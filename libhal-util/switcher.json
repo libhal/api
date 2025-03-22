@@ -1,0 +1,12 @@
+[
+  {
+    "name": "main",
+    "version": "main",
+    "url": "https://libhal.github.io/api/libhal-util/main/"
+  },
+  {
+    "name": "4.10.0",
+    "version": "4.10.0",
+    "url": "https://libhal.github.io/api/libhal-util/5.4.3/"
+  }
+]
