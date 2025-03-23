@@ -1,15 +1,11 @@
 [
     {
-        "version": "4.10.1",
-        "url": "https://libhal.github.io/api/libhal/4.10.1"
+        "version": "main",
+        "url": "https://libhal.github.io/api/libhal/main"
     },
     {
         "version": "4.10.0",
         "url": "https://libhal.github.io/api/libhal/4.10.0"
-    },
-    {
-        "version": "main",
-        "url": "https://libhal.github.io/api/libhal/main"
     },
     {
         "version": "4.10.2",
