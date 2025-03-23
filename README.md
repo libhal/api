@@ -75,7 +75,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.API_PUSH_TOKEN }}
 ```
 
-> [!info]
+> [!TIP]
 > Notice the `api.py` file. This file is the program that makes all of the
 > magic happen. The script above downloads the latest `5.x.y` version of the
 > script from the `libhal/ci` directory in order to build and deploy the API
