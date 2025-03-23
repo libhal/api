@@ -455,7 +455,7 @@
 <span id="_CPPv313work_function"></span><span id="_CPPv213work_function"></span><span class="target" id="group___timeout_core_1gae14dee1f644fcb514428246f9970299f"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">work_function</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv410work_state" title="work_state"><span class="n"><span class="pre">work_state</span></span></a><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv413work_function" title="Link to this definition">#</a><br /></dt>
 <dd><p>A non-blocking callable that performs work with each call. </p>
 <p>Each call to a work_function will perform a set of work. The worker will return a work_state to indicate its current state. Once the worker reaches a terminal state, it MUST perform no additional work and return the terminal state. For example, if a work function failed, it must always return failure and not interact with hardware or other software from that point on. Same will occur for the “finished” state.</p>
-<p>This function can be repeatedly tried until it has reached a terminal state with the try_until() function.</p>
+<p>This function can be repeatedly tried until it has reached a terminal state with the <a class="reference internal" href="functional.html#group___functional_1ga5078c7097c3049684fa72d7a35538e52"><span class="std std-ref">try_until()</span></a> function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return<span class="colon">:</span></dt>
 <dd class="field-odd"><p>work_state - indicates what the state of the worker function is. </p>
@@ -603,7 +603,7 @@
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     <br/>
   </p>
 </div>
