@@ -355,6 +355,24 @@
 <li class="toctree-l1"><a class="reference internal" href="static_list.html">Static List</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="to_array.html">To Array</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="inert/index.html">Inert Drivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_accelerometer.html">Inert Accelerometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_adc.html">Inert ADC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_dac.html">Inert DAC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_distance_sensor.html">Inert Distance Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_gyroscope.html">Inert Gyroscope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_input_pin.html">Inert Input Pin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_interrupt_pin.html">Inert Interrupt Pin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_magnetometer.html">Inert Magnetometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_motor.html">Inert Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_output_pin.html">Inert Output Pin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_pwm.html">Inert PWM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_rotation_sensor.html">Inert Rotation Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_steady_clock.html">Inert Steady Clock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_temperature_sensor.html">Inert Temperature Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_timer.html">Inert Timer</a></li>
+</ul>
+</details></li>
 </ul>
 </div>
 </nav></div>
@@ -428,12 +446,13 @@
 <dt class="sig sig-object cpp" id="_CPPv43mapfNSt4pairIffEENSt4pairIffEE">
 <span id="_CPPv33mapfNSt4pairIffEENSt4pairIffEE"></span><span id="_CPPv23mapfNSt4pairIffEENSt4pairIffEE"></span><span id="map__float.std::pair:float.float:.std::pair:float.float:CE"></span><span class="target" id="group___map_1ga5d5b1145c184160ac984b3594a8ff36d"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">map</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_target</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_input_range</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_output_range</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv43mapfNSt4pairIffEENSt4pairIffEE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Map an target value [x] from an input range [a,b] to an output range [c,d]. </p>
-<p>Another term for this is an affine transformation which follows this equation: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w">                  </span><span class="o">/</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">c</span><span class="w"> </span>\
-<span class="w">   </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">--------|</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span>
-<span class="w">                  </span><span class="err">\</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">/</span>
+<p>Another term for this is an affine transformation which follows this equation:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>               / d - c \
+y = (x - a) * | --------| + c
+               \ b - a /
 </pre></div>
 </div>
- For example:</p>
+<p>For example:</p>
 <p>let x = 5.0 let input_range = [0.0, 10.0] let output_range = [100.0, 200.0] The result will be 150.0</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>

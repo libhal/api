@@ -355,6 +355,24 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Static List</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="to_array.html">To Array</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="inert/index.html">Inert Drivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_accelerometer.html">Inert Accelerometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_adc.html">Inert ADC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_dac.html">Inert DAC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_distance_sensor.html">Inert Distance Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_gyroscope.html">Inert Gyroscope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_input_pin.html">Inert Input Pin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_interrupt_pin.html">Inert Interrupt Pin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_magnetometer.html">Inert Magnetometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_motor.html">Inert Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_output_pin.html">Inert Output Pin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_pwm.html">Inert PWM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_rotation_sensor.html">Inert Rotation Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_steady_clock.html">Inert Steady Clock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_temperature_sensor.html">Inert Temperature Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_timer.html">Inert Timer</a></li>
+</ul>
+</details></li>
 </ul>
 </div>
 </nav></div>
@@ -422,11 +440,23 @@
 <dl>
 <dt class="sig sig-object cpp">
 <span class="target" id="group___static_list"></span><em><span class="pre">group</span></em> <span class="sig-name descname"><span class="pre">Static</span> <span class="pre">List</span></span></dt>
-<dd><div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN3hal11static_listE">
+<span id="_CPPv3I0EN3hal11static_listE"></span><span id="_CPPv2I0EN3hal11static_listE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Object</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1static__list"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">static_list</span></span></span><a class="headerlink" href="#_CPPv4I0EN3hal11static_listE" title="Link to this definition">#</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;static_list.hpp&gt;</em></div>
+<p><a class="reference internal" href="#classhal_1_1static__list"><span class="std std-ref">static_list</span></a> is a non-owning non-allocating doubly linked list container with O(1) memory utilization. </p>
+<p>Items in the list cannot be destroyed by</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Object</strong> – - The type of the elements. Object must be “MoveAssignable” and “MoveConstructible”. </p>
+</dd>
+</dl>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv49push_backv">
-<span id="_CPPv39push_backv"></span><span id="_CPPv29push_backv"></span><span id="push_backCE"></span><span class="target" id="group___static_list_1ga843188e3908e995ee8e8b2d061c9ca33"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">item</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">push_back</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49push_backv" title="Link to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N3hal11static_list9push_backEv">
+<span id="_CPPv3N3hal11static_list9push_backEv"></span><span id="_CPPv2N3hal11static_list9push_backEv"></span><span id="hal::static_list::push_backCE"></span><span class="target" id="classhal_1_1static__list_1a843188e3908e995ee8e8b2d061c9ca33"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal11static_list4itemE" title="hal::static_list::item"><span class="n"><span class="pre">item</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">push_back</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal11static_list9push_backEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>Add default constructed item to the end of the list. </p>
 <p>Only works for Object’s that support default construction.</p>
 <dl class="field-list simple">
@@ -437,8 +467,8 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv49push_backRK6Object">
-<span id="_CPPv39push_backRK6Object"></span><span id="_CPPv29push_backRK6Object"></span><span id="push_back__ObjectCRCE"></span><span class="target" id="group___static_list_1ga921c47a13eb95dad245c4d8d4d303d57"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">item</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">push_back</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Object</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49push_backRK6Object" title="Link to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N3hal11static_list9push_backERK6Object">
+<span id="_CPPv3N3hal11static_list9push_backERK6Object"></span><span id="_CPPv2N3hal11static_list9push_backERK6Object"></span><span id="hal::static_list::push_back__ObjectCRCE"></span><span class="target" id="classhal_1_1static__list_1a921c47a13eb95dad245c4d8d4d303d57"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal11static_list4itemE" title="hal::static_list::item"><span class="n"><span class="pre">item</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">push_back</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal11static_listE" title="hal::static_list::Object"><span class="n"><span class="pre">Object</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal11static_list9push_backERK6Object" title="Link to this definition">#</a><br /></dt>
 <dd><p>Append item to the end of the static list. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -451,8 +481,8 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv49push_backRR6Object">
-<span id="_CPPv39push_backRR6Object"></span><span id="_CPPv29push_backRR6Object"></span><span id="push_back__ObjectRRCE"></span><span class="target" id="group___static_list_1ga0d072a33b23d70078c280203ecb9179a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">item</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">push_back</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Object</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49push_backRR6Object" title="Link to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N3hal11static_list9push_backERR6Object">
+<span id="_CPPv3N3hal11static_list9push_backERR6Object"></span><span id="_CPPv2N3hal11static_list9push_backERR6Object"></span><span id="hal::static_list::push_back__ObjectRRCE"></span><span class="target" id="classhal_1_1static__list_1a0d072a33b23d70078c280203ecb9179a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal11static_list4itemE" title="hal::static_list::item"><span class="n"><span class="pre">item</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">push_back</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal11static_listE" title="hal::static_list::Object"><span class="n"><span class="pre">Object</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal11static_list9push_backERR6Object" title="Link to this definition">#</a><br /></dt>
 <dd><p>Append item to the end of the static list. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -465,18 +495,6 @@
 </dd></dl>
 
 </div>
-<dl class="cpp class">
-<dt class="sig sig-object cpp" id="_CPPv4I0EN3hal11static_listE">
-<span id="_CPPv3I0EN3hal11static_listE"></span><span id="_CPPv2I0EN3hal11static_listE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Object</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1static__list"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">static_list</span></span></span><a class="headerlink" href="#_CPPv4I0EN3hal11static_listE" title="Link to this definition">#</a><br /></dt>
-<dd><div class="docutils container">
-<em>#include &lt;static_list.hpp&gt;</em></div>
-<p><a class="reference internal" href="#classhal_1_1static__list"><span class="std std-ref">static_list</span></a> is a non-owning non-allocating doubly linked list container with O(1) memory utilization. </p>
-<p>Items in the list cannot be destroyed by</p>
-<dl class="field-list simple">
-<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>Object</strong> – - The type of the elements. Object must be “MoveAssignable” and “MoveConstructible”. </p>
-</dd>
-</dl>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal11static_list4itemE">
 <span id="_CPPv3N3hal11static_list4itemE"></span><span id="_CPPv2N3hal11static_list4itemE"></span><span id="hal::static_list::item"></span><span class="target" id="classhal_1_1static__list_1_1item"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">item</span></span></span><a class="headerlink" href="#_CPPv4N3hal11static_list4itemE" title="Link to this definition">#</a><br /></dt>
@@ -501,30 +519,6 @@
 <p>Implements the C++ named requirement of “LegacyBidirectionalIterator”. </p>
 </dd></dl>
 
-</dd></dl>
-
-<dl class="cpp class">
-<dt class="sig sig-object cpp">
-<span class="target" id="classhal_1_1static__list_1_1item"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">item</span></span></span><br /></dt>
-<dd><div class="docutils container">
-<em>#include &lt;static_list.hpp&gt;</em></div>
-<p>Item/node within the static linked list. </p>
-<p>This object does not allow copies. When moved, the object will determine its new location in memory, and will update the linked list to the new location and invalidate the old location. This ensures that this item’s position in memory, if whether returned from a function or relocated in some other way, is always tracked by the list.</p>
-<p>An item can only be removed from the list if it is no longer accessible (goes out of scope) or is destructed explicitly (DO NOT DO THIS).</p>
-<p>The return value of push_back MUST be saved to a variable. Failing to do so will result in the object being destructed and removed from the list due to it being inaccessible. <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">static_list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="p">;</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-</pre></div>
-</div>
-</p>
-</dd></dl>
-
-<dl class="cpp class">
-<dt class="sig sig-object cpp">
-<span class="target" id="classhal_1_1static__list_1_1item__iterator"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">item_iterator</span></span></span><br /></dt>
-<dd><div class="docutils container">
-<em>#include &lt;static_list.hpp&gt;</em></div>
-<p>Iterator for the static list. </p>
-<p>Implements the C++ named requirement of “LegacyBidirectionalIterator”. </p>
 </dd></dl>
 
 </dd></dl>
@@ -578,10 +572,10 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv49push_backv"><code class="docutils literal notranslate"><span class="pre">push_back()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv49push_backRK6Object"><code class="docutils literal notranslate"><span class="pre">push_back()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv49push_backRR6Object"><code class="docutils literal notranslate"><span class="pre">push_back()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN3hal11static_listE"><code class="docutils literal notranslate"><span class="pre">hal::static_list</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal11static_list9push_backEv"><code class="docutils literal notranslate"><span class="pre">push_back()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal11static_list9push_backERK6Object"><code class="docutils literal notranslate"><span class="pre">push_back()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal11static_list9push_backERR6Object"><code class="docutils literal notranslate"><span class="pre">push_back()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal11static_list4itemE"><code class="docutils literal notranslate"><span class="pre">hal::static_list::item</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal11static_list13item_iteratorE"><code class="docutils literal notranslate"><span class="pre">hal::static_list::item_iterator</span></code></a></li>
 </ul>

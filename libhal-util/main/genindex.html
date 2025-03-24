@@ -367,14 +367,12 @@
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
  | <a href="#E"><strong>E</strong></a>
- | <a href="#F"><strong>F</strong></a>
  | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
  | <a href="#I"><strong>I</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
  | <a href="#O"><strong>O</strong></a>
- | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
  | <a href="#T"><strong>T</strong></a>
@@ -386,6 +384,12 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="utilities/math.html#_CPPv4I0E14absolute_value1T1T">absolute_value (C++ function)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="utilities/as_bytes.html#_CPPv48as_bytesRK20convertible_to_bytes">as_bytes (C++ function)</a>, <a href="utilities/as_bytes.html#_CPPv4I0E8as_bytesNSt4spanIKN3hal4byteEEEPK1T6size_t">[1]</a>
+</li>
+      <li><a href="utilities/as_bytes.html#_CPPv417as_writable_bytesR20convertible_to_bytes">as_writable_bytes (C++ function)</a>, <a href="utilities/as_bytes.html#_CPPv4I0E17as_writable_bytesNSt4spanIN3hal4byteEEEP1T6size_t">[1]</a>
 </li>
   </ul></td>
 </tr></table>
@@ -426,14 +430,6 @@
   </ul></td>
 </tr></table>
 
-<h2 id="F">F</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="utilities/bit.html#_CPPv44fromNSt8uint32_tE">from (C++ function)</a>, <a href="utilities/bit.html#_CPPv44fromNSt8uint32_tENSt8uint32_tE">[1]</a>, <a href="utilities/bit.html#_CPPv4I_NSt8uint32_tE_NSt8uint32_tEE4from8bit_maskv">[2]</a>
-</li>
-  </ul></td>
-</tr></table>
-
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -453,7 +449,19 @@
 </li>
       <li><a href="utilities/bit.html#_CPPv4N3hal8bit_maskE">hal::bit_mask (C++ struct)</a>
 </li>
+      <li><a href="utilities/bit.html#_CPPv4I_NSt8uint32_tE_NSt8uint32_tEEN3hal8bit_mask4fromE8bit_maskv">hal::bit_mask::from (C++ function)</a>, <a href="utilities/bit.html#_CPPv4N3hal8bit_mask4fromENSt8uint32_tE">[1]</a>, <a href="utilities/bit.html#_CPPv4N3hal8bit_mask4fromENSt8uint32_tENSt8uint32_tE">[2]</a>
+</li>
+      <li><a href="utilities/bit.html#_CPPv4NK3hal8bit_masklsENSt8uint32_tE">hal::bit_mask::operator&lt;&lt; (C++ function)</a>
+</li>
+      <li><a href="utilities/bit.html#_CPPv4N3hal8bit_maskeqERK8bit_mask">hal::bit_mask::operator== (C++ function)</a>
+</li>
+      <li><a href="utilities/bit.html#_CPPv4NK3hal8bit_maskrsENSt8uint32_tE">hal::bit_mask::operator&gt;&gt; (C++ function)</a>
+</li>
+      <li><a href="utilities/bit.html#_CPPv4I_NSt17unsigned_integralEENK3hal8bit_mask6originEDav">hal::bit_mask::origin (C++ function)</a>
+</li>
       <li><a href="utilities/bit.html#_CPPv4N3hal8bit_mask8positionE">hal::bit_mask::position (C++ member)</a>
+</li>
+      <li><a href="utilities/bit.html#_CPPv4I_NSt17unsigned_integralEENK3hal8bit_mask5valueEDav">hal::bit_mask::value (C++ function)</a>
 </li>
       <li><a href="utilities/bit.html#_CPPv4N3hal8bit_mask5widthE">hal::bit_mask::width (C++ member)</a>
 </li>
@@ -481,11 +489,73 @@
 </li>
       <li><a href="utilities/bit.html#_CPPv4I_8bit_maskEN3hal9bit_value6toggleERDav">hal::bit_value::toggle (C++ function)</a>, <a href="utilities/bit.html#_CPPv4N3hal9bit_value6toggleE8bit_mask">[1]</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="utilities/bit.html#_CPPv4N3hal9bit_value5widthE">hal::bit_value::width (C++ member)</a>
 </li>
       <li><a href="utilities/bit.html#_CPPv4I_6size_t_6size_tEN3hal9byte_maskE">hal::byte_mask (C++ struct)</a>
+</li>
+      <li><a href="utilities/bit.html#_CPPv4N3hal9byte_mask5valueE">hal::byte_mask::value (C++ member)</a>
+</li>
+      <li><a href="utilities/inert/inert_accelerometer.html#_CPPv4N3hal19inert_accelerometerE">hal::inert_accelerometer (C++ class)</a>
+</li>
+      <li><a href="utilities/inert/inert_accelerometer.html#_CPPv4N3hal19inert_accelerometer19inert_accelerometerE6read_t">hal::inert_accelerometer::inert_accelerometer (C++ function)</a>
+</li>
+      <li><a href="utilities/inert/inert_adc.html#_CPPv4N3hal9inert_adcE">hal::inert_adc (C++ class)</a>
+</li>
+      <li><a href="utilities/inert/inert_adc.html#_CPPv4N3hal9inert_adc9inert_adcEf">hal::inert_adc::inert_adc (C++ function)</a>
+</li>
+      <li><a href="utilities/inert/inert_dac.html#_CPPv4N3hal9inert_dacE">hal::inert_dac (C++ class)</a>
+</li>
+      <li><a href="utilities/inert/inert_dac.html#_CPPv4N3hal9inert_dac9inert_dacEv">hal::inert_dac::inert_dac (C++ function)</a>
+</li>
+      <li><a href="utilities/inert/inert_distance_sensor.html#_CPPv4N3hal21inert_distance_sensorE">hal::inert_distance_sensor (C++ class)</a>
+</li>
+      <li><a href="utilities/inert/inert_distance_sensor.html#_CPPv4N3hal21inert_distance_sensor21inert_distance_sensorEN3hal6metersE">hal::inert_distance_sensor::inert_distance_sensor (C++ function)</a>
+</li>
+      <li><a href="utilities/inert/inert_gyroscope.html#_CPPv4N3hal15inert_gyroscopeE">hal::inert_gyroscope (C++ class)</a>
+</li>
+      <li><a href="utilities/inert/inert_gyroscope.html#_CPPv4N3hal15inert_gyroscope15inert_gyroscopeE6read_t">hal::inert_gyroscope::inert_gyroscope (C++ function)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="utilities/inert/inert_input_pin.html#_CPPv4N3hal15inert_input_pinE">hal::inert_input_pin (C++ class)</a>
+</li>
+      <li><a href="utilities/inert/inert_input_pin.html#_CPPv4N3hal15inert_input_pin15inert_input_pinEb">hal::inert_input_pin::inert_input_pin (C++ function)</a>
+</li>
+      <li><a href="utilities/inert/inert_interrupt_pin.html#_CPPv4N3hal19inert_interrupt_pinE">hal::inert_interrupt_pin (C++ class)</a>
+</li>
+      <li><a href="utilities/inert/inert_interrupt_pin.html#_CPPv4N3hal19inert_interrupt_pin19inert_interrupt_pinEv">hal::inert_interrupt_pin::inert_interrupt_pin (C++ function)</a>
+</li>
+      <li><a href="utilities/inert/inert_magnetometer.html#_CPPv4N3hal18inert_magnetometerE">hal::inert_magnetometer (C++ class)</a>
+</li>
+      <li><a href="utilities/inert/inert_magnetometer.html#_CPPv4N3hal18inert_magnetometer18inert_magnetometerE6read_t">hal::inert_magnetometer::inert_magnetometer (C++ function)</a>
+</li>
+      <li><a href="utilities/inert/inert_motor.html#_CPPv4N3hal11inert_motorE">hal::inert_motor (C++ class)</a>
+</li>
+      <li><a href="utilities/inert/inert_motor.html#_CPPv4N3hal11inert_motor11inert_motorEv">hal::inert_motor::inert_motor (C++ function)</a>
+</li>
+      <li><a href="utilities/inert/inert_output_pin.html#_CPPv4N3hal16inert_output_pinE">hal::inert_output_pin (C++ class)</a>
+</li>
+      <li><a href="utilities/inert/inert_output_pin.html#_CPPv4N3hal16inert_output_pin16inert_output_pinEb">hal::inert_output_pin::inert_output_pin (C++ function)</a>
+</li>
+      <li><a href="utilities/inert/inert_pwm.html#_CPPv4N3hal9inert_pwmE">hal::inert_pwm (C++ class)</a>
+</li>
+      <li><a href="utilities/inert/inert_pwm.html#_CPPv4N3hal9inert_pwm9inert_pwmEv">hal::inert_pwm::inert_pwm (C++ function)</a>
+</li>
+      <li><a href="utilities/inert/inert_rotation_sensor.html#_CPPv4N3hal21inert_rotation_sensorE">hal::inert_rotation_sensor (C++ class)</a>
+</li>
+      <li><a href="utilities/inert/inert_rotation_sensor.html#_CPPv4N3hal21inert_rotation_sensor21inert_rotation_sensorE6read_t">hal::inert_rotation_sensor::inert_rotation_sensor (C++ function)</a>
+</li>
+      <li><a href="utilities/inert/inert_steady_clock.html#_CPPv4N3hal18inert_steady_clockE">hal::inert_steady_clock (C++ class)</a>
+</li>
+      <li><a href="utilities/inert/inert_steady_clock.html#_CPPv4N3hal18inert_steady_clock18inert_steady_clockEN3hal5hertzENSt8uint64_tE">hal::inert_steady_clock::inert_steady_clock (C++ function)</a>
+</li>
+      <li><a href="utilities/inert/inert_temperature_sensor.html#_CPPv4N3hal24inert_temperature_sensorE">hal::inert_temperature_sensor (C++ class)</a>
+</li>
+      <li><a href="utilities/inert/inert_temperature_sensor.html#_CPPv4N3hal24inert_temperature_sensor24inert_temperature_sensorEN3hal7celsiusE">hal::inert_temperature_sensor::inert_temperature_sensor (C++ function)</a>
+</li>
+      <li><a href="utilities/inert/inert_timer.html#_CPPv4N3hal11inert_timerE">hal::inert_timer (C++ class)</a>
+</li>
+      <li><a href="utilities/inert/inert_timer.html#_CPPv4N3hal11inert_timer11inert_timerEb">hal::inert_timer::inert_timer (C++ function)</a>
 </li>
       <li><a href="utilities/move_interceptor.html#_CPPv4I0EN3hal16move_interceptorE">hal::move_interceptor (C++ class)</a>
 </li>
@@ -499,9 +569,11 @@
 </li>
       <li><a href="utilities/static_list.html#_CPPv4I0EN3hal11static_listE">hal::static_list (C++ class)</a>
 </li>
-      <li><a href="utilities/static_list.html#_CPPv4N3hal11static_list4itemE">hal::static_list::item (C++ class)</a>, <a href="utilities/static_list.html#_CPPv4N3hal11static_list4itemE">[1]</a>
+      <li><a href="utilities/static_list.html#_CPPv4N3hal11static_list4itemE">hal::static_list::item (C++ class)</a>
 </li>
-      <li><a href="utilities/static_list.html#_CPPv4N3hal11static_list13item_iteratorE">hal::static_list::item_iterator (C++ class)</a>, <a href="utilities/static_list.html#_CPPv4N3hal11static_list13item_iteratorE">[1]</a>
+      <li><a href="utilities/static_list.html#_CPPv4N3hal11static_list13item_iteratorE">hal::static_list::item_iterator (C++ class)</a>
+</li>
+      <li><a href="utilities/static_list.html#_CPPv4N3hal11static_list9push_backERK6Object">hal::static_list::push_back (C++ function)</a>, <a href="utilities/static_list.html#_CPPv4N3hal11static_list9push_backERR6Object">[1]</a>, <a href="utilities/static_list.html#_CPPv4N3hal11static_list9push_backEv">[2]</a>
 </li>
       <li><a href="utilities/streams.html#_CPPv4N3hal11stream_fillE">hal::stream_fill (C++ class)</a>
 </li>
@@ -555,23 +627,11 @@
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="utilities/bit.html#_CPPv4NKlsENSt8uint32_tE">operator&lt;&lt; (C++ function)</a>
-</li>
-      <li><a href="utilities/bit.html#_CPPv4eqRK8bit_mask">operator== (C++ function)</a>
+      <li><a href="utilities/comparison.html#_CPPv4I0_6size_tEnebRKNSt4spanI1TEERKNSt5arrayI1T4sizeEE">operator!= (C++ function)</a>, <a href="utilities/comparison.html#_CPPv4I0_6size_tEnebRKNSt5arrayI1T4sizeEERKNSt4spanI1TEE">[1]</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="utilities/bit.html#_CPPv4NKrsENSt8uint32_tE">operator&gt;&gt; (C++ function)</a>
-</li>
-      <li><a href="utilities/bit.html#_CPPv4I_NSt17unsigned_integralEENK6originEDav">origin (C++ function)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="P">P</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="utilities/static_list.html#_CPPv49push_backRK6Object">push_back (C++ function)</a>, <a href="utilities/static_list.html#_CPPv49push_backRR6Object">[1]</a>, <a href="utilities/static_list.html#_CPPv49push_backv">[2]</a>
+      <li><a href="utilities/comparison.html#_CPPv4I0_6size_tEeqbRKNSt4spanI1TEERKNSt5arrayI1T4sizeEE">operator== (C++ function)</a>, <a href="utilities/comparison.html#_CPPv4I0_6size_tEeqbRKNSt5arrayI1T4sizeEERKNSt4spanI1TEE">[1]</a>
 </li>
   </ul></td>
 </tr></table>
@@ -627,7 +687,7 @@
 <h2 id="V">V</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="utilities/bit.html#_CPPv4I_NSt17unsigned_integralEENK5valueEDav">value (C++ function)</a>, <a href="utilities/enum.html#_CPPv45value11enumeration">[1]</a>
+      <li><a href="utilities/enum.html#_CPPv45value11enumeration">value (C++ function)</a>
 </li>
   </ul></td>
 </tr></table>

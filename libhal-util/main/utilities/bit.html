@@ -355,6 +355,24 @@
 <li class="toctree-l1"><a class="reference internal" href="static_list.html">Static List</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="to_array.html">To Array</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="inert/index.html">Inert Drivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_accelerometer.html">Inert Accelerometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_adc.html">Inert ADC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_dac.html">Inert DAC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_distance_sensor.html">Inert Distance Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_gyroscope.html">Inert Gyroscope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_input_pin.html">Inert Input Pin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_interrupt_pin.html">Inert Interrupt Pin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_magnetometer.html">Inert Magnetometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_motor.html">Inert Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_output_pin.html">Inert Output Pin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_pwm.html">Inert PWM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_rotation_sensor.html">Inert Rotation Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_steady_clock.html">Inert Steady Clock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_temperature_sensor.html">Inert Temperature Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_timer.html">Inert Timer</a></li>
+</ul>
+</details></li>
 </ul>
 </div>
 </nav></div>
@@ -425,150 +443,6 @@
 <dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4I_NSt8uint32_tE_NSt8uint32_tEE4from8bit_maskv">
-<span id="_CPPv3I_NSt8uint32_tE_NSt8uint32_tEE4fromv"></span><span id="_CPPv2I_NSt8uint32_tE_NSt8uint32_tEE4fromv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">position1</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">position2</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_NSt8uint32_tE_NSt8uint32_tEE4from8bit_maskv" title="from::position1"><span class="n"><span class="pre">position1</span></span></a><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="group___bit_1gaac23bb0f62776d60f0aa52f3e223c361"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">consteval</span></span><span class="w"> </span><span class="n"><span class="pre">bit_mask</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">from</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_NSt8uint32_tE_NSt8uint32_tEE4from8bit_maskv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Generate, at compile time, a <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> that spans the from position1 to position2. </p>
-<p>If position1 is the same position2 then the <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> will have length of 1 and the bit position will be the value of position1.</p>
-<p>position1 and position2 can be in any order so long as they span the distance from the start and end of the <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> range.</p>
-<p>Use this when you REQUIRE the bit mask to be generated at compile time, because template arguments are required to be known at compile time.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>position1</strong> – - bit position 1 </p></li>
-<li><p><strong>position2</strong> – - bit position 2 </p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>consteval <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> - bit <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> represented by the two bit positions </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv44fromNSt8uint32_tENSt8uint32_tE">
-<span id="_CPPv34fromNSt8uint32_tENSt8uint32_tE"></span><span id="_CPPv24fromNSt8uint32_tENSt8uint32_tE"></span><span id="from__std::uint32_t.std::uint32_tCE"></span><span class="target" id="group___bit_1ga186f600470b21d2e7788132736138cea"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">bit_mask</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">from</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">position1</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">position2</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44fromNSt8uint32_tENSt8uint32_tE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Generate, at compile time, a <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> that spans the from position1 to position2. </p>
-<p>If position1 is the same position2 then the <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> will have length of 1 and the bit position will be the value of position1.</p>
-<p>position1 and position2 can be in any order so long as they span the distance from the start and end of the <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> range.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>position1</strong> – - bit position 1 </p></li>
-<li><p><strong>position2</strong> – - bit position 2 </p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>consteval <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> - bit <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> represented by the two bit positions </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv44fromNSt8uint32_tE">
-<span id="_CPPv34fromNSt8uint32_tE"></span><span id="_CPPv24fromNSt8uint32_tE"></span><span id="from__std::uint32_tCE"></span><span class="target" id="group___bit_1gad577183d4f6139bcda795394f62db14b"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">bit_mask</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">from</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">position</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44fromNSt8uint32_tE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Generate, at runtime, a single bit width <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> at position. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>position</strong> – - the bit to make the <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> for </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>constexpr <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> - bit <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> with the position bit set to position </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4I_NSt17unsigned_integralEENK6originEDav">
-<span id="_CPPv3I_NSt17unsigned_integralEENK6originEv"></span><span id="_CPPv2I_NSt17unsigned_integralEENK6originEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unsigned_integral</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="group___bit_1gab90f9216ed97b1496eb6da9952190bf6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">origin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I_NSt17unsigned_integralEENK6originEDav" title="Link to this definition">#</a><br /></dt>
-<dd><p>Convert <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> to a integral representation but with bit position at 0. </p>
-<p>The integral presentation will have 1 bits starting from the position bit up to bit position + width. All other bits will be 0s.</p>
-<p>For example: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="n">value</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">bit_mask</span><span class="p">{</span>
-<span class="w">     </span><span class="p">.</span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">     </span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-<span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// returns = 0b0000&#39;0000&#39;0000&#39;1111;</span>
-</pre></div>
-</div>
- </p>
-<dl class="field-list simple">
-<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>T</strong> – - unsigned integral type to hold the <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a></p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>constexpr auto - <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> value as an unsigned integer </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4I_NSt17unsigned_integralEENK5valueEDav">
-<span id="_CPPv3I_NSt17unsigned_integralEENK5valueEv"></span><span id="_CPPv2I_NSt17unsigned_integralEENK5valueEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unsigned_integral</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="group___bit_1ga6bc7e3171bf1e580426112fccc5f356b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">value</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I_NSt17unsigned_integralEENK5valueEDav" title="Link to this definition">#</a><br /></dt>
-<dd><p>Convert mask to a integral representation. </p>
-<p>The integral presentation will have 1 bits starting from the position bit up to bit position + width. All other bits will be 0s.</p>
-<p>For example: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="n">value</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">bit_mask</span><span class="p">{</span>
-<span class="w">     </span><span class="p">.</span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">     </span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-<span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// returns = 0b0000&#39;0000&#39;0001&#39;1110;</span>
-</pre></div>
-</div>
- </p>
-<dl class="field-list simple">
-<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>T</strong> – - unsigned integral type to hold the mask </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>constexpr auto - mask value as an unsigned integer </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4eqRK8bit_mask">
-<span id="_CPPv3eqRK8bit_mask"></span><span id="_CPPv2eqRK8bit_mask"></span><span id="eq-operator__bit_maskCRCE"></span><span class="target" id="group___bit_1ga0af56651a8f93b60ba1180cd0dd0779c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">==</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">bit_mask</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4eqRK8bit_mask" title="Link to this definition">#</a><br /></dt>
-<dd><p>Comparison operator between this mask and another. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>p_other</strong> – - the other mask to compare against </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>true - the masks are the same </p>
-</dd>
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>false - the masks are not the same </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NKrsENSt8uint32_tE">
-<span id="_CPPv3NKrsENSt8uint32_tE"></span><span id="_CPPv2NKrsENSt8uint32_tE"></span><span id="rshift-operator__std::uint32_tCCE"></span><span class="target" id="group___bit_1ga67a4cc97430af8229099e0923a08c199"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&gt;&gt;</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_shift_amount</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NKrsENSt8uint32_tE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Shift the position of the bit mask to the right. </p>
-<p>NOTE: the position will overflow if the position</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>p_shift_amount</strong> – - the number of bits to shift the position by </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>constexpr auto - a copy of this <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> but with the position shifted. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NKlsENSt8uint32_tE">
-<span id="_CPPv3NKlsENSt8uint32_tE"></span><span id="_CPPv2NKlsENSt8uint32_tE"></span><span id="lshift-operator__std::uint32_tCCE"></span><span class="target" id="group___bit_1ga0b484bff31195ed2fca788388ed3ee8e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;&lt;</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_shift_amount</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NKlsENSt8uint32_tE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Shift the position of the bit mask to the left. </p>
-<p>NOTE: the position will not underflow if the shift amount is greater than the position. The position value will saturate at the value of 0.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>p_shift_amount</strong> – - the number of bits to shift the position by </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>constexpr auto - a copy of this <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> but with the position shifted. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4I_8bit_maskE11bit_extractDaNSt17unsigned_integralE">
 <span id="_CPPv3I_8bit_maskE11bit_extractNSt17unsigned_integralE"></span><span id="_CPPv2I_8bit_maskE11bit_extractNSt17unsigned_integralE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">bit_mask</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">field</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="group___bit_1ga292f8eb2d07e913ecae9d39127d154b7"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bit_extract</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unsigned_integral</span></span><span class="w"> </span><span class="k"><span class="pre">auto</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_8bit_maskE11bit_extractDaNSt17unsigned_integralE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Extracts a specific field from an unsigned integral value using a compile time (template) bit mask. </p>
@@ -620,15 +494,9 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
 <dl class="cpp var">
-<dt class="sig sig-object cpp">
-<span class="target" id="group___bit_1ga7442ff68e3fc6e030703411f73f15a46"></span><span class="sig-name descname"><span class="pre">static</span> <span class="pre">constexpr</span> <span class="pre">hal::bit_mask</span> <span class="pre">value</span>&#160; <span class="pre">{.position</span> <span class="pre">=</span> <span class="pre">bits_per_byte</span> <span class="pre">*</span> <span class="pre">start_byte,.width</span> <span class="pre">=</span> <span class="pre">bits_per_byte</span> <span class="pre">*</span> <span class="pre">(1</span> <span class="pre">+</span> <span class="pre">(end_byte</span> <span class="pre">-</span> <span class="pre">start_byte)),}</span></span></dt>
-<dd><p>Mask value defined at compile time. </p>
-</dd></dl>
-
-<dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4I_6size_t_6size_tE6byte_m">
 <span id="_CPPv3I_6size_t_6size_tE6byte_m"></span><span id="_CPPv2I_6size_t_6size_tE6byte_m"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ByteIndex1</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ByteIndex2</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_6size_t_6size_tE6byte_m" title="byte_m::ByteIndex1"><span class="n"><span class="pre">ByteIndex1</span></span></a><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="group___bit_1gaf6a79d99ab9ef69514580c619ece15bb"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N3hal8bit_maskE" title="hal::bit_mask"><span class="n"><span class="pre">bit_mask</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">byte_m</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">byte_mask</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_6size_t_6size_tE6byte_m" title="byte_m::ByteIndex1"><span class="n"><span class="pre">ByteIndex1</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_6size_t_6size_tE6byte_m" title="byte_m::ByteIndex2"><span class="n"><span class="pre">ByteIndex2</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">value</span></span><a class="headerlink" href="#_CPPv4I_6size_t_6size_tE6byte_m" title="Link to this definition">#</a><br /></dt>
-<dd><p>Shorthand for using <a class="reference internal" href="#group___bit_1ga7442ff68e3fc6e030703411f73f15a46"><span class="std std-ref">hal::byte_mask&lt;N&gt;::value</span></a>. </p>
+<dd><p>Shorthand for using <a class="reference internal" href="#structhal_1_1byte__mask_1a11fe3328c63c224e14bbe2be7fff7cdb"><span class="std std-ref">hal::byte_mask&lt;N&gt;::value</span></a>. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -661,6 +529,100 @@
 <em>#include &lt;bit.hpp&gt;</em></div>
 <p>Represents a bit mask of contiguous bits. </p>
 <div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_NSt17unsigned_integralEENK3hal8bit_mask6originEDav">
+<span id="_CPPv3I_NSt17unsigned_integralEENK3hal8bit_mask6originEv"></span><span id="_CPPv2I_NSt17unsigned_integralEENK3hal8bit_mask6originEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unsigned_integral</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structhal_1_1bit__mask_1ab90f9216ed97b1496eb6da9952190bf6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">origin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I_NSt17unsigned_integralEENK3hal8bit_mask6originEDav" title="Link to this definition">#</a><br /></dt>
+<dd><p>Convert <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> to a integral representation but with bit position at 0. </p>
+<p>The integral presentation will have 1 bits starting from the position bit up to bit position + width. All other bits will be 0s.</p>
+<p>For example: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="n">value</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">bit_mask</span><span class="p">{</span>
+<span class="w">     </span><span class="p">.</span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">     </span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// returns = 0b0000&#39;0000&#39;0000&#39;1111;</span>
+</pre></div>
+</div>
+ </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – - unsigned integral type to hold the <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>constexpr auto - <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> value as an unsigned integer </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_NSt17unsigned_integralEENK3hal8bit_mask5valueEDav">
+<span id="_CPPv3I_NSt17unsigned_integralEENK3hal8bit_mask5valueEv"></span><span id="_CPPv2I_NSt17unsigned_integralEENK3hal8bit_mask5valueEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unsigned_integral</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structhal_1_1bit__mask_1a6bc7e3171bf1e580426112fccc5f356b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">value</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I_NSt17unsigned_integralEENK3hal8bit_mask5valueEDav" title="Link to this definition">#</a><br /></dt>
+<dd><p>Convert mask to a integral representation. </p>
+<p>The integral presentation will have 1 bits starting from the position bit up to bit position + width. All other bits will be 0s.</p>
+<p>For example: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="n">value</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint16_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">bit_mask</span><span class="p">{</span>
+<span class="w">     </span><span class="p">.</span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">     </span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// returns = 0b0000&#39;0000&#39;0001&#39;1110;</span>
+</pre></div>
+</div>
+ </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – - unsigned integral type to hold the mask </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>constexpr auto - mask value as an unsigned integer </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8bit_maskeqERK8bit_mask">
+<span id="_CPPv3N3hal8bit_maskeqERK8bit_mask"></span><span id="_CPPv2N3hal8bit_maskeqERK8bit_mask"></span><span id="hal::bit_mask::eq-operator__bit_maskCRCE"></span><span class="target" id="structhal_1_1bit__mask_1a0af56651a8f93b60ba1180cd0dd0779c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">==</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal8bit_maskE" title="hal::bit_mask"><span class="n"><span class="pre">bit_mask</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8bit_maskeqERK8bit_mask" title="Link to this definition">#</a><br /></dt>
+<dd><p>Comparison operator between this mask and another. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – - the other mask to compare against </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true - the masks are the same </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>false - the masks are not the same </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal8bit_maskrsENSt8uint32_tE">
+<span id="_CPPv3NK3hal8bit_maskrsENSt8uint32_tE"></span><span id="_CPPv2NK3hal8bit_maskrsENSt8uint32_tE"></span><span id="hal::bit_mask::rshift-operator__std::uint32_tCCE"></span><span class="target" id="structhal_1_1bit__mask_1a67a4cc97430af8229099e0923a08c199"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&gt;&gt;</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_shift_amount</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal8bit_maskrsENSt8uint32_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Shift the position of the bit mask to the right. </p>
+<p>NOTE: the position will overflow if the position</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_shift_amount</strong> – - the number of bits to shift the position by </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>constexpr auto - a copy of this <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> but with the position shifted. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal8bit_masklsENSt8uint32_tE">
+<span id="_CPPv3NK3hal8bit_masklsENSt8uint32_tE"></span><span id="_CPPv2NK3hal8bit_masklsENSt8uint32_tE"></span><span id="hal::bit_mask::lshift-operator__std::uint32_tCCE"></span><span class="target" id="structhal_1_1bit__mask_1a0b484bff31195ed2fca788388ed3ee8e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;&lt;</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_shift_amount</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal8bit_masklsENSt8uint32_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Shift the position of the bit mask to the left. </p>
+<p>NOTE: the position will not underflow if the shift amount is greater than the position. The position value will saturate at the value of 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_shift_amount</strong> – - the number of bits to shift the position by </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>constexpr auto - a copy of this <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> but with the position shifted. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal8bit_mask8positionE">
@@ -672,6 +634,62 @@
 <dt class="sig sig-object cpp" id="_CPPv4N3hal8bit_mask5widthE">
 <span id="_CPPv3N3hal8bit_mask5widthE"></span><span id="_CPPv2N3hal8bit_mask5widthE"></span><span id="hal::bit_mask::width__std::uint32_t"></span><span class="target" id="structhal_1_1bit__mask_1ac77551388b9af88426b01c6516915f28"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">width</span></span></span><a class="headerlink" href="#_CPPv4N3hal8bit_mask5widthE" title="Link to this definition">#</a><br /></dt>
 <dd><p>The number of bits after position contained in the mask. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_NSt8uint32_tE_NSt8uint32_tEEN3hal8bit_mask4fromE8bit_maskv">
+<span id="_CPPv3I_NSt8uint32_tE_NSt8uint32_tEEN3hal8bit_mask4fromEv"></span><span id="_CPPv2I_NSt8uint32_tE_NSt8uint32_tEEN3hal8bit_mask4fromEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">position1</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">position2</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_NSt8uint32_tE_NSt8uint32_tEEN3hal8bit_mask4fromE8bit_maskv" title="hal::bit_mask::from::position1"><span class="n"><span class="pre">position1</span></span></a><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structhal_1_1bit__mask_1aac23bb0f62776d60f0aa52f3e223c361"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">consteval</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal8bit_maskE" title="hal::bit_mask"><span class="n"><span class="pre">bit_mask</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">from</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_NSt8uint32_tE_NSt8uint32_tEEN3hal8bit_mask4fromE8bit_maskv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Generate, at compile time, a <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> that spans the from position1 to position2. </p>
+<p>If position1 is the same position2 then the <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> will have length of 1 and the bit position will be the value of position1.</p>
+<p>position1 and position2 can be in any order so long as they span the distance from the start and end of the <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> range.</p>
+<p>Use this when you REQUIRE the bit mask to be generated at compile time, because template arguments are required to be known at compile time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>position1</strong> – - bit position 1 </p></li>
+<li><p><strong>position2</strong> – - bit position 2 </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>consteval <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> - bit <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> represented by the two bit positions </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8bit_mask4fromENSt8uint32_tENSt8uint32_tE">
+<span id="_CPPv3N3hal8bit_mask4fromENSt8uint32_tENSt8uint32_tE"></span><span id="_CPPv2N3hal8bit_mask4fromENSt8uint32_tENSt8uint32_tE"></span><span id="hal::bit_mask::from__std::uint32_t.std::uint32_tCE"></span><span class="target" id="structhal_1_1bit__mask_1a186f600470b21d2e7788132736138cea"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal8bit_maskE" title="hal::bit_mask"><span class="n"><span class="pre">bit_mask</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">from</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">position1</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">position2</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8bit_mask4fromENSt8uint32_tENSt8uint32_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Generate, at compile time, a <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> that spans the from position1 to position2. </p>
+<p>If position1 is the same position2 then the <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> will have length of 1 and the bit position will be the value of position1.</p>
+<p>position1 and position2 can be in any order so long as they span the distance from the start and end of the <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>position1</strong> – - bit position 1 </p></li>
+<li><p><strong>position2</strong> – - bit position 2 </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>consteval <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> - bit <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> represented by the two bit positions </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8bit_mask4fromENSt8uint32_tE">
+<span id="_CPPv3N3hal8bit_mask4fromENSt8uint32_tE"></span><span id="_CPPv2N3hal8bit_mask4fromENSt8uint32_tE"></span><span id="hal::bit_mask::from__std::uint32_tCE"></span><span class="target" id="structhal_1_1bit__mask_1ad577183d4f6139bcda795394f62db14b"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal8bit_maskE" title="hal::bit_mask"><span class="n"><span class="pre">bit_mask</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">from</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">position</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8bit_mask4fromENSt8uint32_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Generate, at runtime, a single bit width <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> at position. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>position</strong> – - the bit to make the <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> for </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>constexpr <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> - bit <a class="reference internal" href="#structhal_1_1bit__mask"><span class="std std-ref">bit_mask</span></a> with the position bit set to position </p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -700,6 +718,15 @@
 </ul>
 </dd>
 </dl>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-attributes">Public Static Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9byte_mask5valueE">
+<span id="_CPPv3N3hal9byte_mask5valueE"></span><span id="_CPPv2N3hal9byte_mask5valueE"></span><span id="hal::byte_mask::value__auto"></span><span class="target" id="structhal_1_1byte__mask_1a11fe3328c63c224e14bbe2be7fff7cdb"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">value</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><code class="docutils literal notranslate"><span class="pre">hal::bit_mask{.position</span> <span class="pre">=</span> <span class="pre">bits_per_byte</span> <span class="pre">*</span> <span class="pre">start_byte,.width</span> <span class="pre">=</span> <span class="pre">bits_per_byte</span> <span class="pre">*</span> <span class="pre">(1</span> <span class="pre">+</span> <span class="pre">(end_byte</span> <span class="pre">-</span> <span class="pre">start_byte)),}</span></code><a class="headerlink" href="#_CPPv4N3hal9byte_mask5valueE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Mask value defined at compile time. </p>
+</dd></dl>
+
+</div>
 </dd></dl>
 
 <dl class="cpp struct">
@@ -1039,24 +1066,27 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_NSt8uint32_tE_NSt8uint32_tEE4from8bit_maskv"><code class="docutils literal notranslate"><span class="pre">from()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv44fromNSt8uint32_tENSt8uint32_tE"><code class="docutils literal notranslate"><span class="pre">from()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv44fromNSt8uint32_tE"><code class="docutils literal notranslate"><span class="pre">from()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_NSt17unsigned_integralEENK6originEDav"><code class="docutils literal notranslate"><span class="pre">origin()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_NSt17unsigned_integralEENK5valueEDav"><code class="docutils literal notranslate"><span class="pre">value()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4eqRK8bit_mask"><code class="docutils literal notranslate"><span class="pre">operator==()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NKrsENSt8uint32_tE"><code class="docutils literal notranslate"><span class="pre">operator&gt;&gt;()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NKlsENSt8uint32_tE"><code class="docutils literal notranslate"><span class="pre">operator&lt;&lt;()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_8bit_maskE11bit_extractDaNSt17unsigned_integralE"><code class="docutils literal notranslate"><span class="pre">bit_extract()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv411bit_extract8bit_maskNSt17unsigned_integralE"><code class="docutils literal notranslate"><span class="pre">bit_extract()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_6size_t_6size_tE6byte_m"><code class="docutils literal notranslate"><span class="pre">byte_m</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_NSt6size_tE_NSt6size_tEE8nibble_m"><code class="docutils literal notranslate"><span class="pre">nibble_m</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8bit_maskE"><code class="docutils literal notranslate"><span class="pre">hal::bit_mask</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_NSt17unsigned_integralEENK3hal8bit_mask6originEDav"><code class="docutils literal notranslate"><span class="pre">origin()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_NSt17unsigned_integralEENK3hal8bit_mask5valueEDav"><code class="docutils literal notranslate"><span class="pre">value()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8bit_maskeqERK8bit_mask"><code class="docutils literal notranslate"><span class="pre">operator==()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal8bit_maskrsENSt8uint32_tE"><code class="docutils literal notranslate"><span class="pre">operator&gt;&gt;()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal8bit_masklsENSt8uint32_tE"><code class="docutils literal notranslate"><span class="pre">operator&lt;&lt;()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8bit_mask8positionE"><code class="docutils literal notranslate"><span class="pre">position</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8bit_mask5widthE"><code class="docutils literal notranslate"><span class="pre">width</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_NSt8uint32_tE_NSt8uint32_tEEN3hal8bit_mask4fromE8bit_maskv"><code class="docutils literal notranslate"><span class="pre">from()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8bit_mask4fromENSt8uint32_tENSt8uint32_tE"><code class="docutils literal notranslate"><span class="pre">from()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8bit_mask4fromENSt8uint32_tE"><code class="docutils literal notranslate"><span class="pre">from()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_6size_t_6size_tEN3hal9byte_maskE"><code class="docutils literal notranslate"><span class="pre">hal::byte_mask</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_6size_t_6size_tEN3hal9byte_maskE"><code class="docutils literal notranslate"><span class="pre">hal::byte_mask</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9byte_mask5valueE"><code class="docutils literal notranslate"><span class="pre">value</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_NSt6size_tE_NSt6size_tEEN3hal11nibble_maskE"><code class="docutils literal notranslate"><span class="pre">hal::nibble_mask</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_NSt17unsigned_integralEEN3hal9bit_valueE"><code class="docutils literal notranslate"><span class="pre">hal::bit_value</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9bit_value9bit_valueE1T"><code class="docutils literal notranslate"><span class="pre">bit_value()</span></code></a></li>
