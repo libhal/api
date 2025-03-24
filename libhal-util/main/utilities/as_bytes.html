@@ -355,6 +355,24 @@
 <li class="toctree-l1"><a class="reference internal" href="static_list.html">Static List</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="to_array.html">To Array</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="inert/index.html">Inert Drivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_accelerometer.html">Inert Accelerometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_adc.html">Inert ADC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_dac.html">Inert DAC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_distance_sensor.html">Inert Distance Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_gyroscope.html">Inert Gyroscope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_input_pin.html">Inert Input Pin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_interrupt_pin.html">Inert Interrupt Pin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_magnetometer.html">Inert Magnetometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_motor.html">Inert Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_output_pin.html">Inert Output Pin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_pwm.html">Inert PWM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_rotation_sensor.html">Inert Rotation Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_steady_clock.html">Inert Steady Clock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_temperature_sensor.html">Inert Temperature Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inert/inert_timer.html">Inert Timer</a></li>
+</ul>
+</details></li>
 </ul>
 </div>
 </nav></div>
@@ -422,10 +440,82 @@
 <dl>
 <dt class="sig sig-object cpp">
 <span class="target" id="group___as_bytes"></span><em><span class="pre">group</span></em> <span class="sig-name descname"><span class="pre">As</span> <span class="pre">Bytes</span></span></dt>
-<dd><div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Documentation is needed for this file, please add each public facing API to
-this group!</p>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0E17as_writable_bytesNSt4spanIN3hal4byteEEEP1T6size_t">
+<span id="_CPPv3I0E17as_writable_bytesP1T6size_t"></span><span id="_CPPv2I0E17as_writable_bytesP1T6size_t"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="group___as_bytes_1gabc5ba0c7349a43a7d68cc2960f871ebc"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">byte</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">as_writable_bytes</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0E17as_writable_bytesNSt4spanIN3hal4byteEEEP1T6size_t" title="as_writable_bytes::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">p_address</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_number_of_elements</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0E17as_writable_bytesNSt4spanIN3hal4byteEEEP1T6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Converts a pointer and length to a writeable (mutable) span of T elements. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – - element type </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>p_address</strong> – - address of the first element </p></li>
+<li><p><strong>p_number_of_elements</strong> – - the number of valid elements after the first </p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>constexpr std::span&lt;hal::byte&gt; - span of elements </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0E8as_bytesNSt4spanIKN3hal4byteEEEPK1T6size_t">
+<span id="_CPPv3I0E8as_bytesPK1T6size_t"></span><span id="_CPPv2I0E8as_bytesPK1T6size_t"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="group___as_bytes_1ga7fd5f87384d2a294fd86e395c88cf125"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">byte</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">as_bytes</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0E8as_bytesNSt4spanIKN3hal4byteEEEPK1T6size_t" title="as_bytes::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">p_address</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_number_of_elements</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0E8as_bytesNSt4spanIKN3hal4byteEEEPK1T6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Converts a pointer and length to a constant span of T elements. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – - element type </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>p_address</strong> – - address of the first element </p></li>
+<li><p><strong>p_number_of_elements</strong> – - the number of valid elements after the first </p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>constexpr std::span&lt;hal::byte const&gt; - span of elements </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv417as_writable_bytesR20convertible_to_bytes">
+<span id="_CPPv317as_writable_bytesR20convertible_to_bytes"></span><span id="_CPPv217as_writable_bytesR20convertible_to_bytes"></span><span id="as_writable_bytes__convertible_to_bytesRCE"></span><span class="target" id="group___as_bytes_1ga8c57d270d9d9b47275f58a752c57e272"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">byte</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">as_writable_bytes</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">convertible_to_bytes</span></span><span class="w"> </span><span class="k"><span class="pre">auto</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_container</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417as_writable_bytesR20convertible_to_bytes" title="Link to this definition">#</a><br /></dt>
+<dd><p>Converts a container to a writable (mutable) span of T elements. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – - element type </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>p_container</strong> – - Container containing the contiguous array of elements. </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>constexpr std::span&lt;hal::byte const&gt; - span of elements </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv48as_bytesRK20convertible_to_bytes">
+<span id="_CPPv38as_bytesRK20convertible_to_bytes"></span><span id="_CPPv28as_bytesRK20convertible_to_bytes"></span><span id="as_bytes__convertible_to_bytesCRCE"></span><span class="target" id="group___as_bytes_1gac886e528961e2c9653d37e5a0a677f81"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">byte</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">as_bytes</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">convertible_to_bytes</span></span><span class="w"> </span><span class="k"><span class="pre">auto</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_container</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48as_bytesRK20convertible_to_bytes" title="Link to this definition">#</a><br /></dt>
+<dd><p>Converts a container to a constant span of T elements. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – - element type </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>p_container</strong> – - Container containing the contiguous array of elements. </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>constexpr std::span&lt;hal::byte const&gt; - span of elements </p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 </dd></dl>
 
@@ -469,6 +559,21 @@ this group!</p>
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0E17as_writable_bytesNSt4spanIN3hal4byteEEEP1T6size_t"><code class="docutils literal notranslate"><span class="pre">as_writable_bytes()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0E8as_bytesNSt4spanIKN3hal4byteEEEPK1T6size_t"><code class="docutils literal notranslate"><span class="pre">as_bytes()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv417as_writable_bytesR20convertible_to_bytes"><code class="docutils literal notranslate"><span class="pre">as_writable_bytes()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv48as_bytesRK20convertible_to_bytes"><code class="docutils literal notranslate"><span class="pre">as_bytes()</span></code></a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">
