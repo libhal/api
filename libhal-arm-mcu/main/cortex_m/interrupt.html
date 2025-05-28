@@ -1,0 +1,1096 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Interrupt Controller &#8212; libhal-arm-mcu  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cortex_m/interrupt';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/libhal-arm-mcu/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="libhal-arm-mcu  documentation - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="libhal-arm-mcu  documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<nav class="navbar-nav">
+  <p
+    class="sidebar-header-items__title"
+    role="heading"
+    aria-level="2"
+    aria-label="Site Navigation"
+  ></p>
+  <ul class="bd-navbar-elements navbar-nav">
+    <li class="nav-item dropdown">
+      <button
+        class="btn dropdown-toggle nav-item"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        aria-controls="pst-nav-more-links"
+      >
+        Guides
+      </button>
+      <ul id="pst-nav-more-links" class="dropdown-menu">
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/"
+          >
+            🏡 Introduction
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/getting_started/"
+          >
+            🚀 Getting Started
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/user_guide/fundamentals/"
+          >
+            📖 User Guide
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/contributor_guide/philosophy/"
+          >
+            📚 Contributor Guides
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/project_information/status/"
+          >
+            📊 Project Information
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index.html">
+    Libhal Cortex M
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../lpc40/index.html">
+    Libhal LPC40xx
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index.html">
+    Libhal Cortex M
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../lpc40/index.html">
+    Libhal LPC40xx
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Interrupt Controller</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="interrupt-controller">
+<h1>Interrupt Controller<a class="headerlink" href="#interrupt-controller" title="Link to this heading">#</a></h1>
+<section id="nvic-nested-vector-interrupt-controller">
+<h2>NVIC (Nested Vector Interrupt Controller)<a class="headerlink" href="#nvic-nested-vector-interrupt-controller" title="Link to this heading">#</a></h2>
+<p>Defined in namespace <code class="docutils literal notranslate"><span class="pre">hal::cortex_m</span></code></p>
+<p><em>#include &lt;libhal-arm-mcu/interrupt.hpp&gt;</em></p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_mE">
+<span id="_CPPv3N3hal8cortex_mE"></span><span id="_CPPv2N3hal8cortex_mE"></span><span id="hal::cortex_m"></span><span class="target" id="namespacehal_1_1cortex__m"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cortex_m</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_mE" title="Link to this definition">#</a><br /></dt>
+<dd><p>libhal drivers for the ARM Cortex-M series of processors </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m17interrupt_pointerE">
+<span id="_CPPv3N3hal8cortex_m17interrupt_pointerE"></span><span id="_CPPv2N3hal8cortex_m17interrupt_pointerE"></span><span class="target" id="namespacehal_1_1cortex__m_1a16233c06cbfec74ed1d91019cf84cabc"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">interrupt_pointer</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m17interrupt_pointerE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Used specifically for defining an interrupt vector table of addresses. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m5irq_tE">
+<span id="_CPPv3N3hal8cortex_m5irq_tE"></span><span id="_CPPv2N3hal8cortex_m5irq_tE"></span><span class="target" id="namespacehal_1_1cortex__m_1a96235e739e3ef6d1aead7e578888b130"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">irq_t</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">int16_t</span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m5irq_tE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-enums">Enums</p>
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m3irqE">
+<span id="_CPPv3N3hal8cortex_m3irqE"></span><span id="_CPPv2N3hal8cortex_m3irqE"></span><span class="target" id="namespacehal_1_1cortex__m_1a31e5e0bd0ddbd743d7dbfc3da2e9769c"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">irq</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal8cortex_m5irq_tE" title="hal::cortex_m::irq_t"><span class="n"><span class="pre">irq_t</span></span></a><a class="headerlink" href="#_CPPv4N3hal8cortex_m3irqE" title="Link to this definition">#</a><br /></dt>
+<dd><p>IRQ numbers for core processor interrupts. </p>
+<p>All core IRQs are enabled by default. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m3irq12top_of_stackE">
+<span id="_CPPv3N3hal8cortex_m3irq12top_of_stackE"></span><span id="_CPPv2N3hal8cortex_m3irq12top_of_stackE"></span><span class="target" id="namespacehal_1_1cortex__m_1a31e5e0bd0ddbd743d7dbfc3da2e9769ca29862d94c16059be98abe2be6865a708"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">top_of_stack</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m3irq12top_of_stackE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m3irq5resetE">
+<span id="_CPPv3N3hal8cortex_m3irq5resetE"></span><span id="_CPPv2N3hal8cortex_m3irq5resetE"></span><span class="target" id="namespacehal_1_1cortex__m_1a31e5e0bd0ddbd743d7dbfc3da2e9769ca86266ee937d97f812a8e57d22b62ee29"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reset</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m3irq5resetE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m3irq22non_maskable_interruptE">
+<span id="_CPPv3N3hal8cortex_m3irq22non_maskable_interruptE"></span><span id="_CPPv2N3hal8cortex_m3irq22non_maskable_interruptE"></span><span class="target" id="namespacehal_1_1cortex__m_1a31e5e0bd0ddbd743d7dbfc3da2e9769cae1984fa2dd6dc8cc842c0f61c64320ae"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">non_maskable_interrupt</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m3irq22non_maskable_interruptE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m3irq10hard_faultE">
+<span id="_CPPv3N3hal8cortex_m3irq10hard_faultE"></span><span id="_CPPv2N3hal8cortex_m3irq10hard_faultE"></span><span class="target" id="namespacehal_1_1cortex__m_1a31e5e0bd0ddbd743d7dbfc3da2e9769ca65a450d5ee9f60f7344e2019794eea6c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hard_fault</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m3irq10hard_faultE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m3irq23memory_management_faultE">
+<span id="_CPPv3N3hal8cortex_m3irq23memory_management_faultE"></span><span id="_CPPv2N3hal8cortex_m3irq23memory_management_faultE"></span><span class="target" id="namespacehal_1_1cortex__m_1a31e5e0bd0ddbd743d7dbfc3da2e9769ca1d4e596e92116ff3e324fd21cc1419dd"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">memory_management_fault</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m3irq23memory_management_faultE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m3irq9bus_faultE">
+<span id="_CPPv3N3hal8cortex_m3irq9bus_faultE"></span><span id="_CPPv2N3hal8cortex_m3irq9bus_faultE"></span><span class="target" id="namespacehal_1_1cortex__m_1a31e5e0bd0ddbd743d7dbfc3da2e9769cae536d7d56d9d0746a3e05259aeb0da51"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bus_fault</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m3irq9bus_faultE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m3irq11usage_faultE">
+<span id="_CPPv3N3hal8cortex_m3irq11usage_faultE"></span><span id="_CPPv2N3hal8cortex_m3irq11usage_faultE"></span><span class="target" id="namespacehal_1_1cortex__m_1a31e5e0bd0ddbd743d7dbfc3da2e9769ca7065f85fdbdc96b5edd41c3920f9d15c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">usage_fault</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m3irq11usage_faultE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m3irq8reserve7E">
+<span id="_CPPv3N3hal8cortex_m3irq8reserve7E"></span><span id="_CPPv2N3hal8cortex_m3irq8reserve7E"></span><span class="target" id="namespacehal_1_1cortex__m_1a31e5e0bd0ddbd743d7dbfc3da2e9769ca4c0262496f49c215737e4f8b7d193365"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reserve7</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m3irq8reserve7E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m3irq8reserve8E">
+<span id="_CPPv3N3hal8cortex_m3irq8reserve8E"></span><span id="_CPPv2N3hal8cortex_m3irq8reserve8E"></span><span class="target" id="namespacehal_1_1cortex__m_1a31e5e0bd0ddbd743d7dbfc3da2e9769caa92f4766f50d4d2a42e0813c8d05f268"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reserve8</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m3irq8reserve8E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m3irq8reserve9E">
+<span id="_CPPv3N3hal8cortex_m3irq8reserve9E"></span><span id="_CPPv2N3hal8cortex_m3irq8reserve9E"></span><span class="target" id="namespacehal_1_1cortex__m_1a31e5e0bd0ddbd743d7dbfc3da2e9769ca8110895be60de211811fecde04f8f364"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reserve9</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m3irq8reserve9E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m3irq9reserve10E">
+<span id="_CPPv3N3hal8cortex_m3irq9reserve10E"></span><span id="_CPPv2N3hal8cortex_m3irq9reserve10E"></span><span class="target" id="namespacehal_1_1cortex__m_1a31e5e0bd0ddbd743d7dbfc3da2e9769ca45acce797a821b5a0e2b190d3593ce9c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reserve10</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m3irq9reserve10E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m3irq13software_callE">
+<span id="_CPPv3N3hal8cortex_m3irq13software_callE"></span><span id="_CPPv2N3hal8cortex_m3irq13software_callE"></span><span class="target" id="namespacehal_1_1cortex__m_1a31e5e0bd0ddbd743d7dbfc3da2e9769ca17a6f572ec68f7ef4f4d0a2ae284dc70"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">software_call</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m3irq13software_callE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m3irq9reserve12E">
+<span id="_CPPv3N3hal8cortex_m3irq9reserve12E"></span><span id="_CPPv2N3hal8cortex_m3irq9reserve12E"></span><span class="target" id="namespacehal_1_1cortex__m_1a31e5e0bd0ddbd743d7dbfc3da2e9769cad9b2cee7f42cdddb99c8c0c071c295a8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reserve12</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m3irq9reserve12E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m3irq9reserve13E">
+<span id="_CPPv3N3hal8cortex_m3irq9reserve13E"></span><span id="_CPPv2N3hal8cortex_m3irq9reserve13E"></span><span class="target" id="namespacehal_1_1cortex__m_1a31e5e0bd0ddbd743d7dbfc3da2e9769caaa1d65adc8163eb5209f31c4d49cc8cf"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reserve13</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m3irq9reserve13E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m3irq7pend_svE">
+<span id="_CPPv3N3hal8cortex_m3irq7pend_svE"></span><span id="_CPPv2N3hal8cortex_m3irq7pend_svE"></span><span class="target" id="namespacehal_1_1cortex__m_1a31e5e0bd0ddbd743d7dbfc3da2e9769ca743848f06cfed8e4d7d8547c4f2c0d5a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pend_sv</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m3irq7pend_svE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m3irq7systickE">
+<span id="_CPPv3N3hal8cortex_m3irq7systickE"></span><span id="_CPPv2N3hal8cortex_m3irq7systickE"></span><span class="target" id="namespacehal_1_1cortex__m_1a31e5e0bd0ddbd743d7dbfc3da2e9769ca835fd8dd4fe722f5394f39cf587e71ab"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">systick</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m3irq7systickE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m25default_interrupt_handlerEv">
+<span id="_CPPv3N3hal8cortex_m25default_interrupt_handlerEv"></span><span id="_CPPv2N3hal8cortex_m25default_interrupt_handlerEv"></span><span id="hal::cortex_m::default_interrupt_handler"></span><span class="target" id="namespacehal_1_1cortex__m_1a450ee580a8b13120d8cfb63bcb013ef0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">default_interrupt_handler</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m25default_interrupt_handlerEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>A default interrupt handler that loops forever. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m18hard_fault_handlerEv">
+<span id="_CPPv3N3hal8cortex_m18hard_fault_handlerEv"></span><span id="_CPPv2N3hal8cortex_m18hard_fault_handlerEv"></span><span id="hal::cortex_m::hard_fault_handler"></span><span class="target" id="namespacehal_1_1cortex__m_1a52ce461addc2d72f97195152ef1efb0d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hard_fault_handler</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m18hard_fault_handlerEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Default hard fault handler. </p>
+<p>Used by developers in debug mode to see if they landed in the default hard fault handler. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m31memory_management_fault_handlerEv">
+<span id="_CPPv3N3hal8cortex_m31memory_management_fault_handlerEv"></span><span id="_CPPv2N3hal8cortex_m31memory_management_fault_handlerEv"></span><span id="hal::cortex_m::memory_management_fault_handler"></span><span class="target" id="namespacehal_1_1cortex__m_1adda854cad837f3f450fa6b0504023332"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">memory_management_fault_handler</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m31memory_management_fault_handlerEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Default memory management fault handler. </p>
+<p>Used by developers in debug mode to see if they landed in the default memory management fault handler. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m17bus_fault_handlerEv">
+<span id="_CPPv3N3hal8cortex_m17bus_fault_handlerEv"></span><span id="_CPPv2N3hal8cortex_m17bus_fault_handlerEv"></span><span id="hal::cortex_m::bus_fault_handler"></span><span class="target" id="namespacehal_1_1cortex__m_1a1c4284198e934a1408c1aa49bb4e0f58"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bus_fault_handler</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m17bus_fault_handlerEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Default bus fault handler. </p>
+<p>Used by developers in debug mode to see if they landed in the default bus fault handler. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m19usage_fault_handlerEv">
+<span id="_CPPv3N3hal8cortex_m19usage_fault_handlerEv"></span><span id="_CPPv2N3hal8cortex_m19usage_fault_handlerEv"></span><span id="hal::cortex_m::usage_fault_handler"></span><span class="target" id="namespacehal_1_1cortex__m_1a62fcaf66ff8f0676880d30534a612978"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">usage_fault_handler</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m19usage_fault_handlerEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Default usage fault handler. </p>
+<p>Used by developers in debug mode to see if they landed in the default usage fault handler. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m29revert_interrupt_vector_tableEv">
+<span id="_CPPv3N3hal8cortex_m29revert_interrupt_vector_tableEv"></span><span id="_CPPv2N3hal8cortex_m29revert_interrupt_vector_tableEv"></span><span id="hal::cortex_m::revert_interrupt_vector_table"></span><span class="target" id="namespacehal_1_1cortex__m_1a947c5affbc17522beb2ed778d9cfe903"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">revert_interrupt_vector_table</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m29revert_interrupt_vector_tableEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Sets the interrupt vector table back to a form where it can be initialized again(). </p>
+<p>Recommended to never call this function in your application. If it is called, it should be well documented why this choice was necessary.</p>
+<p>Will clear all pending interrupts and sets the internal state to uninitialized. This call is dangerous and should only be done before any drivers depend on their interrupts to function. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m21initialize_interruptsENSt4spanI17interrupt_pointerEE">
+<span id="_CPPv3N3hal8cortex_m21initialize_interruptsENSt4spanI17interrupt_pointerEE"></span><span id="_CPPv2N3hal8cortex_m21initialize_interruptsENSt4spanI17interrupt_pointerEE"></span><span id="hal::cortex_m::initialize_interrupts__std::span:interrupt_pointer:"></span><span class="target" id="namespacehal_1_1cortex__m_1ac12e4c65e36f652b420ef1f1008198ca"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initialize_interrupts</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N3hal8cortex_m17interrupt_pointerE" title="hal::cortex_m::interrupt_pointer"><span class="n"><span class="pre">interrupt_pointer</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_vector_table</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m21initialize_interruptsENSt4spanI17interrupt_pointerEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Initialize the interrupt vector table. </p>
+<p>Using this function directly is not recommended. Use the templated version of this in drivers and in application code. Only use this if you need to control precisely where the interrupt vector table is located.</p>
+<p>If the input vector table has the same address as the previous vector table, then this function does nothing.</p>
+<p>This function does the following:</p>
+<p><ul class="simple">
+<li><p>Sets the default for hard_fault to <code class="docutils literal notranslate"><span class="pre">hard_fault_handler</span></code></p></li>
+<li><p>Sets the default for memory_management_fault to <code class="docutils literal notranslate"><span class="pre">memory_management_fault_handler</span></code></p></li>
+<li><p>Sets the default for bus_fault to <code class="docutils literal notranslate"><span class="pre">bus_fault_handler</span></code></p></li>
+<li><p>Sets the default for usage_fault to <code class="docutils literal notranslate"><span class="pre">usage_fault_handler</span></code></p></li>
+<li><p>Sets the default for everything else to <code class="docutils literal notranslate"><span class="pre">nop</span></code></p></li>
+<li><p>Assign a global vector_table span to the the passed vector table.</p></li>
+<li><p>Relocates the system’s interrupt vector table away from the hard coded vector table in ROM/Flash memory to the table passed in.</p></li>
+</ul>
+</p>
+<p>All default functions contain an infinite loop and it is encouraged to swap these out if you plan to use the interrupts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_vector_table</strong> – - must have length &gt; 16 to accommodate the core interrupts. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_5irq_tEN3hal8cortex_m21initialize_interruptsEvv">
+<span id="_CPPv3I_5irq_tEN3hal8cortex_m21initialize_interruptsEv"></span><span id="_CPPv2I_5irq_tEN3hal8cortex_m21initialize_interruptsEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N3hal8cortex_m5irq_tE" title="hal::cortex_m::irq_t"><span class="n"><span class="pre">irq_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_possible_irq</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="namespacehal_1_1cortex__m_1a1f0421e03f922c823364d51f5decea5c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initialize_interrupts</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_5irq_tEN3hal8cortex_m21initialize_interruptsEvv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Initializes the interrupt vector table. </p>
+<p>This template function does the following:<ul class="simple">
+<li><p>Statically allocates a 512-byte aligned an interrupt vector table the size of max_possible_irq.</p></li>
+<li><p>Calls the initialize_interrupts function with the array.</p></li>
+</ul>
+</p>
+<p>Internally, this function checks if it has been called before and will simply return early if so. Making this function safe to call multiple times so long as the max_possible_irq template parameter is the same with each invocation.</p>
+<p>Calling this function with differing max_possible_irq values will result in multiple statically allocated interrupt vector tables, which will simply waste space in RAM. Only the first call is used as the IVT.</p>
+<p>
+Performs the same work as: template&lt;size_t vector_count&gt; <a class="reference internal" href="system_control.html#namespacehal_1_1cortex__m_1a1f0421e03f922c823364d51f5decea5c"><span class="std std-ref">initialize_interrupts()</span></a>, but accepts an enumeration class object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>max_possible_irq</strong> – - the number of interrupts available for this system</p></li>
+<li><p><strong>enum_vector_count</strong> – - this parameter should always be set to the <code class="docutils literal notranslate"><span class="pre">hal::platform::irq::max</span></code>. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m34interrupt_vector_table_initializedEv">
+<span id="_CPPv3N3hal8cortex_m34interrupt_vector_table_initializedEv"></span><span id="_CPPv2N3hal8cortex_m34interrupt_vector_table_initializedEv"></span><span id="hal::cortex_m::interrupt_vector_table_initialized"></span><span class="target" id="namespacehal_1_1cortex__m_1a2065921c9bbe6bf069575e8c04f5e16a"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">interrupt_vector_table_initialized</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m34interrupt_vector_table_initializedEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns true if the interrupt vector table has been initialized. </p>
+<p>This API should NOT be called by platform peripheral drivers. Those drivers should call <code class="docutils literal notranslate"><span class="pre">initialize_interrupts&lt;irq::max&gt;()</span></code>. That API will do the check for you and will either return early if interrupts are already enabled. There is no reason to call this API directly then call <code class="docutils literal notranslate"><span class="pre">initialize_interrupts&lt;irq::max&gt;()</span></code>. That is unecessary cycles.</p>
+<p>This API should be used by cortex m drivers like systick, which cannot know the size of the interrupt vector table as it is different for each microcontroller.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true - interrupt vector table is initialized </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>false - interrupt vector table is not initialized </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m22disable_all_interruptsEv">
+<span id="_CPPv3N3hal8cortex_m22disable_all_interruptsEv"></span><span id="_CPPv2N3hal8cortex_m22disable_all_interruptsEv"></span><span id="hal::cortex_m::disable_all_interrupts"></span><span class="target" id="namespacehal_1_1cortex__m_1a9255ea72d2c8ca15cb9093f54aa7541a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">disable_all_interrupts</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m22disable_all_interruptsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Disable all interrupts. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m21enable_all_interruptsEv">
+<span id="_CPPv3N3hal8cortex_m21enable_all_interruptsEv"></span><span id="_CPPv2N3hal8cortex_m21enable_all_interruptsEv"></span><span id="hal::cortex_m::enable_all_interrupts"></span><span class="target" id="namespacehal_1_1cortex__m_1a5a4262a440318dbda14106754b8562ab"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">enable_all_interrupts</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m21enable_all_interruptsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Re-enable all interrupts. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m16get_vector_tableEv">
+<span id="_CPPv3N3hal8cortex_m16get_vector_tableEv"></span><span id="_CPPv2N3hal8cortex_m16get_vector_tableEv"></span><span id="hal::cortex_m::get_vector_table"></span><span class="target" id="namespacehal_1_1cortex__m_1a4c6f96e23fe126ee88656644b52d46af"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N3hal8cortex_m17interrupt_pointerE" title="hal::cortex_m::interrupt_pointer"><span class="n"><span class="pre">interrupt_pointer</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_vector_table</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m16get_vector_tableEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get a reference to interrupt vector table object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>const std::span&lt;interrupt_pointer&gt; - interrupt vector table </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m16enable_interruptE5irq_t17interrupt_pointer">
+<span id="_CPPv3N3hal8cortex_m16enable_interruptE5irq_t17interrupt_pointer"></span><span id="_CPPv2N3hal8cortex_m16enable_interruptE5irq_t17interrupt_pointer"></span><span id="hal::cortex_m::enable_interrupt__irq_t.interrupt_pointer"></span><span class="target" id="namespacehal_1_1cortex__m_1a535c595dfbebad44b2b68d89f5a0f95a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">enable_interrupt</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal8cortex_m5irq_tE" title="hal::cortex_m::irq_t"><span class="n"><span class="pre">irq_t</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_irq</span></span>, <a class="reference internal" href="#_CPPv4N3hal8cortex_m17interrupt_pointerE" title="hal::cortex_m::interrupt_pointer"><span class="n"><span class="pre">interrupt_pointer</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_handler</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m16enable_interruptE5irq_t17interrupt_pointer" title="Link to this definition">#</a><br /></dt>
+<dd><p>Enable interrupt and set the service routine handler. </p>
+<p>If the irq is not valid, meaning it is outside of the range of the interrupt vector table, then nothing happens.</p>
+<p>Using this with a core cortex-m interrupt will assign its handler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p_irq</strong> – - irq to enable. If the value is beyond the range of the interrupt vector table, then this function does nothing. </p></li>
+<li><p><strong>p_handler</strong> – - the interrupt service routine handler to be executed when the hardware interrupt is fired. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m16enable_interruptE8irq_enum17interrupt_pointer">
+<span id="_CPPv3N3hal8cortex_m16enable_interruptE8irq_enum17interrupt_pointer"></span><span id="_CPPv2N3hal8cortex_m16enable_interruptE8irq_enum17interrupt_pointer"></span><span id="hal::cortex_m::enable_interrupt__irq_enum.interrupt_pointer"></span><span class="target" id="namespacehal_1_1cortex__m_1aabed23f462fb125c1bc485b3d045723d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">enable_interrupt</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">irq_enum</span></span><span class="w"> </span><span class="k"><span class="pre">auto</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_irq</span></span>, <a class="reference internal" href="#_CPPv4N3hal8cortex_m17interrupt_pointerE" title="hal::cortex_m::interrupt_pointer"><span class="n"><span class="pre">interrupt_pointer</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_handler</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m16enable_interruptE8irq_enum17interrupt_pointer" title="Link to this definition">#</a><br /></dt>
+<dd><p>Enable interrupt and set the service routine handler. </p>
+<p>Performs the same work as <code class="docutils literal notranslate"><span class="pre">enable_interrupt</span></code> using the <code class="docutils literal notranslate"><span class="pre">irq_t</span></code> type, but allows enum class types to be passed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p_irq</strong> – - enumeration typed irq number </p></li>
+<li><p><strong>p_handler</strong> – - interrupt handler </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m17disable_interruptE5irq_t">
+<span id="_CPPv3N3hal8cortex_m17disable_interruptE5irq_t"></span><span id="_CPPv2N3hal8cortex_m17disable_interruptE5irq_t"></span><span id="hal::cortex_m::disable_interrupt__irq_t"></span><span class="target" id="namespacehal_1_1cortex__m_1a213666fc5a7472ad62ef4ee436aec5aa"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">disable_interrupt</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal8cortex_m5irq_tE" title="hal::cortex_m::irq_t"><span class="n"><span class="pre">irq_t</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_irq</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m17disable_interruptE5irq_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>disable interrupt and set the service routine handler to their default. </p>
+<p>This function does nothing if the vector table has not yet been initialized.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_irq</strong> – - irq to disable, if the value is below 0 or out of range then this function does nothing. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m17disable_interruptE8irq_enum">
+<span id="_CPPv3N3hal8cortex_m17disable_interruptE8irq_enum"></span><span id="_CPPv2N3hal8cortex_m17disable_interruptE8irq_enum"></span><span id="hal::cortex_m::disable_interrupt__irq_enum"></span><span class="target" id="namespacehal_1_1cortex__m_1a8978986001884cb4d9222621cb24bba0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">disable_interrupt</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">irq_enum</span></span><span class="w"> </span><span class="k"><span class="pre">auto</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_irq</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m17disable_interruptE8irq_enum" title="Link to this definition">#</a><br /></dt>
+<dd><p>Disable interrupt and set the service routine handler. </p>
+<p>Performs the same work as <code class="docutils literal notranslate"><span class="pre">disable_interrupt</span></code> using the <code class="docutils literal notranslate"><span class="pre">irq_t</span></code> type, but allows enum class types to be passed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_irq</strong> – - enumeration typed irq number </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m21verify_vector_enabledE5irq_t17interrupt_pointer">
+<span id="_CPPv3N3hal8cortex_m21verify_vector_enabledE5irq_t17interrupt_pointer"></span><span id="_CPPv2N3hal8cortex_m21verify_vector_enabledE5irq_t17interrupt_pointer"></span><span id="hal::cortex_m::verify_vector_enabled__irq_t.interrupt_pointer"></span><span class="target" id="namespacehal_1_1cortex__m_1aa9ac516a9ece32b038a48d82d5548af5"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">verify_vector_enabled</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal8cortex_m5irq_tE" title="hal::cortex_m::irq_t"><span class="n"><span class="pre">irq_t</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_irq</span></span>, <a class="reference internal" href="#_CPPv4N3hal8cortex_m17interrupt_pointerE" title="hal::cortex_m::interrupt_pointer"><span class="n"><span class="pre">interrupt_pointer</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_handler</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m21verify_vector_enabledE5irq_t17interrupt_pointer" title="Link to this definition">#</a><br /></dt>
+<dd><p>determine if a particular handler has been put into the interrupt vector table. </p>
+<p>Generally used by unit testing code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p_irq</strong> – - irq to check </p></li>
+<li><p><strong>p_handler</strong> – - the handler to check against. The address of the handler must match what is in the interrupt vector table. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true - the handler is equal to the handler in the table </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>false - the handler is not at this index in the table or p_irq is not valid. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m21verify_vector_enabledE8irq_enum17interrupt_pointer">
+<span id="_CPPv3N3hal8cortex_m21verify_vector_enabledE8irq_enum17interrupt_pointer"></span><span id="_CPPv2N3hal8cortex_m21verify_vector_enabledE8irq_enum17interrupt_pointer"></span><span id="hal::cortex_m::verify_vector_enabled__irq_enum.interrupt_pointer"></span><span class="target" id="namespacehal_1_1cortex__m_1ab227f7c3fc4fd56615030a3370196161"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">verify_vector_enabled</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">irq_enum</span></span><span class="w"> </span><span class="k"><span class="pre">auto</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_irq</span></span>, <a class="reference internal" href="#_CPPv4N3hal8cortex_m17interrupt_pointerE" title="hal::cortex_m::interrupt_pointer"><span class="n"><span class="pre">interrupt_pointer</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_handler</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m21verify_vector_enabledE8irq_enum17interrupt_pointer" title="Link to this definition">#</a><br /></dt>
+<dd><p>determine if a particular handler has been put into the interrupt vector table. </p>
+<p>Generally used by unit testing code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p_irq</strong> – - irq to check </p></li>
+<li><p><strong>p_handler</strong> – - the handler to check against </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true - the handler is equal to the handler in the table </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>false - the handler is not at this index in the table or p_irq is not valid. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m23initialize_data_sectionEv">
+<span id="_CPPv3N3hal8cortex_m23initialize_data_sectionEv"></span><span id="_CPPv2N3hal8cortex_m23initialize_data_sectionEv"></span><span id="hal::cortex_m::initialize_data_section"></span><span class="target" id="namespacehal_1_1cortex__m_1afac39d4a10412fa8f81c53511e4759ed"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initialize_data_section</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m23initialize_data_sectionEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Initialize the data section of RAM. This should be the first thing called in main() before using any global or statically allocated variables. It can also be called in the startup code before main is called. This is not done by crt0.s (C runtime startup code) because with an OS, when the executable is copied to RAM, the data section is also copied and those same locations can be reused for the application, removing the need to copy the data section. This will also happen if one loads an elf file to an MCU using a debugger. Typically the RAM section, but not BSS, is copied over. But in the case of the MCU without a debugger, the MCU will have to manage coping the contents from ROM to RAM itself. Systems should always assume they haven’t been loaded by any means and should set the data section at the start of the application. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m22initialize_bss_sectionEv">
+<span id="_CPPv3N3hal8cortex_m22initialize_bss_sectionEv"></span><span id="_CPPv2N3hal8cortex_m22initialize_bss_sectionEv"></span><span id="hal::cortex_m::initialize_bss_section"></span><span class="target" id="namespacehal_1_1cortex__m_1ad21e9c20d772a6d4c9d36cc66cd0a831"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initialize_bss_section</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m22initialize_bss_sectionEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Initialize the BSS (uninitialized data section) to all zeros. </p>
+<p>Not required if the C Runtime 0 (crt0.s/.a/.o) is used as a startup routine. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m30initialize_floating_point_unitEv">
+<span id="_CPPv3N3hal8cortex_m30initialize_floating_point_unitEv"></span><span id="_CPPv2N3hal8cortex_m30initialize_floating_point_unitEv"></span><span id="hal::cortex_m::initialize_floating_point_unit"></span><span class="target" id="namespacehal_1_1cortex__m_1abf175d1e11f1ee8ff36cd208891db679"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initialize_floating_point_unit</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m30initialize_floating_point_unitEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Enable the floating point unit coprocessor. </p>
+<p>WARNING: If the coprocessor does not exist, as it is optional, a UsageFault will occur. Floating point units are only found within Cortex M4 and above processors. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m34set_interrupt_vector_table_addressEPv">
+<span id="_CPPv3N3hal8cortex_m34set_interrupt_vector_table_addressEPv"></span><span id="_CPPv2N3hal8cortex_m34set_interrupt_vector_table_addressEPv"></span><span id="hal::cortex_m::set_interrupt_vector_table_address__voidP"></span><span class="target" id="namespacehal_1_1cortex__m_1ac0d287870a830bdfeff2c67b25d66fb5"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_interrupt_vector_table_address</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">p_table_location</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m34set_interrupt_vector_table_addressEPv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the address of the systems interrupt vector table. </p>
+<p>The interrupt vector table (IVT) is held in ROM which means that, either the interrupt service routines (ISR) had to be defined at compile time making them immutable at runtime, or that each ISR calls a mutable function pointer which can be changed at runtime.</p>
+<p>The problem with the first option is that it makes writing and using libraries difficult. Usually requiring updates to the IVT manually by the application designer based on what libraries and drivers the application is using.</p>
+<p>The second solution has a problem where the additional another layer of indirection increases interrupt latency. A more critical problem of this approach is that many ISRs take advantage of the state of the system when the ISR runs. For example, context switching in an RTOS needs to be able to see the address of where code was when the interrupt occurred and having an additional point of indirection (i.e. calling a function pointer) will change that location from the task to the ISR that called the context switch function. This will usually result in a fault of some sort.</p>
+<p>Creating an interrupt vector table in RAM and relocating the ISRs there consumes RAM space, but gives great flexibility over the table at runtime.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_table_location</strong> – - address of the interrupt vector table. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m34get_interrupt_vector_table_addressEv">
+<span id="_CPPv3N3hal8cortex_m34get_interrupt_vector_table_addressEv"></span><span id="_CPPv2N3hal8cortex_m34get_interrupt_vector_table_addressEv"></span><span id="hal::cortex_m::get_interrupt_vector_table_address"></span><span class="target" id="namespacehal_1_1cortex__m_1a747e807b77a882c84f6b9672742724c0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">get_interrupt_vector_table_address</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m34get_interrupt_vector_table_addressEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the address of the systems interrupt vector table. </p>
+<p>On reset the VTOR register is set to 0x0000’0000 or nullptr.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>void* - address within VTOR the interrupt vector table relocation register. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m5resetEv">
+<span id="_CPPv3N3hal8cortex_m5resetEv"></span><span id="_CPPv2N3hal8cortex_m5resetEv"></span><span id="hal::cortex_m::reset"></span><span class="target" id="namespacehal_1_1cortex__m_1a3ecce6a4dee9538d3c8b4d3d1a14fc1b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reset</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m5resetEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Request reset from CPU. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m18wait_for_interruptEv">
+<span id="_CPPv3N3hal8cortex_m18wait_for_interruptEv"></span><span id="_CPPv2N3hal8cortex_m18wait_for_interruptEv"></span><span id="hal::cortex_m::wait_for_interrupt"></span><span class="target" id="namespacehal_1_1cortex__m_1a9b7c75570e7f976231701a2ed831006c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">wait_for_interrupt</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m18wait_for_interruptEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Executes WFI instruction. </p>
+<p>The WFI instruction stops the CPU, reducing power, and wakes up on interrupt. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m14wait_for_eventEv">
+<span id="_CPPv3N3hal8cortex_m14wait_for_eventEv"></span><span id="_CPPv2N3hal8cortex_m14wait_for_eventEv"></span><span id="hal::cortex_m::wait_for_event"></span><span class="target" id="namespacehal_1_1cortex__m_1a221216f7f9dc9f82a91011a1e76fdaf4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">wait_for_event</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m14wait_for_eventEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Executes WFE instruction. </p>
+<p>The WFE instruction stops the CPU, reducing power, and wakes up on event. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m15core_interruptsE">
+<span id="_CPPv3N3hal8cortex_m15core_interruptsE"></span><span id="_CPPv2N3hal8cortex_m15core_interruptsE"></span><span id="hal::cortex_m::core_interrupts__auto"></span><span class="target" id="namespacehal_1_1cortex__m_1a8f9bc270a76a580320f80a68c6283226"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">core_interrupts</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">static_cast</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N3hal8cortex_m5irq_tE" title="hal::cortex_m::irq_t"><span class="n"><span class="pre">irq_t</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#_CPPv4N3hal8cortex_m3irqE" title="hal::cortex_m::irq"><span class="n"><span class="pre">irq</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N3hal8cortex_m3irq12top_of_stackE" title="hal::cortex_m::irq::top_of_stack"><span class="n"><span class="pre">top_of_stack</span></span></a><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m15core_interruptsE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m11dwt_counterE">
+<span id="_CPPv3N3hal8cortex_m11dwt_counterE"></span><span id="_CPPv2N3hal8cortex_m11dwt_counterE"></span><span id="hal::cortex_m::dwt_counter"></span><span class="target" id="classhal_1_1cortex__m_1_1dwt__counter"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dwt_counter</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">steady_clock</span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;dwt_counter.hpp&gt;</em></div>
+<p>A counter with a frequency fixed to the CPU clock rate. </p>
+<p>This driver is supported for Cortex M3 devices and above. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m11dwt_counter11dwt_counterE5hertz">
+<span id="_CPPv3N3hal8cortex_m11dwt_counter11dwt_counterE5hertz"></span><span id="_CPPv2N3hal8cortex_m11dwt_counter11dwt_counterE5hertz"></span><span id="hal::cortex_m::dwt_counter::dwt_counter__hertz"></span><span class="target" id="classhal_1_1cortex__m_1_1dwt__counter_1a2514431a467b680241b3a8bdb78798a8"></span><span class="sig-name descname"><span class="n"><span class="pre">dwt_counter</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">hertz</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_cpu_frequency</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Construct a new dwt counter object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_cpu_frequency</strong> – - the operating frequency of the CPU </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m11dwt_counter22register_cpu_frequencyE5hertz">
+<span id="_CPPv3N3hal8cortex_m11dwt_counter22register_cpu_frequencyE5hertz"></span><span id="_CPPv2N3hal8cortex_m11dwt_counter22register_cpu_frequencyE5hertz"></span><span id="hal::cortex_m::dwt_counter::register_cpu_frequency__hertz"></span><span class="target" id="classhal_1_1cortex__m_1_1dwt__counter_1a6d2d451d0fcb2a2dcc879145657f52eb"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">register_cpu_frequency</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">hertz</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_cpu_frequency</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Inform the driver of the operating frequency of the CPU in order to generate the correct uptime. </p>
+<p>Use this when the CPU’s operating frequency has changed and no longer matches the frequency supplied to the constructor. Care should be taken when expecting this function when there is the potentially other parts of the system that depend on this counter’s uptime to operate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_cpu_frequency</strong> – - the operating frequency of the CPU </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m13systick_timerE">
+<span id="_CPPv3N3hal8cortex_m13systick_timerE"></span><span id="_CPPv2N3hal8cortex_m13systick_timerE"></span><span id="hal::cortex_m::systick_timer"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">systick_timer</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">timer</span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m13systick_timerE" title="Link to this definition">#</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;systick_timer.hpp&gt;</em></div>
+<p>SysTick driver for the ARM Cortex Mx series chips. </p>
+<p>Available in all ARM Cortex M series processors. Provides a generic and simple timer for every platform using these processor. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE">
+<span id="_CPPv3N3hal8cortex_m13systick_timer12clock_sourceE"></span><span id="_CPPv2N3hal8cortex_m13systick_timer12clock_sourceE"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer_1aa22c6596daeb47443ad2f841445e75d2"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clock_source</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint8_t</span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Defines the set of clock sources for the SysTick timer. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m13systick_timer12clock_source8externalE">
+<span id="_CPPv3N3hal8cortex_m13systick_timer12clock_source8externalE"></span><span id="_CPPv2N3hal8cortex_m13systick_timer12clock_source8externalE"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer_1aa22c6596daeb47443ad2f841445e75d2a6a21b6995a068148bbb65c8f949b3fb2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">external</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_source8externalE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Use an external clock source. What this source is depends on the architecture and configuration of the platform. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m13systick_timer12clock_source9processorE">
+<span id="_CPPv3N3hal8cortex_m13systick_timer12clock_source9processorE"></span><span id="_CPPv2N3hal8cortex_m13systick_timer12clock_source9processorE"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer_1aa22c6596daeb47443ad2f841445e75d2a649ce0650379a0aaff63c1ce257350de"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">processor</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_source9processorE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Use the clock given to the CPU. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m13systick_timer13systick_timerE5hertz12clock_source">
+<span id="_CPPv3N3hal8cortex_m13systick_timer13systick_timerE5hertz12clock_source"></span><span id="_CPPv2N3hal8cortex_m13systick_timer13systick_timerE5hertz12clock_source"></span><span id="hal::cortex_m::systick_timer::systick_timer__hertz.clock_source"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer_1a9081457aedc3aaa442eff5498612151d"></span><span class="sig-name descname"><span class="n"><span class="pre">systick_timer</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">hertz</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_frequency</span></span>, <a class="reference internal" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE" title="hal::cortex_m::systick_timer::clock_source"><span class="n"><span class="pre">clock_source</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_source</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE" title="hal::cortex_m::systick_timer::clock_source"><span class="n"><span class="pre">clock_source</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_source9processorE" title="hal::cortex_m::systick_timer::clock_source::processor"><span class="n"><span class="pre">processor</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m13systick_timer13systick_timerE5hertz12clock_source" title="Link to this definition">#</a><br /></dt>
+<dd><p>Construct a new <a class="reference internal" href="systick_timer.html#classhal_1_1cortex__m_1_1systick__timer"><span class="std std-ref">systick_timer</span></a> timer object. </p>
+<p>PRECONDITION: Interrupt vector table must be initialized before creating an instance of this object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p_frequency</strong> – - the clock source’s frequency </p></li>
+<li><p><strong>p_source</strong> – - the source of the clock to the systick timer </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">operation_not_permitted</span></span></span> – - thrown when the precondition to initialize the interrupt vector table before constructing this object. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m13systick_timer22register_cpu_frequencyE5hertz12clock_source">
+<span id="_CPPv3N3hal8cortex_m13systick_timer22register_cpu_frequencyE5hertz12clock_source"></span><span id="_CPPv2N3hal8cortex_m13systick_timer22register_cpu_frequencyE5hertz12clock_source"></span><span id="hal::cortex_m::systick_timer::register_cpu_frequency__hertz.clock_source"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer_1a3b9355bbfb019f61dc1296075637b5ec"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">register_cpu_frequency</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">hertz</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_frequency</span></span>, <a class="reference internal" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE" title="hal::cortex_m::systick_timer::clock_source"><span class="n"><span class="pre">clock_source</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_source</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE" title="hal::cortex_m::systick_timer::clock_source"><span class="n"><span class="pre">clock_source</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_source9processorE" title="hal::cortex_m::systick_timer::clock_source::processor"><span class="n"><span class="pre">processor</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m13systick_timer22register_cpu_frequencyE5hertz12clock_source" title="Link to this definition">#</a><br /></dt>
+<dd><p>Inform the driver of the operating frequency of the CPU in order to generate the correct uptime. </p>
+<p>Use this when the CPU’s operating frequency has changed and no longer matches the frequency supplied to the constructor. Care should be taken when expecting this function when there is the potentially other parts of the system that depend on this counter’s uptime to operate.</p>
+<p>This will clear any ongoing scheduled events as the timing will no longer be valid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p_frequency</strong> – - the clock source’s frequency </p></li>
+<li><p><strong>p_source</strong> – - the source of the clock to the systick timer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m13systick_timerD0Ev">
+<span id="_CPPv3N3hal8cortex_m13systick_timerD0Ev"></span><span id="_CPPv2N3hal8cortex_m13systick_timerD0Ev"></span><span id="hal::cortex_m::systick_timer::~systick_timer"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer_1a4691401a4f10a6c41e9fae8daf98f7d4"></span><span class="sig-name descname"><span class="n"><span class="pre">~systick_timer</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m13systick_timerD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd><p>Destroy the system timer object. </p>
+<p>Stop the timer and disable the interrupt service routine. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvic-nested-vector-interrupt-controller">NVIC (Nested Vector Interrupt Controller)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_mE"><code class="docutils literal notranslate"><span class="pre">hal::cortex_m</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m17interrupt_pointerE"><code class="docutils literal notranslate"><span class="pre">interrupt_pointer</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m5irq_tE"><code class="docutils literal notranslate"><span class="pre">irq_t</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m3irqE"><code class="docutils literal notranslate"><span class="pre">irq</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m3irq12top_of_stackE"><code class="docutils literal notranslate"><span class="pre">top_of_stack</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m3irq5resetE"><code class="docutils literal notranslate"><span class="pre">reset</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m3irq22non_maskable_interruptE"><code class="docutils literal notranslate"><span class="pre">non_maskable_interrupt</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m3irq10hard_faultE"><code class="docutils literal notranslate"><span class="pre">hard_fault</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m3irq23memory_management_faultE"><code class="docutils literal notranslate"><span class="pre">memory_management_fault</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m3irq9bus_faultE"><code class="docutils literal notranslate"><span class="pre">bus_fault</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m3irq11usage_faultE"><code class="docutils literal notranslate"><span class="pre">usage_fault</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m3irq8reserve7E"><code class="docutils literal notranslate"><span class="pre">reserve7</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m3irq8reserve8E"><code class="docutils literal notranslate"><span class="pre">reserve8</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m3irq8reserve9E"><code class="docutils literal notranslate"><span class="pre">reserve9</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m3irq9reserve10E"><code class="docutils literal notranslate"><span class="pre">reserve10</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m3irq13software_callE"><code class="docutils literal notranslate"><span class="pre">software_call</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m3irq9reserve12E"><code class="docutils literal notranslate"><span class="pre">reserve12</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m3irq9reserve13E"><code class="docutils literal notranslate"><span class="pre">reserve13</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m3irq7pend_svE"><code class="docutils literal notranslate"><span class="pre">pend_sv</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m3irq7systickE"><code class="docutils literal notranslate"><span class="pre">systick</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m25default_interrupt_handlerEv"><code class="docutils literal notranslate"><span class="pre">default_interrupt_handler()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m18hard_fault_handlerEv"><code class="docutils literal notranslate"><span class="pre">hard_fault_handler()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m31memory_management_fault_handlerEv"><code class="docutils literal notranslate"><span class="pre">memory_management_fault_handler()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m17bus_fault_handlerEv"><code class="docutils literal notranslate"><span class="pre">bus_fault_handler()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m19usage_fault_handlerEv"><code class="docutils literal notranslate"><span class="pre">usage_fault_handler()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m29revert_interrupt_vector_tableEv"><code class="docutils literal notranslate"><span class="pre">revert_interrupt_vector_table()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m21initialize_interruptsENSt4spanI17interrupt_pointerEE"><code class="docutils literal notranslate"><span class="pre">initialize_interrupts()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_5irq_tEN3hal8cortex_m21initialize_interruptsEvv"><code class="docutils literal notranslate"><span class="pre">initialize_interrupts()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m34interrupt_vector_table_initializedEv"><code class="docutils literal notranslate"><span class="pre">interrupt_vector_table_initialized()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m22disable_all_interruptsEv"><code class="docutils literal notranslate"><span class="pre">disable_all_interrupts()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m21enable_all_interruptsEv"><code class="docutils literal notranslate"><span class="pre">enable_all_interrupts()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m16get_vector_tableEv"><code class="docutils literal notranslate"><span class="pre">get_vector_table()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m16enable_interruptE5irq_t17interrupt_pointer"><code class="docutils literal notranslate"><span class="pre">enable_interrupt()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m16enable_interruptE8irq_enum17interrupt_pointer"><code class="docutils literal notranslate"><span class="pre">enable_interrupt()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m17disable_interruptE5irq_t"><code class="docutils literal notranslate"><span class="pre">disable_interrupt()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m17disable_interruptE8irq_enum"><code class="docutils literal notranslate"><span class="pre">disable_interrupt()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m21verify_vector_enabledE5irq_t17interrupt_pointer"><code class="docutils literal notranslate"><span class="pre">verify_vector_enabled()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m21verify_vector_enabledE8irq_enum17interrupt_pointer"><code class="docutils literal notranslate"><span class="pre">verify_vector_enabled()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m23initialize_data_sectionEv"><code class="docutils literal notranslate"><span class="pre">initialize_data_section()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m22initialize_bss_sectionEv"><code class="docutils literal notranslate"><span class="pre">initialize_bss_section()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m30initialize_floating_point_unitEv"><code class="docutils literal notranslate"><span class="pre">initialize_floating_point_unit()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m34set_interrupt_vector_table_addressEPv"><code class="docutils literal notranslate"><span class="pre">set_interrupt_vector_table_address()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m34get_interrupt_vector_table_addressEv"><code class="docutils literal notranslate"><span class="pre">get_interrupt_vector_table_address()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m5resetEv"><code class="docutils literal notranslate"><span class="pre">reset()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m18wait_for_interruptEv"><code class="docutils literal notranslate"><span class="pre">wait_for_interrupt()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m14wait_for_eventEv"><code class="docutils literal notranslate"><span class="pre">wait_for_event()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m15core_interruptsE"><code class="docutils literal notranslate"><span class="pre">core_interrupts</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m11dwt_counterE"><code class="docutils literal notranslate"><span class="pre">hal::cortex_m::dwt_counter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m11dwt_counter11dwt_counterE5hertz"><code class="docutils literal notranslate"><span class="pre">dwt_counter()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m11dwt_counter22register_cpu_frequencyE5hertz"><code class="docutils literal notranslate"><span class="pre">register_cpu_frequency()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m13systick_timerE"><code class="docutils literal notranslate"><span class="pre">hal::cortex_m::systick_timer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE"><code class="docutils literal notranslate"><span class="pre">clock_source</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_source8externalE"><code class="docutils literal notranslate"><span class="pre">external</span></code></a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_source9processorE"><code class="docutils literal notranslate"><span class="pre">processor</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m13systick_timer13systick_timerE5hertz12clock_source"><code class="docutils literal notranslate"><span class="pre">systick_timer()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m13systick_timer22register_cpu_frequencyE5hertz12clock_source"><code class="docutils literal notranslate"><span class="pre">register_cpu_frequency()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m13systick_timerD0Ev"><code class="docutils literal notranslate"><span class="pre">~systick_timer()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/cortex_m/interrupt.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
