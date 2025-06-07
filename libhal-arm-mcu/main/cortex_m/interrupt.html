@@ -703,6 +703,42 @@ Performs the same work as: template&lt;size_t vector_count&gt; <a class="referen
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m20is_interrupt_enabledE5irq_t">
+<span id="_CPPv3N3hal8cortex_m20is_interrupt_enabledE5irq_t"></span><span id="_CPPv2N3hal8cortex_m20is_interrupt_enabledE5irq_t"></span><span id="hal::cortex_m::is_interrupt_enabled__irq_t"></span><span class="target" id="namespacehal_1_1cortex__m_1ac4fc132dbba53a7e84bf56c1f5e45917"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_interrupt_enabled</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal8cortex_m5irq_tE" title="hal::cortex_m::irq_t"><span class="n"><span class="pre">irq_t</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_irq</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m20is_interrupt_enabledE5irq_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>determine if a particular interrupt has been enabled. </p>
+<p>This is only to determine if that particular entry is enabled, it does not care about what handler is inside.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_irq</strong> – - irq to check. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true - the interrupt has been enabled. </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>false - the interrupt is disabled or is invalid. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m20is_interrupt_enabledE8irq_enum">
+<span id="_CPPv3N3hal8cortex_m20is_interrupt_enabledE8irq_enum"></span><span id="_CPPv2N3hal8cortex_m20is_interrupt_enabledE8irq_enum"></span><span id="hal::cortex_m::is_interrupt_enabled__irq_enum"></span><span class="target" id="namespacehal_1_1cortex__m_1a841237d39b192e5db502a21ad946d51c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_interrupt_enabled</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">irq_enum</span></span><span class="w"> </span><span class="k"><span class="pre">auto</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_irq</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m20is_interrupt_enabledE8irq_enum" title="Link to this definition">#</a><br /></dt>
+<dd><p>determine if a particular interrupt has been enabled. </p>
+<p>This is only to determine if that particular entry is enabled, it does not care about what handler is inside.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_irq</strong> – - irq to check. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true - the interrupt has been enabled. </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>false - the interrupt is disabled or is invalid. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m21verify_vector_enabledE5irq_t17interrupt_pointer">
 <span id="_CPPv3N3hal8cortex_m21verify_vector_enabledE5irq_t17interrupt_pointer"></span><span id="_CPPv2N3hal8cortex_m21verify_vector_enabledE5irq_t17interrupt_pointer"></span><span id="hal::cortex_m::verify_vector_enabled__irq_t.interrupt_pointer"></span><span class="target" id="namespacehal_1_1cortex__m_1aa9ac516a9ece32b038a48d82d5548af5"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">verify_vector_enabled</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal8cortex_m5irq_tE" title="hal::cortex_m::irq_t"><span class="n"><span class="pre">irq_t</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_irq</span></span>, <a class="reference internal" href="#_CPPv4N3hal8cortex_m17interrupt_pointerE" title="hal::cortex_m::interrupt_pointer"><span class="n"><span class="pre">interrupt_pointer</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_handler</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m21verify_vector_enabledE5irq_t17interrupt_pointer" title="Link to this definition">#</a><br /></dt>
 <dd><p>determine if a particular handler has been put into the interrupt vector table. </p>
@@ -1003,6 +1039,8 @@ Performs the same work as: template&lt;size_t vector_count&gt; <a class="referen
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m16enable_interruptE8irq_enum17interrupt_pointer"><code class="docutils literal notranslate"><span class="pre">enable_interrupt()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m17disable_interruptE5irq_t"><code class="docutils literal notranslate"><span class="pre">disable_interrupt()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m17disable_interruptE8irq_enum"><code class="docutils literal notranslate"><span class="pre">disable_interrupt()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m20is_interrupt_enabledE5irq_t"><code class="docutils literal notranslate"><span class="pre">is_interrupt_enabled()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m20is_interrupt_enabledE8irq_enum"><code class="docutils literal notranslate"><span class="pre">is_interrupt_enabled()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m21verify_vector_enabledE5irq_t17interrupt_pointer"><code class="docutils literal notranslate"><span class="pre">verify_vector_enabled()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m21verify_vector_enabledE8irq_enum17interrupt_pointer"><code class="docutils literal notranslate"><span class="pre">verify_vector_enabled()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal8cortex_m23initialize_data_sectionEv"><code class="docutils literal notranslate"><span class="pre">initialize_data_section()</span></code></a></li>
