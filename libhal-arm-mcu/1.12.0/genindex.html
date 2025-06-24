@@ -1,0 +1,575 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; libhal-arm-mcu  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/extra.css?v=2ded0ca0" />
+    <link rel="stylesheet" type="text/css" href="_static/extra.css?v=2ded0ca0" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/libhal-arm-mcu/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.12.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="libhal-arm-mcu  documentation - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="libhal-arm-mcu  documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<nav class="navbar-nav">
+  <p
+    class="sidebar-header-items__title"
+    role="heading"
+    aria-level="2"
+    aria-label="Site Navigation"
+  ></p>
+  <ul class="bd-navbar-elements navbar-nav">
+    <li class="nav-item dropdown">
+      <button
+        class="btn dropdown-toggle nav-item"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        aria-controls="pst-nav-more-links"
+      >
+        Guides
+      </button>
+      <ul id="pst-nav-more-links" class="dropdown-menu">
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/"
+          >
+            🏡 Introduction
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/getting_started/"
+          >
+            🚀 Getting Started
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/user_guide/fundamentals/"
+          >
+            📖 User Guide
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/contributor_guide/philosophy/"
+          >
+            📚 Contributor Guides
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/project_information/status/"
+          >
+            📊 Project Information
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="cortex_m/index.html">
+    Libhal Cortex M
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="lpc40/index.html">
+    Libhal LPC40xx
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="cortex_m/index.html">
+    Libhal Cortex M
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="lpc40/index.html">
+    Libhal LPC40xx
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#H"><strong>H</strong></a>
+ 
+</div>
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_mE">hal::cortex_m (C++ type)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_mE">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_mE">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m17bus_fault_handlerEv">hal::cortex_m::bus_fault_handler (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m17bus_fault_handlerEv">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m17bus_fault_handlerEv">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m15core_interruptsE">hal::cortex_m::core_interrupts (C++ member)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m15core_interruptsE">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m15core_interruptsE">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m25default_interrupt_handlerEv">hal::cortex_m::default_interrupt_handler (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m25default_interrupt_handlerEv">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m25default_interrupt_handlerEv">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m22disable_all_interruptsEv">hal::cortex_m::disable_all_interrupts (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m22disable_all_interruptsEv">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m22disable_all_interruptsEv">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m17disable_interruptE5irq_t">hal::cortex_m::disable_interrupt (C++ function)</a>, <a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m17disable_interruptE8irq_enum">[1]</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m17disable_interruptE5irq_t">[2]</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m17disable_interruptE8irq_enum">[3]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m17disable_interruptE5irq_t">[4]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m17disable_interruptE8irq_enum">[5]</a>
+</li>
+      <li><a href="cortex_m/dwt_counter.html#_CPPv4N3hal8cortex_m11dwt_counterE">hal::cortex_m::dwt_counter (C++ class)</a>, <a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m11dwt_counterE">[1]</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m11dwt_counterE">[2]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m11dwt_counterE">[3]</a>
+</li>
+      <li><a href="cortex_m/dwt_counter.html#_CPPv4N3hal8cortex_m11dwt_counter11dwt_counterE5hertz">hal::cortex_m::dwt_counter::dwt_counter (C++ function)</a>, <a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m11dwt_counter11dwt_counterE5hertz">[1]</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m11dwt_counter11dwt_counterE5hertz">[2]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m11dwt_counter11dwt_counterE5hertz">[3]</a>
+</li>
+      <li><a href="cortex_m/dwt_counter.html#_CPPv4N3hal8cortex_m11dwt_counter22register_cpu_frequencyE5hertz">hal::cortex_m::dwt_counter::register_cpu_frequency (C++ function)</a>, <a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m11dwt_counter22register_cpu_frequencyE5hertz">[1]</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m11dwt_counter22register_cpu_frequencyE5hertz">[2]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m11dwt_counter22register_cpu_frequencyE5hertz">[3]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m21enable_all_interruptsEv">hal::cortex_m::enable_all_interrupts (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m21enable_all_interruptsEv">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m21enable_all_interruptsEv">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m16enable_interruptE5irq_t17interrupt_pointer">hal::cortex_m::enable_interrupt (C++ function)</a>, <a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m16enable_interruptE8irq_enum17interrupt_pointer">[1]</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m16enable_interruptE5irq_t17interrupt_pointer">[2]</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m16enable_interruptE8irq_enum17interrupt_pointer">[3]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m16enable_interruptE5irq_t17interrupt_pointer">[4]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m16enable_interruptE8irq_enum17interrupt_pointer">[5]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m34get_interrupt_vector_table_addressEv">hal::cortex_m::get_interrupt_vector_table_address (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m34get_interrupt_vector_table_addressEv">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m34get_interrupt_vector_table_addressEv">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m16get_vector_tableEv">hal::cortex_m::get_vector_table (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m16get_vector_tableEv">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m16get_vector_tableEv">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m18hard_fault_handlerEv">hal::cortex_m::hard_fault_handler (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m18hard_fault_handlerEv">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m18hard_fault_handlerEv">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m22initialize_bss_sectionEv">hal::cortex_m::initialize_bss_section (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m22initialize_bss_sectionEv">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m22initialize_bss_sectionEv">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m23initialize_data_sectionEv">hal::cortex_m::initialize_data_section (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m23initialize_data_sectionEv">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m23initialize_data_sectionEv">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m30initialize_floating_point_unitEv">hal::cortex_m::initialize_floating_point_unit (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m30initialize_floating_point_unitEv">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m30initialize_floating_point_unitEv">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4I_5irq_tEN3hal8cortex_m21initialize_interruptsEvv">hal::cortex_m::initialize_interrupts (C++ function)</a>, <a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m21initialize_interruptsENSt4spanI17interrupt_pointerEE">[1]</a>, <a href="cortex_m/startup.html#_CPPv4I_5irq_tEN3hal8cortex_m21initialize_interruptsEvv">[2]</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m21initialize_interruptsENSt4spanI17interrupt_pointerEE">[3]</a>, <a href="cortex_m/system_control.html#_CPPv4I_5irq_tEN3hal8cortex_m21initialize_interruptsEvv">[4]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m21initialize_interruptsENSt4spanI17interrupt_pointerEE">[5]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m17interrupt_pointerE">hal::cortex_m::interrupt_pointer (C++ type)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m17interrupt_pointerE">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m17interrupt_pointerE">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m34interrupt_vector_table_initializedEv">hal::cortex_m::interrupt_vector_table_initialized (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m34interrupt_vector_table_initializedEv">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m34interrupt_vector_table_initializedEv">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irqE">hal::cortex_m::irq (C++ enum)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m3irqE">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m3irqE">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq9bus_faultE">hal::cortex_m::irq::bus_fault (C++ enumerator)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m3irq9bus_faultE">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m3irq9bus_faultE">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq10hard_faultE">hal::cortex_m::irq::hard_fault (C++ enumerator)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m3irq10hard_faultE">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m3irq10hard_faultE">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq23memory_management_faultE">hal::cortex_m::irq::memory_management_fault (C++ enumerator)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m3irq23memory_management_faultE">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m3irq23memory_management_faultE">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq22non_maskable_interruptE">hal::cortex_m::irq::non_maskable_interrupt (C++ enumerator)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m3irq22non_maskable_interruptE">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m3irq22non_maskable_interruptE">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq7pend_svE">hal::cortex_m::irq::pend_sv (C++ enumerator)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m3irq7pend_svE">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m3irq7pend_svE">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq9reserve10E">hal::cortex_m::irq::reserve10 (C++ enumerator)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m3irq9reserve10E">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m3irq9reserve10E">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq9reserve12E">hal::cortex_m::irq::reserve12 (C++ enumerator)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m3irq9reserve12E">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m3irq9reserve12E">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq9reserve13E">hal::cortex_m::irq::reserve13 (C++ enumerator)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m3irq9reserve13E">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m3irq9reserve13E">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq8reserve7E">hal::cortex_m::irq::reserve7 (C++ enumerator)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m3irq8reserve7E">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m3irq8reserve7E">[2]</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq8reserve8E">hal::cortex_m::irq::reserve8 (C++ enumerator)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m3irq8reserve8E">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m3irq8reserve8E">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq8reserve9E">hal::cortex_m::irq::reserve9 (C++ enumerator)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m3irq8reserve9E">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m3irq8reserve9E">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq5resetE">hal::cortex_m::irq::reset (C++ enumerator)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m3irq5resetE">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m3irq5resetE">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq13software_callE">hal::cortex_m::irq::software_call (C++ enumerator)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m3irq13software_callE">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m3irq13software_callE">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq7systickE">hal::cortex_m::irq::systick (C++ enumerator)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m3irq7systickE">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m3irq7systickE">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq12top_of_stackE">hal::cortex_m::irq::top_of_stack (C++ enumerator)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m3irq12top_of_stackE">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m3irq12top_of_stackE">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq11usage_faultE">hal::cortex_m::irq::usage_fault (C++ enumerator)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m3irq11usage_faultE">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m3irq11usage_faultE">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m5irq_tE">hal::cortex_m::irq_t (C++ type)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m5irq_tE">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m5irq_tE">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m20is_interrupt_enabledE5irq_t">hal::cortex_m::is_interrupt_enabled (C++ function)</a>, <a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m20is_interrupt_enabledE8irq_enum">[1]</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m20is_interrupt_enabledE5irq_t">[2]</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m20is_interrupt_enabledE8irq_enum">[3]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m20is_interrupt_enabledE5irq_t">[4]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m20is_interrupt_enabledE8irq_enum">[5]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m31memory_management_fault_handlerEv">hal::cortex_m::memory_management_fault_handler (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m31memory_management_fault_handlerEv">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m31memory_management_fault_handlerEv">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m5resetEv">hal::cortex_m::reset (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m5resetEv">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m5resetEv">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m29revert_interrupt_vector_tableEv">hal::cortex_m::revert_interrupt_vector_table (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m29revert_interrupt_vector_tableEv">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m29revert_interrupt_vector_tableEv">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m34set_interrupt_vector_table_addressEPv">hal::cortex_m::set_interrupt_vector_table_address (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m34set_interrupt_vector_table_addressEPv">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m34set_interrupt_vector_table_addressEPv">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m13systick_timerE">hal::cortex_m::systick_timer (C++ class)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m13systick_timerE">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m13systick_timerE">[2]</a>, <a href="cortex_m/systick_timer.html#_CPPv4N3hal8cortex_m13systick_timerE">[3]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE">hal::cortex_m::systick_timer::clock_source (C++ enum)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE">[2]</a>, <a href="cortex_m/systick_timer.html#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE">[3]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m13systick_timer12clock_source8externalE">hal::cortex_m::systick_timer::clock_source::external (C++ enumerator)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m13systick_timer12clock_source8externalE">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m13systick_timer12clock_source8externalE">[2]</a>, <a href="cortex_m/systick_timer.html#_CPPv4N3hal8cortex_m13systick_timer12clock_source8externalE">[3]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m13systick_timer12clock_source9processorE">hal::cortex_m::systick_timer::clock_source::processor (C++ enumerator)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m13systick_timer12clock_source9processorE">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m13systick_timer12clock_source9processorE">[2]</a>, <a href="cortex_m/systick_timer.html#_CPPv4N3hal8cortex_m13systick_timer12clock_source9processorE">[3]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m13systick_timer22register_cpu_frequencyE5hertz12clock_source">hal::cortex_m::systick_timer::register_cpu_frequency (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m13systick_timer22register_cpu_frequencyE5hertz12clock_source">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m13systick_timer22register_cpu_frequencyE5hertz12clock_source">[2]</a>, <a href="cortex_m/systick_timer.html#_CPPv4N3hal8cortex_m13systick_timer22register_cpu_frequencyE5hertz12clock_source">[3]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m13systick_timer13systick_timerE5hertz12clock_source">hal::cortex_m::systick_timer::systick_timer (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m13systick_timer13systick_timerE5hertz12clock_source">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m13systick_timer13systick_timerE5hertz12clock_source">[2]</a>, <a href="cortex_m/systick_timer.html#_CPPv4N3hal8cortex_m13systick_timer13systick_timerE5hertz12clock_source">[3]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m13systick_timerD0Ev">hal::cortex_m::systick_timer::~systick_timer (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m13systick_timerD0Ev">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m13systick_timerD0Ev">[2]</a>, <a href="cortex_m/systick_timer.html#_CPPv4N3hal8cortex_m13systick_timerD0Ev">[3]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m19usage_fault_handlerEv">hal::cortex_m::usage_fault_handler (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m19usage_fault_handlerEv">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m19usage_fault_handlerEv">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m21verify_vector_enabledE5irq_t17interrupt_pointer">hal::cortex_m::verify_vector_enabled (C++ function)</a>, <a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m21verify_vector_enabledE8irq_enum17interrupt_pointer">[1]</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m21verify_vector_enabledE5irq_t17interrupt_pointer">[2]</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m21verify_vector_enabledE8irq_enum17interrupt_pointer">[3]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m21verify_vector_enabledE5irq_t17interrupt_pointer">[4]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m21verify_vector_enabledE8irq_enum17interrupt_pointer">[5]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m14wait_for_eventEv">hal::cortex_m::wait_for_event (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m14wait_for_eventEv">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m14wait_for_eventEv">[2]</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m18wait_for_interruptEv">hal::cortex_m::wait_for_interrupt (C++ function)</a>, <a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m18wait_for_interruptEv">[1]</a>, <a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m18wait_for_interruptEv">[2]</a>
+</li>
+      <li><a href="lpc40/adc.html#_CPPv4N3hal5lpc403adcE">hal::lpc40::adc (C++ class)</a>
+</li>
+      <li><a href="lpc40/adc.html#_CPPv4N3hal5lpc403adc3adcEN3hal13channel_paramE">hal::lpc40::adc::adc (C++ function)</a>, <a href="lpc40/adc.html#_CPPv4N3hal5lpc403adc3adcERK7channel">[1]</a>
+</li>
+      <li><a href="lpc40/adc.html#_CPPv4N3hal5lpc403adc7channelE">hal::lpc40::adc::channel (C++ struct)</a>
+</li>
+      <li><a href="lpc40/adc.html#_CPPv4N3hal5lpc403adc7channel7adc_pinE">hal::lpc40::adc::channel::adc_pin (C++ member)</a>
+</li>
+      <li><a href="lpc40/adc.html#_CPPv4N3hal5lpc403adc7channel10clock_rateE">hal::lpc40::adc::channel::clock_rate (C++ member)</a>
+</li>
+      <li><a href="lpc40/adc.html#_CPPv4N3hal5lpc403adc7channel5indexE">hal::lpc40::adc::channel::index (C++ member)</a>
+</li>
+      <li><a href="lpc40/adc.html#_CPPv4N3hal5lpc403adc7channel12pin_functionE">hal::lpc40::adc::channel::pin_function (C++ member)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
