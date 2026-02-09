@@ -41,8 +41,8 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'libhal/timeout';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
@@ -440,8 +440,15 @@
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
 <dl class="cpp type">
 <dt class="sig sig-object cpp" id="_CPPv416timeout_function">
-<span id="_CPPv316timeout_function"></span><span id="_CPPv216timeout_function"></span><span class="target" id="group___timeout_core_1ga25cf5ebc7e6ab3f04dc3db56bc86abab"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">timeout_function</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">(</span></span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv416timeout_function" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv316timeout_function"></span><span id="_CPPv216timeout_function"></span><span class="target" id="group___timeout_core_1gaf37772ea60fe0672452de7047e4ab0ba"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">timeout_function</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv416timeout_function" title="Link to this definition">#</a><br /></dt>
 <dd><p>Signature of a function that throws <a class="reference internal" href="error.html#structhal_1_1timed__out"><span class="std std-ref">hal::timed_out</span></a>. </p>
+<p><dl>
+<dt class="sig sig-object cpp">
+<em><span class="pre">Deprecated:</span></em></dt>
+<dd><p>will be removed by libhal 5.0.0</p>
+</dd></dl>
+
+</p>
 <p>A function that expires after a certain amount of time or after a certain amount of events, or after a specific event occurs. When called, this function checks if the expiration event has occurred and if so, throws the exception <a class="reference internal" href="error.html#structhal_1_1timed__out"><span class="std std-ref">hal::timed_out</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Throws hal::timed_out<span class="colon">:</span></dt>
@@ -455,7 +462,7 @@
 <span id="_CPPv313work_function"></span><span id="_CPPv213work_function"></span><span class="target" id="group___timeout_core_1gae14dee1f644fcb514428246f9970299f"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">work_function</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv410work_state" title="work_state"><span class="n"><span class="pre">work_state</span></span></a><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv413work_function" title="Link to this definition">#</a><br /></dt>
 <dd><p>A non-blocking callable that performs work with each call. </p>
 <p>Each call to a work_function will perform a set of work. The worker will return a work_state to indicate its current state. Once the worker reaches a terminal state, it MUST perform no additional work and return the terminal state. For example, if a work function failed, it must always return failure and not interact with hardware or other software from that point on. Same will occur for the “finished” state.</p>
-<p>This function can be repeatedly tried until it has reached a terminal state with the <a class="reference internal" href="functional.html#group___functional_1ga5078c7097c3049684fa72d7a35538e52"><span class="std std-ref">try_until()</span></a> function.</p>
+<p>This function can be repeatedly tried until it has reached a terminal state with the try_until() function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return<span class="colon">:</span></dt>
 <dd class="field-odd"><p>work_state - indicates what the state of the worker function is. </p>
@@ -495,6 +502,13 @@
 <dt class="sig sig-object cpp" id="_CPPv413never_timeoutv">
 <span id="_CPPv313never_timeoutv"></span><span id="_CPPv213never_timeoutv"></span><span id="never_timeout"></span><span class="target" id="group___timeout_core_1ga17e66fb842cd0ba8b46795b5e905741a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">never_timeout</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413never_timeoutv" title="Link to this definition">#</a><br /></dt>
 <dd><p>Create a timeout that will never time out. </p>
+<p><dl>
+<dt class="sig sig-object cpp">
+<em><span class="pre">Deprecated:</span></em></dt>
+<dd><p>will be removed by libhal 5.0.0</p>
+</dd></dl>
+
+</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>auto - callable that will never timeout </p>
@@ -603,7 +617,7 @@
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
     <br/>
   </p>
 </div>

@@ -41,8 +41,8 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'libhal/error';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
@@ -468,7 +468,7 @@
 <dd><div class="docutils container">
 <em>#include &lt;error.hpp&gt;</em></div>
 <p>Base exception class for all hal related exceptions. </p>
-<p>Subclassed by <a class="reference internal" href="#structhal_1_1argument__out__of__domain"><span class="std std-ref">hal::argument_out_of_domain</span></a>, <a class="reference internal" href="#structhal_1_1device__or__resource__busy"><span class="std std-ref">hal::device_or_resource_busy</span></a>, <a class="reference internal" href="#structhal_1_1io__error"><span class="std std-ref">hal::io_error</span></a>, <a class="reference internal" href="#structhal_1_1message__size"><span class="std std-ref">hal::message_size</span></a>, <a class="reference internal" href="#structhal_1_1no__such__device"><span class="std std-ref">hal::no_such_device</span></a>, <a class="reference internal" href="#structhal_1_1not__connected"><span class="std std-ref">hal::not_connected</span></a>, <a class="reference internal" href="#structhal_1_1operation__not__permitted"><span class="std std-ref">hal::operation_not_permitted</span></a>, <a class="reference internal" href="#structhal_1_1operation__not__supported"><span class="std std-ref">hal::operation_not_supported</span></a>, <a class="reference internal" href="#structhal_1_1resource__unavailable__try__again"><span class="std std-ref">hal::resource_unavailable_try_again</span></a>, <a class="reference internal" href="#structhal_1_1timed__out"><span class="std std-ref">hal::timed_out</span></a>, <a class="reference internal" href="#structhal_1_1unknown"><span class="std std-ref">hal::unknown</span></a></p>
+<p>Subclassed by <a class="reference internal" href="#structhal_1_1argument__out__of__domain"><span class="std std-ref">hal::argument_out_of_domain</span></a>, <a class="reference internal" href="#structhal_1_1bad__optional__ptr__access"><span class="std std-ref">hal::bad_optional_ptr_access</span></a>, <a class="reference internal" href="#classhal_1_1bad__weak__ptr"><span class="std std-ref">hal::bad_weak_ptr</span></a>, <a class="reference internal" href="#structhal_1_1device__or__resource__busy"><span class="std std-ref">hal::device_or_resource_busy</span></a>, <a class="reference internal" href="#structhal_1_1io__error"><span class="std std-ref">hal::io_error</span></a>, <a class="reference internal" href="#structhal_1_1message__size"><span class="std std-ref">hal::message_size</span></a>, <a class="reference internal" href="#structhal_1_1no__such__device"><span class="std std-ref">hal::no_such_device</span></a>, <a class="reference internal" href="#structhal_1_1not__connected"><span class="std std-ref">hal::not_connected</span></a>, <a class="reference internal" href="#structhal_1_1operation__not__permitted"><span class="std std-ref">hal::operation_not_permitted</span></a>, <a class="reference internal" href="#structhal_1_1operation__not__supported"><span class="std std-ref">hal::operation_not_supported</span></a>, <a class="reference internal" href="#structhal_1_1out__of__range"><span class="std std-ref">hal::out_of_range</span></a>, <a class="reference internal" href="#structhal_1_1resource__unavailable__try__again"><span class="std std-ref">hal::resource_unavailable_try_again</span></a>, <a class="reference internal" href="#structhal_1_1timed__out"><span class="std std-ref">hal::timed_out</span></a>, <a class="reference internal" href="#structhal_1_1unknown"><span class="std std-ref">hal::unknown</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -537,7 +537,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>or use <code class="docutils literal notranslate"><a class="reference internal" href="functional.html#group___functional_1ga5078c7097c3049684fa72d7a35538e52"><span class="std std-ref"><span class="pre">hal::probe(i2c)</span></span></a></code> in the while loop that performs the try catch for you and returns a bool if it was successfully able to communicate with the device.</p>
+<p>or use <code class="docutils literal notranslate"><span class="pre">hal::probe(i2c)</span></code> in the while loop that performs the try catch for you and returns a bool if it was successfully able to communicate with the device.</p>
 </section>
 <section id="structhal_1_1no__such__device_1autotoc_md3">
 <h4>3. Temporary/Intermittent<a class="headerlink" href="#structhal_1_1no__such__device_1autotoc_md3" title="Link to this heading">#</a></h4>
@@ -794,6 +794,35 @@
 <p>If this is not the case, use any other <a class="reference internal" href="#classhal_1_1exception"><span class="std std-ref">hal::exception</span></a> that fits. </p>
 </dd></dl>
 
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal12bad_weak_ptrE">
+<span id="_CPPv3N3hal12bad_weak_ptrE"></span><span id="_CPPv2N3hal12bad_weak_ptrE"></span><span id="hal::bad_weak_ptr"></span><span class="target" id="classhal_1_1bad__weak__ptr"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bad_weak_ptr</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N3hal9exceptionE" title="hal::exception"><span class="n"><span class="pre">exception</span></span></a><a class="headerlink" href="#_CPPv4N3hal12bad_weak_ptrE" title="Link to this definition">#</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;error.hpp&gt;</em></div>
+<p>Raised when a weak_ptr is accessed for an object that has been destroyed. </p>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal12out_of_rangeE">
+<span id="_CPPv3N3hal12out_of_rangeE"></span><span id="_CPPv2N3hal12out_of_rangeE"></span><span id="hal::out_of_range"></span><span class="target" id="structhal_1_1out__of__range"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">out_of_range</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N3hal9exceptionE" title="hal::exception"><span class="n"><span class="pre">exception</span></span></a><a class="headerlink" href="#_CPPv4N3hal12out_of_rangeE" title="Link to this definition">#</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;error.hpp&gt;</em></div>
+<p>Raised when an API attempts to access elements outside of a container or resource. </p>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal12out_of_range4infoE">
+<span id="_CPPv3N3hal12out_of_range4infoE"></span><span id="_CPPv2N3hal12out_of_range4infoE"></span><span id="hal::out_of_range::info"></span><span class="target" id="structhal_1_1out__of__range_1_1info"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">info</span></span></span><a class="headerlink" href="#_CPPv4N3hal12out_of_range4infoE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal23bad_optional_ptr_accessE">
+<span id="_CPPv3N3hal23bad_optional_ptr_accessE"></span><span id="_CPPv2N3hal23bad_optional_ptr_accessE"></span><span id="hal::bad_optional_ptr_access"></span><span class="target" id="structhal_1_1bad__optional__ptr__access"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bad_optional_ptr_access</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N3hal9exceptionE" title="hal::exception"><span class="n"><span class="pre">exception</span></span></a><a class="headerlink" href="#_CPPv4N3hal23bad_optional_ptr_accessE" title="Link to this definition">#</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;error.hpp&gt;</em></div>
+<p>Raised when an API attempts to access the contents of an empty optional_ptr. </p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="cpp type">
@@ -912,6 +941,12 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal12message_sizeE"><code class="docutils literal notranslate"><span class="pre">hal::message_size</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal13not_connectedE"><code class="docutils literal notranslate"><span class="pre">hal::not_connected</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal7unknownE"><code class="docutils literal notranslate"><span class="pre">hal::unknown</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal12bad_weak_ptrE"><code class="docutils literal notranslate"><span class="pre">hal::bad_weak_ptr</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal12out_of_rangeE"><code class="docutils literal notranslate"><span class="pre">hal::out_of_range</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal12out_of_range4infoE"><code class="docutils literal notranslate"><span class="pre">hal::out_of_range::info</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal23bad_optional_ptr_accessE"><code class="docutils literal notranslate"><span class="pre">hal::bad_optional_ptr_access</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5errorE"><code class="docutils literal notranslate"><span class="pre">hal::error</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_DpDaEN3hal5error14invalid_optionE"><code class="docutils literal notranslate"><span class="pre">invalid_option</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_DpDaEN3hal5error16invalid_option_tE"><code class="docutils literal notranslate"><span class="pre">hal::error::invalid_option_t</span></code></a></li>
@@ -955,7 +990,7 @@
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
     <br/>
   </p>
 </div>
