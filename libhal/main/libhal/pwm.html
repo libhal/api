@@ -41,8 +41,8 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'libhal/pwm';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
@@ -440,7 +440,7 @@
 <p><dl>
 <dt class="sig sig-object cpp">
 <em><span class="pre">Deprecated:</span></em></dt>
-<dd><p>This interface couples frequency control and channel duty cycle. This is problematic as many PWM peripheral hardware can only support a single PWM frequency for a group of pwm channels. This makes it impossible to know when changing updating the frequency of one pwm object will inadvertently effect another pwm object. This interface also uses floats for pwm duty cycle where a u16 could provide sufficient precision. Thus <code class="docutils literal notranslate"><span class="pre">hal::pwm16_channel</span></code> and <code class="docutils literal notranslate"><a class="reference internal" href="functional.html#group___functional_1ga5078c7097c3049684fa72d7a35538e52"><span class="std std-ref"><span class="pre">hal::pwm_manager</span></span></a></code> are the alternatives to use. This interface will be removed in libhal 5.0.0.</p>
+<dd><p>This interface couples frequency control and channel duty cycle. This is problematic as many PWM peripheral hardware can only support a single PWM frequency for a group of pwm channels. This makes it impossible to know when changing updating the frequency of one pwm object will inadvertently effect another pwm object. This interface also uses floats for pwm duty cycle where a u16 could provide sufficient precision. Thus <code class="docutils literal notranslate"><span class="pre">hal::pwm16_channel</span></code> and <code class="docutils literal notranslate"><span class="pre">hal::pwm_manager</span></code> are the alternatives to use. This interface will be removed in libhal 5.0.0.</p>
 </dd></dl>
 
 </p>
@@ -590,7 +590,7 @@
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
     <br/>
   </p>
 </div>
