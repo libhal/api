@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>libhal API Documentation</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, sans-serif;
+      background: #f5f7fa;
+      color: #1a1a2e;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    header p {
+      color: #555;
+      font-size: 1.05rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e0e4ea;
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+    }
+    .card h2 {
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
+    }
+    .card h2 a {
+      color: #1a1a2e;
+      text-decoration: none;
+    }
+    .card h2 a:hover {
+      color: #3a6df0;
+    }
+    .versions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    a.version {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      background: #eef1f6;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: #3a6df0;
+      text-decoration: none;
+    }
+    a.version:hover {
+      background: #3a6df0;
+      color: #fff;
+    }
+    #error {
+      text-align: center;
+      color: #c0392b;
+      margin-top: 2rem;
+      display: none;
+    }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>libhal API Documentation</h1>
+    <p>Browse API references for all libhal libraries</p>
+  </header>
+  <div class="grid" id="grid"></div>
+  <p id="error">Could not load library data.</p>
+  <footer>
+    Auto-generated from repository contents
+  </footer>
+
+  <script>
+    fetch("libraries.json")
+      .then(function (res) {
+        if (!res.ok) throw new Error(res.statusText);
+        return res.json();
+      })
+      .then(function (libraries) {
+        var grid = document.getElementById("grid");
+        libraries.forEach(function (lib) {
+          var card = document.createElement("div");
+          card.className = "card";
+
+          var heading = document.createElement("h2");
+          var link = document.createElement("a");
+          link.href = lib.latest_url;
+          link.textContent = lib.name;
+          heading.appendChild(link);
+          card.appendChild(heading);
+
+          var versions = document.createElement("div");
+          versions.className = "versions";
+          lib.versions.forEach(function (v) {
+            var a = document.createElement("a");
+            a.className = "version";
+            a.href = v.url;
+            a.textContent = v.version;
+            versions.appendChild(a);
+          });
+          card.appendChild(versions);
+
+          grid.appendChild(card);
+        });
+      })
+      .catch(function () {
+        document.getElementById("error").style.display = "block";
+      });
+  </script>
+</body>
+</html>
