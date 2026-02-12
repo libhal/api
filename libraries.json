@@ -1,5 +1,15 @@
 [
   {
+    "name": "async_context",
+    "versions": [
+      {
+        "version": "main",
+        "url": "https://libhal.github.io/api/async_context/main"
+      }
+    ],
+    "latest_url": "https://libhal.github.io/api/async_context/main"
+  },
+  {
     "name": "libhal",
     "versions": [
       {
