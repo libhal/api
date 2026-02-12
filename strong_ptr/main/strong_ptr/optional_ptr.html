@@ -414,10 +414,373 @@
 <h2>optional_ptr&lt;T&gt;<a class="headerlink" href="#optional-ptr-t" title="Link to this heading">#</a></h2>
 <p>Defined in namespace <code class="docutils literal notranslate"><span class="pre">mem</span></code></p>
 <p><em>import strong_ptr;</em></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygenclass: Cannot find file: /home/runner/work/strong_ptr/strong_ptr/docs/build/xml/index.xml</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN2v112optional_ptrE">
+<span id="_CPPv3I0EN2v112optional_ptrE"></span><span id="_CPPv2I0EN2v112optional_ptrE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classv1_1_1optional__ptr"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">optional_ptr</span></span></span><a class="headerlink" href="#_CPPv4I0EN2v112optional_ptrE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Optional, nullable, smart pointer that works with <code class="docutils literal notranslate"><span class="pre">mem::strong_ptr</span></code>. </p>
+<p><a class="reference internal" href="#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> provides a way to represent a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> that may or may not be present. Unlike <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>, which is always valid, <a class="reference internal" href="#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> can be in a “disengaged” state where it doesn’t reference any object.</p>
+<p>Use <a class="reference internal" href="#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> when you need a nullable reference to a reference-counted object, such as:<ul class="simple">
+<li><p>Representing the absence of a value</p></li>
+<li><p>Return values from functions that may fail</p></li>
+<li><p>Results of locking a <a class="reference internal" href="weak_ptr.html#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a></p></li>
+</ul>
+</p>
+<p>Example usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create an empty optional_ptr</span>
+<span class="n">optional_ptr</span><span class="o">&lt;</span><span class="n">my_driver</span><span class="o">&gt;</span><span class="w"> </span><span class="n">opt1</span><span class="p">;</span>
+
+<span class="c1">// Create an optional_ptr from a strong_ptr</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_strong_ptr</span><span class="o">&lt;</span><span class="n">my_driver</span><span class="o">&gt;</span><span class="p">(</span><span class="n">allocator</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">...);</span>
+<span class="n">optional_ptr</span><span class="o">&lt;</span><span class="n">my_driver</span><span class="o">&gt;</span><span class="w"> </span><span class="n">opt2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span>
+
+<span class="c1">// Check if the optional_ptr is engaged</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">opt2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Use the contained object</span>
+<span class="w">  </span><span class="n">opt2</span><span class="o">-&gt;</span><span class="n">do_something</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// Reset to disengage</span>
+<span class="n">opt2</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
+</pre></div>
 </div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – - The type pointed to by <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v112optional_ptr12optional_ptrEv">
+<span id="_CPPv3N2v112optional_ptr12optional_ptrEv"></span><span id="_CPPv2N2v112optional_ptr12optional_ptrEv"></span><span id="v1::optional_ptr::optional_ptrCE"></span><span class="target" id="classv1_1_1optional__ptr_1a0093107237ca58625de6b65706b67cce"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">optional_ptr</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v112optional_ptr12optional_ptrEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Default constructor creates a disengaged optional. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v112optional_ptr12optional_ptrENSt9nullptr_tE">
+<span id="_CPPv3N2v112optional_ptr12optional_ptrENSt9nullptr_tE"></span><span id="_CPPv2N2v112optional_ptr12optional_ptrENSt9nullptr_tE"></span><span id="v1::optional_ptr::optional_ptr__std::nullptr_tCE"></span><span class="target" id="classv1_1_1optional__ptr_1aa9020c1eaba7b8a60d746d7eb0a792a2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">optional_ptr</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">nullptr_t</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v112optional_ptr12optional_ptrENSt9nullptr_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor for nullptr (creates a disengaged optional) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v112optional_ptr12optional_ptrERR12optional_ptr">
+<span id="_CPPv3N2v112optional_ptr12optional_ptrERR12optional_ptr"></span><span id="_CPPv2N2v112optional_ptr12optional_ptrERR12optional_ptr"></span><span id="v1::optional_ptr::optional_ptr__optional_ptrRRCE"></span><span class="target" id="classv1_1_1optional__ptr_1a8b41324decff9e4489015aa60049b45b"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">optional_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N2v112optional_ptr12optional_ptrERR12optional_ptr" title="v1::optional_ptr::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N2v112optional_ptr12optional_ptrERR12optional_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Move constructor is deleted. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v112optional_ptr12optional_ptrERK10strong_ptrI1TE">
+<span id="_CPPv3N2v112optional_ptr12optional_ptrERK10strong_ptrI1TE"></span><span id="_CPPv2N2v112optional_ptr12optional_ptrERK10strong_ptrI1TE"></span><span id="v1::optional_ptr::optional_ptr__strong_ptr:T:CRCE"></span><span class="target" id="classv1_1_1optional__ptr_1aeb939ca217a02109813ac96a77074d96"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">optional_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="strong_ptr.html#_CPPv4I0EN2v110strong_ptrE" title="v1::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v112optional_ptrE" title="v1::optional_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v112optional_ptr12optional_ptrERK10strong_ptrI1TE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Construct from a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> lvalue. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to wrap </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v112optional_ptr12optional_ptrERK12optional_ptr">
+<span id="_CPPv3N2v112optional_ptr12optional_ptrERK12optional_ptr"></span><span id="_CPPv2N2v112optional_ptr12optional_ptrERK12optional_ptr"></span><span id="v1::optional_ptr::optional_ptr__optional_ptrCRCE"></span><span class="target" id="classv1_1_1optional__ptr_1a4465fbd3cbeac98cfa2d3d2ed13b7fa2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">optional_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N2v112optional_ptr12optional_ptrERK12optional_ptr" title="v1::optional_ptr::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v112optional_ptr12optional_ptrERK12optional_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Copy constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The <a class="reference internal" href="#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> to copy from </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN2v112optional_ptr12optional_ptrERK10strong_ptrI1UE">
+<span id="_CPPv3I0EN2v112optional_ptr12optional_ptrERK10strong_ptrI1UE"></span><span id="_CPPv2I0EN2v112optional_ptr12optional_ptrERK10strong_ptrI1UE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classv1_1_1optional__ptr_1a6281c65a06f79534a9ccb2ab5aa4c7d6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">optional_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="strong_ptr.html#_CPPv4I0EN2v110strong_ptrE" title="v1::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v112optional_ptr12optional_ptrERK10strong_ptrI1UE" title="v1::optional_ptr::optional_ptr::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN2v112optional_ptr12optional_ptrERK10strong_ptrI1UE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Converting constructor from a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>U</strong> – A type convertible to T </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>p_value</strong> – The <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to wrap </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v112optional_ptraSERR12optional_ptr">
+<span id="_CPPv3N2v112optional_ptraSERR12optional_ptr"></span><span id="_CPPv2N2v112optional_ptraSERR12optional_ptr"></span><span id="v1::optional_ptr::assign-operator__optional_ptrRRCE"></span><span class="target" id="classv1_1_1optional__ptr_1adf60133f0fd26e0b9b00901cd800d5bf"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN2v112optional_ptrE" title="v1::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN2v112optional_ptrE" title="v1::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N2v112optional_ptraSERR12optional_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Move assignment operator is deleted. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v112optional_ptraSERK12optional_ptr">
+<span id="_CPPv3N2v112optional_ptraSERK12optional_ptr"></span><span id="_CPPv2N2v112optional_ptraSERK12optional_ptr"></span><span id="v1::optional_ptr::assign-operator__optional_ptrCRCE"></span><span class="target" id="classv1_1_1optional__ptr_1aa405231c918b6f321a5ac4c43dda47ff"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN2v112optional_ptrE" title="v1::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN2v112optional_ptrE" title="v1::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v112optional_ptraSERK12optional_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Copy assignment operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – The <a class="reference internal" href="#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> to copy from </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Reference to *this </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v112optional_ptraSERK10strong_ptrI1TE">
+<span id="_CPPv3N2v112optional_ptraSERK10strong_ptrI1TE"></span><span id="_CPPv2N2v112optional_ptraSERK10strong_ptrI1TE"></span><span id="v1::optional_ptr::assign-operator__strong_ptr:T:CRCE"></span><span class="target" id="classv1_1_1optional__ptr_1abc3b2c1edbe03693469eeb04b6e0533c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN2v112optional_ptrE" title="v1::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="strong_ptr.html#_CPPv4I0EN2v110strong_ptrE" title="v1::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v112optional_ptrE" title="v1::optional_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v112optional_ptraSERK10strong_ptrI1TE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Assignment from a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to wrap </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Reference to *this </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN2v112optional_ptraSER12optional_ptrRK10strong_ptrI1UE">
+<span id="_CPPv3I0EN2v112optional_ptraSERK10strong_ptrI1UE"></span><span id="_CPPv2I0EN2v112optional_ptraSERK10strong_ptrI1UE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classv1_1_1optional__ptr_1a760cbb52512955ec19c59be78075f22e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN2v112optional_ptrE" title="v1::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="strong_ptr.html#_CPPv4I0EN2v110strong_ptrE" title="v1::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v112optional_ptraSER12optional_ptrRK10strong_ptrI1UE" title="v1::optional_ptr::operator=::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0EN2v112optional_ptraSER12optional_ptrRK10strong_ptrI1UE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Converting assignment from a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>U</strong> – A type convertible to T </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>p_value</strong> – The <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to wrap </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Reference to *this </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v112optional_ptraSENSt9nullptr_tE">
+<span id="_CPPv3N2v112optional_ptraSENSt9nullptr_tE"></span><span id="_CPPv2N2v112optional_ptraSENSt9nullptr_tE"></span><span id="v1::optional_ptr::assign-operator__std::nullptr_tCE"></span><span class="target" id="classv1_1_1optional__ptr_1a4842acf380c5e43bfaaf814cc1b587f8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN2v112optional_ptrE" title="v1::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">nullptr_t</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v112optional_ptraSENSt9nullptr_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Assignment from nullptr (resets to disengaged state) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Reference to *this </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v112optional_ptrD0Ev">
+<span id="_CPPv3N2v112optional_ptrD0Ev"></span><span id="_CPPv2N2v112optional_ptrD0Ev"></span><span id="v1::optional_ptr::~optional_ptr"></span><span class="target" id="classv1_1_1optional__ptr_1a4cd5cf827a488eec33b6bcd497753647"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~optional_ptr</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v112optional_ptrD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd><p>Destructor. </p>
+<p>Properly destroys the contained <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> if engaged. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2v112optional_ptr9has_valueEv">
+<span id="_CPPv3NK2v112optional_ptr9has_valueEv"></span><span id="_CPPv2NK2v112optional_ptr9has_valueEv"></span><span id="v1::optional_ptr::has_valueCCE"></span><span class="target" id="classv1_1_1optional__ptr_1add36454fd1142cc7cc4e50d6e374432d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">has_value</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK2v112optional_ptr9has_valueEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Check if the <a class="reference internal" href="#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> is engaged. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if the <a class="reference internal" href="#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> contains a value, false otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2v112optional_ptrcvbEv">
+<span id="_CPPv3NK2v112optional_ptrcvbEv"></span><span id="_CPPv2NK2v112optional_ptrcvbEv"></span><span id="v1::optional_ptr::castto-b-operatorCCE"></span><span class="target" id="classv1_1_1optional__ptr_1a337d4a546d76578271353bc348dfb9d9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK2v112optional_ptrcvbEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Check if the <a class="reference internal" href="#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> is engaged. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if the <a class="reference internal" href="#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> contains a value, false otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v112optional_ptr5valueEv">
+<span id="_CPPv3N2v112optional_ptr5valueEv"></span><span id="_CPPv2N2v112optional_ptr5valueEv"></span><span id="v1::optional_ptr::valueCE"></span><span class="target" id="classv1_1_1optional__ptr_1a7b1be177bf75903357a3aa3eed22fc9f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="strong_ptr.html#_CPPv4I0EN2v110strong_ptrE" title="v1::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v112optional_ptrE" title="v1::optional_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">value</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v112optional_ptr5valueEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Access the contained value, throw if not engaged. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">mem</span><span class="p">::</span><span class="n">nullptr_access</span></span></span> – if *this is disengaged </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A copy of the contained <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2v112optional_ptr5valueEv">
+<span id="_CPPv3NK2v112optional_ptr5valueEv"></span><span id="_CPPv2NK2v112optional_ptr5valueEv"></span><span id="v1::optional_ptr::valueCCE"></span><span class="target" id="classv1_1_1optional__ptr_1adac3850b95a6497ca17c6738c7e44661"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="strong_ptr.html#_CPPv4I0EN2v110strong_ptrE" title="v1::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v112optional_ptrE" title="v1::optional_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">value</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2v112optional_ptr5valueEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Access the contained value, throw if not engaged (const version) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">mem</span><span class="p">::</span><span class="n">nullptr_access</span></span></span> – if *this is disengaged </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A copy of the contained <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v112optional_ptrcv10strong_ptrI1TEEv">
+<span id="_CPPv3N2v112optional_ptrcv10strong_ptrI1TEEv"></span><span id="_CPPv2N2v112optional_ptrcv10strong_ptrI1TEEv"></span><span id="v1::optional_ptr::castto-strong_ptr:T:-operatorCE"></span><span class="target" id="classv1_1_1optional__ptr_1a1a4603243d5876ad3128a08691a27da3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><a class="reference internal" href="strong_ptr.html#_CPPv4I0EN2v110strong_ptrE" title="v1::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v112optional_ptrE" title="v1::optional_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v112optional_ptrcv10strong_ptrI1TEEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Implicitly convert to a strong_ptr&lt;T&gt; </p>
+<p>This allows <a class="reference internal" href="#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> to be used anywhere a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> is expected when the <a class="reference internal" href="#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> is engaged.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">mem</span><span class="p">::</span><span class="n">nullptr_access</span></span></span> – if *this is disengaged </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A copy of the contained <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2v112optional_ptrcv10strong_ptrI1TEEv">
+<span id="_CPPv3NK2v112optional_ptrcv10strong_ptrI1TEEv"></span><span id="_CPPv2NK2v112optional_ptrcv10strong_ptrI1TEEv"></span><span id="v1::optional_ptr::castto-strong_ptr:T:-operatorCCE"></span><span class="target" id="classv1_1_1optional__ptr_1a789244d6af070cbfd7b9c567c7950ada"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><a class="reference internal" href="strong_ptr.html#_CPPv4I0EN2v110strong_ptrE" title="v1::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v112optional_ptrE" title="v1::optional_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2v112optional_ptrcv10strong_ptrI1TEEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Implicitly convert to a strong_ptr&lt;T&gt; (const version) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">mem</span><span class="p">::</span><span class="n">nullptr_access</span></span></span> – if *this is disengaged </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A copy of the contained <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN2v112optional_ptrcv10strong_ptrI1UEEv">
+<span id="_CPPv3I0EN2v112optional_ptrcv10strong_ptrI1UEEv"></span><span id="_CPPv2I0EN2v112optional_ptrcv10strong_ptrI1UEEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classv1_1_1optional__ptr_1a7cdcfafd1ab7dcff57aba5b2eb9638ac"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><a class="reference internal" href="strong_ptr.html#_CPPv4I0EN2v110strong_ptrE" title="v1::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v112optional_ptrcv10strong_ptrI1UEEv" title="v1::optional_ptr::operator strong_ptr&lt;U&gt;::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN2v112optional_ptrcv10strong_ptrI1UEEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Implicitly convert to a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> for polymorphic types. </p>
+<p>This allows optional_ptr&lt;Derived&gt; to be converted to strong_ptr&lt;Base&gt; when Derived is convertible to Base.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>U</strong> – The target type (must be convertible from T) </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">mem</span><span class="p">::</span><span class="n">nullptr_access</span></span></span> – if *this is disengaged </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A copy of the contained <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>, converted to the target type </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0ENK2v112optional_ptrcv10strong_ptrI1UEEv">
+<span id="_CPPv3I0ENK2v112optional_ptrcv10strong_ptrI1UEEv"></span><span id="_CPPv2I0ENK2v112optional_ptrcv10strong_ptrI1UEEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classv1_1_1optional__ptr_1a6c7aba9546cf41c5b662a9e0fd6ec642"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><a class="reference internal" href="strong_ptr.html#_CPPv4I0EN2v110strong_ptrE" title="v1::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0ENK2v112optional_ptrcv10strong_ptrI1UEEv" title="v1::optional_ptr::operator strong_ptr&lt;U&gt;::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0ENK2v112optional_ptrcv10strong_ptrI1UEEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Implicitly convert to a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> for polymorphic types (const version) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>U</strong> – The target type (must be convertible from T) </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">mem</span><span class="p">::</span><span class="n">nullptr_access</span></span></span> – if *this is disengaged </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A copy of the contained <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>, converted to the target type </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v112optional_ptrptEv">
+<span id="_CPPv3N2v112optional_ptrptEv"></span><span id="_CPPv2N2v112optional_ptrptEv"></span><span id="v1::optional_ptr::pointer-operatorCE"></span><span class="target" id="classv1_1_1optional__ptr_1a4b4d1137a0ae50b510479d379f0a7cae"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">-&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v112optional_ptrptEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Arrow operator for accessing members of the contained object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pointer to the object managed by the contained <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2v112optional_ptrptEv">
+<span id="_CPPv3NK2v112optional_ptrptEv"></span><span id="_CPPv2NK2v112optional_ptrptEv"></span><span id="v1::optional_ptr::pointer-operatorCCE"></span><span class="target" id="classv1_1_1optional__ptr_1abd3831dfd2bdc10b6100b8d8f7b9ec78"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">-&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2v112optional_ptrptEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Arrow operator for accessing members of the contained object (const version) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pointer to the object managed by the contained <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v112optional_ptrmlEv">
+<span id="_CPPv3N2v112optional_ptrmlEv"></span><span id="_CPPv2N2v112optional_ptrmlEv"></span><span id="v1::optional_ptr::mul-operatorCE"></span><span class="target" id="classv1_1_1optional__ptr_1ac55f1321a076a0b313476e35db6e4a68"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">*</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v112optional_ptrmlEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Dereference operator for accessing the contained object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Reference to the object managed by the contained <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2v112optional_ptrmlEv">
+<span id="_CPPv3NK2v112optional_ptrmlEv"></span><span id="_CPPv2NK2v112optional_ptrmlEv"></span><span id="v1::optional_ptr::mul-operatorCCE"></span><span class="target" id="classv1_1_1optional__ptr_1a58efdadbc0b3e681a2046ad27860d1e4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">*</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2v112optional_ptrmlEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Dereference operator for accessing the contained object (const version) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Reference to the object managed by the contained <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v112optional_ptr5resetEv">
+<span id="_CPPv3N2v112optional_ptr5resetEv"></span><span id="_CPPv2N2v112optional_ptr5resetEv"></span><span id="v1::optional_ptr::resetCE"></span><span class="target" id="classv1_1_1optional__ptr_1a909f345c25bd50fc4b2086ba57f23d20"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reset</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v112optional_ptr5resetEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reset the optional to a disengaged state. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4IDpEN2v112optional_ptr7emplaceER10strong_ptrI1TEDpRR4Args">
+<span id="_CPPv3IDpEN2v112optional_ptr7emplaceEDpRR4Args"></span><span id="_CPPv2IDpEN2v112optional_ptr7emplaceEDpRR4Args"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Args</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classv1_1_1optional__ptr_1a4ce29eb91e037863f32080ee54bd7a67"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="strong_ptr.html#_CPPv4I0EN2v110strong_ptrE" title="v1::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v112optional_ptrE" title="v1::optional_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">emplace</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpEN2v112optional_ptr7emplaceER10strong_ptrI1TEDpRR4Args" title="v1::optional_ptr::emplace::Args"><span class="n"><span class="pre">Args</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">...</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDpEN2v112optional_ptr7emplaceER10strong_ptrI1TEDpRR4Args" title="Link to this definition">#</a><br /></dt>
+<dd><p>Emplace a new value. </p>
+<p>Reset the optional and construct a new <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> in-place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Args</strong> – Types of arguments to forward to the constructor </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>args</strong> – Arguments to forward to the constructor </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Reference to the newly constructed <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2v112optional_ptr9use_countEv">
+<span id="_CPPv3NK2v112optional_ptr9use_countEv"></span><span id="_CPPv2NK2v112optional_ptr9use_countEv"></span><span id="v1::optional_ptr::use_countCCE"></span><span class="target" id="classv1_1_1optional__ptr_1ac3591da2c2170a43cd0c66b8c3aaee3d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">use_count</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK2v112optional_ptr9use_countEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the current reference count. </p>
+<p>This is primarily for testing purposes. To determine if an <a class="reference internal" href="#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> points to a statically allocated object, this API must return 0 and <code class="docutils literal notranslate"><span class="pre">is_engaged()</span></code> must return true.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The number of strong references to the managed object. Returns 0 if this pointer is nullptr. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v112optional_ptr4swapER12optional_ptr">
+<span id="_CPPv3N2v112optional_ptr4swapER12optional_ptr"></span><span id="_CPPv2N2v112optional_ptr4swapER12optional_ptr"></span><span id="v1::optional_ptr::swap__optional_ptrRCE"></span><span class="target" id="classv1_1_1optional__ptr_1aca7f08e6d5a687413170cd2870445d38"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">swap</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN2v112optional_ptrE" title="v1::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v112optional_ptr4swapER12optional_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Swap the contents of this <a class="reference internal" href="#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> with another. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – The <a class="reference internal" href="#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> to swap with </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 </section>
 </section>
 
@@ -468,7 +831,40 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-ptr-t">optional_ptr&lt;T&gt;</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-ptr-t">optional_ptr&lt;T&gt;</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN2v112optional_ptrE"><code class="docutils literal notranslate"><span class="pre">v1::optional_ptr</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v112optional_ptr12optional_ptrEv"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v112optional_ptr12optional_ptrENSt9nullptr_tE"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v112optional_ptr12optional_ptrERR12optional_ptr"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v112optional_ptr12optional_ptrERK10strong_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v112optional_ptr12optional_ptrERK12optional_ptr"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN2v112optional_ptr12optional_ptrERK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v112optional_ptraSERR12optional_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v112optional_ptraSERK12optional_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v112optional_ptraSERK10strong_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN2v112optional_ptraSER12optional_ptrRK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v112optional_ptraSENSt9nullptr_tE"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v112optional_ptrD0Ev"><code class="docutils literal notranslate"><span class="pre">~optional_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v112optional_ptr9has_valueEv"><code class="docutils literal notranslate"><span class="pre">has_value()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v112optional_ptrcvbEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">bool()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v112optional_ptr5valueEv"><code class="docutils literal notranslate"><span class="pre">value()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v112optional_ptr5valueEv"><code class="docutils literal notranslate"><span class="pre">value()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v112optional_ptrcv10strong_ptrI1TEEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">strong_ptr&lt;</span> <span class="pre">T</span> <span class="pre">&gt;()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v112optional_ptrcv10strong_ptrI1TEEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">strong_ptr&lt;</span> <span class="pre">T</span> <span class="pre">&gt;()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN2v112optional_ptrcv10strong_ptrI1UEEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">strong_ptr&lt;</span> <span class="pre">U</span> <span class="pre">&gt;()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0ENK2v112optional_ptrcv10strong_ptrI1UEEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">strong_ptr&lt;</span> <span class="pre">U</span> <span class="pre">&gt;()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v112optional_ptrptEv"><code class="docutils literal notranslate"><span class="pre">operator-&gt;()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v112optional_ptrptEv"><code class="docutils literal notranslate"><span class="pre">operator-&gt;()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v112optional_ptrmlEv"><code class="docutils literal notranslate"><span class="pre">operator*()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v112optional_ptrmlEv"><code class="docutils literal notranslate"><span class="pre">operator*()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v112optional_ptr5resetEv"><code class="docutils literal notranslate"><span class="pre">reset()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4IDpEN2v112optional_ptr7emplaceER10strong_ptrI1TEDpRR4Args"><code class="docutils literal notranslate"><span class="pre">emplace()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v112optional_ptr9use_countEv"><code class="docutils literal notranslate"><span class="pre">use_count()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v112optional_ptr4swapER12optional_ptr"><code class="docutils literal notranslate"><span class="pre">swap()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

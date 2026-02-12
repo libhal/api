@@ -414,10 +414,226 @@
 <h2>weak_ptr&lt;T&gt;<a class="headerlink" href="#weak-ptr-t" title="Link to this heading">#</a></h2>
 <p>Defined in namespace <code class="docutils literal notranslate"><span class="pre">mem</span></code></p>
 <p><em>import strong_ptr;</em></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygenclass: Cannot find file: /home/runner/work/strong_ptr/strong_ptr/docs/build/xml/index.xml</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN2v18weak_ptrE">
+<span id="_CPPv3I0EN2v18weak_ptrE"></span><span id="_CPPv2I0EN2v18weak_ptrE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classv1_1_1weak__ptr"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">weak_ptr</span></span></span><a class="headerlink" href="#_CPPv4I0EN2v18weak_ptrE" title="Link to this definition">#</a><br /></dt>
+<dd><p>A weak reference to a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. </p>
+<p><a class="reference internal" href="#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> provides a non-owning reference to an object managed by <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. It can be used to break reference cycles or to create an <a class="reference internal" href="optional_ptr.html#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a>.</p>
+<p>A <a class="reference internal" href="#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> doesn’t increase the strong reference count, so it doesn’t prevent the object from being destroyed when the last <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> goes away.</p>
+<p>Example usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create a strong_ptr to an object</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mem</span><span class="o">::</span><span class="n">make_strong_ptr</span><span class="o">&lt;</span><span class="n">my_driver</span><span class="o">&gt;</span><span class="p">(</span><span class="n">allocator</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">...);</span>
+
+<span class="c1">// Create a weak reference</span>
+<span class="n">weak_ptr</span><span class="o">&lt;</span><span class="n">my_driver</span><span class="o">&gt;</span><span class="w"> </span><span class="n">weak</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span>
+
+<span class="c1">// Later, try to get a strong reference</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">locked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weak</span><span class="p">.</span><span class="n">lock</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Use the object via locked</span>
+<span class="w">  </span><span class="n">locked</span><span class="o">-&gt;</span><span class="n">do_something</span><span class="p">();</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Object has been destroyed</span>
+<span class="p">}</span>
+</pre></div>
 </div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – The type of the referenced object </p>
+</dd>
+</dl>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v18weak_ptr8weak_ptrEv">
+<span id="_CPPv3N2v18weak_ptr8weak_ptrEv"></span><span id="_CPPv2N2v18weak_ptr8weak_ptrEv"></span><span id="v1::weak_ptr::weak_ptr"></span><span class="target" id="classv1_1_1weak__ptr_1a26d1792523451652f68faace0569b85d"></span><span class="sig-name descname"><span class="n"><span class="pre">weak_ptr</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N2v18weak_ptr8weak_ptrEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Default constructor creates empty <a class="reference internal" href="#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v18weak_ptr8weak_ptrERK10strong_ptrI1TE">
+<span id="_CPPv3N2v18weak_ptr8weak_ptrERK10strong_ptrI1TE"></span><span id="_CPPv2N2v18weak_ptr8weak_ptrERK10strong_ptrI1TE"></span><span id="v1::weak_ptr::weak_ptr__strong_ptr:T:CRCE"></span><span class="target" id="classv1_1_1weak__ptr_1ac5c92aab47e397d3aacf5ce7f9331898"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">weak_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="strong_ptr.html#_CPPv4I0EN2v110strong_ptrE" title="v1::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v18weak_ptrE" title="v1::weak_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_strong</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v18weak_ptr8weak_ptrERK10strong_ptrI1TE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Create <a class="reference internal" href="#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> from <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_strong</strong> – The <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to create a weak reference to </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v18weak_ptr8weak_ptrERK8weak_ptr">
+<span id="_CPPv3N2v18weak_ptr8weak_ptrERK8weak_ptr"></span><span id="_CPPv2N2v18weak_ptr8weak_ptrERK8weak_ptr"></span><span id="v1::weak_ptr::weak_ptr__weak_ptrCRCE"></span><span class="target" id="classv1_1_1weak__ptr_1abfac9de2cad9a45759f89b8e2f85670b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">weak_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N2v18weak_ptr8weak_ptrERK8weak_ptr" title="v1::weak_ptr::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v18weak_ptr8weak_ptrERK8weak_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Copy constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The <a class="reference internal" href="#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to copy from </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v18weak_ptr8weak_ptrERR8weak_ptr">
+<span id="_CPPv3N2v18weak_ptr8weak_ptrERR8weak_ptr"></span><span id="_CPPv2N2v18weak_ptr8weak_ptrERR8weak_ptr"></span><span id="v1::weak_ptr::weak_ptr__weak_ptrRRCE"></span><span class="target" id="classv1_1_1weak__ptr_1aee0fc13e66ec56329ef7ccc46151c600"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">weak_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N2v18weak_ptr8weak_ptrERR8weak_ptr" title="v1::weak_ptr::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v18weak_ptr8weak_ptrERR8weak_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Move constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The <a class="reference internal" href="#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to move from </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN2v18weak_ptr8weak_ptrERK8weak_ptrI1UE">
+<span id="_CPPv3I0EN2v18weak_ptr8weak_ptrERK8weak_ptrI1UE"></span><span id="_CPPv2I0EN2v18weak_ptr8weak_ptrERK8weak_ptrI1UE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classv1_1_1weak__ptr_1a30142ef40b20d1475a312b6a974ef1f2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">weak_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN2v18weak_ptr8weak_ptrERK8weak_ptrI1UE" title="v1::weak_ptr::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v18weak_ptr8weak_ptrERK8weak_ptrI1UE" title="v1::weak_ptr::weak_ptr::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0EN2v18weak_ptr8weak_ptrERK8weak_ptrI1UE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Converting copy constructor. </p>
+<p>Creates a <a class="reference internal" href="#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> of T from a <a class="reference internal" href="#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> of U where U is convertible to T.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>U</strong> – A type convertible to T </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>p_other</strong> – The <a class="reference internal" href="#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to copy from </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN2v18weak_ptr8weak_ptrERR8weak_ptrI1UE">
+<span id="_CPPv3I0EN2v18weak_ptr8weak_ptrERR8weak_ptrI1UE"></span><span id="_CPPv2I0EN2v18weak_ptr8weak_ptrERR8weak_ptrI1UE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classv1_1_1weak__ptr_1ac22d57d2ce6a7a9fbaf36085a82bb244"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">weak_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN2v18weak_ptr8weak_ptrERR8weak_ptrI1UE" title="v1::weak_ptr::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v18weak_ptr8weak_ptrERR8weak_ptrI1UE" title="v1::weak_ptr::weak_ptr::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0EN2v18weak_ptr8weak_ptrERR8weak_ptrI1UE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Converting move constructor. </p>
+<p>Moves a <a class="reference internal" href="#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> of U to a <a class="reference internal" href="#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> T where U is convertible to T.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>U</strong> – A type convertible to T </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>p_other</strong> – The <a class="reference internal" href="#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to move from. Moved from <a class="reference internal" href="#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a>’s are considered expired. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN2v18weak_ptr8weak_ptrERK10strong_ptrI1UE">
+<span id="_CPPv3I0EN2v18weak_ptr8weak_ptrERK10strong_ptrI1UE"></span><span id="_CPPv2I0EN2v18weak_ptr8weak_ptrERK10strong_ptrI1UE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classv1_1_1weak__ptr_1a9fbe683cdd79acbb84ca2e190e084585"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">weak_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="strong_ptr.html#_CPPv4I0EN2v110strong_ptrE" title="v1::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v18weak_ptr8weak_ptrERK10strong_ptrI1UE" title="v1::weak_ptr::weak_ptr::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0EN2v18weak_ptr8weak_ptrERK10strong_ptrI1UE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Converting constructor from <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. </p>
+<p>Creates a weak_ptr&lt;T&gt; from a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> where U is convertible to T.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>U</strong> – A type convertible to T </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>p_other</strong> – The <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to create a weak reference to </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v18weak_ptrD0Ev">
+<span id="_CPPv3N2v18weak_ptrD0Ev"></span><span id="_CPPv2N2v18weak_ptrD0Ev"></span><span id="v1::weak_ptr::~weak_ptr"></span><span class="target" id="classv1_1_1weak__ptr_1adbd6b7305bd77ba7ca00de1f228463ba"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~weak_ptr</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v18weak_ptrD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd><p>Destructor. </p>
+<p>Decrements the weak reference count and potentially deallocates memory if this was the last reference. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v18weak_ptraSERK8weak_ptr">
+<span id="_CPPv3N2v18weak_ptraSERK8weak_ptr"></span><span id="_CPPv2N2v18weak_ptraSERK8weak_ptr"></span><span id="v1::weak_ptr::assign-operator__weak_ptrCRCE"></span><span class="target" id="classv1_1_1weak__ptr_1a6c832ec1811a34a177c0e2142f556751"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN2v18weak_ptrE" title="v1::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN2v18weak_ptrE" title="v1::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v18weak_ptraSERK8weak_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Copy assignment operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The <a class="reference internal" href="#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to copy from </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Reference to *this </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v18weak_ptraSERR8weak_ptr">
+<span id="_CPPv3N2v18weak_ptraSERR8weak_ptr"></span><span id="_CPPv2N2v18weak_ptraSERR8weak_ptr"></span><span id="v1::weak_ptr::assign-operator__weak_ptrRRCE"></span><span class="target" id="classv1_1_1weak__ptr_1a10d0f3c70bd98966182eb976c9b211f4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN2v18weak_ptrE" title="v1::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN2v18weak_ptrE" title="v1::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v18weak_ptraSERR8weak_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Move assignment operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The <a class="reference internal" href="#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to move from </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Reference to *this </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v18weak_ptraSERK10strong_ptrI1TE">
+<span id="_CPPv3N2v18weak_ptraSERK10strong_ptrI1TE"></span><span id="_CPPv2N2v18weak_ptraSERK10strong_ptrI1TE"></span><span id="v1::weak_ptr::assign-operator__strong_ptr:T:CRCE"></span><span class="target" id="classv1_1_1weak__ptr_1a5922bbfa21ed9949dc85a4404b459fe2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN2v18weak_ptrE" title="v1::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="strong_ptr.html#_CPPv4I0EN2v110strong_ptrE" title="v1::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v18weak_ptrE" title="v1::weak_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_strong</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v18weak_ptraSERK10strong_ptrI1TE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Assignment from <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_strong</strong> – The <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to create a weak reference to </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Reference to *this </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v18weak_ptr4swapER8weak_ptr">
+<span id="_CPPv3N2v18weak_ptr4swapER8weak_ptr"></span><span id="_CPPv2N2v18weak_ptr4swapER8weak_ptr"></span><span id="v1::weak_ptr::swap__weak_ptrRCE"></span><span class="target" id="classv1_1_1weak__ptr_1a88da586ca0c9428c72cb1c441aa2226f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">swap</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN2v18weak_ptrE" title="v1::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v18weak_ptr4swapER8weak_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Swap the contents of this <a class="reference internal" href="#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> with another. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The <a class="reference internal" href="#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to swap with </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2v18weak_ptr7expiredEv">
+<span id="_CPPv3NK2v18weak_ptr7expiredEv"></span><span id="_CPPv2NK2v18weak_ptr7expiredEv"></span><span id="v1::weak_ptr::expiredCCE"></span><span class="target" id="classv1_1_1weak__ptr_1aef446aeff21a0b827b988b86e8b1fc41"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">expired</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK2v18weak_ptr7expiredEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Check if the referenced object has been destroyed. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if the object has been destroyed, false otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2v18weak_ptr4lockEv">
+<span id="_CPPv3NK2v18weak_ptr4lockEv"></span><span id="_CPPv2NK2v18weak_ptr4lockEv"></span><span id="v1::weak_ptr::lockCCE"></span><span class="target" id="classv1_1_1weak__ptr_1ada7bc8d6c41a5e41a15aecb39f3534c1"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="optional_ptr.html#_CPPv4I0EN2v112optional_ptrE" title="v1::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v18weak_ptrE" title="v1::weak_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lock</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK2v18weak_ptr4lockEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Attempt to obtain a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to the referenced object. </p>
+<p>Implement <a class="reference internal" href="#classv1_1_1weak__ptr_1ada7bc8d6c41a5e41a15aecb39f3534c1"><span class="std std-ref">weak_ptr::lock()</span></a> now that <a class="reference internal" href="optional_ptr.html#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> is defined.</p>
+<p>If the object still exists, returns an <a class="reference internal" href="optional_ptr.html#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> containing a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to it. Otherwise, returns an empty <a class="reference internal" href="optional_ptr.html#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a>.</p>
+<p>
+This function attempts to obtain a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> from a <a class="reference internal" href="#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a>. If the referenced object still exists, it returns an <a class="reference internal" href="optional_ptr.html#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> containing a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to it. Otherwise, it returns an empty <a class="reference internal" href="optional_ptr.html#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An <a class="reference internal" href="optional_ptr.html#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> that is either empty or contains a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+<dt class="field-even">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>T</strong> – The type of the referenced object </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An <a class="reference internal" href="optional_ptr.html#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> that is either empty or contains a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2v18weak_ptr9use_countEv">
+<span id="_CPPv3NK2v18weak_ptr9use_countEv"></span><span id="_CPPv2NK2v18weak_ptr9use_countEv"></span><span id="v1::weak_ptr::use_countCCE"></span><span class="target" id="classv1_1_1weak__ptr_1a4e99144aca48c2172a1daa3cfb7e95e0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">use_count</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK2v18weak_ptr9use_countEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the current strong reference count. </p>
+<p>This is primarily for testing purposes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The number of strong references to the managed object </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 </section>
 </section>
 
@@ -468,7 +684,27 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weak-ptr-t">weak_ptr&lt;T&gt;</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weak-ptr-t">weak_ptr&lt;T&gt;</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN2v18weak_ptrE"><code class="docutils literal notranslate"><span class="pre">v1::weak_ptr</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v18weak_ptr8weak_ptrEv"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v18weak_ptr8weak_ptrERK10strong_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v18weak_ptr8weak_ptrERK8weak_ptr"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v18weak_ptr8weak_ptrERR8weak_ptr"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN2v18weak_ptr8weak_ptrERK8weak_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN2v18weak_ptr8weak_ptrERR8weak_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN2v18weak_ptr8weak_ptrERK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v18weak_ptrD0Ev"><code class="docutils literal notranslate"><span class="pre">~weak_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v18weak_ptraSERK8weak_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v18weak_ptraSERR8weak_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v18weak_ptraSERK10strong_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v18weak_ptr4swapER8weak_ptr"><code class="docutils literal notranslate"><span class="pre">swap()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v18weak_ptr7expiredEv"><code class="docutils literal notranslate"><span class="pre">expired()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v18weak_ptr4lockEv"><code class="docutils literal notranslate"><span class="pre">lock()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v18weak_ptr9use_countEv"><code class="docutils literal notranslate"><span class="pre">use_count()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
