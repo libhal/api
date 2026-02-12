@@ -1,0 +1,62 @@
+[
+  {
+    "name": "libhal",
+    "versions": [
+      {
+        "version": "4.10.0",
+        "url": "https://libhal.github.io/api/libhal/4.10.0"
+      },
+      {
+        "version": "main",
+        "url": "https://libhal.github.io/api/libhal/main"
+      }
+    ],
+    "latest_url": "https://libhal.github.io/api/libhal/main"
+  },
+  {
+    "name": "libhal-arm-mcu",
+    "versions": [
+      {
+        "version": "1.10.0",
+        "url": "https://libhal.github.io/api/libhal-arm-mcu/1.10.0"
+      },
+      {
+        "version": "1.12.0",
+        "url": "https://libhal.github.io/api/libhal-arm-mcu/1.12.0"
+      },
+      {
+        "version": "1.9.0",
+        "url": "https://libhal.github.io/api/libhal-arm-mcu/1.9.0"
+      },
+      {
+        "version": "main",
+        "url": "https://libhal.github.io/api/libhal-arm-mcu/main"
+      }
+    ],
+    "latest_url": "https://libhal.github.io/api/libhal-arm-mcu/main"
+  },
+  {
+    "name": "libhal-util",
+    "versions": [
+      {
+        "version": "5.4.3",
+        "url": "https://libhal.github.io/api/libhal-util/5.4.3"
+      },
+      {
+        "version": "main",
+        "url": "https://libhal.github.io/api/libhal-util/main"
+      }
+    ],
+    "latest_url": "https://libhal.github.io/api/libhal-util/main"
+  },
+  {
+    "name": "strong_ptr",
+    "versions": [
+      {
+        "version": "main",
+        "url": "https://libhal.github.io/api/strong_ptr/main"
+      }
+    ],
+    "latest_url": "https://libhal.github.io/api/strong_ptr/main"
+  }
+]
