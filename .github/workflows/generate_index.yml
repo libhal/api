@@ -1,0 +1,40 @@
+name: Generate API Index
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  generate-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install gitpython requests
+
+      - name: Generate libraries.json
+        run: python3 .github/scripts/generate_index.py .
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "changes=false" >> $GITHUB_ENV
+          else
+            echo "changes=true" >> $GITHUB_ENV
+          fi
+
+      - name: Create PR branch and push changes (if any)
+        if: env.changes == 'true'
+        run: .github/scripts/commit_and_pr.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
