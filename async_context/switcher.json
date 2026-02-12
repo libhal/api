@@ -1,5 +1,9 @@
 [
     {
+        "version": "api-docs",
+        "url": "https://libhal.github.io/api/async_context/api-docs"
+    },
+    {
         "version": "main",
         "url": "https://libhal.github.io/api/async_context/main"
     }
