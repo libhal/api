@@ -414,10 +414,81 @@
 <h2>enable_strong_from_this&lt;T&gt;<a class="headerlink" href="#enable-strong-from-this-t" title="Link to this heading">#</a></h2>
 <p>Defined in namespace <code class="docutils literal notranslate"><span class="pre">mem</span></code></p>
 <p><em>import strong_ptr;</em></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygenclass: Cannot find file: /home/runner/work/strong_ptr/strong_ptr/docs/build/xml/index.xml</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN2v123enable_strong_from_thisE">
+<span id="_CPPv3I0EN2v123enable_strong_from_thisE"></span><span id="_CPPv2I0EN2v123enable_strong_from_thisE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classv1_1_1enable__strong__from__this"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">enable_strong_from_this</span></span></span><a class="headerlink" href="#_CPPv4I0EN2v123enable_strong_from_thisE" title="Link to this definition">#</a><br /></dt>
+<dd><p>CRTP mixin to enable objects to create <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> instances to themselves. </p>
+<p>Similar to <code class="docutils literal notranslate"><span class="pre">std::enable_shared_from_this</span></code>, this class allows an object to safely obtain a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to itself. The object must inherit from this class and be managed by a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> created via make_strong_ptr.</p>
+<p>Example usage: <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">my_driver</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">enable_strong_from_this</span><span class="o">&lt;</span><span class="n">my_driver</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">register_callback</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Get a strong_ptr to ourselves</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">self</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strong_from_this</span><span class="p">();</span>
+<span class="w">    </span><span class="n">some_async_system</span><span class="p">.</span><span class="n">register_callback</span><span class="p">([</span><span class="n">self</span><span class="p">](){</span>
+<span class="w">      </span><span class="n">self</span><span class="o">-&gt;</span><span class="n">handle_callback</span><span class="p">();</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">auto</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_strong_ptr</span><span class="o">&lt;</span><span class="n">my_driver</span><span class="o">&gt;</span><span class="p">(</span><span class="n">allocator</span><span class="p">);</span>
+<span class="n">obj</span><span class="o">-&gt;</span><span class="n">register_callback</span><span class="p">();</span><span class="w"> </span><span class="c1">// Safe to get strong_ptr to self</span>
+</pre></div>
 </div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – The derived class type </p>
+</dd>
+</dl>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v123enable_strong_from_this16strong_from_thisEv">
+<span id="_CPPv3N2v123enable_strong_from_this16strong_from_thisEv"></span><span id="_CPPv2N2v123enable_strong_from_this16strong_from_thisEv"></span><span id="v1::enable_strong_from_this::strong_from_thisCE"></span><span class="target" id="classv1_1_1enable__strong__from__this_1a60a7cc654842949836a88b17430cef7f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="strong_ptr.html#_CPPv4I0EN2v110strong_ptrE" title="v1::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v123enable_strong_from_thisE" title="v1::enable_strong_from_this::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">strong_from_this</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v123enable_strong_from_this16strong_from_thisEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to this object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>strong_ptr&lt;T&gt; pointing to this object </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2v123enable_strong_from_this16strong_from_thisEv">
+<span id="_CPPv3NK2v123enable_strong_from_this16strong_from_thisEv"></span><span id="_CPPv2NK2v123enable_strong_from_this16strong_from_thisEv"></span><span id="v1::enable_strong_from_this::strong_from_thisCCE"></span><span class="target" id="classv1_1_1enable__strong__from__this_1a2b7eae09d4324b0b093a430b6da07b55"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="strong_ptr.html#_CPPv4I0EN2v110strong_ptrE" title="v1::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v123enable_strong_from_thisE" title="v1::enable_strong_from_this::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">strong_from_this</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2v123enable_strong_from_this16strong_from_thisEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get a <a class="reference internal" href="strong_ptr.html#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to this object (const version) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>strong_ptr&lt;T const&gt; pointing to this object </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v123enable_strong_from_this14weak_from_thisEv">
+<span id="_CPPv3N2v123enable_strong_from_this14weak_from_thisEv"></span><span id="_CPPv2N2v123enable_strong_from_this14weak_from_thisEv"></span><span id="v1::enable_strong_from_this::weak_from_thisCE"></span><span class="target" id="classv1_1_1enable__strong__from__this_1ac9b5e75a17dc7f0908278dcb3b93dc63"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="weak_ptr.html#_CPPv4I0EN2v18weak_ptrE" title="v1::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v123enable_strong_from_thisE" title="v1::enable_strong_from_this::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">weak_from_this</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v123enable_strong_from_this14weak_from_thisEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get a <a class="reference internal" href="weak_ptr.html#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to this object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>weak_ptr&lt;T&gt; pointing to this object </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2v123enable_strong_from_this14weak_from_thisEv">
+<span id="_CPPv3NK2v123enable_strong_from_this14weak_from_thisEv"></span><span id="_CPPv2NK2v123enable_strong_from_this14weak_from_thisEv"></span><span id="v1::enable_strong_from_this::weak_from_thisCCE"></span><span class="target" id="classv1_1_1enable__strong__from__this_1a56f25b950e702ac41219e7bae78ad43f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="weak_ptr.html#_CPPv4I0EN2v18weak_ptrE" title="v1::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v123enable_strong_from_thisE" title="v1::enable_strong_from_this::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">weak_from_this</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK2v123enable_strong_from_this14weak_from_thisEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get a <a class="reference internal" href="weak_ptr.html#classv1_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to this object (const version) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>weak_ptr&lt;T const&gt; pointing to this object </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 </section>
 </section>
 
@@ -468,7 +539,16 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-strong-from-this-t">enable_strong_from_this&lt;T&gt;</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-strong-from-this-t">enable_strong_from_this&lt;T&gt;</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN2v123enable_strong_from_thisE"><code class="docutils literal notranslate"><span class="pre">v1::enable_strong_from_this</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v123enable_strong_from_this16strong_from_thisEv"><code class="docutils literal notranslate"><span class="pre">strong_from_this()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v123enable_strong_from_this16strong_from_thisEv"><code class="docutils literal notranslate"><span class="pre">strong_from_this()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v123enable_strong_from_this14weak_from_thisEv"><code class="docutils literal notranslate"><span class="pre">weak_from_this()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v123enable_strong_from_this14weak_from_thisEv"><code class="docutils literal notranslate"><span class="pre">weak_from_this()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

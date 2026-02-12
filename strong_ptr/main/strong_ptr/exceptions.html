@@ -413,24 +413,63 @@
 <h2>exception<a class="headerlink" href="#exception" title="Link to this heading">#</a></h2>
 <p>Defined in namespace <code class="docutils literal notranslate"><span class="pre">mem</span></code></p>
 <p><em>import strong_ptr;</em></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygenclass: Cannot find file: /home/runner/work/strong_ptr/strong_ptr/docs/build/xml/index.xml</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N2v19exceptionE">
+<span id="_CPPv3N2v19exceptionE"></span><span id="_CPPv2N2v19exceptionE"></span><span id="v1::exception"></span><span class="target" id="classv1_1_1exception"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exception</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">exception</span></span><a class="headerlink" href="#_CPPv4N2v19exceptionE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Base exception class for all hal related exceptions. </p>
+<p>Subclassed by <a class="reference internal" href="#structv1_1_1nullptr__access"><span class="std std-ref">v1::nullptr_access</span></a>, <a class="reference internal" href="#structv1_1_1out__of__range"><span class="std std-ref">v1::out_of_range</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2v19exception10error_codeEv">
+<span id="_CPPv3NK2v19exception10error_codeEv"></span><span id="_CPPv2NK2v19exception10error_codeEv"></span><span id="v1::exception::error_codeCCE"></span><span class="target" id="classv1_1_1exception_1a1dd72598e0b5da516d06f8a19e5fb9b0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">errc</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">error_code</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2v19exception10error_codeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Convert this exception to the closest C++ error code. </p>
+<p>Main Use Case: Translation from C++ exceptions to C error codes</p>
+<p>Lets consider a situation when a C++ program must interface with C code or code that uses a C API to operate. Normally C++ code calls C code, but if C++ code is given to a C API like a callback and that C api expects an error code back for its own error handling purposes, this class function provides that error code. Simply catch the mem::exception, and return an error code. Perform any other recovery or handling required to make the system perform as expected.</p>
+<p>Other use cases:</p>
+<p><ol class="lowerroman simple">
+<li><p>Logging</p></li>
+</ol>
+</p>
+<p>Log the error code value (or the stringified version) of this exception to alert developers of the kind of underlying exception that was thrown.</p>
+<p><ol class="lowerroman simple">
+<li><p>Recovery</p></li>
+</ol>
+</p>
+<p>This can be used for recovery, but it is HIGHLY RECOMMENDED to use the derived classes in their own catch blocks to recover from a specific error rather than using the base class and extracting its error code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>std::errc - error code represented by the exception </p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
+</dd></dl>
+
 </section>
 <section id="out-of-range">
 <h2>out_of_range<a class="headerlink" href="#out-of-range" title="Link to this heading">#</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygenstruct: Cannot find file: /home/runner/work/strong_ptr/strong_ptr/docs/build/xml/index.xml</p>
-</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N2v112out_of_rangeE">
+<span id="_CPPv3N2v112out_of_rangeE"></span><span id="_CPPv2N2v112out_of_rangeE"></span><span id="v1::out_of_range"></span><span class="target" id="structv1_1_1out__of__range"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">out_of_range</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">v1</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N2v19exceptionE" title="v1::exception"><span class="n"><span class="pre">exception</span></span></a><a class="headerlink" href="#_CPPv4N2v112out_of_rangeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Raised when an API attempts to access elements outside of a container or resource. </p>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N2v112out_of_range4infoE">
+<span id="_CPPv3N2v112out_of_range4infoE"></span><span id="_CPPv2N2v112out_of_range4infoE"></span><span id="v1::out_of_range::info"></span><span class="target" id="structv1_1_1out__of__range_1_1info"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">info</span></span></span><a class="headerlink" href="#_CPPv4N2v112out_of_range4infoE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="nullptr-access">
 <h2>nullptr_access<a class="headerlink" href="#nullptr-access" title="Link to this heading">#</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygenstruct: Cannot find file: /home/runner/work/strong_ptr/strong_ptr/docs/build/xml/index.xml</p>
-</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N2v114nullptr_accessE">
+<span id="_CPPv3N2v114nullptr_accessE"></span><span id="_CPPv2N2v114nullptr_accessE"></span><span id="v1::nullptr_access"></span><span class="target" id="structv1_1_1nullptr__access"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nullptr_access</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">v1</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N2v19exceptionE" title="v1::exception"><span class="n"><span class="pre">exception</span></span></a><a class="headerlink" href="#_CPPv4N2v114nullptr_accessE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Raised when an API attempts to access the contents of an empty <a class="reference internal" href="optional_ptr.html#classv1_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a>. </p>
+</dd></dl>
+
 </section>
 </section>
 
@@ -472,9 +511,24 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exception">exception</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#out-of-range">out_of_range</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nullptr-access">nullptr_access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exception">exception</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v19exceptionE"><code class="docutils literal notranslate"><span class="pre">v1::exception</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v19exception10error_codeEv"><code class="docutils literal notranslate"><span class="pre">error_code()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#out-of-range">out_of_range</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v112out_of_rangeE"><code class="docutils literal notranslate"><span class="pre">v1::out_of_range</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v112out_of_range4infoE"><code class="docutils literal notranslate"><span class="pre">v1::out_of_range::info</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nullptr-access">nullptr_access</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v114nullptr_accessE"><code class="docutils literal notranslate"><span class="pre">v1::nullptr_access</span></code></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
