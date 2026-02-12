@@ -54,7 +54,7 @@
     <link rel="icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="async_context API" href="api/index.html" />
+    <link rel="next" title="async_context" href="api/async_context.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -229,8 +229,8 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="api/index.html">
-    async_context API
+  <a class="nav-link nav-internal" href="api/async_context.html">
+    async_context
   </a>
 </li>
 
@@ -321,8 +321,8 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="api/index.html">
-    async_context API
+  <a class="nav-link nav-internal" href="api/async_context.html">
+    async_context
   </a>
 </li>
 
@@ -374,14 +374,95 @@ performance.</p>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">async_context Docs</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="api/index.html">async_context API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api/async_context.html">async_context</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/async_context.html#id1">async::context</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/async_context.html#async-basic-context">async::basic_context</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/async_context.html#async-proxy-context">async::proxy_context</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/async_context.html#async-exclusive-access">async::exclusive_access</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/async_context.html#async-blocked-by">async::blocked_by</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/async_context.html#async-future-t">async::future&lt;T&gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/async_context.html">async_context</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/async_context.html#id1">async::context</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07contextE"><code class="docutils literal notranslate"><span class="pre">v0::context</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context7contextEv"><code class="docutils literal notranslate"><span class="pre">context()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context7contextERK7context"><code class="docutils literal notranslate"><span class="pre">context()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07contextaSERK7context"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context7contextERR7context"><code class="docutils literal notranslate"><span class="pre">context()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07contextaSERR7context"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context23initialize_stack_memoryENSt4spanI4uptrEE"><code class="docutils literal notranslate"><span class="pre">initialize_stack_memory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context7unblockEv"><code class="docutils literal notranslate"><span class="pre">unblock()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context28unblock_without_notificationEv"><code class="docutils literal notranslate"><span class="pre">unblock_without_notification()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context13block_by_timeE14sleep_duration"><code class="docutils literal notranslate"><span class="pre">block_by_time()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context11block_by_ioE14sleep_duration"><code class="docutils literal notranslate"><span class="pre">block_by_io()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context13block_by_syncEP7context"><code class="docutils literal notranslate"><span class="pre">block_by_sync()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context17block_by_externalEv"><code class="docutils literal notranslate"><span class="pre">block_by_external()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v07context13active_handleEv"><code class="docutils literal notranslate"><span class="pre">active_handle()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v07context5stateEv"><code class="docutils literal notranslate"><span class="pre">state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context4doneEv"><code class="docutils literal notranslate"><span class="pre">done()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context6cancelEv"><code class="docutils literal notranslate"><span class="pre">cancel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context6resumeEv"><code class="docutils literal notranslate"><span class="pre">resume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v07context11memory_usedEv"><code class="docutils literal notranslate"><span class="pre">memory_used()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v07context8capacityEv"><code class="docutils literal notranslate"><span class="pre">capacity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v07context16memory_remainingEv"><code class="docutils literal notranslate"><span class="pre">memory_remaining()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07contextD0Ev"><code class="docutils literal notranslate"><span class="pre">~context()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/async_context.html#async-basic-context">async::basic_context</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/async_context.html#_CPPv4I_6size_tEN2v013basic_contextE"><code class="docutils literal notranslate"><span class="pre">v0::basic_context</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/async_context.html#async-proxy-context">async::proxy_context</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/async_context.html#_CPPv4N2v013proxy_contextE"><code class="docutils literal notranslate"><span class="pre">v0::proxy_context</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v013proxy_context13proxy_contextERK13proxy_context"><code class="docutils literal notranslate"><span class="pre">proxy_context()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v013proxy_contextaSERK13proxy_context"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v013proxy_context13proxy_contextERR13proxy_context"><code class="docutils literal notranslate"><span class="pre">proxy_context()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v013proxy_contextaSERR13proxy_context"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v013proxy_contextD0Ev"><code class="docutils literal notranslate"><span class="pre">~proxy_context()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v013proxy_context4fromER7context"><code class="docutils literal notranslate"><span class="pre">from()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/async_context.html#async-exclusive-access">async::exclusive_access</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_accessE"><code class="docutils literal notranslate"><span class="pre">v0::exclusive_access</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_access16exclusive_accessEv"><code class="docutils literal notranslate"><span class="pre">exclusive_access()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_access16exclusive_accessER7context"><code class="docutils literal notranslate"><span class="pre">exclusive_access()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_accessaSER7context"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_accessaSE9nullptr_t"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_access16exclusive_accessERK16exclusive_access"><code class="docutils literal notranslate"><span class="pre">exclusive_access()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_accessaSERK16exclusive_access"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_access16exclusive_accessERR16exclusive_access"><code class="docutils literal notranslate"><span class="pre">exclusive_access()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_accessaSER16exclusive_access"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_accesseqER7context"><code class="docutils literal notranslate"><span class="pre">operator==()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v016exclusive_access6in_useEv"><code class="docutils literal notranslate"><span class="pre">in_use()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v016exclusive_access7addressEv"><code class="docutils literal notranslate"><span class="pre">address()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v016exclusive_accesscvbEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">bool()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_access20set_as_block_by_syncER7context"><code class="docutils literal notranslate"><span class="pre">set_as_block_by_sync()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_access17unblock_and_clearEv"><code class="docutils literal notranslate"><span class="pre">unblock_and_clear()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/async_context.html#async-blocked-by">async::blocked_by</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/async_context.html#_CPPv4N2v010blocked_byE"><code class="docutils literal notranslate"><span class="pre">blocked_by</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v010blocked_by7nothingE"><code class="docutils literal notranslate"><span class="pre">nothing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v010blocked_by4timeE"><code class="docutils literal notranslate"><span class="pre">time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v010blocked_by2ioE"><code class="docutils literal notranslate"><span class="pre">io</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v010blocked_by4syncE"><code class="docutils literal notranslate"><span class="pre">sync</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v010blocked_by8externalE"><code class="docutils literal notranslate"><span class="pre">external</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/async_context.html#async-future-t">async::future&lt;T&gt;</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/async_context.html#_CPPv4I0EN2v06futureE"><code class="docutils literal notranslate"><span class="pre">v0::future</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v06future6futureEv"><code class="docutils literal notranslate"><span class="pre">future()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4I0EN2v06future6futureERR1U"><code class="docutils literal notranslate"><span class="pre">future()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v06future6futureERR6future"><code class="docutils literal notranslate"><span class="pre">future()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v06futureaSERR6future"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v06futureD0Ev"><code class="docutils literal notranslate"><span class="pre">~future()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v06future4doneEv"><code class="docutils literal notranslate"><span class="pre">done()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v06future9has_valueEv"><code class="docutils literal notranslate"><span class="pre">has_value()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v06future5valueEv"><code class="docutils literal notranslate"><span class="pre">value()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v06futurecv8co_awaitEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">co_await()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v06future7awaiterE"><code class="docutils literal notranslate"><span class="pre">v0::future::awaiter</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -401,11 +482,11 @@ performance.</p>
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="api/index.html"
+       href="api/async_context.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">async_context API</p>
+        <p class="prev-next-title">async_context</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
