@@ -417,6 +417,12 @@
 </li>
       <li><a href="libhal/error.html#_CPPv4N3hal12bad_weak_ptrE">hal::bad_weak_ptr (C++ class)</a>
 </li>
+      <li><a href="libhal/lock.html#_CPPv4N3hal10basic_lockE">hal::basic_lock (C++ class)</a>
+</li>
+      <li><a href="libhal/lock.html#_CPPv4N3hal10basic_lock4lockEv">hal::basic_lock::lock (C++ function)</a>
+</li>
+      <li><a href="libhal/lock.html#_CPPv4N3hal10basic_lock6unlockEv">hal::basic_lock::unlock (C++ function)</a>
+</li>
       <li><a href="libhal/can.html#_CPPv4N3hal3canE">hal::can (C++ class)</a>
 </li>
       <li><a href="libhal/can.html#_CPPv4N3hal3can6bus_onEv">hal::can::bus_on (C++ function)</a>
@@ -535,14 +541,18 @@
 </li>
       <li><a href="libhal/error.html#_CPPv4N3hal8io_error8io_errorEPKv">hal::io_error::io_error (C++ function)</a>
 </li>
+      <li><a href="libhal/io_waiter.html#_CPPv4N3hal9io_waiterE">hal::io_waiter (C++ class)</a>
+</li>
+      <li><a href="libhal/io_waiter.html#_CPPv4N3hal9io_waiter6resumeEv">hal::io_waiter::resume (C++ function)</a>
+</li>
+      <li><a href="libhal/io_waiter.html#_CPPv4N3hal9io_waiter4waitEv">hal::io_waiter::wait (C++ function)</a>
+</li>
       <li><a href="libhal/magnetometer.html#_CPPv4N3hal12magnetometerE">hal::magnetometer (C++ class)</a>
 </li>
       <li><a href="libhal/magnetometer.html#_CPPv4N3hal12magnetometer4readEv">hal::magnetometer::read (C++ function)</a>
 </li>
       <li><a href="libhal/magnetometer.html#_CPPv4N3hal12magnetometer6read_tE">hal::magnetometer::read_t (C++ struct)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="libhal/magnetometer.html#_CPPv4N3hal12magnetometer6read_t1xE">hal::magnetometer::read_t::x (C++ member)</a>
 </li>
       <li><a href="libhal/magnetometer.html#_CPPv4N3hal12magnetometer6read_t1yE">hal::magnetometer::read_t::y (C++ member)</a>
@@ -585,6 +595,10 @@
 </li>
       <li><a href="libhal/output_pin.html#_CPPv4N3hal10output_pin8settings8resistorE">hal::output_pin::settings::resistor (C++ member)</a>
 </li>
+      <li><a href="libhal/lock.html#_CPPv4N3hal13pollable_lockE">hal::pollable_lock (C++ class)</a>
+</li>
+      <li><a href="libhal/lock.html#_CPPv4N3hal13pollable_lock8try_lockEv">hal::pollable_lock::try_lock (C++ function)</a>
+</li>
       <li><a href="libhal/pwm.html#_CPPv4N3hal3pwmE">hal::pwm (C++ class)</a>
 </li>
       <li><a href="libhal/pwm.html#_CPPv4N3hal3pwm10duty_cycleEf">hal::pwm::duty_cycle (C++ function)</a>
@@ -602,6 +616,8 @@
       <li><a href="libhal/rotation_sensor.html#_CPPv4N3hal15rotation_sensor6read_tE">hal::rotation_sensor::read_t (C++ struct)</a>
 </li>
       <li><a href="libhal/rotation_sensor.html#_CPPv4N3hal15rotation_sensor6read_t5angleE">hal::rotation_sensor::read_t::angle (C++ member)</a>
+</li>
+      <li><a href="libhal/initializers.html#_CPPv4N3hal7runtimeE">hal::runtime (C++ struct)</a>
 </li>
       <li><a href="libhal/serial.html#_CPPv4N3hal6serialE">hal::serial (C++ class)</a>
 </li>
@@ -677,9 +693,23 @@
 </li>
       <li><a href="libhal/steady_clock.html#_CPPv4N3hal12steady_clock6uptimeEv">hal::steady_clock::uptime (C++ function)</a>
 </li>
+      <li><a href="libhal/stream_dac.html#_CPPv4I_NSt17unsigned_integralEEN3hal10stream_dacE">hal::stream_dac (C++ class)</a>
+</li>
+      <li><a href="libhal/stream_dac.html#_CPPv4N3hal10stream_dac7samplesE">hal::stream_dac::samples (C++ struct)</a>
+</li>
+      <li><a href="libhal/stream_dac.html#_CPPv4N3hal10stream_dac7samples4dataE">hal::stream_dac::samples::data (C++ member)</a>
+</li>
+      <li><a href="libhal/stream_dac.html#_CPPv4N3hal10stream_dac7samples11sample_rateE">hal::stream_dac::samples::sample_rate (C++ member)</a>
+</li>
+      <li><a href="libhal/stream_dac.html#_CPPv4N3hal10stream_dac5writeERK7samples">hal::stream_dac::write (C++ function)</a>
+</li>
       <li><a href="libhal/temperature_sensor.html#_CPPv4N3hal18temperature_sensorE">hal::temperature_sensor (C++ class)</a>
 </li>
       <li><a href="libhal/temperature_sensor.html#_CPPv4N3hal18temperature_sensor4readEv">hal::temperature_sensor::read (C++ function)</a>
+</li>
+      <li><a href="libhal/lock.html#_CPPv4N3hal10timed_lockE">hal::timed_lock (C++ class)</a>
+</li>
+      <li><a href="libhal/lock.html#_CPPv4N3hal10timed_lock12try_lock_forEN3hal13time_durationE">hal::timed_lock::try_lock_for (C++ function)</a>
 </li>
       <li><a href="libhal/error.html#_CPPv4N3hal9timed_outE">hal::timed_out (C++ struct)</a>
 </li>
@@ -694,6 +724,466 @@
       <li><a href="libhal/timer.html#_CPPv4N3hal5timer8scheduleEN3hal8callbackIFvvEEEN3hal13time_durationE">hal::timer::schedule (C++ function)</a>
 </li>
       <li><a href="libhal/error.html#_CPPv4N3hal7unknownE">hal::unknown (C++ struct)</a>
+</li>
+      <li><a href="libhal/initializers.html#_CPPv4N3hal6unsafeE">hal::unsafe (C++ struct)</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4I0EN3hal2v516allocated_bufferE">hal::v5::allocated_buffer (C++ class)</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer16allocated_bufferENSt3pmr21polymorphic_allocatorIEE9size_type">hal::v5::allocated_buffer::allocated_buffer (C++ function)</a>, <a href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer16allocated_bufferENSt3pmr21polymorphic_allocatorIEE9size_typeRK1T">[1]</a>, <a href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer16allocated_bufferENSt3pmr21polymorphic_allocatorIEENSt16initializer_listI1TEE">[2]</a>, <a href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer16allocated_bufferERK16allocated_buffer">[3]</a>, <a href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer16allocated_bufferERR16allocated_buffer">[4]</a>, <a href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer16allocated_bufferEv">[5]</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer2atE9size_type">hal::v5::allocated_buffer::at (C++ function)</a>, <a href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer2atE9size_type">[1]</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer4backEv">hal::v5::allocated_buffer::back (C++ function)</a>, <a href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer4backEv">[1]</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer5beginEv">hal::v5::allocated_buffer::begin (C++ function)</a>, <a href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer5beginEv">[1]</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer6cbeginEv">hal::v5::allocated_buffer::cbegin (C++ function)</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer4cendEv">hal::v5::allocated_buffer::cend (C++ function)</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer7crbeginEv">hal::v5::allocated_buffer::crbegin (C++ function)</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer5crendEv">hal::v5::allocated_buffer::crend (C++ function)</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer4dataEv">hal::v5::allocated_buffer::data (C++ function)</a>, <a href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer4dataEv">[1]</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer5emptyEv">hal::v5::allocated_buffer::empty (C++ function)</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer3endEv">hal::v5::allocated_buffer::end (C++ function)</a>, <a href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer3endEv">[1]</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer4fillERK1T">hal::v5::allocated_buffer::fill (C++ function)</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer5frontEv">hal::v5::allocated_buffer::front (C++ function)</a>, <a href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer5frontEv">[1]</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_bufferaSERK16allocated_buffer">hal::v5::allocated_buffer::operator= (C++ function)</a>, <a href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_bufferaSERR16allocated_buffer">[1]</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_bufferixE9size_type">hal::v5::allocated_buffer::operator[] (C++ function)</a>, <a href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_bufferixE9size_type">[1]</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer6rbeginEv">hal::v5::allocated_buffer::rbegin (C++ function)</a>, <a href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer6rbeginEv">[1]</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer4rendEv">hal::v5::allocated_buffer::rend (C++ function)</a>, <a href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer4rendEv">[1]</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer4sizeEv">hal::v5::allocated_buffer::size (C++ function)</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer10size_bytesEv">hal::v5::allocated_buffer::size_bytes (C++ function)</a>
+</li>
+      <li><a href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_bufferD0Ev">hal::v5::allocated_buffer::~allocated_buffer (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v521can_message_interruptE">hal::v5::can_message_interrupt (C++ type)</a>
+</li>
+      <li><a href="libhal/circular_buffer.html#_CPPv4I0EN3hal2v515circular_bufferE">hal::v5::circular_buffer (C++ class)</a>
+</li>
+      <li><a href="libhal/circular_buffer.html#_CPPv4NK3hal2v515circular_buffer8capacityEv">hal::v5::circular_buffer::capacity (C++ function)</a>
+</li>
+      <li><a href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_buffer15circular_bufferENSt3pmr21polymorphic_allocatorI4byteEE9size_type">hal::v5::circular_buffer::circular_buffer (C++ function)</a>, <a href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_buffer15circular_bufferENSt3pmr21polymorphic_allocatorI4byteEE9size_typeRK1T">[1]</a>, <a href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_buffer15circular_bufferENSt3pmr21polymorphic_allocatorI4byteEENSt16initializer_listI1TEE">[2]</a>, <a href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_buffer15circular_bufferERK15circular_buffer">[3]</a>, <a href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_buffer15circular_bufferERR15circular_buffer">[4]</a>, <a href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_buffer15circular_bufferEv">[5]</a>
+</li>
+      <li><a href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_buffer4dataEv">hal::v5::circular_buffer::data (C++ function)</a>, <a href="libhal/circular_buffer.html#_CPPv4NK3hal2v515circular_buffer4dataEv">[1]</a>
+</li>
+      <li><a href="libhal/circular_buffer.html#_CPPv4IDpEN3hal2v515circular_buffer7emplaceE9referenceDpRR4Args">hal::v5::circular_buffer::emplace (C++ function)</a>
+</li>
+      <li><a href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_bufferaSERK15circular_buffer">hal::v5::circular_buffer::operator= (C++ function)</a>, <a href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_bufferaSERR15circular_buffer">[1]</a>
+</li>
+      <li><a href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_bufferixE9size_type">hal::v5::circular_buffer::operator[] (C++ function)</a>, <a href="libhal/circular_buffer.html#_CPPv4NK3hal2v515circular_bufferixE9size_type">[1]</a>
+</li>
+      <li><a href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_buffer4pushERK1T">hal::v5::circular_buffer::push (C++ function)</a>, <a href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_buffer4pushERR1T">[1]</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="libhal/circular_buffer.html#_CPPv4NK3hal2v515circular_buffer10size_bytesEv">hal::v5::circular_buffer::size_bytes (C++ function)</a>
+</li>
+      <li><a href="libhal/circular_buffer.html#_CPPv4NK3hal2v515circular_buffer11write_indexEv">hal::v5::circular_buffer::write_index (C++ function)</a>
+</li>
+      <li><a href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_bufferD0Ev">hal::v5::circular_buffer::~circular_buffer (C++ function)</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4I0EN3hal2v523enable_strong_from_thisE">hal::v5::enable_strong_from_this (C++ class)</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4N3hal2v523enable_strong_from_this16strong_from_thisEv">hal::v5::enable_strong_from_this::strong_from_this (C++ function)</a>, <a href="libhal/pointers.html#_CPPv4NK3hal2v523enable_strong_from_this16strong_from_thisEv">[1]</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4N3hal2v523enable_strong_from_this14weak_from_thisEv">hal::v5::enable_strong_from_this::weak_from_this (C++ function)</a>, <a href="libhal/pointers.html#_CPPv4NK3hal2v523enable_strong_from_this14weak_from_thisEv">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v516allocated_bufferE">hal::v5::hal::v5::allocated_buffer (C++ class)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer16allocated_bufferENSt3pmr21polymorphic_allocatorIEE9size_type">hal::v5::hal::v5::allocated_buffer::allocated_buffer (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer16allocated_bufferENSt3pmr21polymorphic_allocatorIEE9size_typeRK1T">[1]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer16allocated_bufferENSt3pmr21polymorphic_allocatorIEENSt16initializer_listI1TEE">[2]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer16allocated_bufferERK16allocated_buffer">[3]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer16allocated_bufferERR16allocated_buffer">[4]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer16allocated_bufferEv">[5]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer2atE9size_type">hal::v5::hal::v5::allocated_buffer::at (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer2atE9size_type">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer4backEv">hal::v5::hal::v5::allocated_buffer::back (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer4backEv">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer5beginEv">hal::v5::hal::v5::allocated_buffer::begin (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer5beginEv">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer6cbeginEv">hal::v5::hal::v5::allocated_buffer::cbegin (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer4cendEv">hal::v5::hal::v5::allocated_buffer::cend (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer7crbeginEv">hal::v5::hal::v5::allocated_buffer::crbegin (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer5crendEv">hal::v5::hal::v5::allocated_buffer::crend (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer4dataEv">hal::v5::hal::v5::allocated_buffer::data (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer4dataEv">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer5emptyEv">hal::v5::hal::v5::allocated_buffer::empty (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer3endEv">hal::v5::hal::v5::allocated_buffer::end (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer3endEv">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer4fillERK1T">hal::v5::hal::v5::allocated_buffer::fill (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer5frontEv">hal::v5::hal::v5::allocated_buffer::front (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer5frontEv">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_bufferaSERK16allocated_buffer">hal::v5::hal::v5::allocated_buffer::operator= (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_bufferaSERR16allocated_buffer">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_bufferixE9size_type">hal::v5::hal::v5::allocated_buffer::operator[] (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_bufferixE9size_type">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer6rbeginEv">hal::v5::hal::v5::allocated_buffer::rbegin (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer6rbeginEv">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer4rendEv">hal::v5::hal::v5::allocated_buffer::rend (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer4rendEv">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer4sizeEv">hal::v5::hal::v5::allocated_buffer::size (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer10size_bytesEv">hal::v5::hal::v5::allocated_buffer::size_bytes (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_bufferD0Ev">hal::v5::hal::v5::allocated_buffer::~allocated_buffer (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v515circular_bufferE">hal::v5::hal::v5::circular_buffer (C++ class)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v515circular_buffer8capacityEv">hal::v5::hal::v5::circular_buffer::capacity (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_buffer15circular_bufferENSt3pmr21polymorphic_allocatorI4byteEE9size_type">hal::v5::hal::v5::circular_buffer::circular_buffer (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_buffer15circular_bufferENSt3pmr21polymorphic_allocatorI4byteEE9size_typeRK1T">[1]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_buffer15circular_bufferENSt3pmr21polymorphic_allocatorI4byteEENSt16initializer_listI1TEE">[2]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_buffer15circular_bufferERK15circular_buffer">[3]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_buffer15circular_bufferERR15circular_buffer">[4]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_buffer15circular_bufferEv">[5]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_buffer4dataEv">hal::v5::hal::v5::circular_buffer::data (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v515circular_buffer4dataEv">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4IDpEN3hal2v53hal2v515circular_buffer7emplaceE9referenceDpRR4Args">hal::v5::hal::v5::circular_buffer::emplace (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_bufferaSERK15circular_buffer">hal::v5::hal::v5::circular_buffer::operator= (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_bufferaSERR15circular_buffer">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_bufferixE9size_type">hal::v5::hal::v5::circular_buffer::operator[] (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v515circular_bufferixE9size_type">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_buffer4pushERK1T">hal::v5::hal::v5::circular_buffer::push (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_buffer4pushERR1T">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v515circular_buffer10size_bytesEv">hal::v5::hal::v5::circular_buffer::size_bytes (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v515circular_buffer11write_indexEv">hal::v5::hal::v5::circular_buffer::write_index (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_bufferD0Ev">hal::v5::hal::v5::circular_buffer::~circular_buffer (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v523enable_strong_from_thisE">hal::v5::hal::v5::enable_strong_from_this (C++ class)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v523enable_strong_from_this16strong_from_thisEv">hal::v5::hal::v5::enable_strong_from_this::strong_from_this (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v523enable_strong_from_this16strong_from_thisEv">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v523enable_strong_from_this14weak_from_thisEv">hal::v5::hal::v5::enable_strong_from_this::weak_from_this (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v523enable_strong_from_this14weak_from_thisEv">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v512optional_ptrE">hal::v5::hal::v5::optional_ptr (C++ class)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4IDpEN3hal2v53hal2v512optional_ptr7emplaceER10strong_ptrI1TEDpRR4Args">hal::v5::hal::v5::optional_ptr::emplace (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v512optional_ptr9has_valueEv">hal::v5::hal::v5::optional_ptr::has_value (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v512optional_ptrcvbEv">hal::v5::hal::v5::optional_ptr::operator bool (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptrcv10strong_ptrI1TEEv">hal::v5::hal::v5::optional_ptr::operator strong_ptr&lt;T&gt; (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v512optional_ptrcv10strong_ptrI1TEEv">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v512optional_ptrcv10strong_ptrI1UEEv">hal::v5::hal::v5::optional_ptr::operator strong_ptr&lt;U&gt; (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4I0ENK3hal2v53hal2v512optional_ptrcv10strong_ptrI1UEEv">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptrmlEv">hal::v5::hal::v5::optional_ptr::operator* (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v512optional_ptrmlEv">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptrptEv">hal::v5::hal::v5::optional_ptr::operator-&gt; (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v512optional_ptrptEv">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v512optional_ptraSER12optional_ptrRK10strong_ptrI1UE">hal::v5::hal::v5::optional_ptr::operator= (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptraSENSt9nullptr_tE">[1]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptraSERK10strong_ptrI1TE">[2]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptraSERK12optional_ptr">[3]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptraSERR12optional_ptr">[4]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v512optional_ptr12optional_ptrERK10strong_ptrI1UE">hal::v5::hal::v5::optional_ptr::optional_ptr (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptr12optional_ptrENSt9nullptr_tE">[1]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptr12optional_ptrERK10strong_ptrI1TE">[2]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptr12optional_ptrERK12optional_ptr">[3]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptr12optional_ptrERR12optional_ptr">[4]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptr12optional_ptrEv">[5]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptr5resetEv">hal::v5::hal::v5::optional_ptr::reset (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptr4swapER12optional_ptr">hal::v5::hal::v5::optional_ptr::swap (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptr5valueEv">hal::v5::hal::v5::optional_ptr::value (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v512optional_ptr5valueEv">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptrD0Ev">hal::v5::hal::v5::optional_ptr::~optional_ptr (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serialE">hal::v5::hal::v5::serial (C++ class)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial9configureERK8settings">hal::v5::hal::v5::serial::configure (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial14receive_bufferEv">hal::v5::hal::v5::serial::receive_buffer (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial14receive_cursorEv">hal::v5::hal::v5::serial::receive_cursor (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial8settingsE">hal::v5::hal::v5::serial::settings (C++ struct)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial8settings9baud_rateE">hal::v5::hal::v5::serial::settings::baud_rate (C++ member)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v56serial8settingsssERK8settings">hal::v5::hal::v5::serial::settings::operator&lt;=&gt; (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial8settings6parityE">hal::v5::hal::v5::serial::settings::parity (C++ enum)</a>
+
+      <ul>
+        <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial8settings6parityE">(C++ member)</a>
+</li>
+      </ul></li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial8settings6parity4evenE">hal::v5::hal::v5::serial::settings::parity::even (C++ enumerator)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial8settings6parity7forced0E">hal::v5::hal::v5::serial::settings::parity::forced0 (C++ enumerator)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial8settings6parity7forced1E">hal::v5::hal::v5::serial::settings::parity::forced1 (C++ enumerator)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial8settings6parity4noneE">hal::v5::hal::v5::serial::settings::parity::none (C++ enumerator)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial8settings6parity3oddE">hal::v5::hal::v5::serial::settings::parity::odd (C++ enumerator)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial8settings4stopE">hal::v5::hal::v5::serial::settings::stop (C++ member)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial8settings9stop_bitsE">hal::v5::hal::v5::serial::settings::stop_bits (C++ enum)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial8settings9stop_bits3oneE">hal::v5::hal::v5::serial::settings::stop_bits::one (C++ enumerator)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial8settings9stop_bits3twoE">hal::v5::hal::v5::serial::settings::stop_bits::two (C++ enumerator)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial5writeENSt4spanIKN3hal4byteEEE">hal::v5::hal::v5::serial::write (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v510strong_ptrE">hal::v5::hal::v5::strong_ptr (C++ class)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4NKR3hal2v53hal2v510strong_ptrmlEv">hal::v5::hal::v5::strong_ptr::operator* (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4NO3hal2v53hal2v510strong_ptrmlEv">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4NKR3hal2v53hal2v510strong_ptrptEv">hal::v5::hal::v5::strong_ptr::operator-&gt; (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4NO3hal2v53hal2v510strong_ptrptEv">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v510strong_ptraSER10strong_ptrRK10strong_ptrI1UE">hal::v5::hal::v5::strong_ptr::operator= (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v510strong_ptraSERK10strong_ptr">[1]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v510strong_ptraSERR10strong_ptr">[2]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I00_NSt6size_tEEN3hal2v53hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UA1N_1ENSt6size_tE">hal::v5::hal::v5::strong_ptr::strong_ptr (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4I00_NSt6size_tEEN3hal2v53hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UNSt5arrayI1E1NEENSt6size_tE">[1]</a>, <a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UE">[2]</a>, <a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEPKv">[3]</a>, <a href="libhal/scatter_span.html#_CPPv4I0_N6detail14non_array_likeEEN3hal2v53hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1U1M">[4]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v510strong_ptr10strong_ptrENSt9nullptr_tE">[5]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v510strong_ptr10strong_ptrERK10strong_ptr">[6]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v510strong_ptr10strong_ptrERR10strong_ptr">[7]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v510strong_ptr10strong_ptrEv">[8]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v510strong_ptr4swapER10strong_ptr">hal::v5::hal::v5::strong_ptr::swap (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v510strong_ptr9use_countEv">hal::v5::hal::v5::strong_ptr::use_count (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v510strong_ptrD0Ev">hal::v5::hal::v5::strong_ptr::~strong_ptr (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v521strong_ptr_only_tokenE">hal::v5::hal::v5::strong_ptr_only_token (C++ class)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515timed_interruptE">hal::v5::hal::v5::timed_interrupt (C++ class)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515timed_interrupt16optional_handlerE">hal::v5::hal::v5::timed_interrupt::optional_handler (C++ type)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515timed_interrupt8scheduleERK16optional_handlerN3hal13time_durationE">hal::v5::hal::v5::timed_interrupt::schedule (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515timed_interrupt12schedule_tagE">hal::v5::hal::v5::timed_interrupt::schedule_tag (C++ struct)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515timed_interrupt9scheduledEv">hal::v5::hal::v5::timed_interrupt::scheduled (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v58weak_ptrE">hal::v5::hal::v5::weak_ptr (C++ class)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v58weak_ptr7expiredEv">hal::v5::hal::v5::weak_ptr::expired (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v58weak_ptr4lockEv">hal::v5::hal::v5::weak_ptr::lock (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v58weak_ptraSERK10strong_ptrI1TE">hal::v5::hal::v5::weak_ptr::operator= (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v58weak_ptraSERK8weak_ptr">[1]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v58weak_ptraSERR8weak_ptr">[2]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v58weak_ptr4swapER8weak_ptr">hal::v5::hal::v5::weak_ptr::swap (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v58weak_ptr9use_countEv">hal::v5::hal::v5::weak_ptr::use_count (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v58weak_ptr8weak_ptrERK10strong_ptrI1UE">hal::v5::hal::v5::weak_ptr::weak_ptr (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v58weak_ptr8weak_ptrERK8weak_ptrI1UE">[1]</a>, <a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v58weak_ptr8weak_ptrERR8weak_ptrI1UE">[2]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v58weak_ptr8weak_ptrERK10strong_ptrI1TE">[3]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v58weak_ptr8weak_ptrERK8weak_ptr">[4]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v58weak_ptr8weak_ptrERR8weak_ptr">[5]</a>, <a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v58weak_ptr8weak_ptrEv">[6]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v58weak_ptrD0Ev">hal::v5::hal::v5::weak_ptr::~weak_ptr (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v521make_allocated_bufferE16allocated_bufferI1TENSt3pmr21polymorphic_allocatorIEEN16allocated_bufferI1TE9size_typeE">hal::v5::make_allocated_buffer (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v521make_allocated_bufferE16allocated_bufferI1TENSt3pmr21polymorphic_allocatorIEEN16allocated_bufferI1TE9size_typeERK1T">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v520make_circular_bufferE15circular_bufferI1TENSt3pmr21polymorphic_allocatorI4byteEEN15circular_bufferI1TE9size_typeE">hal::v5::make_circular_buffer (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v520make_circular_bufferE15circular_bufferI1TENSt3pmr21polymorphic_allocatorI4byteEEN15circular_bufferI1TE9size_typeERK1T">[1]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I0DpEN3hal2v518make_scatter_arrayEDaDpRR4Args">hal::v5::make_scatter_array (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4IDpEN3hal2v518make_scatter_bytesEDaDpRR4Args">hal::v5::make_scatter_bytes (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I0DpEN3hal2v515make_strong_ptrE10strong_ptrI1TENSt3pmr21polymorphic_allocatorIEEDpRR4Args">hal::v5::make_strong_ptr (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4IDpEN3hal2v527make_writable_scatter_bytesEDaDpRR4Args">hal::v5::make_writable_scatter_bytes (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I00EN3hal2v5neEbRK10strong_ptrI1TERK10strong_ptrI1UE">hal::v5::operator!= (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4I00EN3hal2v5neEbRK12optional_ptrI1TERK12optional_ptrI1UE">[1]</a>, <a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v5neEbNSt9nullptr_tERK12optional_ptrI1TE">[2]</a>, <a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v5neEbRK12optional_ptrI1TENSt9nullptr_tE">[3]</a>, <a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v5neEbRK12scatter_spanI1TERK12scatter_spanI1TE">[4]</a>, <a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v5neEbRK16allocated_bufferI1TERK16allocated_bufferI1TE">[5]</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I00EN3hal2v5eqEbRK10strong_ptrI1TERK10strong_ptrI1UE">hal::v5::operator== (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4I00EN3hal2v5eqEbRK12optional_ptrI1TERK12optional_ptrI1UE">[1]</a>, <a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v5eqEbNSt9nullptr_tERK12optional_ptrI1TE">[2]</a>, <a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v5eqEbRK12optional_ptrI1TENSt9nullptr_tE">[3]</a>, <a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v5eqEbRK12scatter_spanI1TERK12scatter_spanI1TE">[4]</a>, <a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v5eqEbRK16allocated_bufferI1TERK16allocated_bufferI1TE">[5]</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4I0EN3hal2v512optional_ptrE">hal::v5::optional_ptr (C++ class)</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4IDpEN3hal2v512optional_ptr7emplaceER10strong_ptrI1TEDpRR4Args">hal::v5::optional_ptr::emplace (C++ function)</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4NK3hal2v512optional_ptr9has_valueEv">hal::v5::optional_ptr::has_value (C++ function)</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4NK3hal2v512optional_ptrcvbEv">hal::v5::optional_ptr::operator bool (C++ function)</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptrcv10strong_ptrI1TEEv">hal::v5::optional_ptr::operator strong_ptr&lt;T&gt; (C++ function)</a>, <a href="libhal/pointers.html#_CPPv4NK3hal2v512optional_ptrcv10strong_ptrI1TEEv">[1]</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4I0EN3hal2v512optional_ptrcv10strong_ptrI1UEEv">hal::v5::optional_ptr::operator strong_ptr&lt;U&gt; (C++ function)</a>, <a href="libhal/pointers.html#_CPPv4I0ENK3hal2v512optional_ptrcv10strong_ptrI1UEEv">[1]</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptrmlEv">hal::v5::optional_ptr::operator* (C++ function)</a>, <a href="libhal/pointers.html#_CPPv4NK3hal2v512optional_ptrmlEv">[1]</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptrptEv">hal::v5::optional_ptr::operator-&gt; (C++ function)</a>, <a href="libhal/pointers.html#_CPPv4NK3hal2v512optional_ptrptEv">[1]</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4I0EN3hal2v512optional_ptraSER12optional_ptrRK10strong_ptrI1UE">hal::v5::optional_ptr::operator= (C++ function)</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptraSENSt9nullptr_tE">[1]</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptraSERK10strong_ptrI1TE">[2]</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptraSERK12optional_ptr">[3]</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptraSERR12optional_ptr">[4]</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4I0EN3hal2v512optional_ptr12optional_ptrERK10strong_ptrI1UE">hal::v5::optional_ptr::optional_ptr (C++ function)</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptr12optional_ptrENSt9nullptr_tE">[1]</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptr12optional_ptrERK10strong_ptrI1TE">[2]</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptr12optional_ptrERK12optional_ptr">[3]</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptr12optional_ptrERR12optional_ptr">[4]</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptr12optional_ptrEv">[5]</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptr5resetEv">hal::v5::optional_ptr::reset (C++ function)</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptr4swapER12optional_ptr">hal::v5::optional_ptr::swap (C++ function)</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptr5valueEv">hal::v5::optional_ptr::value (C++ function)</a>, <a href="libhal/pointers.html#_CPPv4NK3hal2v512optional_ptr5valueEv">[1]</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptrD0Ev">hal::v5::optional_ptr::~optional_ptr (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v512scatter_spanE">hal::v5::scatter_span (C++ type)</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4I0EN3hal2v510strong_ptrE">hal::v5::strong_ptr (C++ class)</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4NKR3hal2v510strong_ptrmlEv">hal::v5::strong_ptr::operator* (C++ function)</a>, <a href="libhal/pointers.html#_CPPv4NO3hal2v510strong_ptrmlEv">[1]</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4NKR3hal2v510strong_ptrptEv">hal::v5::strong_ptr::operator-&gt; (C++ function)</a>, <a href="libhal/pointers.html#_CPPv4NO3hal2v510strong_ptrptEv">[1]</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4I0EN3hal2v510strong_ptraSER10strong_ptrRK10strong_ptrI1UE">hal::v5::strong_ptr::operator= (C++ function)</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v510strong_ptraSERK10strong_ptr">[1]</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v510strong_ptraSERR10strong_ptr">[2]</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UA1N_1ENSt6size_tE">hal::v5::strong_ptr::strong_ptr (C++ function)</a>, <a href="libhal/pointers.html#_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UNSt5arrayI1E1NEENSt6size_tE">[1]</a>, <a href="libhal/pointers.html#_CPPv4I0EN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UE">[2]</a>, <a href="libhal/pointers.html#_CPPv4I0EN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEPKv">[3]</a>, <a href="libhal/pointers.html#_CPPv4I0_N6detail14non_array_likeEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1U1M">[4]</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v510strong_ptr10strong_ptrENSt9nullptr_tE">[5]</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v510strong_ptr10strong_ptrERK10strong_ptr">[6]</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v510strong_ptr10strong_ptrERR10strong_ptr">[7]</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v510strong_ptr10strong_ptrEv">[8]</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4N3hal2v510strong_ptr4swapER10strong_ptr">hal::v5::strong_ptr::swap (C++ function)</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4NK3hal2v510strong_ptr9use_countEv">hal::v5::strong_ptr::use_count (C++ function)</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4N3hal2v510strong_ptrD0Ev">hal::v5::strong_ptr::~strong_ptr (C++ function)</a>
+</li>
+      <li><a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v54swapEvR10strong_ptrI1TER10strong_ptrI1TE">hal::v5::swap (C++ function)</a>, <a href="libhal/scatter_span.html#_CPPv4I0EN3hal2v54swapEvR8weak_ptrI1TER8weak_ptrI1TE">[1]</a>
+</li>
+      <li><a href="libhal/timed_interrupt.html#_CPPv4N3hal2v515timed_interruptE">hal::v5::timed_interrupt (C++ class)</a>
+</li>
+      <li><a href="libhal/timed_interrupt.html#_CPPv4N3hal2v515timed_interrupt16optional_handlerE">hal::v5::timed_interrupt::optional_handler (C++ type)</a>
+</li>
+      <li><a href="libhal/timed_interrupt.html#_CPPv4N3hal2v515timed_interrupt8scheduleERK16optional_handlerN3hal13time_durationE">hal::v5::timed_interrupt::schedule (C++ function)</a>
+</li>
+      <li><a href="libhal/timed_interrupt.html#_CPPv4N3hal2v515timed_interrupt12schedule_tagE">hal::v5::timed_interrupt::schedule_tag (C++ struct)</a>
+</li>
+      <li><a href="libhal/timed_interrupt.html#_CPPv4N3hal2v515timed_interrupt9scheduledEv">hal::v5::timed_interrupt::scheduled (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb16bulk_in_endpointE">hal::v5::usb::bulk_in_endpoint (C++ struct)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb17bulk_out_endpointE">hal::v5::usb::bulk_out_endpoint (C++ struct)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb16control_endpointE">hal::v5::usb::control_endpoint (C++ class)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb16control_endpoint7connectEb">hal::v5::usb::control_endpoint::connect (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb16control_endpoint10on_receiveERKN3hal8callbackIFv14on_receive_tagEEE">hal::v5::usb::control_endpoint::on_receive (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb16control_endpoint14on_receive_tagE">hal::v5::usb::control_endpoint::on_receive_tag (C++ struct)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb16control_endpoint4readE12scatter_spanI4byteE">hal::v5::usb::control_endpoint::read (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb16control_endpoint11set_addressE2u8">hal::v5::usb::control_endpoint::set_address (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb16control_endpoint5writeE12scatter_spanIK4byteE">hal::v5::usb::control_endpoint::write (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb8endpointE">hal::v5::usb::endpoint (C++ class)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4NK3hal2v53usb8endpoint4infoEv">hal::v5::usb::endpoint::info (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb8endpoint5resetEv">hal::v5::usb::endpoint::reset (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb8endpoint5stallEb">hal::v5::usb::endpoint::stall (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb13endpoint_infoE">hal::v5::usb::endpoint_info (C++ struct)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb13endpoint_info12in_directionEv">hal::v5::usb::endpoint_info::in_direction (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb13endpoint_info14logical_numberEv">hal::v5::usb::endpoint_info::logical_number (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb13endpoint_info6numberE">hal::v5::usb::endpoint_info::number (C++ member)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb13endpoint_info4sizeE">hal::v5::usb::endpoint_info::size (C++ member)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb13endpoint_info7stalledE">hal::v5::usb::endpoint_info::stalled (C++ member)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb11in_endpointE">hal::v5::usb::in_endpoint (C++ class)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb11in_endpoint5writeE12scatter_spanIK4byteE">hal::v5::usb::in_endpoint::write (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb9interfaceE">hal::v5::usb::interface (C++ class)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb9interface16descriptor_countE">hal::v5::usb::interface::descriptor_count (C++ struct)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb9interface16descriptor_count9interfaceE">hal::v5::usb::interface::descriptor_count::interface (C++ member)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb9interface16descriptor_count6stringE">hal::v5::usb::interface::descriptor_count::string (C++ member)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb9interface16descriptor_startE">hal::v5::usb::interface::descriptor_start (C++ struct)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb9interface16descriptor_start9interfaceE">hal::v5::usb::interface::descriptor_start::interface (C++ member)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb9interface16descriptor_start6stringE">hal::v5::usb::interface::descriptor_start::string (C++ member)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb9interface14handle_requestERK12setup_packetRK15endpoint_writer">hal::v5::usb::interface::handle_request (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb9interface17write_descriptorsE16descriptor_startRK15endpoint_writer">hal::v5::usb::interface::write_descriptors (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb9interface23write_string_descriptorE2u8RK15endpoint_writer">hal::v5::usb::interface::write_string_descriptor (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb21interrupt_in_endpointE">hal::v5::usb::interrupt_in_endpoint (C++ struct)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb22interrupt_out_endpointE">hal::v5::usb::interrupt_out_endpoint (C++ struct)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb12out_endpointE">hal::v5::usb::out_endpoint (C++ class)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb12out_endpoint10on_receiveERK8callbackIFv14on_receive_tagEE">hal::v5::usb::out_endpoint::on_receive (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb12out_endpoint14on_receive_tagE">hal::v5::usb::out_endpoint::on_receive_tag (C++ struct)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb12out_endpoint4readE12scatter_spanI4byteE">hal::v5::usb::out_endpoint::read (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packetE">hal::v5::usb::setup_packet (C++ struct)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet4argsE">hal::v5::usb::setup_packet::args (C++ struct)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet13from_le_bytesEN3hal4byteEN3hal4byteE">hal::v5::usb::setup_packet::from_le_bytes (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4NK3hal2v53usb12setup_packet13get_recipientEv">hal::v5::usb::setup_packet::get_recipient (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4NK3hal2v53usb12setup_packet8get_typeEv">hal::v5::usb::setup_packet::get_type (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4NK3hal2v53usb12setup_packet17is_device_to_hostEv">hal::v5::usb::setup_packet::is_device_to_host (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet17request_recipientE">hal::v5::usb::setup_packet::request_recipient (C++ enum)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet17request_recipient6deviceE">hal::v5::usb::setup_packet::request_recipient::device (C++ enumerator)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet17request_recipient8endpointE">hal::v5::usb::setup_packet::request_recipient::endpoint (C++ enumerator)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet17request_recipient9interfaceE">hal::v5::usb::setup_packet::request_recipient::interface (C++ enumerator)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet17request_recipient7invalidE">hal::v5::usb::setup_packet::request_recipient::invalid (C++ enumerator)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet12request_typeE">hal::v5::usb::setup_packet::request_type (C++ enum)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet12request_type7class_tE">hal::v5::usb::setup_packet::request_type::class_t (C++ enumerator)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet12request_type7invalidE">hal::v5::usb::setup_packet::request_type::invalid (C++ enumerator)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet12request_type8standardE">hal::v5::usb::setup_packet::request_type::standard (C++ enumerator)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet12request_type6vendorE">hal::v5::usb::setup_packet::request_type::vendor (C++ enumerator)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4I_5usizeEN3hal2v53usb12setup_packet10set_le_u16Ev3u16">hal::v5::usb::setup_packet::set_le_u16 (C++ function)</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet12setup_packetE4args">hal::v5::usb::setup_packet::setup_packet (C++ function)</a>, <a href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet12setup_packetERKNSt5arrayI4byteXL8EEEE">[1]</a>
+</li>
+      <li><a href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet9to_le_u16E3u16">hal::v5::usb::setup_packet::to_le_u16 (C++ function)</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4I0EN3hal2v58weak_ptrE">hal::v5::weak_ptr (C++ class)</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4NK3hal2v58weak_ptr7expiredEv">hal::v5::weak_ptr::expired (C++ function)</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4NK3hal2v58weak_ptr4lockEv">hal::v5::weak_ptr::lock (C++ function)</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4N3hal2v58weak_ptraSERK10strong_ptrI1TE">hal::v5::weak_ptr::operator= (C++ function)</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v58weak_ptraSERK8weak_ptr">[1]</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v58weak_ptraSERR8weak_ptr">[2]</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4N3hal2v58weak_ptr4swapER8weak_ptr">hal::v5::weak_ptr::swap (C++ function)</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4NK3hal2v58weak_ptr9use_countEv">hal::v5::weak_ptr::use_count (C++ function)</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERK10strong_ptrI1UE">hal::v5::weak_ptr::weak_ptr (C++ function)</a>, <a href="libhal/pointers.html#_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERK8weak_ptrI1UE">[1]</a>, <a href="libhal/pointers.html#_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERR8weak_ptrI1UE">[2]</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v58weak_ptr8weak_ptrERK10strong_ptrI1TE">[3]</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v58weak_ptr8weak_ptrERK8weak_ptr">[4]</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v58weak_ptr8weak_ptrERR8weak_ptr">[5]</a>, <a href="libhal/pointers.html#_CPPv4N3hal2v58weak_ptr8weak_ptrEv">[6]</a>
+</li>
+      <li><a href="libhal/pointers.html#_CPPv4N3hal2v58weak_ptrD0Ev">hal::v5::weak_ptr::~weak_ptr (C++ function)</a>
 </li>
   </ul></td>
 </tr></table>
