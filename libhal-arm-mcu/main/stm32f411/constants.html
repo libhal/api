@@ -1,0 +1,1289 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>STM32F411 Constants APIs &#8212; libhal-arm-mcu  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'stm32f411/constants';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/libhal-arm-mcu/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="STM32F411 DMA APIs" href="dma.html" />
+    <link rel="prev" title="STM32F411 Clock APIs" href="clock.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="libhal-arm-mcu  documentation - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="libhal-arm-mcu  documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<nav class="navbar-nav">
+  <p
+    class="sidebar-header-items__title"
+    role="heading"
+    aria-level="2"
+    aria-label="Site Navigation"
+  ></p>
+  <ul class="bd-navbar-elements navbar-nav">
+    <li class="nav-item dropdown">
+      <button
+        class="btn dropdown-toggle nav-item"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        aria-controls="pst-nav-more-links"
+      >
+        Guides
+      </button>
+      <ul id="pst-nav-more-links" class="dropdown-menu">
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/"
+          >
+            🏡 Introduction
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/getting_started/"
+          >
+            🚀 Getting Started
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/user_guide/fundamentals/"
+          >
+            📖 User Guide
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/contributor_guide/philosophy/"
+          >
+            📚 Contributor Guides
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/project_information/status/"
+          >
+            📊 Project Information
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../cortex_m/index.html">
+    Libhal Cortex M
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../lpc40/index.html">
+    Libhal LPC40xx
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32f1/index.html">
+    Libhal STM32F1
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../stm32f40/index.html">
+    Libhal STM32F40
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="index.html">
+    Libhal STM32F411
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../stm32_generic/index.html">
+    Libhal STM32 Generic
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../cortex_m/index.html">
+    Libhal Cortex M
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../lpc40/index.html">
+    Libhal LPC40xx
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32f1/index.html">
+    Libhal STM32F1
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32f40/index.html">
+    Libhal STM32F40
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Libhal STM32F411
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32_generic/index.html">
+    Libhal STM32 Generic
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">STM32F411 drivers</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="clock.html">STM32F411 Clock APIs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">STM32F411 Constants APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dma.html">STM32F411 DMA APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="i2c.html">STM32F411 I2C APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input_pin.html">STM32F411 Input Pin APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interrupt.html">STM32F411 Interrupt APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output_pin.html">STM32F411 Output Pin APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pin.html">STM32F411 Pin APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spi.html">STM32F411 SPI APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uart.html">STM32F411 UART APIs</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">libhal-arm-mcu STM32F411 API Documentation</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">STM32F411 Constants APIs</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="stm32f411-constants-apis">
+<h1>STM32F411 Constants APIs<a class="headerlink" href="#stm32f411-constants-apis" title="Link to this heading">#</a></h1>
+<p>Defined in namespace <code class="docutils literal notranslate"><span class="pre">hal::stm32f411</span></code></p>
+<p><em>#include &lt;libhal-arm-mcu/stm32f411/constants.hpp&gt;</em></p>
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheralE">
+<span id="_CPPv3N3hal9stm32f41110peripheralE"></span><span id="_CPPv2N3hal9stm32f41110peripheralE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0b"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">stm32f411</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">peripheral</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">u8</span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheralE" title="Link to this definition">#</a><br /></dt>
+<dd><p>List of each peripheral and their power on id number for this platform. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral6gpio_aE">
+<span id="_CPPv3N3hal9stm32f41110peripheral6gpio_aE"></span><span id="_CPPv2N3hal9stm32f41110peripheral6gpio_aE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0ba9a5e5d2897b8bd7edacbce12b1610e56"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gpio_a</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral6gpio_aE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral6gpio_bE">
+<span id="_CPPv3N3hal9stm32f41110peripheral6gpio_bE"></span><span id="_CPPv2N3hal9stm32f41110peripheral6gpio_bE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0baa833ca9d1f8f845b7b1f5d3d04119101"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gpio_b</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral6gpio_bE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral6gpio_cE">
+<span id="_CPPv3N3hal9stm32f41110peripheral6gpio_cE"></span><span id="_CPPv2N3hal9stm32f41110peripheral6gpio_cE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0bacb7b7b3a09a146999692fbdfa7848fb4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gpio_c</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral6gpio_cE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral6gpio_dE">
+<span id="_CPPv3N3hal9stm32f41110peripheral6gpio_dE"></span><span id="_CPPv2N3hal9stm32f41110peripheral6gpio_dE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0bafacc9bec319d0465284ed6b63687c652"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gpio_d</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral6gpio_dE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral6gpio_eE">
+<span id="_CPPv3N3hal9stm32f41110peripheral6gpio_eE"></span><span id="_CPPv2N3hal9stm32f41110peripheral6gpio_eE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0babc67f2dfbe6076872f0bb1350bf37f05"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gpio_e</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral6gpio_eE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral6gpio_hE">
+<span id="_CPPv3N3hal9stm32f41110peripheral6gpio_hE"></span><span id="_CPPv2N3hal9stm32f41110peripheral6gpio_hE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0baf8e678f2ddc11a74f57244d819e93683"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gpio_h</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral6gpio_hE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral3crcE">
+<span id="_CPPv3N3hal9stm32f41110peripheral3crcE"></span><span id="_CPPv2N3hal9stm32f41110peripheral3crcE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0baf5ad59c5401fea3f2df0703d958fdc97"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crc</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral3crcE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral4dma1E">
+<span id="_CPPv3N3hal9stm32f41110peripheral4dma1E"></span><span id="_CPPv2N3hal9stm32f41110peripheral4dma1E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0ba4373713bcb21bd6dd730e0a630751477"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma1</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral4dma1E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral4dma2E">
+<span id="_CPPv3N3hal9stm32f41110peripheral4dma2E"></span><span id="_CPPv2N3hal9stm32f41110peripheral4dma2E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0bad032c4364c8fe0d43986a4a00608b2c2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma2</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral4dma2E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral7usb_otgE">
+<span id="_CPPv3N3hal9stm32f41110peripheral7usb_otgE"></span><span id="_CPPv2N3hal9stm32f41110peripheral7usb_otgE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0ba5e0bc21563db7a4a3de47dd3eb70b42e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">usb_otg</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral7usb_otgE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral6timer2E">
+<span id="_CPPv3N3hal9stm32f41110peripheral6timer2E"></span><span id="_CPPv2N3hal9stm32f41110peripheral6timer2E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0ba80ed5caa9918116f306340840f303067"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">timer2</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral6timer2E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral6timer3E">
+<span id="_CPPv3N3hal9stm32f41110peripheral6timer3E"></span><span id="_CPPv2N3hal9stm32f41110peripheral6timer3E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0ba65b5a8a526f38c63a0530f3036e120d4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">timer3</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral6timer3E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral6timer4E">
+<span id="_CPPv3N3hal9stm32f41110peripheral6timer4E"></span><span id="_CPPv2N3hal9stm32f41110peripheral6timer4E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0ba7e6b6d4035693847b8b64f2c77c27ad7"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">timer4</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral6timer4E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral6timer5E">
+<span id="_CPPv3N3hal9stm32f41110peripheral6timer5E"></span><span id="_CPPv2N3hal9stm32f41110peripheral6timer5E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0bafa55eae41d9c5965d32a485c64db805f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">timer5</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral6timer5E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral15window_watchdogE">
+<span id="_CPPv3N3hal9stm32f41110peripheral15window_watchdogE"></span><span id="_CPPv2N3hal9stm32f41110peripheral15window_watchdogE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0bae5faf60f1f12222cbe780b0bbef87e3f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">window_watchdog</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral15window_watchdogE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral4spi2E">
+<span id="_CPPv3N3hal9stm32f41110peripheral4spi2E"></span><span id="_CPPv2N3hal9stm32f41110peripheral4spi2E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0baa1becc428f64ec19e1e55736c285e0e8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spi2</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral4spi2E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral4spi3E">
+<span id="_CPPv3N3hal9stm32f41110peripheral4spi3E"></span><span id="_CPPv2N3hal9stm32f41110peripheral4spi3E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0ba1af7d4608cbe250211385afb021b4387"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spi3</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral4spi3E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral6usart2E">
+<span id="_CPPv3N3hal9stm32f41110peripheral6usart2E"></span><span id="_CPPv2N3hal9stm32f41110peripheral6usart2E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0ba70199feefebd183167f7520893219691"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">usart2</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral6usart2E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral4i2c1E">
+<span id="_CPPv3N3hal9stm32f41110peripheral4i2c1E"></span><span id="_CPPv2N3hal9stm32f41110peripheral4i2c1E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0baa0db315dd9ce9094089731320119af28"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i2c1</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral4i2c1E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral4i2c2E">
+<span id="_CPPv3N3hal9stm32f41110peripheral4i2c2E"></span><span id="_CPPv2N3hal9stm32f41110peripheral4i2c2E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0bac4ee482167c93f673fc5af4619a8b448"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i2c2</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral4i2c2E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral4i2c3E">
+<span id="_CPPv3N3hal9stm32f41110peripheral4i2c3E"></span><span id="_CPPv2N3hal9stm32f41110peripheral4i2c3E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0babac44ff519498585f1a4f2737d8db60b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i2c3</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral4i2c3E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral5powerE">
+<span id="_CPPv3N3hal9stm32f41110peripheral5powerE"></span><span id="_CPPv2N3hal9stm32f41110peripheral5powerE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0ba62cd275989e78ee56a81f0265a87562e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">power</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral5powerE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral6timer1E">
+<span id="_CPPv3N3hal9stm32f41110peripheral6timer1E"></span><span id="_CPPv2N3hal9stm32f41110peripheral6timer1E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0ba32d6a9eda46be7b70c9d51382740f633"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">timer1</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral6timer1E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral6usart1E">
+<span id="_CPPv3N3hal9stm32f41110peripheral6usart1E"></span><span id="_CPPv2N3hal9stm32f41110peripheral6usart1E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0ba662c4fd1e4636f3c622b9008b3bdee24"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">usart1</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral6usart1E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral6usart6E">
+<span id="_CPPv3N3hal9stm32f41110peripheral6usart6E"></span><span id="_CPPv2N3hal9stm32f41110peripheral6usart6E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0ba09f7636ca223c169b8081c0d699cf679"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">usart6</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral6usart6E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral4adc1E">
+<span id="_CPPv3N3hal9stm32f41110peripheral4adc1E"></span><span id="_CPPv2N3hal9stm32f41110peripheral4adc1E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0bad990c34f4ccdcceed97a37acf6ffd5ca"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">adc1</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral4adc1E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral4sdioE">
+<span id="_CPPv3N3hal9stm32f41110peripheral4sdioE"></span><span id="_CPPv2N3hal9stm32f41110peripheral4sdioE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0ba4f9f658d6f6ae57f32ff155bd24812c9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sdio</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral4sdioE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral4spi1E">
+<span id="_CPPv3N3hal9stm32f41110peripheral4spi1E"></span><span id="_CPPv2N3hal9stm32f41110peripheral4spi1E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0ba544689ba3469f273ec314262604619a4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spi1</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral4spi1E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral4spi4E">
+<span id="_CPPv3N3hal9stm32f41110peripheral4spi4E"></span><span id="_CPPv2N3hal9stm32f41110peripheral4spi4E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0ba56bc9b3c969c365a74acdaf5422beb1e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spi4</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral4spi4E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral24system_config_controllerE">
+<span id="_CPPv3N3hal9stm32f41110peripheral24system_config_controllerE"></span><span id="_CPPv2N3hal9stm32f41110peripheral24system_config_controllerE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0baa1e17a7578a3fa8e9ba97966dd624072"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">system_config_controller</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral24system_config_controllerE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral6timer9E">
+<span id="_CPPv3N3hal9stm32f41110peripheral6timer9E"></span><span id="_CPPv2N3hal9stm32f41110peripheral6timer9E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0bab0f8625b92c5a2bdaf6683ed1f310cd7"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">timer9</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral6timer9E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral7timer10E">
+<span id="_CPPv3N3hal9stm32f41110peripheral7timer10E"></span><span id="_CPPv2N3hal9stm32f41110peripheral7timer10E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0ba879c0613395605781a16ebf7fce4b44d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">timer10</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral7timer10E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral7timer11E">
+<span id="_CPPv3N3hal9stm32f41110peripheral7timer11E"></span><span id="_CPPv2N3hal9stm32f41110peripheral7timer11E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0ba91f054223c1608938c7fd5fd2960390f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">timer11</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral7timer11E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral4spi5E">
+<span id="_CPPv3N3hal9stm32f41110peripheral4spi5E"></span><span id="_CPPv2N3hal9stm32f41110peripheral4spi5E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0ba65ff3ea2bf29a3b547dd664e437d1b73"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spi5</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral4spi5E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral3cpuE">
+<span id="_CPPv3N3hal9stm32f41110peripheral3cpuE"></span><span id="_CPPv2N3hal9stm32f41110peripheral3cpuE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0bad9747e2da342bdb995f6389533ad1a3d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cpu</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral3cpuE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral12system_timerE">
+<span id="_CPPv3N3hal9stm32f41110peripheral12system_timerE"></span><span id="_CPPv2N3hal9stm32f41110peripheral12system_timerE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0baf2755df69e880d843b7e1af40d511835"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">system_timer</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral12system_timerE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110peripheral3i2sE">
+<span id="_CPPv3N3hal9stm32f41110peripheral3i2sE"></span><span id="_CPPv2N3hal9stm32f41110peripheral3i2sE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1a1842acafc82d0208879440dd6cf65e0ba7f68529abb01e6b228ceec06ec220ec1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i2s</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110peripheral3i2sE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irqE">
+<span id="_CPPv3N3hal9stm32f4113irqE"></span><span id="_CPPv2N3hal9stm32f4113irqE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">stm32f411</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">irq</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">cortex_m</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">irq_t</span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irqE" title="Link to this definition">#</a><br /></dt>
+<dd><p>List of interrupt request numbers for this platform. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq15window_watchdogE">
+<span id="_CPPv3N3hal9stm32f4113irq15window_watchdogE"></span><span id="_CPPv2N3hal9stm32f4113irq15window_watchdogE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03ae5faf60f1f12222cbe780b0bbef87e3f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">window_watchdog</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq15window_watchdogE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Window WatchDog. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq3pvdE">
+<span id="_CPPv3N3hal9stm32f4113irq3pvdE"></span><span id="_CPPv2N3hal9stm32f4113irq3pvdE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a78a84f93d185dcf4c59771263b3f1af3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pvd</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq3pvdE" title="Link to this definition">#</a><br /></dt>
+<dd><p>PVD through EXTI Line detection. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq6tamperE">
+<span id="_CPPv3N3hal9stm32f4113irq6tamperE"></span><span id="_CPPv2N3hal9stm32f4113irq6tamperE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a3fcd05a1469bda87af800c506b9ebc8b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tamper</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq6tamperE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Tamper. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq3rtcE">
+<span id="_CPPv3N3hal9stm32f4113irq3rtcE"></span><span id="_CPPv2N3hal9stm32f4113irq3rtcE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a68154466f81bfb532cd70f8c71426356"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rtc</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq3rtcE" title="Link to this definition">#</a><br /></dt>
+<dd><p>RTC. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq5flashE">
+<span id="_CPPv3N3hal9stm32f4113irq5flashE"></span><span id="_CPPv2N3hal9stm32f4113irq5flashE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03aa39401275d1b300aa789fb22aea4148a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">flash</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq5flashE" title="Link to this definition">#</a><br /></dt>
+<dd><p>FLASH. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq3rccE">
+<span id="_CPPv3N3hal9stm32f4113irq3rccE"></span><span id="_CPPv2N3hal9stm32f4113irq3rccE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03aa018881f8fefba70a163172087b7f45c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rcc</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq3rccE" title="Link to this definition">#</a><br /></dt>
+<dd><p>RCC. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq5exti0E">
+<span id="_CPPv3N3hal9stm32f4113irq5exti0E"></span><span id="_CPPv2N3hal9stm32f4113irq5exti0E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03ad36711d3c5641046c85cf8fd7c6ece81"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exti0</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq5exti0E" title="Link to this definition">#</a><br /></dt>
+<dd><p>EXTI Line0. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq5exti1E">
+<span id="_CPPv3N3hal9stm32f4113irq5exti1E"></span><span id="_CPPv2N3hal9stm32f4113irq5exti1E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a246fb80416f803c147e08c7db5997471"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exti1</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq5exti1E" title="Link to this definition">#</a><br /></dt>
+<dd><p>EXTI Line1. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq5exti2E">
+<span id="_CPPv3N3hal9stm32f4113irq5exti2E"></span><span id="_CPPv2N3hal9stm32f4113irq5exti2E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a01589cfc65335e3643fc38febc2ce1d4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exti2</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq5exti2E" title="Link to this definition">#</a><br /></dt>
+<dd><p>EXTI Line2. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq5exti3E">
+<span id="_CPPv3N3hal9stm32f4113irq5exti3E"></span><span id="_CPPv2N3hal9stm32f4113irq5exti3E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a7ad35ac6a2f537ce2a6f8f0fe6ea4609"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exti3</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq5exti3E" title="Link to this definition">#</a><br /></dt>
+<dd><p>EXTI Line3. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq5exti4E">
+<span id="_CPPv3N3hal9stm32f4113irq5exti4E"></span><span id="_CPPv2N3hal9stm32f4113irq5exti4E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a528d63c45ee6008ff98ac1da097bfc8b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exti4</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq5exti4E" title="Link to this definition">#</a><br /></dt>
+<dd><p>EXTI Line4. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq13dma1_channel0E">
+<span id="_CPPv3N3hal9stm32f4113irq13dma1_channel0E"></span><span id="_CPPv2N3hal9stm32f4113irq13dma1_channel0E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03af4b8fd9c36aea443130429ee729ab9c8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma1_channel0</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq13dma1_channel0E" title="Link to this definition">#</a><br /></dt>
+<dd><p>DMA1 Channel 0. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq13dma1_channel1E">
+<span id="_CPPv3N3hal9stm32f4113irq13dma1_channel1E"></span><span id="_CPPv2N3hal9stm32f4113irq13dma1_channel1E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a604c215796d0e2e64bee70ccefb78cb2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma1_channel1</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq13dma1_channel1E" title="Link to this definition">#</a><br /></dt>
+<dd><p>DMA1 Channel 1. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq13dma1_channel2E">
+<span id="_CPPv3N3hal9stm32f4113irq13dma1_channel2E"></span><span id="_CPPv2N3hal9stm32f4113irq13dma1_channel2E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a9013e0ca247c2daf546741b9d5e639ce"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma1_channel2</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq13dma1_channel2E" title="Link to this definition">#</a><br /></dt>
+<dd><p>DMA1 Channel 2. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq13dma1_channel3E">
+<span id="_CPPv3N3hal9stm32f4113irq13dma1_channel3E"></span><span id="_CPPv2N3hal9stm32f4113irq13dma1_channel3E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03ae290afdc712abfd5e70c47e8db42b8f5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma1_channel3</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq13dma1_channel3E" title="Link to this definition">#</a><br /></dt>
+<dd><p>DMA1 Channel 3. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq13dma1_channel4E">
+<span id="_CPPv3N3hal9stm32f4113irq13dma1_channel4E"></span><span id="_CPPv2N3hal9stm32f4113irq13dma1_channel4E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a71ed4346f000aca017ef451246395ae0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma1_channel4</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq13dma1_channel4E" title="Link to this definition">#</a><br /></dt>
+<dd><p>DMA1 Channel 4. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq13dma1_channel5E">
+<span id="_CPPv3N3hal9stm32f4113irq13dma1_channel5E"></span><span id="_CPPv2N3hal9stm32f4113irq13dma1_channel5E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a7b216ab3fd76fe02286efb5e76e7b2ce"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma1_channel5</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq13dma1_channel5E" title="Link to this definition">#</a><br /></dt>
+<dd><p>DMA1 Channel 5. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq13dma1_channel6E">
+<span id="_CPPv3N3hal9stm32f4113irq13dma1_channel6E"></span><span id="_CPPv2N3hal9stm32f4113irq13dma1_channel6E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a5c086fcd435e90496a36dbdd3bac0d1f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma1_channel6</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq13dma1_channel6E" title="Link to this definition">#</a><br /></dt>
+<dd><p>DMA1 Channel 6. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq4adc1E">
+<span id="_CPPv3N3hal9stm32f4113irq4adc1E"></span><span id="_CPPv2N3hal9stm32f4113irq4adc1E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03ad990c34f4ccdcceed97a37acf6ffd5ca"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">adc1</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq4adc1E" title="Link to this definition">#</a><br /></dt>
+<dd><p>ADC1. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq6exi9_5E">
+<span id="_CPPv3N3hal9stm32f4113irq6exi9_5E"></span><span id="_CPPv2N3hal9stm32f4113irq6exi9_5E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03aa5b6f7f78c99531c00d767fa93546626"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exi9_5</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq6exi9_5E" title="Link to this definition">#</a><br /></dt>
+<dd><p>EXTI Line[9:5]. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq8tim1_brkE">
+<span id="_CPPv3N3hal9stm32f4113irq8tim1_brkE"></span><span id="_CPPv2N3hal9stm32f4113irq8tim1_brkE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a58bf83133d95f79f7c1280f2704b16ee"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tim1_brk</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq8tim1_brkE" title="Link to this definition">#</a><br /></dt>
+<dd><p>TIM1 Break. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq14tim1_brk_tim19E">
+<span id="_CPPv3N3hal9stm32f4113irq14tim1_brk_tim19E"></span><span id="_CPPv2N3hal9stm32f4113irq14tim1_brk_tim19E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a03d51297e75399e0805fe7a94188c2fa"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tim1_brk_tim19</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq14tim1_brk_tim19E" title="Link to this definition">#</a><br /></dt>
+<dd><p>TIM1 Break and TIM19. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq7tim1_upE">
+<span id="_CPPv3N3hal9stm32f4113irq7tim1_upE"></span><span id="_CPPv2N3hal9stm32f4113irq7tim1_upE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03ae42654758c858c7fd0e183ddc4c7ef6b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tim1_up</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq7tim1_upE" title="Link to this definition">#</a><br /></dt>
+<dd><p>TIM1 Update. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq13tim1_up_tim10E">
+<span id="_CPPv3N3hal9stm32f4113irq13tim1_up_tim10E"></span><span id="_CPPv2N3hal9stm32f4113irq13tim1_up_tim10E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a7e1998a5871ede0577c0d35d212a70d2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tim1_up_tim10</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq13tim1_up_tim10E" title="Link to this definition">#</a><br /></dt>
+<dd><p>TIM1 Update and TIM10. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq12tim1_trg_comE">
+<span id="_CPPv3N3hal9stm32f4113irq12tim1_trg_comE"></span><span id="_CPPv2N3hal9stm32f4113irq12tim1_trg_comE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a0273a5b4e95b4aa12a388673cd5c5d5b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tim1_trg_com</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq12tim1_trg_comE" title="Link to this definition">#</a><br /></dt>
+<dd><p>TIM1 Trigger and Commutation. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq18tim1_trg_com_tim11E">
+<span id="_CPPv3N3hal9stm32f4113irq18tim1_trg_com_tim11E"></span><span id="_CPPv2N3hal9stm32f4113irq18tim1_trg_com_tim11E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03af66b1cc0f13ada3758b774e69253753c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tim1_trg_com_tim11</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq18tim1_trg_com_tim11E" title="Link to this definition">#</a><br /></dt>
+<dd><p>TIM1 Trigger and Commutation. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq7tim1_ccE">
+<span id="_CPPv3N3hal9stm32f4113irq7tim1_ccE"></span><span id="_CPPv2N3hal9stm32f4113irq7tim1_ccE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a68e476277756f533de88564a6ebddf91"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tim1_cc</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq7tim1_ccE" title="Link to this definition">#</a><br /></dt>
+<dd><p>TIM1 Capture Compare. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq4tim2E">
+<span id="_CPPv3N3hal9stm32f4113irq4tim2E"></span><span id="_CPPv2N3hal9stm32f4113irq4tim2E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a77b6fc6736661135bfe5f07d508ac397"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tim2</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq4tim2E" title="Link to this definition">#</a><br /></dt>
+<dd><p>TIM2. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq4tim3E">
+<span id="_CPPv3N3hal9stm32f4113irq4tim3E"></span><span id="_CPPv2N3hal9stm32f4113irq4tim3E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a49bd0c5907255e0ccbf7f8e57b5c5e60"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tim3</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq4tim3E" title="Link to this definition">#</a><br /></dt>
+<dd><p>TIM3. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq4tim4E">
+<span id="_CPPv3N3hal9stm32f4113irq4tim4E"></span><span id="_CPPv2N3hal9stm32f4113irq4tim4E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a732691416165459d1272888fb48366c2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tim4</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq4tim4E" title="Link to this definition">#</a><br /></dt>
+<dd><p>TIM4. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq7i2c1_evE">
+<span id="_CPPv3N3hal9stm32f4113irq7i2c1_evE"></span><span id="_CPPv2N3hal9stm32f4113irq7i2c1_evE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03ada5d23425dc0968528fdd3553b22723d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i2c1_ev</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq7i2c1_evE" title="Link to this definition">#</a><br /></dt>
+<dd><p>I2C1 Event. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq7i2c1_erE">
+<span id="_CPPv3N3hal9stm32f4113irq7i2c1_erE"></span><span id="_CPPv2N3hal9stm32f4113irq7i2c1_erE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a2f776843f782c7e0ee46460286a13eda"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i2c1_er</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq7i2c1_erE" title="Link to this definition">#</a><br /></dt>
+<dd><p>I2C1 Error. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq7i2c2_evE">
+<span id="_CPPv3N3hal9stm32f4113irq7i2c2_evE"></span><span id="_CPPv2N3hal9stm32f4113irq7i2c2_evE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03ad5949dabe6737c161f9913613a5b7fad"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i2c2_ev</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq7i2c2_evE" title="Link to this definition">#</a><br /></dt>
+<dd><p>I2C2 Event. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq7i2c2_erE">
+<span id="_CPPv3N3hal9stm32f4113irq7i2c2_erE"></span><span id="_CPPv2N3hal9stm32f4113irq7i2c2_erE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03afbe053bc1780032248050d5948551eb8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i2c2_er</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq7i2c2_erE" title="Link to this definition">#</a><br /></dt>
+<dd><p>I2C2 Error. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq4spi1E">
+<span id="_CPPv3N3hal9stm32f4113irq4spi1E"></span><span id="_CPPv2N3hal9stm32f4113irq4spi1E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a544689ba3469f273ec314262604619a4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spi1</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq4spi1E" title="Link to this definition">#</a><br /></dt>
+<dd><p>SPI1. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq4spi2E">
+<span id="_CPPv3N3hal9stm32f4113irq4spi2E"></span><span id="_CPPv2N3hal9stm32f4113irq4spi2E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03aa1becc428f64ec19e1e55736c285e0e8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spi2</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq4spi2E" title="Link to this definition">#</a><br /></dt>
+<dd><p>SPI2. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq6usart1E">
+<span id="_CPPv3N3hal9stm32f4113irq6usart1E"></span><span id="_CPPv2N3hal9stm32f4113irq6usart1E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a662c4fd1e4636f3c622b9008b3bdee24"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">usart1</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq6usart1E" title="Link to this definition">#</a><br /></dt>
+<dd><p>USART1. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq6usart2E">
+<span id="_CPPv3N3hal9stm32f4113irq6usart2E"></span><span id="_CPPv2N3hal9stm32f4113irq6usart2E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a70199feefebd183167f7520893219691"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">usart2</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq6usart2E" title="Link to this definition">#</a><br /></dt>
+<dd><p>USART2. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq9exti15_10E">
+<span id="_CPPv3N3hal9stm32f4113irq9exti15_10E"></span><span id="_CPPv2N3hal9stm32f4113irq9exti15_10E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03ab2bd754a30ea2db939d20808d0df3eaa"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exti15_10</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq9exti15_10E" title="Link to this definition">#</a><br /></dt>
+<dd><p>External Line[15:10]. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq6exti17E">
+<span id="_CPPv3N3hal9stm32f4113irq6exti17E"></span><span id="_CPPv2N3hal9stm32f4113irq6exti17E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a7edebfdb87b3f3554a1c7aac1b759b6e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exti17</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq6exti17E" title="Link to this definition">#</a><br /></dt>
+<dd><p>EXTI Line17. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq8rtcalarmE">
+<span id="_CPPv3N3hal9stm32f4113irq8rtcalarmE"></span><span id="_CPPv2N3hal9stm32f4113irq8rtcalarmE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a2997ac0897a4c92d220a2339c461dc58"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rtcalarm</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq8rtcalarmE" title="Link to this definition">#</a><br /></dt>
+<dd><p>RTC Alarm through EXTI Line. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq6exti18E">
+<span id="_CPPv3N3hal9stm32f4113irq6exti18E"></span><span id="_CPPv2N3hal9stm32f4113irq6exti18E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a56ac866f9d7d72b7e14c880442a1ec6d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exti18</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq6exti18E" title="Link to this definition">#</a><br /></dt>
+<dd><p>EXTI18 Line18. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq11otg_fs_wkupE">
+<span id="_CPPv3N3hal9stm32f4113irq11otg_fs_wkupE"></span><span id="_CPPv2N3hal9stm32f4113irq11otg_fs_wkupE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a9cc3f351848c9e4c0030efaaf16433ee"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">otg_fs_wkup</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq11otg_fs_wkupE" title="Link to this definition">#</a><br /></dt>
+<dd><p>USB OTG FS WakeUp. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq13dma1_channel7E">
+<span id="_CPPv3N3hal9stm32f4113irq13dma1_channel7E"></span><span id="_CPPv2N3hal9stm32f4113irq13dma1_channel7E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a9acf2b25783f19d1b2c168a21f442774"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma1_channel7</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq13dma1_channel7E" title="Link to this definition">#</a><br /></dt>
+<dd><p>DMA1_Channel7. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq4sdioE">
+<span id="_CPPv3N3hal9stm32f4113irq4sdioE"></span><span id="_CPPv2N3hal9stm32f4113irq4sdioE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a4f9f658d6f6ae57f32ff155bd24812c9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sdio</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq4sdioE" title="Link to this definition">#</a><br /></dt>
+<dd><p>SDIO. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq4tim5E">
+<span id="_CPPv3N3hal9stm32f4113irq4tim5E"></span><span id="_CPPv2N3hal9stm32f4113irq4tim5E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a2ad2410eda516f8b6f98dd5998f630d5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tim5</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq4tim5E" title="Link to this definition">#</a><br /></dt>
+<dd><p>TIM5. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq4spi3E">
+<span id="_CPPv3N3hal9stm32f4113irq4spi3E"></span><span id="_CPPv2N3hal9stm32f4113irq4spi3E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a1af7d4608cbe250211385afb021b4387"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spi3</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq4spi3E" title="Link to this definition">#</a><br /></dt>
+<dd><p>SPI3. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq13dma2_channel0E">
+<span id="_CPPv3N3hal9stm32f4113irq13dma2_channel0E"></span><span id="_CPPv2N3hal9stm32f4113irq13dma2_channel0E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a9477999a68fa5ab75c1341a6aef2f22a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma2_channel0</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq13dma2_channel0E" title="Link to this definition">#</a><br /></dt>
+<dd><p>DMA2 Channel 0. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq13dma2_channel1E">
+<span id="_CPPv3N3hal9stm32f4113irq13dma2_channel1E"></span><span id="_CPPv2N3hal9stm32f4113irq13dma2_channel1E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a3edf1be577a96e393107d94114e42c2f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma2_channel1</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq13dma2_channel1E" title="Link to this definition">#</a><br /></dt>
+<dd><p>DMA2 Channel 1. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq13dma2_channel2E">
+<span id="_CPPv3N3hal9stm32f4113irq13dma2_channel2E"></span><span id="_CPPv2N3hal9stm32f4113irq13dma2_channel2E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03afca4360f0e74b6ec556469462e70c62d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma2_channel2</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq13dma2_channel2E" title="Link to this definition">#</a><br /></dt>
+<dd><p>DMA2 Channel 2. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq13dma2_channel3E">
+<span id="_CPPv3N3hal9stm32f4113irq13dma2_channel3E"></span><span id="_CPPv2N3hal9stm32f4113irq13dma2_channel3E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03adb6d267618f8e6dc7e56f35d1846d5de"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma2_channel3</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq13dma2_channel3E" title="Link to this definition">#</a><br /></dt>
+<dd><p>DMA2 Channel 3. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq13dma2_channel4E">
+<span id="_CPPv3N3hal9stm32f4113irq13dma2_channel4E"></span><span id="_CPPv2N3hal9stm32f4113irq13dma2_channel4E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03acd8c22df43837d5a20d6ff6a858ed435"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma2_channel4</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq13dma2_channel4E" title="Link to this definition">#</a><br /></dt>
+<dd><p>DMA2 Channel 4. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq6otg_fsE">
+<span id="_CPPv3N3hal9stm32f4113irq6otg_fsE"></span><span id="_CPPv2N3hal9stm32f4113irq6otg_fsE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a46809c750af40e166cfed068117df762"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">otg_fs</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq6otg_fsE" title="Link to this definition">#</a><br /></dt>
+<dd><p>USB OTG FS. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq13dma2_channel5E">
+<span id="_CPPv3N3hal9stm32f4113irq13dma2_channel5E"></span><span id="_CPPv2N3hal9stm32f4113irq13dma2_channel5E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03abbaa45b83b99768a679586d1e510b303"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma2_channel5</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq13dma2_channel5E" title="Link to this definition">#</a><br /></dt>
+<dd><p>DMA2 Channel 5. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq13dma2_channel6E">
+<span id="_CPPv3N3hal9stm32f4113irq13dma2_channel6E"></span><span id="_CPPv2N3hal9stm32f4113irq13dma2_channel6E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a47232f1200c9fb682563658baa396393"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma2_channel6</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq13dma2_channel6E" title="Link to this definition">#</a><br /></dt>
+<dd><p>DMA2 Channel 6. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq13dma2_channel7E">
+<span id="_CPPv3N3hal9stm32f4113irq13dma2_channel7E"></span><span id="_CPPv2N3hal9stm32f4113irq13dma2_channel7E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a12b19b816d6370c8d007ad5e33c40365"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma2_channel7</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq13dma2_channel7E" title="Link to this definition">#</a><br /></dt>
+<dd><p>DMA2 Channel 7. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq6usart6E">
+<span id="_CPPv3N3hal9stm32f4113irq6usart6E"></span><span id="_CPPv2N3hal9stm32f4113irq6usart6E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a09f7636ca223c169b8081c0d699cf679"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">usart6</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq6usart6E" title="Link to this definition">#</a><br /></dt>
+<dd><p>USART6. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq7i2c3_evE">
+<span id="_CPPv3N3hal9stm32f4113irq7i2c3_evE"></span><span id="_CPPv2N3hal9stm32f4113irq7i2c3_evE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03adc0265f8d7848b2502222bcc266d5a15"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i2c3_ev</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq7i2c3_evE" title="Link to this definition">#</a><br /></dt>
+<dd><p>I2C3 Event. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq7i2c3_erE">
+<span id="_CPPv3N3hal9stm32f4113irq7i2c3_erE"></span><span id="_CPPv2N3hal9stm32f4113irq7i2c3_erE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03ab05d2328064a1300e3732ed90e8db6da"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i2c3_er</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq7i2c3_erE" title="Link to this definition">#</a><br /></dt>
+<dd><p>I2C3 Error. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq3fpuE">
+<span id="_CPPv3N3hal9stm32f4113irq3fpuE"></span><span id="_CPPv2N3hal9stm32f4113irq3fpuE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a0075ab5617d7f0d01c017e92e8a46e22"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fpu</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq3fpuE" title="Link to this definition">#</a><br /></dt>
+<dd><p>FPU. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq4spi4E">
+<span id="_CPPv3N3hal9stm32f4113irq4spi4E"></span><span id="_CPPv2N3hal9stm32f4113irq4spi4E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a56bc9b3c969c365a74acdaf5422beb1e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spi4</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq4spi4E" title="Link to this definition">#</a><br /></dt>
+<dd><p>SPI4. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq4spi5E">
+<span id="_CPPv3N3hal9stm32f4113irq4spi5E"></span><span id="_CPPv2N3hal9stm32f4113irq4spi5E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a65ff3ea2bf29a3b547dd664e437d1b73"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spi5</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq4spi5E" title="Link to this definition">#</a><br /></dt>
+<dd><p>SPI5. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113irq3maxE">
+<span id="_CPPv3N3hal9stm32f4113irq3maxE"></span><span id="_CPPv2N3hal9stm32f4113irq3maxE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2constants_8hpp_1aad556ed0b85f4af018ea54dfeb67ab03a2ffe4e77325d9a7152f7086ea7aa5114"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113irq3maxE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="clock.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">STM32F411 Clock APIs</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dma.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">STM32F411 DMA APIs</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheralE"><code class="docutils literal notranslate"><span class="pre">peripheral</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral6gpio_aE"><code class="docutils literal notranslate"><span class="pre">gpio_a</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral6gpio_bE"><code class="docutils literal notranslate"><span class="pre">gpio_b</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral6gpio_cE"><code class="docutils literal notranslate"><span class="pre">gpio_c</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral6gpio_dE"><code class="docutils literal notranslate"><span class="pre">gpio_d</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral6gpio_eE"><code class="docutils literal notranslate"><span class="pre">gpio_e</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral6gpio_hE"><code class="docutils literal notranslate"><span class="pre">gpio_h</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral3crcE"><code class="docutils literal notranslate"><span class="pre">crc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral4dma1E"><code class="docutils literal notranslate"><span class="pre">dma1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral4dma2E"><code class="docutils literal notranslate"><span class="pre">dma2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral7usb_otgE"><code class="docutils literal notranslate"><span class="pre">usb_otg</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral6timer2E"><code class="docutils literal notranslate"><span class="pre">timer2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral6timer3E"><code class="docutils literal notranslate"><span class="pre">timer3</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral6timer4E"><code class="docutils literal notranslate"><span class="pre">timer4</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral6timer5E"><code class="docutils literal notranslate"><span class="pre">timer5</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral15window_watchdogE"><code class="docutils literal notranslate"><span class="pre">window_watchdog</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral4spi2E"><code class="docutils literal notranslate"><span class="pre">spi2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral4spi3E"><code class="docutils literal notranslate"><span class="pre">spi3</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral6usart2E"><code class="docutils literal notranslate"><span class="pre">usart2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral4i2c1E"><code class="docutils literal notranslate"><span class="pre">i2c1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral4i2c2E"><code class="docutils literal notranslate"><span class="pre">i2c2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral4i2c3E"><code class="docutils literal notranslate"><span class="pre">i2c3</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral5powerE"><code class="docutils literal notranslate"><span class="pre">power</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral6timer1E"><code class="docutils literal notranslate"><span class="pre">timer1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral6usart1E"><code class="docutils literal notranslate"><span class="pre">usart1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral6usart6E"><code class="docutils literal notranslate"><span class="pre">usart6</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral4adc1E"><code class="docutils literal notranslate"><span class="pre">adc1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral4sdioE"><code class="docutils literal notranslate"><span class="pre">sdio</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral4spi1E"><code class="docutils literal notranslate"><span class="pre">spi1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral4spi4E"><code class="docutils literal notranslate"><span class="pre">spi4</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral24system_config_controllerE"><code class="docutils literal notranslate"><span class="pre">system_config_controller</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral6timer9E"><code class="docutils literal notranslate"><span class="pre">timer9</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral7timer10E"><code class="docutils literal notranslate"><span class="pre">timer10</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral7timer11E"><code class="docutils literal notranslate"><span class="pre">timer11</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral4spi5E"><code class="docutils literal notranslate"><span class="pre">spi5</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral3cpuE"><code class="docutils literal notranslate"><span class="pre">cpu</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral12system_timerE"><code class="docutils literal notranslate"><span class="pre">system_timer</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110peripheral3i2sE"><code class="docutils literal notranslate"><span class="pre">i2s</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irqE"><code class="docutils literal notranslate"><span class="pre">irq</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq15window_watchdogE"><code class="docutils literal notranslate"><span class="pre">window_watchdog</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq3pvdE"><code class="docutils literal notranslate"><span class="pre">pvd</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq6tamperE"><code class="docutils literal notranslate"><span class="pre">tamper</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq3rtcE"><code class="docutils literal notranslate"><span class="pre">rtc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq5flashE"><code class="docutils literal notranslate"><span class="pre">flash</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq3rccE"><code class="docutils literal notranslate"><span class="pre">rcc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq5exti0E"><code class="docutils literal notranslate"><span class="pre">exti0</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq5exti1E"><code class="docutils literal notranslate"><span class="pre">exti1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq5exti2E"><code class="docutils literal notranslate"><span class="pre">exti2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq5exti3E"><code class="docutils literal notranslate"><span class="pre">exti3</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq5exti4E"><code class="docutils literal notranslate"><span class="pre">exti4</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq13dma1_channel0E"><code class="docutils literal notranslate"><span class="pre">dma1_channel0</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq13dma1_channel1E"><code class="docutils literal notranslate"><span class="pre">dma1_channel1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq13dma1_channel2E"><code class="docutils literal notranslate"><span class="pre">dma1_channel2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq13dma1_channel3E"><code class="docutils literal notranslate"><span class="pre">dma1_channel3</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq13dma1_channel4E"><code class="docutils literal notranslate"><span class="pre">dma1_channel4</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq13dma1_channel5E"><code class="docutils literal notranslate"><span class="pre">dma1_channel5</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq13dma1_channel6E"><code class="docutils literal notranslate"><span class="pre">dma1_channel6</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq4adc1E"><code class="docutils literal notranslate"><span class="pre">adc1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq6exi9_5E"><code class="docutils literal notranslate"><span class="pre">exi9_5</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq8tim1_brkE"><code class="docutils literal notranslate"><span class="pre">tim1_brk</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq14tim1_brk_tim19E"><code class="docutils literal notranslate"><span class="pre">tim1_brk_tim19</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq7tim1_upE"><code class="docutils literal notranslate"><span class="pre">tim1_up</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq13tim1_up_tim10E"><code class="docutils literal notranslate"><span class="pre">tim1_up_tim10</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq12tim1_trg_comE"><code class="docutils literal notranslate"><span class="pre">tim1_trg_com</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq18tim1_trg_com_tim11E"><code class="docutils literal notranslate"><span class="pre">tim1_trg_com_tim11</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq7tim1_ccE"><code class="docutils literal notranslate"><span class="pre">tim1_cc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq4tim2E"><code class="docutils literal notranslate"><span class="pre">tim2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq4tim3E"><code class="docutils literal notranslate"><span class="pre">tim3</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq4tim4E"><code class="docutils literal notranslate"><span class="pre">tim4</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq7i2c1_evE"><code class="docutils literal notranslate"><span class="pre">i2c1_ev</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq7i2c1_erE"><code class="docutils literal notranslate"><span class="pre">i2c1_er</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq7i2c2_evE"><code class="docutils literal notranslate"><span class="pre">i2c2_ev</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq7i2c2_erE"><code class="docutils literal notranslate"><span class="pre">i2c2_er</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq4spi1E"><code class="docutils literal notranslate"><span class="pre">spi1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq4spi2E"><code class="docutils literal notranslate"><span class="pre">spi2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq6usart1E"><code class="docutils literal notranslate"><span class="pre">usart1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq6usart2E"><code class="docutils literal notranslate"><span class="pre">usart2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq9exti15_10E"><code class="docutils literal notranslate"><span class="pre">exti15_10</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq6exti17E"><code class="docutils literal notranslate"><span class="pre">exti17</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq8rtcalarmE"><code class="docutils literal notranslate"><span class="pre">rtcalarm</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq6exti18E"><code class="docutils literal notranslate"><span class="pre">exti18</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq11otg_fs_wkupE"><code class="docutils literal notranslate"><span class="pre">otg_fs_wkup</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq13dma1_channel7E"><code class="docutils literal notranslate"><span class="pre">dma1_channel7</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq4sdioE"><code class="docutils literal notranslate"><span class="pre">sdio</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq4tim5E"><code class="docutils literal notranslate"><span class="pre">tim5</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq4spi3E"><code class="docutils literal notranslate"><span class="pre">spi3</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq13dma2_channel0E"><code class="docutils literal notranslate"><span class="pre">dma2_channel0</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq13dma2_channel1E"><code class="docutils literal notranslate"><span class="pre">dma2_channel1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq13dma2_channel2E"><code class="docutils literal notranslate"><span class="pre">dma2_channel2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq13dma2_channel3E"><code class="docutils literal notranslate"><span class="pre">dma2_channel3</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq13dma2_channel4E"><code class="docutils literal notranslate"><span class="pre">dma2_channel4</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq6otg_fsE"><code class="docutils literal notranslate"><span class="pre">otg_fs</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq13dma2_channel5E"><code class="docutils literal notranslate"><span class="pre">dma2_channel5</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq13dma2_channel6E"><code class="docutils literal notranslate"><span class="pre">dma2_channel6</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq13dma2_channel7E"><code class="docutils literal notranslate"><span class="pre">dma2_channel7</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq6usart6E"><code class="docutils literal notranslate"><span class="pre">usart6</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq7i2c3_evE"><code class="docutils literal notranslate"><span class="pre">i2c3_ev</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq7i2c3_erE"><code class="docutils literal notranslate"><span class="pre">i2c3_er</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq3fpuE"><code class="docutils literal notranslate"><span class="pre">fpu</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq4spi4E"><code class="docutils literal notranslate"><span class="pre">spi4</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq4spi5E"><code class="docutils literal notranslate"><span class="pre">spi5</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113irq3maxE"><code class="docutils literal notranslate"><span class="pre">max</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/stm32f411/constants.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
