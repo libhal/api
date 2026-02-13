@@ -344,29 +344,39 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="accelerometer.html">Accelerometer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adc.html">Analog Digital Converter (ADC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="allocated_buffer.html">Allocated Buffer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="angular_velocity_sensor.html">Angular Velocity Sensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="can.html">Controlled Area Network (CAN)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="circular_buffer.html">Circular Buffer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dac.html">Digital Analog Converter (DAC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="distance_sensor.html">Distance Sensor</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Error</a></li>
 <li class="toctree-l1"><a class="reference internal" href="functional.html">Functional</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gyroscope.html">Gyroscope</a></li>
 <li class="toctree-l1"><a class="reference internal" href="i2c.html">Inter-integrated Circuit (I2C)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="initializers.html">Initializers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="input_pin.html">Input Pin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interrupt_pin.html">Interrupt Pin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="io_waiter.html">IO Waiter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lock.html">Lock</a></li>
 <li class="toctree-l1"><a class="reference internal" href="magnetometer.html">Magnetometer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motor.html">Motor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="output_pin.html">Output Pin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pointers.html">Pointers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pwm.html">Pulse Width Modulation (PWM)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rotation_sensor.html">Rotational Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scatter_span.html">Scatter Span</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serial.html">Serial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="servo.html">Servo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="spi.html">Serial Peripheral Interface (SPI)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="steady_clock.html">Steady Clock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stream_dac.html">Stream DAC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="temperature_sensor.html">Temperature Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timed_interrupt.html">Timed Interrupt</a></li>
 <li class="toctree-l1"><a class="reference internal" href="timeout.html">Timeout</a></li>
 <li class="toctree-l1"><a class="reference internal" href="timer.html">Timer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="units.html">Units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usb.html">USB</a></li>
 </ul>
 </div>
 </nav></div>
@@ -601,7 +611,7 @@
 <p><dl>
 <dt class="sig sig-object cpp">
 <em><span class="pre">Deprecated:</span></em></dt>
-<dd><p>I2c no longer uses this exception when another controller on the bus is currently performing a transaction. The new behavior is to wait for the bus to become available. <code class="docutils literal notranslate"><span class="pre">hal::io_waiter</span></code> can be used to get out of the <a class="reference internal" href="i2c.html#classhal_1_1i2c"><span class="std std-ref">i2c</span></a> if a deadline has been exceeded. There are no other interfaces for which this exception makes sense and thus an example describing when to use this and how to recover from it does not exist. Until such an example is found, this error type should not be thrown and should be considered deprecated. If such a use case becomes known, then this comment will be updated, deprecation notice will be removed, and this type can be used in those situations.</p>
+<dd><p>I2c no longer uses this exception when another controller on the bus is currently performing a transaction. The new behavior is to wait for the bus to become available. <code class="docutils literal notranslate"><a class="reference internal" href="io_waiter.html#classhal_1_1io__waiter"><span class="std std-ref"><span class="pre">hal::io_waiter</span></span></a></code> can be used to get out of the <a class="reference internal" href="i2c.html#classhal_1_1i2c"><span class="std std-ref">i2c</span></a> if a deadline has been exceeded. There are no other interfaces for which this exception makes sense and thus an example describing when to use this and how to recover from it does not exist. Until such an example is found, this error type should not be thrown and should be considered deprecated. If such a use case becomes known, then this comment will be updated, deprecation notice will be removed, and this type can be used in those situations.</p>
 </dd></dl>
 
 </p>
