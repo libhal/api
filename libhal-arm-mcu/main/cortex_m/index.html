@@ -41,8 +41,8 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'cortex_m/index';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
@@ -242,6 +242,44 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32f1/index.html">
+    Libhal STM32F1
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../stm32f40/index.html">
+    Libhal STM32F40
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../stm32f411/index.html">
+    Libhal STM32F411
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../stm32_generic/index.html">
+    Libhal STM32 Generic
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
   </ul>
 </nav></div>
       
@@ -339,6 +377,34 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32f1/index.html">
+    Libhal STM32F1
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32f40/index.html">
+    Libhal STM32F40
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32f411/index.html">
+    Libhal STM32F411
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32_generic/index.html">
+    Libhal STM32 Generic
+  </a>
+</li>
+
   </ul>
 </nav></div>
           
@@ -357,6 +423,10 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">ARM MCU drivers</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dwt_counter.html">DWT (Debug-Watchdog-Trace) Counter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interrupt.html">Interrupt Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startup.html">Startup Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system_control.html">System Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="systick_timer.html">SysTick Timer</a></li>
 </ul>
 </div>
 </nav></div>
@@ -425,6 +495,80 @@
 <li class="toctree-l3"><a class="reference internal" href="dwt_counter.html#_CPPv4N3hal8cortex_m11dwt_counterE"><code class="docutils literal notranslate"><span class="pre">hal::cortex_m::dwt_counter</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="dwt_counter.html#_CPPv4N3hal8cortex_m11dwt_counter11dwt_counterE5hertz"><code class="docutils literal notranslate"><span class="pre">dwt_counter()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="dwt_counter.html#_CPPv4N3hal8cortex_m11dwt_counter22register_cpu_frequencyE5hertz"><code class="docutils literal notranslate"><span class="pre">register_cpu_frequency()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="interrupt.html">Interrupt Controller</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="interrupt.html#nvic-nested-vector-interrupt-controller">NVIC (Nested Vector Interrupt Controller)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m3irqE"><code class="docutils literal notranslate"><span class="pre">irq</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m3irq12top_of_stackE"><code class="docutils literal notranslate"><span class="pre">top_of_stack</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m3irq5resetE"><code class="docutils literal notranslate"><span class="pre">reset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m3irq22non_maskable_interruptE"><code class="docutils literal notranslate"><span class="pre">non_maskable_interrupt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m3irq10hard_faultE"><code class="docutils literal notranslate"><span class="pre">hard_fault</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m3irq23memory_management_faultE"><code class="docutils literal notranslate"><span class="pre">memory_management_fault</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m3irq9bus_faultE"><code class="docutils literal notranslate"><span class="pre">bus_fault</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m3irq11usage_faultE"><code class="docutils literal notranslate"><span class="pre">usage_fault</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m3irq8reserve7E"><code class="docutils literal notranslate"><span class="pre">reserve7</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m3irq8reserve8E"><code class="docutils literal notranslate"><span class="pre">reserve8</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m3irq8reserve9E"><code class="docutils literal notranslate"><span class="pre">reserve9</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m3irq9reserve10E"><code class="docutils literal notranslate"><span class="pre">reserve10</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m3irq13software_callE"><code class="docutils literal notranslate"><span class="pre">software_call</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m3irq9reserve12E"><code class="docutils literal notranslate"><span class="pre">reserve12</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m3irq9reserve13E"><code class="docutils literal notranslate"><span class="pre">reserve13</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m3irq7pend_svE"><code class="docutils literal notranslate"><span class="pre">pend_sv</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m3irq7systickE"><code class="docutils literal notranslate"><span class="pre">systick</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m25default_interrupt_handlerEv"><code class="docutils literal notranslate"><span class="pre">default_interrupt_handler()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m18hard_fault_handlerEv"><code class="docutils literal notranslate"><span class="pre">hard_fault_handler()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m31memory_management_fault_handlerEv"><code class="docutils literal notranslate"><span class="pre">memory_management_fault_handler()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m17bus_fault_handlerEv"><code class="docutils literal notranslate"><span class="pre">bus_fault_handler()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m19usage_fault_handlerEv"><code class="docutils literal notranslate"><span class="pre">usage_fault_handler()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m29revert_interrupt_vector_tableEv"><code class="docutils literal notranslate"><span class="pre">revert_interrupt_vector_table()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m21initialize_interruptsENSt4spanI17interrupt_pointerEE"><code class="docutils literal notranslate"><span class="pre">initialize_interrupts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m34interrupt_vector_table_initializedEv"><code class="docutils literal notranslate"><span class="pre">interrupt_vector_table_initialized()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m22disable_all_interruptsEv"><code class="docutils literal notranslate"><span class="pre">disable_all_interrupts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m21enable_all_interruptsEv"><code class="docutils literal notranslate"><span class="pre">enable_all_interrupts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m16get_vector_tableEv"><code class="docutils literal notranslate"><span class="pre">get_vector_table()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m16enable_interruptE5irq_t17interrupt_pointer"><code class="docutils literal notranslate"><span class="pre">enable_interrupt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m17disable_interruptE5irq_t"><code class="docutils literal notranslate"><span class="pre">disable_interrupt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m20is_interrupt_enabledE5irq_t"><code class="docutils literal notranslate"><span class="pre">is_interrupt_enabled()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m21verify_vector_enabledE5irq_t17interrupt_pointer"><code class="docutils literal notranslate"><span class="pre">verify_vector_enabled()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="startup.html">Startup Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="startup.html#arm-cortex-m-startup-utilities">ARM Cortex-M Startup Utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="startup.html#_CPPv4N3hal8cortex_m23initialize_data_sectionEv"><code class="docutils literal notranslate"><span class="pre">initialize_data_section()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="startup.html#_CPPv4N3hal8cortex_m22initialize_bss_sectionEv"><code class="docutils literal notranslate"><span class="pre">initialize_bss_section()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="system_control.html">System Control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="system_control.html#arm-cortex-m-system-control-functions">ARM Cortex-M System Control Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="system_control.html#_CPPv4N3hal8cortex_m30initialize_floating_point_unitEv"><code class="docutils literal notranslate"><span class="pre">initialize_floating_point_unit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="system_control.html#_CPPv4N3hal8cortex_m34get_interrupt_vector_table_addressEv"><code class="docutils literal notranslate"><span class="pre">get_interrupt_vector_table_address()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="system_control.html#_CPPv4N3hal8cortex_m34set_interrupt_vector_table_addressEPv"><code class="docutils literal notranslate"><span class="pre">set_interrupt_vector_table_address()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="system_control.html#_CPPv4N3hal8cortex_m5resetEv"><code class="docutils literal notranslate"><span class="pre">reset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="system_control.html#_CPPv4N3hal8cortex_m18wait_for_interruptEv"><code class="docutils literal notranslate"><span class="pre">wait_for_interrupt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="system_control.html#_CPPv4N3hal8cortex_m14wait_for_eventEv"><code class="docutils literal notranslate"><span class="pre">wait_for_event()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="system_control.html#_CPPv4N3hal8cortex_m18debugger_connectedEv"><code class="docutils literal notranslate"><span class="pre">debugger_connected()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="systick_timer.html">SysTick Timer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="systick_timer.html#arm-cortex-m-systick-timer">ARM Cortex-M SysTick Timer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="systick_timer.html#_CPPv4N3hal8cortex_m13systick_timerE"><code class="docutils literal notranslate"><span class="pre">hal::cortex_m::systick_timer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="systick_timer.html#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE"><code class="docutils literal notranslate"><span class="pre">clock_source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="systick_timer.html#_CPPv4N3hal8cortex_m13systick_timer13systick_timerE5hertz12clock_source"><code class="docutils literal notranslate"><span class="pre">systick_timer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="systick_timer.html#_CPPv4N3hal8cortex_m13systick_timer22register_cpu_frequencyE5hertz12clock_source"><code class="docutils literal notranslate"><span class="pre">register_cpu_frequency()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="systick_timer.html#_CPPv4N3hal8cortex_m13systick_timerD0Ev"><code class="docutils literal notranslate"><span class="pre">~systick_timer()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -507,7 +651,7 @@
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
     <br/>
   </p>
 </div>

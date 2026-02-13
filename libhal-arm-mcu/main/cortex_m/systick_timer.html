@@ -41,8 +41,8 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'cortex_m/systick_timer';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
@@ -54,6 +54,8 @@
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="libhal-arm-mcu LPC40 API Documentation" href="../lpc40/index.html" />
+    <link rel="prev" title="System Control" href="system_control.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -227,7 +229,7 @@
 <nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-<li class="nav-item ">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
     Libhal Cortex M
   </a>
@@ -240,6 +242,44 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32f1/index.html">
+    Libhal STM32F1
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../stm32f40/index.html">
+    Libhal STM32F40
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../stm32f411/index.html">
+    Libhal STM32F411
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../stm32_generic/index.html">
+    Libhal STM32 Generic
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
   </ul>
 </nav></div>
       
@@ -308,10 +348,8 @@
       
       
       
-        
-      
       <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -326,7 +364,7 @@
 <nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-<li class="nav-item ">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
     Libhal Cortex M
   </a>
@@ -339,6 +377,34 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32f1/index.html">
+    Libhal STM32F1
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32f40/index.html">
+    Libhal STM32F40
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32f411/index.html">
+    Libhal STM32F411
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32_generic/index.html">
+    Libhal STM32 Generic
+  </a>
+</li>
+
   </ul>
 </nav></div>
           
@@ -348,6 +414,23 @@
     
     
   </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">ARM MCU drivers</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dwt_counter.html">DWT (Debug-Watchdog-Trace) Counter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interrupt.html">Interrupt Controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startup.html">Startup Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system_control.html">System Control</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">SysTick Timer</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
@@ -384,6 +467,9 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">libhal-arm-mcu API Documentation</a></li>
+    
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">SysTick Timer</span></li>
   </ul>
 </nav>
@@ -409,25 +495,25 @@
 <p><em>#include &lt;libhal-arm-mcu/systick_timer.hpp&gt;</em></p>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m13systick_timerE">
-<span id="_CPPv3N3hal8cortex_m13systick_timerE"></span><span id="_CPPv2N3hal8cortex_m13systick_timerE"></span><span id="hal::cortex_m::systick_timer"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">systick_timer</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">timer</span></span><br /></dt>
+<span id="_CPPv3N3hal8cortex_m13systick_timerE"></span><span id="_CPPv2N3hal8cortex_m13systick_timerE"></span><span id="hal::cortex_m::systick_timer"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">systick_timer</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">timer</span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m13systick_timerE" title="Link to this definition">#</a><br /></dt>
 <dd><p>SysTick driver for the ARM Cortex Mx series chips. </p>
 <p>Available in all ARM Cortex M series processors. Provides a generic and simple timer for every platform using these processor. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
 <dl class="cpp enum-class">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE">
-<span id="_CPPv3N3hal8cortex_m13systick_timer12clock_sourceE"></span><span id="_CPPv2N3hal8cortex_m13systick_timer12clock_sourceE"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer_1aa22c6596daeb47443ad2f841445e75d2"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clock_source</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint8_t</span></span><br /></dt>
+<span id="_CPPv3N3hal8cortex_m13systick_timer12clock_sourceE"></span><span id="_CPPv2N3hal8cortex_m13systick_timer12clock_sourceE"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer_1aa22c6596daeb47443ad2f841445e75d2"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clock_source</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint8_t</span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Defines the set of clock sources for the SysTick timer. </p>
 <p><em>Values:</em></p>
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m13systick_timer12clock_source8externalE">
-<span id="_CPPv3N3hal8cortex_m13systick_timer12clock_source8externalE"></span><span id="_CPPv2N3hal8cortex_m13systick_timer12clock_source8externalE"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer_1aa22c6596daeb47443ad2f841445e75d2a6a21b6995a068148bbb65c8f949b3fb2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">external</span></span></span><br /></dt>
+<span id="_CPPv3N3hal8cortex_m13systick_timer12clock_source8externalE"></span><span id="_CPPv2N3hal8cortex_m13systick_timer12clock_source8externalE"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer_1aa22c6596daeb47443ad2f841445e75d2a6a21b6995a068148bbb65c8f949b3fb2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">external</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_source8externalE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Use an external clock source. What this source is depends on the architecture and configuration of the platform. </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m13systick_timer12clock_source9processorE">
-<span id="_CPPv3N3hal8cortex_m13systick_timer12clock_source9processorE"></span><span id="_CPPv2N3hal8cortex_m13systick_timer12clock_source9processorE"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer_1aa22c6596daeb47443ad2f841445e75d2a649ce0650379a0aaff63c1ce257350de"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">processor</span></span></span><br /></dt>
+<span id="_CPPv3N3hal8cortex_m13systick_timer12clock_source9processorE"></span><span id="_CPPv2N3hal8cortex_m13systick_timer12clock_source9processorE"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer_1aa22c6596daeb47443ad2f841445e75d2a649ce0650379a0aaff63c1ce257350de"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">processor</span></span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_source9processorE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Use the clock given to the CPU. </p>
 </dd></dl>
 
@@ -438,7 +524,7 @@
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m13systick_timer13systick_timerE5hertz12clock_source">
-<span id="_CPPv3N3hal8cortex_m13systick_timer13systick_timerE5hertz12clock_source"></span><span id="_CPPv2N3hal8cortex_m13systick_timer13systick_timerE5hertz12clock_source"></span><span id="hal::cortex_m::systick_timer::systick_timer__hertz.clock_source"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer_1a9081457aedc3aaa442eff5498612151d"></span><span class="sig-name descname"><span class="n"><span class="pre">systick_timer</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">hertz</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_frequency</span></span>, <a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE" title="hal::cortex_m::systick_timer::clock_source"><span class="n"><span class="pre">clock_source</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_source</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE" title="hal::cortex_m::systick_timer::clock_source"><span class="n"><span class="pre">clock_source</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m13systick_timer12clock_source9processorE" title="hal::cortex_m::systick_timer::clock_source::processor"><span class="n"><span class="pre">processor</span></span></a><span class="sig-paren">)</span><br /></dt>
+<span id="_CPPv3N3hal8cortex_m13systick_timer13systick_timerE5hertz12clock_source"></span><span id="_CPPv2N3hal8cortex_m13systick_timer13systick_timerE5hertz12clock_source"></span><span id="hal::cortex_m::systick_timer::systick_timer__hertz.clock_source"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer_1a9081457aedc3aaa442eff5498612151d"></span><span class="sig-name descname"><span class="n"><span class="pre">systick_timer</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">hertz</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_frequency</span></span>, <a class="reference internal" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE" title="hal::cortex_m::systick_timer::clock_source"><span class="n"><span class="pre">clock_source</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_source</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE" title="hal::cortex_m::systick_timer::clock_source"><span class="n"><span class="pre">clock_source</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_source9processorE" title="hal::cortex_m::systick_timer::clock_source::processor"><span class="n"><span class="pre">processor</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m13systick_timer13systick_timerE5hertz12clock_source" title="Link to this definition">#</a><br /></dt>
 <dd><p>Construct a new <a class="reference internal" href="#classhal_1_1cortex__m_1_1systick__timer"><span class="std std-ref">systick_timer</span></a> timer object. </p>
 <p>PRECONDITION: Interrupt vector table must be initialized before creating an instance of this object.</p>
 <dl class="field-list simple">
@@ -456,7 +542,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m13systick_timer22register_cpu_frequencyE5hertz12clock_source">
-<span id="_CPPv3N3hal8cortex_m13systick_timer22register_cpu_frequencyE5hertz12clock_source"></span><span id="_CPPv2N3hal8cortex_m13systick_timer22register_cpu_frequencyE5hertz12clock_source"></span><span id="hal::cortex_m::systick_timer::register_cpu_frequency__hertz.clock_source"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer_1a3b9355bbfb019f61dc1296075637b5ec"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">register_cpu_frequency</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">hertz</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_frequency</span></span>, <a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE" title="hal::cortex_m::systick_timer::clock_source"><span class="n"><span class="pre">clock_source</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_source</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE" title="hal::cortex_m::systick_timer::clock_source"><span class="n"><span class="pre">clock_source</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="interrupt.html#_CPPv4N3hal8cortex_m13systick_timer12clock_source9processorE" title="hal::cortex_m::systick_timer::clock_source::processor"><span class="n"><span class="pre">processor</span></span></a><span class="sig-paren">)</span><br /></dt>
+<span id="_CPPv3N3hal8cortex_m13systick_timer22register_cpu_frequencyE5hertz12clock_source"></span><span id="_CPPv2N3hal8cortex_m13systick_timer22register_cpu_frequencyE5hertz12clock_source"></span><span id="hal::cortex_m::systick_timer::register_cpu_frequency__hertz.clock_source"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer_1a3b9355bbfb019f61dc1296075637b5ec"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">register_cpu_frequency</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">hertz</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_frequency</span></span>, <a class="reference internal" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE" title="hal::cortex_m::systick_timer::clock_source"><span class="n"><span class="pre">clock_source</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_source</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE" title="hal::cortex_m::systick_timer::clock_source"><span class="n"><span class="pre">clock_source</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N3hal8cortex_m13systick_timer12clock_source9processorE" title="hal::cortex_m::systick_timer::clock_source::processor"><span class="n"><span class="pre">processor</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal8cortex_m13systick_timer22register_cpu_frequencyE5hertz12clock_source" title="Link to this definition">#</a><br /></dt>
 <dd><p>Inform the driver of the operating frequency of the CPU in order to generate the correct uptime. </p>
 <p>Use this when the CPU’s operating frequency has changed and no longer matches the frequency supplied to the constructor. Care should be taken when expecting this function when there is the potentially other parts of the system that depend on this counter’s uptime to operate.</p>
 <p>This will clear any ongoing scheduled events as the timing will no longer be valid.</p>
@@ -472,7 +558,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal8cortex_m13systick_timerD0Ev">
-<span id="_CPPv3N3hal8cortex_m13systick_timerD0Ev"></span><span id="_CPPv2N3hal8cortex_m13systick_timerD0Ev"></span><span id="hal::cortex_m::systick_timer::~systick_timer"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer_1a4691401a4f10a6c41e9fae8daf98f7d4"></span><span class="sig-name descname"><span class="n"><span class="pre">~systick_timer</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><br /></dt>
+<span id="_CPPv3N3hal8cortex_m13systick_timerD0Ev"></span><span id="_CPPv2N3hal8cortex_m13systick_timerD0Ev"></span><span id="hal::cortex_m::systick_timer::~systick_timer"></span><span class="target" id="classhal_1_1cortex__m_1_1systick__timer_1a4691401a4f10a6c41e9fae8daf98f7d4"></span><span class="sig-name descname"><span class="n"><span class="pre">~systick_timer</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N3hal8cortex_m13systick_timerD0Ev" title="Link to this definition">#</a><br /></dt>
 <dd><p>Destroy the system timer object. </p>
 <p>Stop the timer and disable the interrupt service routine. </p>
 </dd></dl>
@@ -493,6 +579,24 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="system_control.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">System Control</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../lpc40/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">libhal-arm-mcu LPC40 API Documentation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -562,7 +666,7 @@
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
     <br/>
   </p>
 </div>
