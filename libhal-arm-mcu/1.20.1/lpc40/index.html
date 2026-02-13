@@ -1,0 +1,973 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>libhal-arm-mcu LPC40 API Documentation &#8212; libhal-arm-mcu  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lpc40/index';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/libhal-arm-mcu/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.20.1';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="LPC40 ADC APIs" href="adc.html" />
+    <link rel="prev" title="SysTick Timer" href="../cortex_m/systick_timer.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="libhal-arm-mcu  documentation - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="libhal-arm-mcu  documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<nav class="navbar-nav">
+  <p
+    class="sidebar-header-items__title"
+    role="heading"
+    aria-level="2"
+    aria-label="Site Navigation"
+  ></p>
+  <ul class="bd-navbar-elements navbar-nav">
+    <li class="nav-item dropdown">
+      <button
+        class="btn dropdown-toggle nav-item"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        aria-controls="pst-nav-more-links"
+      >
+        Guides
+      </button>
+      <ul id="pst-nav-more-links" class="dropdown-menu">
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/"
+          >
+            🏡 Introduction
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/getting_started/"
+          >
+            🚀 Getting Started
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/user_guide/fundamentals/"
+          >
+            📖 User Guide
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/contributor_guide/philosophy/"
+          >
+            📚 Contributor Guides
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/project_information/status/"
+          >
+            📊 Project Information
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../cortex_m/index.html">
+    Libhal Cortex M
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Libhal LPC40xx
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32f1/index.html">
+    Libhal STM32F1
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../stm32f40/index.html">
+    Libhal STM32F40
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../stm32f411/index.html">
+    Libhal STM32F411
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../stm32_generic/index.html">
+    Libhal STM32 Generic
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../cortex_m/index.html">
+    Libhal Cortex M
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Libhal LPC40xx
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32f1/index.html">
+    Libhal STM32F1
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32f40/index.html">
+    Libhal STM32F40
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32f411/index.html">
+    Libhal STM32F411
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32_generic/index.html">
+    Libhal STM32 Generic
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">LPC40 drivers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="adc.html">LPC40 ADC APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="can.html">LPC40 CAN APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clock.html">LPC40 Clock APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constants.html">LPC40 Constants APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dac.html">LPC40 DAC APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dma.html">LPC40 DMA APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dma_spi.html">LPC40 DMA SPI APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="i2c.html">LPC40 I2C APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input_pin.html">LPC40 Input Pin APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interrupt.html">LPC40 Interrupt APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interrupt_pin.html">LPC40 Interrupt Pin APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output_pin.html">LPC40 Output Pin APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pin.html">LPC40 Pin APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="power.html">LPC40 Power APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwm.html">LPC40 PWM APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spi.html">LPC40 SPI APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stream_dac.html">LPC40 Stream DAC APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uart.html">LPC40 UART APIs</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">libhal-arm-mcu LPC40 API Documentation</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="libhal-arm-mcu-lpc40-api-documentation">
+<h1>libhal-arm-mcu LPC40 API Documentation<a class="headerlink" href="#libhal-arm-mcu-lpc40-api-documentation" title="Link to this heading">#</a></h1>
+<p>Here are the collection of drivers for the LPC40 series microcontrollers.</p>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">LPC40 drivers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adc.html">LPC40 ADC APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="adc.html#hal-lpc40-adc"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::adc</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="adc.html#_CPPv4N3hal5lpc403adcE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::adc</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="adc.html#_CPPv4N3hal5lpc403adc3adcEN3hal13channel_paramE"><code class="docutils literal notranslate"><span class="pre">adc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="adc.html#_CPPv4N3hal5lpc403adc3adcERK7channel"><code class="docutils literal notranslate"><span class="pre">adc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="adc.html#_CPPv4N3hal5lpc403adc7channelE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::adc::channel</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="can.html">LPC40 CAN APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="can.html#hal-lpc40-can"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::can</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="can.html#_CPPv4N3hal5lpc403canE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::can</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal5lpc403can4portE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::can::port</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="clock.html">LPC40 Clock APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#hal-lpc40-clock-tree"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4016usb_clock_sourceE"><code class="docutils literal notranslate"><span class="pre">usb_clock_source</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4016usb_clock_source12system_clockE"><code class="docutils literal notranslate"><span class="pre">system_clock</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4016usb_clock_source4pll0E"><code class="docutils literal notranslate"><span class="pre">pll0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4016usb_clock_source4pll1E"><code class="docutils literal notranslate"><span class="pre">pll1</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4011usb_dividerE"><code class="docutils literal notranslate"><span class="pre">usb_divider</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4011usb_divider10divide_by1E"><code class="docutils literal notranslate"><span class="pre">divide_by1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4011usb_divider10divide_by2E"><code class="docutils literal notranslate"><span class="pre">divide_by2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4011usb_divider10divide_by3E"><code class="docutils literal notranslate"><span class="pre">divide_by3</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4011usb_divider10divide_by4E"><code class="docutils literal notranslate"><span class="pre">divide_by4</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4018spifi_clock_sourceE"><code class="docutils literal notranslate"><span class="pre">spifi_clock_source</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4018spifi_clock_source12system_clockE"><code class="docutils literal notranslate"><span class="pre">system_clock</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4018spifi_clock_source4pll0E"><code class="docutils literal notranslate"><span class="pre">pll0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4018spifi_clock_source4pll1E"><code class="docutils literal notranslate"><span class="pre">pll1</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4019flash_configurationE"><code class="docutils literal notranslate"><span class="pre">flash_configuration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4019flash_configuration6clock1E"><code class="docutils literal notranslate"><span class="pre">clock1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4019flash_configuration6clock2E"><code class="docutils literal notranslate"><span class="pre">clock2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4019flash_configuration6clock3E"><code class="docutils literal notranslate"><span class="pre">clock3</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4019flash_configuration6clock4E"><code class="docutils literal notranslate"><span class="pre">clock4</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4019flash_configuration6clock5E"><code class="docutils literal notranslate"><span class="pre">clock5</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4019flash_configuration6clock6E"><code class="docutils literal notranslate"><span class="pre">clock6</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4010clock_treeE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4010clock_tree20oscillator_frequencyE"><code class="docutils literal notranslate"><span class="pre">oscillator_frequency</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4010clock_tree23use_external_oscillatorE"><code class="docutils literal notranslate"><span class="pre">use_external_oscillator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4010clock_tree3pllE"><code class="docutils literal notranslate"><span class="pre">pll</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4010clock_tree3cpuE"><code class="docutils literal notranslate"><span class="pre">cpu</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4010clock_tree3usbE"><code class="docutils literal notranslate"><span class="pre">usb</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4010clock_tree5spifiE"><code class="docutils literal notranslate"><span class="pre">spifi</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4010clock_tree18peripheral_dividerE"><code class="docutils literal notranslate"><span class="pre">peripheral_divider</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4010clock_tree20emc_half_cpu_dividerE"><code class="docutils literal notranslate"><span class="pre">emc_half_cpu_divider</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4010clock_tree5cpu_tE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree::cpu_t</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4010clock_tree5pll_tE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree::pll_t</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4010clock_tree7spifi_tE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree::spifi_t</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4010clock_tree5usb_tE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree::usb_t</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc407maximumE5hertz"><code class="docutils literal notranslate"><span class="pre">maximum()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4013get_frequencyE10peripheral"><code class="docutils literal notranslate"><span class="pre">get_frequency()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4025using_external_oscillatorEv"><code class="docutils literal notranslate"><span class="pre">using_external_oscillator()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal5lpc4016configure_clocksERK10clock_tree"><code class="docutils literal notranslate"><span class="pre">configure_clocks()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="constants.html">LPC40 Constants APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheralE"><code class="docutils literal notranslate"><span class="pre">peripheral</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral3lcdE"><code class="docutils literal notranslate"><span class="pre">lcd</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral6timer0E"><code class="docutils literal notranslate"><span class="pre">timer0</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral6timer1E"><code class="docutils literal notranslate"><span class="pre">timer1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral5uart0E"><code class="docutils literal notranslate"><span class="pre">uart0</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral5uart1E"><code class="docutils literal notranslate"><span class="pre">uart1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral4pwm0E"><code class="docutils literal notranslate"><span class="pre">pwm0</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral4pwm1E"><code class="docutils literal notranslate"><span class="pre">pwm1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral4i2c0E"><code class="docutils literal notranslate"><span class="pre">i2c0</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral5uart4E"><code class="docutils literal notranslate"><span class="pre">uart4</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral3rtcE"><code class="docutils literal notranslate"><span class="pre">rtc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral4ssp1E"><code class="docutils literal notranslate"><span class="pre">ssp1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral3emcE"><code class="docutils literal notranslate"><span class="pre">emc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral3adcE"><code class="docutils literal notranslate"><span class="pre">adc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral4can1E"><code class="docutils literal notranslate"><span class="pre">can1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral4can2E"><code class="docutils literal notranslate"><span class="pre">can2</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral4gpioE"><code class="docutils literal notranslate"><span class="pre">gpio</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral5spifiE"><code class="docutils literal notranslate"><span class="pre">spifi</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral17motor_control_pwmE"><code class="docutils literal notranslate"><span class="pre">motor_control_pwm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral18quadrature_encoderE"><code class="docutils literal notranslate"><span class="pre">quadrature_encoder</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral4i2c1E"><code class="docutils literal notranslate"><span class="pre">i2c1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral4ssp2E"><code class="docutils literal notranslate"><span class="pre">ssp2</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral4ssp0E"><code class="docutils literal notranslate"><span class="pre">ssp0</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral6timer2E"><code class="docutils literal notranslate"><span class="pre">timer2</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral6timer3E"><code class="docutils literal notranslate"><span class="pre">timer3</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral5uart2E"><code class="docutils literal notranslate"><span class="pre">uart2</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral5uart3E"><code class="docutils literal notranslate"><span class="pre">uart3</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral4i2c2E"><code class="docutils literal notranslate"><span class="pre">i2c2</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral3i2sE"><code class="docutils literal notranslate"><span class="pre">i2s</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral6sdcardE"><code class="docutils literal notranslate"><span class="pre">sdcard</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral5gpdmaE"><code class="docutils literal notranslate"><span class="pre">gpdma</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral8ethernetE"><code class="docutils literal notranslate"><span class="pre">ethernet</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral3usbE"><code class="docutils literal notranslate"><span class="pre">usb</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral3cpuE"><code class="docutils literal notranslate"><span class="pre">cpu</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheral3dacE"><code class="docutils literal notranslate"><span class="pre">dac</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irqE"><code class="docutils literal notranslate"><span class="pre">irq</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq3wdtE"><code class="docutils literal notranslate"><span class="pre">wdt</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq6timer0E"><code class="docutils literal notranslate"><span class="pre">timer0</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq6timer1E"><code class="docutils literal notranslate"><span class="pre">timer1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq6timer2E"><code class="docutils literal notranslate"><span class="pre">timer2</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq6timer3E"><code class="docutils literal notranslate"><span class="pre">timer3</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq5uart0E"><code class="docutils literal notranslate"><span class="pre">uart0</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq5uart1E"><code class="docutils literal notranslate"><span class="pre">uart1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq5uart2E"><code class="docutils literal notranslate"><span class="pre">uart2</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq5uart3E"><code class="docutils literal notranslate"><span class="pre">uart3</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq4pwm1E"><code class="docutils literal notranslate"><span class="pre">pwm1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq4i2c0E"><code class="docutils literal notranslate"><span class="pre">i2c0</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq4i2c1E"><code class="docutils literal notranslate"><span class="pre">i2c1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq4i2c2E"><code class="docutils literal notranslate"><span class="pre">i2c2</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq9reserved0E"><code class="docutils literal notranslate"><span class="pre">reserved0</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq4ssp0E"><code class="docutils literal notranslate"><span class="pre">ssp0</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq4ssp1E"><code class="docutils literal notranslate"><span class="pre">ssp1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq4pll0E"><code class="docutils literal notranslate"><span class="pre">pll0</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq3rtcE"><code class="docutils literal notranslate"><span class="pre">rtc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq5eint0E"><code class="docutils literal notranslate"><span class="pre">eint0</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq5eint1E"><code class="docutils literal notranslate"><span class="pre">eint1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq5eint2E"><code class="docutils literal notranslate"><span class="pre">eint2</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq5eint3E"><code class="docutils literal notranslate"><span class="pre">eint3</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq3adcE"><code class="docutils literal notranslate"><span class="pre">adc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq3bodE"><code class="docutils literal notranslate"><span class="pre">bod</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq3usbE"><code class="docutils literal notranslate"><span class="pre">usb</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq3canE"><code class="docutils literal notranslate"><span class="pre">can</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq3dmaE"><code class="docutils literal notranslate"><span class="pre">dma</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq3i2sE"><code class="docutils literal notranslate"><span class="pre">i2s</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq4enetE"><code class="docutils literal notranslate"><span class="pre">enet</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq3mciE"><code class="docutils literal notranslate"><span class="pre">mci</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq5mcpwmE"><code class="docutils literal notranslate"><span class="pre">mcpwm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq3qeiE"><code class="docutils literal notranslate"><span class="pre">qei</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq4pll1E"><code class="docutils literal notranslate"><span class="pre">pll1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq11usbactivityE"><code class="docutils literal notranslate"><span class="pre">usbactivity</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq11canactivityE"><code class="docutils literal notranslate"><span class="pre">canactivity</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq5uart4E"><code class="docutils literal notranslate"><span class="pre">uart4</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq4ssp2E"><code class="docutils literal notranslate"><span class="pre">ssp2</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq3lcdE"><code class="docutils literal notranslate"><span class="pre">lcd</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq4gpioE"><code class="docutils literal notranslate"><span class="pre">gpio</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq4pwm0E"><code class="docutils literal notranslate"><span class="pre">pwm0</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq6eepromE"><code class="docutils literal notranslate"><span class="pre">eeprom</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq4cmp0E"><code class="docutils literal notranslate"><span class="pre">cmp0</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq4cmp1E"><code class="docutils literal notranslate"><span class="pre">cmp1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc403irq3maxE"><code class="docutils literal notranslate"><span class="pre">max</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dac.html">LPC40 DAC APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dac.html#hal-lpc40-dac"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::dac</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dac.html#_CPPv4N3hal5lpc403dacE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::dac</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dma.html">LPC40 DMA APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dma.html#hal-lpc40-dma"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::dma</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc403dmaE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::dma</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4017dma_transfer_typeE"><code class="docutils literal notranslate"><span class="pre">dma_transfer_type</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4017dma_transfer_type16memory_to_memoryE"><code class="docutils literal notranslate"><span class="pre">memory_to_memory</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4017dma_transfer_type20memory_to_peripheralE"><code class="docutils literal notranslate"><span class="pre">memory_to_peripheral</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4017dma_transfer_type20peripheral_to_memoryE"><code class="docutils literal notranslate"><span class="pre">peripheral_to_memory</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4017dma_transfer_type24peripheral_to_peripheralE"><code class="docutils literal notranslate"><span class="pre">peripheral_to_peripheral</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4017dma_transfer_type27peripheral_to_peripheral_dpE"><code class="docutils literal notranslate"><span class="pre">peripheral_to_peripheral_dp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4017dma_transfer_type23memory_to_peripheral_dpE"><code class="docutils literal notranslate"><span class="pre">memory_to_peripheral_dp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4017dma_transfer_type23peripheral_to_memory_spE"><code class="docutils literal notranslate"><span class="pre">peripheral_to_memory_sp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4017dma_transfer_type27peripheral_to_peripheral_spE"><code class="docutils literal notranslate"><span class="pre">peripheral_to_peripheral_sp</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4018dma_channel_selectE"><code class="docutils literal notranslate"><span class="pre">dma_channel_select</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4018dma_channel_select8channel0E"><code class="docutils literal notranslate"><span class="pre">channel0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4018dma_channel_select8channel1E"><code class="docutils literal notranslate"><span class="pre">channel1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4018dma_channel_select8channel2E"><code class="docutils literal notranslate"><span class="pre">channel2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4018dma_channel_select8channel3E"><code class="docutils literal notranslate"><span class="pre">channel3</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4018dma_channel_select8channel4E"><code class="docutils literal notranslate"><span class="pre">channel4</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4018dma_channel_select8channel5E"><code class="docutils literal notranslate"><span class="pre">channel5</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4018dma_channel_select8channel6E"><code class="docutils literal notranslate"><span class="pre">channel6</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4018dma_channel_select8channel7E"><code class="docutils literal notranslate"><span class="pre">channel7</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4018dma_transfer_widthE"><code class="docutils literal notranslate"><span class="pre">dma_transfer_width</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4018dma_transfer_width5bit_8E"><code class="docutils literal notranslate"><span class="pre">bit_8</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4018dma_transfer_width6bit_16E"><code class="docutils literal notranslate"><span class="pre">bit_16</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4018dma_transfer_width6bit_32E"><code class="docutils literal notranslate"><span class="pre">bit_32</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_burst_sizeE"><code class="docutils literal notranslate"><span class="pre">dma_burst_size</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_burst_size7bytes_1E"><code class="docutils literal notranslate"><span class="pre">bytes_1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_burst_size7bytes_4E"><code class="docutils literal notranslate"><span class="pre">bytes_4</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_burst_size7bytes_8E"><code class="docutils literal notranslate"><span class="pre">bytes_8</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_burst_size8bytes_16E"><code class="docutils literal notranslate"><span class="pre">bytes_16</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_burst_size8bytes_32E"><code class="docutils literal notranslate"><span class="pre">bytes_32</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_burst_size8bytes_64E"><code class="docutils literal notranslate"><span class="pre">bytes_64</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_burst_size9bytes_128E"><code class="docutils literal notranslate"><span class="pre">bytes_128</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_burst_size9bytes_256E"><code class="docutils literal notranslate"><span class="pre">bytes_256</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_peripheralE"><code class="docutils literal notranslate"><span class="pre">dma_peripheral</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_peripheral23memory_or_timer0_match0E"><code class="docutils literal notranslate"><span class="pre">memory_or_timer0_match0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_peripheral25sd_card_and_timer0_match1E"><code class="docutils literal notranslate"><span class="pre">sd_card_and_timer0_match1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_peripheral25spi0_tx_and_timer1_match0E"><code class="docutils literal notranslate"><span class="pre">spi0_tx_and_timer1_match0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_peripheral25spi0_rx_and_timer1_match1E"><code class="docutils literal notranslate"><span class="pre">spi0_rx_and_timer1_match1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_peripheral25spi1_tx_and_timer2_match0E"><code class="docutils literal notranslate"><span class="pre">spi1_tx_and_timer2_match0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_peripheral25spi1_rx_and_timer2_match1E"><code class="docutils literal notranslate"><span class="pre">spi1_rx_and_timer2_match1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_peripheral25spi2_tx_and_i2s_channel_0E"><code class="docutils literal notranslate"><span class="pre">spi2_tx_and_i2s_channel_0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_peripheral25spi2_rx_and_i2s_channel_1E"><code class="docutils literal notranslate"><span class="pre">spi2_rx_and_i2s_channel_1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_peripheral3adcE"><code class="docutils literal notranslate"><span class="pre">adc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_peripheral3dacE"><code class="docutils literal notranslate"><span class="pre">dac</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_peripheral21uart0_tx_and_uart3_txE"><code class="docutils literal notranslate"><span class="pre">uart0_tx_and_uart3_tx</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_peripheral21uart0_rx_and_uart3_rxE"><code class="docutils literal notranslate"><span class="pre">uart0_rx_and_uart3_rx</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_peripheral21uart1_tx_and_uart4_txE"><code class="docutils literal notranslate"><span class="pre">uart1_tx_and_uart4_tx</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_peripheral21uart1_rx_and_uart4_rxE"><code class="docutils literal notranslate"><span class="pre">uart1_rx_and_uart4_rx</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_peripheral26uart2_tx_and_timer3_match0E"><code class="docutils literal notranslate"><span class="pre">uart2_tx_and_timer3_match0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4014dma_peripheral26uart2_rx_and_timer3_match1E"><code class="docutils literal notranslate"><span class="pre">uart2_rx_and_timer3_match1</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4012set_dma_lockERN3hal10basic_lockE"><code class="docutils literal notranslate"><span class="pre">set_dma_lock()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dma.html#_CPPv4N3hal5lpc4018setup_dma_transferERK3dmaN3hal8callbackIFvvEEE"><code class="docutils literal notranslate"><span class="pre">setup_dma_transfer()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dma_spi.html">LPC40 DMA SPI APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dma_spi.html#hal-lpc40-dma-spi"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::dma_spi</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dma_spi.html#_CPPv4N3hal5lpc407dma_spiE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::dma_spi</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dma_spi.html#_CPPv4N3hal5lpc407dma_spi7dma_spiE2u8RN3hal9io_waiterERKN3spi8settingsE"><code class="docutils literal notranslate"><span class="pre">dma_spi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma_spi.html#_CPPv4N3hal5lpc407dma_spi7dma_spiE8bus_info"><code class="docutils literal notranslate"><span class="pre">dma_spi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="dma_spi.html#_CPPv4N3hal5lpc407dma_spi8bus_infoE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::dma_spi::bus_info</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="i2c.html">LPC40 I2C APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html#hal-lpc40-i2c"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::i2c</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="i2c.html#_CPPv4N3hal5lpc403i2cE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::i2c</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="i2c.html#_CPPv4N3hal5lpc403i2c3i2cE2u8RKN3i2c8settingsERN3hal9io_waiterE"><code class="docutils literal notranslate"><span class="pre">i2c()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="i2c.html#_CPPv4N3hal5lpc403i2c3i2cERK8bus_infoRKN3i2c8settingsERN3hal9io_waiterE"><code class="docutils literal notranslate"><span class="pre">i2c()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="i2c.html#_CPPv4N3hal5lpc403i2c8bus_infoE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::i2c::bus_info</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input_pin.html">LPC40 Input Pin APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input_pin.html#hal-lpc40-input-pin"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::input_pin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="input_pin.html#_CPPv4N3hal5lpc409input_pinE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::input_pin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="input_pin.html#_CPPv4N3hal5lpc409input_pin9input_pinE2u82u8RKN9input_pin8settingsE"><code class="docutils literal notranslate"><span class="pre">input_pin()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="interrupt.html">LPC40 Interrupt APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="interrupt.html#_CPPv4N3hal5lpc4021initialize_interruptsEv"><code class="docutils literal notranslate"><span class="pre">initialize_interrupts()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="interrupt_pin.html">LPC40 Interrupt Pin APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="interrupt_pin.html#hal-lpc40-interrupt-pin"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::interrupt_pin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="interrupt_pin.html#_CPPv4N3hal5lpc4013interrupt_pinE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::interrupt_pin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="interrupt_pin.html#_CPPv4N3hal5lpc4013interrupt_pin13interrupt_pinE2u82u8RK8settings"><code class="docutils literal notranslate"><span class="pre">interrupt_pin()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="output_pin.html">LPC40 Output Pin APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="output_pin.html#hal-lpc40-output-pin"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::output_pin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="output_pin.html#_CPPv4N3hal5lpc4010output_pinE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::output_pin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="output_pin.html#_CPPv4N3hal5lpc4010output_pin10output_pinE2u82u8RKN10output_pin8settingsE"><code class="docutils literal notranslate"><span class="pre">output_pin()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pin.html">LPC40 Pin APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pin.html#hal-lpc40-pin"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::pin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pin.html#_CPPv4N3hal5lpc403pinE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::pin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4N3hal5lpc403pin3pinE2u82u8"><code class="docutils literal notranslate"><span class="pre">pin()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4N3hal5lpc403pin3pinEv"><code class="docutils literal notranslate"><span class="pre">pin()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4NK3hal5lpc403pin8functionE7uint8_t"><code class="docutils literal notranslate"><span class="pre">function()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4NK3hal5lpc403pin8resistorEN3hal12pin_resistorE"><code class="docutils literal notranslate"><span class="pre">resistor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4NK3hal5lpc403pin10hysteresisEb"><code class="docutils literal notranslate"><span class="pre">hysteresis()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4NK3hal5lpc403pin12input_invertEb"><code class="docutils literal notranslate"><span class="pre">input_invert()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4NK3hal5lpc403pin6analogEb"><code class="docutils literal notranslate"><span class="pre">analog()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4NK3hal5lpc403pin14digital_filterEb"><code class="docutils literal notranslate"><span class="pre">digital_filter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4NK3hal5lpc403pin13highspeed_i2cEb"><code class="docutils literal notranslate"><span class="pre">highspeed_i2c()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4NK3hal5lpc403pin14high_slew_rateEb"><code class="docutils literal notranslate"><span class="pre">high_slew_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4NK3hal5lpc403pin16i2c_high_currentEb"><code class="docutils literal notranslate"><span class="pre">i2c_high_current()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4NK3hal5lpc403pin10open_drainEb"><code class="docutils literal notranslate"><span class="pre">open_drain()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4NK3hal5lpc403pin3dacEb"><code class="docutils literal notranslate"><span class="pre">dac()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="power.html">LPC40 Power APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="power.html#_CPPv4N3hal5lpc408power_onE10peripheral"><code class="docutils literal notranslate"><span class="pre">power_on()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="power.html#_CPPv4N3hal5lpc405is_onE10peripheral"><code class="docutils literal notranslate"><span class="pre">is_on()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="power.html#_CPPv4N3hal5lpc409power_offE10peripheral"><code class="docutils literal notranslate"><span class="pre">power_off()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pwm.html">LPC40 PWM APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pwm.html#hal-lpc40-pwm"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::pwm</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pwm.html#_CPPv4N3hal5lpc403pwmE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::pwm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pwm.html#_CPPv4N3hal5lpc403pwm3pwmE2u82u8"><code class="docutils literal notranslate"><span class="pre">pwm()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pwm.html#_CPPv4N3hal5lpc403pwm7channelE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::pwm::channel</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="spi.html">LPC40 SPI APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spi.html#hal-lpc40-spi"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::spi</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spi.html#_CPPv4N3hal5lpc403spiE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::spi</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spi.html#_CPPv4N3hal5lpc403spi3spiE2u8RKN3spi8settingsE"><code class="docutils literal notranslate"><span class="pre">spi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spi.html#_CPPv4N3hal5lpc403spi3spiE8bus_info"><code class="docutils literal notranslate"><span class="pre">spi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spi.html#_CPPv4N3hal5lpc403spi8bus_infoE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::spi::bus_info</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stream_dac.html">LPC40 Stream DAC APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stream_dac.html#hal-lpc40-stream-dac-u16"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::stream_dac_u16</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="stream_dac.html#_CPPv4N3hal5lpc4014stream_dac_u16E"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::stream_dac_u16</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="stream_dac.html#hal-lpc40-stream-dac-u8"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::stream_dac_u8</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="stream_dac.html#_CPPv4N3hal5lpc4013stream_dac_u8E"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::stream_dac_u8</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="uart.html">LPC40 UART APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="uart.html#hal-lpc40-uart"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::uart</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="uart.html#_CPPv4N3hal5lpc404uartE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::uart</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="uart.html#_CPPv4N3hal5lpc404uart4uartENSt7uint8_tENSt4spanIN3hal4byteEEERKN6serial8settingsE"><code class="docutils literal notranslate"><span class="pre">uart()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uart.html#_CPPv4N3hal5lpc404uart4uartERKN4uart4portENSt4spanIN3hal4byteEEERKN6serial8settingsE"><code class="docutils literal notranslate"><span class="pre">uart()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uart.html#_CPPv4N3hal5lpc404uart4portE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::uart::port</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../cortex_m/systick_timer.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">SysTick Timer</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="adc.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">LPC40 ADC APIs</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/lpc40/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

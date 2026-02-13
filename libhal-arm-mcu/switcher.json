@@ -18,5 +18,9 @@
     {
         "version": "1.20.0",
         "url": "https://libhal.github.io/api/libhal-arm-mcu/1.20.0"
+    },
+    {
+        "version": "1.20.1",
+        "url": "https://libhal.github.io/api/libhal-arm-mcu/1.20.1"
     }
 ]
