@@ -1,0 +1,1259 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>libhal API documentation &#8212; libhal  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/extra.css?v=2ded0ca0" />
+    <link rel="stylesheet" type="text/css" href="_static/extra.css?v=2ded0ca0" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/libhal/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '4.19.2';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="libhal Hardware Interface API Documentation" href="libhal/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="libhal  documentation - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="libhal  documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<nav class="navbar-nav">
+  <p
+    class="sidebar-header-items__title"
+    role="heading"
+    aria-level="2"
+    aria-label="Site Navigation"
+  ></p>
+  <ul class="bd-navbar-elements navbar-nav">
+    <li class="nav-item dropdown">
+      <button
+        class="btn dropdown-toggle nav-item"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        aria-controls="pst-nav-more-links"
+      >
+        Guides
+      </button>
+      <ul id="pst-nav-more-links" class="dropdown-menu">
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/"
+          >
+            🏡 Introduction
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/getting_started/"
+          >
+            🚀 Getting Started
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/user_guide/fundamentals/"
+          >
+            📖 User Guide
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/contributor_guide/philosophy/"
+          >
+            📚 Contributor Guides
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/project_information/status/"
+          >
+            📊 Project Information
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="libhal/index.html">
+    Libhal Interfaces
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="libhal/index.html">
+    Libhal Interfaces
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="libhal-api-documentation">
+<h1>libhal API documentation<a class="headerlink" href="#libhal-api-documentation" title="Link to this heading">#</a></h1>
+<a class="reference internal image-reference" href="_images/logo.png"><img alt="libhal logo" class="align-center" src="_images/logo.png" width="200" />
+</a>
+<p><strong>Welcome to libhal API documentation</strong></p>
+<p>Here you will find an organized list of the interfaces used in libhal.
+This includes soft drivers which are drivers that are not tied to specific
+hardware. This will also include utility functions.</p>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">libhal Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="libhal/index.html">Libhal Interfaces</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="libhal/accelerometer.html">Accelerometer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/accelerometer.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/accelerometer.html#_CPPv4N3hal13accelerometerE"><code class="docutils literal notranslate"><span class="pre">hal::accelerometer</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/accelerometer.html#_CPPv4N3hal13accelerometer4readEv"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/accelerometer.html#_CPPv4N3hal13accelerometer6read_tE"><code class="docutils literal notranslate"><span class="pre">hal::accelerometer::read_t</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/adc.html">Analog Digital Converter (ADC)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/adc.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/adc.html#_CPPv4N3hal3adcE"><code class="docutils literal notranslate"><span class="pre">hal::adc</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/adc.html#_CPPv4N3hal3adc4readEv"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/allocated_buffer.html">Allocated Buffer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/allocated_buffer.html#documentation">Documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4I0EN3hal2v516allocated_bufferE"><code class="docutils literal notranslate"><span class="pre">hal::v5::allocated_buffer</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer16allocated_bufferEv"><code class="docutils literal notranslate"><span class="pre">allocated_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer16allocated_bufferERR16allocated_buffer"><code class="docutils literal notranslate"><span class="pre">allocated_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_bufferaSERR16allocated_buffer"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer16allocated_bufferERK16allocated_buffer"><code class="docutils literal notranslate"><span class="pre">allocated_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_bufferaSERK16allocated_buffer"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer16allocated_bufferENSt3pmr21polymorphic_allocatorIEE9size_type"><code class="docutils literal notranslate"><span class="pre">allocated_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer16allocated_bufferENSt3pmr21polymorphic_allocatorIEE9size_typeRK1T"><code class="docutils literal notranslate"><span class="pre">allocated_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer16allocated_bufferENSt3pmr21polymorphic_allocatorIEENSt16initializer_listI1TEE"><code class="docutils literal notranslate"><span class="pre">allocated_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_bufferD0Ev"><code class="docutils literal notranslate"><span class="pre">~allocated_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer2atE9size_type"><code class="docutils literal notranslate"><span class="pre">at()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer2atE9size_type"><code class="docutils literal notranslate"><span class="pre">at()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_bufferixE9size_type"><code class="docutils literal notranslate"><span class="pre">operator[]()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_bufferixE9size_type"><code class="docutils literal notranslate"><span class="pre">operator[]()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer5frontEv"><code class="docutils literal notranslate"><span class="pre">front()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer5frontEv"><code class="docutils literal notranslate"><span class="pre">front()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer4backEv"><code class="docutils literal notranslate"><span class="pre">back()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer4backEv"><code class="docutils literal notranslate"><span class="pre">back()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer4dataEv"><code class="docutils literal notranslate"><span class="pre">data()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer4dataEv"><code class="docutils literal notranslate"><span class="pre">data()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer5beginEv"><code class="docutils literal notranslate"><span class="pre">begin()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer5beginEv"><code class="docutils literal notranslate"><span class="pre">begin()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer6cbeginEv"><code class="docutils literal notranslate"><span class="pre">cbegin()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer3endEv"><code class="docutils literal notranslate"><span class="pre">end()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer3endEv"><code class="docutils literal notranslate"><span class="pre">end()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer4cendEv"><code class="docutils literal notranslate"><span class="pre">cend()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer6rbeginEv"><code class="docutils literal notranslate"><span class="pre">rbegin()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer6rbeginEv"><code class="docutils literal notranslate"><span class="pre">rbegin()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer7crbeginEv"><code class="docutils literal notranslate"><span class="pre">crbegin()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer4rendEv"><code class="docutils literal notranslate"><span class="pre">rend()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer4rendEv"><code class="docutils literal notranslate"><span class="pre">rend()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer5crendEv"><code class="docutils literal notranslate"><span class="pre">crend()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer5emptyEv"><code class="docutils literal notranslate"><span class="pre">empty()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer4sizeEv"><code class="docutils literal notranslate"><span class="pre">size()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4NK3hal2v516allocated_buffer10size_bytesEv"><code class="docutils literal notranslate"><span class="pre">size_bytes()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/allocated_buffer.html#_CPPv4N3hal2v516allocated_buffer4fillERK1T"><code class="docutils literal notranslate"><span class="pre">fill()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/angular_velocity_sensor.html">Angular Velocity Sensor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/angular_velocity_sensor.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/angular_velocity_sensor.html#_CPPv4N3hal23angular_velocity_sensorE"><code class="docutils literal notranslate"><span class="pre">hal::angular_velocity_sensor</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/angular_velocity_sensor.html#_CPPv4N3hal23angular_velocity_sensor4readEv"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/can.html">Controlled Area Network (CAN)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/can.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/can.html#_CPPv4N3hal3canE"><code class="docutils literal notranslate"><span class="pre">hal::can</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/can.html#_CPPv4N3hal3can4id_tE"><code class="docutils literal notranslate"><span class="pre">id_t</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/can.html#_CPPv4N3hal3can7handlerE"><code class="docutils literal notranslate"><span class="pre">handler</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/can.html#_CPPv4N3hal3can9configureERK8settings"><code class="docutils literal notranslate"><span class="pre">configure()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/can.html#_CPPv4N3hal3can6bus_onEv"><code class="docutils literal notranslate"><span class="pre">bus_on()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/can.html#_CPPv4N3hal3can4sendERK9message_t"><code class="docutils literal notranslate"><span class="pre">send()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/can.html#_CPPv4N3hal3can10on_receiveEN3hal8callbackI7handlerEE"><code class="docutils literal notranslate"><span class="pre">on_receive()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/can.html#_CPPv4N3hal3can9message_tE"><code class="docutils literal notranslate"><span class="pre">hal::can::message_t</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/can.html#_CPPv4N3hal3can8settingsE"><code class="docutils literal notranslate"><span class="pre">hal::can::settings</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/circular_buffer.html">Circular Buffer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/circular_buffer.html#documentation">Documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4I0EN3hal2v515circular_bufferE"><code class="docutils literal notranslate"><span class="pre">hal::v5::circular_buffer</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_buffer15circular_bufferEv"><code class="docutils literal notranslate"><span class="pre">circular_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_buffer15circular_bufferERR15circular_buffer"><code class="docutils literal notranslate"><span class="pre">circular_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_bufferaSERR15circular_buffer"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_buffer15circular_bufferERK15circular_buffer"><code class="docutils literal notranslate"><span class="pre">circular_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_bufferaSERK15circular_buffer"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_buffer15circular_bufferENSt3pmr21polymorphic_allocatorI4byteEE9size_type"><code class="docutils literal notranslate"><span class="pre">circular_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_buffer15circular_bufferENSt3pmr21polymorphic_allocatorI4byteEE9size_typeRK1T"><code class="docutils literal notranslate"><span class="pre">circular_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_buffer15circular_bufferENSt3pmr21polymorphic_allocatorI4byteEENSt16initializer_listI1TEE"><code class="docutils literal notranslate"><span class="pre">circular_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_bufferD0Ev"><code class="docutils literal notranslate"><span class="pre">~circular_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_buffer4pushERK1T"><code class="docutils literal notranslate"><span class="pre">push()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_buffer4pushERR1T"><code class="docutils literal notranslate"><span class="pre">push()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4IDpEN3hal2v515circular_buffer7emplaceE9referenceDpRR4Args"><code class="docutils literal notranslate"><span class="pre">emplace()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_bufferixE9size_type"><code class="docutils literal notranslate"><span class="pre">operator[]()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4NK3hal2v515circular_bufferixE9size_type"><code class="docutils literal notranslate"><span class="pre">operator[]()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4N3hal2v515circular_buffer4dataEv"><code class="docutils literal notranslate"><span class="pre">data()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4NK3hal2v515circular_buffer4dataEv"><code class="docutils literal notranslate"><span class="pre">data()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4NK3hal2v515circular_buffer8capacityEv"><code class="docutils literal notranslate"><span class="pre">capacity()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4NK3hal2v515circular_buffer10size_bytesEv"><code class="docutils literal notranslate"><span class="pre">size_bytes()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/circular_buffer.html#_CPPv4NK3hal2v515circular_buffer11write_indexEv"><code class="docutils literal notranslate"><span class="pre">write_index()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/dac.html">Digital Analog Converter (DAC)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/dac.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/dac.html#_CPPv4N3hal3dacE"><code class="docutils literal notranslate"><span class="pre">hal::dac</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/dac.html#_CPPv4N3hal3dac5writeEf"><code class="docutils literal notranslate"><span class="pre">write()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/distance_sensor.html">Distance Sensor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/distance_sensor.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/distance_sensor.html#_CPPv4N3hal15distance_sensorE"><code class="docutils literal notranslate"><span class="pre">hal::distance_sensor</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/distance_sensor.html#_CPPv4N3hal15distance_sensor4readEv"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/error.html">Error</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/error.html#documentation">Documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/error.html#_CPPv4I0E10safe_throwvRR8thrown_t"><code class="docutils literal notranslate"><span class="pre">safe_throw()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal9exceptionE"><code class="docutils literal notranslate"><span class="pre">hal::exception</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/error.html#_CPPv4NK3hal9exception8instanceEv"><code class="docutils literal notranslate"><span class="pre">instance()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/error.html#_CPPv4NK3hal9exception10error_codeEv"><code class="docutils literal notranslate"><span class="pre">error_code()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal14no_such_deviceE"><code class="docutils literal notranslate"><span class="pre">hal::no_such_device</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal14no_such_device14no_such_deviceE3u32PKv"><code class="docutils literal notranslate"><span class="pre">no_such_device()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal8io_errorE"><code class="docutils literal notranslate"><span class="pre">hal::io_error</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal8io_error8io_errorEPKv"><code class="docutils literal notranslate"><span class="pre">io_error()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal30resource_unavailable_try_againE"><code class="docutils literal notranslate"><span class="pre">hal::resource_unavailable_try_again</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal30resource_unavailable_try_again30resource_unavailable_try_againEPKv"><code class="docutils literal notranslate"><span class="pre">resource_unavailable_try_again()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal23device_or_resource_busyE"><code class="docutils literal notranslate"><span class="pre">hal::device_or_resource_busy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal9timed_outE"><code class="docutils literal notranslate"><span class="pre">hal::timed_out</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal9timed_out9timed_outEPKv"><code class="docutils literal notranslate"><span class="pre">timed_out()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal23operation_not_supportedE"><code class="docutils literal notranslate"><span class="pre">hal::operation_not_supported</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal23operation_not_supported23operation_not_supportedEPKv"><code class="docutils literal notranslate"><span class="pre">operation_not_supported()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal23operation_not_permittedE"><code class="docutils literal notranslate"><span class="pre">hal::operation_not_permitted</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal22argument_out_of_domainE"><code class="docutils literal notranslate"><span class="pre">hal::argument_out_of_domain</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal12message_sizeE"><code class="docutils literal notranslate"><span class="pre">hal::message_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal13not_connectedE"><code class="docutils literal notranslate"><span class="pre">hal::not_connected</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal7unknownE"><code class="docutils literal notranslate"><span class="pre">hal::unknown</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal12bad_weak_ptrE"><code class="docutils literal notranslate"><span class="pre">hal::bad_weak_ptr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal12out_of_rangeE"><code class="docutils literal notranslate"><span class="pre">hal::out_of_range</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal12out_of_range4infoE"><code class="docutils literal notranslate"><span class="pre">hal::out_of_range::info</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal23bad_optional_ptr_accessE"><code class="docutils literal notranslate"><span class="pre">hal::bad_optional_ptr_access</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/error.html#_CPPv4N3hal5errorE"><code class="docutils literal notranslate"><span class="pre">hal::error</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/error.html#_CPPv4I_DpDaEN3hal5error14invalid_optionE"><code class="docutils literal notranslate"><span class="pre">invalid_option</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/error.html#_CPPv4I_DpDaEN3hal5error16invalid_option_tE"><code class="docutils literal notranslate"><span class="pre">hal::error::invalid_option_t</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/functional.html">Functional</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/functional.html#documentation">Documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/functional.html#_CPPv4I0E12function_ref"><code class="docutils literal notranslate"><span class="pre">function_ref</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/functional.html#_CPPv4I0_6size_tE16inplace_function"><code class="docutils literal notranslate"><span class="pre">inplace_function</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/functional.html#_CPPv4I0E8callback"><code class="docutils literal notranslate"><span class="pre">callback</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/gyroscope.html">Gyroscope</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/gyroscope.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/gyroscope.html#_CPPv4N3hal9gyroscopeE"><code class="docutils literal notranslate"><span class="pre">hal::gyroscope</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/gyroscope.html#_CPPv4N3hal9gyroscope4readEv"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/gyroscope.html#_CPPv4N3hal9gyroscope6read_tE"><code class="docutils literal notranslate"><span class="pre">hal::gyroscope::read_t</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/i2c.html">Inter-integrated Circuit (I2C)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/i2c.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/i2c.html#_CPPv4N3hal3i2cE"><code class="docutils literal notranslate"><span class="pre">hal::i2c</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/i2c.html#_CPPv4N3hal3i2c9configureERK8settings"><code class="docutils literal notranslate"><span class="pre">configure()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/i2c.html#_CPPv4N3hal3i2c11transactionEN3hal4byteENSt4spanIKN3hal4byteEEENSt4spanIN3hal4byteEEE"><code class="docutils literal notranslate"><span class="pre">transaction()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/i2c.html#_CPPv4N3hal3i2c11transactionEN3hal4byteENSt4spanIKN3hal4byteEEENSt4spanIN3hal4byteEEEN3hal12function_refIN3hal16timeout_functionEEE"><code class="docutils literal notranslate"><span class="pre">transaction()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/i2c.html#_CPPv4N3hal3i2c8settingsE"><code class="docutils literal notranslate"><span class="pre">hal::i2c::settings</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/initializers.html">Initializers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/initializers.html#documentation">Documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/initializers.html#_CPPv4N3hal7runtimeE"><code class="docutils literal notranslate"><span class="pre">hal::runtime</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/initializers.html#_CPPv4N3hal6unsafeE"><code class="docutils literal notranslate"><span class="pre">hal::unsafe</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/input_pin.html">Input Pin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/input_pin.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/input_pin.html#_CPPv4N3hal9input_pinE"><code class="docutils literal notranslate"><span class="pre">hal::input_pin</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/input_pin.html#_CPPv4N3hal9input_pin9configureERK8settings"><code class="docutils literal notranslate"><span class="pre">configure()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/input_pin.html#_CPPv4N3hal9input_pin5levelEv"><code class="docutils literal notranslate"><span class="pre">level()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/input_pin.html#_CPPv4N3hal9input_pin8settingsE"><code class="docutils literal notranslate"><span class="pre">hal::input_pin::settings</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/interrupt_pin.html">Interrupt Pin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/interrupt_pin.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/interrupt_pin.html#_CPPv4N3hal13interrupt_pinE"><code class="docutils literal notranslate"><span class="pre">hal::interrupt_pin</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/interrupt_pin.html#_CPPv4N3hal13interrupt_pin12trigger_edgeE"><code class="docutils literal notranslate"><span class="pre">trigger_edge</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/interrupt_pin.html#_CPPv4N3hal13interrupt_pin7handlerE"><code class="docutils literal notranslate"><span class="pre">handler</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/interrupt_pin.html#_CPPv4N3hal13interrupt_pin9configureERK8settings"><code class="docutils literal notranslate"><span class="pre">configure()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/interrupt_pin.html#_CPPv4N3hal13interrupt_pin10on_triggerEN3hal8callbackI7handlerEE"><code class="docutils literal notranslate"><span class="pre">on_trigger()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/interrupt_pin.html#_CPPv4N3hal13interrupt_pin8settingsE"><code class="docutils literal notranslate"><span class="pre">hal::interrupt_pin::settings</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/io_waiter.html">IO Waiter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/io_waiter.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/io_waiter.html#_CPPv4N3hal9io_waiterE"><code class="docutils literal notranslate"><span class="pre">hal::io_waiter</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/io_waiter.html#_CPPv4N3hal9io_waiter4waitEv"><code class="docutils literal notranslate"><span class="pre">wait()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/io_waiter.html#_CPPv4N3hal9io_waiter6resumeEv"><code class="docutils literal notranslate"><span class="pre">resume()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/lock.html">Lock</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/lock.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/lock.html#_CPPv4N3hal10basic_lockE"><code class="docutils literal notranslate"><span class="pre">hal::basic_lock</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/lock.html#_CPPv4N3hal10basic_lock4lockEv"><code class="docutils literal notranslate"><span class="pre">lock()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/lock.html#_CPPv4N3hal10basic_lock6unlockEv"><code class="docutils literal notranslate"><span class="pre">unlock()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/lock.html#_CPPv4N3hal13pollable_lockE"><code class="docutils literal notranslate"><span class="pre">hal::pollable_lock</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/lock.html#_CPPv4N3hal13pollable_lock8try_lockEv"><code class="docutils literal notranslate"><span class="pre">try_lock()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/lock.html#_CPPv4N3hal10timed_lockE"><code class="docutils literal notranslate"><span class="pre">hal::timed_lock</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/lock.html#_CPPv4N3hal10timed_lock12try_lock_forEN3hal13time_durationE"><code class="docutils literal notranslate"><span class="pre">try_lock_for()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/magnetometer.html">Magnetometer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/magnetometer.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/magnetometer.html#_CPPv4N3hal12magnetometerE"><code class="docutils literal notranslate"><span class="pre">hal::magnetometer</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/magnetometer.html#_CPPv4N3hal12magnetometer4readEv"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/magnetometer.html#_CPPv4N3hal12magnetometer6read_tE"><code class="docutils literal notranslate"><span class="pre">hal::magnetometer::read_t</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/motor.html">Motor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/motor.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/motor.html#_CPPv4N3hal5motorE"><code class="docutils literal notranslate"><span class="pre">hal::motor</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/motor.html#_CPPv4N3hal5motor5powerEf"><code class="docutils literal notranslate"><span class="pre">power()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/output_pin.html">Output Pin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/output_pin.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/output_pin.html#_CPPv4N3hal10output_pinE"><code class="docutils literal notranslate"><span class="pre">hal::output_pin</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/output_pin.html#_CPPv4N3hal10output_pin9configureERK8settings"><code class="docutils literal notranslate"><span class="pre">configure()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/output_pin.html#_CPPv4N3hal10output_pin5levelEb"><code class="docutils literal notranslate"><span class="pre">level()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/output_pin.html#_CPPv4N3hal10output_pin5levelEv"><code class="docutils literal notranslate"><span class="pre">level()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/output_pin.html#_CPPv4N3hal10output_pin8settingsE"><code class="docutils literal notranslate"><span class="pre">hal::output_pin::settings</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/pointers.html">Pointers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/pointers.html#documentation">Documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/pointers.html#_CPPv4I0EN3hal2v510strong_ptrE"><code class="docutils literal notranslate"><span class="pre">hal::v5::strong_ptr</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v510strong_ptr10strong_ptrEv"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v510strong_ptr10strong_ptrENSt9nullptr_tE"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v510strong_ptr10strong_ptrERK10strong_ptr"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4I0EN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v510strong_ptr10strong_ptrERR10strong_ptr"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v510strong_ptraSERR10strong_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4I0EN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEPKv"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4I0_N6detail14non_array_likeEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1U1M"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UNSt5arrayI1E1NEENSt6size_tE"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UA1N_1ENSt6size_tE"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v510strong_ptrD0Ev"><code class="docutils literal notranslate"><span class="pre">~strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v510strong_ptraSERK10strong_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4I0EN3hal2v510strong_ptraSER10strong_ptrRK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v510strong_ptr4swapER10strong_ptr"><code class="docutils literal notranslate"><span class="pre">swap()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4NO3hal2v510strong_ptrmlEv"><code class="docutils literal notranslate"><span class="pre">operator*()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4NO3hal2v510strong_ptrptEv"><code class="docutils literal notranslate"><span class="pre">operator-&gt;()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4NKR3hal2v510strong_ptrmlEv"><code class="docutils literal notranslate"><span class="pre">operator*()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4NKR3hal2v510strong_ptrptEv"><code class="docutils literal notranslate"><span class="pre">operator-&gt;()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4NK3hal2v510strong_ptr9use_countEv"><code class="docutils literal notranslate"><span class="pre">use_count()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/pointers.html#_CPPv4I0EN3hal2v58weak_ptrE"><code class="docutils literal notranslate"><span class="pre">hal::v5::weak_ptr</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v58weak_ptr8weak_ptrEv"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v58weak_ptr8weak_ptrERK10strong_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v58weak_ptr8weak_ptrERK8weak_ptr"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v58weak_ptr8weak_ptrERR8weak_ptr"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERK8weak_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERR8weak_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v58weak_ptrD0Ev"><code class="docutils literal notranslate"><span class="pre">~weak_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v58weak_ptraSERK8weak_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v58weak_ptraSERR8weak_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v58weak_ptraSERK10strong_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v58weak_ptr4swapER8weak_ptr"><code class="docutils literal notranslate"><span class="pre">swap()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4NK3hal2v58weak_ptr7expiredEv"><code class="docutils literal notranslate"><span class="pre">expired()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4NK3hal2v58weak_ptr4lockEv"><code class="docutils literal notranslate"><span class="pre">lock()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4NK3hal2v58weak_ptr9use_countEv"><code class="docutils literal notranslate"><span class="pre">use_count()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/pointers.html#_CPPv4I0EN3hal2v512optional_ptrE"><code class="docutils literal notranslate"><span class="pre">hal::v5::optional_ptr</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptr12optional_ptrEv"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptr12optional_ptrENSt9nullptr_tE"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptr12optional_ptrERR12optional_ptr"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptr12optional_ptrERK10strong_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptr12optional_ptrERK12optional_ptr"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4I0EN3hal2v512optional_ptr12optional_ptrERK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptraSERR12optional_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptraSERK12optional_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptraSERK10strong_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4I0EN3hal2v512optional_ptraSER12optional_ptrRK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptraSENSt9nullptr_tE"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptrD0Ev"><code class="docutils literal notranslate"><span class="pre">~optional_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4NK3hal2v512optional_ptr9has_valueEv"><code class="docutils literal notranslate"><span class="pre">has_value()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4NK3hal2v512optional_ptrcvbEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">bool()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptr5valueEv"><code class="docutils literal notranslate"><span class="pre">value()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4NK3hal2v512optional_ptr5valueEv"><code class="docutils literal notranslate"><span class="pre">value()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptrcv10strong_ptrI1TEEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">strong_ptr&lt;</span> <span class="pre">T</span> <span class="pre">&gt;()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4NK3hal2v512optional_ptrcv10strong_ptrI1TEEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">strong_ptr&lt;</span> <span class="pre">T</span> <span class="pre">&gt;()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4I0EN3hal2v512optional_ptrcv10strong_ptrI1UEEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">strong_ptr&lt;</span> <span class="pre">U</span> <span class="pre">&gt;()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4I0ENK3hal2v512optional_ptrcv10strong_ptrI1UEEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">strong_ptr&lt;</span> <span class="pre">U</span> <span class="pre">&gt;()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptrptEv"><code class="docutils literal notranslate"><span class="pre">operator-&gt;()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4NK3hal2v512optional_ptrptEv"><code class="docutils literal notranslate"><span class="pre">operator-&gt;()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptrmlEv"><code class="docutils literal notranslate"><span class="pre">operator*()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4NK3hal2v512optional_ptrmlEv"><code class="docutils literal notranslate"><span class="pre">operator*()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptr5resetEv"><code class="docutils literal notranslate"><span class="pre">reset()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4IDpEN3hal2v512optional_ptr7emplaceER10strong_ptrI1TEDpRR4Args"><code class="docutils literal notranslate"><span class="pre">emplace()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v512optional_ptr4swapER12optional_ptr"><code class="docutils literal notranslate"><span class="pre">swap()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/pointers.html#_CPPv4I0EN3hal2v523enable_strong_from_thisE"><code class="docutils literal notranslate"><span class="pre">hal::v5::enable_strong_from_this</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v523enable_strong_from_this16strong_from_thisEv"><code class="docutils literal notranslate"><span class="pre">strong_from_this()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4NK3hal2v523enable_strong_from_this16strong_from_thisEv"><code class="docutils literal notranslate"><span class="pre">strong_from_this()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4N3hal2v523enable_strong_from_this14weak_from_thisEv"><code class="docutils literal notranslate"><span class="pre">weak_from_this()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pointers.html#_CPPv4NK3hal2v523enable_strong_from_this14weak_from_thisEv"><code class="docutils literal notranslate"><span class="pre">weak_from_this()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/pwm.html">Pulse Width Modulation (PWM)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/pwm.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/pwm.html#_CPPv4N3hal3pwmE"><code class="docutils literal notranslate"><span class="pre">hal::pwm</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pwm.html#_CPPv4N3hal3pwm9frequencyE5hertz"><code class="docutils literal notranslate"><span class="pre">frequency()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/pwm.html#_CPPv4N3hal3pwm10duty_cycleEf"><code class="docutils literal notranslate"><span class="pre">duty_cycle()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/rotation_sensor.html">Rotational Sensor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/rotation_sensor.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/rotation_sensor.html#_CPPv4N3hal15rotation_sensorE"><code class="docutils literal notranslate"><span class="pre">hal::rotation_sensor</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/rotation_sensor.html#_CPPv4N3hal15rotation_sensor4readEv"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/rotation_sensor.html#_CPPv4N3hal15rotation_sensor6read_tE"><code class="docutils literal notranslate"><span class="pre">hal::rotation_sensor::read_t</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/scatter_span.html">Scatter Span</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/scatter_span.html#documentation">Documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v521can_message_interruptE"><code class="docutils literal notranslate"><span class="pre">can_message_interrupt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v512scatter_spanE"><code class="docutils literal notranslate"><span class="pre">scatter_span</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v5eqEbRK16allocated_bufferI1TERK16allocated_bufferI1TE"><code class="docutils literal notranslate"><span class="pre">operator==()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v5neEbRK16allocated_bufferI1TERK16allocated_bufferI1TE"><code class="docutils literal notranslate"><span class="pre">operator!=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v521make_allocated_bufferE16allocated_bufferI1TENSt3pmr21polymorphic_allocatorIEEN16allocated_bufferI1TE9size_typeE"><code class="docutils literal notranslate"><span class="pre">make_allocated_buffer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v521make_allocated_bufferE16allocated_bufferI1TENSt3pmr21polymorphic_allocatorIEEN16allocated_bufferI1TE9size_typeERK1T"><code class="docutils literal notranslate"><span class="pre">make_allocated_buffer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v520make_circular_bufferE15circular_bufferI1TENSt3pmr21polymorphic_allocatorI4byteEEN15circular_bufferI1TE9size_typeE"><code class="docutils literal notranslate"><span class="pre">make_circular_buffer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v520make_circular_bufferE15circular_bufferI1TENSt3pmr21polymorphic_allocatorI4byteEEN15circular_bufferI1TE9size_typeERK1T"><code class="docutils literal notranslate"><span class="pre">make_circular_buffer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v54swapEvR10strong_ptrI1TER10strong_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">swap()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v54swapEvR8weak_ptrI1TER8weak_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">swap()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I00EN3hal2v5eqEbRK10strong_ptrI1TERK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">operator==()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I00EN3hal2v5neEbRK10strong_ptrI1TERK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">operator!=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I00EN3hal2v5eqEbRK12optional_ptrI1TERK12optional_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">operator==()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I00EN3hal2v5neEbRK12optional_ptrI1TERK12optional_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">operator!=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v5eqEbRK12optional_ptrI1TENSt9nullptr_tE"><code class="docutils literal notranslate"><span class="pre">operator==()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v5eqEbNSt9nullptr_tERK12optional_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">operator==()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v5neEbRK12optional_ptrI1TENSt9nullptr_tE"><code class="docutils literal notranslate"><span class="pre">operator!=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v5neEbNSt9nullptr_tERK12optional_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">operator!=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0DpEN3hal2v515make_strong_ptrE10strong_ptrI1TENSt3pmr21polymorphic_allocatorIEEDpRR4Args"><code class="docutils literal notranslate"><span class="pre">make_strong_ptr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0DpEN3hal2v518make_scatter_arrayEDaDpRR4Args"><code class="docutils literal notranslate"><span class="pre">make_scatter_array()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v5eqEbRK12scatter_spanI1TERK12scatter_spanI1TE"><code class="docutils literal notranslate"><span class="pre">operator==()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v5neEbRK12scatter_spanI1TERK12scatter_spanI1TE"><code class="docutils literal notranslate"><span class="pre">operator!=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4IDpEN3hal2v518make_scatter_bytesEDaDpRR4Args"><code class="docutils literal notranslate"><span class="pre">make_scatter_bytes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4IDpEN3hal2v527make_writable_scatter_bytesEDaDpRR4Args"><code class="docutils literal notranslate"><span class="pre">make_writable_scatter_bytes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v516allocated_bufferE"><code class="docutils literal notranslate"><span class="pre">hal::v5::allocated_buffer</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer16allocated_bufferEv"><code class="docutils literal notranslate"><span class="pre">allocated_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer16allocated_bufferERR16allocated_buffer"><code class="docutils literal notranslate"><span class="pre">allocated_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_bufferaSERR16allocated_buffer"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer16allocated_bufferERK16allocated_buffer"><code class="docutils literal notranslate"><span class="pre">allocated_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_bufferaSERK16allocated_buffer"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer16allocated_bufferENSt3pmr21polymorphic_allocatorIEE9size_type"><code class="docutils literal notranslate"><span class="pre">allocated_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer16allocated_bufferENSt3pmr21polymorphic_allocatorIEE9size_typeRK1T"><code class="docutils literal notranslate"><span class="pre">allocated_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer16allocated_bufferENSt3pmr21polymorphic_allocatorIEENSt16initializer_listI1TEE"><code class="docutils literal notranslate"><span class="pre">allocated_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_bufferD0Ev"><code class="docutils literal notranslate"><span class="pre">~allocated_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer2atE9size_type"><code class="docutils literal notranslate"><span class="pre">at()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer2atE9size_type"><code class="docutils literal notranslate"><span class="pre">at()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_bufferixE9size_type"><code class="docutils literal notranslate"><span class="pre">operator[]()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_bufferixE9size_type"><code class="docutils literal notranslate"><span class="pre">operator[]()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer5frontEv"><code class="docutils literal notranslate"><span class="pre">front()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer5frontEv"><code class="docutils literal notranslate"><span class="pre">front()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer4backEv"><code class="docutils literal notranslate"><span class="pre">back()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer4backEv"><code class="docutils literal notranslate"><span class="pre">back()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer4dataEv"><code class="docutils literal notranslate"><span class="pre">data()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer4dataEv"><code class="docutils literal notranslate"><span class="pre">data()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer5beginEv"><code class="docutils literal notranslate"><span class="pre">begin()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer5beginEv"><code class="docutils literal notranslate"><span class="pre">begin()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer6cbeginEv"><code class="docutils literal notranslate"><span class="pre">cbegin()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer3endEv"><code class="docutils literal notranslate"><span class="pre">end()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer3endEv"><code class="docutils literal notranslate"><span class="pre">end()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer4cendEv"><code class="docutils literal notranslate"><span class="pre">cend()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer6rbeginEv"><code class="docutils literal notranslate"><span class="pre">rbegin()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer6rbeginEv"><code class="docutils literal notranslate"><span class="pre">rbegin()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer7crbeginEv"><code class="docutils literal notranslate"><span class="pre">crbegin()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer4rendEv"><code class="docutils literal notranslate"><span class="pre">rend()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer4rendEv"><code class="docutils literal notranslate"><span class="pre">rend()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer5crendEv"><code class="docutils literal notranslate"><span class="pre">crend()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer5emptyEv"><code class="docutils literal notranslate"><span class="pre">empty()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer4sizeEv"><code class="docutils literal notranslate"><span class="pre">size()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v516allocated_buffer10size_bytesEv"><code class="docutils literal notranslate"><span class="pre">size_bytes()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v516allocated_buffer4fillERK1T"><code class="docutils literal notranslate"><span class="pre">fill()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v515circular_bufferE"><code class="docutils literal notranslate"><span class="pre">hal::v5::circular_buffer</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_buffer15circular_bufferEv"><code class="docutils literal notranslate"><span class="pre">circular_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_buffer15circular_bufferERR15circular_buffer"><code class="docutils literal notranslate"><span class="pre">circular_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_bufferaSERR15circular_buffer"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_buffer15circular_bufferERK15circular_buffer"><code class="docutils literal notranslate"><span class="pre">circular_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_bufferaSERK15circular_buffer"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_buffer15circular_bufferENSt3pmr21polymorphic_allocatorI4byteEE9size_type"><code class="docutils literal notranslate"><span class="pre">circular_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_buffer15circular_bufferENSt3pmr21polymorphic_allocatorI4byteEE9size_typeRK1T"><code class="docutils literal notranslate"><span class="pre">circular_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_buffer15circular_bufferENSt3pmr21polymorphic_allocatorI4byteEENSt16initializer_listI1TEE"><code class="docutils literal notranslate"><span class="pre">circular_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_bufferD0Ev"><code class="docutils literal notranslate"><span class="pre">~circular_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_buffer4pushERK1T"><code class="docutils literal notranslate"><span class="pre">push()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_buffer4pushERR1T"><code class="docutils literal notranslate"><span class="pre">push()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4IDpEN3hal2v53hal2v515circular_buffer7emplaceE9referenceDpRR4Args"><code class="docutils literal notranslate"><span class="pre">emplace()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_bufferixE9size_type"><code class="docutils literal notranslate"><span class="pre">operator[]()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v515circular_bufferixE9size_type"><code class="docutils literal notranslate"><span class="pre">operator[]()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515circular_buffer4dataEv"><code class="docutils literal notranslate"><span class="pre">data()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v515circular_buffer4dataEv"><code class="docutils literal notranslate"><span class="pre">data()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v515circular_buffer8capacityEv"><code class="docutils literal notranslate"><span class="pre">capacity()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v515circular_buffer10size_bytesEv"><code class="docutils literal notranslate"><span class="pre">size_bytes()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v515circular_buffer11write_indexEv"><code class="docutils literal notranslate"><span class="pre">write_index()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v523enable_strong_from_thisE"><code class="docutils literal notranslate"><span class="pre">hal::v5::enable_strong_from_this</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v523enable_strong_from_this16strong_from_thisEv"><code class="docutils literal notranslate"><span class="pre">strong_from_this()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v523enable_strong_from_this16strong_from_thisEv"><code class="docutils literal notranslate"><span class="pre">strong_from_this()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v523enable_strong_from_this14weak_from_thisEv"><code class="docutils literal notranslate"><span class="pre">weak_from_this()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v523enable_strong_from_this14weak_from_thisEv"><code class="docutils literal notranslate"><span class="pre">weak_from_this()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v512optional_ptrE"><code class="docutils literal notranslate"><span class="pre">hal::v5::optional_ptr</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptr12optional_ptrEv"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptr12optional_ptrENSt9nullptr_tE"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptr12optional_ptrERR12optional_ptr"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptr12optional_ptrERK10strong_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptr12optional_ptrERK12optional_ptr"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v512optional_ptr12optional_ptrERK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptraSERR12optional_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptraSERK12optional_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptraSERK10strong_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v512optional_ptraSER12optional_ptrRK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptraSENSt9nullptr_tE"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptrD0Ev"><code class="docutils literal notranslate"><span class="pre">~optional_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v512optional_ptr9has_valueEv"><code class="docutils literal notranslate"><span class="pre">has_value()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v512optional_ptrcvbEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">bool()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptr5valueEv"><code class="docutils literal notranslate"><span class="pre">value()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v512optional_ptr5valueEv"><code class="docutils literal notranslate"><span class="pre">value()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptrcv10strong_ptrI1TEEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">strong_ptr&lt;</span> <span class="pre">T</span> <span class="pre">&gt;()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v512optional_ptrcv10strong_ptrI1TEEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">strong_ptr&lt;</span> <span class="pre">T</span> <span class="pre">&gt;()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v512optional_ptrcv10strong_ptrI1UEEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">strong_ptr&lt;</span> <span class="pre">U</span> <span class="pre">&gt;()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0ENK3hal2v53hal2v512optional_ptrcv10strong_ptrI1UEEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">strong_ptr&lt;</span> <span class="pre">U</span> <span class="pre">&gt;()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptrptEv"><code class="docutils literal notranslate"><span class="pre">operator-&gt;()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v512optional_ptrptEv"><code class="docutils literal notranslate"><span class="pre">operator-&gt;()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptrmlEv"><code class="docutils literal notranslate"><span class="pre">operator*()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v512optional_ptrmlEv"><code class="docutils literal notranslate"><span class="pre">operator*()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptr5resetEv"><code class="docutils literal notranslate"><span class="pre">reset()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4IDpEN3hal2v53hal2v512optional_ptr7emplaceER10strong_ptrI1TEDpRR4Args"><code class="docutils literal notranslate"><span class="pre">emplace()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v512optional_ptr4swapER12optional_ptr"><code class="docutils literal notranslate"><span class="pre">swap()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serialE"><code class="docutils literal notranslate"><span class="pre">hal::v5::serial</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial9configureERK8settings"><code class="docutils literal notranslate"><span class="pre">configure()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial5writeENSt4spanIKN3hal4byteEEE"><code class="docutils literal notranslate"><span class="pre">write()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial14receive_bufferEv"><code class="docutils literal notranslate"><span class="pre">receive_buffer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial14receive_cursorEv"><code class="docutils literal notranslate"><span class="pre">receive_cursor()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v56serial8settingsE"><code class="docutils literal notranslate"><span class="pre">hal::v5::serial::settings</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v510strong_ptrE"><code class="docutils literal notranslate"><span class="pre">hal::v5::strong_ptr</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v510strong_ptr10strong_ptrEv"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v510strong_ptr10strong_ptrENSt9nullptr_tE"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v510strong_ptr10strong_ptrERK10strong_ptr"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v510strong_ptr10strong_ptrERR10strong_ptr"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v510strong_ptraSERR10strong_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEPKv"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0_N6detail14non_array_likeEEN3hal2v53hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1U1M"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I00_NSt6size_tEEN3hal2v53hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UNSt5arrayI1E1NEENSt6size_tE"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I00_NSt6size_tEEN3hal2v53hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UA1N_1ENSt6size_tE"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v510strong_ptrD0Ev"><code class="docutils literal notranslate"><span class="pre">~strong_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v510strong_ptraSERK10strong_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v510strong_ptraSER10strong_ptrRK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v510strong_ptr4swapER10strong_ptr"><code class="docutils literal notranslate"><span class="pre">swap()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NO3hal2v53hal2v510strong_ptrmlEv"><code class="docutils literal notranslate"><span class="pre">operator*()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NO3hal2v53hal2v510strong_ptrptEv"><code class="docutils literal notranslate"><span class="pre">operator-&gt;()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NKR3hal2v53hal2v510strong_ptrmlEv"><code class="docutils literal notranslate"><span class="pre">operator*()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NKR3hal2v53hal2v510strong_ptrptEv"><code class="docutils literal notranslate"><span class="pre">operator-&gt;()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v510strong_ptr9use_countEv"><code class="docutils literal notranslate"><span class="pre">use_count()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v521strong_ptr_only_tokenE"><code class="docutils literal notranslate"><span class="pre">hal::v5::strong_ptr_only_token</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515timed_interruptE"><code class="docutils literal notranslate"><span class="pre">hal::v5::timed_interrupt</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515timed_interrupt16optional_handlerE"><code class="docutils literal notranslate"><span class="pre">optional_handler</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515timed_interrupt9scheduledEv"><code class="docutils literal notranslate"><span class="pre">scheduled()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515timed_interrupt8scheduleERK16optional_handlerN3hal13time_durationE"><code class="docutils literal notranslate"><span class="pre">schedule()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v515timed_interrupt12schedule_tagE"><code class="docutils literal notranslate"><span class="pre">hal::v5::timed_interrupt::schedule_tag</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v58weak_ptrE"><code class="docutils literal notranslate"><span class="pre">hal::v5::weak_ptr</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v58weak_ptr8weak_ptrEv"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v58weak_ptr8weak_ptrERK10strong_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v58weak_ptr8weak_ptrERK8weak_ptr"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v58weak_ptr8weak_ptrERR8weak_ptr"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v58weak_ptr8weak_ptrERK8weak_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v58weak_ptr8weak_ptrERR8weak_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4I0EN3hal2v53hal2v58weak_ptr8weak_ptrERK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v58weak_ptrD0Ev"><code class="docutils literal notranslate"><span class="pre">~weak_ptr()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v58weak_ptraSERK8weak_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v58weak_ptraSERR8weak_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v58weak_ptraSERK10strong_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4N3hal2v53hal2v58weak_ptr4swapER8weak_ptr"><code class="docutils literal notranslate"><span class="pre">swap()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v58weak_ptr7expiredEv"><code class="docutils literal notranslate"><span class="pre">expired()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v58weak_ptr4lockEv"><code class="docutils literal notranslate"><span class="pre">lock()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/scatter_span.html#_CPPv4NK3hal2v53hal2v58weak_ptr9use_countEv"><code class="docutils literal notranslate"><span class="pre">use_count()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/serial.html">Serial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/serial.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/serial.html#_CPPv4N3hal6serialE"><code class="docutils literal notranslate"><span class="pre">hal::serial</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/serial.html#_CPPv4N3hal6serial9configureERK8settings"><code class="docutils literal notranslate"><span class="pre">configure()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/serial.html#_CPPv4N3hal6serial5writeENSt4spanIK4byteEE"><code class="docutils literal notranslate"><span class="pre">write()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/serial.html#_CPPv4N3hal6serial4readENSt4spanI4byteEE"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/serial.html#_CPPv4N3hal6serial5flushEv"><code class="docutils literal notranslate"><span class="pre">flush()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/serial.html#_CPPv4N3hal6serial6read_tE"><code class="docutils literal notranslate"><span class="pre">hal::serial::read_t</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/serial.html#_CPPv4N3hal6serial8settingsE"><code class="docutils literal notranslate"><span class="pre">hal::serial::settings</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/serial.html#_CPPv4N3hal6serial7write_tE"><code class="docutils literal notranslate"><span class="pre">hal::serial::write_t</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/servo.html">Servo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/servo.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/servo.html#_CPPv4N3hal5servoE"><code class="docutils literal notranslate"><span class="pre">hal::servo</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/servo.html#_CPPv4N3hal5servo8positionEN3hal7degreesE"><code class="docutils literal notranslate"><span class="pre">position()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/spi.html">Serial Peripheral Interface (SPI)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/spi.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/spi.html#_CPPv4N3hal3spiE"><code class="docutils literal notranslate"><span class="pre">hal::spi</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/spi.html#_CPPv4N3hal3spi9configureERK8settings"><code class="docutils literal notranslate"><span class="pre">configure()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/spi.html#_CPPv4N3hal3spi8transferENSt4spanIK4byteEENSt4spanI4byteEEN3hal4byteE"><code class="docutils literal notranslate"><span class="pre">transfer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/spi.html#_CPPv4N3hal3spi14default_fillerE"><code class="docutils literal notranslate"><span class="pre">default_filler</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/spi.html#_CPPv4N3hal3spi8settingsE"><code class="docutils literal notranslate"><span class="pre">hal::spi::settings</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/steady_clock.html">Steady Clock</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/steady_clock.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/steady_clock.html#_CPPv4N3hal12steady_clockE"><code class="docutils literal notranslate"><span class="pre">hal::steady_clock</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/steady_clock.html#_CPPv4N3hal12steady_clock9frequencyEv"><code class="docutils literal notranslate"><span class="pre">frequency()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/steady_clock.html#_CPPv4N3hal12steady_clock6uptimeEv"><code class="docutils literal notranslate"><span class="pre">uptime()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/stream_dac.html">Stream DAC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/stream_dac.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/stream_dac.html#_CPPv4I_NSt17unsigned_integralEEN3hal10stream_dacE"><code class="docutils literal notranslate"><span class="pre">hal::stream_dac</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/stream_dac.html#_CPPv4N3hal10stream_dac5writeERK7samples"><code class="docutils literal notranslate"><span class="pre">write()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/stream_dac.html#_CPPv4N3hal10stream_dac7samplesE"><code class="docutils literal notranslate"><span class="pre">hal::stream_dac::samples</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/temperature_sensor.html">Temperature Sensor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/temperature_sensor.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/temperature_sensor.html#_CPPv4N3hal18temperature_sensorE"><code class="docutils literal notranslate"><span class="pre">hal::temperature_sensor</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/temperature_sensor.html#_CPPv4N3hal18temperature_sensor4readEv"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/timed_interrupt.html">Timed Interrupt</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/timed_interrupt.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/timed_interrupt.html#_CPPv4N3hal2v515timed_interruptE"><code class="docutils literal notranslate"><span class="pre">hal::v5::timed_interrupt</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/timed_interrupt.html#_CPPv4N3hal2v515timed_interrupt16optional_handlerE"><code class="docutils literal notranslate"><span class="pre">optional_handler</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/timed_interrupt.html#_CPPv4N3hal2v515timed_interrupt9scheduledEv"><code class="docutils literal notranslate"><span class="pre">scheduled()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/timed_interrupt.html#_CPPv4N3hal2v515timed_interrupt8scheduleERK16optional_handlerN3hal13time_durationE"><code class="docutils literal notranslate"><span class="pre">schedule()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/timed_interrupt.html#_CPPv4N3hal2v515timed_interrupt12schedule_tagE"><code class="docutils literal notranslate"><span class="pre">hal::v5::timed_interrupt::schedule_tag</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/timeout.html">Timeout</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/timeout.html#core-functionality">Core Functionality</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/timeout.html#_CPPv416timeout_function"><code class="docutils literal notranslate"><span class="pre">timeout_function</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/timeout.html#_CPPv413work_function"><code class="docutils literal notranslate"><span class="pre">work_function</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/timeout.html#_CPPv410work_state"><code class="docutils literal notranslate"><span class="pre">work_state</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/timeout.html#_CPPv4N10work_state11in_progressE"><code class="docutils literal notranslate"><span class="pre">in_progress</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/timeout.html#_CPPv4N10work_state6failedE"><code class="docutils literal notranslate"><span class="pre">failed</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/timeout.html#_CPPv4N10work_state8finishedE"><code class="docutils literal notranslate"><span class="pre">finished</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/timeout.html#_CPPv413never_timeoutv"><code class="docutils literal notranslate"><span class="pre">never_timeout()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/timer.html">Timer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/timer.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/timer.html#_CPPv4N3hal5timerE"><code class="docutils literal notranslate"><span class="pre">hal::timer</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/timer.html#_CPPv4N3hal5timer10is_runningEv"><code class="docutils literal notranslate"><span class="pre">is_running()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/timer.html#_CPPv4N3hal5timer6cancelEv"><code class="docutils literal notranslate"><span class="pre">cancel()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/timer.html#_CPPv4N3hal5timer8scheduleEN3hal8callbackIFvvEEEN3hal13time_durationE"><code class="docutils literal notranslate"><span class="pre">schedule()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/units.html">Units</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/units.html#core-functionality">Core Functionality</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="libhal/usb.html">USB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libhal/usb.html#hardware-interface">Hardware Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb13endpoint_infoE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::endpoint_info</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb13endpoint_info12in_directionEv"><code class="docutils literal notranslate"><span class="pre">in_direction()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb13endpoint_info14logical_numberEv"><code class="docutils literal notranslate"><span class="pre">logical_number()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb13endpoint_info4sizeE"><code class="docutils literal notranslate"><span class="pre">size</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb13endpoint_info6numberE"><code class="docutils literal notranslate"><span class="pre">number</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb13endpoint_info7stalledE"><code class="docutils literal notranslate"><span class="pre">stalled</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb8endpointE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::endpoint</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4NK3hal2v53usb8endpoint4infoEv"><code class="docutils literal notranslate"><span class="pre">info()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb8endpoint5stallEb"><code class="docutils literal notranslate"><span class="pre">stall()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb8endpoint5resetEv"><code class="docutils literal notranslate"><span class="pre">reset()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb16control_endpointE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::control_endpoint</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb16control_endpoint7connectEb"><code class="docutils literal notranslate"><span class="pre">connect()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb16control_endpoint11set_addressE2u8"><code class="docutils literal notranslate"><span class="pre">set_address()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb16control_endpoint5writeE12scatter_spanIK4byteE"><code class="docutils literal notranslate"><span class="pre">write()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb16control_endpoint4readE12scatter_spanI4byteE"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb16control_endpoint10on_receiveERKN3hal8callbackIFv14on_receive_tagEEE"><code class="docutils literal notranslate"><span class="pre">on_receive()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb16control_endpoint14on_receive_tagE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::control_endpoint::on_receive_tag</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb11in_endpointE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::in_endpoint</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb11in_endpoint5writeE12scatter_spanIK4byteE"><code class="docutils literal notranslate"><span class="pre">write()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb12out_endpointE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::out_endpoint</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb12out_endpoint10on_receiveERK8callbackIFv14on_receive_tagEE"><code class="docutils literal notranslate"><span class="pre">on_receive()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb12out_endpoint4readE12scatter_spanI4byteE"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb12out_endpoint14on_receive_tagE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::out_endpoint::on_receive_tag</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb21interrupt_in_endpointE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::interrupt_in_endpoint</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb22interrupt_out_endpointE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::interrupt_out_endpoint</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb16bulk_in_endpointE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::bulk_in_endpoint</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb17bulk_out_endpointE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::bulk_out_endpoint</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packetE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::setup_packet</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet12request_typeE"><code class="docutils literal notranslate"><span class="pre">request_type</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet17request_recipientE"><code class="docutils literal notranslate"><span class="pre">request_recipient</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet12setup_packetE4args"><code class="docutils literal notranslate"><span class="pre">setup_packet()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet12setup_packetERKNSt5arrayI4byteXL8EEEE"><code class="docutils literal notranslate"><span class="pre">setup_packet()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4NK3hal2v53usb12setup_packet8get_typeEv"><code class="docutils literal notranslate"><span class="pre">get_type()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4NK3hal2v53usb12setup_packet13get_recipientEv"><code class="docutils literal notranslate"><span class="pre">get_recipient()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4NK3hal2v53usb12setup_packet17is_device_to_hostEv"><code class="docutils literal notranslate"><span class="pre">is_device_to_host()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4I_5usizeEN3hal2v53usb12setup_packet10set_le_u16Ev3u16"><code class="docutils literal notranslate"><span class="pre">set_le_u16()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet13from_le_bytesEN3hal4byteEN3hal4byteE"><code class="docutils literal notranslate"><span class="pre">from_le_bytes()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet9to_le_u16E3u16"><code class="docutils literal notranslate"><span class="pre">to_le_u16()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb12setup_packet4argsE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::setup_packet::args</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb9interfaceE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::interface</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb9interface17write_descriptorsE16descriptor_startRK15endpoint_writer"><code class="docutils literal notranslate"><span class="pre">write_descriptors()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb9interface23write_string_descriptorE2u8RK15endpoint_writer"><code class="docutils literal notranslate"><span class="pre">write_string_descriptor()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb9interface14handle_requestERK12setup_packetRK15endpoint_writer"><code class="docutils literal notranslate"><span class="pre">handle_request()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb9interface16descriptor_countE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::interface::descriptor_count</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="libhal/usb.html#_CPPv4N3hal2v53usb9interface16descriptor_startE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::interface::descriptor_start</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="libhal/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">libhal Hardware Interface API Documentation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
