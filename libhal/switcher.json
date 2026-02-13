@@ -1,5 +1,9 @@
 [
     {
+        "version": "api",
+        "url": "https://libhal.github.io/api/libhal/api"
+    },
+    {
         "version": "main",
         "url": "https://libhal.github.io/api/libhal/main"
     },
