@@ -1,0 +1,697 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>STM32 Generic I2C APIs &#8212; libhal-arm-mcu  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'stm32_generic/i2c';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/libhal-arm-mcu/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.20.2';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="STM32 Generic PWM APIs" href="pwm.html" />
+    <link rel="prev" title="libhal-arm-mcu STM32 Generic API Documentation" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="libhal-arm-mcu  documentation - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="libhal-arm-mcu  documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<nav class="navbar-nav">
+  <p
+    class="sidebar-header-items__title"
+    role="heading"
+    aria-level="2"
+    aria-label="Site Navigation"
+  ></p>
+  <ul class="bd-navbar-elements navbar-nav">
+    <li class="nav-item dropdown">
+      <button
+        class="btn dropdown-toggle nav-item"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        aria-controls="pst-nav-more-links"
+      >
+        Guides
+      </button>
+      <ul id="pst-nav-more-links" class="dropdown-menu">
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/"
+          >
+            🏡 Introduction
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/getting_started/"
+          >
+            🚀 Getting Started
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/user_guide/fundamentals/"
+          >
+            📖 User Guide
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/contributor_guide/philosophy/"
+          >
+            📚 Contributor Guides
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/project_information/status/"
+          >
+            📊 Project Information
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../cortex_m/index.html">
+    Libhal Cortex M
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../lpc40/index.html">
+    Libhal LPC40xx
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32f1/index.html">
+    Libhal STM32F1
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../stm32f40/index.html">
+    Libhal STM32F40
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../stm32f411/index.html">
+    Libhal STM32F411
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="index.html">
+    Libhal STM32 Generic
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../cortex_m/index.html">
+    Libhal Cortex M
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../lpc40/index.html">
+    Libhal LPC40xx
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32f1/index.html">
+    Libhal STM32F1
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32f40/index.html">
+    Libhal STM32F40
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../stm32f411/index.html">
+    Libhal STM32F411
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Libhal STM32 Generic
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">STM32 Generic drivers</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">STM32 Generic I2C APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwm.html">STM32 Generic PWM APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadrature_encoder.html">STM32 Generic Quadrature Encoder APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spi.html">STM32 Generic SPI APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timer.html">STM32 Generic Timer APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uart.html">STM32 Generic UART APIs</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">libhal-arm-mcu STM32 Generic API Documentation</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">STM32 Generic I2C APIs</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="stm32-generic-i2c-apis">
+<h1>STM32 Generic I2C APIs<a class="headerlink" href="#stm32-generic-i2c-apis" title="Link to this heading">#</a></h1>
+<section id="hal-stm32-generic-i2c">
+<h2><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::i2c</span></code><a class="headerlink" href="#hal-stm32-generic-i2c" title="Link to this heading">#</a></h2>
+<p>Defined in namespace <code class="docutils literal notranslate"><span class="pre">hal::stm32_generic</span></code></p>
+<p><em>#include &lt;libhal-arm-mcu/stm32_generic/i2c.hpp&gt;</em></p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal13stm32_generic3i2cE">
+<span id="_CPPv3N3hal13stm32_generic3i2cE"></span><span id="_CPPv2N3hal13stm32_generic3i2cE"></span><span id="hal::stm32_generic::i2c"></span><span class="target" id="classhal_1_1stm32__generic_1_1i2c"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i2c</span></span></span><a class="headerlink" href="#_CPPv4N3hal13stm32_generic3i2cE" title="Link to this definition">#</a><br /></dt>
+<dd><p>A generic <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> implementation for all stm32 series MCUs. </p>
+<p>This class is meant to only be used by platform libraries or drivers aiming to be platform libraries for stm32 devices. Application developers should use the driver specific to their platform instead of this class as they handle proper initialization for you. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal13stm32_generic3i2c3i2cEPv">
+<span id="_CPPv3N3hal13stm32_generic3i2c3i2cEPv"></span><span id="_CPPv2N3hal13stm32_generic3i2c3i2cEPv"></span><span id="hal::stm32_generic::i2c::i2c__voidP"></span><span class="target" id="classhal_1_1stm32__generic_1_1i2c_1a375ed3119b69a63bb1acf88aca07d60a"></span><span class="sig-name descname"><span class="n"><span class="pre">i2c</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">p_i2c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal13stm32_generic3i2c3i2cEPv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Construct a new <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> object Care must be taken when constructing this object. The constructor does not and cannot power on the <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> peripheral. Accessing the peripheral’s registers without it be powered on (or provided a clock), will result in a memory fault as the peripheral cannot ACK the CPU when it attempts to access the peripheral’s registers. The power management system for each peripheral across the stm32 series of MCUs is different, meaning its not something that can efficiently be manged by this generic driver. </p>
+<p>Things that needed to be done before construction:</p>
+<p><ol class="lowerroman simple">
+<li><p>Configure pins to be controlled by the <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> peripheral pointed to by the <code class="docutils literal notranslate"><span class="pre">p_peripheral_address</span></code> input parameter.</p></li>
+<li><p>Power on the appropriate <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> peripheral</p></li>
+</ol>
+</p>
+<p>After construction, execute the <code class="docutils literal notranslate"><a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c_1af9b839bbd5e2c86a2cc7611a39ca8624"><span class="std std-ref"><span class="pre">configure()</span></span></a></code> function with the appropriate peripheral frequency and <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> settings.</p>
+<p>Performing these in this order will properly initialize the <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> driver and allow the usage of the <code class="docutils literal notranslate"><span class="pre">transfer()</span></code> API. Failing to execute these steps in this order will result in UB.</p>
+<p>NOTE: why does this driver get away with breaking the rule about construction means initialization? Because its constructor is marked unsafe meaning care needs to be taken when using this.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_i2c</strong> – - <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> peripheral address </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal13stm32_generic3i2c11transactionEN3hal4byteENSt4spanIKN3hal4byteEEENSt4spanIN3hal4byteEEEN3hal12function_refIN3hal16timeout_functionEEE">
+<span id="_CPPv3N3hal13stm32_generic3i2c11transactionEN3hal4byteENSt4spanIKN3hal4byteEEENSt4spanIN3hal4byteEEEN3hal12function_refIN3hal16timeout_functionEEE"></span><span id="_CPPv2N3hal13stm32_generic3i2c11transactionEN3hal4byteENSt4spanIKN3hal4byteEEENSt4spanIN3hal4byteEEEN3hal12function_refIN3hal16timeout_functionEEE"></span><span id="hal::stm32_generic::i2c::transaction__hal::byte.std::span:hal::byteC:.std::span:hal::byte:.hal::function_ref:hal::timeout_function:"></span><span class="target" id="classhal_1_1stm32__generic_1_1i2c_1acad21fd359142adeddc4705aec4130ad"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">transaction</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">byte</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_address</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">byte</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_data_out</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">byte</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_data_in</span></span>, <span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">function_ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">timeout_function</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_timeout</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal13stm32_generic3i2c11transactionEN3hal4byteENSt4spanIKN3hal4byteEEENSt4spanIN3hal4byteEEEN3hal12function_refIN3hal16timeout_functionEEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Perform a transfer operation as defined in <code class="docutils literal notranslate"><span class="pre">hal::i2c::transaction</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p_address</strong> – - target <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> slave address </p></li>
+<li><p><strong>p_data_out</strong> – - outgoing data </p></li>
+<li><p><strong>p_data_in</strong> – - incoming data </p></li>
+<li><p><strong>p_timeout</strong> – - timeout function </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal13stm32_generic3i2c9configureERKN3hal3i2c8settingsE5hertz">
+<span id="_CPPv3N3hal13stm32_generic3i2c9configureERKN3hal3i2c8settingsE5hertz"></span><span id="_CPPv2N3hal13stm32_generic3i2c9configureERKN3hal3i2c8settingsE5hertz"></span><span id="hal::stm32_generic::i2c::configure__hal::i2c::settingsCR.hertz"></span><span class="target" id="classhal_1_1stm32__generic_1_1i2c_1af9b839bbd5e2c86a2cc7611a39ca8624"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">configure</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">i2c</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">settings</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_settings</span></span>, <span class="n"><span class="pre">hertz</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_frequency</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal13stm32_generic3i2c9configureERKN3hal3i2c8settingsE5hertz" title="Link to this definition">#</a><br /></dt>
+<dd><p>Configures <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> peripheral. </p>
+<p>Because each stm32 series MCU has its own unique clock tree, there is no single, simple and space efficient may to determine the system’s <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> clock speed. So the caller must supply the operating frequency of the <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> peripheral for this to work. This API is meant to be called by platform specific <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> drivers that have the necessary context and library apis to retrieve the <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> peripheral’s clock rate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p_settings</strong> – - <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> settings </p></li>
+<li><p><strong>p_frequency</strong> – - peripheral operating frequency </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal13stm32_generic3i2c16handle_i2c_eventEv">
+<span id="_CPPv3N3hal13stm32_generic3i2c16handle_i2c_eventEv"></span><span id="_CPPv2N3hal13stm32_generic3i2c16handle_i2c_eventEv"></span><span id="hal::stm32_generic::i2c::handle_i2c_event"></span><span class="target" id="classhal_1_1stm32__generic_1_1i2c_1aff438d93e4f4964bdd7211d57a4a5b79"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">handle_i2c_event</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal13stm32_generic3i2c16handle_i2c_eventEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Handles <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> event interupt when using the above configuration. Insert this into the appropriate <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> peripheral event interupt. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal13stm32_generic3i2c16handle_i2c_errorEv">
+<span id="_CPPv3N3hal13stm32_generic3i2c16handle_i2c_errorEv"></span><span id="_CPPv2N3hal13stm32_generic3i2c16handle_i2c_errorEv"></span><span id="hal::stm32_generic::i2c::handle_i2c_error"></span><span class="target" id="classhal_1_1stm32__generic_1_1i2c_1a7f86cba1dede2de3c1541993300c6e0f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">handle_i2c_error</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal13stm32_generic3i2c16handle_i2c_errorEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Handles <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> error interupt when using the above configuration. Insert this into the appropriate <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> peripheral error interupt. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal13stm32_generic3i2cD0Ev">
+<span id="_CPPv3N3hal13stm32_generic3i2cD0Ev"></span><span id="_CPPv2N3hal13stm32_generic3i2cD0Ev"></span><span id="hal::stm32_generic::i2c::~i2c"></span><span class="target" id="classhal_1_1stm32__generic_1_1i2c_1a736a6a7044006abc2c41b787d87b632b"></span><span class="sig-name descname"><span class="n"><span class="pre">~i2c</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal13stm32_generic3i2cD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd><p>Destroy the <a class="reference internal" href="#classhal_1_1stm32__generic_1_1i2c"><span class="std std-ref">i2c</span></a> object. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">libhal-arm-mcu STM32 Generic API Documentation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="pwm.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">STM32 Generic PWM APIs</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hal-stm32-generic-i2c"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::i2c</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal13stm32_generic3i2cE"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::i2c</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal13stm32_generic3i2c3i2cEPv"><code class="docutils literal notranslate"><span class="pre">i2c()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal13stm32_generic3i2c11transactionEN3hal4byteENSt4spanIKN3hal4byteEEENSt4spanIN3hal4byteEEEN3hal12function_refIN3hal16timeout_functionEEE"><code class="docutils literal notranslate"><span class="pre">transaction()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal13stm32_generic3i2c9configureERKN3hal3i2c8settingsE5hertz"><code class="docutils literal notranslate"><span class="pre">configure()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal13stm32_generic3i2c16handle_i2c_eventEv"><code class="docutils literal notranslate"><span class="pre">handle_i2c_event()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal13stm32_generic3i2c16handle_i2c_errorEv"><code class="docutils literal notranslate"><span class="pre">handle_i2c_error()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal13stm32_generic3i2cD0Ev"><code class="docutils literal notranslate"><span class="pre">~i2c()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/stm32_generic/i2c.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
