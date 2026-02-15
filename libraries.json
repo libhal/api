@@ -31,6 +31,14 @@
         "url": "https://libhal.github.io/api/libhal-arm-mcu/1.20.1"
       },
       {
+        "version": "1.20.2",
+        "url": "https://libhal.github.io/api/libhal-arm-mcu/1.20.2"
+      },
+      {
+        "version": "1.21.0",
+        "url": "https://libhal.github.io/api/libhal-arm-mcu/1.21.0"
+      },
+      {
         "version": "main",
         "url": "https://libhal.github.io/api/libhal-arm-mcu/main"
       }
