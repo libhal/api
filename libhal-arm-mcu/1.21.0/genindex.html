@@ -1,0 +1,2177 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; libhal-arm-mcu  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/extra.css?v=2ded0ca0" />
+    <link rel="stylesheet" type="text/css" href="_static/extra.css?v=2ded0ca0" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/libhal-arm-mcu/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '1.21.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="libhal-arm-mcu  documentation - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="libhal-arm-mcu  documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<nav class="navbar-nav">
+  <p
+    class="sidebar-header-items__title"
+    role="heading"
+    aria-level="2"
+    aria-label="Site Navigation"
+  ></p>
+  <ul class="bd-navbar-elements navbar-nav">
+    <li class="nav-item dropdown">
+      <button
+        class="btn dropdown-toggle nav-item"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        aria-controls="pst-nav-more-links"
+      >
+        Guides
+      </button>
+      <ul id="pst-nav-more-links" class="dropdown-menu">
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/"
+          >
+            🏡 Introduction
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/getting_started/"
+          >
+            🚀 Getting Started
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/user_guide/fundamentals/"
+          >
+            📖 User Guide
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/contributor_guide/philosophy/"
+          >
+            📚 Contributor Guides
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/project_information/status/"
+          >
+            📊 Project Information
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="cortex_m/index.html">
+    Libhal Cortex M
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="lpc40/index.html">
+    Libhal LPC40xx
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="stm32f1/index.html">
+    Libhal STM32F1
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="stm32f40/index.html">
+    Libhal STM32F40
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="stm32f411/index.html">
+    Libhal STM32F411
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="stm32_generic/index.html">
+    Libhal STM32 Generic
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="cortex_m/index.html">
+    Libhal Cortex M
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="lpc40/index.html">
+    Libhal LPC40xx
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="stm32f1/index.html">
+    Libhal STM32F1
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="stm32f40/index.html">
+    Libhal STM32F40
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="stm32f411/index.html">
+    Libhal STM32F411
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="stm32_generic/index.html">
+    Libhal STM32 Generic
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#H"><strong>H</strong></a>
+ 
+</div>
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m17bus_fault_handlerEv">hal::cortex_m::bus_fault_handler (C++ function)</a>
+</li>
+      <li><a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m18debugger_connectedEv">hal::cortex_m::debugger_connected (C++ function)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m25default_interrupt_handlerEv">hal::cortex_m::default_interrupt_handler (C++ function)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m22disable_all_interruptsEv">hal::cortex_m::disable_all_interrupts (C++ function)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m17disable_interruptE5irq_t">hal::cortex_m::disable_interrupt (C++ function)</a>
+</li>
+      <li><a href="cortex_m/dwt_counter.html#_CPPv4N3hal8cortex_m11dwt_counterE">hal::cortex_m::dwt_counter (C++ class)</a>
+</li>
+      <li><a href="cortex_m/dwt_counter.html#_CPPv4N3hal8cortex_m11dwt_counter11dwt_counterE5hertz">hal::cortex_m::dwt_counter::dwt_counter (C++ function)</a>
+</li>
+      <li><a href="cortex_m/dwt_counter.html#_CPPv4N3hal8cortex_m11dwt_counter22register_cpu_frequencyE5hertz">hal::cortex_m::dwt_counter::register_cpu_frequency (C++ function)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m21enable_all_interruptsEv">hal::cortex_m::enable_all_interrupts (C++ function)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m16enable_interruptE5irq_t17interrupt_pointer">hal::cortex_m::enable_interrupt (C++ function)</a>
+</li>
+      <li><a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m34get_interrupt_vector_table_addressEv">hal::cortex_m::get_interrupt_vector_table_address (C++ function)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m16get_vector_tableEv">hal::cortex_m::get_vector_table (C++ function)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m18hard_fault_handlerEv">hal::cortex_m::hard_fault_handler (C++ function)</a>
+</li>
+      <li><a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m22initialize_bss_sectionEv">hal::cortex_m::initialize_bss_section (C++ function)</a>
+</li>
+      <li><a href="cortex_m/startup.html#_CPPv4N3hal8cortex_m23initialize_data_sectionEv">hal::cortex_m::initialize_data_section (C++ function)</a>
+</li>
+      <li><a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m30initialize_floating_point_unitEv">hal::cortex_m::initialize_floating_point_unit (C++ function)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m21initialize_interruptsENSt4spanI17interrupt_pointerEE">hal::cortex_m::initialize_interrupts (C++ function)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m34interrupt_vector_table_initializedEv">hal::cortex_m::interrupt_vector_table_initialized (C++ function)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irqE">hal::cortex_m::irq (C++ enum)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq9bus_faultE">hal::cortex_m::irq::bus_fault (C++ enumerator)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq10hard_faultE">hal::cortex_m::irq::hard_fault (C++ enumerator)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq23memory_management_faultE">hal::cortex_m::irq::memory_management_fault (C++ enumerator)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq22non_maskable_interruptE">hal::cortex_m::irq::non_maskable_interrupt (C++ enumerator)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq7pend_svE">hal::cortex_m::irq::pend_sv (C++ enumerator)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq9reserve10E">hal::cortex_m::irq::reserve10 (C++ enumerator)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq9reserve12E">hal::cortex_m::irq::reserve12 (C++ enumerator)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq9reserve13E">hal::cortex_m::irq::reserve13 (C++ enumerator)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq8reserve7E">hal::cortex_m::irq::reserve7 (C++ enumerator)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq8reserve8E">hal::cortex_m::irq::reserve8 (C++ enumerator)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq8reserve9E">hal::cortex_m::irq::reserve9 (C++ enumerator)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq5resetE">hal::cortex_m::irq::reset (C++ enumerator)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq13software_callE">hal::cortex_m::irq::software_call (C++ enumerator)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq7systickE">hal::cortex_m::irq::systick (C++ enumerator)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq12top_of_stackE">hal::cortex_m::irq::top_of_stack (C++ enumerator)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m3irq11usage_faultE">hal::cortex_m::irq::usage_fault (C++ enumerator)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m20is_interrupt_enabledE5irq_t">hal::cortex_m::is_interrupt_enabled (C++ function)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m31memory_management_fault_handlerEv">hal::cortex_m::memory_management_fault_handler (C++ function)</a>
+</li>
+      <li><a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m5resetEv">hal::cortex_m::reset (C++ function)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m29revert_interrupt_vector_tableEv">hal::cortex_m::revert_interrupt_vector_table (C++ function)</a>
+</li>
+      <li><a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m34set_interrupt_vector_table_addressEPv">hal::cortex_m::set_interrupt_vector_table_address (C++ function)</a>
+</li>
+      <li><a href="cortex_m/systick_timer.html#_CPPv4N3hal8cortex_m13systick_timerE">hal::cortex_m::systick_timer (C++ class)</a>
+</li>
+      <li><a href="cortex_m/systick_timer.html#_CPPv4N3hal8cortex_m13systick_timer12clock_sourceE">hal::cortex_m::systick_timer::clock_source (C++ enum)</a>
+</li>
+      <li><a href="cortex_m/systick_timer.html#_CPPv4N3hal8cortex_m13systick_timer12clock_source8externalE">hal::cortex_m::systick_timer::clock_source::external (C++ enumerator)</a>
+</li>
+      <li><a href="cortex_m/systick_timer.html#_CPPv4N3hal8cortex_m13systick_timer12clock_source9processorE">hal::cortex_m::systick_timer::clock_source::processor (C++ enumerator)</a>
+</li>
+      <li><a href="cortex_m/systick_timer.html#_CPPv4N3hal8cortex_m13systick_timer22register_cpu_frequencyE5hertz12clock_source">hal::cortex_m::systick_timer::register_cpu_frequency (C++ function)</a>
+</li>
+      <li><a href="cortex_m/systick_timer.html#_CPPv4N3hal8cortex_m13systick_timer13systick_timerE5hertz12clock_source">hal::cortex_m::systick_timer::systick_timer (C++ function)</a>
+</li>
+      <li><a href="cortex_m/systick_timer.html#_CPPv4N3hal8cortex_m13systick_timerD0Ev">hal::cortex_m::systick_timer::~systick_timer (C++ function)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m19usage_fault_handlerEv">hal::cortex_m::usage_fault_handler (C++ function)</a>
+</li>
+      <li><a href="cortex_m/interrupt.html#_CPPv4N3hal8cortex_m21verify_vector_enabledE5irq_t17interrupt_pointer">hal::cortex_m::verify_vector_enabled (C++ function)</a>
+</li>
+      <li><a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m14wait_for_eventEv">hal::cortex_m::wait_for_event (C++ function)</a>
+</li>
+      <li><a href="cortex_m/system_control.html#_CPPv4N3hal8cortex_m18wait_for_interruptEv">hal::cortex_m::wait_for_interrupt (C++ function)</a>
+</li>
+      <li><a href="lpc40/adc.html#_CPPv4N3hal5lpc403adcE">hal::lpc40::adc (C++ class)</a>
+</li>
+      <li><a href="lpc40/adc.html#_CPPv4N3hal5lpc403adc3adcEN3hal13channel_paramE">hal::lpc40::adc::adc (C++ function)</a>, <a href="lpc40/adc.html#_CPPv4N3hal5lpc403adc3adcERK7channel">[1]</a>
+</li>
+      <li><a href="lpc40/adc.html#_CPPv4N3hal5lpc403adc7channelE">hal::lpc40::adc::channel (C++ struct)</a>
+</li>
+      <li><a href="lpc40/adc.html#_CPPv4N3hal5lpc403adc7channel7adc_pinE">hal::lpc40::adc::channel::adc_pin (C++ member)</a>
+</li>
+      <li><a href="lpc40/adc.html#_CPPv4N3hal5lpc403adc7channel10clock_rateE">hal::lpc40::adc::channel::clock_rate (C++ member)</a>
+</li>
+      <li><a href="lpc40/adc.html#_CPPv4N3hal5lpc403adc7channel5indexE">hal::lpc40::adc::channel::index (C++ member)</a>
+</li>
+      <li><a href="lpc40/adc.html#_CPPv4N3hal5lpc403adc7channel12pin_functionE">hal::lpc40::adc::channel::pin_function (C++ member)</a>
+</li>
+      <li><a href="lpc40/can.html#_CPPv4N3hal5lpc403canE">hal::lpc40::can (C++ class)</a>
+</li>
+      <li><a href="lpc40/can.html#_CPPv4N3hal5lpc403can4portE">hal::lpc40::can::port (C++ struct)</a>
+</li>
+      <li><a href="lpc40/can.html#_CPPv4N3hal5lpc403can4port2idE">hal::lpc40::can::port::id (C++ member)</a>
+</li>
+      <li><a href="lpc40/can.html#_CPPv4N3hal5lpc403can4port10irq_numberE">hal::lpc40::can::port::irq_number (C++ member)</a>
+</li>
+      <li><a href="lpc40/can.html#_CPPv4N3hal5lpc403can4port2rdE">hal::lpc40::can::port::rd (C++ member)</a>
+</li>
+      <li><a href="lpc40/can.html#_CPPv4N3hal5lpc403can4port16rd_function_codeE">hal::lpc40::can::port::rd_function_code (C++ member)</a>
+</li>
+      <li><a href="lpc40/can.html#_CPPv4N3hal5lpc403can4port9sync_jumpE">hal::lpc40::can::port::sync_jump (C++ member)</a>
+</li>
+      <li><a href="lpc40/can.html#_CPPv4N3hal5lpc403can4port2tdE">hal::lpc40::can::port::td (C++ member)</a>
+</li>
+      <li><a href="lpc40/can.html#_CPPv4N3hal5lpc403can4port16td_function_codeE">hal::lpc40::can::port::td_function_code (C++ member)</a>
+</li>
+      <li><a href="lpc40/can.html#_CPPv4N3hal5lpc403can4port5tseg1E">hal::lpc40::can::port::tseg1 (C++ member)</a>
+</li>
+      <li><a href="lpc40/can.html#_CPPv4N3hal5lpc403can4port5tseg2E">hal::lpc40::can::port::tseg2 (C++ member)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_treeE">hal::lpc40::clock_tree (C++ struct)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree3cpuE">hal::lpc40::clock_tree::cpu (C++ member)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree5cpu_tE">hal::lpc40::clock_tree::cpu_t (C++ struct)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree5cpu_t7dividerE">hal::lpc40::clock_tree::cpu_t::divider (C++ member)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree5cpu_t8use_pll0E">hal::lpc40::clock_tree::cpu_t::use_pll0 (C++ member)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree20emc_half_cpu_dividerE">hal::lpc40::clock_tree::emc_half_cpu_divider (C++ member)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree20oscillator_frequencyE">hal::lpc40::clock_tree::oscillator_frequency (C++ member)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree18peripheral_dividerE">hal::lpc40::clock_tree::peripheral_divider (C++ member)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree3pllE">hal::lpc40::clock_tree::pll (C++ member)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree5pll_tE">hal::lpc40::clock_tree::pll_t (C++ struct)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree5pll_t7enabledE">hal::lpc40::clock_tree::pll_t::enabled (C++ member)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree5pll_t8multiplyE">hal::lpc40::clock_tree::pll_t::multiply (C++ member)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree5spifiE">hal::lpc40::clock_tree::spifi (C++ member)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree7spifi_tE">hal::lpc40::clock_tree::spifi_t (C++ struct)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree7spifi_t5clockE">hal::lpc40::clock_tree::spifi_t::clock (C++ member)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree7spifi_t7dividerE">hal::lpc40::clock_tree::spifi_t::divider (C++ member)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree3usbE">hal::lpc40::clock_tree::usb (C++ member)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree5usb_tE">hal::lpc40::clock_tree::usb_t (C++ struct)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree5usb_t5clockE">hal::lpc40::clock_tree::usb_t::clock (C++ member)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree5usb_t7dividerE">hal::lpc40::clock_tree::usb_t::divider (C++ member)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4010clock_tree23use_external_oscillatorE">hal::lpc40::clock_tree::use_external_oscillator (C++ member)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4016configure_clocksERK10clock_tree">hal::lpc40::configure_clocks (C++ function)</a>
+</li>
+      <li><a href="lpc40/dac.html#_CPPv4N3hal5lpc403dacE">hal::lpc40::dac (C++ class)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc403dmaE">hal::lpc40::dma (C++ struct)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_burst_sizeE">hal::lpc40::dma_burst_size (C++ enum)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_burst_size7bytes_1E">hal::lpc40::dma_burst_size::bytes_1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_burst_size9bytes_128E">hal::lpc40::dma_burst_size::bytes_128 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_burst_size8bytes_16E">hal::lpc40::dma_burst_size::bytes_16 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_burst_size9bytes_256E">hal::lpc40::dma_burst_size::bytes_256 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_burst_size8bytes_32E">hal::lpc40::dma_burst_size::bytes_32 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_burst_size7bytes_4E">hal::lpc40::dma_burst_size::bytes_4 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_burst_size8bytes_64E">hal::lpc40::dma_burst_size::bytes_64 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_burst_size7bytes_8E">hal::lpc40::dma_burst_size::bytes_8 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4018dma_channel_selectE">hal::lpc40::dma_channel_select (C++ enum)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4018dma_channel_select8channel0E">hal::lpc40::dma_channel_select::channel0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4018dma_channel_select8channel1E">hal::lpc40::dma_channel_select::channel1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4018dma_channel_select8channel2E">hal::lpc40::dma_channel_select::channel2 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4018dma_channel_select8channel3E">hal::lpc40::dma_channel_select::channel3 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4018dma_channel_select8channel4E">hal::lpc40::dma_channel_select::channel4 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4018dma_channel_select8channel5E">hal::lpc40::dma_channel_select::channel5 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4018dma_channel_select8channel6E">hal::lpc40::dma_channel_select::channel6 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4018dma_channel_select8channel7E">hal::lpc40::dma_channel_select::channel7 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_peripheralE">hal::lpc40::dma_peripheral (C++ enum)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_peripheral3adcE">hal::lpc40::dma_peripheral::adc (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_peripheral3dacE">hal::lpc40::dma_peripheral::dac (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_peripheral23memory_or_timer0_match0E">hal::lpc40::dma_peripheral::memory_or_timer0_match0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_peripheral25sd_card_and_timer0_match1E">hal::lpc40::dma_peripheral::sd_card_and_timer0_match1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_peripheral25spi0_rx_and_timer1_match1E">hal::lpc40::dma_peripheral::spi0_rx_and_timer1_match1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_peripheral25spi0_tx_and_timer1_match0E">hal::lpc40::dma_peripheral::spi0_tx_and_timer1_match0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_peripheral25spi1_rx_and_timer2_match1E">hal::lpc40::dma_peripheral::spi1_rx_and_timer2_match1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_peripheral25spi1_tx_and_timer2_match0E">hal::lpc40::dma_peripheral::spi1_tx_and_timer2_match0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_peripheral25spi2_rx_and_i2s_channel_1E">hal::lpc40::dma_peripheral::spi2_rx_and_i2s_channel_1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_peripheral25spi2_tx_and_i2s_channel_0E">hal::lpc40::dma_peripheral::spi2_tx_and_i2s_channel_0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_peripheral21uart0_rx_and_uart3_rxE">hal::lpc40::dma_peripheral::uart0_rx_and_uart3_rx (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_peripheral21uart0_tx_and_uart3_txE">hal::lpc40::dma_peripheral::uart0_tx_and_uart3_tx (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_peripheral21uart1_rx_and_uart4_rxE">hal::lpc40::dma_peripheral::uart1_rx_and_uart4_rx (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_peripheral21uart1_tx_and_uart4_txE">hal::lpc40::dma_peripheral::uart1_tx_and_uart4_tx (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_peripheral26uart2_rx_and_timer3_match1E">hal::lpc40::dma_peripheral::uart2_rx_and_timer3_match1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4014dma_peripheral26uart2_tx_and_timer3_match0E">hal::lpc40::dma_peripheral::uart2_tx_and_timer3_match0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma_spi.html#_CPPv4N3hal5lpc407dma_spiE">hal::lpc40::dma_spi (C++ class)</a>
+</li>
+      <li><a href="lpc40/dma_spi.html#_CPPv4N3hal5lpc407dma_spi8bus_infoE">hal::lpc40::dma_spi::bus_info (C++ struct)</a>
+</li>
+      <li><a href="lpc40/dma_spi.html#_CPPv4N3hal5lpc407dma_spi8bus_info5clockE">hal::lpc40::dma_spi::bus_info::clock (C++ member)</a>
+</li>
+      <li><a href="lpc40/dma_spi.html#_CPPv4N3hal5lpc407dma_spi8bus_info14clock_functionE">hal::lpc40::dma_spi::bus_info::clock_function (C++ member)</a>
+</li>
+      <li><a href="lpc40/dma_spi.html#_CPPv4N3hal5lpc407dma_spi8bus_info7data_inE">hal::lpc40::dma_spi::bus_info::data_in (C++ member)</a>
+</li>
+      <li><a href="lpc40/dma_spi.html#_CPPv4N3hal5lpc407dma_spi8bus_info16data_in_functionE">hal::lpc40::dma_spi::bus_info::data_in_function (C++ member)</a>
+</li>
+      <li><a href="lpc40/dma_spi.html#_CPPv4N3hal5lpc407dma_spi8bus_info8data_outE">hal::lpc40::dma_spi::bus_info::data_out (C++ member)</a>
+</li>
+      <li><a href="lpc40/dma_spi.html#_CPPv4N3hal5lpc407dma_spi8bus_info17data_out_functionE">hal::lpc40::dma_spi::bus_info::data_out_function (C++ member)</a>
+</li>
+      <li><a href="lpc40/dma_spi.html#_CPPv4N3hal5lpc407dma_spi8bus_info13peripheral_idE">hal::lpc40::dma_spi::bus_info::peripheral_id (C++ member)</a>
+</li>
+      <li><a href="lpc40/dma_spi.html#_CPPv4N3hal5lpc407dma_spi7dma_spiE2u8RN3hal9io_waiterERKN3spi8settingsE">hal::lpc40::dma_spi::dma_spi (C++ function)</a>, <a href="lpc40/dma_spi.html#_CPPv4N3hal5lpc407dma_spi7dma_spiE8bus_info">[1]</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4017dma_transfer_typeE">hal::lpc40::dma_transfer_type (C++ enum)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4017dma_transfer_type16memory_to_memoryE">hal::lpc40::dma_transfer_type::memory_to_memory (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4017dma_transfer_type20memory_to_peripheralE">hal::lpc40::dma_transfer_type::memory_to_peripheral (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4017dma_transfer_type23memory_to_peripheral_dpE">hal::lpc40::dma_transfer_type::memory_to_peripheral_dp (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4017dma_transfer_type20peripheral_to_memoryE">hal::lpc40::dma_transfer_type::peripheral_to_memory (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4017dma_transfer_type23peripheral_to_memory_spE">hal::lpc40::dma_transfer_type::peripheral_to_memory_sp (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4017dma_transfer_type24peripheral_to_peripheralE">hal::lpc40::dma_transfer_type::peripheral_to_peripheral (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4017dma_transfer_type27peripheral_to_peripheral_dpE">hal::lpc40::dma_transfer_type::peripheral_to_peripheral_dp (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4017dma_transfer_type27peripheral_to_peripheral_spE">hal::lpc40::dma_transfer_type::peripheral_to_peripheral_sp (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4018dma_transfer_widthE">hal::lpc40::dma_transfer_width (C++ enum)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4018dma_transfer_width6bit_16E">hal::lpc40::dma_transfer_width::bit_16 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4018dma_transfer_width6bit_32E">hal::lpc40::dma_transfer_width::bit_32 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4018dma_transfer_width5bit_8E">hal::lpc40::dma_transfer_width::bit_8 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4019flash_configurationE">hal::lpc40::flash_configuration (C++ enum)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4019flash_configuration6clock1E">hal::lpc40::flash_configuration::clock1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4019flash_configuration6clock2E">hal::lpc40::flash_configuration::clock2 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4019flash_configuration6clock3E">hal::lpc40::flash_configuration::clock3 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4019flash_configuration6clock4E">hal::lpc40::flash_configuration::clock4 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4019flash_configuration6clock5E">hal::lpc40::flash_configuration::clock5 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4019flash_configuration6clock6E">hal::lpc40::flash_configuration::clock6 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4013get_frequencyE10peripheral">hal::lpc40::get_frequency (C++ function)</a>
+</li>
+      <li><a href="lpc40/i2c.html#_CPPv4N3hal5lpc403i2cE">hal::lpc40::i2c (C++ class)</a>
+</li>
+      <li><a href="lpc40/i2c.html#_CPPv4N3hal5lpc403i2c8bus_infoE">hal::lpc40::i2c::bus_info (C++ struct)</a>
+</li>
+      <li><a href="lpc40/i2c.html#_CPPv4N3hal5lpc403i2c8bus_info10duty_cycleE">hal::lpc40::i2c::bus_info::duty_cycle (C++ member)</a>
+</li>
+      <li><a href="lpc40/i2c.html#_CPPv4N3hal5lpc403i2c8bus_info10irq_numberE">hal::lpc40::i2c::bus_info::irq_number (C++ member)</a>
+</li>
+      <li><a href="lpc40/i2c.html#_CPPv4N3hal5lpc403i2c8bus_info13peripheral_idE">hal::lpc40::i2c::bus_info::peripheral_id (C++ member)</a>
+</li>
+      <li><a href="lpc40/i2c.html#_CPPv4N3hal5lpc403i2c8bus_info3sclE">hal::lpc40::i2c::bus_info::scl (C++ member)</a>
+</li>
+      <li><a href="lpc40/i2c.html#_CPPv4N3hal5lpc403i2c8bus_info12scl_functionE">hal::lpc40::i2c::bus_info::scl_function (C++ member)</a>
+</li>
+      <li><a href="lpc40/i2c.html#_CPPv4N3hal5lpc403i2c8bus_info3sdaE">hal::lpc40::i2c::bus_info::sda (C++ member)</a>
+</li>
+      <li><a href="lpc40/i2c.html#_CPPv4N3hal5lpc403i2c8bus_info12sda_functionE">hal::lpc40::i2c::bus_info::sda_function (C++ member)</a>
+</li>
+      <li><a href="lpc40/i2c.html#_CPPv4N3hal5lpc403i2c3i2cE2u8RKN3i2c8settingsERN3hal9io_waiterE">hal::lpc40::i2c::i2c (C++ function)</a>, <a href="lpc40/i2c.html#_CPPv4N3hal5lpc403i2c3i2cERK8bus_infoRKN3i2c8settingsERN3hal9io_waiterE">[1]</a>
+</li>
+      <li><a href="lpc40/interrupt.html#_CPPv4N3hal5lpc4021initialize_interruptsEv">hal::lpc40::initialize_interrupts (C++ function)</a>
+</li>
+      <li><a href="lpc40/input_pin.html#_CPPv4N3hal5lpc409input_pinE">hal::lpc40::input_pin (C++ class)</a>
+</li>
+      <li><a href="lpc40/input_pin.html#_CPPv4N3hal5lpc409input_pin9input_pinE2u82u8RKN9input_pin8settingsE">hal::lpc40::input_pin::input_pin (C++ function)</a>
+</li>
+      <li><a href="lpc40/interrupt_pin.html#_CPPv4N3hal5lpc4013interrupt_pinE">hal::lpc40::interrupt_pin (C++ class)</a>
+</li>
+      <li><a href="lpc40/interrupt_pin.html#_CPPv4N3hal5lpc4013interrupt_pin13interrupt_pinE2u82u8RK8settings">hal::lpc40::interrupt_pin::interrupt_pin (C++ function)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irqE">hal::lpc40::irq (C++ enum)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq3adcE">hal::lpc40::irq::adc (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq3bodE">hal::lpc40::irq::bod (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq3canE">hal::lpc40::irq::can (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq11canactivityE">hal::lpc40::irq::canactivity (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq4cmp0E">hal::lpc40::irq::cmp0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq4cmp1E">hal::lpc40::irq::cmp1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq3dmaE">hal::lpc40::irq::dma (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq6eepromE">hal::lpc40::irq::eeprom (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq5eint0E">hal::lpc40::irq::eint0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq5eint1E">hal::lpc40::irq::eint1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq5eint2E">hal::lpc40::irq::eint2 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq5eint3E">hal::lpc40::irq::eint3 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq4enetE">hal::lpc40::irq::enet (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq4gpioE">hal::lpc40::irq::gpio (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq4i2c0E">hal::lpc40::irq::i2c0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq4i2c1E">hal::lpc40::irq::i2c1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq4i2c2E">hal::lpc40::irq::i2c2 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq3i2sE">hal::lpc40::irq::i2s (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq3lcdE">hal::lpc40::irq::lcd (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq3maxE">hal::lpc40::irq::max (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq3mciE">hal::lpc40::irq::mci (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq5mcpwmE">hal::lpc40::irq::mcpwm (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq4pll0E">hal::lpc40::irq::pll0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq4pll1E">hal::lpc40::irq::pll1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq4pwm0E">hal::lpc40::irq::pwm0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq4pwm1E">hal::lpc40::irq::pwm1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq3qeiE">hal::lpc40::irq::qei (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq9reserved0E">hal::lpc40::irq::reserved0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq3rtcE">hal::lpc40::irq::rtc (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq4ssp0E">hal::lpc40::irq::ssp0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq4ssp1E">hal::lpc40::irq::ssp1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq4ssp2E">hal::lpc40::irq::ssp2 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq6timer0E">hal::lpc40::irq::timer0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq6timer1E">hal::lpc40::irq::timer1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq6timer2E">hal::lpc40::irq::timer2 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq6timer3E">hal::lpc40::irq::timer3 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq5uart0E">hal::lpc40::irq::uart0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq5uart1E">hal::lpc40::irq::uart1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq5uart2E">hal::lpc40::irq::uart2 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq5uart3E">hal::lpc40::irq::uart3 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq5uart4E">hal::lpc40::irq::uart4 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq3usbE">hal::lpc40::irq::usb (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq11usbactivityE">hal::lpc40::irq::usbactivity (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc403irq3wdtE">hal::lpc40::irq::wdt (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/power.html#_CPPv4N3hal5lpc405is_onE10peripheral">hal::lpc40::is_on (C++ function)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc407maximumE5hertz">hal::lpc40::maximum (C++ function)</a>
+</li>
+      <li><a href="lpc40/output_pin.html#_CPPv4N3hal5lpc4010output_pinE">hal::lpc40::output_pin (C++ class)</a>
+</li>
+      <li><a href="lpc40/output_pin.html#_CPPv4N3hal5lpc4010output_pin10output_pinE2u82u8RKN10output_pin8settingsE">hal::lpc40::output_pin::output_pin (C++ function)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheralE">hal::lpc40::peripheral (C++ enum)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral3adcE">hal::lpc40::peripheral::adc (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral4can1E">hal::lpc40::peripheral::can1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral4can2E">hal::lpc40::peripheral::can2 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral3cpuE">hal::lpc40::peripheral::cpu (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral3dacE">hal::lpc40::peripheral::dac (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral3emcE">hal::lpc40::peripheral::emc (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral8ethernetE">hal::lpc40::peripheral::ethernet (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral5gpdmaE">hal::lpc40::peripheral::gpdma (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral4gpioE">hal::lpc40::peripheral::gpio (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral4i2c0E">hal::lpc40::peripheral::i2c0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral4i2c1E">hal::lpc40::peripheral::i2c1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral4i2c2E">hal::lpc40::peripheral::i2c2 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral3i2sE">hal::lpc40::peripheral::i2s (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral3lcdE">hal::lpc40::peripheral::lcd (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral17motor_control_pwmE">hal::lpc40::peripheral::motor_control_pwm (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral4pwm0E">hal::lpc40::peripheral::pwm0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral4pwm1E">hal::lpc40::peripheral::pwm1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral18quadrature_encoderE">hal::lpc40::peripheral::quadrature_encoder (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral3rtcE">hal::lpc40::peripheral::rtc (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral6sdcardE">hal::lpc40::peripheral::sdcard (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral5spifiE">hal::lpc40::peripheral::spifi (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral4ssp0E">hal::lpc40::peripheral::ssp0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral4ssp1E">hal::lpc40::peripheral::ssp1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral4ssp2E">hal::lpc40::peripheral::ssp2 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral6timer0E">hal::lpc40::peripheral::timer0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral6timer1E">hal::lpc40::peripheral::timer1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral6timer2E">hal::lpc40::peripheral::timer2 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral6timer3E">hal::lpc40::peripheral::timer3 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral5uart0E">hal::lpc40::peripheral::uart0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral5uart1E">hal::lpc40::peripheral::uart1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral5uart2E">hal::lpc40::peripheral::uart2 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral5uart3E">hal::lpc40::peripheral::uart3 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral5uart4E">hal::lpc40::peripheral::uart4 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/constants.html#_CPPv4N3hal5lpc4010peripheral3usbE">hal::lpc40::peripheral::usb (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/pin.html#_CPPv4N3hal5lpc403pinE">hal::lpc40::pin (C++ class)</a>
+</li>
+      <li><a href="lpc40/pin.html#_CPPv4NK3hal5lpc403pin6analogEb">hal::lpc40::pin::analog (C++ function)</a>
+</li>
+      <li><a href="lpc40/pin.html#_CPPv4NK3hal5lpc403pin3dacEb">hal::lpc40::pin::dac (C++ function)</a>
+</li>
+      <li><a href="lpc40/pin.html#_CPPv4NK3hal5lpc403pin14digital_filterEb">hal::lpc40::pin::digital_filter (C++ function)</a>
+</li>
+      <li><a href="lpc40/pin.html#_CPPv4NK3hal5lpc403pin8functionE7uint8_t">hal::lpc40::pin::function (C++ function)</a>
+</li>
+      <li><a href="lpc40/pin.html#_CPPv4NK3hal5lpc403pin14high_slew_rateEb">hal::lpc40::pin::high_slew_rate (C++ function)</a>
+</li>
+      <li><a href="lpc40/pin.html#_CPPv4NK3hal5lpc403pin13highspeed_i2cEb">hal::lpc40::pin::highspeed_i2c (C++ function)</a>
+</li>
+      <li><a href="lpc40/pin.html#_CPPv4NK3hal5lpc403pin10hysteresisEb">hal::lpc40::pin::hysteresis (C++ function)</a>
+</li>
+      <li><a href="lpc40/pin.html#_CPPv4NK3hal5lpc403pin16i2c_high_currentEb">hal::lpc40::pin::i2c_high_current (C++ function)</a>
+</li>
+      <li><a href="lpc40/pin.html#_CPPv4NK3hal5lpc403pin12input_invertEb">hal::lpc40::pin::input_invert (C++ function)</a>
+</li>
+      <li><a href="lpc40/pin.html#_CPPv4NK3hal5lpc403pin10open_drainEb">hal::lpc40::pin::open_drain (C++ function)</a>
+</li>
+      <li><a href="lpc40/pin.html#_CPPv4N3hal5lpc403pin3pinE2u82u8">hal::lpc40::pin::pin (C++ function)</a>, <a href="lpc40/pin.html#_CPPv4N3hal5lpc403pin3pinEv">[1]</a>
+</li>
+      <li><a href="lpc40/pin.html#_CPPv4NK3hal5lpc403pin8resistorEN3hal12pin_resistorE">hal::lpc40::pin::resistor (C++ function)</a>
+</li>
+      <li><a href="lpc40/power.html#_CPPv4N3hal5lpc409power_offE10peripheral">hal::lpc40::power_off (C++ function)</a>
+</li>
+      <li><a href="lpc40/power.html#_CPPv4N3hal5lpc408power_onE10peripheral">hal::lpc40::power_on (C++ function)</a>
+</li>
+      <li><a href="lpc40/pwm.html#_CPPv4N3hal5lpc403pwmE">hal::lpc40::pwm (C++ class)</a>
+</li>
+      <li><a href="lpc40/pwm.html#_CPPv4N3hal5lpc403pwm7channelE">hal::lpc40::pwm::channel (C++ struct)</a>
+</li>
+      <li><a href="lpc40/pwm.html#_CPPv4N3hal5lpc403pwm7channel5indexE">hal::lpc40::pwm::channel::index (C++ member)</a>
+</li>
+      <li><a href="lpc40/pwm.html#_CPPv4N3hal5lpc403pwm7channel13peripheral_idE">hal::lpc40::pwm::channel::peripheral_id (C++ member)</a>
+</li>
+      <li><a href="lpc40/pwm.html#_CPPv4N3hal5lpc403pwm7channel12pin_functionE">hal::lpc40::pwm::channel::pin_function (C++ member)</a>
+</li>
+      <li><a href="lpc40/pwm.html#_CPPv4N3hal5lpc403pwm7channel7pwm_pinE">hal::lpc40::pwm::channel::pwm_pin (C++ member)</a>
+</li>
+      <li><a href="lpc40/pwm.html#_CPPv4N3hal5lpc403pwm3pwmE2u82u8">hal::lpc40::pwm::pwm (C++ function)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4012set_dma_lockERN3hal10basic_lockE">hal::lpc40::set_dma_lock (C++ function)</a>
+</li>
+      <li><a href="lpc40/dma.html#_CPPv4N3hal5lpc4018setup_dma_transferERK3dmaN3hal8callbackIFvvEEE">hal::lpc40::setup_dma_transfer (C++ function)</a>
+</li>
+      <li><a href="lpc40/spi.html#_CPPv4N3hal5lpc403spiE">hal::lpc40::spi (C++ class)</a>
+</li>
+      <li><a href="lpc40/spi.html#_CPPv4N3hal5lpc403spi8bus_infoE">hal::lpc40::spi::bus_info (C++ struct)</a>
+</li>
+      <li><a href="lpc40/spi.html#_CPPv4N3hal5lpc403spi8bus_info5clockE">hal::lpc40::spi::bus_info::clock (C++ member)</a>
+</li>
+      <li><a href="lpc40/spi.html#_CPPv4N3hal5lpc403spi8bus_info14clock_functionE">hal::lpc40::spi::bus_info::clock_function (C++ member)</a>
+</li>
+      <li><a href="lpc40/spi.html#_CPPv4N3hal5lpc403spi8bus_info7data_inE">hal::lpc40::spi::bus_info::data_in (C++ member)</a>
+</li>
+      <li><a href="lpc40/spi.html#_CPPv4N3hal5lpc403spi8bus_info16data_in_functionE">hal::lpc40::spi::bus_info::data_in_function (C++ member)</a>
+</li>
+      <li><a href="lpc40/spi.html#_CPPv4N3hal5lpc403spi8bus_info8data_outE">hal::lpc40::spi::bus_info::data_out (C++ member)</a>
+</li>
+      <li><a href="lpc40/spi.html#_CPPv4N3hal5lpc403spi8bus_info17data_out_functionE">hal::lpc40::spi::bus_info::data_out_function (C++ member)</a>
+</li>
+      <li><a href="lpc40/spi.html#_CPPv4N3hal5lpc403spi8bus_info13peripheral_idE">hal::lpc40::spi::bus_info::peripheral_id (C++ member)</a>
+</li>
+      <li><a href="lpc40/spi.html#_CPPv4N3hal5lpc403spi3spiE2u8RKN3spi8settingsE">hal::lpc40::spi::spi (C++ function)</a>, <a href="lpc40/spi.html#_CPPv4N3hal5lpc403spi3spiE8bus_info">[1]</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4018spifi_clock_sourceE">hal::lpc40::spifi_clock_source (C++ enum)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4018spifi_clock_source4pll0E">hal::lpc40::spifi_clock_source::pll0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4018spifi_clock_source4pll1E">hal::lpc40::spifi_clock_source::pll1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4018spifi_clock_source12system_clockE">hal::lpc40::spifi_clock_source::system_clock (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/stream_dac.html#_CPPv4N3hal5lpc4014stream_dac_u16E">hal::lpc40::stream_dac_u16 (C++ class)</a>
+</li>
+      <li><a href="lpc40/stream_dac.html#_CPPv4N3hal5lpc4013stream_dac_u8E">hal::lpc40::stream_dac_u8 (C++ class)</a>
+</li>
+      <li><a href="lpc40/uart.html#_CPPv4N3hal5lpc404uartE">hal::lpc40::uart (C++ class)</a>
+</li>
+      <li><a href="lpc40/uart.html#_CPPv4N3hal5lpc404uart4portE">hal::lpc40::uart::port (C++ struct)</a>
+</li>
+      <li><a href="lpc40/uart.html#_CPPv4N3hal5lpc404uart4port2idE">hal::lpc40::uart::port::id (C++ member)</a>
+</li>
+      <li><a href="lpc40/uart.html#_CPPv4N3hal5lpc404uart4port10irq_numberE">hal::lpc40::uart::port::irq_number (C++ member)</a>
+</li>
+      <li><a href="lpc40/uart.html#_CPPv4N3hal5lpc404uart4port2rxE">hal::lpc40::uart::port::rx (C++ member)</a>
+</li>
+      <li><a href="lpc40/uart.html#_CPPv4N3hal5lpc404uart4port11rx_functionE">hal::lpc40::uart::port::rx_function (C++ member)</a>
+</li>
+      <li><a href="lpc40/uart.html#_CPPv4N3hal5lpc404uart4port2txE">hal::lpc40::uart::port::tx (C++ member)</a>
+</li>
+      <li><a href="lpc40/uart.html#_CPPv4N3hal5lpc404uart4port11tx_functionE">hal::lpc40::uart::port::tx_function (C++ member)</a>
+</li>
+      <li><a href="lpc40/uart.html#_CPPv4N3hal5lpc404uart4uartENSt7uint8_tENSt4spanIN3hal4byteEEERKN6serial8settingsE">hal::lpc40::uart::uart (C++ function)</a>, <a href="lpc40/uart.html#_CPPv4N3hal5lpc404uart4uartERKN4uart4portENSt4spanIN3hal4byteEEERKN6serial8settingsE">[1]</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4016usb_clock_sourceE">hal::lpc40::usb_clock_source (C++ enum)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4016usb_clock_source4pll0E">hal::lpc40::usb_clock_source::pll0 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4016usb_clock_source4pll1E">hal::lpc40::usb_clock_source::pll1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4016usb_clock_source12system_clockE">hal::lpc40::usb_clock_source::system_clock (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4011usb_dividerE">hal::lpc40::usb_divider (C++ enum)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4011usb_divider10divide_by1E">hal::lpc40::usb_divider::divide_by1 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4011usb_divider10divide_by2E">hal::lpc40::usb_divider::divide_by2 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4011usb_divider10divide_by3E">hal::lpc40::usb_divider::divide_by3 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4011usb_divider10divide_by4E">hal::lpc40::usb_divider::divide_by4 (C++ enumerator)</a>
+</li>
+      <li><a href="lpc40/clock.html#_CPPv4N3hal5lpc4025using_external_oscillatorEv">hal::lpc40::using_external_oscillator (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/i2c.html#_CPPv4N3hal13stm32_generic3i2cE">hal::stm32_generic::i2c (C++ class)</a>
+</li>
+      <li><a href="stm32_generic/i2c.html#_CPPv4N3hal13stm32_generic3i2c9configureERKN3hal3i2c8settingsE5hertz">hal::stm32_generic::i2c::configure (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/i2c.html#_CPPv4N3hal13stm32_generic3i2c16handle_i2c_errorEv">hal::stm32_generic::i2c::handle_i2c_error (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/i2c.html#_CPPv4N3hal13stm32_generic3i2c16handle_i2c_eventEv">hal::stm32_generic::i2c::handle_i2c_event (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/i2c.html#_CPPv4N3hal13stm32_generic3i2c3i2cEPv">hal::stm32_generic::i2c::i2c (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/i2c.html#_CPPv4N3hal13stm32_generic3i2c11transactionEN3hal4byteENSt4spanIKN3hal4byteEEENSt4spanIN3hal4byteEEEN3hal12function_refIN3hal16timeout_functionEEE">hal::stm32_generic::i2c::transaction (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/i2c.html#_CPPv4N3hal13stm32_generic3i2cD0Ev">hal::stm32_generic::i2c::~i2c (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/pwm.html#_CPPv4N3hal13stm32_generic3pwmE">hal::stm32_generic::pwm (C++ class)</a>
+</li>
+      <li><a href="stm32_generic/pwm.html#_CPPv4N3hal13stm32_generic3pwm10duty_cycleE3u16">hal::stm32_generic::pwm::duty_cycle (C++ function)</a>, <a href="stm32_generic/pwm.html#_CPPv4N3hal13stm32_generic3pwm10duty_cycleEf">[1]</a>
+</li>
+      <li><a href="stm32_generic/pwm.html#_CPPv4N3hal13stm32_generic3pwm9frequencyE3u32">hal::stm32_generic::pwm::frequency (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/pwm.html#_CPPv4N3hal13stm32_generic3pwm10initializeEN3hal6unsafeEPv16pwm_channel_info">hal::stm32_generic::pwm::initialize (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/pwm.html#_CPPv4N3hal13stm32_generic3pwm3pwmEN3hal6unsafeE">hal::stm32_generic::pwm::pwm (C++ function)</a>, <a href="stm32_generic/pwm.html#_CPPv4N3hal13stm32_generic3pwm3pwmEN3hal6unsafeEPv16pwm_channel_info">[1]</a>
+</li>
+      <li><a href="stm32_generic/pwm.html#_CPPv4N3hal13stm32_generic19pwm_group_frequencyE">hal::stm32_generic::pwm_group_frequency (C++ class)</a>
+</li>
+      <li><a href="stm32_generic/pwm.html#_CPPv4N3hal13stm32_generic19pwm_group_frequency19pwm_group_frequencyEN3hal6unsafeEPv">hal::stm32_generic::pwm_group_frequency::pwm_group_frequency (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/pwm.html#_CPPv4N3hal13stm32_generic19pwm_group_frequency19set_group_frequencyE19pwm_timer_frequency">hal::stm32_generic::pwm_group_frequency::set_group_frequency (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/quadrature_encoder.html#_CPPv4N3hal13stm32_generic18quadrature_encoderE">hal::stm32_generic::quadrature_encoder (C++ class)</a>
+</li>
+      <li><a href="stm32_generic/spi.html#_CPPv4N3hal13stm32_generic3spiE">hal::stm32_generic::spi (C++ class)</a>
+</li>
+      <li><a href="stm32_generic/spi.html#_CPPv4N3hal13stm32_generic3spi9configureERKN3hal3spi8settingsEN3hal5hertzE">hal::stm32_generic::spi::configure (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/spi.html#_CPPv4N3hal13stm32_generic3spi3spiEN3hal6unsafeEPv">hal::stm32_generic::spi::spi (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/spi.html#_CPPv4N3hal13stm32_generic3spi8transferENSt4spanIKN3hal4byteEEENSt4spanIN3hal4byteEEEN3hal4byteE">hal::stm32_generic::spi::transfer (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/timer.html#_CPPv4N3hal13stm32_generic5timerE">hal::stm32_generic::timer (C++ class)</a>
+</li>
+      <li><a href="stm32_generic/timer.html#_CPPv4N3hal13stm32_generic5timer6cancelEv">hal::stm32_generic::timer::cancel (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/timer.html#_CPPv4N3hal13stm32_generic5timer10initializeEN3hal6unsafeEPvPFvvEN8cortex_m5irq_tEN8cortex_m17interrupt_pointerE">hal::stm32_generic::timer::initialize (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/timer.html#_CPPv4N3hal13stm32_generic5timer10is_runningEv">hal::stm32_generic::timer::is_running (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/timer.html#_CPPv4N3hal13stm32_generic5timer8scheduleEN3hal13time_durationE3u32">hal::stm32_generic::timer::schedule (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/timer.html#_CPPv4N3hal13stm32_generic5timer5timerEN3hal6unsafeE">hal::stm32_generic::timer::timer (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/uart.html#_CPPv4N3hal13stm32_generic4uartE">hal::stm32_generic::uart (C++ class)</a>
+</li>
+      <li><a href="stm32_generic/uart.html#_CPPv4N3hal13stm32_generic4uart9configureERKN6serial8settingsE5hertz">hal::stm32_generic::uart::configure (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/uart.html#_CPPv4N3hal13stm32_generic4uart9uart_readERNSt4spanI4byteEERK3u32">hal::stm32_generic::uart::uart_read (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/uart.html#_CPPv4N3hal13stm32_generic4uart10uart_writeENSt4spanIK4byteEE">hal::stm32_generic::uart::uart_write (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/uart.html#_CPPv4N3hal13stm32_generic15zero_copy_usartE">hal::stm32_generic::zero_copy_usart (C++ class)</a>
+</li>
+      <li><a href="stm32_generic/uart.html#_CPPv4N3hal13stm32_generic15zero_copy_usart9configureERKN6serial8settingsE3u32">hal::stm32_generic::zero_copy_usart::configure (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/uart.html#_CPPv4N3hal13stm32_generic15zero_copy_usart9uart_readERNSt4spanI4byteEERK3u32">hal::stm32_generic::zero_copy_usart::uart_read (C++ function)</a>
+</li>
+      <li><a href="stm32_generic/uart.html#_CPPv4N3hal13stm32_generic15zero_copy_usart10uart_writeENSt4spanIK4byteEE">hal::stm32_generic::zero_copy_usart::uart_write (C++ function)</a>
+</li>
+      <li><a href="stm32f1/gpio.html#_CPPv4N3hal7stm32f117acquire_input_pinENSt3pmr21polymorphic_allocatorIEERKN3hal2v510strong_ptrI12gpio_managerEE2u8RKN9input_pin8settingsE">hal::stm32f1::acquire_input_pin (C++ function)</a>
+</li>
+      <li><a href="stm32f1/gpio.html#_CPPv4N3hal7stm32f118acquire_output_pinENSt3pmr21polymorphic_allocatorIEERKN3hal2v510strong_ptrI12gpio_managerEE2u8RKN10output_pin8settingsE">hal::stm32f1::acquire_output_pin (C++ function)</a>
+</li>
+      <li><a href="stm32f1/pin.html#_CPPv4N3hal7stm32f116activate_mco_pa8E10mco_source">hal::stm32f1::activate_mco_pa8 (C++ function)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111adc_dividerE">hal::stm32f1::adc_divider (C++ enum)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111adc_divider11divide_by_2E">hal::stm32f1::adc_divider::divide_by_2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111adc_divider11divide_by_4E">hal::stm32f1::adc_divider::divide_by_4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111adc_divider11divide_by_6E">hal::stm32f1::adc_divider::divide_by_6 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111adc_divider11divide_by_8E">hal::stm32f1::adc_divider::divide_by_8 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/adc.html#_CPPv4N3hal7stm32f111adc_managerE">hal::stm32f1::adc_manager (C++ class)</a>
+</li>
+      <li><a href="stm32f1/adc.html#_CPPv4N3hal7stm32f111adc_manager15acquire_channelE8adc_pins">hal::stm32f1::adc_manager::acquire_channel (C++ function)</a>
+</li>
+      <li><a href="stm32f1/adc.html#_CPPv4N3hal7stm32f111adc_manager7channelE">hal::stm32f1::adc_manager::channel (C++ class)</a>
+</li>
+      <li><a href="stm32f1/adc.html#_CPPv4I_10peripheralEN3hal7stm32f111adc_manager7channel7channelERN7stm32f13adcI2idEE8adc_pins">hal::stm32f1::adc_manager::channel::channel (C++ function)</a>
+</li>
+      <li><a href="stm32f1/timer.html#_CPPv4N3hal7stm32f122advanced_timer_managerE">hal::stm32f1::advanced_timer_manager (C++ class)</a>
+</li>
+      <li><a href="stm32f1/timer.html#_CPPv4N3hal7stm32f122advanced_timer_manager27acquire_pwm_group_frequencyEv">hal::stm32f1::advanced_timer_manager::acquire_pwm_group_frequency (C++ function)</a>
+</li>
+      <li><a href="stm32f1/timer.html#_CPPv4N3hal7stm32f122advanced_timer_manager13acquire_timerEv">hal::stm32f1::advanced_timer_manager::acquire_timer (C++ function)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111ahb_dividerE">hal::stm32f1::ahb_divider (C++ enum)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111ahb_divider11divide_by_1E">hal::stm32f1::ahb_divider::divide_by_1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111ahb_divider13divide_by_128E">hal::stm32f1::ahb_divider::divide_by_128 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111ahb_divider12divide_by_16E">hal::stm32f1::ahb_divider::divide_by_16 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111ahb_divider11divide_by_2E">hal::stm32f1::ahb_divider::divide_by_2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111ahb_divider13divide_by_256E">hal::stm32f1::ahb_divider::divide_by_256 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111ahb_divider11divide_by_4E">hal::stm32f1::ahb_divider::divide_by_4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111ahb_divider13divide_by_512E">hal::stm32f1::ahb_divider::divide_by_512 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111ahb_divider12divide_by_64E">hal::stm32f1::ahb_divider::divide_by_64 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111ahb_divider11divide_by_8E">hal::stm32f1::ahb_divider::divide_by_8 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111apb_dividerE">hal::stm32f1::apb_divider (C++ enum)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111apb_divider11divide_by_1E">hal::stm32f1::apb_divider::divide_by_1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111apb_divider12divide_by_16E">hal::stm32f1::apb_divider::divide_by_16 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111apb_divider11divide_by_2E">hal::stm32f1::apb_divider::divide_by_2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111apb_divider11divide_by_4E">hal::stm32f1::apb_divider::divide_by_4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111apb_divider11divide_by_8E">hal::stm32f1::apb_divider::divide_by_8 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_managerE">hal::stm32f1::can_peripheral_manager (C++ class)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager19acquire_bus_managerEv">hal::stm32f1::can_peripheral_manager::acquire_bus_manager (C++ function)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager34acquire_extended_identifier_filterE15fifo_assignment">hal::stm32f1::can_peripheral_manager::acquire_extended_identifier_filter (C++ function)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager28acquire_extended_mask_filterE15fifo_assignment">hal::stm32f1::can_peripheral_manager::acquire_extended_mask_filter (C++ function)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager25acquire_identifier_filterE15fifo_assignment">hal::stm32f1::can_peripheral_manager::acquire_identifier_filter (C++ function)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager17acquire_interruptEv">hal::stm32f1::can_peripheral_manager::acquire_interrupt (C++ function)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager19acquire_mask_filterE15fifo_assignment">hal::stm32f1::can_peripheral_manager::acquire_mask_filter (C++ function)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager19acquire_transceiverENSt4spanI11can_messageEE">hal::stm32f1::can_peripheral_manager::acquire_transceiver (C++ function)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager11bus_managerE">hal::stm32f1::can_peripheral_manager::bus_manager (C++ class)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager22can_peripheral_managerEN3hal3u32E8can_pins11disable_idsb">hal::stm32f1::can_peripheral_manager::can_peripheral_manager (C++ function)</a>, <a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager22can_peripheral_managerEN3hal3u32ERN3hal12steady_clockEN3hal13time_durationE8can_pins9self_test11disable_ids">[1]</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager11disable_idsE">hal::stm32f1::can_peripheral_manager::disable_ids (C++ struct)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager26extended_identifier_filterE">hal::stm32f1::can_peripheral_manager::extended_identifier_filter (C++ class)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager30extended_identifier_filter_setE">hal::stm32f1::can_peripheral_manager::extended_identifier_filter_set (C++ class)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager30extended_identifier_filter_set6filterE">hal::stm32f1::can_peripheral_manager::extended_identifier_filter_set::filter (C++ member)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager20extended_mask_filterE">hal::stm32f1::can_peripheral_manager::extended_mask_filter (C++ class)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager15fifo_assignmentE">hal::stm32f1::can_peripheral_manager::fifo_assignment (C++ enum)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager15fifo_assignment5fifo1E">hal::stm32f1::can_peripheral_manager::fifo_assignment::fifo1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager15fifo_assignment5fifo2E">hal::stm32f1::can_peripheral_manager::fifo_assignment::fifo2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager15filter_resourceE">hal::stm32f1::can_peripheral_manager::filter_resource (C++ struct)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager17identifier_filterE">hal::stm32f1::can_peripheral_manager::identifier_filter (C++ class)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager21identifier_filter_setE">hal::stm32f1::can_peripheral_manager::identifier_filter_set (C++ class)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager21identifier_filter_set6filterE">hal::stm32f1::can_peripheral_manager::identifier_filter_set::filter (C++ member)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager9interruptE">hal::stm32f1::can_peripheral_manager::interrupt (C++ class)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager11mask_filterE">hal::stm32f1::can_peripheral_manager::mask_filter (C++ class)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager15mask_filter_setE">hal::stm32f1::can_peripheral_manager::mask_filter_set (C++ class)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager15mask_filter_set6filterE">hal::stm32f1::can_peripheral_manager::mask_filter_set::filter (C++ member)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager9self_testE">hal::stm32f1::can_peripheral_manager::self_test (C++ enum)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager9self_test3offE">hal::stm32f1::can_peripheral_manager::self_test::off (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager9self_test2onE">hal::stm32f1::can_peripheral_manager::self_test::on (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/can.html#_CPPv4N3hal7stm32f122can_peripheral_manager11transceiverE">hal::stm32f1::can_peripheral_manager::transceiver (C++ class)</a>
+</li>
+      <li><a href="stm32f1/can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v2E">hal::stm32f1::can_peripheral_manager_v2 (C++ class)</a>
+</li>
+      <li><a href="stm32f1/can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v216available_filterEv">hal::stm32f1::can_peripheral_manager_v2::available_filter (C++ function)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="stm32f1/can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v29baud_rateEN3hal3u32E">hal::stm32f1::can_peripheral_manager_v2::baud_rate (C++ function)</a>, <a href="stm32f1/can2.html#_CPPv4NK3hal7stm32f125can_peripheral_manager_v29baud_rateEv">[1]</a>
+</li>
+      <li><a href="stm32f1/can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v26bus_onEv">hal::stm32f1::can_peripheral_manager_v2::bus_on (C++ function)</a>
+</li>
+      <li><a href="stm32f1/can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v225can_peripheral_manager_v2EN3hal5usizeENSt3pmr21polymorphic_allocatorIEEN3hal3u32ERN3hal12steady_clockEN3hal13time_durationE8can_pins13can_self_test">hal::stm32f1::can_peripheral_manager_v2::can_peripheral_manager_v2 (C++ function)</a>
+</li>
+      <li><a href="stm32f1/can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v216enable_self_testEb">hal::stm32f1::can_peripheral_manager_v2::enable_self_test (C++ function)</a>
+</li>
+      <li><a href="stm32f1/can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v210on_receiveERKN3hal13can_interrupt24optional_receive_handlerE">hal::stm32f1::can_peripheral_manager_v2::on_receive (C++ function)</a>
+</li>
+      <li><a href="stm32f1/can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v214receive_bufferEv">hal::stm32f1::can_peripheral_manager_v2::receive_buffer (C++ function)</a>
+</li>
+      <li><a href="stm32f1/can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v214receive_cursorEv">hal::stm32f1::can_peripheral_manager_v2::receive_cursor (C++ function)</a>
+</li>
+      <li><a href="stm32f1/can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v214release_filterEN3hal2u8E">hal::stm32f1::can_peripheral_manager_v2::release_filter (C++ function)</a>
+</li>
+      <li><a href="stm32f1/can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v24sendERK11can_message">hal::stm32f1::can_peripheral_manager_v2::send (C++ function)</a>
+</li>
+      <li><a href="stm32f1/pin.html#_CPPv4N3hal7stm32f18can_pinsE">hal::stm32f1::can_pins (C++ enum)</a>
+</li>
+      <li><a href="stm32f1/pin.html#_CPPv4N3hal7stm32f18can_pins9pa11_pa12E">hal::stm32f1::can_pins::pa11_pa12 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/pin.html#_CPPv4N3hal7stm32f18can_pins7pb9_pb8E">hal::stm32f1::can_pins::pb9_pb8 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/pin.html#_CPPv4N3hal7stm32f18can_pins7pd0_pd1E">hal::stm32f1::can_pins::pd0_pd1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110clock_treeE">hal::stm32f1::clock_tree (C++ struct)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110clock_tree5ahb_tE">hal::stm32f1::clock_tree::ahb_t (C++ struct)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110clock_tree5ahb_t6apb1_tE">hal::stm32f1::clock_tree::ahb_t::apb1_t (C++ struct)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110clock_tree5ahb_t6apb2_tE">hal::stm32f1::clock_tree::ahb_t::apb2_t (C++ struct)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110clock_tree5ahb_t6apb2_t5adc_tE">hal::stm32f1::clock_tree::ahb_t::apb2_t::adc_t (C++ struct)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110clock_tree19high_speed_externalE">hal::stm32f1::clock_tree::high_speed_external (C++ member)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110clock_tree18low_speed_externalE">hal::stm32f1::clock_tree::low_speed_external (C++ member)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110clock_tree5pll_tE">hal::stm32f1::clock_tree::pll_t (C++ struct)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110clock_tree5pll_t13usb_divider_tE">hal::stm32f1::clock_tree::pll_t::usb_divider_t (C++ struct)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110clock_tree5rtc_tE">hal::stm32f1::clock_tree::rtc_t (C++ struct)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110clock_tree12system_clockE">hal::stm32f1::clock_tree::system_clock (C++ member)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f116configure_clocksE10clock_tree">hal::stm32f1::configure_clocks (C++ function)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f19frequencyE10peripheral">hal::stm32f1::frequency (C++ function)</a>
+</li>
+      <li><a href="stm32f1/timer.html#_CPPv4N3hal7stm32f129general_purpose_timer_managerE">hal::stm32f1::general_purpose_timer_manager (C++ class)</a>
+</li>
+      <li><a href="stm32f1/timer.html#_CPPv4N3hal7stm32f129general_purpose_timer_manager27acquire_pwm_group_frequencyEv">hal::stm32f1::general_purpose_timer_manager::acquire_pwm_group_frequency (C++ function)</a>
+</li>
+      <li><a href="stm32f1/timer.html#_CPPv4N3hal7stm32f129general_purpose_timer_manager13acquire_timerEv">hal::stm32f1::general_purpose_timer_manager::acquire_timer (C++ function)</a>
+</li>
+      <li><a href="stm32f1/gpio.html#_CPPv4I_10peripheralEN3hal7stm32f14gpioE">hal::stm32f1::gpio (C++ class)</a>
+</li>
+      <li><a href="stm32f1/independent_watchdog.html#_CPPv4N3hal7stm32f120independent_watchdogE">hal::stm32f1::independent_watchdog (C++ class)</a>
+</li>
+      <li><a href="stm32f1/independent_watchdog.html#_CPPv4N3hal7stm32f120independent_watchdog10check_flagEv">hal::stm32f1::independent_watchdog::check_flag (C++ function)</a>
+</li>
+      <li><a href="stm32f1/independent_watchdog.html#_CPPv4N3hal7stm32f120independent_watchdog10clear_flagEv">hal::stm32f1::independent_watchdog::clear_flag (C++ function)</a>
+</li>
+      <li><a href="stm32f1/independent_watchdog.html#_CPPv4N3hal7stm32f120independent_watchdog5resetEv">hal::stm32f1::independent_watchdog::reset (C++ function)</a>
+</li>
+      <li><a href="stm32f1/independent_watchdog.html#_CPPv4N3hal7stm32f120independent_watchdog18set_countdown_timeEN3hal13time_durationE">hal::stm32f1::independent_watchdog::set_countdown_time (C++ function)</a>
+</li>
+      <li><a href="stm32f1/independent_watchdog.html#_CPPv4N3hal7stm32f120independent_watchdog5startEv">hal::stm32f1::independent_watchdog::start (C++ function)</a>
+</li>
+      <li><a href="stm32f1/interrupt.html#_CPPv4N3hal7stm32f121initialize_interruptsEv">hal::stm32f1::initialize_interrupts (C++ function)</a>
+</li>
+      <li><a href="stm32f1/input_pin.html#_CPPv4N3hal7stm32f19input_pinE">hal::stm32f1::input_pin (C++ class)</a>
+</li>
+      <li><a href="stm32f1/input_pin.html#_CPPv4N3hal7stm32f19input_pin9input_pinE2u82u8">hal::stm32f1::input_pin::input_pin (C++ function)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irqE">hal::stm32f1::irq (C++ enum)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq4adc1E">hal::stm32f1::irq::adc1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq6adc1_2E">hal::stm32f1::irq::adc1_2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq4adc3E">hal::stm32f1::irq::adc3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq8can1_rx0E">hal::stm32f1::irq::can1_rx0 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq8can1_rx1E">hal::stm32f1::irq::can1_rx1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq8can1_sceE">hal::stm32f1::irq::can1_sce (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq7can1_txE">hal::stm32f1::irq::can1_tx (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq8can2_rx0E">hal::stm32f1::irq::can2_rx0 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq8can2_rx1E">hal::stm32f1::irq::can2_rx1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq8can2_sceE">hal::stm32f1::irq::can2_sce (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq7can2_txE">hal::stm32f1::irq::can2_tx (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq3cecE">hal::stm32f1::irq::cec (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq13dma1_channel1E">hal::stm32f1::irq::dma1_channel1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq13dma1_channel2E">hal::stm32f1::irq::dma1_channel2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq13dma1_channel3E">hal::stm32f1::irq::dma1_channel3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq13dma1_channel4E">hal::stm32f1::irq::dma1_channel4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq13dma1_channel5E">hal::stm32f1::irq::dma1_channel5 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq13dma1_channel6E">hal::stm32f1::irq::dma1_channel6 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq13dma1_channel7E">hal::stm32f1::irq::dma1_channel7 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq13dma2_channel1E">hal::stm32f1::irq::dma2_channel1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq13dma2_channel2E">hal::stm32f1::irq::dma2_channel2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq13dma2_channel3E">hal::stm32f1::irq::dma2_channel3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq13dma2_channel4E">hal::stm32f1::irq::dma2_channel4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq15dma2_channel4_5E">hal::stm32f1::irq::dma2_channel4_5 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq13dma2_channel5E">hal::stm32f1::irq::dma2_channel5 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq3ethE">hal::stm32f1::irq::eth (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq8eth_wkupE">hal::stm32f1::irq::eth_wkup (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq5exti0E">hal::stm32f1::irq::exti0 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq5exti1E">hal::stm32f1::irq::exti1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq9exti15_10E">hal::stm32f1::irq::exti15_10 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq5exti2E">hal::stm32f1::irq::exti2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq5exti3E">hal::stm32f1::irq::exti3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq5exti4E">hal::stm32f1::irq::exti4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq7exti9_5E">hal::stm32f1::irq::exti9_5 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq5flashE">hal::stm32f1::irq::flash (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq4fsmcE">hal::stm32f1::irq::fsmc (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq7i2c1_erE">hal::stm32f1::irq::i2c1_er (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq7i2c1_evE">hal::stm32f1::irq::i2c1_ev (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq7i2c2_erE">hal::stm32f1::irq::i2c2_er (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq7i2c2_evE">hal::stm32f1::irq::i2c2_ev (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq3maxE">hal::stm32f1::irq::max (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq6otg_fsE">hal::stm32f1::irq::otg_fs (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq11otg_fs_wkupE">hal::stm32f1::irq::otg_fs_wkup (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq3pvdE">hal::stm32f1::irq::pvd (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq3rccE">hal::stm32f1::irq::rcc (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq3rtcE">hal::stm32f1::irq::rtc (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq8rtcalarmE">hal::stm32f1::irq::rtcalarm (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq4sdioE">hal::stm32f1::irq::sdio (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq4spi1E">hal::stm32f1::irq::spi1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq4spi2E">hal::stm32f1::irq::spi2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq4spi3E">hal::stm32f1::irq::spi3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq6tamperE">hal::stm32f1::irq::tamper (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq5tim12E">hal::stm32f1::irq::tim12 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq5tim13E">hal::stm32f1::irq::tim13 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq5tim14E">hal::stm32f1::irq::tim14 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq8tim1_brkE">hal::stm32f1::irq::tim1_brk (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq14tim1_brk_tim15E">hal::stm32f1::irq::tim1_brk_tim15 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq13tim1_brk_tim9E">hal::stm32f1::irq::tim1_brk_tim9 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq7tim1_ccE">hal::stm32f1::irq::tim1_cc (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq12tim1_trg_comE">hal::stm32f1::irq::tim1_trg_com (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq18tim1_trg_com_tim11E">hal::stm32f1::irq::tim1_trg_com_tim11 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq7tim1_upE">hal::stm32f1::irq::tim1_up (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq13tim1_up_tim10E">hal::stm32f1::irq::tim1_up_tim10 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq13tim1_up_tim16E">hal::stm32f1::irq::tim1_up_tim16 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq4tim2E">hal::stm32f1::irq::tim2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq4tim3E">hal::stm32f1::irq::tim3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq4tim4E">hal::stm32f1::irq::tim4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq4tim5E">hal::stm32f1::irq::tim5 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq4tim6E">hal::stm32f1::irq::tim6 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq8tim6_dacE">hal::stm32f1::irq::tim6_dac (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq4tim7E">hal::stm32f1::irq::tim7 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq8tim8_brkE">hal::stm32f1::irq::tim8_brk (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq14tim8_brk_tim12E">hal::stm32f1::irq::tim8_brk_tim12 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq7tim8_ccE">hal::stm32f1::irq::tim8_cc (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq12tim8_trg_comE">hal::stm32f1::irq::tim8_trg_com (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq18tim8_trg_com_tim14E">hal::stm32f1::irq::tim8_trg_com_tim14 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq7tim8_upE">hal::stm32f1::irq::tim8_up (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq13tim8_up_tim13E">hal::stm32f1::irq::tim8_up_tim13 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq5uart4E">hal::stm32f1::irq::uart4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq5uart5E">hal::stm32f1::irq::uart5 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq6usart1E">hal::stm32f1::irq::usart1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq6usart2E">hal::stm32f1::irq::usart2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq6usart3E">hal::stm32f1::irq::usart3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq14usb_hp_can1_txE">hal::stm32f1::irq::usb_hp_can1_tx (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq15usb_lp_can1_rx0E">hal::stm32f1::irq::usb_lp_can1_rx0 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq9usbwakeupE">hal::stm32f1::irq::usbwakeup (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f13irq15window_watchdogE">hal::stm32f1::irq::window_watchdog (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/dma.html#_CPPv4N3hal7stm32f114max_dma_lengthE">hal::stm32f1::max_dma_length (C++ member)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f139maximum_speed_using_internal_oscillatorEv">hal::stm32f1::maximum_speed_using_internal_oscillator (C++ function)</a>
+</li>
+      <li><a href="stm32f1/pin.html#_CPPv4N3hal7stm32f110mco_sourceE">hal::stm32f1::mco_source (C++ enum)</a>
+</li>
+      <li><a href="stm32f1/pin.html#_CPPv4N3hal7stm32f110mco_source19high_speed_externalE">hal::stm32f1::mco_source::high_speed_external (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/pin.html#_CPPv4N3hal7stm32f110mco_source19high_speed_internalE">hal::stm32f1::mco_source::high_speed_internal (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/pin.html#_CPPv4N3hal7stm32f110mco_source22pll_clock_divided_by_2E">hal::stm32f1::mco_source::pll_clock_divided_by_2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/pin.html#_CPPv4N3hal7stm32f110mco_source12system_clockE">hal::stm32f1::mco_source::system_clock (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/output_pin.html#_CPPv4N3hal7stm32f110output_pinE">hal::stm32f1::output_pin (C++ class)</a>
+</li>
+      <li><a href="stm32f1/output_pin.html#_CPPv4N3hal7stm32f110output_pin10output_pinE2u82u8N10output_pin8settingsE">hal::stm32f1::output_pin::output_pin (C++ function)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheralE">hal::stm32f1::peripheral (C++ enum)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral4adc1E">hal::stm32f1::peripheral::adc1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral4adc2E">hal::stm32f1::peripheral::adc2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral4adc3E">hal::stm32f1::peripheral::adc3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral4afioE">hal::stm32f1::peripheral::afio (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral12backup_clockE">hal::stm32f1::peripheral::backup_clock (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral4can1E">hal::stm32f1::peripheral::can1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral3cpuE">hal::stm32f1::peripheral::cpu (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral3crcE">hal::stm32f1::peripheral::crc (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral3dacE">hal::stm32f1::peripheral::dac (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral4dma1E">hal::stm32f1::peripheral::dma1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral4dma2E">hal::stm32f1::peripheral::dma2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral5flitfE">hal::stm32f1::peripheral::flitf (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral4fsmcE">hal::stm32f1::peripheral::fsmc (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral6gpio_aE">hal::stm32f1::peripheral::gpio_a (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral6gpio_bE">hal::stm32f1::peripheral::gpio_b (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral6gpio_cE">hal::stm32f1::peripheral::gpio_c (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral6gpio_dE">hal::stm32f1::peripheral::gpio_d (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral6gpio_eE">hal::stm32f1::peripheral::gpio_e (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral6gpio_fE">hal::stm32f1::peripheral::gpio_f (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral6gpio_gE">hal::stm32f1::peripheral::gpio_g (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral4i2c1E">hal::stm32f1::peripheral::i2c1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral4i2c2E">hal::stm32f1::peripheral::i2c2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral3i2sE">hal::stm32f1::peripheral::i2s (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral5powerE">hal::stm32f1::peripheral::power (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral4sdioE">hal::stm32f1::peripheral::sdio (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral4spi1E">hal::stm32f1::peripheral::spi1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral4spi2E">hal::stm32f1::peripheral::spi2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral4spi3E">hal::stm32f1::peripheral::spi3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral4sramE">hal::stm32f1::peripheral::sram (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral12system_timerE">hal::stm32f1::peripheral::system_timer (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral6timer1E">hal::stm32f1::peripheral::timer1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral7timer10E">hal::stm32f1::peripheral::timer10 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral7timer11E">hal::stm32f1::peripheral::timer11 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral7timer12E">hal::stm32f1::peripheral::timer12 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral7timer13E">hal::stm32f1::peripheral::timer13 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral7timer14E">hal::stm32f1::peripheral::timer14 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral6timer2E">hal::stm32f1::peripheral::timer2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral6timer3E">hal::stm32f1::peripheral::timer3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral6timer4E">hal::stm32f1::peripheral::timer4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral6timer5E">hal::stm32f1::peripheral::timer5 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral6timer6E">hal::stm32f1::peripheral::timer6 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral6timer7E">hal::stm32f1::peripheral::timer7 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral6timer8E">hal::stm32f1::peripheral::timer8 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral6timer9E">hal::stm32f1::peripheral::timer9 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral5uart4E">hal::stm32f1::peripheral::uart4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral5uart5E">hal::stm32f1::peripheral::uart5 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral6usart1E">hal::stm32f1::peripheral::usart1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral6usart2E">hal::stm32f1::peripheral::usart2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral6usart3E">hal::stm32f1::peripheral::usart3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral3usbE">hal::stm32f1::peripheral::usb (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/constants.html#_CPPv4N3hal7stm32f110peripheral15window_watchdogE">hal::stm32f1::peripheral::window_watchdog (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/pin.html#_CPPv4N3hal7stm32f110pin_selectE">hal::stm32f1::pin_select (C++ struct)</a>
+</li>
+      <li><a href="stm32f1/pin.html#_CPPv4N3hal7stm32f110pin_select3pinE">hal::stm32f1::pin_select::pin (C++ member)</a>
+</li>
+      <li><a href="stm32f1/pin.html#_CPPv4N3hal7stm32f110pin_select4portE">hal::stm32f1::pin_select::port (C++ member)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f112pll_multiplyE">hal::stm32f1::pll_multiply (C++ enum)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f112pll_multiply14multiply_by_10E">hal::stm32f1::pll_multiply::multiply_by_10 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f112pll_multiply14multiply_by_11E">hal::stm32f1::pll_multiply::multiply_by_11 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f112pll_multiply14multiply_by_12E">hal::stm32f1::pll_multiply::multiply_by_12 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f112pll_multiply14multiply_by_13E">hal::stm32f1::pll_multiply::multiply_by_13 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f112pll_multiply14multiply_by_14E">hal::stm32f1::pll_multiply::multiply_by_14 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f112pll_multiply14multiply_by_15E">hal::stm32f1::pll_multiply::multiply_by_15 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f112pll_multiply14multiply_by_16E">hal::stm32f1::pll_multiply::multiply_by_16 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f112pll_multiply13multiply_by_2E">hal::stm32f1::pll_multiply::multiply_by_2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f112pll_multiply13multiply_by_3E">hal::stm32f1::pll_multiply::multiply_by_3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f112pll_multiply13multiply_by_4E">hal::stm32f1::pll_multiply::multiply_by_4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f112pll_multiply13multiply_by_5E">hal::stm32f1::pll_multiply::multiply_by_5 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f112pll_multiply13multiply_by_6E">hal::stm32f1::pll_multiply::multiply_by_6 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f112pll_multiply13multiply_by_7E">hal::stm32f1::pll_multiply::multiply_by_7 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f112pll_multiply13multiply_by_8E">hal::stm32f1::pll_multiply::multiply_by_8 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f112pll_multiply13multiply_by_9E">hal::stm32f1::pll_multiply::multiply_by_9 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110pll_sourceE">hal::stm32f1::pll_source (C++ enum)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110pll_source19high_speed_externalE">hal::stm32f1::pll_source::high_speed_external (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110pll_source32high_speed_external_divided_by_2E">hal::stm32f1::pll_source::high_speed_external_divided_by_2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110pll_source26internal_8mhz_divided_by_2E">hal::stm32f1::pll_source::internal_8mhz_divided_by_2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/pwm.html#_CPPv4N3hal7stm32f13pwmE">hal::stm32f1::pwm (C++ class)</a>
+</li>
+      <li><a href="stm32f1/timer.html#_CPPv4N3hal7stm32f113pwm16_channelE">hal::stm32f1::pwm16_channel (C++ class)</a>
+</li>
+      <li><a href="stm32f1/timer.html#_CPPv4N3hal7stm32f119pwm_group_frequencyE">hal::stm32f1::pwm_group_frequency (C++ class)</a>
+</li>
+      <li><a href="stm32f1/pin.html#_CPPv4N3hal7stm32f117release_jtag_pinsEv">hal::stm32f1::release_jtag_pins (C++ function)</a>
+</li>
+      <li><a href="stm32f1/pin.html#_CPPv4N3hal7stm32f113reset_mco_pa8Ev">hal::stm32f1::reset_mco_pa8 (C++ function)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110rtc_sourceE">hal::stm32f1::rtc_source (C++ enum)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110rtc_source34high_speed_external_divided_by_128E">hal::stm32f1::rtc_source::high_speed_external_divided_by_128 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110rtc_source18low_speed_externalE">hal::stm32f1::rtc_source::low_speed_external (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110rtc_source18low_speed_internalE">hal::stm32f1::rtc_source::low_speed_internal (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f110rtc_source8no_clockE">hal::stm32f1::rtc_source::no_clock (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/spi.html#_CPPv4N3hal7stm32f13spiE">hal::stm32f1::spi (C++ class)</a>
+</li>
+      <li><a href="stm32f1/spi.html#_CPPv4N3hal7stm32f13spi3spiEN3hal9bus_paramERKN3spi8settingsE">hal::stm32f1::spi::spi (C++ function)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f119system_clock_selectE">hal::stm32f1::system_clock_select (C++ enum)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f119system_clock_select19high_speed_externalE">hal::stm32f1::system_clock_select::high_speed_external (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f119system_clock_select19high_speed_internalE">hal::stm32f1::system_clock_select::high_speed_internal (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f119system_clock_select3pllE">hal::stm32f1::system_clock_select::pll (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/timer.html#_CPPv4N3hal7stm32f15timerE">hal::stm32f1::timer (C++ class)</a>
+</li>
+      <li><a href="stm32f1/uart.html#_CPPv4N3hal7stm32f14uartE">hal::stm32f1::uart (C++ class)</a>
+</li>
+      <li><a href="stm32f1/uart.html#_CPPv4N3hal7stm32f14uart4uartEN3hal10port_paramEN3hal12buffer_paramERKN6serial8settingsE">hal::stm32f1::uart::uart (C++ function)</a>, <a href="stm32f1/uart.html#_CPPv4N3hal7stm32f14uart4uartEN3hal7runtimeENSt7uint8_tENSt4spanIN3hal4byteEEERKN6serial8settingsE">[1]</a>
+</li>
+      <li><a href="stm32f1/usart.html#_CPPv4N3hal7stm32f113usart_managerE">hal::stm32f1::usart_manager (C++ class)</a>
+</li>
+      <li><a href="stm32f1/usart.html#_CPPv4N3hal7stm32f113usart_manager6serialE">hal::stm32f1::usart_manager::serial (C++ class)</a>
+</li>
+      <li><a href="stm32f1/usb.html#_CPPv4N3hal7stm32f13usbE">hal::stm32f1::usb (C++ class)</a>
+</li>
+      <li><a href="stm32f1/usb.html#_CPPv4N3hal7stm32f13usb3usbEN3hal2v521strong_ptr_only_tokenERKN3hal2v510strong_ptrIN3hal12steady_clockEEEN3hal13time_durationE">hal::stm32f1::usb::usb (C++ function)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111usb_dividerE">hal::stm32f1::usb_divider (C++ enum)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111usb_divider11divide_by_1E">hal::stm32f1::usb_divider::divide_by_1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f1/clock.html#_CPPv4N3hal7stm32f111usb_divider19divide_by_1_point_5E">hal::stm32f1::usb_divider::divide_by_1_point_5 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f40/constants.html#_CPPv4N3hal10stm32f41103irqE">hal::stm32f4110::irq (C++ enum)</a>
+</li>
+      <li><a href="stm32f40/constants.html#_CPPv4N3hal10stm32f41103irq3maxE">hal::stm32f4110::irq::max (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f40/constants.html#_CPPv4N3hal10stm32f411010peripheralE">hal::stm32f4110::peripheral (C++ enum)</a>
+</li>
+      <li><a href="stm32f40/constants.html#_CPPv4N3hal10stm32f411010peripheral3maxE">hal::stm32f4110::peripheral::max (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111adc_dividerE">hal::stm32f411::adc_divider (C++ enum)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111adc_divider11divide_by_2E">hal::stm32f411::adc_divider::divide_by_2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111adc_divider11divide_by_4E">hal::stm32f411::adc_divider::divide_by_4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111adc_divider11divide_by_6E">hal::stm32f411::adc_divider::divide_by_6 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111adc_divider11divide_by_8E">hal::stm32f411::adc_divider::divide_by_8 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111ahb_dividerE">hal::stm32f411::ahb_divider (C++ enum)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111ahb_divider11divide_by_1E">hal::stm32f411::ahb_divider::divide_by_1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111ahb_divider13divide_by_128E">hal::stm32f411::ahb_divider::divide_by_128 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111ahb_divider12divide_by_16E">hal::stm32f411::ahb_divider::divide_by_16 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111ahb_divider11divide_by_2E">hal::stm32f411::ahb_divider::divide_by_2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111ahb_divider13divide_by_256E">hal::stm32f411::ahb_divider::divide_by_256 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111ahb_divider11divide_by_4E">hal::stm32f411::ahb_divider::divide_by_4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111ahb_divider13divide_by_512E">hal::stm32f411::ahb_divider::divide_by_512 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111ahb_divider12divide_by_64E">hal::stm32f411::ahb_divider::divide_by_64 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111ahb_divider11divide_by_8E">hal::stm32f411::ahb_divider::divide_by_8 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111apb_dividerE">hal::stm32f411::apb_divider (C++ enum)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111apb_divider11divide_by_1E">hal::stm32f411::apb_divider::divide_by_1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111apb_divider12divide_by_16E">hal::stm32f411::apb_divider::divide_by_16 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111apb_divider11divide_by_2E">hal::stm32f411::apb_divider::divide_by_2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111apb_divider11divide_by_4E">hal::stm32f411::apb_divider::divide_by_4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41111apb_divider11divide_by_8E">hal::stm32f411::apb_divider::divide_by_8 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110clock_treeE">hal::stm32f411::clock_tree (C++ struct)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110clock_tree5ahb_tE">hal::stm32f411::clock_tree::ahb_t (C++ struct)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110clock_tree5ahb_t6apb1_tE">hal::stm32f411::clock_tree::ahb_t::apb1_t (C++ struct)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110clock_tree5ahb_t6apb2_tE">hal::stm32f411::clock_tree::ahb_t::apb2_t (C++ struct)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110clock_tree5ahb_t6apb2_t5adc_tE">hal::stm32f411::clock_tree::ahb_t::apb2_t::adc_t (C++ struct)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110clock_tree19high_speed_externalE">hal::stm32f411::clock_tree::high_speed_external (C++ member)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110clock_tree18low_speed_externalE">hal::stm32f411::clock_tree::low_speed_external (C++ member)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110clock_tree5pll_tE">hal::stm32f411::clock_tree::pll_t (C++ struct)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110clock_tree5rtc_tE">hal::stm32f411::clock_tree::rtc_t (C++ struct)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110clock_tree12system_clockE">hal::stm32f411::clock_tree::system_clock (C++ member)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41116configure_clocksERK10clock_tree">hal::stm32f411::configure_clocks (C++ function)</a>
+</li>
+      <li><a href="stm32f411/dma.html#_CPPv4N3hal9stm32f4113dmaE">hal::stm32f411::dma (C++ enum)</a>
+</li>
+      <li><a href="stm32f411/dma.html#_CPPv4N3hal9stm32f4113dma4dma1E">hal::stm32f411::dma::dma1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/dma.html#_CPPv4N3hal9stm32f4113dma4dma2E">hal::stm32f411::dma::dma2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f4119frequencyE10peripheral">hal::stm32f411::frequency (C++ function)</a>
+</li>
+      <li><a href="stm32f411/i2c.html#_CPPv4N3hal9stm32f41116i2c_manager_implE">hal::stm32f411::i2c_manager_impl (C++ class)</a>
+</li>
+      <li><a href="stm32f411/i2c.html#_CPPv4N3hal9stm32f41116i2c_manager_impl3i2cE">hal::stm32f411::i2c_manager_impl::i2c (C++ class)</a>
+</li>
+      <li><a href="stm32f411/i2c.html#_CPPv4N3hal9stm32f41116i2c_manager_impl3i2c3i2cER16i2c_manager_implRKN3i2c8settingsE">hal::stm32f411::i2c_manager_impl::i2c::i2c (C++ function)</a>
+</li>
+      <li><a href="stm32f411/i2c.html#_CPPv4N3hal9stm32f41116i2c_manager_implD0Ev">hal::stm32f411::i2c_manager_impl::~i2c_manager_impl (C++ function)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110i2s_sourceE">hal::stm32f411::i2s_source (C++ enum)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110i2s_source18i2s_external_clockE">hal::stm32f411::i2s_source::i2s_external_clock (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110i2s_source11pll_i2s_clkE">hal::stm32f411::i2s_source::pll_i2s_clk (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/interrupt.html#_CPPv4N3hal9stm32f41121initialize_interruptsEv">hal::stm32f411::initialize_interrupts (C++ function)</a>
+</li>
+      <li><a href="stm32f411/input_pin.html#_CPPv4N3hal9stm32f4119input_pinE">hal::stm32f411::input_pin (C++ class)</a>
+</li>
+      <li><a href="stm32f411/input_pin.html#_CPPv4N3hal9stm32f4119input_pin9input_pinEN3hal9stm32f41110peripheralENSt7uint8_tERKN9input_pin8settingsE">hal::stm32f411::input_pin::input_pin (C++ function)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irqE">hal::stm32f411::irq (C++ enum)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq4adc1E">hal::stm32f411::irq::adc1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq13dma1_channel0E">hal::stm32f411::irq::dma1_channel0 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq13dma1_channel1E">hal::stm32f411::irq::dma1_channel1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq13dma1_channel2E">hal::stm32f411::irq::dma1_channel2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq13dma1_channel3E">hal::stm32f411::irq::dma1_channel3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq13dma1_channel4E">hal::stm32f411::irq::dma1_channel4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq13dma1_channel5E">hal::stm32f411::irq::dma1_channel5 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq13dma1_channel6E">hal::stm32f411::irq::dma1_channel6 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq13dma1_channel7E">hal::stm32f411::irq::dma1_channel7 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq13dma2_channel0E">hal::stm32f411::irq::dma2_channel0 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq13dma2_channel1E">hal::stm32f411::irq::dma2_channel1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq13dma2_channel2E">hal::stm32f411::irq::dma2_channel2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq13dma2_channel3E">hal::stm32f411::irq::dma2_channel3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq13dma2_channel4E">hal::stm32f411::irq::dma2_channel4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq13dma2_channel5E">hal::stm32f411::irq::dma2_channel5 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq13dma2_channel6E">hal::stm32f411::irq::dma2_channel6 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq13dma2_channel7E">hal::stm32f411::irq::dma2_channel7 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq6exi9_5E">hal::stm32f411::irq::exi9_5 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq5exti0E">hal::stm32f411::irq::exti0 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq5exti1E">hal::stm32f411::irq::exti1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq9exti15_10E">hal::stm32f411::irq::exti15_10 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq6exti17E">hal::stm32f411::irq::exti17 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq6exti18E">hal::stm32f411::irq::exti18 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq5exti2E">hal::stm32f411::irq::exti2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq5exti3E">hal::stm32f411::irq::exti3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq5exti4E">hal::stm32f411::irq::exti4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq5flashE">hal::stm32f411::irq::flash (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq3fpuE">hal::stm32f411::irq::fpu (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq7i2c1_erE">hal::stm32f411::irq::i2c1_er (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq7i2c1_evE">hal::stm32f411::irq::i2c1_ev (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq7i2c2_erE">hal::stm32f411::irq::i2c2_er (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq7i2c2_evE">hal::stm32f411::irq::i2c2_ev (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq7i2c3_erE">hal::stm32f411::irq::i2c3_er (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq7i2c3_evE">hal::stm32f411::irq::i2c3_ev (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq3maxE">hal::stm32f411::irq::max (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq6otg_fsE">hal::stm32f411::irq::otg_fs (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq11otg_fs_wkupE">hal::stm32f411::irq::otg_fs_wkup (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq3pvdE">hal::stm32f411::irq::pvd (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq3rccE">hal::stm32f411::irq::rcc (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq3rtcE">hal::stm32f411::irq::rtc (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq8rtcalarmE">hal::stm32f411::irq::rtcalarm (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq4sdioE">hal::stm32f411::irq::sdio (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq4spi1E">hal::stm32f411::irq::spi1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq4spi2E">hal::stm32f411::irq::spi2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq4spi3E">hal::stm32f411::irq::spi3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq4spi4E">hal::stm32f411::irq::spi4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq4spi5E">hal::stm32f411::irq::spi5 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq6tamperE">hal::stm32f411::irq::tamper (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq8tim1_brkE">hal::stm32f411::irq::tim1_brk (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq14tim1_brk_tim19E">hal::stm32f411::irq::tim1_brk_tim19 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq7tim1_ccE">hal::stm32f411::irq::tim1_cc (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq12tim1_trg_comE">hal::stm32f411::irq::tim1_trg_com (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq18tim1_trg_com_tim11E">hal::stm32f411::irq::tim1_trg_com_tim11 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq7tim1_upE">hal::stm32f411::irq::tim1_up (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq13tim1_up_tim10E">hal::stm32f411::irq::tim1_up_tim10 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq4tim2E">hal::stm32f411::irq::tim2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq4tim3E">hal::stm32f411::irq::tim3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq4tim4E">hal::stm32f411::irq::tim4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq4tim5E">hal::stm32f411::irq::tim5 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq6usart1E">hal::stm32f411::irq::usart1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq6usart2E">hal::stm32f411::irq::usart2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq6usart6E">hal::stm32f411::irq::usart6 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f4113irq15window_watchdogE">hal::stm32f411::irq::window_watchdog (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41139maximum_speed_using_internal_oscillatorEv">hal::stm32f411::maximum_speed_using_internal_oscillator (C++ function)</a>
+</li>
+      <li><a href="stm32f411/output_pin.html#_CPPv4N3hal9stm32f41110output_pinE">hal::stm32f411::output_pin (C++ class)</a>
+</li>
+      <li><a href="stm32f411/output_pin.html#_CPPv4N3hal9stm32f41110output_pin10output_pinEN3hal9stm32f41110peripheralENSt7uint8_tEN10output_pin8settingsE">hal::stm32f411::output_pin::output_pin (C++ function)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheralE">hal::stm32f411::peripheral (C++ enum)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral4adc1E">hal::stm32f411::peripheral::adc1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral3cpuE">hal::stm32f411::peripheral::cpu (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral3crcE">hal::stm32f411::peripheral::crc (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral4dma1E">hal::stm32f411::peripheral::dma1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral4dma2E">hal::stm32f411::peripheral::dma2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral6gpio_aE">hal::stm32f411::peripheral::gpio_a (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral6gpio_bE">hal::stm32f411::peripheral::gpio_b (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral6gpio_cE">hal::stm32f411::peripheral::gpio_c (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral6gpio_dE">hal::stm32f411::peripheral::gpio_d (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral6gpio_eE">hal::stm32f411::peripheral::gpio_e (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral6gpio_hE">hal::stm32f411::peripheral::gpio_h (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral4i2c1E">hal::stm32f411::peripheral::i2c1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral4i2c2E">hal::stm32f411::peripheral::i2c2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral4i2c3E">hal::stm32f411::peripheral::i2c3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral3i2sE">hal::stm32f411::peripheral::i2s (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral5powerE">hal::stm32f411::peripheral::power (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral4sdioE">hal::stm32f411::peripheral::sdio (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral4spi1E">hal::stm32f411::peripheral::spi1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral4spi2E">hal::stm32f411::peripheral::spi2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral4spi3E">hal::stm32f411::peripheral::spi3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral4spi4E">hal::stm32f411::peripheral::spi4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral4spi5E">hal::stm32f411::peripheral::spi5 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral24system_config_controllerE">hal::stm32f411::peripheral::system_config_controller (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral12system_timerE">hal::stm32f411::peripheral::system_timer (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral6timer1E">hal::stm32f411::peripheral::timer1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral7timer10E">hal::stm32f411::peripheral::timer10 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral7timer11E">hal::stm32f411::peripheral::timer11 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral6timer2E">hal::stm32f411::peripheral::timer2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral6timer3E">hal::stm32f411::peripheral::timer3 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral6timer4E">hal::stm32f411::peripheral::timer4 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral6timer5E">hal::stm32f411::peripheral::timer5 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral6timer9E">hal::stm32f411::peripheral::timer9 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral6usart1E">hal::stm32f411::peripheral::usart1 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral6usart2E">hal::stm32f411::peripheral::usart2 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral6usart6E">hal::stm32f411::peripheral::usart6 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral7usb_otgE">hal::stm32f411::peripheral::usb_otg (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/constants.html#_CPPv4N3hal9stm32f41110peripheral15window_watchdogE">hal::stm32f411::peripheral::window_watchdog (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/pin.html#_CPPv4N3hal9stm32f4113pinE">hal::stm32f411::pin (C++ class)</a>
+</li>
+      <li><a href="stm32f411/pin.html#_CPPv4N3hal9stm32f4113pin16activate_mco_pc9E10mco_source">hal::stm32f411::pin::activate_mco_pc9 (C++ function)</a>
+</li>
+      <li><a href="stm32f411/pin.html#_CPPv4NK3hal9stm32f4113pin8functionE12pin_function">hal::stm32f411::pin::function (C++ function)</a>
+</li>
+      <li><a href="stm32f411/pin.html#_CPPv4NK3hal9stm32f4113pin10open_drainEb">hal::stm32f411::pin::open_drain (C++ function)</a>
+</li>
+      <li><a href="stm32f411/pin.html#_CPPv4N3hal9stm32f4113pin3pinE10peripheralNSt7uint8_tE">hal::stm32f411::pin::pin (C++ function)</a>
+</li>
+      <li><a href="stm32f411/pin.html#_CPPv4NK3hal9stm32f4113pin8resistorEN3hal12pin_resistorE">hal::stm32f411::pin::resistor (C++ function)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110pll_sourceE">hal::stm32f411::pll_source (C++ enum)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110pll_source19high_speed_externalE">hal::stm32f411::pll_source::high_speed_external (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110pll_source19high_speed_internalE">hal::stm32f411::pll_source::high_speed_internal (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110rtc_sourceE">hal::stm32f411::rtc_source (C++ enum)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110rtc_source34high_speed_external_divided_by_128E">hal::stm32f411::rtc_source::high_speed_external_divided_by_128 (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110rtc_source18low_speed_externalE">hal::stm32f411::rtc_source::low_speed_external (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110rtc_source18low_speed_internalE">hal::stm32f411::rtc_source::low_speed_internal (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41110rtc_source8no_clockE">hal::stm32f411::rtc_source::no_clock (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/dma.html#_CPPv4N3hal9stm32f41123set_dma_memory_transferE3dmaKNSt4spanIK4byteEEKNSt4spanI4byteEE">hal::stm32f411::set_dma_memory_transfer (C++ function)</a>
+</li>
+      <li><a href="stm32f411/spi.html#_CPPv4N3hal9stm32f4113spiE">hal::stm32f411::spi (C++ class)</a>
+</li>
+      <li><a href="stm32f411/spi.html#_CPPv4N3hal9stm32f4113spi3spiEN3hal7runtimeENSt7uint8_tERKN3spi8settingsE">hal::stm32f411::spi::spi (C++ function)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41119system_clock_selectE">hal::stm32f411::system_clock_select (C++ enum)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41119system_clock_select19high_speed_externalE">hal::stm32f411::system_clock_select::high_speed_external (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41119system_clock_select19high_speed_internalE">hal::stm32f411::system_clock_select::high_speed_internal (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/clock.html#_CPPv4N3hal9stm32f41119system_clock_select3pllE">hal::stm32f411::system_clock_select::pll (C++ enumerator)</a>
+</li>
+      <li><a href="stm32f411/uart.html#_CPPv4N3hal9stm32f4114uartE">hal::stm32f411::uart (C++ class)</a>
+</li>
+      <li><a href="stm32f411/uart.html#_CPPv4N3hal9stm32f4114uart4uartEN3hal10port_paramEN3hal12buffer_paramERKN6serial8settingsE">hal::stm32f411::uart::uart (C++ function)</a>, <a href="stm32f411/uart.html#_CPPv4N3hal9stm32f4114uart4uartEN3hal7runtimeE2u8NSt4spanIN3hal4byteEEERKN6serial8settingsE">[1]</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
