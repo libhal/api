@@ -17,7 +17,7 @@
 set -e
 
 # Get the branch name from the commit SHA
-BRANCH_NAME="generate-index-${GITHUB_SHA:0:8}"
+BRANCH_NAME="generate-index"
 
 # Create and switch to a new branch
 git checkout -b "$BRANCH_NAME"
