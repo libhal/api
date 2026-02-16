@@ -487,6 +487,12 @@ called.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+</section>
+</section>
+<section id="apis">
+<h2>APIs<a class="headerlink" href="#apis" title="Link to this heading">#</a></h2>
+<section id="factory-function">
+<h3>Factory Function<a class="headerlink" href="#factory-function" title="Link to this heading">#</a></h3>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4I_6size_tEN2v124make_monotonic_allocatorE19monotonic_allocatorI16StorageSizeBytesEv">
 <span id="_CPPv3I_6size_tEN2v124make_monotonic_allocatorEv"></span><span id="_CPPv2I_6size_tEN2v124make_monotonic_allocatorEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">StorageSizeBytes</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="strong__ptr_8cppm_1ad41918cf5856100d101344211666c0ea"></span><a class="reference internal" href="#_CPPv4I_6size_tEN2v119monotonic_allocatorE" title="v1::monotonic_allocator"><span class="n"><span class="pre">monotonic_allocator</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_6size_tEN2v124make_monotonic_allocatorE19monotonic_allocatorI16StorageSizeBytesEv" title="v1::make_monotonic_allocator::StorageSizeBytes"><span class="n"><span class="pre">StorageSizeBytes</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">v1</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">make_monotonic_allocator</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_6size_tEN2v124make_monotonic_allocatorE19monotonic_allocatorI16StorageSizeBytesEv" title="Link to this definition">#</a><br /></dt>
@@ -504,6 +510,9 @@ called.</p>
 </dl>
 </dd></dl>
 
+</section>
+<section id="memory-resource-storage-hybrid-object">
+<h3>Memory Resource + Storage Hybrid Object<a class="headerlink" href="#memory-resource-storage-hybrid-object" title="Link to this heading">#</a></h3>
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv4I_6size_tEN2v119monotonic_allocatorE">
 <span id="_CPPv3I_6size_tEN2v119monotonic_allocatorE"></span><span id="_CPPv2I_6size_tEN2v119monotonic_allocatorE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MemorySize</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structv1_1_1monotonic__allocator"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">monotonic_allocator</span></span></span><a class="headerlink" href="#_CPPv4I_6size_tEN2v119monotonic_allocatorE" title="Link to this definition">#</a><br /></dt>
@@ -571,6 +580,9 @@ called.</p>
 </div>
 </dd></dl>
 
+</section>
+<section id="memory-resource-implementation">
+<h3>Memory Resource Implementation<a class="headerlink" href="#memory-resource-implementation" title="Link to this heading">#</a></h3>
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv4N2v124monotonic_allocator_baseE">
 <span id="_CPPv3N2v124monotonic_allocator_baseE"></span><span id="_CPPv2N2v124monotonic_allocator_baseE"></span><span id="v1::monotonic_allocator_base"></span><span class="target" id="structv1_1_1monotonic__allocator__base"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">monotonic_allocator_base</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pmr</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">memory_resource</span></span><a class="headerlink" href="#_CPPv4N2v124monotonic_allocator_baseE" title="Link to this definition">#</a><br /></dt>
@@ -705,8 +717,15 @@ called.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-allocation-and-deallocation">Basic allocation and deallocation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-with-strong-ptr">Using with strong_ptr</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overflow-behavior">Overflow behavior</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leak-detection">Leak detection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leak-detection">Leak detection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apis">APIs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factory-function">Factory Function</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_6size_tEN2v124make_monotonic_allocatorE19monotonic_allocatorI16StorageSizeBytesEv"><code class="docutils literal notranslate"><span class="pre">make_monotonic_allocator()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-resource-storage-hybrid-object">Memory Resource + Storage Hybrid Object</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_6size_tEN2v119monotonic_allocatorE"><code class="docutils literal notranslate"><span class="pre">v1::monotonic_allocator</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v119monotonic_allocator19monotonic_allocatorEv"><code class="docutils literal notranslate"><span class="pre">monotonic_allocator()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v119monotonic_allocator8resourceEv"><code class="docutils literal notranslate"><span class="pre">resource()</span></code></a></li>
@@ -718,6 +737,9 @@ called.</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v119monotonic_allocator9m_storageE"><code class="docutils literal notranslate"><span class="pre">m_storage</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-resource-implementation">Memory Resource Implementation</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v124monotonic_allocator_baseE"><code class="docutils literal notranslate"><span class="pre">v1::monotonic_allocator_base</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v124monotonic_allocator_baseD0Ev"><code class="docutils literal notranslate"><span class="pre">~monotonic_allocator_base()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v124monotonic_allocator_base11do_allocateENSt6size_tENSt6size_tE"><code class="docutils literal notranslate"><span class="pre">do_allocate()</span></code></a></li>
