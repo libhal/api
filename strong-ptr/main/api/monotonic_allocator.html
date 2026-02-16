@@ -1,0 +1,816 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>monotonic_allocator&lt;MemorySize&gt; &#8212; strong_ptr  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=e42c4877" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=e42c4877" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/monotonic_allocator';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/strong_ptr/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exceptions" href="exceptions.html" />
+    <link rel="prev" title="strong_ptr&lt;T&gt;" href="strong_ptr.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="strong_ptr  documentation - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="strong_ptr  documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<nav class="navbar-nav">
+  <p
+    class="sidebar-header-items__title"
+    role="heading"
+    aria-level="2"
+    aria-label="Site Navigation"
+  ></p>
+  <ul class="bd-navbar-elements navbar-nav">
+    <li class="nav-item dropdown">
+      <button
+        class="btn dropdown-toggle nav-item"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        aria-controls="pst-nav-more-links"
+      >
+        Guides
+      </button>
+      <ul id="pst-nav-more-links" class="dropdown-menu">
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/"
+          >
+            🏡 Introduction
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/getting_started/"
+          >
+            🚀 Getting Started
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/user_guide/fundamentals/"
+          >
+            📖 User Guide
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/contributor_guide/philosophy/"
+          >
+            📚 Contributor Guides
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/project_information/status/"
+          >
+            📊 Project Information
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    API
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    API
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Types</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="strong_ptr.html">strong_ptr&lt;T&gt;</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">monotonic_allocator&lt;MemorySize&gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional_ptr.html">optional_ptr&lt;T&gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enable_strong_from_this.html">enable_strong_from_this&lt;T&gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="weak_ptr.html">weak_ptr&lt;T&gt;</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">API</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">monotonic_allocator&lt;MemorySize&gt;</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="monotonic-allocator-memorysize">
+<h1>monotonic_allocator&lt;MemorySize&gt;<a class="headerlink" href="#monotonic-allocator-memorysize" title="Link to this heading">#</a></h1>
+<p>Defined in namespace <code class="docutils literal notranslate"><span class="pre">mem</span></code></p>
+<p><em>import strong_ptr;</em></p>
+<p>A stack-allocated monotonic memory arena for use with <code class="docutils literal notranslate"><span class="pre">std::pmr</span></code> allocators.
+Allocations advance sequentially through a fixed-size buffer. If the allocator
+is destroyed while allocations are still outstanding, <code class="docutils literal notranslate"><span class="pre">std::terminate</span></code> is
+called.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">make_monotonic_allocator&lt;N&gt;()</span></code> to create instances.</p>
+<section id="usage-examples">
+<h2>Usage Examples<a class="headerlink" href="#usage-examples" title="Link to this heading">#</a></h2>
+<section id="basic-allocation-and-deallocation">
+<h3>Basic allocation and deallocation<a class="headerlink" href="#basic-allocation-and-deallocation" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="n">strong_ptr</span><span class="p">;</span>
+
+<span class="c1">// Create a monotonic allocator with 32 bytes of storage</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">allocator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mem</span><span class="o">::</span><span class="n">make_monotonic_allocator</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="c1">// Allocate memory using the -&gt; operator</span>
+<span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">allocator</span><span class="o">-&gt;</span><span class="n">allocate</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span><span class="w"> </span><span class="k">alignof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">raw</span><span class="p">);</span>
+<span class="o">*</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
+
+<span class="c1">// Must deallocate before the allocator is destroyed,</span>
+<span class="c1">// otherwise std::terminate is called</span>
+<span class="n">allocator</span><span class="o">-&gt;</span><span class="n">deallocate</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+</pre></div>
+</div>
+</section>
+<section id="using-with-strong-ptr">
+<h3>Using with strong_ptr<a class="headerlink" href="#using-with-strong-ptr" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="n">strong_ptr</span><span class="p">;</span>
+
+<span class="c1">// Create an allocator with enough space for the object + control block</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">allocator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mem</span><span class="o">::</span><span class="n">make_monotonic_allocator</span><span class="o">&lt;</span><span class="mi">256</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="c1">// Pass the allocator as the memory resource for strong_ptr</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mem</span><span class="o">::</span><span class="n">make_strong_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">allocator</span><span class="p">.</span><span class="n">resource</span><span class="p">(),</span><span class="w"> </span><span class="mi">42</span><span class="p">);</span>
+<span class="c1">// ptr is automatically deallocated when all references are released</span>
+</pre></div>
+</div>
+</section>
+<section id="overflow-behavior">
+<h3>Overflow behavior<a class="headerlink" href="#overflow-behavior" title="Link to this heading">#</a></h3>
+<p>Allocating beyond the buffer size throws <code class="docutils literal notranslate"><span class="pre">std::bad_alloc</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="n">strong_ptr</span><span class="p">;</span>
+
+<span class="k">auto</span><span class="w"> </span><span class="n">allocator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mem</span><span class="o">::</span><span class="n">make_monotonic_allocator</span><span class="o">&lt;</span><span class="mi">8</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="c1">// Allocate 8 bytes (fills the buffer)</span>
+<span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">allocator</span><span class="o">-&gt;</span><span class="n">allocate</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span><span class="w"> </span><span class="k">alignof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">allocator</span><span class="o">-&gt;</span><span class="n">allocate</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span><span class="w"> </span><span class="k">alignof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+
+<span class="c1">// This will throw std::bad_alloc — no space left</span>
+<span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">p3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">allocator</span><span class="o">-&gt;</span><span class="n">allocate</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span><span class="w"> </span><span class="k">alignof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">bad_alloc</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Handle out-of-memory</span>
+<span class="p">}</span>
+
+<span class="n">allocator</span><span class="o">-&gt;</span><span class="n">deallocate</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<span class="n">allocator</span><span class="o">-&gt;</span><span class="n">deallocate</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+</pre></div>
+</div>
+</section>
+<section id="leak-detection">
+<h3>Leak detection<a class="headerlink" href="#leak-detection" title="Link to this heading">#</a></h3>
+<p>If allocations are not fully deallocated before the allocator is destroyed,
+<code class="docutils literal notranslate"><span class="pre">std::terminate</span></code> is called:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="n">strong_ptr</span><span class="p">;</span>
+
+<span class="p">{</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">allocator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mem</span><span class="o">::</span><span class="n">make_monotonic_allocator</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">  </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">allocator</span><span class="o">-&gt;</span><span class="n">allocate</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span><span class="w"> </span><span class="k">alignof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<span class="w">  </span><span class="c1">// Forgetting to deallocate here will call std::terminate</span>
+<span class="w">  </span><span class="c1">// when allocator goes out of scope!</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="apis">
+<h2>APIs<a class="headerlink" href="#apis" title="Link to this heading">#</a></h2>
+<section id="factory-function">
+<h3>Factory Function<a class="headerlink" href="#factory-function" title="Link to this heading">#</a></h3>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_6size_tEN2v124make_monotonic_allocatorE19monotonic_allocatorI16StorageSizeBytesEv">
+<span id="_CPPv3I_6size_tEN2v124make_monotonic_allocatorEv"></span><span id="_CPPv2I_6size_tEN2v124make_monotonic_allocatorEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">StorageSizeBytes</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="strong__ptr_8cppm_1ad41918cf5856100d101344211666c0ea"></span><a class="reference internal" href="#_CPPv4I_6size_tEN2v119monotonic_allocatorE" title="v1::monotonic_allocator"><span class="n"><span class="pre">monotonic_allocator</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_6size_tEN2v124make_monotonic_allocatorE19monotonic_allocatorI16StorageSizeBytesEv" title="v1::make_monotonic_allocator::StorageSizeBytes"><span class="n"><span class="pre">StorageSizeBytes</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">v1</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">make_monotonic_allocator</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_6size_tEN2v124make_monotonic_allocatorE19monotonic_allocatorI16StorageSizeBytesEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Creates monotonic allocators with embedded memory pool &amp; memory safety checks. </p>
+<p>Allocated memory is fetched from the internal storage defined by the template parameter <code class="docutils literal notranslate"><span class="pre">StorageSizeBytes</span></code>.</p>
+<p>Allocations are monotonic, meaning sequential and always progressing forward. The amount of memory allocated is recorded. Previously allocated memory addresses are never returned from this memory resource. If the required space is not available <code class="docutils literal notranslate"><span class="pre">std::bad_alloc</span></code> is thrown.</p>
+<p>Every deallocation subtracts from the counter that records the total amount of memory allocated. When this allocator is destroyed, if the allocated amount of bytes is not 0, std::terminate is called. This is to ensure that references to memory within this buffer cannot become invalid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>StorageSizeBytes</strong> – - Number of bytes for allocator memory </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#structv1_1_1monotonic__allocator"><span class="std std-ref">monotonic_allocator</span></a> - the monotonic allocator arena </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="memory-resource-storage-hybrid-object">
+<h3>Memory Resource + Storage Hybrid Object<a class="headerlink" href="#memory-resource-storage-hybrid-object" title="Link to this heading">#</a></h3>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4I_6size_tEN2v119monotonic_allocatorE">
+<span id="_CPPv3I_6size_tEN2v119monotonic_allocatorE"></span><span id="_CPPv2I_6size_tEN2v119monotonic_allocatorE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MemorySize</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structv1_1_1monotonic__allocator"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">monotonic_allocator</span></span></span><a class="headerlink" href="#_CPPv4I_6size_tEN2v119monotonic_allocatorE" title="Link to this definition">#</a><br /></dt>
+<dd><p>A stack-allocated monotonic memory arena for use with pmr allocators. </p>
+<p>Provides a fixed-size, stack-allocated buffer that serves as a std::pmr::memory_resource. Allocations advance sequentially through the buffer. Deallocations only track the byte count — memory is never reused. If the allocator is destroyed while allocations are still outstanding, std::terminate is called.</p>
+<p>Supports implicit conversion to std::pmr::memory_resource* and std::pmr::polymorphic_allocator&lt;T&gt;, and provides operator-&gt; for direct allocate/deallocate calls.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>MemorySize</strong> – number of bytes in the internal storage buffer </p>
+</dd>
+</dl>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v119monotonic_allocator19monotonic_allocatorEv">
+<span id="_CPPv3N2v119monotonic_allocator19monotonic_allocatorEv"></span><span id="_CPPv2N2v119monotonic_allocator19monotonic_allocatorEv"></span><span id="v1::monotonic_allocator::monotonic_allocator"></span><span class="target" id="structv1_1_1monotonic__allocator_1a31fc0b5c9fe3b348a695c1cb8eddd745"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">monotonic_allocator</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v119monotonic_allocator19monotonic_allocatorEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Initializes the internal buffer and sets up the base allocator. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v119monotonic_allocator8resourceEv">
+<span id="_CPPv3N2v119monotonic_allocator8resourceEv"></span><span id="_CPPv2N2v119monotonic_allocator8resourceEv"></span><span id="v1::monotonic_allocator::resource"></span><span class="target" id="structv1_1_1monotonic__allocator_1ad321ee5b6efa88fdf1aa4566cad5474b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pmr</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">memory_resource</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">resource</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v119monotonic_allocator8resourceEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns a pointer to the underlying memory resource. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v119monotonic_allocatorcvPNSt3pmr15memory_resourceEEv">
+<span id="_CPPv3N2v119monotonic_allocatorcvPNSt3pmr15memory_resourceEEv"></span><span id="_CPPv2N2v119monotonic_allocatorcvPNSt3pmr15memory_resourceEEv"></span><span id="v1::monotonic_allocator::castto-std::pmr::memory_resourceP-operator"></span><span class="target" id="structv1_1_1monotonic__allocator_1a1038604d9ee904fcb7aefcb85ef58824"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pmr</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">memory_resource</span></span><span class="p"><span class="pre">*</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v119monotonic_allocatorcvPNSt3pmr15memory_resourceEEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Implicit conversion to std::pmr::memory_resource*. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v119monotonic_allocatorptEv">
+<span id="_CPPv3N2v119monotonic_allocatorptEv"></span><span id="_CPPv2N2v119monotonic_allocatorptEv"></span><span id="v1::monotonic_allocator::pointer-operator"></span><span class="target" id="structv1_1_1monotonic__allocator_1a80fbdfb1f45590743656991677bdeced"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pmr</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">memory_resource</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">-&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v119monotonic_allocatorptEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Arrow operator for direct access to memory resource methods. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v119monotonic_allocatormlEv">
+<span id="_CPPv3N2v119monotonic_allocatormlEv"></span><span id="_CPPv2N2v119monotonic_allocatormlEv"></span><span id="v1::monotonic_allocator::mul-operator"></span><span class="target" id="structv1_1_1monotonic__allocator_1a5a04e24f3d6ecfd8052c3f3c48bb71ef"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pmr</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">memory_resource</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">*</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v119monotonic_allocatormlEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Dereference operator returning the memory resource. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN2v119monotonic_allocatorcvNSt3pmr21polymorphic_allocatorI1TEEEv">
+<span id="_CPPv3I0EN2v119monotonic_allocatorcvNSt3pmr21polymorphic_allocatorI1TEEEv"></span><span id="_CPPv2I0EN2v119monotonic_allocatorcvNSt3pmr21polymorphic_allocatorI1TEEEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structv1_1_1monotonic__allocator_1ac1bee7f59819cb5b0969567d3c0daf2e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pmr</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">polymorphic_allocator</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v119monotonic_allocatorcvNSt3pmr21polymorphic_allocatorI1TEEEv" title="v1::monotonic_allocator::operator std::pmr::polymorphic_allocator&lt;T&gt;::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN2v119monotonic_allocatorcvNSt3pmr21polymorphic_allocatorI1TEEEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Implicit conversion to std::pmr::polymorphic_allocator&lt;T&gt;. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N2v119monotonic_allocator6m_baseE">
+<span id="_CPPv3N2v119monotonic_allocator6m_baseE"></span><span id="_CPPv2N2v119monotonic_allocator6m_baseE"></span><span id="v1::monotonic_allocator::m_base__monotonic_allocator_base"></span><span class="target" id="structv1_1_1monotonic__allocator_1a90c4bfa928991357f87cb7c07302e04a"></span><a class="reference internal" href="#_CPPv4N2v124monotonic_allocator_baseE" title="v1::monotonic_allocator_base"><span class="n"><span class="pre">monotonic_allocator_base</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_base</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N2v119monotonic_allocator6m_baseE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The base allocator implementing the pmr interface. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N2v119monotonic_allocator9m_storageE">
+<span id="_CPPv3N2v119monotonic_allocator9m_storageE"></span><span id="_CPPv2N2v119monotonic_allocator9m_storageE"></span><span id="v1::monotonic_allocator::m_storage__std::array:std::byte.MemorySize:"></span><span class="target" id="structv1_1_1monotonic__allocator_1ae113e7ec160631d60d907bfa0a0804c8"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">byte</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_6size_tEN2v119monotonic_allocatorE" title="v1::monotonic_allocator::MemorySize"><span class="n"><span class="pre">MemorySize</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_storage</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N2v119monotonic_allocator9m_storageE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Fixed-size storage buffer for allocations. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="memory-resource-implementation">
+<h3>Memory Resource Implementation<a class="headerlink" href="#memory-resource-implementation" title="Link to this heading">#</a></h3>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N2v124monotonic_allocator_baseE">
+<span id="_CPPv3N2v124monotonic_allocator_baseE"></span><span id="_CPPv2N2v124monotonic_allocator_baseE"></span><span id="v1::monotonic_allocator_base"></span><span class="target" id="structv1_1_1monotonic__allocator__base"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">monotonic_allocator_base</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pmr</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">memory_resource</span></span><a class="headerlink" href="#_CPPv4N2v124monotonic_allocator_baseE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Base class for monotonic allocators providing the pmr memory resource interface. </p>
+<p>Implements std::pmr::memory_resource with monotonic (bump) allocation. Allocations advance a pointer forward through a buffer. Deallocations only decrement an allocation counter; memory is not reused. If the allocator is destroyed while memory is still allocated, std::terminate is called to prevent dangling references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws std::bad_alloc<span class="colon">:</span></dt>
+<dd class="field-odd"><p>when insufficient space remains for an allocation </p>
+</dd>
+</dl>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v124monotonic_allocator_baseD0Ev">
+<span id="_CPPv3N2v124monotonic_allocator_baseD0Ev"></span><span id="_CPPv2N2v124monotonic_allocator_baseD0Ev"></span><span id="v1::monotonic_allocator_base::~monotonic_allocator_base"></span><span class="target" id="structv1_1_1monotonic__allocator__base_1aeb62e95906bb200d657ae60b2b25795c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~monotonic_allocator_base</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N2v124monotonic_allocator_baseD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd><p>Destructor that calls std::terminate if allocated bytes is not zero. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v124monotonic_allocator_base11do_allocateENSt6size_tENSt6size_tE">
+<span id="_CPPv3N2v124monotonic_allocator_base11do_allocateENSt6size_tENSt6size_tE"></span><span id="_CPPv2N2v124monotonic_allocator_base11do_allocateENSt6size_tENSt6size_tE"></span><span id="v1::monotonic_allocator_base::do_allocate__std::s.std::s"></span><span class="target" id="structv1_1_1monotonic__allocator__base_1a96d69c7d21da2bd207a02070b9df0a41"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">do_allocate</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_bytes</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_alignment</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N2v124monotonic_allocator_base11do_allocateENSt6size_tENSt6size_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Allocates memory by advancing a pointer through the buffer. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p_bytes</strong> – number of bytes to allocate </p></li>
+<li><p><strong>p_alignment</strong> – required alignment for the allocation </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">std</span><span class="p">::</span><span class="n">bad_alloc</span></span></span> – if insufficient space remains </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pointer to the allocated memory </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v124monotonic_allocator_base13do_deallocateEPvNSt6size_tENSt6size_tE">
+<span id="_CPPv3N2v124monotonic_allocator_base13do_deallocateEPvNSt6size_tENSt6size_tE"></span><span id="_CPPv2N2v124monotonic_allocator_base13do_deallocateEPvNSt6size_tENSt6size_tE"></span><span id="v1::monotonic_allocator_base::do_deallocate__voidP.std::s.std::s"></span><span class="target" id="structv1_1_1monotonic__allocator__base_1a0a2d2cd579b6bb4e2e82336ccde6b0ea"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">do_deallocate</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">*</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_bytes</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N2v124monotonic_allocator_base13do_deallocateEPvNSt6size_tENSt6size_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Records a deallocation by decrementing the allocation counter. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_bytes</strong> – number of bytes being deallocated </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2v124monotonic_allocator_base11do_is_equalERKNSt3pmr15memory_resourceE">
+<span id="_CPPv3NK2v124monotonic_allocator_base11do_is_equalERKNSt3pmr15memory_resourceE"></span><span id="_CPPv2NK2v124monotonic_allocator_base11do_is_equalERKNSt3pmr15memory_resourceE"></span><span id="v1::monotonic_allocator_base::do_is_equal__std::pmr::memory_resourceCRC"></span><span class="target" id="structv1_1_1monotonic__allocator__base_1af73ca7c63e56be35e141b5d819357660"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">do_is_equal</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pmr</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">memory_resource</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK2v124monotonic_allocator_base11do_is_equalERKNSt3pmr15memory_resourceE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Checks if two memory resources are the same object. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N2v124monotonic_allocator_base7m_spaceE">
+<span id="_CPPv3N2v124monotonic_allocator_base7m_spaceE"></span><span id="_CPPv2N2v124monotonic_allocator_base7m_spaceE"></span><span id="v1::monotonic_allocator_base::m_space__s"></span><span class="target" id="structv1_1_1monotonic__allocator__base_1a17ec951c4334cad7c016eef3182d57c6"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_space</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N2v124monotonic_allocator_base7m_spaceE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Remaining space in the buffer. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N2v124monotonic_allocator_base5m_ptrE">
+<span id="_CPPv3N2v124monotonic_allocator_base5m_ptrE"></span><span id="_CPPv2N2v124monotonic_allocator_base5m_ptrE"></span><span id="v1::monotonic_allocator_base::m_ptr__voidP"></span><span class="target" id="structv1_1_1monotonic__allocator__base_1a3a1fcd425352815eeeb4a3fdc8c77eeb"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">m_ptr</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><a class="headerlink" href="#_CPPv4N2v124monotonic_allocator_base5m_ptrE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Current position in the buffer. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N2v124monotonic_allocator_base17m_allocated_bytesE">
+<span id="_CPPv3N2v124monotonic_allocator_base17m_allocated_bytesE"></span><span id="_CPPv2N2v124monotonic_allocator_base17m_allocated_bytesE"></span><span id="v1::monotonic_allocator_base::m_allocated_bytes__std::int32_t"></span><span class="target" id="structv1_1_1monotonic__allocator__base_1a0cdd05c0e3f9fcd87454312641738e75"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_allocated_bytes</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N2v124monotonic_allocator_base17m_allocated_bytesE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Tracks total allocated bytes for leak detection. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="strong_ptr.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">strong_ptr&lt;T&gt;</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="exceptions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exceptions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-examples">Usage Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-allocation-and-deallocation">Basic allocation and deallocation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-with-strong-ptr">Using with strong_ptr</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overflow-behavior">Overflow behavior</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leak-detection">Leak detection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apis">APIs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factory-function">Factory Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_6size_tEN2v124make_monotonic_allocatorE19monotonic_allocatorI16StorageSizeBytesEv"><code class="docutils literal notranslate"><span class="pre">make_monotonic_allocator()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-resource-storage-hybrid-object">Memory Resource + Storage Hybrid Object</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_6size_tEN2v119monotonic_allocatorE"><code class="docutils literal notranslate"><span class="pre">v1::monotonic_allocator</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v119monotonic_allocator19monotonic_allocatorEv"><code class="docutils literal notranslate"><span class="pre">monotonic_allocator()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v119monotonic_allocator8resourceEv"><code class="docutils literal notranslate"><span class="pre">resource()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v119monotonic_allocatorcvPNSt3pmr15memory_resourceEEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">std::pmr::memory_resource</span> <span class="pre">*()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v119monotonic_allocatorptEv"><code class="docutils literal notranslate"><span class="pre">operator-&gt;()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v119monotonic_allocatormlEv"><code class="docutils literal notranslate"><span class="pre">operator*()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN2v119monotonic_allocatorcvNSt3pmr21polymorphic_allocatorI1TEEEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">std::pmr::polymorphic_allocator&lt;</span> <span class="pre">T</span> <span class="pre">&gt;()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v119monotonic_allocator6m_baseE"><code class="docutils literal notranslate"><span class="pre">m_base</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v119monotonic_allocator9m_storageE"><code class="docutils literal notranslate"><span class="pre">m_storage</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-resource-implementation">Memory Resource Implementation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v124monotonic_allocator_baseE"><code class="docutils literal notranslate"><span class="pre">v1::monotonic_allocator_base</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v124monotonic_allocator_baseD0Ev"><code class="docutils literal notranslate"><span class="pre">~monotonic_allocator_base()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v124monotonic_allocator_base11do_allocateENSt6size_tENSt6size_tE"><code class="docutils literal notranslate"><span class="pre">do_allocate()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v124monotonic_allocator_base13do_deallocateEPvNSt6size_tENSt6size_tE"><code class="docutils literal notranslate"><span class="pre">do_deallocate()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v124monotonic_allocator_base11do_is_equalERKNSt3pmr15memory_resourceE"><code class="docutils literal notranslate"><span class="pre">do_is_equal()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v124monotonic_allocator_base7m_spaceE"><code class="docutils literal notranslate"><span class="pre">m_space</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v124monotonic_allocator_base5m_ptrE"><code class="docutils literal notranslate"><span class="pre">m_ptr</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v124monotonic_allocator_base17m_allocated_bytesE"><code class="docutils literal notranslate"><span class="pre">m_allocated_bytes</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/monotonic_allocator.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
