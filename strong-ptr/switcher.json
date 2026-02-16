@@ -2,5 +2,9 @@
     {
         "version": "main",
         "url": "https://libhal.github.io/api/strong-ptr/main"
+    },
+    {
+        "version": "0.1.8",
+        "url": "https://libhal.github.io/api/strong-ptr/0.1.8"
     }
 ]
