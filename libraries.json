@@ -3,6 +3,10 @@
     "name": "async_context",
     "versions": [
       {
+        "version": "0.0.8",
+        "url": "https://libhal.github.io/api/async_context/0.0.8"
+      },
+      {
         "version": "main",
         "url": "https://libhal.github.io/api/async_context/main"
       }
