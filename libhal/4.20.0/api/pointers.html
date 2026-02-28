@@ -1,0 +1,1643 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pointers &#8212; libhal  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=e42c4877" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=e42c4877" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/pointers';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/libhal/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '4.20.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Pulse Width Modulation (PWM)" href="pwm.html" />
+    <link rel="prev" title="Output Pin" href="output_pin.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="libhal  documentation - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="libhal  documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<nav class="navbar-nav">
+  <p
+    class="sidebar-header-items__title"
+    role="heading"
+    aria-level="2"
+    aria-label="Site Navigation"
+  ></p>
+  <ul class="bd-navbar-elements navbar-nav">
+    <li class="nav-item dropdown">
+      <button
+        class="btn dropdown-toggle nav-item"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        aria-controls="pst-nav-more-links"
+      >
+        Guides
+      </button>
+      <ul id="pst-nav-more-links" class="dropdown-menu">
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/"
+          >
+            🏡 Introduction
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/getting_started/"
+          >
+            🚀 Getting Started
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/user_guide/fundamentals/"
+          >
+            📖 User Guide
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/contributor_guide/philosophy/"
+          >
+            📚 Contributor Guides
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/project_information/status/"
+          >
+            📊 Project Information
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="interfaces.html">
+    Hardware Interfaces
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="containers.html">
+    Containers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="constants.html">
+    Constants
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="interfaces.html">
+    Hardware Interfaces
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="containers.html">
+    Containers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="constants.html">
+    Constants
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Interfaces</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="accelerometer.html">Accelerometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adc.html">Analog Digital Converter (ADC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angular_velocity_sensor.html">Angular Velocity Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="can.html">Controlled Area Network (CAN)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dac.html">Digital Analog Converter (DAC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distance_sensor.html">Distance Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gyroscope.html">Gyroscope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="i2c.html">Inter-integrated Circuit (I2C)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input_pin.html">Input Pin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interrupt_pin.html">Interrupt Pin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="io_waiter.html">IO Waiter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lock.html">Lock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="magnetometer.html">Magnetometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motor.html">Motor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output_pin.html">Output Pin</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pointers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwm.html">Pulse Width Modulation (PWM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rotation_sensor.html">Rotational Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serial.html">Serial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="servo.html">Servo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spi.html">Serial Peripheral Interface (SPI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="steady_clock.html">Steady Clock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stream_dac.html">Stream DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="temperature_sensor.html">Temperature Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timed_interrupt.html">Timed Interrupt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timeout.html">Timeout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timer.html">Timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usb.html">USB</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="interfaces.html" class="nav-link">libhal Hardware Interface API Documentation</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pointers</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pointers">
+<h1>Pointers<a class="headerlink" href="#pointers" title="Link to this heading">#</a></h1>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h2>
+<p>Defined in namespace <code class="docutils literal notranslate"><span class="pre">hal</span></code></p>
+<p><em>#include &lt;libhal/pointers.hpp&gt;</em></p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN3hal2v510strong_ptrE">
+<span id="_CPPv3I0EN3hal2v510strong_ptrE"></span><span id="_CPPv2I0EN3hal2v510strong_ptrE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1strong__ptr"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">strong_ptr</span></span></span><a class="headerlink" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="Link to this definition">#</a><br /></dt>
+<dd><p>A non-nullable strong reference counted pointer. </p>
+<p><a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> is a smart pointer that maintains shared ownership of an object through a reference count. It is similar to std::shared_ptr but with these key differences:</p>
+<p><ol class="loweralpha simple">
+<li><p>Cannot be null - must always point to a valid object</p></li>
+<li><p>Can only be created via make_strong_ptr, not from raw pointers</p></li>
+<li><p>More memory efficient implementation</p></li>
+</ol>
+</p>
+<p>Use <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> when you need shared ownership semantics and can guarantee the pointer will never be null. For nullable references, use <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a>.</p>
+<p>Example usage:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="o">++</span>
+<span class="c1">// Create a strong_ptr to an object</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hal</span><span class="o">::</span><span class="n">make_strong_ptr</span><span class="o">&lt;</span><span class="n">my_i2c_driver</span><span class="o">&gt;</span><span class="p">(</span><span class="n">allocator</span><span class="p">,</span><span class="w"> </span><span class="n">arg1</span><span class="p">,</span><span class="w"> </span><span class="n">arg2</span><span class="p">);</span>
+
+<span class="c1">// Use the object using dereference (*) operator</span>
+<span class="p">(</span><span class="o">*</span><span class="n">ptr</span><span class="p">).</span><span class="n">configure</span><span class="p">({</span><span class="w"> </span><span class="p">.</span><span class="n">clock_rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">250</span><span class="n">_kHz</span><span class="w"> </span><span class="p">});</span>
+
+<span class="c1">// OR use the object using arrow (-&gt;) operator</span>
+<span class="n">ptr</span><span class="o">-&gt;</span><span class="n">configure</span><span class="p">({</span><span class="w"> </span><span class="p">.</span><span class="n">clock_rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">250</span><span class="n">_kHz</span><span class="w"> </span><span class="p">});</span>
+
+<span class="c1">// Share ownership with another driver or object</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">my_imu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hal</span><span class="o">::</span><span class="n">make_strong_ptr</span><span class="o">&lt;</span><span class="n">my_driver</span><span class="o">&gt;</span><span class="p">(</span><span class="n">allocator</span><span class="p">,</span><span class="w"> </span><span class="n">ptr</span><span class="p">,</span><span class="w"> </span><span class="mh">0x13</span><span class="p">);</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – The type of the managed object </p>
+</dd>
+</dl>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v510strong_ptr10strong_ptrEv">
+<span id="_CPPv3N3hal2v510strong_ptr10strong_ptrEv"></span><span id="_CPPv2N3hal2v510strong_ptr10strong_ptrEv"></span><span id="hal::v5::strong_ptr::strong_ptr"></span><span class="target" id="classhal_1_1v5_1_1strong__ptr_1a4b164540687593081c402523d7f3fa4f"></span><span class="sig-name descname"><span class="n"><span class="pre">strong_ptr</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N3hal2v510strong_ptr10strong_ptrEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Delete default constructor - <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> must always be valid. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v510strong_ptr10strong_ptrENSt9nullptr_tE">
+<span id="_CPPv3N3hal2v510strong_ptr10strong_ptrENSt9nullptr_tE"></span><span id="_CPPv2N3hal2v510strong_ptr10strong_ptrENSt9nullptr_tE"></span><span id="hal::v5::strong_ptr::strong_ptr__std::nullptr_t"></span><span class="target" id="classhal_1_1v5_1_1strong__ptr_1ad3683e5032ae738ff413f273539234a6"></span><span class="sig-name descname"><span class="n"><span class="pre">strong_ptr</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">nullptr_t</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N3hal2v510strong_ptr10strong_ptrENSt9nullptr_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Delete nullptr constructor - <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> must always be valid. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v510strong_ptr10strong_ptrERK10strong_ptr">
+<span id="_CPPv3N3hal2v510strong_ptr10strong_ptrERK10strong_ptr"></span><span id="_CPPv2N3hal2v510strong_ptr10strong_ptrERK10strong_ptr"></span><span id="hal::v5::strong_ptr::strong_ptr__strong_ptrCR"></span><span class="target" id="classhal_1_1v5_1_1strong__ptr_1a494b32b9b8c2322159593ee00af2b4fd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">strong_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal2v510strong_ptr10strong_ptrERK10strong_ptr" title="hal::v5::strong_ptr::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v510strong_ptr10strong_ptrERK10strong_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Copy constructor. </p>
+<p>Creates a new strong reference to the same object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to copy from </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UE">
+<span id="_CPPv3I0EN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UE"></span><span id="_CPPv2I0EN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1strong__ptr_1a49c805a8b40e0bc2927b8272e95d6609"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">strong_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UE" title="hal::v5::strong_ptr::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UE" title="hal::v5::strong_ptr::strong_ptr::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0EN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Converting copy constructor. </p>
+<p>Creates a new strong reference to the same object, converting from a derived type U to base type T.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>U</strong> – A type convertible to T </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>p_other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to copy from </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v510strong_ptr10strong_ptrERR10strong_ptr">
+<span id="_CPPv3N3hal2v510strong_ptr10strong_ptrERR10strong_ptr"></span><span id="_CPPv2N3hal2v510strong_ptr10strong_ptrERR10strong_ptr"></span><span id="hal::v5::strong_ptr::strong_ptr__strong_ptrRR"></span><span class="target" id="classhal_1_1v5_1_1strong__ptr_1aaaf3b4cd61211f29385c66c1c61fccbd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">strong_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal2v510strong_ptr10strong_ptrERR10strong_ptr" title="hal::v5::strong_ptr::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v510strong_ptr10strong_ptrERR10strong_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Move constructor that intentionally behaves like a copy constructor for safety. </p>
+<p>This move constructor deliberately performs a full copy operation rather than transferring ownership. This is a safety feature to prevent potential undefined behavior that could occur if code accidentally accessed a moved-from <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>.</p>
+<p>After this operation, both the source and destination objects remain in valid states, and the reference count is incremented by 1. This ensures that even if code incorrectly continues to use the source object after a move, no undefined behavior will occur.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to “move” from (actually copied for safety) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v510strong_ptraSERR10strong_ptr">
+<span id="_CPPv3N3hal2v510strong_ptraSERR10strong_ptr"></span><span id="_CPPv2N3hal2v510strong_ptraSERR10strong_ptr"></span><span id="hal::v5::strong_ptr::assign-operator__strong_ptrRR"></span><span class="target" id="classhal_1_1v5_1_1strong__ptr_1ae30d3e469b4505c3e529e8fe08764855"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v510strong_ptraSERR10strong_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Move assignment operator that behaves like a copy assignment for safety. </p>
+<p>This move assignment operator deliberately performs a full copy operation rather than transferring ownership. This is a safety feature to prevent potential undefined behavior that could occur if code accidentally accessed a moved-from <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>.</p>
+<p>After this operation, both the source and destination objects remain in valid states, and the reference count is incremented by 1. This ensures that even if code incorrectly continues to use the source object after a move, no undefined behavior will occur.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to “move” from (actually copied for safety) </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Reference to *this </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEPKv">
+<span id="_CPPv3I0EN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEPKv"></span><span id="_CPPv2I0EN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEPKv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1strong__ptr_1a86a47dfee611465632295517a5573c09"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">strong_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEPKv" title="hal::v5::strong_ptr::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEPKv" title="hal::v5::strong_ptr::strong_ptr::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&amp;</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">*</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0EN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEPKv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Compile time error message for bad alias value. </p>
+<p><code class="docutils literal notranslate"><span class="pre">std::shared_ptr</span></code> provides an alias constructor that accepts any <code class="docutils literal notranslate"><span class="pre">void*</span></code> which is UB if that <code class="docutils literal notranslate"><span class="pre">void*</span></code> doesn’t have the same lifetime as the object referenced by the <code class="docutils literal notranslate"><span class="pre">std::shared_ptr</span></code>. Users attempting to do this will get a list of constructors that failed to fit. This is not a good error message for users. Instead, we provide a static_assert message in plain english that explains why this overload fails at compile time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>U</strong> – - some type for the <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0_N6detail14non_array_likeEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1U1M">
+<span id="_CPPv3I0_N6detail14non_array_likeEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1U1M"></span><span id="_CPPv2I0_N6detail14non_array_likeEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1U1M"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">detail</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">non_array_like</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">M</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1strong__ptr_1ac88d23f1b098653d1effa2e1c0af1ceb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">strong_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_N6detail14non_array_likeEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1U1M" title="hal::v5::strong_ptr::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0_N6detail14non_array_likeEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1U1M" title="hal::v5::strong_ptr::strong_ptr::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span>, <a class="reference internal" href="#_CPPv4I0_N6detail14non_array_likeEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1U1M" title="hal::v5::strong_ptr::strong_ptr::M"><span class="n"><span class="pre">M</span></span></a><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_N6detail14non_array_likeEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1U1M" title="hal::v5::strong_ptr::strong_ptr::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">::</span></span><span class="p"><span class="pre">*</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_member_ptr</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0_N6detail14non_array_likeEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1U1M" title="Link to this definition">#</a><br /></dt>
+<dd><p>Safe aliasing constructor for object members. </p>
+<p>This constructor creates a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> that points to a member of an object managed by another <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. The resulting <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> shares ownership with the original <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>, keeping the entire parent object alive.</p>
+<p>This version is only enabled for non-array members to prevent potential undefined behavior when accessing array elements directly. Use the array-specific versions instead.</p>
+<p>Example usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">container</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">component</span><span class="w"> </span><span class="n">part</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// Create a strong_ptr to the container</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">container_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_strong_ptr</span><span class="o">&lt;</span><span class="n">container</span><span class="o">&gt;</span><span class="p">(</span><span class="n">allocator</span><span class="p">);</span>
+
+<span class="c1">// Create a strong_ptr to just the component</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">component_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strong_ptr</span><span class="o">&lt;</span><span class="n">component</span><span class="o">&gt;</span><span class="p">(</span><span class="n">container_ptr</span><span class="p">,</span>
+<span class="o">&amp;</span><span class="n">container</span><span class="o">::</span><span class="n">part</span><span class="p">);</span>
+</pre></div>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>U</strong> – Type of the parent object </p></li>
+<li><p><strong>M</strong> – Type of the member </p></li>
+</ul>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>p_other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to the parent object </p></li>
+<li><p><strong>p_member_ptr</strong> – Pointer-to-member identifying which member to reference </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UNSt5arrayI1E1NEENSt6size_tE">
+<span id="_CPPv3I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UNSt5arrayI1E1NEENSt6size_tE"></span><span id="_CPPv2I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UNSt5arrayI1E1NEENSt6size_tE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">E</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">N</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1strong__ptr_1a5a43ba4019f9cba94237b3615d9bff6b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">strong_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UNSt5arrayI1E1NEENSt6size_tE" title="hal::v5::strong_ptr::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UNSt5arrayI1E1NEENSt6size_tE" title="hal::v5::strong_ptr::strong_ptr::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UNSt5arrayI1E1NEENSt6size_tE" title="hal::v5::strong_ptr::strong_ptr::E"><span class="n"><span class="pre">E</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UNSt5arrayI1E1NEENSt6size_tE" title="hal::v5::strong_ptr::strong_ptr::N"><span class="n"><span class="pre">N</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UNSt5arrayI1E1NEENSt6size_tE" title="hal::v5::strong_ptr::strong_ptr::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">::</span></span><span class="p"><span class="pre">*</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_array_ptr</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_index</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UNSt5arrayI1E1NEENSt6size_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Safe aliasing constructor for std::array members. </p>
+<p>This constructor creates a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> that points to an element of an array member in an object managed by another <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. It performs bounds checking to ensure the index is valid.</p>
+<p>Example usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">array_container</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">&gt;</span><span class="w"> </span><span class="n">elements</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">auto</span><span class="w"> </span><span class="n">container_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_strong_ptr</span><span class="o">&lt;</span><span class="n">array_container</span><span class="o">&gt;</span><span class="p">(</span><span class="n">allocator</span><span class="p">);</span>
+
+<span class="c1">// Get strong_ptr to the 2nd element</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">element_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strong_ptr</span><span class="o">&lt;</span><span class="n">element</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">  </span><span class="n">container_ptr</span><span class="p">,</span>
+<span class="w">  </span><span class="o">&amp;</span><span class="n">array_container</span><span class="o">::</span><span class="n">elements</span><span class="p">,</span>
+<span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="c1">// Index to access</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>U</strong> – Type of the parent object </p></li>
+<li><p><strong>E</strong> – Type of the array element </p></li>
+<li><p><strong>N</strong> – Size of the array </p></li>
+</ul>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>p_other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to the parent object </p></li>
+<li><p><strong>p_array_ptr</strong> – Pointer-to-member identifying the array member </p></li>
+<li><p><strong>p_index</strong> – Index of the element to reference </p></li>
+</ul>
+</dd>
+<dt class="field-odd">Throws<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">out_of_range</span></span></span> – if index is out of bounds </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UA1N_1ENSt6size_tE">
+<span id="_CPPv3I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UA1N_1ENSt6size_tE"></span><span id="_CPPv2I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UAN_1ENSt6size_tE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">E</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">N</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1strong__ptr_1afcb57a334999bdc4c4039aa7955ece4a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">strong_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UA1N_1ENSt6size_tE" title="hal::v5::strong_ptr::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UA1N_1ENSt6size_tE" title="hal::v5::strong_ptr::strong_ptr::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span>, <a class="reference internal" href="#_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UA1N_1ENSt6size_tE" title="hal::v5::strong_ptr::strong_ptr::E"><span class="n"><span class="pre">E</span></span></a><span class="w"> </span><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UA1N_1ENSt6size_tE" title="hal::v5::strong_ptr::strong_ptr::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">::</span></span><span class="p"><span class="pre">*</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_array_ptr</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UA1N_1ENSt6size_tE" title="hal::v5::strong_ptr::strong_ptr::N"><span class="n"><span class="pre">N</span></span></a><span class="p"><span class="pre">]</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_index</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UA1N_1ENSt6size_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Safe aliasing constructor for C-array members. </p>
+<p>This constructor creates a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> that points to an element of a C-style array member in an object managed by another <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. It performs bounds checking to ensure the index is valid.</p>
+<p>Example usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">c_array_container</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">element</span><span class="w"> </span><span class="n">elements</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+<span class="p">};</span>
+
+<span class="k">auto</span><span class="w"> </span><span class="n">container_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_strong_ptr</span><span class="o">&lt;</span><span class="n">c_array_container</span><span class="o">&gt;</span><span class="p">(</span><span class="n">allocator</span><span class="p">);</span>
+
+<span class="c1">// Get strong_ptr to the 2nd element</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">element_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strong_ptr</span><span class="o">&lt;</span><span class="n">element</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">  </span><span class="n">container_ptr</span><span class="p">,</span>
+<span class="w">  </span><span class="o">&amp;</span><span class="n">c_array_container</span><span class="o">::</span><span class="n">elements</span><span class="p">,</span>
+<span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="c1">// Index to access</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>U</strong> – Type of the parent object </p></li>
+<li><p><strong>E</strong> – Type of the array element </p></li>
+<li><p><strong>N</strong> – Size of the array </p></li>
+</ul>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>p_other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to the parent object </p></li>
+<li><p><strong>p_array_ptr</strong> – Pointer-to-member identifying the array member </p></li>
+<li><p><strong>p_index</strong> – Index of the element to reference </p></li>
+</ul>
+</dd>
+<dt class="field-odd">Throws<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">out_of_range</span></span></span> – if index is out of bounds </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v510strong_ptrD0Ev">
+<span id="_CPPv3N3hal2v510strong_ptrD0Ev"></span><span id="_CPPv2N3hal2v510strong_ptrD0Ev"></span><span id="hal::v5::strong_ptr::~strong_ptr"></span><span class="target" id="classhal_1_1v5_1_1strong__ptr_1a1a17f93520869b0e9fd72ae2b3f976ce"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~strong_ptr</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v510strong_ptrD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd><p>Destructor. </p>
+<p>Decrements the reference count and destroys the managed object if this was the last strong reference. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v510strong_ptraSERK10strong_ptr">
+<span id="_CPPv3N3hal2v510strong_ptraSERK10strong_ptr"></span><span id="_CPPv2N3hal2v510strong_ptraSERK10strong_ptr"></span><span id="hal::v5::strong_ptr::assign-operator__strong_ptrCR"></span><span class="target" id="classhal_1_1v5_1_1strong__ptr_1a6d6c3fcaafed7f02ac75acb5049bb722"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v510strong_ptraSERK10strong_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Copy assignment operator. </p>
+<p>Replaces the managed object with the one managed by p_other.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to copy from </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Reference to *this </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN3hal2v510strong_ptraSER10strong_ptrRK10strong_ptrI1UE">
+<span id="_CPPv3I0EN3hal2v510strong_ptraSERK10strong_ptrI1UE"></span><span id="_CPPv2I0EN3hal2v510strong_ptraSERK10strong_ptrI1UE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1strong__ptr_1acf2d62905520137fe425c9eff224f0ce"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptraSER10strong_ptrRK10strong_ptrI1UE" title="hal::v5::strong_ptr::operator=::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0EN3hal2v510strong_ptraSER10strong_ptrRK10strong_ptrI1UE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Converting copy assignment operator. </p>
+<p>Replaces the managed object with the one managed by p_other, converting from type U to type T.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>U</strong> – A type convertible to T </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>p_other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to copy from </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Reference to *this </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v510strong_ptr4swapER10strong_ptr">
+<span id="_CPPv3N3hal2v510strong_ptr4swapER10strong_ptr"></span><span id="_CPPv2N3hal2v510strong_ptr4swapER10strong_ptr"></span><span id="hal::v5::strong_ptr::swap__strong_ptrR"></span><span class="target" id="classhal_1_1v5_1_1strong__ptr_1acd2de8410c7e4f2d67b255e62b3d423e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">swap</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v510strong_ptr4swapER10strong_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Swap the contents of this <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> with another. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to swap with </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NO3hal2v510strong_ptrmlEv">
+<span id="_CPPv3NO3hal2v510strong_ptrmlEv"></span><span id="_CPPv2NO3hal2v510strong_ptrmlEv"></span><span id="hal::v5::strong_ptr::mul-operatorO"></span><span class="target" id="classhal_1_1v5_1_1strong__ptr_1a5b334457a8d8b9238daf236e53a3cb23"></span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">*</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">&amp;&amp;</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4NO3hal2v510strong_ptrmlEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Disable dereferencing for r-values (temporaries) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NO3hal2v510strong_ptrptEv">
+<span id="_CPPv3NO3hal2v510strong_ptrptEv"></span><span id="_CPPv2NO3hal2v510strong_ptrptEv"></span><span id="hal::v5::strong_ptr::pointer-operatorO"></span><span class="target" id="classhal_1_1v5_1_1strong__ptr_1add360eb92bb900a3910ec3fdecafdb5d"></span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">-&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">&amp;&amp;</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4NO3hal2v510strong_ptrptEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Disable member access for r-values (temporaries) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NKR3hal2v510strong_ptrmlEv">
+<span id="_CPPv3NKR3hal2v510strong_ptrmlEv"></span><span id="_CPPv2NKR3hal2v510strong_ptrmlEv"></span><span id="hal::v5::strong_ptr::mul-operatorCR"></span><span class="target" id="classhal_1_1v5_1_1strong__ptr_1a2396a15ac16c6760a00b82105738df96"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">*</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NKR3hal2v510strong_ptrmlEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Dereference operator to access the managed object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Reference to the managed object </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NKR3hal2v510strong_ptrptEv">
+<span id="_CPPv3NKR3hal2v510strong_ptrptEv"></span><span id="_CPPv2NKR3hal2v510strong_ptrptEv"></span><span id="hal::v5::strong_ptr::pointer-operatorCR"></span><span class="target" id="classhal_1_1v5_1_1strong__ptr_1aa7911be17e9b187dec3731813821d541"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">-&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NKR3hal2v510strong_ptrptEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Member access operator to access the managed object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pointer to the managed object </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v510strong_ptr9use_countEv">
+<span id="_CPPv3NK3hal2v510strong_ptr9use_countEv"></span><span id="_CPPv2NK3hal2v510strong_ptr9use_countEv"></span><span id="hal::v5::strong_ptr::use_countC"></span><span class="target" id="classhal_1_1v5_1_1strong__ptr_1a7c52ef2824014961abb490f34ff8db10"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">use_count</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK3hal2v510strong_ptr9use_countEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the current reference count. </p>
+<p>This is primarily for testing purposes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The number of strong references to the managed object </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN3hal2v58weak_ptrE">
+<span id="_CPPv3I0EN3hal2v58weak_ptrE"></span><span id="_CPPv2I0EN3hal2v58weak_ptrE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1weak__ptr"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">weak_ptr</span></span></span><a class="headerlink" href="#_CPPv4I0EN3hal2v58weak_ptrE" title="Link to this definition">#</a><br /></dt>
+<dd><p>A weak reference to a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. </p>
+<p><a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> provides a non-owning reference to an object managed by <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. It can be used to break reference cycles or to create an <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a>.</p>
+<p>A <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> doesn’t increase the strong reference count, so it doesn’t prevent the object from being destroyed when the last <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> goes away.</p>
+<p>Example usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create a strong_ptr to an object</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hal</span><span class="o">::</span><span class="n">make_strong_ptr</span><span class="o">&lt;</span><span class="n">my_driver</span><span class="o">&gt;</span><span class="p">(</span><span class="n">allocator</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">...);</span>
+
+<span class="c1">// Create a weak reference</span>
+<span class="n">weak_ptr</span><span class="o">&lt;</span><span class="n">my_driver</span><span class="o">&gt;</span><span class="w"> </span><span class="n">weak</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span>
+
+<span class="c1">// Later, try to get a strong reference</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">locked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weak</span><span class="p">.</span><span class="n">lock</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Use the object via locked</span>
+<span class="w">  </span><span class="n">locked</span><span class="o">-&gt;</span><span class="n">doSomething</span><span class="p">();</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Object has been destroyed</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – The type of the referenced object </p>
+</dd>
+</dl>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v58weak_ptr8weak_ptrEv">
+<span id="_CPPv3N3hal2v58weak_ptr8weak_ptrEv"></span><span id="_CPPv2N3hal2v58weak_ptr8weak_ptrEv"></span><span id="hal::v5::weak_ptr::weak_ptr"></span><span class="target" id="classhal_1_1v5_1_1weak__ptr_1ac5335a541d44c7305ebb93257f6bd391"></span><span class="sig-name descname"><span class="n"><span class="pre">weak_ptr</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N3hal2v58weak_ptr8weak_ptrEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Default constructor creates empty <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v58weak_ptr8weak_ptrERK10strong_ptrI1TE">
+<span id="_CPPv3N3hal2v58weak_ptr8weak_ptrERK10strong_ptrI1TE"></span><span id="_CPPv2N3hal2v58weak_ptr8weak_ptrERK10strong_ptrI1TE"></span><span id="hal::v5::weak_ptr::weak_ptr__strong_ptr:T:CR"></span><span class="target" id="classhal_1_1v5_1_1weak__ptr_1a6a067f33e3542367b8ca0ac186bbe9df"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">weak_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v58weak_ptrE" title="hal::v5::weak_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_strong</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v58weak_ptr8weak_ptrERK10strong_ptrI1TE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Create <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> from <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_strong</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to create a weak reference to </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v58weak_ptr8weak_ptrERK8weak_ptr">
+<span id="_CPPv3N3hal2v58weak_ptr8weak_ptrERK8weak_ptr"></span><span id="_CPPv2N3hal2v58weak_ptr8weak_ptrERK8weak_ptr"></span><span id="hal::v5::weak_ptr::weak_ptr__weak_ptrCR"></span><span class="target" id="classhal_1_1v5_1_1weak__ptr_1a4611d23ed3a189131b8d5661ac39dcd0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">weak_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal2v58weak_ptr8weak_ptrERK8weak_ptr" title="hal::v5::weak_ptr::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v58weak_ptr8weak_ptrERK8weak_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Copy constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to copy from </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v58weak_ptr8weak_ptrERR8weak_ptr">
+<span id="_CPPv3N3hal2v58weak_ptr8weak_ptrERR8weak_ptr"></span><span id="_CPPv2N3hal2v58weak_ptr8weak_ptrERR8weak_ptr"></span><span id="hal::v5::weak_ptr::weak_ptr__weak_ptrRR"></span><span class="target" id="classhal_1_1v5_1_1weak__ptr_1afff80212625c6dfbf3119740030e2618"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">weak_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal2v58weak_ptr8weak_ptrERR8weak_ptr" title="hal::v5::weak_ptr::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v58weak_ptr8weak_ptrERR8weak_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Move constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to move from </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERK8weak_ptrI1UE">
+<span id="_CPPv3I0EN3hal2v58weak_ptr8weak_ptrERK8weak_ptrI1UE"></span><span id="_CPPv2I0EN3hal2v58weak_ptr8weak_ptrERK8weak_ptrI1UE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1weak__ptr_1a5bcf4e886c2ad53a6e69c477cdff97ed"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">weak_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERK8weak_ptrI1UE" title="hal::v5::weak_ptr::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERK8weak_ptrI1UE" title="hal::v5::weak_ptr::weak_ptr::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERK8weak_ptrI1UE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Converting copy constructor. </p>
+<p>Creates a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> of T from a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> of U where U is convertible to T.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>U</strong> – A type convertible to T </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>p_other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to copy from </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERR8weak_ptrI1UE">
+<span id="_CPPv3I0EN3hal2v58weak_ptr8weak_ptrERR8weak_ptrI1UE"></span><span id="_CPPv2I0EN3hal2v58weak_ptr8weak_ptrERR8weak_ptrI1UE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1weak__ptr_1a4c9b59ab9b7aab03491880b33c69ce44"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">weak_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERR8weak_ptrI1UE" title="hal::v5::weak_ptr::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERR8weak_ptrI1UE" title="hal::v5::weak_ptr::weak_ptr::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERR8weak_ptrI1UE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Converting move constructor. </p>
+<p>Moves a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> of U to a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> T where U is convertible to T.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>U</strong> – A type convertible to T </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>p_other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to move from </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERK10strong_ptrI1UE">
+<span id="_CPPv3I0EN3hal2v58weak_ptr8weak_ptrERK10strong_ptrI1UE"></span><span id="_CPPv2I0EN3hal2v58weak_ptr8weak_ptrERK10strong_ptrI1UE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1weak__ptr_1a5634e6ee88de138298686f9c00c757b9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">weak_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERK10strong_ptrI1UE" title="hal::v5::weak_ptr::weak_ptr::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERK10strong_ptrI1UE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Converting constructor from <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. </p>
+<p>Creates a weak_ptr&lt;T&gt; from a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> where U is convertible to T.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>U</strong> – A type convertible to T </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>p_other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to create a weak reference to </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v58weak_ptrD0Ev">
+<span id="_CPPv3N3hal2v58weak_ptrD0Ev"></span><span id="_CPPv2N3hal2v58weak_ptrD0Ev"></span><span id="hal::v5::weak_ptr::~weak_ptr"></span><span class="target" id="classhal_1_1v5_1_1weak__ptr_1aebb21f76c412a00bbeca89836b9679f0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~weak_ptr</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v58weak_ptrD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd><p>Destructor. </p>
+<p>Decrements the weak reference count and potentially deallocates memory if this was the last reference. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v58weak_ptraSERK8weak_ptr">
+<span id="_CPPv3N3hal2v58weak_ptraSERK8weak_ptr"></span><span id="_CPPv2N3hal2v58weak_ptraSERK8weak_ptr"></span><span id="hal::v5::weak_ptr::assign-operator__weak_ptrCR"></span><span class="target" id="classhal_1_1v5_1_1weak__ptr_1a2ba2192cdfa911e9949f6e8dad2f35be"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v58weak_ptrE" title="hal::v5::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v58weak_ptrE" title="hal::v5::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v58weak_ptraSERK8weak_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Copy assignment operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to copy from </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Reference to *this </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v58weak_ptraSERR8weak_ptr">
+<span id="_CPPv3N3hal2v58weak_ptraSERR8weak_ptr"></span><span id="_CPPv2N3hal2v58weak_ptraSERR8weak_ptr"></span><span id="hal::v5::weak_ptr::assign-operator__weak_ptrRR"></span><span class="target" id="classhal_1_1v5_1_1weak__ptr_1a52ffdc1ce45c0da0ca2ed1dfe5997b6c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v58weak_ptrE" title="hal::v5::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v58weak_ptrE" title="hal::v5::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v58weak_ptraSERR8weak_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Move assignment operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to move from </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Reference to *this </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v58weak_ptraSERK10strong_ptrI1TE">
+<span id="_CPPv3N3hal2v58weak_ptraSERK10strong_ptrI1TE"></span><span id="_CPPv2N3hal2v58weak_ptraSERK10strong_ptrI1TE"></span><span id="hal::v5::weak_ptr::assign-operator__strong_ptr:T:CR"></span><span class="target" id="classhal_1_1v5_1_1weak__ptr_1a2240f18be4726ab0f7772b99c6ff5ea4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v58weak_ptrE" title="hal::v5::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v58weak_ptrE" title="hal::v5::weak_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_strong</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v58weak_ptraSERK10strong_ptrI1TE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Assignment from <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_strong</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to create a weak reference to </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Reference to *this </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v58weak_ptr4swapER8weak_ptr">
+<span id="_CPPv3N3hal2v58weak_ptr4swapER8weak_ptr"></span><span id="_CPPv2N3hal2v58weak_ptr4swapER8weak_ptr"></span><span id="hal::v5::weak_ptr::swap__weak_ptrR"></span><span class="target" id="classhal_1_1v5_1_1weak__ptr_1a5f13c8e95a171765300e5556569bd043"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">swap</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v58weak_ptrE" title="hal::v5::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v58weak_ptr4swapER8weak_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Swap the contents of this <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> with another. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to swap with </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v58weak_ptr7expiredEv">
+<span id="_CPPv3NK3hal2v58weak_ptr7expiredEv"></span><span id="_CPPv2NK3hal2v58weak_ptr7expiredEv"></span><span id="hal::v5::weak_ptr::expiredC"></span><span class="target" id="classhal_1_1v5_1_1weak__ptr_1a76b8fa169c880f82d20503c469b5a72b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">expired</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK3hal2v58weak_ptr7expiredEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Check if the referenced object has been destroyed. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if the object has been destroyed, false otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v58weak_ptr4lockEv">
+<span id="_CPPv3NK3hal2v58weak_ptr4lockEv"></span><span id="_CPPv2NK3hal2v58weak_ptr4lockEv"></span><span id="hal::v5::weak_ptr::lockC"></span><span class="target" id="classhal_1_1v5_1_1weak__ptr_1a2ce612f2f63e01f2540b6579bef8af7a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v58weak_ptrE" title="hal::v5::weak_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lock</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK3hal2v58weak_ptr4lockEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Attempt to obtain a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to the referenced object. </p>
+<p>Implement <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr_1a2ce612f2f63e01f2540b6579bef8af7a"><span class="std std-ref">weak_ptr::lock()</span></a> now that <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> is defined.</p>
+<p>If the object still exists, returns an <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> containing a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to it. Otherwise, returns an empty <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a>.</p>
+<p>
+This function attempts to obtain a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> from a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a>. If the referenced object still exists, it returns an <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> containing a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to it. Otherwise, it returns an empty <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> that is either empty or contains a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+<dt class="field-even">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>T</strong> – The type of the referenced object </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> that is either empty or contains a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v58weak_ptr9use_countEv">
+<span id="_CPPv3NK3hal2v58weak_ptr9use_countEv"></span><span id="_CPPv2NK3hal2v58weak_ptr9use_countEv"></span><span id="hal::v5::weak_ptr::use_countC"></span><span class="target" id="classhal_1_1v5_1_1weak__ptr_1ab95d746e3dde55e44fc8dcafc2141786"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">use_count</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK3hal2v58weak_ptr9use_countEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the current strong reference count. </p>
+<p>This is primarily for testing purposes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The number of strong references to the managed object </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN3hal2v512optional_ptrE">
+<span id="_CPPv3I0EN3hal2v512optional_ptrE"></span><span id="_CPPv2I0EN3hal2v512optional_ptrE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1optional__ptr"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">optional_ptr</span></span></span><a class="headerlink" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Optional, nullable, smart pointer that works with <code class="docutils literal notranslate"><span class="pre">hal::strong_ptr</span></code>. </p>
+<p><a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> provides a way to represent a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> that may or may not be present. Unlike <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>, which is always valid, <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> can be in a “disengaged” state where it doesn’t reference any object.</p>
+<p>Use <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> when you need a nullable reference to a reference-counted object, such as:<ul class="simple">
+<li><p>Representing the absence of a value</p></li>
+<li><p>Return values from functions that may fail</p></li>
+<li><p>Results of locking a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a></p></li>
+</ul>
+</p>
+<p>Example usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create an empty optional_ptr</span>
+<span class="n">optional_ptr</span><span class="o">&lt;</span><span class="n">my_driver</span><span class="o">&gt;</span><span class="w"> </span><span class="n">opt1</span><span class="p">;</span>
+
+<span class="c1">// Create an optional_ptr from a strong_ptr</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_strong_ptr</span><span class="o">&lt;</span><span class="n">my_driver</span><span class="o">&gt;</span><span class="p">(</span><span class="n">allocator</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">...);</span>
+<span class="n">optional_ptr</span><span class="o">&lt;</span><span class="n">my_driver</span><span class="o">&gt;</span><span class="w"> </span><span class="n">opt2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span>
+
+<span class="c1">// Check if the optional_ptr is engaged</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">opt2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Use the contained object</span>
+<span class="w">  </span><span class="n">opt2</span><span class="o">-&gt;</span><span class="n">doSomething</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// Reset to disengage</span>
+<span class="n">opt2</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
+</pre></div>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – - The type pointed to by <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v512optional_ptr12optional_ptrEv">
+<span id="_CPPv3N3hal2v512optional_ptr12optional_ptrEv"></span><span id="_CPPv2N3hal2v512optional_ptr12optional_ptrEv"></span><span id="hal::v5::optional_ptr::optional_ptrCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1aecde750adb2c3b691adbefc3e77e9fab"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">optional_ptr</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v512optional_ptr12optional_ptrEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Default constructor creates a disengaged optional. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v512optional_ptr12optional_ptrENSt9nullptr_tE">
+<span id="_CPPv3N3hal2v512optional_ptr12optional_ptrENSt9nullptr_tE"></span><span id="_CPPv2N3hal2v512optional_ptr12optional_ptrENSt9nullptr_tE"></span><span id="hal::v5::optional_ptr::optional_ptr__std::nullptr_tCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1aa2a0c1238df52e62edce445d74921328"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">optional_ptr</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">nullptr_t</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v512optional_ptr12optional_ptrENSt9nullptr_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor for nullptr (creates a disengaged optional) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v512optional_ptr12optional_ptrERR12optional_ptr">
+<span id="_CPPv3N3hal2v512optional_ptr12optional_ptrERR12optional_ptr"></span><span id="_CPPv2N3hal2v512optional_ptr12optional_ptrERR12optional_ptr"></span><span id="hal::v5::optional_ptr::optional_ptr__optional_ptrRRCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a8cb3a0bc4ed418f18b32993f478a2d2c"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">optional_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal2v512optional_ptr12optional_ptrERR12optional_ptr" title="hal::v5::optional_ptr::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N3hal2v512optional_ptr12optional_ptrERR12optional_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Move constructor is deleted. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v512optional_ptr12optional_ptrERK10strong_ptrI1TE">
+<span id="_CPPv3N3hal2v512optional_ptr12optional_ptrERK10strong_ptrI1TE"></span><span id="_CPPv2N3hal2v512optional_ptr12optional_ptrERK10strong_ptrI1TE"></span><span id="hal::v5::optional_ptr::optional_ptr__strong_ptr:T:CRCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1ac8d768f67989615b48a99656c3089544"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">optional_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v512optional_ptr12optional_ptrERK10strong_ptrI1TE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Construct from a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> lvalue. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to wrap </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v512optional_ptr12optional_ptrERK12optional_ptr">
+<span id="_CPPv3N3hal2v512optional_ptr12optional_ptrERK12optional_ptr"></span><span id="_CPPv2N3hal2v512optional_ptr12optional_ptrERK12optional_ptr"></span><span id="hal::v5::optional_ptr::optional_ptr__optional_ptrCRCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a146b819efc7d2c4b2ab5d91c7e5c9006"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">optional_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal2v512optional_ptr12optional_ptrERK12optional_ptr" title="hal::v5::optional_ptr::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v512optional_ptr12optional_ptrERK12optional_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Copy constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> to copy from </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN3hal2v512optional_ptr12optional_ptrERK10strong_ptrI1UE">
+<span id="_CPPv3I0EN3hal2v512optional_ptr12optional_ptrERK10strong_ptrI1UE"></span><span id="_CPPv2I0EN3hal2v512optional_ptr12optional_ptrERK10strong_ptrI1UE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1optional__ptr_1aca3e88395602b9066072eac40b33f394"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">optional_ptr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptr12optional_ptrERK10strong_ptrI1UE" title="hal::v5::optional_ptr::optional_ptr::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3hal2v512optional_ptr12optional_ptrERK10strong_ptrI1UE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Converting constructor from a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>U</strong> – A type convertible to T </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>p_value</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to wrap </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v512optional_ptraSERR12optional_ptr">
+<span id="_CPPv3N3hal2v512optional_ptraSERR12optional_ptr"></span><span id="_CPPv2N3hal2v512optional_ptraSERR12optional_ptr"></span><span id="hal::v5::optional_ptr::assign-operator__optional_ptrRRCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1ad5fa844884c9d15e565d951aaf9b9776"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N3hal2v512optional_ptraSERR12optional_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Move assignment operator is deleted. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v512optional_ptraSERK12optional_ptr">
+<span id="_CPPv3N3hal2v512optional_ptraSERK12optional_ptr"></span><span id="_CPPv2N3hal2v512optional_ptraSERK12optional_ptr"></span><span id="hal::v5::optional_ptr::assign-operator__optional_ptrCRCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a7491d10f01cb3d9505cbaf04e16b19a0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v512optional_ptraSERK12optional_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Copy assignment operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> to copy from </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Reference to *this </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v512optional_ptraSERK10strong_ptrI1TE">
+<span id="_CPPv3N3hal2v512optional_ptraSERK10strong_ptrI1TE"></span><span id="_CPPv2N3hal2v512optional_ptraSERK10strong_ptrI1TE"></span><span id="hal::v5::optional_ptr::assign-operator__strong_ptr:T:CRCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1af79e698c7e4e5c645c98b5ece8d266b8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v512optional_ptraSERK10strong_ptrI1TE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Assignment from a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to wrap </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Reference to *this </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN3hal2v512optional_ptraSER12optional_ptrRK10strong_ptrI1UE">
+<span id="_CPPv3I0EN3hal2v512optional_ptraSERK10strong_ptrI1UE"></span><span id="_CPPv2I0EN3hal2v512optional_ptraSERK10strong_ptrI1UE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1optional__ptr_1ac88b8416d7fd98c1e38198a100a6fe95"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptraSER12optional_ptrRK10strong_ptrI1UE" title="hal::v5::optional_ptr::operator=::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0EN3hal2v512optional_ptraSER12optional_ptrRK10strong_ptrI1UE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Converting assignment from a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>U</strong> – A type convertible to T </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>p_value</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to wrap </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Reference to *this </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v512optional_ptraSENSt9nullptr_tE">
+<span id="_CPPv3N3hal2v512optional_ptraSENSt9nullptr_tE"></span><span id="_CPPv2N3hal2v512optional_ptraSENSt9nullptr_tE"></span><span id="hal::v5::optional_ptr::assign-operator__std::nullptr_tCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a97677297d268fc07658815f365fc2af0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">nullptr_t</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v512optional_ptraSENSt9nullptr_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Assignment from nullptr (resets to disengaged state) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Reference to *this </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v512optional_ptrD0Ev">
+<span id="_CPPv3N3hal2v512optional_ptrD0Ev"></span><span id="_CPPv2N3hal2v512optional_ptrD0Ev"></span><span id="hal::v5::optional_ptr::~optional_ptr"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a4f059579398bf179419b68e5a4751061"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~optional_ptr</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v512optional_ptrD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd><p>Destructor. </p>
+<p>Properly destroys the contained <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> if engaged. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v512optional_ptr9has_valueEv">
+<span id="_CPPv3NK3hal2v512optional_ptr9has_valueEv"></span><span id="_CPPv2NK3hal2v512optional_ptr9has_valueEv"></span><span id="hal::v5::optional_ptr::has_valueCCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1aaded9d7b6d31770b4cd240cc892b8bfe"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">has_value</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK3hal2v512optional_ptr9has_valueEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Check if the <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> is engaged. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if the <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> contains a value, false otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v512optional_ptrcvbEv">
+<span id="_CPPv3NK3hal2v512optional_ptrcvbEv"></span><span id="_CPPv2NK3hal2v512optional_ptrcvbEv"></span><span id="hal::v5::optional_ptr::castto-b-operatorCCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a193d214aaaf56ad3b61b9798cadf7d2b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK3hal2v512optional_ptrcvbEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Check if the <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> is engaged. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if the <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> contains a value, false otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v512optional_ptr5valueEv">
+<span id="_CPPv3N3hal2v512optional_ptr5valueEv"></span><span id="_CPPv2N3hal2v512optional_ptr5valueEv"></span><span id="hal::v5::optional_ptr::valueCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1adba571d7a2a606715a31ebb8209547e6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">value</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v512optional_ptr5valueEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Access the contained value, throw if not engaged. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">bad_optional_ptr_access</span></span></span> – if *this is disengaged </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A copy of the contained <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v512optional_ptr5valueEv">
+<span id="_CPPv3NK3hal2v512optional_ptr5valueEv"></span><span id="_CPPv2NK3hal2v512optional_ptr5valueEv"></span><span id="hal::v5::optional_ptr::valueCCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a5326a640f4f9a3dc2f72a07d7be733a8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">value</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v512optional_ptr5valueEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Access the contained value, throw if not engaged (const version) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">bad_optional_ptr_access</span></span></span> – if *this is disengaged </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A copy of the contained <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v512optional_ptrcv10strong_ptrI1TEEv">
+<span id="_CPPv3N3hal2v512optional_ptrcv10strong_ptrI1TEEv"></span><span id="_CPPv2N3hal2v512optional_ptrcv10strong_ptrI1TEEv"></span><span id="hal::v5::optional_ptr::castto-strong_ptr:T:-operatorCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a94d6a23f604d641767914666e7f8dcde"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v512optional_ptrcv10strong_ptrI1TEEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Implicitly convert to a strong_ptr&lt;T&gt; </p>
+<p>This allows <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> to be used anywhere a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> is expected when the <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> is engaged.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">bad_optional_ptr_access</span></span></span> – if *this is disengaged </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A copy of the contained <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v512optional_ptrcv10strong_ptrI1TEEv">
+<span id="_CPPv3NK3hal2v512optional_ptrcv10strong_ptrI1TEEv"></span><span id="_CPPv2NK3hal2v512optional_ptrcv10strong_ptrI1TEEv"></span><span id="hal::v5::optional_ptr::castto-strong_ptr:T:-operatorCCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a9e715f47d0f929b7356c6c8a6e04a769"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v512optional_ptrcv10strong_ptrI1TEEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Implicitly convert to a strong_ptr&lt;T&gt; (const version) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">bad_optional_ptr_access</span></span></span> – if *this is disengaged </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A copy of the contained <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN3hal2v512optional_ptrcv10strong_ptrI1UEEv">
+<span id="_CPPv3I0EN3hal2v512optional_ptrcv10strong_ptrI1UEEv"></span><span id="_CPPv2I0EN3hal2v512optional_ptrcv10strong_ptrI1UEEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1optional__ptr_1aba9a2a710a7909d054b999afc62cb202"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrcv10strong_ptrI1UEEv" title="hal::v5::optional_ptr::operator strong_ptr&lt;U&gt;::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3hal2v512optional_ptrcv10strong_ptrI1UEEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Implicitly convert to a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> for polymorphic types. </p>
+<p>This allows optional_ptr&lt;Derived&gt; to be converted to strong_ptr&lt;Base&gt; when Derived is convertible to Base.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>U</strong> – The target type (must be convertible from T) </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">bad_optional_ptr_access</span></span></span> – if *this is disengaged </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A copy of the contained <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>, converted to the target type </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0ENK3hal2v512optional_ptrcv10strong_ptrI1UEEv">
+<span id="_CPPv3I0ENK3hal2v512optional_ptrcv10strong_ptrI1UEEv"></span><span id="_CPPv2I0ENK3hal2v512optional_ptrcv10strong_ptrI1UEEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a82b533855ee7234e55271722a343594d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0ENK3hal2v512optional_ptrcv10strong_ptrI1UEEv" title="hal::v5::optional_ptr::operator strong_ptr&lt;U&gt;::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0ENK3hal2v512optional_ptrcv10strong_ptrI1UEEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Implicitly convert to a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> for polymorphic types (const version) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>U</strong> – The target type (must be convertible from T) </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">bad_optional_ptr_access</span></span></span> – if *this is disengaged </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A copy of the contained <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>, converted to the target type </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v512optional_ptrptEv">
+<span id="_CPPv3N3hal2v512optional_ptrptEv"></span><span id="_CPPv2N3hal2v512optional_ptrptEv"></span><span id="hal::v5::optional_ptr::pointer-operatorCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a2e3cd71e53965d3a76da481e64a1a89e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">-&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v512optional_ptrptEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Arrow operator for accessing members of the contained object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pointer to the object managed by the contained <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v512optional_ptrptEv">
+<span id="_CPPv3NK3hal2v512optional_ptrptEv"></span><span id="_CPPv2NK3hal2v512optional_ptrptEv"></span><span id="hal::v5::optional_ptr::pointer-operatorCCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1ae6d04291b21b22d226e97f91042c038b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">-&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v512optional_ptrptEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Arrow operator for accessing members of the contained object (const version) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pointer to the object managed by the contained <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v512optional_ptrmlEv">
+<span id="_CPPv3N3hal2v512optional_ptrmlEv"></span><span id="_CPPv2N3hal2v512optional_ptrmlEv"></span><span id="hal::v5::optional_ptr::mul-operatorCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a61a6764fc9fe5921b8c5cb74f190c710"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">*</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v512optional_ptrmlEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Dereference operator for accessing the contained object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Reference to the object managed by the contained <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v512optional_ptrmlEv">
+<span id="_CPPv3NK3hal2v512optional_ptrmlEv"></span><span id="_CPPv2NK3hal2v512optional_ptrmlEv"></span><span id="hal::v5::optional_ptr::mul-operatorCCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a0e15e19c72b6cd3227ae7f3f636f590c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">*</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v512optional_ptrmlEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Dereference operator for accessing the contained object (const version) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Reference to the object managed by the contained <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v512optional_ptr5resetEv">
+<span id="_CPPv3N3hal2v512optional_ptr5resetEv"></span><span id="_CPPv2N3hal2v512optional_ptr5resetEv"></span><span id="hal::v5::optional_ptr::resetCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1ab7de06dea5f239f4adfe1b896e7b82bd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reset</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v512optional_ptr5resetEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reset the optional to a disengaged state. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4IDpEN3hal2v512optional_ptr7emplaceER10strong_ptrI1TEDpRR4Args">
+<span id="_CPPv3IDpEN3hal2v512optional_ptr7emplaceEDpRR4Args"></span><span id="_CPPv2IDpEN3hal2v512optional_ptr7emplaceEDpRR4Args"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Args</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a2520cce10aa778dbe9658dc041c2f4bf"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">emplace</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpEN3hal2v512optional_ptr7emplaceER10strong_ptrI1TEDpRR4Args" title="hal::v5::optional_ptr::emplace::Args"><span class="n"><span class="pre">Args</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">...</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDpEN3hal2v512optional_ptr7emplaceER10strong_ptrI1TEDpRR4Args" title="Link to this definition">#</a><br /></dt>
+<dd><p>Emplace a new value. </p>
+<p>Reset the optional and construct a new <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> in-place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Args</strong> – Types of arguments to forward to the constructor </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>args</strong> – Arguments to forward to the constructor </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Reference to the newly constructed <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v512optional_ptr4swapER12optional_ptr">
+<span id="_CPPv3N3hal2v512optional_ptr4swapER12optional_ptr"></span><span id="_CPPv2N3hal2v512optional_ptr4swapER12optional_ptr"></span><span id="hal::v5::optional_ptr::swap__optional_ptrRCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a630a1871ea25d73e9a33b4e6a5a4df1a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">swap</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v512optional_ptr4swapER12optional_ptr" title="Link to this definition">#</a><br /></dt>
+<dd><p>Swap the contents of this <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> with another. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> – The <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> to swap with </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN3hal2v523enable_strong_from_thisE">
+<span id="_CPPv3I0EN3hal2v523enable_strong_from_thisE"></span><span id="_CPPv2I0EN3hal2v523enable_strong_from_thisE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1enable__strong__from__this"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">enable_strong_from_this</span></span></span><a class="headerlink" href="#_CPPv4I0EN3hal2v523enable_strong_from_thisE" title="Link to this definition">#</a><br /></dt>
+<dd><p>CRTP mixin to enable objects to create <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> instances to themselves. </p>
+<p>Similar to <code class="docutils literal notranslate"><span class="pre">std::enable_shared_from_this</span></code>, this class allows an object to safely obtain a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to itself. The object must inherit from this class and be managed by a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> created via make_strong_ptr.</p>
+<p>Example usage: <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">my_driver</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">enable_strong_from_this</span><span class="o">&lt;</span><span class="n">my_driver</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">register_callback</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Get a strong_ptr to ourselves</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">self</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strong_from_this</span><span class="p">();</span>
+<span class="w">    </span><span class="n">some_async_system</span><span class="p">.</span><span class="n">register_callback</span><span class="p">([</span><span class="n">self</span><span class="p">](){</span>
+<span class="w">      </span><span class="n">self</span><span class="o">-&gt;</span><span class="n">handle_callback</span><span class="p">();</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">auto</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_strong_ptr</span><span class="o">&lt;</span><span class="n">my_driver</span><span class="o">&gt;</span><span class="p">(</span><span class="n">allocator</span><span class="p">);</span>
+<span class="n">obj</span><span class="o">-&gt;</span><span class="n">register_callback</span><span class="p">();</span><span class="w"> </span><span class="c1">// Safe to get strong_ptr to self</span>
+</pre></div>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – The derived class type </p>
+</dd>
+</dl>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v523enable_strong_from_this16strong_from_thisEv">
+<span id="_CPPv3N3hal2v523enable_strong_from_this16strong_from_thisEv"></span><span id="_CPPv2N3hal2v523enable_strong_from_this16strong_from_thisEv"></span><span id="hal::v5::enable_strong_from_this::strong_from_this"></span><span class="target" id="classhal_1_1v5_1_1enable__strong__from__this_1ae7c6862a79aa640306a0493638d8def6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v523enable_strong_from_thisE" title="hal::v5::enable_strong_from_this::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">strong_from_this</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v523enable_strong_from_this16strong_from_thisEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to this object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">bad_weak_ptr</span></span></span> – if this object is not managed by a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>strong_ptr&lt;T&gt; pointing to this object </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v523enable_strong_from_this16strong_from_thisEv">
+<span id="_CPPv3NK3hal2v523enable_strong_from_this16strong_from_thisEv"></span><span id="_CPPv2NK3hal2v523enable_strong_from_this16strong_from_thisEv"></span><span id="hal::v5::enable_strong_from_this::strong_from_thisC"></span><span class="target" id="classhal_1_1v5_1_1enable__strong__from__this_1a373af2ec14a50d36d3392d4cab9934ed"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v523enable_strong_from_thisE" title="hal::v5::enable_strong_from_this::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">strong_from_this</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v523enable_strong_from_this16strong_from_thisEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to this object (const version) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">bad_weak_ptr</span></span></span> – if this object is not managed by a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>strong_ptr&lt;T const&gt; pointing to this object </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v523enable_strong_from_this14weak_from_thisEv">
+<span id="_CPPv3N3hal2v523enable_strong_from_this14weak_from_thisEv"></span><span id="_CPPv2N3hal2v523enable_strong_from_this14weak_from_thisEv"></span><span id="hal::v5::enable_strong_from_this::weak_from_this"></span><span class="target" id="classhal_1_1v5_1_1enable__strong__from__this_1a498a5019960f4d4ccc669c6e06f4bb9a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v58weak_ptrE" title="hal::v5::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v523enable_strong_from_thisE" title="hal::v5::enable_strong_from_this::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">weak_from_this</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v523enable_strong_from_this14weak_from_thisEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to this object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>weak_ptr&lt;T&gt; pointing to this object </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v523enable_strong_from_this14weak_from_thisEv">
+<span id="_CPPv3NK3hal2v523enable_strong_from_this14weak_from_thisEv"></span><span id="_CPPv2NK3hal2v523enable_strong_from_this14weak_from_thisEv"></span><span id="hal::v5::enable_strong_from_this::weak_from_thisC"></span><span class="target" id="classhal_1_1v5_1_1enable__strong__from__this_1a7f8a6c898a9f09ee6e6c85b977ae0c00"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v58weak_ptrE" title="hal::v5::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v523enable_strong_from_thisE" title="hal::v5::enable_strong_from_this::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">weak_from_this</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK3hal2v523enable_strong_from_this14weak_from_thisEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to this object (const version) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>weak_ptr&lt;T const&gt; pointing to this object </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="output_pin.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Output Pin</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="pwm.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Pulse Width Modulation (PWM)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN3hal2v510strong_ptrE"><code class="docutils literal notranslate"><span class="pre">hal::v5::strong_ptr</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v510strong_ptr10strong_ptrEv"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v510strong_ptr10strong_ptrENSt9nullptr_tE"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v510strong_ptr10strong_ptrERK10strong_ptr"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v510strong_ptr10strong_ptrERR10strong_ptr"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v510strong_ptraSERR10strong_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEPKv"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0_N6detail14non_array_likeEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1U1M"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UNSt5arrayI1E1NEENSt6size_tE"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I00_NSt6size_tEEN3hal2v510strong_ptr10strong_ptrERK10strong_ptrI1UEM1UA1N_1ENSt6size_tE"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v510strong_ptrD0Ev"><code class="docutils literal notranslate"><span class="pre">~strong_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v510strong_ptraSERK10strong_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN3hal2v510strong_ptraSER10strong_ptrRK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v510strong_ptr4swapER10strong_ptr"><code class="docutils literal notranslate"><span class="pre">swap()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NO3hal2v510strong_ptrmlEv"><code class="docutils literal notranslate"><span class="pre">operator*()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NO3hal2v510strong_ptrptEv"><code class="docutils literal notranslate"><span class="pre">operator-&gt;()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NKR3hal2v510strong_ptrmlEv"><code class="docutils literal notranslate"><span class="pre">operator*()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NKR3hal2v510strong_ptrptEv"><code class="docutils literal notranslate"><span class="pre">operator-&gt;()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v510strong_ptr9use_countEv"><code class="docutils literal notranslate"><span class="pre">use_count()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN3hal2v58weak_ptrE"><code class="docutils literal notranslate"><span class="pre">hal::v5::weak_ptr</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v58weak_ptr8weak_ptrEv"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v58weak_ptr8weak_ptrERK10strong_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v58weak_ptr8weak_ptrERK8weak_ptr"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v58weak_ptr8weak_ptrERR8weak_ptr"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERK8weak_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERR8weak_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN3hal2v58weak_ptr8weak_ptrERK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">weak_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v58weak_ptrD0Ev"><code class="docutils literal notranslate"><span class="pre">~weak_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v58weak_ptraSERK8weak_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v58weak_ptraSERR8weak_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v58weak_ptraSERK10strong_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v58weak_ptr4swapER8weak_ptr"><code class="docutils literal notranslate"><span class="pre">swap()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v58weak_ptr7expiredEv"><code class="docutils literal notranslate"><span class="pre">expired()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v58weak_ptr4lockEv"><code class="docutils literal notranslate"><span class="pre">lock()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v58weak_ptr9use_countEv"><code class="docutils literal notranslate"><span class="pre">use_count()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN3hal2v512optional_ptrE"><code class="docutils literal notranslate"><span class="pre">hal::v5::optional_ptr</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v512optional_ptr12optional_ptrEv"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v512optional_ptr12optional_ptrENSt9nullptr_tE"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v512optional_ptr12optional_ptrERR12optional_ptr"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v512optional_ptr12optional_ptrERK10strong_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v512optional_ptr12optional_ptrERK12optional_ptr"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN3hal2v512optional_ptr12optional_ptrERK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">optional_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v512optional_ptraSERR12optional_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v512optional_ptraSERK12optional_ptr"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v512optional_ptraSERK10strong_ptrI1TE"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN3hal2v512optional_ptraSER12optional_ptrRK10strong_ptrI1UE"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v512optional_ptraSENSt9nullptr_tE"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v512optional_ptrD0Ev"><code class="docutils literal notranslate"><span class="pre">~optional_ptr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v512optional_ptr9has_valueEv"><code class="docutils literal notranslate"><span class="pre">has_value()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v512optional_ptrcvbEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">bool()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v512optional_ptr5valueEv"><code class="docutils literal notranslate"><span class="pre">value()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v512optional_ptr5valueEv"><code class="docutils literal notranslate"><span class="pre">value()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v512optional_ptrcv10strong_ptrI1TEEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">strong_ptr&lt;</span> <span class="pre">T</span> <span class="pre">&gt;()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v512optional_ptrcv10strong_ptrI1TEEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">strong_ptr&lt;</span> <span class="pre">T</span> <span class="pre">&gt;()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN3hal2v512optional_ptrcv10strong_ptrI1UEEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">strong_ptr&lt;</span> <span class="pre">U</span> <span class="pre">&gt;()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0ENK3hal2v512optional_ptrcv10strong_ptrI1UEEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">strong_ptr&lt;</span> <span class="pre">U</span> <span class="pre">&gt;()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v512optional_ptrptEv"><code class="docutils literal notranslate"><span class="pre">operator-&gt;()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v512optional_ptrptEv"><code class="docutils literal notranslate"><span class="pre">operator-&gt;()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v512optional_ptrmlEv"><code class="docutils literal notranslate"><span class="pre">operator*()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v512optional_ptrmlEv"><code class="docutils literal notranslate"><span class="pre">operator*()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v512optional_ptr5resetEv"><code class="docutils literal notranslate"><span class="pre">reset()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4IDpEN3hal2v512optional_ptr7emplaceER10strong_ptrI1TEDpRR4Args"><code class="docutils literal notranslate"><span class="pre">emplace()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v512optional_ptr4swapER12optional_ptr"><code class="docutils literal notranslate"><span class="pre">swap()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN3hal2v523enable_strong_from_thisE"><code class="docutils literal notranslate"><span class="pre">hal::v5::enable_strong_from_this</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v523enable_strong_from_this16strong_from_thisEv"><code class="docutils literal notranslate"><span class="pre">strong_from_this()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v523enable_strong_from_this16strong_from_thisEv"><code class="docutils literal notranslate"><span class="pre">strong_from_this()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v523enable_strong_from_this14weak_from_thisEv"><code class="docutils literal notranslate"><span class="pre">weak_from_this()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v523enable_strong_from_this14weak_from_thisEv"><code class="docutils literal notranslate"><span class="pre">weak_from_this()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/pointers.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
