@@ -2,5 +2,9 @@
     {
         "version": "main",
         "url": "https://libhal.github.io/api/libhal-mac/main"
+    },
+    {
+        "version": "1.1.1",
+        "url": "https://libhal.github.io/api/libhal-mac/1.1.1"
     }
 ]
