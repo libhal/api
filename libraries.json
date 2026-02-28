@@ -21,6 +21,14 @@
         "url": "https://libhal.github.io/api/libhal/4.19.2"
       },
       {
+        "version": "4.19.3",
+        "url": "https://libhal.github.io/api/libhal/4.19.3"
+      },
+      {
+        "version": "4.20.0",
+        "url": "https://libhal.github.io/api/libhal/4.20.0"
+      },
+      {
         "version": "main",
         "url": "https://libhal.github.io/api/libhal/main"
       }
@@ -48,6 +56,20 @@
       }
     ],
     "latest_url": "https://libhal.github.io/api/libhal-arm-mcu/main"
+  },
+  {
+    "name": "libhal-mac",
+    "versions": [
+      {
+        "version": "1.1.1",
+        "url": "https://libhal.github.io/api/libhal-mac/1.1.1"
+      },
+      {
+        "version": "main",
+        "url": "https://libhal.github.io/api/libhal-mac/main"
+      }
+    ],
+    "latest_url": "https://libhal.github.io/api/libhal-mac/main"
   },
   {
     "name": "libhal-util",
