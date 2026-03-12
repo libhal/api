@@ -652,12 +652,35 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb16control_endpoint10on_receiveERKN3hal8callbackIFv14on_receive_tagEEE">
-<span id="_CPPv3N3hal2v53usb16control_endpoint10on_receiveERKN3hal8callbackIFv14on_receive_tagEEE"></span><span id="_CPPv2N3hal2v53usb16control_endpoint10on_receiveERKN3hal8callbackIFv14on_receive_tagEEE"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1control__endpoint_1a7107e7e639e072f30189592638e56b66"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">on_receive</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">callback</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#_CPPv4N3hal2v53usb16control_endpoint14on_receive_tagE" title="hal::v5::usb::control_endpoint::on_receive_tag"><span class="n"><span class="pre">on_receive_tag</span></span></a><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_callback</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb16control_endpoint10on_receiveERKN3hal8callbackIFv14on_receive_tagEEE" title="Link to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb16control_endpoint10on_receiveERK8callbackIFv14on_receive_tagEE">
+<span id="_CPPv3N3hal2v53usb16control_endpoint10on_receiveERK8callbackIFv14on_receive_tagEE"></span><span id="_CPPv2N3hal2v53usb16control_endpoint10on_receiveERK8callbackIFv14on_receive_tagEE"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1control__endpoint_1a81afebb97ebd76beb3448d2c4f3fce01"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">on_receive</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="functional.html#_CPPv4I0E8callback" title="callback"><span class="n"><span class="pre">callback</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#_CPPv4N3hal2v53usb16control_endpoint14on_receive_tagE" title="hal::v5::usb::control_endpoint::on_receive_tag"><span class="n"><span class="pre">on_receive_tag</span></span></a><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_callback</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb16control_endpoint10on_receiveERK8callbackIFv14on_receive_tagEE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Set a callback function for when USB requests are received. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>p_callback</strong> – The callback function to be called when a USB request command is received on the control endpoint. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v53usb16control_endpoint9has_setupEv">
+<span id="_CPPv3NK3hal2v53usb16control_endpoint9has_setupEv"></span><span id="_CPPv2NK3hal2v53usb16control_endpoint9has_setupEv"></span><span id="hal::v5::usb::control_endpoint::has_setupC"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1control__endpoint_1a7e2984f96a417ecd7508e507cfbadd10"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">optional</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">bool</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">has_setup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK3hal2v53usb16control_endpoint9has_setupEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns whether the endpoint’s receive buffer contains a setup packet. </p>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> until all 8 bytes of the setup packet have been extracted via <code class="docutils literal notranslate"><a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1control__endpoint_1a0e1c86f7789ceb61947dd076a0fc84d6"><span class="std std-ref"><span class="pre">read()</span></span></a></code>. Returns <code class="docutils literal notranslate"><span class="pre">false</span></code> once the setup packet has been fully consumed or if the last received packet was not a setup packet.</p>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">std::nullopt</span></code> if the implementation does not support setup packet detection. Enumerators that require this information should accept a callable (as a template parameter or type-erased input parameter) to work around legacy implementations.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Safe to call from ISR context. Implementations must not throw, call throwing functions, or perform I/O within this method.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">std::nullopt</span></code> if setup packet detection is unsupported. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code> if the receive buffer contains an unconsumed setup packet. </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1097,13 +1120,13 @@ Raw packet format:<ul class="simple">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb9interface17write_descriptorsE16descriptor_startR11endpoint_io">
-<span id="_CPPv3N3hal2v53usb9interface17write_descriptorsE16descriptor_startR11endpoint_io"></span><span id="_CPPv2N3hal2v53usb9interface17write_descriptorsE16descriptor_startR11endpoint_io"></span><span id="hal::v5::usb::interface::write_descriptors__descriptor_start.endpoint_ioR"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1interface_1a60c2d511221fcca4c812455ff7ae5bfc"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal2v53usb9interface16descriptor_countE" title="hal::v5::usb::interface::descriptor_count"><span class="n"><span class="pre">descriptor_count</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write_descriptors</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal2v53usb9interface16descriptor_startE" title="hal::v5::usb::interface::descriptor_start"><span class="n"><span class="pre">descriptor_start</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_start</span></span>, <span class="n"><span class="pre">endpoint_io</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_ep_req</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb9interface17write_descriptorsE16descriptor_startR11endpoint_io" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N3hal2v53usb9interface17write_descriptorsE16descriptor_startR11endpoint_io"></span><span id="_CPPv2N3hal2v53usb9interface17write_descriptorsE16descriptor_startR11endpoint_io"></span><span id="hal::v5::usb::interface::write_descriptors__descriptor_start.endpoint_ioR"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1interface_1a39d554c385f4cf299174fcd4e6561518"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal2v53usb9interface16descriptor_countE" title="hal::v5::usb::interface::descriptor_count"><span class="n"><span class="pre">descriptor_count</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write_descriptors</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal2v53usb9interface16descriptor_startE" title="hal::v5::usb::interface::descriptor_start"><span class="n"><span class="pre">descriptor_start</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_start</span></span>, <span class="n"><span class="pre">endpoint_io</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_endpoint</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb9interface17write_descriptorsE16descriptor_startR11endpoint_io" title="Link to this definition">#</a><br /></dt>
 <dd><p>Writes descriptors that this interface is responsible for via the endpoint I/O interface. This function may be called multiple times during (re)enumeration. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>p_start</strong> – - the starting values for interface numbers and string indexes. The <code class="docutils literal notranslate"><span class="pre">string</span></code> field should be cached by the interface in order to allow <code class="docutils literal notranslate"><span class="pre">write_string_descriptor</span></code> to work correctly. </p></li>
-<li><p><strong>p_ep_req</strong> – - endpoint I/O interface used to write descriptor data to the host. </p></li>
+<li><p><strong>p_endpoint</strong> – - endpoint I/O interface used to write descriptor data to the host. </p></li>
 </ul>
 </dd>
 </dl>
@@ -1111,15 +1134,15 @@ Raw packet format:<ul class="simple">
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb9interface23write_string_descriptorE2u8R11endpoint_io">
-<span id="_CPPv3N3hal2v53usb9interface23write_string_descriptorE2u8R11endpoint_io"></span><span id="_CPPv2N3hal2v53usb9interface23write_string_descriptorE2u8R11endpoint_io"></span><span id="hal::v5::usb::interface::write_string_descriptor__u8.endpoint_ioR"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1interface_1ab25cdcd4d3c37b6e670cc4e51399d728"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write_string_descriptor</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">u8</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_index</span></span>, <span class="n"><span class="pre">endpoint_io</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_ep_req</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb9interface23write_string_descriptorE2u8R11endpoint_io" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N3hal2v53usb9interface23write_string_descriptorE2u8R11endpoint_io"></span><span id="_CPPv2N3hal2v53usb9interface23write_string_descriptorE2u8R11endpoint_io"></span><span id="hal::v5::usb::interface::write_string_descriptor__u8.endpoint_ioR"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1interface_1a0fff1226d9c4872797a7124ecda41a71"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write_string_descriptor</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">u8</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_index</span></span>, <span class="n"><span class="pre">endpoint_io</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_endpoint</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb9interface23write_string_descriptorE2u8R11endpoint_io" title="Link to this definition">#</a><br /></dt>
 <dd><p>Write a specific string descriptor. </p>
 <p>Invoked to write a string given a specific index that the interface is responsible for. The string will be written in the encoding of UTF-16LE.</p>
-<p>The interface must have evaluated all string indexes by invoking <a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1interface_1a60c2d511221fcca4c812455ff7ae5bfc"><span class="std std-ref">write_descriptors()</span></a> to properly identify its string descriptors. String descriptors use the USB string descriptor format with length and descriptor type fields.</p>
+<p>The interface must have evaluated all string indexes by invoking <a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1interface_1a39d554c385f4cf299174fcd4e6561518"><span class="std std-ref">write_descriptors()</span></a> to properly identify its string descriptors. String descriptors use the USB string descriptor format with length and descriptor type fields.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>p_index</strong> – - Which string index’s descriptor should be written. </p></li>
-<li><p><strong>p_ep_req</strong> – - endpoint I/O interface used to write the string descriptor to the host.</p></li>
+<li><p><strong>p_endpoint</strong> – - endpoint I/O interface used to write the string descriptor to the host.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1133,30 +1156,35 @@ Raw packet format:<ul class="simple">
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb9interface14handle_requestERK12setup_packetR11endpoint_io">
-<span id="_CPPv3N3hal2v53usb9interface14handle_requestERK12setup_packetR11endpoint_io"></span><span id="_CPPv2N3hal2v53usb9interface14handle_requestERK12setup_packetR11endpoint_io"></span><span id="hal::v5::usb::interface::handle_request__setup_packetCR.endpoint_ioR"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1interface_1aacdade682c63fb885b99d2c09794b4b6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">handle_request</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal2v53usb12setup_packetE" title="hal::v5::usb::setup_packet"><span class="n"><span class="pre">setup_packet</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_setup</span></span>, <span class="n"><span class="pre">endpoint_io</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_ep_req</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb9interface14handle_requestERK12setup_packetR11endpoint_io" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N3hal2v53usb9interface14handle_requestERK12setup_packetR11endpoint_io"></span><span id="_CPPv2N3hal2v53usb9interface14handle_requestERK12setup_packetR11endpoint_io"></span><span id="hal::v5::usb::interface::handle_request__setup_packetCR.endpoint_ioR"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1interface_1a3b25a876d271a29ce54af254c966688a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">handle_request</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal2v53usb12setup_packetE" title="hal::v5::usb::setup_packet"><span class="n"><span class="pre">setup_packet</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_setup</span></span>, <span class="n"><span class="pre">endpoint_io</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_endpoint</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb9interface14handle_requestERK12setup_packetR11endpoint_io" title="Link to this definition">#</a><br /></dt>
 <dd><p>Handle USB requests directed to this interface or its endpoints. </p>
-<p>This method is called when the USB device receives a setup packet that targets this interface (interface-specific requests) or one of its endpoints (endpoint-specific requests). The interface should examine the setup packet and handle any requests it recognizes.</p>
-<p>The interface may handle:<ul class="simple">
+<p>This method is called when the USB device receives a setup packet that may target this interface (interface-specific requests) or one of its endpoints (endpoint-specific requests). The interface should examine the setup packet and handle any requests it recognizes. If the setup packet is not for this interface, this API must return false.</p>
+<p>The interface must handle:</p>
+<p><ul class="simple">
 <li><p>Standard requests specific to this interface type</p></li>
 <li><p>Class-specific requests defined by the interface’s USB class</p></li>
 <li><p>Vendor-specific requests for custom functionality</p></li>
 <li><p>Endpoint-specific requests for its endpoints</p></li>
-<li><p>Anything that isn’t a device or configuration level request</p></li>
 </ul>
 </p>
-<p>If the request has a data phase (wLength &gt; 0), use the endpoint I/O interface to send response data (device-to-host) or receive data (host-to-device).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">endpoint_io</span></code> object is constructed by the enumerator to provide limited access to the control endpoint.</p>
+<p>If the request has a data phase (wLength &gt; 0), use the endpoint I/O interface to send data from device-to-host via the <code class="docutils literal notranslate"><span class="pre">write</span></code> API or receive data from host-to-device via the <code class="docutils literal notranslate"><span class="pre">read</span></code> API.</p>
+<p>When a new setup packet is received from the HOST, the enumerator ensures that <code class="docutils literal notranslate"><a class="reference internal" href="error.html#structhal_1_1operation__not__permitted"><span class="std std-ref"><span class="pre">hal::operation_not_permitted</span></span></a></code> is thrown from all <code class="docutils literal notranslate"><span class="pre">endpoint_io</span></code> APIs. Implementations of <code class="docutils literal notranslate"><span class="pre">driver_handle_request</span></code> MUST NOT catch this exception; it must propagate to the enumerator for handling. Correct use of RAII to undo state changes is advised. If cleanup requires a catch block, the exception must be rethrown via <code class="docutils literal notranslate"><span class="pre">throw;</span></code> before exiting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>p_setup</strong> – - Setup request from the host. </p></li>
-<li><p><strong>p_ep_req</strong> – - endpoint I/O interface for reading or writing data during the data phase of the control transfer. </p></li>
+<li><p><strong>p_endpoint</strong> – - endpoint I/O interface for reading or writing data to the host via the control endpoint during the data phase of the control transfer. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>true - if the request was handled by the interface. </p>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">operation_not_permitted</span></span></span> – - If a new setup packet is received before the current control transfer completes. This exception must not be caught by the implementation; it is intended for the enumerator. </p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>false - if the request could not be handled by interface. </p>
+<dd class="field-odd"><p>true - if the request was handled by the interface. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>false - if the request could not be handled by interface. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1166,7 +1194,7 @@ Raw packet format:<ul class="simple">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb9interface16descriptor_countE">
 <span id="_CPPv3N3hal2v53usb9interface16descriptor_countE"></span><span id="_CPPv2N3hal2v53usb9interface16descriptor_countE"></span><span id="hal::v5::usb::interface::descriptor_count"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1interface_1_1descriptor__count"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">descriptor_count</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb9interface16descriptor_countE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Encapsulates the number of interface and string descriptors. </p>
-<p>This structure is returned by <a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1interface_1a60c2d511221fcca4c812455ff7ae5bfc"><span class="std std-ref">write_descriptors()</span></a> to inform the USB configuration how many descriptors were written and how many resources (interface numbers and string indices) were consumed. </p>
+<p>This structure is returned by <a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1interface_1a39d554c385f4cf299174fcd4e6561518"><span class="std std-ref">write_descriptors()</span></a> to inform the USB configuration how many descriptors were written and how many resources (interface numbers and string indices) were consumed. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
@@ -1188,7 +1216,7 @@ Raw packet format:<ul class="simple">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb9interface16descriptor_startE">
 <span id="_CPPv3N3hal2v53usb9interface16descriptor_startE"></span><span id="_CPPv2N3hal2v53usb9interface16descriptor_startE"></span><span id="hal::v5::usb::interface::descriptor_start"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1interface_1_1descriptor__start"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">descriptor_start</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb9interface16descriptor_startE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Starting indices for interface numbers and string descriptors. </p>
-<p>This structure is passed to <a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1interface_1a60c2d511221fcca4c812455ff7ae5bfc"><span class="std std-ref">write_descriptors()</span></a> to inform the interface what numbering it should use for its descriptors. The interface must use sequential numbering starting from these values. </p>
+<p>This structure is passed to <a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1interface_1a39d554c385f4cf299174fcd4e6561518"><span class="std std-ref">write_descriptors()</span></a> to inform the interface what numbering it should use for its descriptors. The interface must use sequential numbering starting from these values. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
@@ -1278,7 +1306,8 @@ Raw packet format:<ul class="simple">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb16control_endpoint11set_addressE2u8"><code class="docutils literal notranslate"><span class="pre">set_address()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb16control_endpoint5writeE12scatter_spanIK4byteE"><code class="docutils literal notranslate"><span class="pre">write()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb16control_endpoint4readE12scatter_spanI4byteE"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb16control_endpoint10on_receiveERKN3hal8callbackIFv14on_receive_tagEEE"><code class="docutils literal notranslate"><span class="pre">on_receive()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb16control_endpoint10on_receiveERK8callbackIFv14on_receive_tagEE"><code class="docutils literal notranslate"><span class="pre">on_receive()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v53usb16control_endpoint9has_setupEv"><code class="docutils literal notranslate"><span class="pre">has_setup()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb16control_endpoint14on_receive_tagE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::control_endpoint::on_receive_tag</span></code></a></li>
 </ul>
 </li>
