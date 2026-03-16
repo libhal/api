@@ -418,14 +418,25 @@
 <p class="admonition-title">Note</p>
 <p>Context objects should be kept alive as long as coroutines are running on them. The context must be properly cleaned up to prevent memory leaks. </p>
 </div>
-<p>Subclassed by v0::basic_context_impl, <a class="reference internal" href="#classv0_1_1proxy__context"><span class="std std-ref">v0::proxy_context</span></a></p>
+<p>Subclassed by v0::inplace_context&lt; StackSizeInWords &gt;, <a class="reference internal" href="#classv0_1_1proxy__context"><span class="std std-ref">v0::proxy_context</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2v07context7contextEv">
 <span id="_CPPv3N2v07context7contextEv"></span><span id="_CPPv2N2v07context7contextEv"></span><span id="v0::context::context"></span><span class="target" id="classv0_1_1context_1af0a094dca890823acce18b4000439b28"></span><span class="sig-name descname"><span class="n"><span class="pre">context</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N2v07context7contextEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>Default constructor for context. </p>
-<p>Creates an uninitialized context. Derived classes must call <a class="reference internal" href="#classv0_1_1context_1a122277460a822589434942221f6b8225"><span class="std std-ref">initialize_stack_memory()</span></a> to properly set up the stack memory. </p>
+<p>Creates context without a stack. <code class="docutils literal notranslate"><a class="reference internal" href="#classv0_1_1context_1a122277460a822589434942221f6b8225"><span class="std std-ref"><span class="pre">initialize_stack_memory()</span></span></a></code> must be called before passing this context to a coroutine. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v07context7contextENSt4spanI4uptrEE">
+<span id="_CPPv3N2v07context7contextENSt4spanI4uptrEE"></span><span id="_CPPv2N2v07context7contextENSt4spanI4uptrEE"></span><span id="v0::context::context__std::span:uptr:"></span><span class="target" id="classv0_1_1context_1a3c53d3a830176d193a911e946e91c46e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">context</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uptr</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_stack</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v07context7contextENSt4spanI4uptrEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Construct a new context object with stack memory. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_stack</strong> – - the stack memory for the async operations </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -444,16 +455,29 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2v07context7contextERR7context">
-<span id="_CPPv3N2v07context7contextERR7context"></span><span id="_CPPv2N2v07context7contextERR7context"></span><span id="v0::context::context__contextRR"></span><span class="target" id="classv0_1_1context_1ae8b3a18e6a39f7825adf6df52a60d9e3"></span><span class="sig-name descname"><span class="n"><span class="pre">context</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N2v07context7contextERR7context" title="v0::context::context"><span class="n"><span class="pre">context</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N2v07context7contextERR7context" title="Link to this definition">#</a><br /></dt>
-<dd><p>Delete move constructor. </p>
-<p>Contexts cannot be moved as they manage unique stack memory. </p>
+<span id="_CPPv3N2v07context7contextERR7context"></span><span id="_CPPv2N2v07context7contextERR7context"></span><span id="v0::context::context__contextRR"></span><span class="target" id="classv0_1_1context_1ab50071c32ebb22b9597220c560b18662"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">context</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N2v07context7contextERR7context" title="v0::context::context"><span class="n"><span class="pre">context</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v07context7contextERR7context" title="Link to this definition">#</a><br /></dt>
+<dd><p>Move constructor. </p>
+<p>Transfers ownership of stack and state from the source context. The moved-from context is reset to its default state (no stack, no active operations).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The context to move from (will be reset to default state) </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2v07contextaSERR7context">
-<span id="_CPPv3N2v07contextaSERR7context"></span><span id="_CPPv2N2v07contextaSERR7context"></span><span id="v0::context::assign-operator__contextRR"></span><span class="target" id="classv0_1_1context_1abb5225dee02529c34bfaccde0fb67da5"></span><a class="reference internal" href="#_CPPv4N2v07contextE" title="v0::context"><span class="n"><span class="pre">context</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N2v07contextE" title="v0::context"><span class="n"><span class="pre">context</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N2v07contextaSERR7context" title="Link to this definition">#</a><br /></dt>
-<dd><p>Delete move assignment operator. </p>
-<p>Contexts cannot be moved as they manage unique stack memory. </p>
+<span id="_CPPv3N2v07contextaSERR7context"></span><span id="_CPPv2N2v07contextaSERR7context"></span><span id="v0::context::assign-operator__contextRR"></span><span class="target" id="classv0_1_1context_1a03ed858f8ab801bfbf7ed73203c5ae1e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2v07contextE" title="v0::context"><span class="n"><span class="pre">context</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N2v07contextE" title="v0::context"><span class="n"><span class="pre">context</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v07contextaSERR7context" title="Link to this definition">#</a><br /></dt>
+<dd><p>Move assignment operator. </p>
+<p>Transfers ownership of stack and state from the source context. The current context is cancelled before assignment, and the moved-from context is reset to its default state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The context to move from (will be reset to default state) </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Reference to this context </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -473,30 +497,33 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N2v07context7unblockEv">
-<span id="_CPPv3N2v07context7unblockEv"></span><span id="_CPPv2N2v07context7unblockEv"></span><span id="v0::context::unblockCE"></span><span class="target" id="classv0_1_1context_1a6447415fb7b58bcd152a87415d4561b5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">unblock</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v07context7unblockEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Unblocks a coroutine that was previously blocked. </p>
-<p>This method transitions the context from any blocking state to “nothing” (ready to run) state. It’s typically called by I/O completion handlers or when external conditions that were blocking a coroutine have been resolved.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This method is noexcept and should not throw exceptions. It’s used internally by I/O completion handlers to signal that a blocked coroutine can now proceed. </p>
-</div>
-</dd></dl>
-
-<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2v07context28unblock_without_notificationEv">
 <span id="_CPPv3N2v07context28unblock_without_notificationEv"></span><span id="_CPPv2N2v07context28unblock_without_notificationEv"></span><span id="v0::context::unblock_without_notificationCE"></span><span class="target" id="classv0_1_1context_1a78402011c877349479737086fc78491e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">unblock_without_notification</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v07context28unblock_without_notificationEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Unblocks a coroutine without notifying the scheduler. </p>
-<p>This method transitions the context to “nothing” (ready to run) state but does not call the scheduler’s do_schedule method. This is useful in cases where the scheduler state is being managed externally or during cleanup.</p>
+<dd><p>Unblocks the context without invoking the unblock listener. </p>
+<p>This method transitions the context to “nothing” (ready to run). </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v07context7unblockEv">
+<span id="_CPPv3N2v07context7unblockEv"></span><span id="_CPPv2N2v07context7unblockEv"></span><span id="v0::context::unblockCE"></span><span class="target" id="classv0_1_1context_1a6447415fb7b58bcd152a87415d4561b5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">unblock</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v07context7unblockEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Unblocks the context and clears blocking state. </p>
+<p>The state of the context after this is called:</p>
+<p><ol class="lowerroman simple">
+<li><p>Block state becomes (block_by::nothing)</p></li>
+<li><p>sleep time is set to 0us.</p></li>
+<li><p>sync blocker is set to nullptr.</p></li>
+</ol>
+</p>
+<p>The unblock listener is called before clearing the context state in the event that the unblock listener wants to inspect information from the context.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This method is noexcept and should not throw exceptions. </p>
+<p>this API is safe to call within an interrupt service routine. </p>
 </div>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N2v07context13block_by_timeE14sleep_duration">
-<span id="_CPPv3N2v07context13block_by_timeE14sleep_duration"></span><span id="_CPPv2N2v07context13block_by_timeE14sleep_duration"></span><span id="v0::context::block_by_time__sleep_durationCE"></span><span class="target" id="classv0_1_1context_1a9e50fc884040bb75400227193fe7624f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">suspend_always</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">block_by_time</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">sleep_duration</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_duration</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v07context13block_by_timeE14sleep_duration" title="Link to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4I00EN2v07context13block_by_timeENSt14suspend_alwaysENSt6chrono8durationI3Rep6PeriodEE">
+<span id="_CPPv3I00EN2v07context13block_by_timeENSt6chrono8durationI3Rep6PeriodEE"></span><span id="_CPPv2I00EN2v07context13block_by_timeENSt6chrono8durationI3Rep6PeriodEE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Rep</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Period</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classv0_1_1context_1aab718ca0899395bd10def0cb74a31e1d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">suspend_always</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">block_by_time</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I00EN2v07context13block_by_timeENSt14suspend_alwaysENSt6chrono8durationI3Rep6PeriodEE" title="v0::context::block_by_time::Rep"><span class="n"><span class="pre">Rep</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00EN2v07context13block_by_timeENSt14suspend_alwaysENSt6chrono8durationI3Rep6PeriodEE" title="v0::context::block_by_time::Period"><span class="n"><span class="pre">Period</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_duration</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I00EN2v07context13block_by_timeENSt14suspend_alwaysENSt6chrono8durationI3Rep6PeriodEE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Blocks the context for a specified time duration. </p>
 <p>This method blocks the current coroutine for the specified duration, transitioning it to the time-blocking state. The scheduler is responsible for resuming this context after the duration has elapsed.</p>
 <dl class="field-list simple">
@@ -577,8 +604,8 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N2v07context4doneEv">
-<span id="_CPPv3N2v07context4doneEv"></span><span id="_CPPv2N2v07context4doneEv"></span><span id="v0::context::doneCE"></span><span class="target" id="classv0_1_1context_1a9fd88b4095ad41f2e2ef8c764bccb472"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">done</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v07context4doneEv" title="Link to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4NK2v07context4doneEv">
+<span id="_CPPv3NK2v07context4doneEv"></span><span id="_CPPv2NK2v07context4doneEv"></span><span id="v0::context::doneCCE"></span><span class="target" id="classv0_1_1context_1a984ecc4b19401c0cc24dc29eda235601"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">done</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2v07context4doneEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>Check if the context has completed its operation. </p>
 <p>This method determines whether the context is in a “done” state, meaning it has completed all operations and no longer needs to be scheduled. The stack memory of the context should be completely unused when this function returns <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
 <dl class="field-list simple">
@@ -605,6 +632,25 @@
 <span id="_CPPv3N2v07context6resumeEv"></span><span id="_CPPv2N2v07context6resumeEv"></span><span id="v0::context::resume"></span><span class="target" id="classv0_1_1context_1a3e6c0df0b44e0abc3be11bc80faacd51"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resume</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v07context6resumeEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>Resume the active coroutine on this context. </p>
 <p>This method resumes the currently active coroutine. It only has an effect if the context is not blocked by time, as time-blocking contexts must wait for their designated duration to elapse. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v07context9sync_waitERRNSt9invocableI14sleep_durationEE">
+<span id="_CPPv3N2v07context9sync_waitERRNSt9invocableI14sleep_durationEE"></span><span id="_CPPv2N2v07context9sync_waitERRNSt9invocableI14sleep_durationEE"></span><span id="v0::context::sync_wait__std::invocable:sleep_duration:RR"></span><span class="target" id="classv0_1_1context_1a425b9d34b5bb09e2381094a48bc97114"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sync_wait</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">invocable</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">sleep_duration</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">auto</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_delay</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v07context9sync_waitERRNSt9invocableI14sleep_durationEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Perform sync_wait operation. </p>
+<p>This method waits synchronously for all coroutines on this context to complete. It uses the provided delay function to sleep for the required duration when waiting for time-based operations.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method is primarily intended for testing and simple applications where a synchronous wait is needed. It’s not suitable for production embedded systems that require precise timing or real-time scheduling. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>DelayFunc</strong> – The type of the delay function (must be invocable with sleep_duration parameter) </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>p_delay</strong> – - a delay function, that accepts a sleep duration and returns void.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -644,33 +690,64 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N2v07contextD0Ev">
-<span id="_CPPv3N2v07contextD0Ev"></span><span id="_CPPv2N2v07contextD0Ev"></span><span id="v0::context::~context"></span><span class="target" id="classv0_1_1context_1a08a6964f03fa4d6979eca2989d533e28"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~context</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N2v07contextD0Ev" title="Link to this definition">#</a><br /></dt>
-<dd><p>Virtual destructor for proper cleanup of derived classes. </p>
-<p>This virtual destructor ensures that derived context classes are properly cleaned up when deleted through a base class pointer. </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK2v07context10sleep_timeEv">
+<span id="_CPPv3NK2v07context10sleep_timeEv"></span><span id="_CPPv2NK2v07context10sleep_timeEv"></span><span id="v0::context::sleep_timeCCE"></span><span class="target" id="classv0_1_1context_1adc34497063c0903aeefe27eb4b472280"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">sleep_duration</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sleep_time</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK2v07context10sleep_timeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Amount of time to delay resuming this context. </p>
+<p>When a context is blocked by for a set duration of time, it is the responsibility of the scheduler to ensure that the context is not resumed until that duration of time has elapsed. In the event that the context is not blocked by time, then this returns 0.</p>
+<p>Calling this function multiple times returns the last sleep duration that was set by the async operation contained within the context. It is the responsibility of the scheduler to unblock this context, otherwise, calling <a class="reference internal" href="#classv0_1_1context_1a3e6c0df0b44e0abc3be11bc80faacd51"><span class="std std-ref">resume()</span></a> will immediately without resuming async operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>constexpr sleep_duration - the amount of time to delay resuming this context. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v07context10on_unblockEP16unblock_listener">
+<span id="_CPPv3N2v07context10on_unblockEP16unblock_listener"></span><span id="_CPPv2N2v07context10on_unblockEP16unblock_listener"></span><span id="v0::context::on_unblock__unblock_listenerP"></span><span class="target" id="classv0_1_1context_1a7a97f0264fd1e43c54062ec48a77de33"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">on_unblock</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">unblock_listener</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">p_listener</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v07context10on_unblockEP16unblock_listener" title="Link to this definition">#</a><br /></dt>
+<dd><p>Sets the unblock listener. </p>
+<p>There can only be a single unblock listener per context, thus any previously set unblock listener will be removed.</p>
+<p>Because this API takes the address of the listener, it is important that the context outlive the listener.</p>
+<p><code class="docutils literal notranslate"><span class="pre">remove_unblock_handler()</span></code> must be called before the end of the lifetime of the <code class="docutils literal notranslate"><span class="pre">p_listener</span></code> object. It is undefined behavior to allow a listener to be destroyed before it is removed from this context.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_listener</strong> – - the address of the unblock listener to be invoked when this context is unblocked. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2v07context22clear_unblock_listenerEv">
+<span id="_CPPv3N2v07context22clear_unblock_listenerEv"></span><span id="_CPPv2N2v07context22clear_unblock_listenerEv"></span><span id="v0::context::clear_unblock_listener"></span><span class="target" id="classv0_1_1context_1a91c4e676c3bd2c4ca46775fa632c77ed"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear_unblock_listener</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v07context22clear_unblock_listenerEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Clears the on_unblock listener from this context. </p>
+<p>After this is called, any call to <code class="docutils literal notranslate"><a class="reference internal" href="#classv0_1_1context_1a6447415fb7b58bcd152a87415d4561b5"><span class="std std-ref"><span class="pre">unblock()</span></span></a></code> will not invoke an unblock listener.</p>
+<p>It is the responsibility of the application to clear the unblock listener is cleared, before the end of the lifetime of the object that was passed to <a class="reference internal" href="#classv0_1_1context_1a7a97f0264fd1e43c54062ec48a77de33"><span class="std std-ref">on_unblock()</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2v07context11get_blockerEv">
+<span id="_CPPv3NK2v07context11get_blockerEv"></span><span id="_CPPv2NK2v07context11get_blockerEv"></span><span id="v0::context::get_blockerC"></span><span class="target" id="classv0_1_1context_1a456565a8767441bcfc89ab4d610f0ffd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2v07contextE" title="v0::context"><span class="n"><span class="pre">context</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">get_blocker</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2v07context11get_blockerEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the address of the context currently blocking this one blocking. </p>
+<p>If this context’s state is <code class="docutils literal notranslate"><span class="pre">blocked_by::sync</span></code> then there is a context that currently holds a resource that this context needs. That context’s address can be acquired by this API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>context const* - returns a const pointer to the other context that is blocking this context. If no such context exists, then a nullptr is returned. </p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
 </dd></dl>
 
 </section>
-<section id="async-basic-context">
-<h2>async::basic_context<a class="headerlink" href="#async-basic-context" title="Link to this heading">#</a></h2>
+<section id="async-inplace-context">
+<h2>async::inplace_context<a class="headerlink" href="#async-inplace-context" title="Link to this heading">#</a></h2>
 <p>Defined in namespace <code class="docutils literal notranslate"><span class="pre">async::v0</span></code></p>
 <p><em>import async_context;</em></p>
-<dl class="cpp class">
-<dt class="sig sig-object cpp" id="_CPPv4I_6size_tEN2v013basic_contextE">
-<span id="_CPPv3I_6size_tEN2v013basic_contextE"></span><span id="_CPPv2I_6size_tEN2v013basic_contextE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">StackSizeInWords</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classv0_1_1basic__context"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">basic_context</span></span></span><a class="headerlink" href="#_CPPv4I_6size_tEN2v013basic_contextE" title="Link to this definition">#</a><br /></dt>
-<dd><p>A basic context implementation that supports synchronous waiting. </p>
-<p>The <a class="reference internal" href="#classv0_1_1basic__context"><span class="std std-ref">basic_context</span></a> class provides a concrete implementation of the context interface that supports synchronous waiting operations. It extends the base context with functionality to wait for coroutines to complete using a simple synchronous loop.</p>
-<p>This class provides stack memory via its <code class="docutils literal notranslate"><span class="pre">StackSizeInWords</span></code> template variable.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>StackSizeInWords</strong> – - the number of words to allocate for the context’s stack memory. Word size is 4 bytes for 32-bit systems and 8 bytes on 64-bit systems. </p>
-</dd>
-</dl>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenclass: Cannot find class “v0::basic_context” in doxygen xml output for project “async_context” from directory: build/xml</p>
+</div>
 </section>
 <section id="async-proxy-context">
 <h2>async::proxy_context<a class="headerlink" href="#async-proxy-context" title="Link to this heading">#</a></h2>
@@ -714,7 +791,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2v013proxy_contextD0Ev">
-<span id="_CPPv3N2v013proxy_contextD0Ev"></span><span id="_CPPv2N2v013proxy_contextD0Ev"></span><span id="v0::proxy_context::~proxy_context"></span><span class="target" id="classv0_1_1proxy__context_1ae77a4adc54cd96eb447de89d52cb5cc0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~proxy_context</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N2v013proxy_contextD0Ev" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N2v013proxy_contextD0Ev"></span><span id="_CPPv2N2v013proxy_contextD0Ev"></span><span id="v0::proxy_context::~proxy_context"></span><span class="target" id="classv0_1_1proxy__context_1a5891c86a33ef6d0d577d0697c0b77e61"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~proxy_context</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v013proxy_contextD0Ev" title="Link to this definition">#</a><br /></dt>
 <dd><p>Destructor for <a class="reference internal" href="#classv0_1_1proxy__context"><span class="std std-ref">proxy_context</span></a>. </p>
 <p>The destructor cancels any remaining operations and properly restores the parent context’s stack memory to its original state. </p>
 </dd></dl>
@@ -1190,34 +1267,36 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">async::context</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07contextE"><code class="docutils literal notranslate"><span class="pre">v0::context</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context7contextEv"><code class="docutils literal notranslate"><span class="pre">context()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context7contextENSt4spanI4uptrEE"><code class="docutils literal notranslate"><span class="pre">context()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context7contextERK7context"><code class="docutils literal notranslate"><span class="pre">context()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07contextaSERK7context"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context7contextERR7context"><code class="docutils literal notranslate"><span class="pre">context()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07contextaSERR7context"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context23initialize_stack_memoryENSt4spanI4uptrEE"><code class="docutils literal notranslate"><span class="pre">initialize_stack_memory()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context7unblockEv"><code class="docutils literal notranslate"><span class="pre">unblock()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context28unblock_without_notificationEv"><code class="docutils literal notranslate"><span class="pre">unblock_without_notification()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context13block_by_timeE14sleep_duration"><code class="docutils literal notranslate"><span class="pre">block_by_time()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context7unblockEv"><code class="docutils literal notranslate"><span class="pre">unblock()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I00EN2v07context13block_by_timeENSt14suspend_alwaysENSt6chrono8durationI3Rep6PeriodEE"><code class="docutils literal notranslate"><span class="pre">block_by_time()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context11block_by_ioE14sleep_duration"><code class="docutils literal notranslate"><span class="pre">block_by_io()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context13block_by_syncEP7context"><code class="docutils literal notranslate"><span class="pre">block_by_sync()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context17block_by_externalEv"><code class="docutils literal notranslate"><span class="pre">block_by_external()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v07context13active_handleEv"><code class="docutils literal notranslate"><span class="pre">active_handle()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v07context5stateEv"><code class="docutils literal notranslate"><span class="pre">state()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context4doneEv"><code class="docutils literal notranslate"><span class="pre">done()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v07context4doneEv"><code class="docutils literal notranslate"><span class="pre">done()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context6cancelEv"><code class="docutils literal notranslate"><span class="pre">cancel()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context6resumeEv"><code class="docutils literal notranslate"><span class="pre">resume()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context9sync_waitERRNSt9invocableI14sleep_durationEE"><code class="docutils literal notranslate"><span class="pre">sync_wait()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v07context11memory_usedEv"><code class="docutils literal notranslate"><span class="pre">memory_used()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v07context8capacityEv"><code class="docutils literal notranslate"><span class="pre">capacity()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v07context16memory_remainingEv"><code class="docutils literal notranslate"><span class="pre">memory_remaining()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07contextD0Ev"><code class="docutils literal notranslate"><span class="pre">~context()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v07context10sleep_timeEv"><code class="docutils literal notranslate"><span class="pre">sleep_time()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context10on_unblockEP16unblock_listener"><code class="docutils literal notranslate"><span class="pre">on_unblock()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context22clear_unblock_listenerEv"><code class="docutils literal notranslate"><span class="pre">clear_unblock_listener()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v07context11get_blockerEv"><code class="docutils literal notranslate"><span class="pre">get_blocker()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#async-basic-context">async::basic_context</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_6size_tEN2v013basic_contextE"><code class="docutils literal notranslate"><span class="pre">v0::basic_context</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#async-inplace-context">async::inplace_context</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#async-proxy-context">async::proxy_context</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v013proxy_contextE"><code class="docutils literal notranslate"><span class="pre">v0::proxy_context</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v013proxy_context13proxy_contextERK13proxy_context"><code class="docutils literal notranslate"><span class="pre">proxy_context()</span></code></a></li>
