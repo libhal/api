@@ -413,7 +413,7 @@
 <li><p>Scheduler integration through virtual methods</p></li>
 </ul>
 </p>
-<p>Derived classes must implement the do_schedule() method to integrate with custom schedulers and provide stack memory via <a class="reference internal" href="#classv0_1_1context_1a122277460a822589434942221f6b8225"><span class="std std-ref">initialize_stack_memory()</span></a>.</p>
+<p>Derived classes must implement the do_schedule() method to integrate with custom schedulers and provide stack memory via <a class="reference internal" href="#classv0_1_1context_1ab7b77dd52bf04debd1c1ed4822268341"><span class="std std-ref">initialize_stack_memory()</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Context objects should be kept alive as long as coroutines are running on them. The context must be properly cleaned up to prevent memory leaks. </p>
@@ -425,12 +425,12 @@
 <dt class="sig sig-object cpp" id="_CPPv4N2v07context7contextEv">
 <span id="_CPPv3N2v07context7contextEv"></span><span id="_CPPv2N2v07context7contextEv"></span><span id="v0::context::context"></span><span class="target" id="classv0_1_1context_1af0a094dca890823acce18b4000439b28"></span><span class="sig-name descname"><span class="n"><span class="pre">context</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N2v07context7contextEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>Default constructor for context. </p>
-<p>Creates context without a stack. <code class="docutils literal notranslate"><a class="reference internal" href="#classv0_1_1context_1a122277460a822589434942221f6b8225"><span class="std std-ref"><span class="pre">initialize_stack_memory()</span></span></a></code> must be called before passing this context to a coroutine. </p>
+<p>Creates context without a stack. <code class="docutils literal notranslate"><a class="reference internal" href="#classv0_1_1context_1ab7b77dd52bf04debd1c1ed4822268341"><span class="std std-ref"><span class="pre">initialize_stack_memory()</span></span></a></code> must be called before passing this context to a coroutine. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N2v07context7contextENSt4spanI4uptrEE">
-<span id="_CPPv3N2v07context7contextENSt4spanI4uptrEE"></span><span id="_CPPv2N2v07context7contextENSt4spanI4uptrEE"></span><span id="v0::context::context__std::span:uptr:"></span><span class="target" id="classv0_1_1context_1a3c53d3a830176d193a911e946e91c46e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">context</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uptr</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_stack</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v07context7contextENSt4spanI4uptrEE" title="Link to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N2v07context7contextENSt4spanI10stack_wordEE">
+<span id="_CPPv3N2v07context7contextENSt4spanI10stack_wordEE"></span><span id="_CPPv2N2v07context7contextENSt4spanI10stack_wordEE"></span><span id="v0::context::context__std::span:stack_word:"></span><span class="target" id="classv0_1_1context_1a434b98a35e04e4fe7d6fa9acc79f06f0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">context</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">stack_word</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_stack</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v07context7contextENSt4spanI10stack_wordEE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Construct a new context object with stack memory. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -481,13 +481,17 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N2v07context23initialize_stack_memoryENSt4spanI4uptrEE">
-<span id="_CPPv3N2v07context23initialize_stack_memoryENSt4spanI4uptrEE"></span><span id="_CPPv2N2v07context23initialize_stack_memoryENSt4spanI4uptrEE"></span><span id="v0::context::initialize_stack_memory__std::span:uptr:CE"></span><span class="target" id="classv0_1_1context_1a122277460a822589434942221f6b8225"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initialize_stack_memory</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uptr</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_stack_memory</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v07context23initialize_stack_memoryENSt4spanI4uptrEE" title="Link to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N2v07context23initialize_stack_memoryENSt4spanI10stack_wordEE">
+<span id="_CPPv3N2v07context23initialize_stack_memoryENSt4spanI10stack_wordEE"></span><span id="_CPPv2N2v07context23initialize_stack_memoryENSt4spanI10stack_wordEE"></span><span id="v0::context::initialize_stack_memory__std::span:stack_word:CE"></span><span class="target" id="classv0_1_1context_1ab7b77dd52bf04debd1c1ed4822268341"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initialize_stack_memory</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">stack_word</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_stack_memory</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v07context23initialize_stack_memoryENSt4spanI10stack_wordEE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Initialize stack memory for the context. </p>
-<p>This method must be called by derived context implementations to provide the stack memory that will be used for coroutine frame allocation.</p>
+<p><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">alignas</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">max_align_t</span><span class="p">)</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">async</span><span class="o">::</span><span class="n">stack_word</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stack</span><span class="p">;</span>
+</pre></div>
+</div>
+</p>
+<p>Passing a buffer that is only 4-byte aligned on a target where alignof(std::max_align_t) == 8 is undefined behaviour and may produce a hardfault if the coroutine frame requires 8-byte alignment. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The stack memory must be properly aligned and sized to accommodate coroutine frames. This is a required step for any derived context implementation. </p>
+<p>The span’s base address must be aligned to at least alignof(std::max_align_t) (8 bytes on ARM Cortex-M, 16 bytes on x86-64). This matches the alignment guarantee of operator new and ensures that coroutine frames containing double, int64_t, or std::chrono::duration are correctly placed. The simplest way to satisfy this is to declare the backing array with alignas(std::max_align_t):</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -660,7 +664,7 @@
 <p>This method returns how much stack space has been consumed by currently active coroutines.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The number of <code class="docutils literal notranslate"><span class="pre">uptr</span></code> sized words used in the stack </p>
+<dd class="field-odd"><p>The number of <code class="docutils literal notranslate"><span class="pre">stack_word</span></code> sized words used in the stack </p>
 </dd>
 </dl>
 </dd></dl>
@@ -669,10 +673,10 @@
 <dt class="sig sig-object cpp" id="_CPPv4NK2v07context8capacityEv">
 <span id="_CPPv3NK2v07context8capacityEv"></span><span id="_CPPv2NK2v07context8capacityEv"></span><span id="v0::context::capacityCCE"></span><span class="target" id="classv0_1_1context_1a35b8d61dc995111f4e860deaf340556c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">capacity</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK2v07context8capacityEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>Get the total capacity of the stack memory. </p>
-<p>This method returns the total size of the stack buffer in uptr words.</p>
+<p>This method returns the total size of the stack buffer in stack_word words.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The total capacity in uptr words </p>
+<dd class="field-odd"><p>The total capacity in stack_word words </p>
 </dd>
 </dl>
 </dd></dl>
@@ -684,7 +688,7 @@
 <p>This method returns how much stack space is still available for new coroutine allocation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The number of <code class="docutils literal notranslate"><span class="pre">uptr</span></code> sized words used in the stack </p>
+<dd class="field-odd"><p>The number of <code class="docutils literal notranslate"><span class="pre">stack_word</span></code> sized words used in the stack </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1007,7 +1011,7 @@
 <p><em>import async_context;</em></p>
 <dl class="cpp enum-class">
 <dt class="sig sig-object cpp" id="_CPPv4N2v010blocked_byE">
-<span id="_CPPv3N2v010blocked_byE"></span><span id="_CPPv2N2v010blocked_byE"></span><span class="target" id="async__context_8cppm_1add81b9c3d4dc9bd6f1a2dedeb21af160"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">v0</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">blocked_by</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">u8</span></span><a class="headerlink" href="#_CPPv4N2v010blocked_byE" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N2v010blocked_byE"></span><span id="_CPPv2N2v010blocked_byE"></span><span class="target" id="coroutine_8cppm_1a1c369a032a303fcf14dd386f2867c5fd"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">v0</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">blocked_by</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint8_t</span></span><a class="headerlink" href="#_CPPv4N2v010blocked_byE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Enumeration of blocking states for async operations. </p>
 <p>This enum describes the various states a coroutine can be in when blocked from execution. Each state has different implications for how the scheduler should handle resumption of the coroutine.</p>
 <p>The blocking states are ordered from least to most restrictive:<ul class="simple">
@@ -1021,13 +1025,13 @@
 <p><em>Values:</em></p>
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2v010blocked_by7nothingE">
-<span id="_CPPv3N2v010blocked_by7nothingE"></span><span id="_CPPv2N2v010blocked_by7nothingE"></span><span class="target" id="async__context_8cppm_1add81b9c3d4dc9bd6f1a2dedeb21af160a3e47b75000b0924b6c9ba5759a7cf15d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nothing</span></span></span><a class="headerlink" href="#_CPPv4N2v010blocked_by7nothingE" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N2v010blocked_by7nothingE"></span><span id="_CPPv2N2v010blocked_by7nothingE"></span><span class="target" id="coroutine_8cppm_1a1c369a032a303fcf14dd386f2867c5fda3e47b75000b0924b6c9ba5759a7cf15d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nothing</span></span></span><a class="headerlink" href="#_CPPv4N2v010blocked_by7nothingE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Not blocked by anything, ready to run, can be resumed. </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2v010blocked_by4timeE">
-<span id="_CPPv3N2v010blocked_by4timeE"></span><span id="_CPPv2N2v010blocked_by4timeE"></span><span class="target" id="async__context_8cppm_1add81b9c3d4dc9bd6f1a2dedeb21af160a07cc694b9b3fc636710fa08b6922c42b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">time</span></span></span><a class="headerlink" href="#_CPPv4N2v010blocked_by4timeE" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N2v010blocked_by4timeE"></span><span id="_CPPv2N2v010blocked_by4timeE"></span><span class="target" id="coroutine_8cppm_1a1c369a032a303fcf14dd386f2867c5fda07cc694b9b3fc636710fa08b6922c42b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">time</span></span></span><a class="headerlink" href="#_CPPv4N2v010blocked_by4timeE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Blocked by a time duration that must elapse before resuming.</p>
 <p>Another way of saying this is that the active coroutine is requesting to be rescheduled at or after the time duration provided. The sleep time provided is the minimum that a scheduler must wait before resuming the coroutine. If the coroutine is resumed earlier, then this is erroneous behavior. This behavior is clearly wrong, but is well defined. The coroutine will resume earlier than it had anticipated, which can cause other problems down the line. For example, if a coroutine resets a device and must wait 50ms before attempting to communicate with it again. If that time isn’t upheld, then the code may thrown an exception when the device is not online by the time of resumption.</p>
 <p>This blocked by state is special in that it is not poll-able. Unlike the blocked by states below, when a coroutine requests to be rescheduled, the scheduler must ensure that the context/future it is bound to is resumed at the right time. </p>
@@ -1035,7 +1039,7 @@
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2v010blocked_by2ioE">
-<span id="_CPPv3N2v010blocked_by2ioE"></span><span id="_CPPv2N2v010blocked_by2ioE"></span><span class="target" id="async__context_8cppm_1add81b9c3d4dc9bd6f1a2dedeb21af160af98ed07a4d5f50f7de1410d905f1477f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">io</span></span></span><a class="headerlink" href="#_CPPv4N2v010blocked_by2ioE" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N2v010blocked_by2ioE"></span><span id="_CPPv2N2v010blocked_by2ioE"></span><span class="target" id="coroutine_8cppm_1a1c369a032a303fcf14dd386f2867c5fdaf98ed07a4d5f50f7de1410d905f1477f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">io</span></span></span><a class="headerlink" href="#_CPPv4N2v010blocked_by2ioE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Blocked by an I/O operation (DMA, bus transaction, etc.). An interrupt or I/O completion will call unblock() when ready.</p>
 <p>This blocked by state is poll-able, meaning that the coroutine may be resumed before the context is unblocked. Coroutines MUST check that their I/O operations have completed before continuing on with their operations. If a coroutine is resumed and their I/O operation is still pending, those coroutines should block themselves by I/O again to signal to the scheduler that they are not ready yet.</p>
 <p>A time estimate may be provided to the scheduler to give extra information about when to poll or reschedule the context again. The time information may be ignored. </p>
@@ -1043,7 +1047,7 @@
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2v010blocked_by4syncE">
-<span id="_CPPv3N2v010blocked_by4syncE"></span><span id="_CPPv2N2v010blocked_by4syncE"></span><span class="target" id="async__context_8cppm_1add81b9c3d4dc9bd6f1a2dedeb21af160a63ad9d34f3503826e5f649ae6b7ac92c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sync</span></span></span><a class="headerlink" href="#_CPPv4N2v010blocked_by4syncE" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N2v010blocked_by4syncE"></span><span id="_CPPv2N2v010blocked_by4syncE"></span><span class="target" id="coroutine_8cppm_1a1c369a032a303fcf14dd386f2867c5fda63ad9d34f3503826e5f649ae6b7ac92c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sync</span></span></span><a class="headerlink" href="#_CPPv4N2v010blocked_by4syncE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Blocked by a resource contention.</p>
 <p>Examples: mutex, semaphore, two coroutines competing for an I2C bus.</p>
 <p>If the coroutine is resumed, the coroutine should check that it can acquire the resource before assuming that it can. Just like I/O, if the coroutine determines that its still blocked by sync, then it must re-block itself by sync. </p>
@@ -1051,7 +1055,7 @@
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2v010blocked_by8externalE">
-<span id="_CPPv3N2v010blocked_by8externalE"></span><span id="_CPPv2N2v010blocked_by8externalE"></span><span class="target" id="async__context_8cppm_1add81b9c3d4dc9bd6f1a2dedeb21af160a6a21b6995a068148bbb65c8f949b3fb2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">external</span></span></span><a class="headerlink" href="#_CPPv4N2v010blocked_by8externalE" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N2v010blocked_by8externalE"></span><span id="_CPPv2N2v010blocked_by8externalE"></span><span class="target" id="coroutine_8cppm_1a1c369a032a303fcf14dd386f2867c5fda6a21b6995a068148bbb65c8f949b3fb2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">external</span></span></span><a class="headerlink" href="#_CPPv4N2v010blocked_by8externalE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Blocked by an external coroutine outside the async::context system.</p>
 <p>Examples: co_awaiting a std::task, std::generator, or third-party coroutine library.</p>
 <p>A coroutine invoking a 3rd party async library is considered to be a coroutine supervisor. A coroutine supervisor stays as the active coroutine on its context, and must manually resume the 3rd party async library until it finishes. This is important since the async context scheduler has no knowledge of the 3rd party async operation and how it works.</p>
@@ -1267,12 +1271,12 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">async::context</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07contextE"><code class="docutils literal notranslate"><span class="pre">v0::context</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context7contextEv"><code class="docutils literal notranslate"><span class="pre">context()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context7contextENSt4spanI4uptrEE"><code class="docutils literal notranslate"><span class="pre">context()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context7contextENSt4spanI10stack_wordEE"><code class="docutils literal notranslate"><span class="pre">context()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context7contextERK7context"><code class="docutils literal notranslate"><span class="pre">context()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07contextaSERK7context"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context7contextERR7context"><code class="docutils literal notranslate"><span class="pre">context()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07contextaSERR7context"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context23initialize_stack_memoryENSt4spanI4uptrEE"><code class="docutils literal notranslate"><span class="pre">initialize_stack_memory()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context23initialize_stack_memoryENSt4spanI10stack_wordEE"><code class="docutils literal notranslate"><span class="pre">initialize_stack_memory()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context28unblock_without_notificationEv"><code class="docutils literal notranslate"><span class="pre">unblock_without_notification()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context7unblockEv"><code class="docutils literal notranslate"><span class="pre">unblock()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I00EN2v07context13block_by_timeENSt14suspend_alwaysENSt6chrono8durationI3Rep6PeriodEE"><code class="docutils literal notranslate"><span class="pre">block_by_time()</span></code></a></li>
