@@ -27,30 +27,31 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/extra.css?v=e42c4877" />
     <link rel="stylesheet" type="text/css" href="_static/extra.css?v=e42c4877" />
   
   <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="_static/scripts/fontawesome.js?digest=7f76b32a3354e82990f2"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2" />
 
     <script src="_static/documentation_options.js?v=5929fcd5"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_version = '0.17.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/async_context/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
             false;
         </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -58,14 +59,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
@@ -97,7 +102,7 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
   <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
@@ -377,6 +382,7 @@ performance.</p>
 <li class="toctree-l1"><a class="reference internal" href="api/async_context.html">async_context</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="api/async_context.html#id1">async::context</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07contextE"><code class="docutils literal notranslate"><span class="pre">v0::context</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context8io_setupE"><code class="docutils literal notranslate"><span class="pre">io_setup</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context7contextEv"><code class="docutils literal notranslate"><span class="pre">context()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context7contextENSt4spanI10stack_wordEE"><code class="docutils literal notranslate"><span class="pre">context()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context7contextERK7context"><code class="docutils literal notranslate"><span class="pre">context()</span></code></a></li>
@@ -387,9 +393,9 @@ performance.</p>
 <li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context28unblock_without_notificationEv"><code class="docutils literal notranslate"><span class="pre">unblock_without_notification()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context7unblockEv"><code class="docutils literal notranslate"><span class="pre">unblock()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4I00EN2v07context13block_by_timeENSt14suspend_alwaysENSt6chrono8durationI3Rep6PeriodEE"><code class="docutils literal notranslate"><span class="pre">block_by_time()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context11block_by_ioE14sleep_duration"><code class="docutils literal notranslate"><span class="pre">block_by_io()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context13block_by_syncEP7context"><code class="docutils literal notranslate"><span class="pre">block_by_sync()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context17block_by_externalEv"><code class="docutils literal notranslate"><span class="pre">block_by_external()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context15block_by_signalENSt9invocableI8io_setupEE14sleep_duration"><code class="docutils literal notranslate"><span class="pre">block_by_signal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context15block_by_signalE14sleep_duration"><code class="docutils literal notranslate"><span class="pre">block_by_signal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context13block_by_syncERK7context"><code class="docutils literal notranslate"><span class="pre">block_by_sync()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v07context13active_handleEv"><code class="docutils literal notranslate"><span class="pre">active_handle()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v07context5stateEv"><code class="docutils literal notranslate"><span class="pre">state()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v07context4doneEv"><code class="docutils literal notranslate"><span class="pre">done()</span></code></a></li>
@@ -400,9 +406,8 @@ performance.</p>
 <li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v07context8capacityEv"><code class="docutils literal notranslate"><span class="pre">capacity()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v07context16memory_remainingEv"><code class="docutils literal notranslate"><span class="pre">memory_remaining()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v07context10sleep_timeEv"><code class="docutils literal notranslate"><span class="pre">sleep_time()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context10on_unblockEP16unblock_listener"><code class="docutils literal notranslate"><span class="pre">on_unblock()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context22clear_unblock_listenerEv"><code class="docutils literal notranslate"><span class="pre">clear_unblock_listener()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v07context11get_blockerEv"><code class="docutils literal notranslate"><span class="pre">get_blocker()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context12set_listenerEP16context_listener"><code class="docutils literal notranslate"><span class="pre">set_listener()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v07context14clear_listenerEv"><code class="docutils literal notranslate"><span class="pre">clear_listener()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -420,33 +425,12 @@ performance.</p>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="api/async_context.html#async-exclusive-access">async::exclusive_access</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_accessE"><code class="docutils literal notranslate"><span class="pre">v0::exclusive_access</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_access16exclusive_accessEv"><code class="docutils literal notranslate"><span class="pre">exclusive_access()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_access16exclusive_accessER7context"><code class="docutils literal notranslate"><span class="pre">exclusive_access()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_accessaSER7context"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_accessaSE9nullptr_t"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_access16exclusive_accessERK16exclusive_access"><code class="docutils literal notranslate"><span class="pre">exclusive_access()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_accessaSERK16exclusive_access"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_access16exclusive_accessERR16exclusive_access"><code class="docutils literal notranslate"><span class="pre">exclusive_access()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_accessaSER16exclusive_access"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_accesseqER7context"><code class="docutils literal notranslate"><span class="pre">operator==()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v016exclusive_access6in_useEv"><code class="docutils literal notranslate"><span class="pre">in_use()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v016exclusive_access7addressEv"><code class="docutils literal notranslate"><span class="pre">address()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v016exclusive_accesscvbEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">bool()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_access20set_as_block_by_syncER7context"><code class="docutils literal notranslate"><span class="pre">set_as_block_by_sync()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v016exclusive_access17unblock_and_clearEv"><code class="docutils literal notranslate"><span class="pre">unblock_and_clear()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="api/async_context.html#async-blocked-by">async::blocked_by</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api/async_context.html#_CPPv4N2v010blocked_byE"><code class="docutils literal notranslate"><span class="pre">blocked_by</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v010blocked_by7nothingE"><code class="docutils literal notranslate"><span class="pre">nothing</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v010blocked_by4timeE"><code class="docutils literal notranslate"><span class="pre">time</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v010blocked_by2ioE"><code class="docutils literal notranslate"><span class="pre">io</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v010blocked_by6signalE"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v010blocked_by4syncE"><code class="docutils literal notranslate"><span class="pre">sync</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v010blocked_by8externalE"><code class="docutils literal notranslate"><span class="pre">external</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -464,6 +448,28 @@ performance.</p>
 <li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NO2v06futurecv8co_awaitEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">co_await()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NR2v06futurecv8co_awaitEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">co_await()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v06future7awaiterE"><code class="docutils literal notranslate"><span class="pre">v0::future::awaiter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v06future9cancelledE"><code class="docutils literal notranslate"><span class="pre">v0::future::cancelled</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/async_context.html#async-mutex">async::mutex</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/async_context.html#_CPPv4N2v05mutexE"><code class="docutils literal notranslate"><span class="pre">v0::mutex</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v05mutex5mutexEv"><code class="docutils literal notranslate"><span class="pre">mutex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v05mutex5mutexER7context"><code class="docutils literal notranslate"><span class="pre">mutex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v05mutexaSER7context"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v05mutexaSE9nullptr_t"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v05mutex5mutexERK5mutex"><code class="docutils literal notranslate"><span class="pre">mutex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v05mutexaSERK5mutex"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v05mutex5mutexERR5mutex"><code class="docutils literal notranslate"><span class="pre">mutex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v05mutexaSER5mutex"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v05mutexeqER7context"><code class="docutils literal notranslate"><span class="pre">operator==()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v05mutex4lockER7context"><code class="docutils literal notranslate"><span class="pre">lock()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v05mutex5ownerEv"><code class="docutils literal notranslate"><span class="pre">owner()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v05mutex6in_useEv"><code class="docutils literal notranslate"><span class="pre">in_use()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4NK2v05mutexcvbEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">bool()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v05mutex19unblock_and_releaseEv"><code class="docutils literal notranslate"><span class="pre">unblock_and_release()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/async_context.html#_CPPv4N2v05mutex5guardE"><code class="docutils literal notranslate"><span class="pre">v0::mutex::guard</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -505,13 +511,13 @@ performance.</p>
 
 
   <div class="sidebar-secondary-item">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/index.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div></div>
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/index.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
 
 </div></div>
               
@@ -526,8 +532,8 @@ performance.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -551,7 +557,7 @@ performance.</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.0.
 </p></div>
       
     </div>
