@@ -669,18 +669,6 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK2v07context11memory_usedEv">
-<span id="_CPPv3NK2v07context11memory_usedEv"></span><span id="_CPPv2NK2v07context11memory_usedEv"></span><span id="v0::context::memory_usedCCE"></span><span class="target" id="classv0_1_1context_1af1e369a255b1143b0dad9067198ec698"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">memory_used</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK2v07context11memory_usedEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Get the amount of stack memory used by active coroutines. </p>
-<p>This method returns how much stack space has been consumed by currently active coroutines.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The number of <code class="docutils literal notranslate"><span class="pre">stack_word</span></code> sized words used in the stack </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK2v07context8capacityEv">
 <span id="_CPPv3NK2v07context8capacityEv"></span><span id="_CPPv2NK2v07context8capacityEv"></span><span id="v0::context::capacityCCE"></span><span class="target" id="classv0_1_1context_1a35b8d61dc995111f4e860deaf340556c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">capacity</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK2v07context8capacityEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>Get the total capacity of the stack memory. </p>
@@ -697,6 +685,18 @@
 <span id="_CPPv3NK2v07context16memory_remainingEv"></span><span id="_CPPv2NK2v07context16memory_remainingEv"></span><span id="v0::context::memory_remainingCCE"></span><span class="target" id="classv0_1_1context_1a7c4df251fe5cbdec995e90555daa0548"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">memory_remaining</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK2v07context16memory_remainingEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>Get the remaining stack memory available. </p>
 <p>This method returns how much stack space is still available for new coroutine allocation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The number of <code class="docutils literal notranslate"><span class="pre">stack_word</span></code> sized words used in the stack </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2v07context11memory_usedEv">
+<span id="_CPPv3NK2v07context11memory_usedEv"></span><span id="_CPPv2NK2v07context11memory_usedEv"></span><span id="v0::context::memory_usedCCE"></span><span class="target" id="classv0_1_1context_1af1e369a255b1143b0dad9067198ec698"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">memory_used</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK2v07context11memory_usedEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the amount of stack memory used by active coroutines. </p>
+<p>This method returns how much stack space has been consumed by currently active coroutines.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The number of <code class="docutils literal notranslate"><span class="pre">stack_word</span></code> sized words used in the stack </p>
@@ -1341,9 +1341,9 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context6cancelEv"><code class="docutils literal notranslate"><span class="pre">cancel()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context6resumeEv"><code class="docutils literal notranslate"><span class="pre">resume()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context9sync_waitERRNSt9invocableI14sleep_durationEE"><code class="docutils literal notranslate"><span class="pre">sync_wait()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v07context11memory_usedEv"><code class="docutils literal notranslate"><span class="pre">memory_used()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v07context8capacityEv"><code class="docutils literal notranslate"><span class="pre">capacity()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v07context16memory_remainingEv"><code class="docutils literal notranslate"><span class="pre">memory_remaining()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v07context11memory_usedEv"><code class="docutils literal notranslate"><span class="pre">memory_used()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v07context10sleep_timeEv"><code class="docutils literal notranslate"><span class="pre">sleep_time()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context12set_listenerEP16context_listener"><code class="docutils literal notranslate"><span class="pre">set_listener()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v07context14clear_listenerEv"><code class="docutils literal notranslate"><span class="pre">clear_listener()</span></code></a></li>
