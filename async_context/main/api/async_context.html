@@ -635,6 +635,7 @@
 <p>After cancellation, the state is <code class="docutils literal notranslate"><span class="pre">blocked_by::nothing</span></code>, the active coroutine becomes the noop_sentinel and the stack memory is clear of any living objects.</p>
 <p>This function must only be called when the coroutine is suspended. A context may be cancelled when it is blocked.</p>
 <p>This method cancels all pending operations on the context.</p>
+<p>A context awaiting this context will be disconnected from this context. Meaning, if the context awaiting this context, when resumed will resume where it left off. If a future with this context was awaited and was completed with a value, then resuming the awaiting context will operate as normal. If the future was cancelled before completing with a value or error, then resuming the context and exiting the awaitable will result in the <code class="docutils literal notranslate"><span class="pre">async::future::cancelled</span></code> exception type being throw.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This method is called internally by the context destructor to ensure proper cleanup of all pending asynchronous operations. </p>
