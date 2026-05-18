@@ -18,5 +18,9 @@
     {
         "version": "4.21.0",
         "url": "https://libhal.github.io/api/libhal/4.21.0"
+    },
+    {
+        "version": "4.22.0",
+        "url": "https://libhal.github.io/api/libhal/4.22.0"
     }
 ]

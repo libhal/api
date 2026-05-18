@@ -1,0 +1,1577 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>USB &#8212; libhal  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=e42c4877" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=e42c4877" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/usb';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.17.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/libhal/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '4.22.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="libhal Containers" href="containers.html" />
+    <link rel="prev" title="Timer" href="timer.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="libhal  documentation - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="libhal  documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<nav class="navbar-nav">
+  <p
+    class="sidebar-header-items__title"
+    role="heading"
+    aria-level="2"
+    aria-label="Site Navigation"
+  ></p>
+  <ul class="bd-navbar-elements navbar-nav">
+    <li class="nav-item dropdown">
+      <button
+        class="btn dropdown-toggle nav-item"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        aria-controls="pst-nav-more-links"
+      >
+        Guides
+      </button>
+      <ul id="pst-nav-more-links" class="dropdown-menu">
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/"
+          >
+            🏡 Introduction
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/getting_started/"
+          >
+            🚀 Getting Started
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/user_guide/fundamentals/"
+          >
+            📖 User Guide
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/contributor_guide/philosophy/"
+          >
+            📚 Contributor Guides
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/project_information/status/"
+          >
+            📊 Project Information
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="interfaces.html">
+    Hardware Interfaces
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="containers.html">
+    Containers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="constants.html">
+    Constants
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="interfaces.html">
+    Hardware Interfaces
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="containers.html">
+    Containers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="constants.html">
+    Constants
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Interfaces</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="accelerometer.html">Accelerometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adc.html">Analog Digital Converter (ADC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="angular_velocity_sensor.html">Angular Velocity Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="can.html">Controlled Area Network (CAN)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dac.html">Digital Analog Converter (DAC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distance_sensor.html">Distance Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gyroscope.html">Gyroscope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="i2c.html">Inter-integrated Circuit (I2C)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input_pin.html">Input Pin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interrupt_pin.html">Interrupt Pin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="io_waiter.html">IO Waiter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lock.html">Lock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="magnetometer.html">Magnetometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motor.html">Motor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output_pin.html">Output Pin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pointers.html">Pointers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pwm.html">Pulse Width Modulation (PWM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rotation_sensor.html">Rotational Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serial.html">Serial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="servo.html">Servo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spi.html">Serial Peripheral Interface (SPI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="steady_clock.html">Steady Clock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stream_dac.html">Stream DAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="temperature_sensor.html">Temperature Sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timed_interrupt.html">Timed Interrupt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timeout.html">Timeout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timer.html">Timer</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">USB</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="interfaces.html" class="nav-link">libhal Hardware Interface API Documentation</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">USB</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="usb">
+<h1>USB<a class="headerlink" href="#usb" title="Link to this heading">#</a></h1>
+<section id="hardware-interface">
+<h2>Hardware Interface<a class="headerlink" href="#hardware-interface" title="Link to this heading">#</a></h2>
+<p>Defined in namespace <code class="docutils literal notranslate"><span class="pre">hal::usb</span></code></p>
+<p><em>#include &lt;libhal/usb.hpp&gt;</em></p>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb13endpoint_infoE">
+<span id="_CPPv3N3hal2v53usb13endpoint_infoE"></span><span id="_CPPv2N3hal2v53usb13endpoint_infoE"></span><span id="hal::v5::usb::endpoint_info"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1endpoint__info"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">endpoint_info</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb13endpoint_infoE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Basic information about an usb endpoint. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb13endpoint_info12in_directionEv">
+<span id="_CPPv3N3hal2v53usb13endpoint_info12in_directionEv"></span><span id="_CPPv2N3hal2v53usb13endpoint_info12in_directionEv"></span><span id="hal::v5::usb::endpoint_info::in_direction"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1endpoint__info_1aa17b66cfc120b7b17bd93d79fa61a979"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">in_direction</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb13endpoint_info12in_directionEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns if the direction of the endpoint is an IN endpoint. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true - endpoint is an IN endpoint </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>false - endpoint is an OUT endpoint </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb13endpoint_info14logical_numberEv">
+<span id="_CPPv3N3hal2v53usb13endpoint_info14logical_numberEv"></span><span id="_CPPv2N3hal2v53usb13endpoint_info14logical_numberEv"></span><span id="hal::v5::usb::endpoint_info::logical_number"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1endpoint__info_1a57a9dfc1bc99e584b394376acb84ea82"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">u8</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">logical_number</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb13endpoint_info14logical_numberEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Return the endpoint number without the IN/OUT flag. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>u8 - the logical endpoint number from 0 to 16. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb13endpoint_info4sizeE">
+<span id="_CPPv3N3hal2v53usb13endpoint_info4sizeE"></span><span id="_CPPv2N3hal2v53usb13endpoint_info4sizeE"></span><span id="hal::v5::usb::endpoint_info::size__u16"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1endpoint__info_1a9629da63bfc4fbe5598f3719c08a662e"></span><span class="n"><span class="pre">u16</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb13endpoint_info4sizeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The max number of bytes the endpoint can work with. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb13endpoint_info6numberE">
+<span id="_CPPv3N3hal2v53usb13endpoint_info6numberE"></span><span id="_CPPv2N3hal2v53usb13endpoint_info6numberE"></span><span id="hal::v5::usb::endpoint_info::number__u8"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1endpoint__info_1a0872a5e9f8085c200a84fd3c721f93b6"></span><span class="n"><span class="pre">u8</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">number</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb13endpoint_info6numberE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Endpoint number in USB format. </p>
+<p>bits [0-4]: logical endpoint number bits [5-6]: reserved and set to zero bits [7]: 1 == IN endpoint ; 0 == OUT endpoint </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb13endpoint_info7stalledE">
+<span id="_CPPv3N3hal2v53usb13endpoint_info7stalledE"></span><span id="_CPPv2N3hal2v53usb13endpoint_info7stalledE"></span><span id="hal::v5::usb::endpoint_info::stalled__b"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1endpoint__info_1a97a8903422f34d485ee47be84ae32875"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stalled</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb13endpoint_info7stalledE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set to <code class="docutils literal notranslate"><span class="pre">true</span></code> if the endpoint is stalled/HALTED. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb8endpointE">
+<span id="_CPPv3N3hal2v53usb8endpointE"></span><span id="_CPPv2N3hal2v53usb8endpointE"></span><span id="hal::v5::usb::endpoint"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1endpoint"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">endpoint</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb8endpointE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Generic usb endpoint interface. </p>
+<p>This interface exists to mandate specific generic APIs for all usb endpoints. Specifically that each endpoint must provide an <a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1endpoint_1a63097b73e96e288cd47d7bcda3c1046d"><span class="std std-ref">info()</span></a> and <a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1endpoint_1a0729d2246a5fdf9e260c2e254d9f9d29"><span class="std std-ref">stall(bool)</span></a> API which are used by the enumeration process to stall or un-stall an endpoint so a specific feature can be used.</p>
+<p>The <code class="docutils literal notranslate"><a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1endpoint_1a0729d2246a5fdf9e260c2e254d9f9d29"><span class="std std-ref"><span class="pre">stall(bool)</span></span></a></code> can also be used by implementations of the <code class="docutils literal notranslate"><span class="pre">hal::interface</span></code> interface to indicate to the HOST usb controller an error on that endpoint or to signal to the HOST that the endpoint is no longer available.</p>
+<p>The <code class="docutils literal notranslate"><a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1endpoint_1a63097b73e96e288cd47d7bcda3c1046d"><span class="std std-ref"><span class="pre">info()</span></span></a></code> API can also be used by users in order to log information about endpoints if that is useful to their application and testing. </p>
+<p>Subclassed by <a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1control__endpoint"><span class="std std-ref">hal::v5::usb::control_endpoint</span></a>, <a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1in__endpoint"><span class="std std-ref">hal::v5::usb::in_endpoint</span></a>, <a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1out__endpoint"><span class="std std-ref">hal::v5::usb::out_endpoint</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v53usb8endpoint4infoEv">
+<span id="_CPPv3NK3hal2v53usb8endpoint4infoEv"></span><span id="_CPPv2NK3hal2v53usb8endpoint4infoEv"></span><span id="hal::v5::usb::endpoint::infoC"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1endpoint_1a63097b73e96e288cd47d7bcda3c1046d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal2v53usb13endpoint_infoE" title="hal::v5::usb::endpoint_info"><span class="n"><span class="pre">endpoint_info</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">info</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v53usb8endpoint4infoEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get info about this endpoint. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#structhal_1_1v5_1_1usb_1_1endpoint__info"><span class="std std-ref">endpoint_info</span></a> - endpoint information </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb8endpoint5stallEb">
+<span id="_CPPv3N3hal2v53usb8endpoint5stallEb"></span><span id="_CPPv2N3hal2v53usb8endpoint5stallEb"></span><span id="hal::v5::usb::endpoint::stall__b"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1endpoint_1a0729d2246a5fdf9e260c2e254d9f9d29"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stall</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_should_stall</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb8endpoint5stallEb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Stall or un-stall an endpoint. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_should_stall</strong> – - set to true to stall this endpoint, set to false to un-stall the endpoint. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb8endpoint5resetEv">
+<span id="_CPPv3N3hal2v53usb8endpoint5resetEv"></span><span id="_CPPv2N3hal2v53usb8endpoint5resetEv"></span><span id="hal::v5::usb::endpoint::reset"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1endpoint_1a1a33b427583da22747f1060858f59394"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reset</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb8endpoint5resetEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reset the USB endpoint. </p>
+<p>This method resets the USB endpoint to its default state. A reset operation clears any pending transactions, resets the endpoint’s data toggle bit to zero, and terminates any ongoing transfers on the endpoint. This is typically used during USB enumeration when transitioning between different device states, or when recovering from error conditions.</p>
+<p>The reset operation affects the following aspects of the endpoint:<ul class="simple">
+<li><p>Clears the data toggle bit (used for USB protocol handshaking)</p></li>
+<li><p>Terminates any pending or active transfers</p></li>
+<li><p>Resets the endpoint’s internal state machine</p></li>
+<li><p>Clears any error conditions that may be present</p></li>
+</ul>
+</p>
+<p>This method is typically called during:<ul class="simple">
+<li><p>USB device enumeration when transitioning from Default to Addressed state</p></li>
+<li><p>Recovery from USB protocol errors</p></li>
+<li><p>When a new configuration is being set</p></li>
+<li><p>During USB bus reset operations</p></li>
+</ul>
+</p>
+<p>After a reset, the endpoint will be in a clean state ready to accept new transactions. The host controller will typically re-initialize the endpoint when the next data transfer occurs. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb16control_endpointE">
+<span id="_CPPv3N3hal2v53usb16control_endpointE"></span><span id="_CPPv2N3hal2v53usb16control_endpointE"></span><span id="hal::v5::usb::control_endpoint"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1control__endpoint"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">control_endpoint</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">v5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">usb</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">endpoint</span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb16control_endpointE" title="Link to this definition">#</a><br /></dt>
+<dd><p>USB Control Endpoint Interface. </p>
+<p>This class represents the control endpoint of a USB device. The control endpoint is crucial for USB communication as it handles device enumeration, configuration, and general control operations.</p>
+<p>Use cases:</p>
+<p><ul class="simple">
+<li><p>Initiating USB connections</p></li>
+<li><p>Handling USB enumeration process</p></li>
+<li><p>Setting device addresses</p></li>
+<li><p>Responding to standard USB requests</p></li>
+<li><p>Sending and receiving control data </p></li>
+</ul>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb16control_endpoint7connectEb">
+<span id="_CPPv3N3hal2v53usb16control_endpoint7connectEb"></span><span id="_CPPv2N3hal2v53usb16control_endpoint7connectEb"></span><span id="hal::v5::usb::control_endpoint::connect__b"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1control__endpoint_1a4638fab0ed0f978b9c4a20cbd8caa4be"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">connect</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_should_connect</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb16control_endpoint7connectEb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Signal to connect/enable USB peripheral. </p>
+<p>Used to initiate a connection to a host machine and begin enumeration. Can be used to perform a disconnect and reconnect to the host/hub.</p>
+<p>Enumeration only involves the control endpoints and cannot happen without it, thus the responsibility to initiate enumeration is on the control endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_should_connect</strong> – - set to true to connect, set to false to disconnect. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb16control_endpoint11set_addressE2u8">
+<span id="_CPPv3N3hal2v53usb16control_endpoint11set_addressE2u8"></span><span id="_CPPv2N3hal2v53usb16control_endpoint11set_addressE2u8"></span><span id="hal::v5::usb::control_endpoint::set_address__u8"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1control__endpoint_1a9619a576650aafd4b195eb5c9f4775d5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_address</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">u8</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_address</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb16control_endpoint11set_addressE2u8" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the USB device address. </p>
+<p>Used to set the device address during the USB enumeration process. This address must come from a USB request on the control endpoint by the HOST.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_address</strong> – The address assigned to this device from the HOST </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb16control_endpoint5writeE12scatter_spanIK4byteE">
+<span id="_CPPv3N3hal2v53usb16control_endpoint5writeE12scatter_spanIK4byteE"></span><span id="_CPPv2N3hal2v53usb16control_endpoint5writeE12scatter_spanIK4byteE"></span><span id="hal::v5::usb::control_endpoint::write__scatter_span:byteC:"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1control__endpoint_1a1e9d0001ac29e6f313f716c8e94c528a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="scatter_span.html#_CPPv4I0EN3hal2v512scatter_spanE" title="hal::v5::scatter_span"><span class="n"><span class="pre">scatter_span</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">byte</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_data</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb16control_endpoint5writeE12scatter_spanIK4byteE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Write data to the control endpoint’s memory. </p>
+<p>This API will copy the contents of the span of byte spans into the endpoint memory. When the endpoint memory is full, this API will ACK the next HOST IN packet and the data in the endpoint will be transmitted. This is repeated until no more data is left. To finish the transfer of data, call <code class="docutils literal notranslate"><span class="pre">flush()</span></code> OR call this API with an empty p_data field:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="o">++</span>
+<span class="n">usb</span><span class="p">.</span><span class="n">write</span><span class="p">({});</span><span class="w"> </span><span class="c1">// Finishes the transfer with an ZLP or the last of the data</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_data</strong> – - a scatter span of bytes to be written to the endpoint memory and sent over USB. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb16control_endpoint4readE12scatter_spanI4byteE">
+<span id="_CPPv3N3hal2v53usb16control_endpoint4readE12scatter_spanI4byteE"></span><span id="_CPPv2N3hal2v53usb16control_endpoint4readE12scatter_spanI4byteE"></span><span id="hal::v5::usb::control_endpoint::read__scatter_span:byte:"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1control__endpoint_1a0e1c86f7789ceb61947dd076a0fc84d6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">usize</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="scatter_span.html#_CPPv4I0EN3hal2v512scatter_spanE" title="hal::v5::scatter_span"><span class="n"><span class="pre">scatter_span</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">byte</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_buffer</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb16control_endpoint4readE12scatter_spanI4byteE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Read contents of endpoint. </p>
+<p>This API is not to be assumed to be callable from within the <code class="docutils literal notranslate"><span class="pre">on_receive</span></code> callback.</p>
+<p>When data is available in the endpoint, the endpoint will be configured to NAK all following HOST packet requests. When all data from the endpoint has been read, the endpoint will become valid again and can ACK the HOST packets.</p>
+<p>If a caller wants to drain all of the data from the endpoint’s memory, then the caller should continually call read until it returns an empty span.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_buffer</strong> – - a scatter span of bytes to fill with data </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>usize - the number of bytes read into the buffers provided by p_buffer. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb16control_endpoint10on_receiveERK8callbackIFv14on_receive_tagEE">
+<span id="_CPPv3N3hal2v53usb16control_endpoint10on_receiveERK8callbackIFv14on_receive_tagEE"></span><span id="_CPPv2N3hal2v53usb16control_endpoint10on_receiveERK8callbackIFv14on_receive_tagEE"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1control__endpoint_1a81afebb97ebd76beb3448d2c4f3fce01"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">on_receive</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="functional.html#_CPPv4I0E8callback" title="callback"><span class="n"><span class="pre">callback</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#_CPPv4N3hal2v53usb16control_endpoint14on_receive_tagE" title="hal::v5::usb::control_endpoint::on_receive_tag"><span class="n"><span class="pre">on_receive_tag</span></span></a><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_callback</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb16control_endpoint10on_receiveERK8callbackIFv14on_receive_tagEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set a callback function for when USB requests are received. </p>
+<p><dl>
+<dt class="sig sig-object cpp">
+<em><span class="pre">Deprecated:</span></em></dt>
+<dd><p>Use <a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1control__endpoint_1ac308cc44bd331565d60359b85f54ab11"><span class="std std-ref">on_bus_event</span></a> instead. That API provides the full set of bus-level events (reset, setup packet, data packet, suspend, resume, sleep) in a single callback, superseding this one. Calling <a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1control__endpoint_1ac308cc44bd331565d60359b85f54ab11"><span class="std std-ref">on_bus_event</span></a> may clear any previously registered <code class="docutils literal notranslate"><span class="pre">on_receive</span></code> callback.</p>
+</dd></dl>
+
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_callback</strong> – The callback function to be called when a USB request command is received on the control endpoint. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v53usb16control_endpoint9has_setupEv">
+<span id="_CPPv3NK3hal2v53usb16control_endpoint9has_setupEv"></span><span id="_CPPv2NK3hal2v53usb16control_endpoint9has_setupEv"></span><span id="hal::v5::usb::control_endpoint::has_setupC"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1control__endpoint_1a7e2984f96a417ecd7508e507cfbadd10"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">optional</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">bool</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">has_setup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK3hal2v53usb16control_endpoint9has_setupEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns whether the endpoint’s receive buffer contains a setup packet. </p>
+<p><dl>
+<dt class="sig sig-object cpp">
+<em><span class="pre">Deprecated:</span></em></dt>
+<dd><p>Use on_bus_event and the bus_event type to detect if a setup command has arrived.</p>
+</dd></dl>
+
+</p>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> until all 8 bytes of the setup packet have been extracted via <code class="docutils literal notranslate"><a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1control__endpoint_1a0e1c86f7789ceb61947dd076a0fc84d6"><span class="std std-ref"><span class="pre">read()</span></span></a></code>. Returns <code class="docutils literal notranslate"><span class="pre">false</span></code> once the setup packet has been fully consumed or if the last received packet was not a setup packet.</p>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">std::nullopt</span></code> if the implementation does not support setup packet detection. Enumerators that require this information should accept a callable (as a template parameter or type-erased input parameter) to work around legacy implementations.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Safe to call from ISR context. Implementations must not throw, call throwing functions, or perform I/O within this method.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">std::nullopt</span></code> if setup packet detection is unsupported. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code> if the receive buffer contains an unconsumed setup packet. </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb16control_endpoint12on_bus_eventERKN3hal8callbackIFv9bus_eventEEE">
+<span id="_CPPv3N3hal2v53usb16control_endpoint12on_bus_eventERKN3hal8callbackIFv9bus_eventEEE"></span><span id="_CPPv2N3hal2v53usb16control_endpoint12on_bus_eventERKN3hal8callbackIFv9bus_eventEEE"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1control__endpoint_1ac308cc44bd331565d60359b85f54ab11"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">on_bus_event</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">callback</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">bus_event</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_callback</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb16control_endpoint12on_bus_eventERKN3hal8callbackIFv9bus_eventEEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Register a callback for control endpoint and bus-level events. </p>
+<p>The registered callback is invoked from interrupt context when any bus_event occurs. The callback must not perform any blocking operations.</p>
+<p>Replaces the <a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1control__endpoint_1a81afebb97ebd76beb3448d2c4f3fce01"><span class="std std-ref">on_receive</span></a> callbacks. If a previously set <code class="docutils literal notranslate"><span class="pre">on_receive</span></code> callback was set, calling this function may remove the previous <code class="docutils literal notranslate"><span class="pre">on_receive</span></code> callback and replace it with the <code class="docutils literal notranslate"><span class="pre">on_bus_event</span></code> callback.</p>
+<p>Only one callback may be registered at a time. Calling this function again replaces the previously registered callback.</p>
+<p>The enumerator registers this callback internally. Applications should not call this directly.</p>
+<p>This API does nothing if not implemented.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_callback</strong> – - callback to invoke when an event occurs, receives the bus_event indicating which event fired. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb16control_endpoint20remote_wakeup_enableEb">
+<span id="_CPPv3N3hal2v53usb16control_endpoint20remote_wakeup_enableEb"></span><span id="_CPPv2N3hal2v53usb16control_endpoint20remote_wakeup_enableEb"></span><span id="hal::v5::usb::control_endpoint::remote_wakeup_enable__b"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1control__endpoint_1ac160e35623831f23f7876995e10877ae"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">remote_wakeup_enable</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_enabled</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb16control_endpoint20remote_wakeup_enableEb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Grant or revoke the device’s permission to initiate remote wakeup. </p>
+<p>Called by the enumerator in response to SET_FEATURE(DEVICE_REMOTE_WAKEUP) and CLEAR_FEATURE(DEVICE_REMOTE_WAKEUP) setup packets from the host.</p>
+<p>When enabled, IN endpoint writes issued while the bus is suspended will automatically assert resume signaling before completing the transfer, waking the host if it is suspended.</p>
+<p>When disabled, IN endpoint writes while suspended will block until the host resumes the bus on its own.</p>
+<p>This API does nothing if not implemented.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_enabled</strong> – - true if the host has granted remote wakeup permission, false if the host has revoked it. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb16control_endpoint21remote_wakeup_grantedEv">
+<span id="_CPPv3N3hal2v53usb16control_endpoint21remote_wakeup_grantedEv"></span><span id="_CPPv2N3hal2v53usb16control_endpoint21remote_wakeup_grantedEv"></span><span id="hal::v5::usb::control_endpoint::remote_wakeup_granted"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1control__endpoint_1acf822f376d79ff348f907d4c0e3329ed"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">remote_wakeup_granted</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb16control_endpoint21remote_wakeup_grantedEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Query whether the host has granted remote wakeup permission. </p>
+<p>Returns the current remote wakeup grant state as last set by the enumerator via <a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1control__endpoint_1ac160e35623831f23f7876995e10877ae"><span class="std std-ref">remote_wakeup_enable</span></a>. Returns <code class="docutils literal notranslate"><span class="pre">false</span></code> by default if not overridden by the driver.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true - the host has granted remote wakeup permission </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>false - remote wakeup permission has not been granted, was revoked, or the hardware isn’t capable of performing a wake K-state on the bus. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb16control_endpoint17acknowledge_sleepEb">
+<span id="_CPPv3N3hal2v53usb16control_endpoint17acknowledge_sleepEb"></span><span id="_CPPv2N3hal2v53usb16control_endpoint17acknowledge_sleepEb"></span><span id="hal::v5::usb::control_endpoint::acknowledge_sleep__b"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1control__endpoint_1a3f370b2acbec17a65744619b3c14d280"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">acknowledge_sleep</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_accept</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb16control_endpoint17acknowledge_sleepEb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Accept or reject an incoming L1 LPM sleep request from the host. </p>
+<p>Called by the enumerator when an LPM token is received from the host requesting the device enter the L1 (sleep) power state. The implementation must respond to the host by either acknowledging or rejecting the transition.</p>
+<p>Accepting the request causes the hardware to enter L1 sleep, after which the enumerator dispatches <code class="docutils literal notranslate"><span class="pre">bus_event::sleep</span></code> to all registered interfaces. Rejecting the request keeps the device in L0 (active) state and no event is dispatched.</p>
+<p>This function is invoked exclusively by the enumerator and must not be called directly by interface implementors or application code.</p>
+<p>This API does nothing if not implemented</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_accept</strong> – - <code class="docutils literal notranslate"><span class="pre">true</span></code> to acknowledge the L1 sleep request and allow the device to enter L1; <code class="docutils literal notranslate"><span class="pre">false</span></code> to reject it and remain in L0. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb16control_endpoint12supports_lpmEv">
+<span id="_CPPv3N3hal2v53usb16control_endpoint12supports_lpmEv"></span><span id="_CPPv2N3hal2v53usb16control_endpoint12supports_lpmEv"></span><span id="hal::v5::usb::control_endpoint::supports_lpm"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1control__endpoint_1ab81157351103a339804eb2e4b730c8ad"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">lpm_support</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">supports_lpm</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb16control_endpoint12supports_lpmEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Query which USB Link Power Management states the hardware supports. </p>
+<p>The enumerator calls this during enumeration to determine which LPM capability descriptors to include. For USB 2.0, a Binary Object Store (BOS) descriptor advertising L1 support is included only when <code class="docutils literal notranslate"><span class="pre">lpm_support::l1_supported()</span></code> is true. For USB 3.x, U1/U2 capability descriptors follow the same pattern. If no bits are set the relevant descriptors are omitted and the host will never enter those link states, meaning <code class="docutils literal notranslate"><a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1control__endpoint_1a3f370b2acbec17a65744619b3c14d280"><span class="std std-ref"><span class="pre">acknowledge_sleep()</span></span></a></code> will never be called.</p>
+<p>Implementations should return a compile-time or hardware-register-derived constant. The result must remain stable for the lifetime of the <code class="docutils literal notranslate"><a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1control__endpoint"><span class="std std-ref"><span class="pre">control_endpoint</span></span></a></code> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>lpm_support - bitmask of supported LPM states; defaults to an all-zero value (no LPM support) if not overridden by the driver. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb16control_endpoint14on_receive_tagE">
+<span id="_CPPv3N3hal2v53usb16control_endpoint14on_receive_tagE"></span><span id="_CPPv2N3hal2v53usb16control_endpoint14on_receive_tagE"></span><span id="hal::v5::usb::control_endpoint::on_receive_tag"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1control__endpoint_1_1on__receive__tag"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">on_receive_tag</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb16control_endpoint14on_receive_tagE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb11in_endpointE">
+<span id="_CPPv3N3hal2v53usb11in_endpointE"></span><span id="_CPPv2N3hal2v53usb11in_endpointE"></span><span id="hal::v5::usb::in_endpoint"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1in__endpoint"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">in_endpoint</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">v5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">usb</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">endpoint</span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb11in_endpointE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The generic USB IN Endpoint Interface. </p>
+<p>This class represents a generic IN endpoint of a USB device. It does not specify the exact endpoint type. This interface is a convince interface for common APIs. It is not meant to be used directly by drivers. Use the interfaces that inherit from this interface. </p>
+<p>Subclassed by <a class="reference internal" href="#structhal_1_1v5_1_1usb_1_1bulk__in__endpoint"><span class="std std-ref">hal::v5::usb::bulk_in_endpoint</span></a>, <a class="reference internal" href="#structhal_1_1v5_1_1usb_1_1interrupt__in__endpoint"><span class="std std-ref">hal::v5::usb::interrupt_in_endpoint</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb11in_endpoint5writeE12scatter_spanIK4byteE">
+<span id="_CPPv3N3hal2v53usb11in_endpoint5writeE12scatter_spanIK4byteE"></span><span id="_CPPv2N3hal2v53usb11in_endpoint5writeE12scatter_spanIK4byteE"></span><span id="hal::v5::usb::in_endpoint::write__scatter_span:byteC:"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1in__endpoint_1a64680ae1972931d96ac2ee3f9d8d7f4e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="scatter_span.html#_CPPv4I0EN3hal2v512scatter_spanE" title="hal::v5::scatter_span"><span class="n"><span class="pre">scatter_span</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">byte</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_data</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb11in_endpoint5writeE12scatter_spanIK4byteE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Write data to the control endpoint’s memory. </p>
+<p>This API will copy the contents of the span of byte spans into the endpoint memory. When the endpoint memory is full, this API will ACK the next HOST IN packet and the data in the endpoint will be transmitted. This is repeated until no more data is left. To finish the transfer of data, call <code class="docutils literal notranslate"><span class="pre">flush()</span></code> OR call this API with an empty p_data field:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="o">++</span>
+<span class="n">usb</span><span class="p">.</span><span class="n">write</span><span class="p">({});</span><span class="w"> </span><span class="c1">// Finishes the transfer with an ZLP or the last of the data</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_data</strong> – - a scatter span of bytes to be written to the endpoint memory and sent over USB. </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">operation_not_permitted</span></span></span> – - if the USB is suspended and a write is attempted. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12out_endpointE">
+<span id="_CPPv3N3hal2v53usb12out_endpointE"></span><span id="_CPPv2N3hal2v53usb12out_endpointE"></span><span id="hal::v5::usb::out_endpoint"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1out__endpoint"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">out_endpoint</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">v5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">usb</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">endpoint</span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb12out_endpointE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The generic USB OUT Endpoint Interface. </p>
+<p>This class represents a generic OUT endpoint of a USB device. It does not specify the exact endpoint type. This interface is a convince interface for common APIs. It is not meant to be used directly by drivers. Use the interfaces that inherit from this interface. </p>
+<p>Subclassed by <a class="reference internal" href="#structhal_1_1v5_1_1usb_1_1bulk__out__endpoint"><span class="std std-ref">hal::v5::usb::bulk_out_endpoint</span></a>, <a class="reference internal" href="#structhal_1_1v5_1_1usb_1_1interrupt__out__endpoint"><span class="std std-ref">hal::v5::usb::interrupt_out_endpoint</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12out_endpoint10on_receiveERK8callbackIFv14on_receive_tagEE">
+<span id="_CPPv3N3hal2v53usb12out_endpoint10on_receiveERK8callbackIFv14on_receive_tagEE"></span><span id="_CPPv2N3hal2v53usb12out_endpoint10on_receiveERK8callbackIFv14on_receive_tagEE"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1out__endpoint_1a2f805db3217d243a1796b0b8c58cdc65"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">on_receive</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="functional.html#_CPPv4I0E8callback" title="callback"><span class="n"><span class="pre">callback</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#_CPPv4N3hal2v53usb12out_endpoint14on_receive_tagE" title="hal::v5::usb::out_endpoint::on_receive_tag"><span class="n"><span class="pre">on_receive_tag</span></span></a><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_callback</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb12out_endpoint10on_receiveERK8callbackIFv14on_receive_tagEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set a callback for when data is available on the endpoint. </p>
+<p>After this callback is called, the endpoint shall be set to NAK all requests from the HOST until the contents are read via the <a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1out__endpoint_1aba7f8b1117bed0b0d38ee2c49f596ea9"><span class="std std-ref">read()</span></a> API. Once all data has been read from the endpoint, will this endpoint become valid once again and can ACK the host if it wants to transmit more data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_callback</strong> – - The callback function to be called when data is available in the endpoint. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12out_endpoint4readE12scatter_spanI4byteE">
+<span id="_CPPv3N3hal2v53usb12out_endpoint4readE12scatter_spanI4byteE"></span><span id="_CPPv2N3hal2v53usb12out_endpoint4readE12scatter_spanI4byteE"></span><span id="hal::v5::usb::out_endpoint::read__scatter_span:byte:"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1out__endpoint_1aba7f8b1117bed0b0d38ee2c49f596ea9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">usize</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="scatter_span.html#_CPPv4I0EN3hal2v512scatter_spanE" title="hal::v5::scatter_span"><span class="n"><span class="pre">scatter_span</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">byte</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_buffer</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb12out_endpoint4readE12scatter_spanI4byteE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Read contents of endpoint. </p>
+<p>This API is not to be assumed to be callable from within the <code class="docutils literal notranslate"><span class="pre">on_receive</span></code> callback.</p>
+<p>When data is available in the endpoint, the endpoint will be configured to NAK all following HOST packet requests. When all data from the endpoint has been read, the endpoint will become valid again and can ACK the HOST packets.</p>
+<p>If a caller wants to drain all of the data from the endpoint’s memory, then the caller should continually call read until it returns an empty span.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_buffer</strong> – - buffer to fill with data </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>usize - the same buffer that was passed into the read function but with its size equal to the number of bytes read from the OUT endpoint. The size will be 0 if no more data was present in the endpoint. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12out_endpoint14on_receive_tagE">
+<span id="_CPPv3N3hal2v53usb12out_endpoint14on_receive_tagE"></span><span id="_CPPv2N3hal2v53usb12out_endpoint14on_receive_tagE"></span><span id="hal::v5::usb::out_endpoint::on_receive_tag"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1out__endpoint_1_1on__receive__tag"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">on_receive_tag</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb12out_endpoint14on_receive_tagE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb21interrupt_in_endpointE">
+<span id="_CPPv3N3hal2v53usb21interrupt_in_endpointE"></span><span id="_CPPv2N3hal2v53usb21interrupt_in_endpointE"></span><span id="hal::v5::usb::interrupt_in_endpoint"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1interrupt__in__endpoint"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">interrupt_in_endpoint</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">v5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">usb</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">in_endpoint</span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb21interrupt_in_endpointE" title="Link to this definition">#</a><br /></dt>
+<dd><p>USB Interrupt IN Endpoint Interface. </p>
+<p>This class represents an interrupt IN endpoint of a USB device. Interrupt IN endpoints are used for small, time-sensitive data transfers from the device to the host.</p>
+<p>Use cases:<ul class="simple">
+<li><p>Sending periodic status updates</p></li>
+<li><p>Transmitting small amounts of data with guaranteed latency</p></li>
+<li><p>Ideal for devices like keyboards, mice, or game controllers </p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb22interrupt_out_endpointE">
+<span id="_CPPv3N3hal2v53usb22interrupt_out_endpointE"></span><span id="_CPPv2N3hal2v53usb22interrupt_out_endpointE"></span><span id="hal::v5::usb::interrupt_out_endpoint"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1interrupt__out__endpoint"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">interrupt_out_endpoint</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">v5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">usb</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">out_endpoint</span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb22interrupt_out_endpointE" title="Link to this definition">#</a><br /></dt>
+<dd><p>USB Interrupt OUT Endpoint Interface. </p>
+<p>This class represents an interrupt OUT endpoint of a USB device. Interrupt OUT endpoints are used for small, time-sensitive data transfers from the host to the device.</p>
+<p>Use cases:<ul class="simple">
+<li><p>Receiving periodic commands or settings</p></li>
+<li><p>Handling small amounts of data with guaranteed latency</p></li>
+<li><p>Ideal for devices that need quick responses to host commands </p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb16bulk_in_endpointE">
+<span id="_CPPv3N3hal2v53usb16bulk_in_endpointE"></span><span id="_CPPv2N3hal2v53usb16bulk_in_endpointE"></span><span id="hal::v5::usb::bulk_in_endpoint"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1bulk__in__endpoint"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bulk_in_endpoint</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">v5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">usb</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">in_endpoint</span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb16bulk_in_endpointE" title="Link to this definition">#</a><br /></dt>
+<dd><p>USB Bulk IN Endpoint Interface. </p>
+<p>This class represents a bulk IN endpoint of a USB device. Bulk IN endpoints are used for large, non-time-critical data transfers from the device to the host.</p>
+<p>Use cases:<ul class="simple">
+<li><p>Transferring large amounts of data</p></li>
+<li><p>Sending data when timing is not critical</p></li>
+<li><p>Ideal for devices like printers, scanners, or external storage </p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb17bulk_out_endpointE">
+<span id="_CPPv3N3hal2v53usb17bulk_out_endpointE"></span><span id="_CPPv2N3hal2v53usb17bulk_out_endpointE"></span><span id="hal::v5::usb::bulk_out_endpoint"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1bulk__out__endpoint"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bulk_out_endpoint</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">v5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">usb</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">out_endpoint</span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb17bulk_out_endpointE" title="Link to this definition">#</a><br /></dt>
+<dd><p>USB Bulk OUT Endpoint Interface. </p>
+<p>This class represents a bulk OUT endpoint of a USB device. Bulk OUT endpoints are used for large, non-time-critical data transfers from the host to the device.</p>
+<p>Use cases:<ul class="simple">
+<li><p>Receiving large amounts of data</p></li>
+<li><p>Handling data when timing is not critical</p></li>
+<li><p>Ideal for devices like printers, scanners, or external storage </p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12setup_packetE">
+<span id="_CPPv3N3hal2v53usb12setup_packetE"></span><span id="_CPPv2N3hal2v53usb12setup_packetE"></span><span id="hal::v5::usb::setup_packet"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setup_packet</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb12setup_packetE" title="Link to this definition">#</a><br /></dt>
+<dd><p>USB Setup Request packet definition. </p>
+<p>This structure represents the standard 8-byte USB setup packet that is sent by the host to initiate control transfers. Setup packets are used for device enumeration, configuration, and various control operations as defined by the USB specification.</p>
+<p>The setup packet format follows the USB specification exactly:<ul class="simple">
+<li><p>Byte 0: bmRequestType (direction, type, and recipient)</p></li>
+<li><p>Byte 1: bRequest (specific request code)</p></li>
+<li><p>Bytes 2-3: wValue (request-specific value, little-endian)</p></li>
+<li><p>Bytes 4-5: wIndex (request-specific index, little-endian)</p></li>
+<li><p>Bytes 6-7: wLength (data phase length, little-endian) </p></li>
+</ul>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12setup_packet12request_typeE">
+<span id="_CPPv3N3hal2v53usb12setup_packet12request_typeE"></span><span id="_CPPv2N3hal2v53usb12setup_packet12request_typeE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a0c7178a002f1522efada67d888961b6e"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">request_type</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">byte</span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb12setup_packet12request_typeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Request type classification for setup packets. </p>
+<p>Defines the type of USB request as specified in bits 6-5 of bmRequestType. This determines how the request should be interpreted and who is responsible for handling it. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12setup_packet12request_type8standardE">
+<span id="_CPPv3N3hal2v53usb12setup_packet12request_type8standardE"></span><span id="_CPPv2N3hal2v53usb12setup_packet12request_type8standardE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a0c7178a002f1522efada67d888961b6eac00f0c4675b91fb8b918e4079a0b1bac"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">standard</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb12setup_packet12request_type8standardE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Standard USB requests defined by the USB specification (e.g., GET_DESCRIPTOR) </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12setup_packet12request_type7class_tE">
+<span id="_CPPv3N3hal2v53usb12setup_packet12request_type7class_tE"></span><span id="_CPPv2N3hal2v53usb12setup_packet12request_type7class_tE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a0c7178a002f1522efada67d888961b6eafef99a6be2fd3f98a038c819173683ee"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">class_t</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb12setup_packet12request_type7class_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Class-specific requests defined by USB device classes (e.g., HID, CDC, MSC) </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12setup_packet12request_type6vendorE">
+<span id="_CPPv3N3hal2v53usb12setup_packet12request_type6vendorE"></span><span id="_CPPv2N3hal2v53usb12setup_packet12request_type6vendorE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a0c7178a002f1522efada67d888961b6ea7c3613dba5171cb6027c67835dd3b9d4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vendor</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb12setup_packet12request_type6vendorE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Vendor-specific requests for custom functionality. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12setup_packet12request_type7invalidE">
+<span id="_CPPv3N3hal2v53usb12setup_packet12request_type7invalidE"></span><span id="_CPPv2N3hal2v53usb12setup_packet12request_type7invalidE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a0c7178a002f1522efada67d888961b6eafedb2d84cafe20862cb4399751a8a7e3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">invalid</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb12setup_packet12request_type7invalidE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Invalid or reserved request type. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12setup_packet17request_recipientE">
+<span id="_CPPv3N3hal2v53usb12setup_packet17request_recipientE"></span><span id="_CPPv2N3hal2v53usb12setup_packet17request_recipientE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a519e9ac97537feeb6bfad33e5f01713e"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">request_recipient</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">byte</span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb12setup_packet17request_recipientE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Request recipient classification for setup packets. </p>
+<p>Defines the target of the USB request as specified in bits 4-0 of bmRequestType. This determines which component of the USB device should handle the request. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12setup_packet17request_recipient6deviceE">
+<span id="_CPPv3N3hal2v53usb12setup_packet17request_recipient6deviceE"></span><span id="_CPPv2N3hal2v53usb12setup_packet17request_recipient6deviceE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a519e9ac97537feeb6bfad33e5f01713ea913f9c49dcb544e2087cee284f4a00b7"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">device</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb12setup_packet17request_recipient6deviceE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Request targets the entire device (e.g., SET_ADDRESS, GET_CONFIGURATION) </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12setup_packet17request_recipient9interfaceE">
+<span id="_CPPv3N3hal2v53usb12setup_packet17request_recipient9interfaceE"></span><span id="_CPPv2N3hal2v53usb12setup_packet17request_recipient9interfaceE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a519e9ac97537feeb6bfad33e5f01713ea8eb58dd5e328e978169c7b0cbd30d43f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">interface</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb12setup_packet17request_recipient9interfaceE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Request targets a specific interface (e.g., SET_INTERFACE, class requests) </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12setup_packet17request_recipient8endpointE">
+<span id="_CPPv3N3hal2v53usb12setup_packet17request_recipient8endpointE"></span><span id="_CPPv2N3hal2v53usb12setup_packet17request_recipient8endpointE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a519e9ac97537feeb6bfad33e5f01713eaad65d91ba5fc5f4494e00822c04e583b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">endpoint</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb12setup_packet17request_recipient8endpointE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Request targets a specific endpoint (e.g., CLEAR_FEATURE on endpoint) </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12setup_packet17request_recipient7invalidE">
+<span id="_CPPv3N3hal2v53usb12setup_packet17request_recipient7invalidE"></span><span id="_CPPv2N3hal2v53usb12setup_packet17request_recipient7invalidE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a519e9ac97537feeb6bfad33e5f01713eafedb2d84cafe20862cb4399751a8a7e3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">invalid</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb12setup_packet17request_recipient7invalidE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Invalid or reserved recipient. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12setup_packet12setup_packetE4args">
+<span id="_CPPv3N3hal2v53usb12setup_packet12setup_packetE4args"></span><span id="_CPPv2N3hal2v53usb12setup_packet12setup_packetE4args"></span><span id="hal::v5::usb::setup_packet::setup_packet__argsCE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a1897491e11e0af0b59a52a775b2bfdc1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setup_packet</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal2v53usb12setup_packet4argsE" title="hal::v5::usb::setup_packet::args"><span class="n"><span class="pre">args</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb12setup_packet12setup_packetE4args" title="Link to this definition">#</a><br /></dt>
+<dd><p>Construct setup packet from semantic components. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_args</strong> – Arguments for the individual fields of the packet </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12setup_packet12setup_packetERKNSt5arrayI4byteXL8EEEE">
+<span id="_CPPv3N3hal2v53usb12setup_packet12setup_packetERKNSt5arrayI4byteXL8EEEE"></span><span id="_CPPv2N3hal2v53usb12setup_packet12setup_packetERKNSt5arrayI4byteX8EEE"></span><span id="hal::v5::usb::setup_packet::setup_packet__std::array:byte.8:CRCE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a6dd449c57a493c1c8303de8bc6e21e9e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setup_packet</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">byte</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">8</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_raw_req</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb12setup_packet12setup_packetERKNSt5arrayI4byteXL8EEEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Construct setup packet from raw USB data. </p>
+<p>Parses an 8-byte setup packet received from the USB host. This constructor handles the little-endian byte ordering conversion for multi-byte fields. This is typically used when processing setup packets received from the control endpoint.</p>
+<p>
+Raw packet format:<ul class="simple">
+<li><p>p_raw_req[0]: bmRequestType</p></li>
+<li><p>p_raw_req[1]: bRequest</p></li>
+<li><p>p_raw_req[2-3]: wValue (little-endian)</p></li>
+<li><p>p_raw_req[4-5]: wIndex (little-endian)</p></li>
+<li><p>p_raw_req[6-7]: wLength (little-endian) </p></li>
+</ul>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_raw_req</strong> – 8-byte span containing the raw setup packet data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v53usb12setup_packet8get_typeEv">
+<span id="_CPPv3NK3hal2v53usb12setup_packet8get_typeEv"></span><span id="_CPPv2NK3hal2v53usb12setup_packet8get_typeEv"></span><span id="hal::v5::usb::setup_packet::get_typeCCE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a58c25411c504f292582eaa720e6eab43"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal2v53usb12setup_packet12request_typeE" title="hal::v5::usb::setup_packet::request_type"><span class="n"><span class="pre">request_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_type</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v53usb12setup_packet8get_typeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Extract the request type from bmRequestType field. </p>
+<p>Parses bits 6-5 of the bmRequestType byte to determine if this is a standard, class, or vendor-specific request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>type The request type, or type::invalid if bits indicate reserved value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v53usb12setup_packet13get_recipientEv">
+<span id="_CPPv3NK3hal2v53usb12setup_packet13get_recipientEv"></span><span id="_CPPv2NK3hal2v53usb12setup_packet13get_recipientEv"></span><span id="hal::v5::usb::setup_packet::get_recipientCCE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a2266f904a8945fcb56dd5fb42319d38b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal2v53usb12setup_packet17request_recipientE" title="hal::v5::usb::setup_packet::request_recipient"><span class="n"><span class="pre">request_recipient</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_recipient</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v53usb12setup_packet13get_recipientEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Extract the request recipient from bmRequestType field. </p>
+<p>Parses bits 4-0 of the bmRequestType byte to determine the target component for this request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>recipient The request recipient, or recipient::invalid if bits indicate reserved value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v53usb12setup_packet17is_device_to_hostEv">
+<span id="_CPPv3NK3hal2v53usb12setup_packet17is_device_to_hostEv"></span><span id="_CPPv2NK3hal2v53usb12setup_packet17is_device_to_hostEv"></span><span id="hal::v5::usb::setup_packet::is_device_to_hostCCE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1ac529c8dc5ba777851d4ef3d2948002f6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_device_to_host</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v53usb12setup_packet17is_device_to_hostEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Check the data phase direction of the request. </p>
+<p>Examines bit 7 of bmRequestType to determine the direction of data transfer in the data phase (if wLength &gt; 0).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if data flows from device to host (IN direction) </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>false if data flows from host to device (OUT direction) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v53usb12setup_packet5valueEv">
+<span id="_CPPv3NK3hal2v53usb12setup_packet5valueEv"></span><span id="_CPPv2NK3hal2v53usb12setup_packet5valueEv"></span><span id="hal::v5::usb::setup_packet::valueCCE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a5a6e36aecae2c9686e2e9062e784602a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">u16</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">value</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v53usb12setup_packet5valueEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get wValue field in native endianness for program use. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v53usb12setup_packet11value_bytesEv">
+<span id="_CPPv3NK3hal2v53usb12setup_packet11value_bytesEv"></span><span id="_CPPv2NK3hal2v53usb12setup_packet11value_bytesEv"></span><span id="hal::v5::usb::setup_packet::value_bytesCCE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a22a226fbffddb0049a7d2703614e8e96"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">byte</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">value_bytes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v53usb12setup_packet11value_bytesEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get wValue field as raw LE bytes for USB bus transmission. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v53usb12setup_packet5indexEv">
+<span id="_CPPv3NK3hal2v53usb12setup_packet5indexEv"></span><span id="_CPPv2NK3hal2v53usb12setup_packet5indexEv"></span><span id="hal::v5::usb::setup_packet::indexCCE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1ae96e002a65b7c4405861626b61477897"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">u16</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">index</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v53usb12setup_packet5indexEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get wIndex field in native endianness for program use. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v53usb12setup_packet11index_bytesEv">
+<span id="_CPPv3NK3hal2v53usb12setup_packet11index_bytesEv"></span><span id="_CPPv2NK3hal2v53usb12setup_packet11index_bytesEv"></span><span id="hal::v5::usb::setup_packet::index_bytesCCE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1ab11fa4b485ac9ca5033affbb461edd1a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">byte</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">index_bytes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v53usb12setup_packet11index_bytesEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get wIndex field as raw LE bytes for USB bus transmission. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v53usb12setup_packet6lengthEv">
+<span id="_CPPv3NK3hal2v53usb12setup_packet6lengthEv"></span><span id="_CPPv2NK3hal2v53usb12setup_packet6lengthEv"></span><span id="hal::v5::usb::setup_packet::lengthCCE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a608c9cb7a2bc127998691b003d452797"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">u16</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">length</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v53usb12setup_packet6lengthEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get wLength field in native endianness for program use. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3hal2v53usb12setup_packet12length_bytesEv">
+<span id="_CPPv3NK3hal2v53usb12setup_packet12length_bytesEv"></span><span id="_CPPv2NK3hal2v53usb12setup_packet12length_bytesEv"></span><span id="hal::v5::usb::setup_packet::length_bytesCCE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a3cd6547c139a9751febffc321a11b178"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">byte</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">length_bytes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v53usb12setup_packet12length_bytesEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get wLength field as raw LE bytes for USB bus transmission. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12setup_packet5valueE3u16">
+<span id="_CPPv3N3hal2v53usb12setup_packet5valueE3u16"></span><span id="_CPPv2N3hal2v53usb12setup_packet5valueE3u16"></span><span id="hal::v5::usb::setup_packet::value__u16CE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a40b1054bee74a0583564d28aea04e2f0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">value</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">u16</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb12setup_packet5valueE3u16" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set wValue field from native endianness value (stored as LE) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12setup_packet5indexE3u16">
+<span id="_CPPv3N3hal2v53usb12setup_packet5indexE3u16"></span><span id="_CPPv2N3hal2v53usb12setup_packet5indexE3u16"></span><span id="hal::v5::usb::setup_packet::index__u16CE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1acf9022d81896589bf6e6009366d3e945"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">index</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">u16</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_index</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb12setup_packet5indexE3u16" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set wIndex field from native endianness value (stored as LE) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12setup_packet6lengthE3u16">
+<span id="_CPPv3N3hal2v53usb12setup_packet6lengthE3u16"></span><span id="_CPPv2N3hal2v53usb12setup_packet6lengthE3u16"></span><span id="hal::v5::usb::setup_packet::length__u16CE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a878357cb2d6317c328c22cd15f412f9a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">length</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">u16</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_length</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb12setup_packet6lengthE3u16" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set wLength field from native endianness value (stored as LE) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_5usizeEN3hal2v53usb12setup_packet10set_le_u16Ev3u16">
+<span id="_CPPv3I_5usizeEN3hal2v53usb12setup_packet10set_le_u16E3u16"></span><span id="_CPPv2I_5usizeEN3hal2v53usb12setup_packet10set_le_u16E3u16"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">usize</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">offset</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a3ed232a61ce51241df6e6e4e258913d5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_le_u16</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">u16</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_5usizeEN3hal2v53usb12setup_packet10set_le_u16Ev3u16" title="Link to this definition">#</a><br /></dt>
+<dd><p>Emplace a 16 bit value into the internal <a class="reference internal" href="#structhal_1_1v5_1_1usb_1_1setup__packet"><span class="std std-ref">setup_packet</span></a> array at a given offset in little endian form. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>offset</strong> – - The offset into the setup packet array (Array after the offset needs to be at least two bytes)</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>p_value</strong> – - 16-bit value to emplace </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12setup_packet13from_le_bytesEN3hal4byteEN3hal4byteE">
+<span id="_CPPv3N3hal2v53usb12setup_packet13from_le_bytesEN3hal4byteEN3hal4byteE"></span><span id="_CPPv2N3hal2v53usb12setup_packet13from_le_bytesEN3hal4byteEN3hal4byteE"></span><span id="hal::v5::usb::setup_packet::from_le_bytes__hal::byte.hal::byteCE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1a66e138feb03308ae499871e159fe5df4"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">u16</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">from_le_bytes</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">byte</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_first</span></span>, <span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">byte</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_second</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb12setup_packet13from_le_bytesEN3hal4byteEN3hal4byteE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Convert two bytes from little-endian to host byte order. </p>
+<p>Helper function to combine two bytes in little-endian format into a 16-bit value in host byte order. Used internally for parsing multi-byte fields from raw USB data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p_first</strong> – Low byte (least significant) </p></li>
+<li><p><strong>p_second</strong> – High byte (most significant) </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>u16 Combined 16-bit value in host byte order </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12setup_packet9to_le_u16E3u16">
+<span id="_CPPv3N3hal2v53usb12setup_packet9to_le_u16E3u16"></span><span id="_CPPv2N3hal2v53usb12setup_packet9to_le_u16E3u16"></span><span id="hal::v5::usb::setup_packet::to_le_u16__u16CE"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1aef1a0dae4327fe30c283ee28d59c01c5"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">byte</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">to_le_u16</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">u16</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb12setup_packet9to_le_u16E3u16" title="Link to this definition">#</a><br /></dt>
+<dd><p>Convert 16-bit value to little-endian byte array. </p>
+<p>Helper function to convert a 16-bit value into two bytes in little-endian format. Used when constructing USB descriptor data or response packets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_value</strong> – 16-bit value to convert </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>std::array&lt;hal::byte, 2&gt; Array with low byte first, high byte second </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb12setup_packet4argsE">
+<span id="_CPPv3N3hal2v53usb12setup_packet4argsE"></span><span id="_CPPv2N3hal2v53usb12setup_packet4argsE"></span><span id="hal::v5::usb::setup_packet::args"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1setup__packet_1_1args"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">args</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb12setup_packet4argsE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Argument struct for building a setup packet from scratch. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Request type (standard, class, or vendor) </p>
+</dd>
+<dt class="field-even">Param recipient<span class="colon">:</span></dt>
+<dd class="field-even"><p>Request recipient (device, interface, or endpoint) </p>
+</dd>
+<dt class="field-odd">Param request<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bRequest field value </p>
+</dd>
+<dt class="field-even">Param value<span class="colon">:</span></dt>
+<dd class="field-even"><p>wValue field value </p>
+</dd>
+<dt class="field-odd">Param index<span class="colon">:</span></dt>
+<dd class="field-odd"><p>wIndex field value </p>
+</dd>
+<dt class="field-even">Param length<span class="colon">:</span></dt>
+<dd class="field-even"><p>wLength field value (data phase length) </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb9interfaceE">
+<span id="_CPPv3N3hal2v53usb9interfaceE"></span><span id="_CPPv2N3hal2v53usb9interfaceE"></span><span id="hal::v5::usb::interface"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1interface"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">interface</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb9interfaceE" title="Link to this definition">#</a><br /></dt>
+<dd><p>USB Interface class for implementing specific USB device functionality. </p>
+<p>This class represents a USB interface, which defines a specific function or capability of a USB device. Examples include HID devices (keyboards, mice), audio devices, storage devices, or communication devices.</p>
+<p>A USB interface is designed to be anything under a configuration, typically this will be at the interface level but could also be multiple USB interface descriptors that are associated for a given functionality.</p>
+<p>It is responsible for:<ul class="simple">
+<li><p>Providing its own descriptors during enumeration</p></li>
+<li><p>Managing string descriptors for its functionality</p></li>
+<li><p>Handling interface-specific and endpoint-specific USB requests</p></li>
+<li><p>Implementing the specific protocol or behavior of the interface type </p></li>
+</ul>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb9interface17write_descriptorsE16descriptor_startR11endpoint_io">
+<span id="_CPPv3N3hal2v53usb9interface17write_descriptorsE16descriptor_startR11endpoint_io"></span><span id="_CPPv2N3hal2v53usb9interface17write_descriptorsE16descriptor_startR11endpoint_io"></span><span id="hal::v5::usb::interface::write_descriptors__descriptor_start.endpoint_ioR"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1interface_1a39d554c385f4cf299174fcd4e6561518"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal2v53usb9interface16descriptor_countE" title="hal::v5::usb::interface::descriptor_count"><span class="n"><span class="pre">descriptor_count</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write_descriptors</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal2v53usb9interface16descriptor_startE" title="hal::v5::usb::interface::descriptor_start"><span class="n"><span class="pre">descriptor_start</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_start</span></span>, <span class="n"><span class="pre">endpoint_io</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_endpoint</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb9interface17write_descriptorsE16descriptor_startR11endpoint_io" title="Link to this definition">#</a><br /></dt>
+<dd><p>Writes descriptors that this interface is responsible for via the endpoint I/O interface. This function may be called multiple times during (re)enumeration. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p_start</strong> – - the starting values for interface numbers and string indexes. The <code class="docutils literal notranslate"><span class="pre">string</span></code> field should be cached by the interface in order to allow <code class="docutils literal notranslate"><span class="pre">write_string_descriptor</span></code> to work correctly. </p></li>
+<li><p><strong>p_endpoint</strong> – - endpoint I/O interface used to write descriptor data to the host. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb9interface23write_string_descriptorE2u8R11endpoint_io">
+<span id="_CPPv3N3hal2v53usb9interface23write_string_descriptorE2u8R11endpoint_io"></span><span id="_CPPv2N3hal2v53usb9interface23write_string_descriptorE2u8R11endpoint_io"></span><span id="hal::v5::usb::interface::write_string_descriptor__u8.endpoint_ioR"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1interface_1a0fff1226d9c4872797a7124ecda41a71"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write_string_descriptor</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">u8</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_index</span></span>, <span class="n"><span class="pre">endpoint_io</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_endpoint</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb9interface23write_string_descriptorE2u8R11endpoint_io" title="Link to this definition">#</a><br /></dt>
+<dd><p>Write a specific string descriptor. </p>
+<p>Invoked to write a string given a specific index that the interface is responsible for. The string will be written in the encoding of UTF-16LE.</p>
+<p>The interface must have evaluated all string indexes by invoking <a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1interface_1a39d554c385f4cf299174fcd4e6561518"><span class="std std-ref">write_descriptors()</span></a> to properly identify its string descriptors. String descriptors use the USB string descriptor format with length and descriptor type fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p_index</strong> – - Which string index’s descriptor should be written. </p></li>
+<li><p><strong>p_endpoint</strong> – - endpoint I/O interface used to write the string descriptor to the host.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true - if the string was located and written via the endpoint I/O. </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>false - if the string requested does not belong to this interface. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb9interface14handle_requestERK12setup_packetR11endpoint_io">
+<span id="_CPPv3N3hal2v53usb9interface14handle_requestERK12setup_packetR11endpoint_io"></span><span id="_CPPv2N3hal2v53usb9interface14handle_requestERK12setup_packetR11endpoint_io"></span><span id="hal::v5::usb::interface::handle_request__setup_packetCR.endpoint_ioR"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1interface_1a3b25a876d271a29ce54af254c966688a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">handle_request</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal2v53usb12setup_packetE" title="hal::v5::usb::setup_packet"><span class="n"><span class="pre">setup_packet</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_setup</span></span>, <span class="n"><span class="pre">endpoint_io</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_endpoint</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb9interface14handle_requestERK12setup_packetR11endpoint_io" title="Link to this definition">#</a><br /></dt>
+<dd><p>Handle USB requests directed to this interface or its endpoints. </p>
+<p>This method is called when the USB device receives a setup packet that may target this interface (interface-specific requests) or one of its endpoints (endpoint-specific requests). The interface should examine the setup packet and handle any requests it recognizes. If the setup packet is not for this interface, this API must return false.</p>
+<p>The interface must handle:</p>
+<p><ul class="simple">
+<li><p>Standard requests specific to this interface type</p></li>
+<li><p>Class-specific requests defined by the interface’s USB class</p></li>
+<li><p>Vendor-specific requests for custom functionality</p></li>
+<li><p>Endpoint-specific requests for its endpoints</p></li>
+</ul>
+</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">endpoint_io</span></code> object is constructed by the enumerator to provide limited access to the control endpoint.</p>
+<p>If the request has a data phase (wLength &gt; 0), use the endpoint I/O interface to send data from device-to-host via the <code class="docutils literal notranslate"><span class="pre">write</span></code> API or receive data from host-to-device via the <code class="docutils literal notranslate"><span class="pre">read</span></code> API.</p>
+<p>When a new setup packet is received from the HOST, the enumerator ensures that <code class="docutils literal notranslate"><a class="reference internal" href="error.html#structhal_1_1operation__not__permitted"><span class="std std-ref"><span class="pre">hal::operation_not_permitted</span></span></a></code> is thrown from all <code class="docutils literal notranslate"><span class="pre">endpoint_io</span></code> APIs. Implementations of <code class="docutils literal notranslate"><span class="pre">driver_handle_request</span></code> MUST NOT catch this exception; it must propagate to the enumerator for handling. Correct use of RAII to undo state changes is advised. If cleanup requires a catch block, the exception must be rethrown via <code class="docutils literal notranslate"><span class="pre">throw;</span></code> before exiting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p_setup</strong> – - Setup request from the host. </p></li>
+<li><p><strong>p_endpoint</strong> – - endpoint I/O interface for reading or writing data to the host via the control endpoint during the data phase of the control transfer. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">operation_not_permitted</span></span></span> – - If a new setup packet is received before the current control transfer completes. This exception must not be caught by the implementation; it is intended for the enumerator. </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true - if the request was handled by the interface. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>false - if the request could not be handled by interface. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb9interface17handle_host_eventE10host_event">
+<span id="_CPPv3N3hal2v53usb9interface17handle_host_eventE10host_event"></span><span id="_CPPv2N3hal2v53usb9interface17handle_host_eventE10host_event"></span><span id="hal::v5::usb::interface::handle_host_event__host_event"></span><span class="target" id="classhal_1_1v5_1_1usb_1_1interface_1aecf0afe1d36c10e211e884b3b83b8c4a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">handle_host_event</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">host_event</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_event</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v53usb9interface17handle_host_eventE10host_event" title="Link to this definition">#</a><br /></dt>
+<dd><p>Respond to bus-level host events dispatched by the enumerator. </p>
+<p>Called by the enumerator after it has processed a host_event and updated its own state. Implementations that need to react to power transitions, suspend/resume, or bus reset should override this method.</p>
+<p><code class="docutils literal notranslate"><span class="pre">host_event::setup_packet</span></code> and <code class="docutils literal notranslate"><span class="pre">host_event::data_packet</span></code> are consumed internally by the enumerator and are never forwarded here.</p>
+<p>This method is called from the enumerator’s main context, not from interrupt context.</p>
+<p><strong>Event-specific guidance:</strong></p>
+<p><ul class="simple">
+<li><p>host_event::reset — Discard all pending transfer state. The enumerator will re-run enumeration and re-initialize all descriptors before normal operation resumes.</p></li>
+<li><p>host_event::enumerated — The enumerator has completed enumeration and is ready for normal operation. Interfaces may begin queuing data to their endpoints.</p></li>
+<li><p>host_event::suspend_with_wakeup — The bus has entered L2/U3 suspend and the host has granted remote wakeup capability. The interface may trigger a wakeup by writing to any IN endpoint; the endpoint driver handles remote wakeup signaling internally.</p></li>
+<li><p>host_event::suspend_without_wakeup — The bus has entered L2/U3 suspend without remote wakeup capability. The interface must not attempt to initiate wakeup. Any IN endpoint write attempted during this state will throw <a class="reference internal" href="error.html#structhal_1_1operation__not__permitted"><span class="std std-ref">hal::operation_not_permitted</span></a>, as the device has no means to deliver data or signal the host to resume.</p></li>
+<li><p>host_event::resume — The bus has returned to L0/U0 active state from any sleep or suspend condition. Normal endpoint operation may resume.</p></li>
+<li><p>host_event::sleep — The host has granted an L1 LPM sleep request. Cease queuing data to endpoints. Any pending IN writes will block until the bus resumes.</p></li>
+<li><p>host_event::u1_sleep / host_event::u2_sleep — USB 3.0+ U1/U2 link power states entered. Behavior mirrors <code class="docutils literal notranslate"><span class="pre">sleep</span></code> for interface purposes.</p></li>
+</ul>
+</p>
+<p>The default implementation is a no-op.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_event</strong> – The host event that occurred. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb9interface16descriptor_countE">
+<span id="_CPPv3N3hal2v53usb9interface16descriptor_countE"></span><span id="_CPPv2N3hal2v53usb9interface16descriptor_countE"></span><span id="hal::v5::usb::interface::descriptor_count"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1interface_1_1descriptor__count"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">descriptor_count</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb9interface16descriptor_countE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Encapsulates the number of interface and string descriptors. </p>
+<p>This structure is returned by <a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1interface_1a39d554c385f4cf299174fcd4e6561518"><span class="std std-ref">write_descriptors()</span></a> to inform the USB configuration how many descriptors were written and how many resources (interface numbers and string indices) were consumed. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb9interface16descriptor_count9interfaceE">
+<span id="_CPPv3N3hal2v53usb9interface16descriptor_count9interfaceE"></span><span id="_CPPv2N3hal2v53usb9interface16descriptor_count9interfaceE"></span><span id="hal::v5::usb::interface::descriptor_count::interface__u8"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1interface_1_1descriptor__count_1a864c128468a97a114e5768944296a72f"></span><span class="n"><span class="pre">u8</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">interface</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb9interface16descriptor_count9interfaceE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Number of interface descriptors written by this interface. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb9interface16descriptor_count6stringE">
+<span id="_CPPv3N3hal2v53usb9interface16descriptor_count6stringE"></span><span id="_CPPv2N3hal2v53usb9interface16descriptor_count6stringE"></span><span id="hal::v5::usb::interface::descriptor_count::string__u8"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1interface_1_1descriptor__count_1a49b9c14a6dda11f8a30095f454180bee"></span><span class="n"><span class="pre">u8</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">string</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb9interface16descriptor_count6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Number of string descriptors provided by this interface. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb9interface16descriptor_startE">
+<span id="_CPPv3N3hal2v53usb9interface16descriptor_startE"></span><span id="_CPPv2N3hal2v53usb9interface16descriptor_startE"></span><span id="hal::v5::usb::interface::descriptor_start"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1interface_1_1descriptor__start"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">descriptor_start</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb9interface16descriptor_startE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Starting indices for interface numbers and string descriptors. </p>
+<p>This structure is passed to <a class="reference internal" href="#classhal_1_1v5_1_1usb_1_1interface_1a39d554c385f4cf299174fcd4e6561518"><span class="std std-ref">write_descriptors()</span></a> to inform the interface what numbering it should use for its descriptors. The interface must use sequential numbering starting from these values. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb9interface16descriptor_start9interfaceE">
+<span id="_CPPv3N3hal2v53usb9interface16descriptor_start9interfaceE"></span><span id="_CPPv2N3hal2v53usb9interface16descriptor_start9interfaceE"></span><span id="hal::v5::usb::interface::descriptor_start::interface__std::optional:u8:"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1interface_1_1descriptor__start_1acfe522bc0f2b4ae86409e7374456c271"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">optional</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">u8</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">interface</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb9interface16descriptor_start9interfaceE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Defines the starting index value for this interface. For example, if this usb interface contains two sub interfaces, then the interface number should be <code class="docutils literal notranslate"><span class="pre">interface</span></code> and the second should be <code class="docutils literal notranslate"><span class="pre">interface</span> <span class="pre">+</span> <span class="pre">1</span></code>. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal2v53usb9interface16descriptor_start6stringE">
+<span id="_CPPv3N3hal2v53usb9interface16descriptor_start6stringE"></span><span id="_CPPv2N3hal2v53usb9interface16descriptor_start6stringE"></span><span id="hal::v5::usb::interface::descriptor_start::string__std::optional:u8:"></span><span class="target" id="structhal_1_1v5_1_1usb_1_1interface_1_1descriptor__start_1a728bbc8e3781b631e3a0a3cb70d4b131"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">optional</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">u8</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">string</span></span></span><a class="headerlink" href="#_CPPv4N3hal2v53usb9interface16descriptor_start6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Defines the starting index value for this interface’s strings. For example, if this usb interface has 3 strings, then the starting ID for those strings would be this value. String 1 would be this value, then string 2 would be <code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">+</span> <span class="pre">1</span></code> and string 3 would be <code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">+</span> <span class="pre">2</span></code>. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="timer.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Timer</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="containers.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">libhal Containers</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-interface">Hardware Interface</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb13endpoint_infoE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::endpoint_info</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb13endpoint_info12in_directionEv"><code class="docutils literal notranslate"><span class="pre">in_direction()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb13endpoint_info14logical_numberEv"><code class="docutils literal notranslate"><span class="pre">logical_number()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb13endpoint_info4sizeE"><code class="docutils literal notranslate"><span class="pre">size</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb13endpoint_info6numberE"><code class="docutils literal notranslate"><span class="pre">number</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb13endpoint_info7stalledE"><code class="docutils literal notranslate"><span class="pre">stalled</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb8endpointE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::endpoint</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v53usb8endpoint4infoEv"><code class="docutils literal notranslate"><span class="pre">info()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb8endpoint5stallEb"><code class="docutils literal notranslate"><span class="pre">stall()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb8endpoint5resetEv"><code class="docutils literal notranslate"><span class="pre">reset()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb16control_endpointE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::control_endpoint</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb16control_endpoint7connectEb"><code class="docutils literal notranslate"><span class="pre">connect()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb16control_endpoint11set_addressE2u8"><code class="docutils literal notranslate"><span class="pre">set_address()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb16control_endpoint5writeE12scatter_spanIK4byteE"><code class="docutils literal notranslate"><span class="pre">write()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb16control_endpoint4readE12scatter_spanI4byteE"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb16control_endpoint10on_receiveERK8callbackIFv14on_receive_tagEE"><code class="docutils literal notranslate"><span class="pre">on_receive()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v53usb16control_endpoint9has_setupEv"><code class="docutils literal notranslate"><span class="pre">has_setup()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb16control_endpoint12on_bus_eventERKN3hal8callbackIFv9bus_eventEEE"><code class="docutils literal notranslate"><span class="pre">on_bus_event()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb16control_endpoint20remote_wakeup_enableEb"><code class="docutils literal notranslate"><span class="pre">remote_wakeup_enable()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb16control_endpoint21remote_wakeup_grantedEv"><code class="docutils literal notranslate"><span class="pre">remote_wakeup_granted()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb16control_endpoint17acknowledge_sleepEb"><code class="docutils literal notranslate"><span class="pre">acknowledge_sleep()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb16control_endpoint12supports_lpmEv"><code class="docutils literal notranslate"><span class="pre">supports_lpm()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb16control_endpoint14on_receive_tagE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::control_endpoint::on_receive_tag</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb11in_endpointE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::in_endpoint</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb11in_endpoint5writeE12scatter_spanIK4byteE"><code class="docutils literal notranslate"><span class="pre">write()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12out_endpointE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::out_endpoint</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12out_endpoint10on_receiveERK8callbackIFv14on_receive_tagEE"><code class="docutils literal notranslate"><span class="pre">on_receive()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12out_endpoint4readE12scatter_spanI4byteE"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12out_endpoint14on_receive_tagE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::out_endpoint::on_receive_tag</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb21interrupt_in_endpointE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::interrupt_in_endpoint</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb22interrupt_out_endpointE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::interrupt_out_endpoint</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb16bulk_in_endpointE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::bulk_in_endpoint</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb17bulk_out_endpointE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::bulk_out_endpoint</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12setup_packetE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::setup_packet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12setup_packet12request_typeE"><code class="docutils literal notranslate"><span class="pre">request_type</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12setup_packet12request_type8standardE"><code class="docutils literal notranslate"><span class="pre">standard</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12setup_packet12request_type7class_tE"><code class="docutils literal notranslate"><span class="pre">class_t</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12setup_packet12request_type6vendorE"><code class="docutils literal notranslate"><span class="pre">vendor</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12setup_packet12request_type7invalidE"><code class="docutils literal notranslate"><span class="pre">invalid</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12setup_packet17request_recipientE"><code class="docutils literal notranslate"><span class="pre">request_recipient</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12setup_packet17request_recipient6deviceE"><code class="docutils literal notranslate"><span class="pre">device</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12setup_packet17request_recipient9interfaceE"><code class="docutils literal notranslate"><span class="pre">interface</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12setup_packet17request_recipient8endpointE"><code class="docutils literal notranslate"><span class="pre">endpoint</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12setup_packet17request_recipient7invalidE"><code class="docutils literal notranslate"><span class="pre">invalid</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12setup_packet12setup_packetE4args"><code class="docutils literal notranslate"><span class="pre">setup_packet()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12setup_packet12setup_packetERKNSt5arrayI4byteXL8EEEE"><code class="docutils literal notranslate"><span class="pre">setup_packet()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v53usb12setup_packet8get_typeEv"><code class="docutils literal notranslate"><span class="pre">get_type()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v53usb12setup_packet13get_recipientEv"><code class="docutils literal notranslate"><span class="pre">get_recipient()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v53usb12setup_packet17is_device_to_hostEv"><code class="docutils literal notranslate"><span class="pre">is_device_to_host()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v53usb12setup_packet5valueEv"><code class="docutils literal notranslate"><span class="pre">value()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v53usb12setup_packet11value_bytesEv"><code class="docutils literal notranslate"><span class="pre">value_bytes()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v53usb12setup_packet5indexEv"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v53usb12setup_packet11index_bytesEv"><code class="docutils literal notranslate"><span class="pre">index_bytes()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v53usb12setup_packet6lengthEv"><code class="docutils literal notranslate"><span class="pre">length()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal2v53usb12setup_packet12length_bytesEv"><code class="docutils literal notranslate"><span class="pre">length_bytes()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12setup_packet5valueE3u16"><code class="docutils literal notranslate"><span class="pre">value()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12setup_packet5indexE3u16"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12setup_packet6lengthE3u16"><code class="docutils literal notranslate"><span class="pre">length()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_5usizeEN3hal2v53usb12setup_packet10set_le_u16Ev3u16"><code class="docutils literal notranslate"><span class="pre">set_le_u16()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12setup_packet13from_le_bytesEN3hal4byteEN3hal4byteE"><code class="docutils literal notranslate"><span class="pre">from_le_bytes()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12setup_packet9to_le_u16E3u16"><code class="docutils literal notranslate"><span class="pre">to_le_u16()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb12setup_packet4argsE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::setup_packet::args</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb9interfaceE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::interface</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb9interface17write_descriptorsE16descriptor_startR11endpoint_io"><code class="docutils literal notranslate"><span class="pre">write_descriptors()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb9interface23write_string_descriptorE2u8R11endpoint_io"><code class="docutils literal notranslate"><span class="pre">write_string_descriptor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb9interface14handle_requestERK12setup_packetR11endpoint_io"><code class="docutils literal notranslate"><span class="pre">handle_request()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb9interface17handle_host_eventE10host_event"><code class="docutils literal notranslate"><span class="pre">handle_host_event()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb9interface16descriptor_countE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::interface::descriptor_count</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb9interface16descriptor_count9interfaceE"><code class="docutils literal notranslate"><span class="pre">interface</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb9interface16descriptor_count6stringE"><code class="docutils literal notranslate"><span class="pre">string</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb9interface16descriptor_startE"><code class="docutils literal notranslate"><span class="pre">hal::v5::usb::interface::descriptor_start</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb9interface16descriptor_start9interfaceE"><code class="docutils literal notranslate"><span class="pre">interface</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal2v53usb9interface16descriptor_start6stringE"><code class="docutils literal notranslate"><span class="pre">string</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/usb.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
