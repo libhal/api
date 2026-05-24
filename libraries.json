@@ -41,6 +41,10 @@
         "url": "https://libhal.github.io/api/libhal/4.21.0"
       },
       {
+        "version": "4.22.0",
+        "url": "https://libhal.github.io/api/libhal/4.22.0"
+      },
+      {
         "version": "main",
         "url": "https://libhal.github.io/api/libhal/main"
       }
@@ -90,6 +94,16 @@
       }
     ],
     "latest_url": "https://libhal.github.io/api/libhal-mac/main"
+  },
+  {
+    "name": "libhal-picosdk",
+    "versions": [
+      {
+        "version": "main",
+        "url": "https://libhal.github.io/api/libhal-picosdk/main"
+      }
+    ],
+    "latest_url": "https://libhal.github.io/api/libhal-picosdk/main"
   },
   {
     "name": "libhal-util",
