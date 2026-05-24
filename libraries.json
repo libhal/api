@@ -99,6 +99,10 @@
         "url": "https://libhal.github.io/api/libhal-util/5.4.3"
       },
       {
+        "version": "5.9.1",
+        "url": "https://libhal.github.io/api/libhal-util/5.9.1"
+      },
+      {
         "version": "main",
         "url": "https://libhal.github.io/api/libhal-util/main"
       }
