@@ -10,5 +10,9 @@
     {
         "version": "0.1.8",
         "url": "https://libhal.github.io/api/strong_ptr/0.1.8"
+    },
+    {
+        "version": "0.2.0",
+        "url": "https://libhal.github.io/api/strong_ptr/0.2.0"
     }
 ]
