@@ -27,25 +27,25 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
     <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'stm32f411/dma';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.17.1';
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/libhal-arm-mcu/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -308,11 +308,18 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
         </div>
       
       
@@ -332,11 +339,18 @@
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
     </div>
   
 
@@ -510,37 +524,14 @@
 <h1>STM32F411 DMA APIs<a class="headerlink" href="#stm32f411-dma-apis" title="Link to this heading">#</a></h1>
 <p>Defined in namespace <code class="docutils literal notranslate"><span class="pre">hal::stm32f411</span></code></p>
 <p><em>#include &lt;libhal-arm-mcu/stm32f411/dma.hpp&gt;</em></p>
-<dl class="cpp enum-class">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113dmaE">
-<span id="_CPPv3N3hal9stm32f4113dmaE"></span><span id="_CPPv2N3hal9stm32f4113dmaE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2dma_8hpp_1ae96fd40cc5d66dbfe65d592d60f870f6"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">stm32f411</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">dma</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">u8</span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113dmaE" title="Link to this definition">#</a><br /></dt>
-<dd><p><em>Values:</em></p>
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113dma4dma1E">
-<span id="_CPPv3N3hal9stm32f4113dma4dma1E"></span><span id="_CPPv2N3hal9stm32f4113dma4dma1E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2dma_8hpp_1ae96fd40cc5d66dbfe65d592d60f870f6a4373713bcb21bd6dd730e0a630751477"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma1</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113dma4dma1E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4113dma4dma2E">
-<span id="_CPPv3N3hal9stm32f4113dma4dma2E"></span><span id="_CPPv2N3hal9stm32f4113dma4dma2E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2dma_8hpp_1ae96fd40cc5d66dbfe65d592d60f870f6ad032c4364c8fe0d43986a4a00608b2c2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dma2</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f4113dma4dma2E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41123set_dma_memory_transferE3dmaKNSt4spanIK4byteEEKNSt4spanI4byteEE">
-<span id="_CPPv3N3hal9stm32f41123set_dma_memory_transferE3dmaKNSt4spanIK4byteEEKNSt4spanI4byteEE"></span><span id="_CPPv2N3hal9stm32f41123set_dma_memory_transferE3dmaKNSt4spanIK4byteEEKNSt4spanI4byteEE"></span><span id="hal::stm32f411::set_dma_memory_transfer__dma.std::span:byteC:C.std::span:byte:C"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2dma_8hpp_1ad512182075bae92b908ef9fee1db7a93"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">stm32f411</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">set_dma_memory_transfer</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal9stm32f4113dmaE" title="hal::stm32f411::dma"><span class="n"><span class="pre">dma</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_dma</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">byte</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_source</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">byte</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_destination</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal9stm32f41123set_dma_memory_transferE3dmaKNSt4spanIK4byteEEKNSt4spanI4byteEE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Sets up the DMA memory to memory transfer mode. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>p_dma</strong> – Select DMA </p></li>
-<li><p><strong>p_source</strong> – source span of bytes </p></li>
-<li><p><strong>p_destination</strong> – destination span of bytes </p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenenum: Cannot find enum “hal::stm32f411::dma” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Cannot find function “hal::stm32f411::set_dma_memory_transfer” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
+</div>
 </section>
 
 
@@ -583,23 +574,6 @@
 
 
   <div class="sidebar-secondary-item">
-<div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113dmaE"><code class="docutils literal notranslate"><span class="pre">dma</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113dma4dma1E"><code class="docutils literal notranslate"><span class="pre">dma1</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4113dma4dma2E"><code class="docutils literal notranslate"><span class="pre">dma2</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41123set_dma_memory_transferE3dmaKNSt4spanIK4byteEEKNSt4spanI4byteEE"><code class="docutils literal notranslate"><span class="pre">set_dma_memory_transfer()</span></code></a></li>
-</ul>
-  </nav></div>
-
-  <div class="sidebar-secondary-item">
 
   <div class="tocsection sourcelink">
     <a href="../_sources/stm32f411/dma.md.txt">
@@ -621,8 +595,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -646,7 +620,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
 </p></div>
       
     </div>

@@ -27,25 +27,25 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
     <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'stm32f411/clock';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.17.1';
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/libhal-arm-mcu/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -308,11 +308,18 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
         </div>
       
       
@@ -332,11 +339,18 @@
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
     </div>
   
 
@@ -512,301 +526,50 @@
 <h2><code class="docutils literal notranslate"><span class="pre">hal::stm32f411::clock_tree</span></code><a class="headerlink" href="#hal-stm32f411-clock-tree" title="Link to this heading">#</a></h2>
 <p>Defined in namespace <code class="docutils literal notranslate"><span class="pre">hal::stm32f411</span></code></p>
 <p><em>#include &lt;libhal-arm-mcu/stm32f411/clock.hpp&gt;</em></p>
-<dl class="cpp enum-class">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111ahb_dividerE">
-<span id="_CPPv3N3hal9stm32f41111ahb_dividerE"></span><span id="_CPPv2N3hal9stm32f41111ahb_dividerE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a72136195536e16de4d0d6569aec71d38"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">stm32f411</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ahb_divider</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">u8</span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111ahb_dividerE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Available dividers for the AHB bus. </p>
-<p><em>Values:</em></p>
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111ahb_divider11divide_by_1E">
-<span id="_CPPv3N3hal9stm32f41111ahb_divider11divide_by_1E"></span><span id="_CPPv2N3hal9stm32f41111ahb_divider11divide_by_1E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a72136195536e16de4d0d6569aec71d38aab08360b1a0fce39139b0577794fec8d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by_1</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111ahb_divider11divide_by_1E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111ahb_divider11divide_by_2E">
-<span id="_CPPv3N3hal9stm32f41111ahb_divider11divide_by_2E"></span><span id="_CPPv2N3hal9stm32f41111ahb_divider11divide_by_2E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a72136195536e16de4d0d6569aec71d38a87516f71d9dfac7ebcec15432c39376a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by_2</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111ahb_divider11divide_by_2E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111ahb_divider11divide_by_4E">
-<span id="_CPPv3N3hal9stm32f41111ahb_divider11divide_by_4E"></span><span id="_CPPv2N3hal9stm32f41111ahb_divider11divide_by_4E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a72136195536e16de4d0d6569aec71d38a9885b5be950a2568eef77c40fe0fea2c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by_4</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111ahb_divider11divide_by_4E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111ahb_divider11divide_by_8E">
-<span id="_CPPv3N3hal9stm32f41111ahb_divider11divide_by_8E"></span><span id="_CPPv2N3hal9stm32f41111ahb_divider11divide_by_8E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a72136195536e16de4d0d6569aec71d38acc24759391f467b1104f9f399e192e3f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by_8</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111ahb_divider11divide_by_8E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111ahb_divider12divide_by_16E">
-<span id="_CPPv3N3hal9stm32f41111ahb_divider12divide_by_16E"></span><span id="_CPPv2N3hal9stm32f41111ahb_divider12divide_by_16E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a72136195536e16de4d0d6569aec71d38a7a8752a1365d0bdf26642da278267f6c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by_16</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111ahb_divider12divide_by_16E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111ahb_divider12divide_by_64E">
-<span id="_CPPv3N3hal9stm32f41111ahb_divider12divide_by_64E"></span><span id="_CPPv2N3hal9stm32f41111ahb_divider12divide_by_64E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a72136195536e16de4d0d6569aec71d38a426b055827b42b808cfce39bccfe4032"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by_64</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111ahb_divider12divide_by_64E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111ahb_divider13divide_by_128E">
-<span id="_CPPv3N3hal9stm32f41111ahb_divider13divide_by_128E"></span><span id="_CPPv2N3hal9stm32f41111ahb_divider13divide_by_128E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a72136195536e16de4d0d6569aec71d38a6861b391bb64a2d9ea4c79235b961171"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by_128</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111ahb_divider13divide_by_128E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111ahb_divider13divide_by_256E">
-<span id="_CPPv3N3hal9stm32f41111ahb_divider13divide_by_256E"></span><span id="_CPPv2N3hal9stm32f41111ahb_divider13divide_by_256E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a72136195536e16de4d0d6569aec71d38a75956c48f70f1721c708b892dc3b1777"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by_256</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111ahb_divider13divide_by_256E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111ahb_divider13divide_by_512E">
-<span id="_CPPv3N3hal9stm32f41111ahb_divider13divide_by_512E"></span><span id="_CPPv2N3hal9stm32f41111ahb_divider13divide_by_512E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a72136195536e16de4d0d6569aec71d38a3e99224c6f41878909fef6e1d882428e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by_512</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111ahb_divider13divide_by_512E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="cpp enum-class">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111apb_dividerE">
-<span id="_CPPv3N3hal9stm32f41111apb_dividerE"></span><span id="_CPPv2N3hal9stm32f41111apb_dividerE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a40a482de59344dd6cb9303c740204936"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">stm32f411</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">apb_divider</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">u8</span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111apb_dividerE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Available dividers for the APB bus. </p>
-<p><em>Values:</em></p>
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111apb_divider11divide_by_1E">
-<span id="_CPPv3N3hal9stm32f41111apb_divider11divide_by_1E"></span><span id="_CPPv2N3hal9stm32f41111apb_divider11divide_by_1E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a40a482de59344dd6cb9303c740204936aab08360b1a0fce39139b0577794fec8d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by_1</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111apb_divider11divide_by_1E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111apb_divider11divide_by_2E">
-<span id="_CPPv3N3hal9stm32f41111apb_divider11divide_by_2E"></span><span id="_CPPv2N3hal9stm32f41111apb_divider11divide_by_2E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a40a482de59344dd6cb9303c740204936a87516f71d9dfac7ebcec15432c39376a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by_2</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111apb_divider11divide_by_2E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111apb_divider11divide_by_4E">
-<span id="_CPPv3N3hal9stm32f41111apb_divider11divide_by_4E"></span><span id="_CPPv2N3hal9stm32f41111apb_divider11divide_by_4E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a40a482de59344dd6cb9303c740204936a9885b5be950a2568eef77c40fe0fea2c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by_4</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111apb_divider11divide_by_4E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111apb_divider11divide_by_8E">
-<span id="_CPPv3N3hal9stm32f41111apb_divider11divide_by_8E"></span><span id="_CPPv2N3hal9stm32f41111apb_divider11divide_by_8E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a40a482de59344dd6cb9303c740204936acc24759391f467b1104f9f399e192e3f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by_8</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111apb_divider11divide_by_8E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111apb_divider12divide_by_16E">
-<span id="_CPPv3N3hal9stm32f41111apb_divider12divide_by_16E"></span><span id="_CPPv2N3hal9stm32f41111apb_divider12divide_by_16E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a40a482de59344dd6cb9303c740204936a7a8752a1365d0bdf26642da278267f6c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by_16</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111apb_divider12divide_by_16E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="cpp enum-class">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111adc_dividerE">
-<span id="_CPPv3N3hal9stm32f41111adc_dividerE"></span><span id="_CPPv2N3hal9stm32f41111adc_dividerE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a8626b989abcf55028a6452f42a8f239d"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">stm32f411</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">adc_divider</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">u8</span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111adc_dividerE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Available dividers for the ADC bus. </p>
-<p><em>Values:</em></p>
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111adc_divider11divide_by_2E">
-<span id="_CPPv3N3hal9stm32f41111adc_divider11divide_by_2E"></span><span id="_CPPv2N3hal9stm32f41111adc_divider11divide_by_2E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a8626b989abcf55028a6452f42a8f239da87516f71d9dfac7ebcec15432c39376a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by_2</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111adc_divider11divide_by_2E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111adc_divider11divide_by_4E">
-<span id="_CPPv3N3hal9stm32f41111adc_divider11divide_by_4E"></span><span id="_CPPv2N3hal9stm32f41111adc_divider11divide_by_4E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a8626b989abcf55028a6452f42a8f239da9885b5be950a2568eef77c40fe0fea2c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by_4</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111adc_divider11divide_by_4E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111adc_divider11divide_by_6E">
-<span id="_CPPv3N3hal9stm32f41111adc_divider11divide_by_6E"></span><span id="_CPPv2N3hal9stm32f41111adc_divider11divide_by_6E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a8626b989abcf55028a6452f42a8f239daa02a40943e49173d7566f39c255b9693"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by_6</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111adc_divider11divide_by_6E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41111adc_divider11divide_by_8E">
-<span id="_CPPv3N3hal9stm32f41111adc_divider11divide_by_8E"></span><span id="_CPPv2N3hal9stm32f41111adc_divider11divide_by_8E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a8626b989abcf55028a6452f42a8f239dacc24759391f467b1104f9f399e192e3f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by_8</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41111adc_divider11divide_by_8E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="cpp enum-class">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41119system_clock_selectE">
-<span id="_CPPv3N3hal9stm32f41119system_clock_selectE"></span><span id="_CPPv2N3hal9stm32f41119system_clock_selectE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a1cfacb114623aebb02f6b09564ec01ad"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">stm32f411</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">system_clock_select</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">u8</span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41119system_clock_selectE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Available clock sources available for the system clock. </p>
-<p><em>Values:</em></p>
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41119system_clock_select19high_speed_internalE">
-<span id="_CPPv3N3hal9stm32f41119system_clock_select19high_speed_internalE"></span><span id="_CPPv2N3hal9stm32f41119system_clock_select19high_speed_internalE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a1cfacb114623aebb02f6b09564ec01ada8cb8219457a7be7440aabb7d8207fe09"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">high_speed_internal</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41119system_clock_select19high_speed_internalE" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41119system_clock_select19high_speed_externalE">
-<span id="_CPPv3N3hal9stm32f41119system_clock_select19high_speed_externalE"></span><span id="_CPPv2N3hal9stm32f41119system_clock_select19high_speed_externalE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a1cfacb114623aebb02f6b09564ec01adaf809df1abb6f9d9e509b8d79f838f2fd"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">high_speed_external</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41119system_clock_select19high_speed_externalE" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41119system_clock_select3pllE">
-<span id="_CPPv3N3hal9stm32f41119system_clock_select3pllE"></span><span id="_CPPv2N3hal9stm32f41119system_clock_select3pllE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a1cfacb114623aebb02f6b09564ec01adab23e9e4405d0c242f0d6b1c946683384"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pll</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41119system_clock_select3pllE" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="cpp enum-class">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110pll_sourceE">
-<span id="_CPPv3N3hal9stm32f41110pll_sourceE"></span><span id="_CPPv2N3hal9stm32f41110pll_sourceE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a36c7098f14ef32a389923aa5744e1691"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">stm32f411</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">pll_source</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">u8</span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110pll_sourceE" title="Link to this definition">#</a><br /></dt>
-<dd><p><em>Values:</em></p>
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110pll_source19high_speed_internalE">
-<span id="_CPPv3N3hal9stm32f41110pll_source19high_speed_internalE"></span><span id="_CPPv2N3hal9stm32f41110pll_source19high_speed_internalE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a36c7098f14ef32a389923aa5744e1691a8cb8219457a7be7440aabb7d8207fe09"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">high_speed_internal</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110pll_source19high_speed_internalE" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110pll_source19high_speed_externalE">
-<span id="_CPPv3N3hal9stm32f41110pll_source19high_speed_externalE"></span><span id="_CPPv2N3hal9stm32f41110pll_source19high_speed_externalE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a36c7098f14ef32a389923aa5744e1691af809df1abb6f9d9e509b8d79f838f2fd"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">high_speed_external</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110pll_source19high_speed_externalE" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="cpp enum-class">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110rtc_sourceE">
-<span id="_CPPv3N3hal9stm32f41110rtc_sourceE"></span><span id="_CPPv2N3hal9stm32f41110rtc_sourceE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a3c87902b0ffa2020e6eda023255b247b"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">stm32f411</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">rtc_source</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">u8</span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110rtc_sourceE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Available clock sources for the RTC. </p>
-<p><em>Values:</em></p>
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110rtc_source8no_clockE">
-<span id="_CPPv3N3hal9stm32f41110rtc_source8no_clockE"></span><span id="_CPPv2N3hal9stm32f41110rtc_source8no_clockE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a3c87902b0ffa2020e6eda023255b247ba4e2f95e88d298b8db6032e6cf8f40346"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">no_clock</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110rtc_source8no_clockE" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110rtc_source18low_speed_externalE">
-<span id="_CPPv3N3hal9stm32f41110rtc_source18low_speed_externalE"></span><span id="_CPPv2N3hal9stm32f41110rtc_source18low_speed_externalE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a3c87902b0ffa2020e6eda023255b247ba59a6193d01b157bcf76daf80901f1280"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">low_speed_external</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110rtc_source18low_speed_externalE" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110rtc_source18low_speed_internalE">
-<span id="_CPPv3N3hal9stm32f41110rtc_source18low_speed_internalE"></span><span id="_CPPv2N3hal9stm32f41110rtc_source18low_speed_internalE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a3c87902b0ffa2020e6eda023255b247bab52d98bc574593aad8cbbdd745923816"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">low_speed_internal</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110rtc_source18low_speed_internalE" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110rtc_source34high_speed_external_divided_by_128E">
-<span id="_CPPv3N3hal9stm32f41110rtc_source34high_speed_external_divided_by_128E"></span><span id="_CPPv2N3hal9stm32f41110rtc_source34high_speed_external_divided_by_128E"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a3c87902b0ffa2020e6eda023255b247ba970bb555d7605127f3b90a882620f3f2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">high_speed_external_divided_by_128</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110rtc_source34high_speed_external_divided_by_128E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="cpp enum-class">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110i2s_sourceE">
-<span id="_CPPv3N3hal9stm32f41110i2s_sourceE"></span><span id="_CPPv2N3hal9stm32f41110i2s_sourceE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a6e8c20549f59cc3b1facbe7cb4044fe4"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">stm32f411</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">i2s_source</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">u8</span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110i2s_sourceE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Available sources for the I2S clocks. </p>
-<p><em>Values:</em></p>
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110i2s_source11pll_i2s_clkE">
-<span id="_CPPv3N3hal9stm32f41110i2s_source11pll_i2s_clkE"></span><span id="_CPPv2N3hal9stm32f41110i2s_source11pll_i2s_clkE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a6e8c20549f59cc3b1facbe7cb4044fe4aed932cda63f2b7ad27df4b915d804c34"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pll_i2s_clk</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110i2s_source11pll_i2s_clkE" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110i2s_source18i2s_external_clockE">
-<span id="_CPPv3N3hal9stm32f41110i2s_source18i2s_external_clockE"></span><span id="_CPPv2N3hal9stm32f41110i2s_source18i2s_external_clockE"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a6e8c20549f59cc3b1facbe7cb4044fe4ae89d05846f7d59062602a925e237ad9e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i2s_external_clock</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110i2s_source18i2s_external_clockE" title="Link to this definition">#</a><br /></dt>
-<dd><p>External I2S_CKIN pin. </p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110clock_treeE">
-<span id="_CPPv3N3hal9stm32f41110clock_treeE"></span><span id="_CPPv2N3hal9stm32f41110clock_treeE"></span><span id="hal::stm32f411::clock_tree"></span><span class="target" id="structhal_1_1stm32f411_1_1clock__tree"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clock_tree</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110clock_treeE" title="Link to this definition">#</a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110clock_tree19high_speed_externalE">
-<span id="_CPPv3N3hal9stm32f41110clock_tree19high_speed_externalE"></span><span id="_CPPv2N3hal9stm32f41110clock_tree19high_speed_externalE"></span><span id="hal::stm32f411::clock_tree::high_speed_external__hal::hertz"></span><span class="target" id="structhal_1_1stm32f411_1_1clock__tree_1a8f5d231295a03d92158390750ef400e6"></span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">hertz</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">high_speed_external</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="n"><span class="pre">_MHz</span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110clock_tree19high_speed_externalE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Defines the frequency of the high speed external clock signal. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110clock_tree18low_speed_externalE">
-<span id="_CPPv3N3hal9stm32f41110clock_tree18low_speed_externalE"></span><span id="_CPPv2N3hal9stm32f41110clock_tree18low_speed_externalE"></span><span id="hal::stm32f411::clock_tree::low_speed_external__hal::hertz"></span><span class="target" id="structhal_1_1stm32f411_1_1clock__tree_1adf83364c3038bab0d9e0110101d38a06"></span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">hertz</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">low_speed_external</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><span class="n"><span class="pre">_MHz</span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110clock_tree18low_speed_externalE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Defines the frequency of the low speed external clock signal. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110clock_tree12system_clockE">
-<span id="_CPPv3N3hal9stm32f41110clock_tree12system_clockE"></span><span id="_CPPv2N3hal9stm32f41110clock_tree12system_clockE"></span><span id="hal::stm32f411::clock_tree::system_clock__system_clock_select"></span><span class="target" id="structhal_1_1stm32f411_1_1clock__tree_1a237826262772b37b6a534f106982c111"></span><a class="reference internal" href="#_CPPv4N3hal9stm32f41119system_clock_selectE" title="hal::stm32f411::system_clock_select"><span class="n"><span class="pre">system_clock_select</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">system_clock</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal9stm32f41119system_clock_selectE" title="hal::stm32f411::system_clock_select"><span class="n"><span class="pre">system_clock_select</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N3hal9stm32f41119system_clock_select19high_speed_internalE" title="hal::stm32f411::system_clock_select::high_speed_internal"><span class="n"><span class="pre">high_speed_internal</span></span></a><a class="headerlink" href="#_CPPv4N3hal9stm32f41110clock_tree12system_clockE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Defines which clock source will be use for the system. </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>System will lock up in the following situations:<ul class="simple">
-<li><p>Select PLL, but PLL is not enabled</p></li>
-<li><p>Select PLL, but PLL frequency is too high</p></li>
-<li><p>Select High Speed External, but the frequency is kept at 0_Mhz. </p></li>
-</ul>
-</p>
+<p>doxygenenum: Cannot find enum “hal::stm32f411::ahb_divider” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
 </div>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenenum: Cannot find enum “hal::stm32f411::apb_divider” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
 </div>
-<dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110clock_tree5ahb_tE">
-<span id="_CPPv3N3hal9stm32f41110clock_tree5ahb_tE"></span><span id="_CPPv2N3hal9stm32f41110clock_tree5ahb_tE"></span><span id="hal::stm32f411::clock_tree::ahb_t"></span><span class="target" id="structhal_1_1stm32f411_1_1clock__tree_1_1ahb__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ahb_t</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110clock_tree5ahb_tE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Defines the configuration of the dividers beyond system clock mux. </p>
-<dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110clock_tree5ahb_t6apb1_tE">
-<span id="_CPPv3N3hal9stm32f41110clock_tree5ahb_t6apb1_tE"></span><span id="_CPPv2N3hal9stm32f41110clock_tree5ahb_t6apb1_tE"></span><span id="hal::stm32f411::clock_tree::ahb_t::apb1_t"></span><span class="target" id="structhal_1_1stm32f411_1_1clock__tree_1_1ahb__t_1_1apb1__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">apb1_t</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110clock_tree5ahb_t6apb1_tE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Maximum rate of 36 MHz. </p>
-</dd></dl>
-
-<dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110clock_tree5ahb_t6apb2_tE">
-<span id="_CPPv3N3hal9stm32f41110clock_tree5ahb_t6apb2_tE"></span><span id="_CPPv2N3hal9stm32f41110clock_tree5ahb_t6apb2_tE"></span><span id="hal::stm32f411::clock_tree::ahb_t::apb2_t"></span><span class="target" id="structhal_1_1stm32f411_1_1clock__tree_1_1ahb__t_1_1apb2__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">apb2_t</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110clock_tree5ahb_t6apb2_tE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Maximum rate of 72 MHz. </p>
-<dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110clock_tree5ahb_t6apb2_t5adc_tE">
-<span id="_CPPv3N3hal9stm32f41110clock_tree5ahb_t6apb2_t5adc_tE"></span><span id="_CPPv2N3hal9stm32f41110clock_tree5ahb_t6apb2_t5adc_tE"></span><span id="hal::stm32f411::clock_tree::ahb_t::apb2_t::adc_t"></span><span class="target" id="structhal_1_1stm32f411_1_1clock__tree_1_1ahb__t_1_1apb2__t_1_1adc__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">adc_t</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110clock_tree5ahb_t6apb2_t5adc_tE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Maximum of 14 MHz. </p>
-</dd></dl>
-
-</dd></dl>
-
-</dd></dl>
-
-<dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110clock_tree5pll_tE">
-<span id="_CPPv3N3hal9stm32f41110clock_tree5pll_tE"></span><span id="_CPPv2N3hal9stm32f41110clock_tree5pll_tE"></span><span id="hal::stm32f411::clock_tree::pll_t"></span><span class="target" id="structhal_1_1stm32f411_1_1clock__tree_1_1pll__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pll_t</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110clock_tree5pll_tE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Defines the configuration of the PLL. </p>
-</dd></dl>
-
-<dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41110clock_tree5rtc_tE">
-<span id="_CPPv3N3hal9stm32f41110clock_tree5rtc_tE"></span><span id="_CPPv2N3hal9stm32f41110clock_tree5rtc_tE"></span><span id="hal::stm32f411::clock_tree::rtc_t"></span><span class="target" id="structhal_1_1stm32f411_1_1clock__tree_1_1rtc__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rtc_t</span></span></span><a class="headerlink" href="#_CPPv4N3hal9stm32f41110clock_tree5rtc_tE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Defines the configuration for the RTC. </p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41116configure_clocksERK10clock_tree">
-<span id="_CPPv3N3hal9stm32f41116configure_clocksERK10clock_tree"></span><span id="_CPPv2N3hal9stm32f41116configure_clocksERK10clock_tree"></span><span id="hal::stm32f411::configure_clocks__clock_treeCR"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a20d3f59bb0946fc3093b36b2aec9eaa1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">stm32f411</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">configure_clocks</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal9stm32f41110clock_treeE" title="hal::stm32f411::clock_tree"><span class="n"><span class="pre">clock_tree</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_clock_tree</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal9stm32f41116configure_clocksERK10clock_tree" title="Link to this definition">#</a><br /></dt>
-<dd><p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>Figure 12. Clock Tree <a class="reference external" href="https://www.st.com/resource/en/reference_manual/rm0383-stm32f411xce-advanced-armbased-32bit-mcus-stmicroelectronics.pdf#page=93">https://www.st.com/resource/en/reference_manual/rm0383-stm32f411xce-advanced-armbased-32bit-mcus-stmicroelectronics.pdf#page=93</a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenenum: Cannot find enum “hal::stm32f411::adc_divider” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
 </div>
-<dl class="simple">
-<dt><strong>Attention</strong></dt><dd><p>If configuration of the system clocks is desired, one should consult the user manual of the target MCU in use to determine the valid clock configuration values that can/should be used. The configure_clocks() method is only responsible for configuring the clock system based on configurations in the clock_configuration. Incorrect configurations may result in a hard fault or cause the clock system(s) to supply incorrect clock rate(s).</p>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f4119frequencyE10peripheral">
-<span id="_CPPv3N3hal9stm32f4119frequencyE10peripheral"></span><span id="_CPPv2N3hal9stm32f4119frequencyE10peripheral"></span><span id="hal::stm32f411::frequency__peripheral"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a4cb50eb7e9c6e7d2511d61d3916113a8"></span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">hertz</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">stm32f411</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">frequency</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="constants.html#_CPPv4N3hal9stm32f41110peripheralE" title="hal::stm32f411::peripheral"><span class="n"><span class="pre">peripheral</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal9stm32f4119frequencyE10peripheral" title="Link to this definition">#</a><br /></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>the clock rate frequency of a peripheral </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal9stm32f41139maximum_speed_using_internal_oscillatorEv">
-<span id="_CPPv3N3hal9stm32f41139maximum_speed_using_internal_oscillatorEv"></span><span id="_CPPv2N3hal9stm32f41139maximum_speed_using_internal_oscillatorEv"></span><span id="hal::stm32f411::maximum_speed_using_internal_oscillator"></span><span class="target" id="libhal-arm-mcu_2stm32f411_2clock_8hpp_1a80639882b1f586b2463cf9ddd26b5557"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">stm32f411</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">maximum_speed_using_internal_oscillator</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal9stm32f41139maximum_speed_using_internal_oscillatorEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Sets every bus to its maximum possible frequency using the internal oscillator. </p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenenum: Cannot find enum “hal::stm32f411::system_clock_select” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenenum: Cannot find enum “hal::stm32f411::pll_source” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenenum: Cannot find enum “hal::stm32f411::rtc_source” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenenum: Cannot find enum “hal::stm32f411::i2s_source” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenstruct: Cannot find class “hal::stm32f411::clock_tree” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Cannot find function “hal::stm32f411::configure_clocks” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Cannot find function “hal::stm32f411::frequency” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Cannot find function “hal::stm32f411::maximum_speed_using_internal_oscillator” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
+</div>
 </section>
 </section>
 
@@ -857,78 +620,7 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hal-stm32f411-clock-tree"><code class="docutils literal notranslate"><span class="pre">hal::stm32f411::clock_tree</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111ahb_dividerE"><code class="docutils literal notranslate"><span class="pre">ahb_divider</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111ahb_divider11divide_by_1E"><code class="docutils literal notranslate"><span class="pre">divide_by_1</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111ahb_divider11divide_by_2E"><code class="docutils literal notranslate"><span class="pre">divide_by_2</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111ahb_divider11divide_by_4E"><code class="docutils literal notranslate"><span class="pre">divide_by_4</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111ahb_divider11divide_by_8E"><code class="docutils literal notranslate"><span class="pre">divide_by_8</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111ahb_divider12divide_by_16E"><code class="docutils literal notranslate"><span class="pre">divide_by_16</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111ahb_divider12divide_by_64E"><code class="docutils literal notranslate"><span class="pre">divide_by_64</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111ahb_divider13divide_by_128E"><code class="docutils literal notranslate"><span class="pre">divide_by_128</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111ahb_divider13divide_by_256E"><code class="docutils literal notranslate"><span class="pre">divide_by_256</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111ahb_divider13divide_by_512E"><code class="docutils literal notranslate"><span class="pre">divide_by_512</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111apb_dividerE"><code class="docutils literal notranslate"><span class="pre">apb_divider</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111apb_divider11divide_by_1E"><code class="docutils literal notranslate"><span class="pre">divide_by_1</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111apb_divider11divide_by_2E"><code class="docutils literal notranslate"><span class="pre">divide_by_2</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111apb_divider11divide_by_4E"><code class="docutils literal notranslate"><span class="pre">divide_by_4</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111apb_divider11divide_by_8E"><code class="docutils literal notranslate"><span class="pre">divide_by_8</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111apb_divider12divide_by_16E"><code class="docutils literal notranslate"><span class="pre">divide_by_16</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111adc_dividerE"><code class="docutils literal notranslate"><span class="pre">adc_divider</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111adc_divider11divide_by_2E"><code class="docutils literal notranslate"><span class="pre">divide_by_2</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111adc_divider11divide_by_4E"><code class="docutils literal notranslate"><span class="pre">divide_by_4</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111adc_divider11divide_by_6E"><code class="docutils literal notranslate"><span class="pre">divide_by_6</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41111adc_divider11divide_by_8E"><code class="docutils literal notranslate"><span class="pre">divide_by_8</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41119system_clock_selectE"><code class="docutils literal notranslate"><span class="pre">system_clock_select</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41119system_clock_select19high_speed_internalE"><code class="docutils literal notranslate"><span class="pre">high_speed_internal</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41119system_clock_select19high_speed_externalE"><code class="docutils literal notranslate"><span class="pre">high_speed_external</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41119system_clock_select3pllE"><code class="docutils literal notranslate"><span class="pre">pll</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110pll_sourceE"><code class="docutils literal notranslate"><span class="pre">pll_source</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110pll_source19high_speed_internalE"><code class="docutils literal notranslate"><span class="pre">high_speed_internal</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110pll_source19high_speed_externalE"><code class="docutils literal notranslate"><span class="pre">high_speed_external</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110rtc_sourceE"><code class="docutils literal notranslate"><span class="pre">rtc_source</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110rtc_source8no_clockE"><code class="docutils literal notranslate"><span class="pre">no_clock</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110rtc_source18low_speed_externalE"><code class="docutils literal notranslate"><span class="pre">low_speed_external</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110rtc_source18low_speed_internalE"><code class="docutils literal notranslate"><span class="pre">low_speed_internal</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110rtc_source34high_speed_external_divided_by_128E"><code class="docutils literal notranslate"><span class="pre">high_speed_external_divided_by_128</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110i2s_sourceE"><code class="docutils literal notranslate"><span class="pre">i2s_source</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110i2s_source11pll_i2s_clkE"><code class="docutils literal notranslate"><span class="pre">pll_i2s_clk</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110i2s_source18i2s_external_clockE"><code class="docutils literal notranslate"><span class="pre">i2s_external_clock</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110clock_treeE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f411::clock_tree</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110clock_tree19high_speed_externalE"><code class="docutils literal notranslate"><span class="pre">high_speed_external</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110clock_tree18low_speed_externalE"><code class="docutils literal notranslate"><span class="pre">low_speed_external</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110clock_tree12system_clockE"><code class="docutils literal notranslate"><span class="pre">system_clock</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110clock_tree5ahb_tE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f411::clock_tree::ahb_t</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110clock_tree5ahb_t6apb1_tE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f411::clock_tree::ahb_t::apb1_t</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110clock_tree5ahb_t6apb2_tE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f411::clock_tree::ahb_t::apb2_t</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110clock_tree5ahb_t6apb2_t5adc_tE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f411::clock_tree::ahb_t::apb2_t::adc_t</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110clock_tree5pll_tE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f411::clock_tree::pll_t</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41110clock_tree5rtc_tE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f411::clock_tree::rtc_t</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41116configure_clocksERK10clock_tree"><code class="docutils literal notranslate"><span class="pre">configure_clocks()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f4119frequencyE10peripheral"><code class="docutils literal notranslate"><span class="pre">frequency()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal9stm32f41139maximum_speed_using_internal_oscillatorEv"><code class="docutils literal notranslate"><span class="pre">maximum_speed_using_internal_oscillator()</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hal-stm32f411-clock-tree"><code class="docutils literal notranslate"><span class="pre">hal::stm32f411::clock_tree</span></code></a></li>
 </ul>
   </nav></div>
 
@@ -954,8 +646,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -979,7 +671,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
 </p></div>
       
     </div>
