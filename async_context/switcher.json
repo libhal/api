@@ -14,5 +14,9 @@
     {
         "version": "0.0.10",
         "url": "https://libhal.github.io/api/async_context/0.0.10"
+    },
+    {
+        "version": "0.0.11",
+        "url": "https://libhal.github.io/api/async_context/0.0.11"
     }
 ]
