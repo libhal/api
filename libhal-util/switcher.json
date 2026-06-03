@@ -10,5 +10,9 @@
     {
         "version": "5.9.1",
         "url": "https://libhal.github.io/api/libhal-util/5.9.1"
+    },
+    {
+        "version": "5.10.0",
+        "url": "https://libhal.github.io/api/libhal-util/5.10.0"
     }
 ]
