@@ -27,25 +27,25 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
     <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'stm32f1/usb';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.17.1';
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/libhal-arm-mcu/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -308,11 +308,18 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
         </div>
       
       
@@ -332,11 +339,18 @@
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
     </div>
   
 
@@ -528,14 +542,14 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal7stm32f13usb3usbEN3hal2v521strong_ptr_only_tokenERKN3hal2v510strong_ptrIN3hal12steady_clockEEEN3hal13time_durationE">
-<span id="_CPPv3N3hal7stm32f13usb3usbEN3hal2v521strong_ptr_only_tokenERKN3hal2v510strong_ptrIN3hal12steady_clockEEEN3hal13time_durationE"></span><span id="_CPPv2N3hal7stm32f13usb3usbEN3hal2v521strong_ptr_only_tokenERKN3hal2v510strong_ptrIN3hal12steady_clockEEEN3hal13time_durationE"></span><span id="hal::stm32f1::usb::usb__hal::v5::strong_ptr_only_token.hal::v5::strong_ptr:hal::steady_clock:CR.hal::time_duration"></span><span class="target" id="classhal_1_1stm32f1_1_1usb_1a0e46a5965b9cff9c168d8127347a3574"></span><span class="sig-name descname"><span class="n"><span class="pre">usb</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">v5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">strong_ptr_only_token</span></span>, <span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">v5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">strong_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">steady_clock</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_clock</span></span>, <span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">time_duration</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_write_timeout</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">milliseconds</span></span><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">5</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal7stm32f13usb3usbEN3hal2v521strong_ptr_only_tokenERKN3hal2v510strong_ptrIN3hal12steady_clockEEEN3hal13time_durationE" title="Link to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N3hal7stm32f13usb3usbEN3hal2v521strong_ptr_only_tokenERN3hal12steady_clockE9timeout_t">
+<span id="_CPPv3N3hal7stm32f13usb3usbEN3hal2v521strong_ptr_only_tokenERN3hal12steady_clockE9timeout_t"></span><span id="_CPPv2N3hal7stm32f13usb3usbEN3hal2v521strong_ptr_only_tokenERN3hal12steady_clockE9timeout_t"></span><span id="hal::stm32f1::usb::usb__hal::v5::strong_ptr_only_token.hal::steady_clockR.timeout_t"></span><span class="target" id="classhal_1_1stm32f1_1_1usb_1a09273a51e01a8eb1d1581c9609348a61"></span><span class="sig-name descname"><span class="n"><span class="pre">usb</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">v5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">strong_ptr_only_token</span></span>, <span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">steady_clock</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_clock</span></span>, <span class="n"><span class="pre">timeout_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_write_timeout</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">timeout_t</span></span><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">10</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal7stm32f13usb3usbEN3hal2v521strong_ptr_only_tokenERN3hal12steady_clockE9timeout_t" title="Link to this definition">#</a><br /></dt>
 <dd><p>Construct a new usb object. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>p_clock</strong> – - clocked used for detecting endpoint stalls for write operations. This can occur when the device is disconnected, the host has stopped sending OUT packets, or something wrong with the bus. </p></li>
-<li><p><strong>p_write_timeout</strong> – - the amount of time before throwing a timed_out exception for an OUT endpoint with data to transmit but the HOST has not requested it yet. </p></li>
+<li><p><strong>p_clock</strong> – - clocked used for timing parts of the usb initialization. </p></li>
+<li><p><strong>p_write_timeout</strong> – - the amount of milliseconds of time before throwing a timed_out exception for an OUT endpoint with data to transmit but the HOST has not requested it yet. Its max duration is is 255ms. Temporal resolution is +/- 1ms. </p></li>
 </ul>
 </dd>
 </dl>
@@ -596,7 +610,7 @@
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hal-stm32f1-usb"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::usb</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal7stm32f13usbE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::usb</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal7stm32f13usb3usbEN3hal2v521strong_ptr_only_tokenERKN3hal2v510strong_ptrIN3hal12steady_clockEEEN3hal13time_durationE"><code class="docutils literal notranslate"><span class="pre">usb()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal7stm32f13usb3usbEN3hal2v521strong_ptr_only_tokenERN3hal12steady_clockE9timeout_t"><code class="docutils literal notranslate"><span class="pre">usb()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -626,8 +640,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -651,7 +665,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
 </p></div>
       
     </div>
