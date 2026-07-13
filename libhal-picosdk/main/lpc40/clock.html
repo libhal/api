@@ -27,25 +27,25 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
     <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lpc40/clock';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.17.1';
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/libhal-arm-mcu/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -308,11 +308,18 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
         </div>
       
       
@@ -332,11 +339,18 @@
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
     </div>
   
 
@@ -520,324 +534,42 @@
 <h2><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree</span></code><a class="headerlink" href="#hal-lpc40-clock-tree" title="Link to this heading">#</a></h2>
 <p>Defined in namespace <code class="docutils literal notranslate"><span class="pre">hal::lpc40</span></code></p>
 <p><em>#include &lt;libhal-arm-mcu/lpc40/clock.hpp&gt;</em></p>
-<dl class="cpp enum-class">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4016usb_clock_sourceE">
-<span id="_CPPv3N3hal5lpc4016usb_clock_sourceE"></span><span id="_CPPv2N3hal5lpc4016usb_clock_sourceE"></span><span class="target" id="namespacehal_1_1lpc40_1a2559a9a66a8b2b9ad04b24d50c643352"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">lpc40</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">usb_clock_source</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">u8</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4016usb_clock_sourceE" title="Link to this definition">#</a><br /></dt>
-<dd><p>USB oscillator source constants (not used) </p>
-<p><em>Values:</em></p>
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4016usb_clock_source12system_clockE">
-<span id="_CPPv3N3hal5lpc4016usb_clock_source12system_clockE"></span><span id="_CPPv2N3hal5lpc4016usb_clock_source12system_clockE"></span><span class="target" id="namespacehal_1_1lpc40_1a2559a9a66a8b2b9ad04b24d50c643352af55832d9c36b9732cd4a625a7146f00b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">system_clock</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4016usb_clock_source12system_clockE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Use IRC or external oscillator directly. </p>
-</dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4016usb_clock_source4pll0E">
-<span id="_CPPv3N3hal5lpc4016usb_clock_source4pll0E"></span><span id="_CPPv2N3hal5lpc4016usb_clock_source4pll0E"></span><span class="target" id="namespacehal_1_1lpc40_1a2559a9a66a8b2b9ad04b24d50c643352acb0aec9c320ff617c231117260871eb5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pll0</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4016usb_clock_source4pll0E" title="Link to this definition">#</a><br /></dt>
-<dd><p>Use PLL0 main PLL as the clock source. </p>
-</dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4016usb_clock_source4pll1E">
-<span id="_CPPv3N3hal5lpc4016usb_clock_source4pll1E"></span><span id="_CPPv2N3hal5lpc4016usb_clock_source4pll1E"></span><span class="target" id="namespacehal_1_1lpc40_1a2559a9a66a8b2b9ad04b24d50c643352aaaee8712bcb9a79dd2b35abc66d0af2d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pll1</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4016usb_clock_source4pll1E" title="Link to this definition">#</a><br /></dt>
-<dd><p>Use PLL1 alternative PLL as the clock source. </p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="cpp enum-class">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4011usb_dividerE">
-<span id="_CPPv3N3hal5lpc4011usb_dividerE"></span><span id="_CPPv2N3hal5lpc4011usb_dividerE"></span><span class="target" id="namespacehal_1_1lpc40_1aed91d6470d9a94bb4e357b7d19416e69"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">lpc40</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">usb_divider</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">u8</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4011usb_dividerE" title="Link to this definition">#</a><br /></dt>
-<dd><p>USB Clock divider constants. </p>
-<p><em>Values:</em></p>
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4011usb_divider10divide_by1E">
-<span id="_CPPv3N3hal5lpc4011usb_divider10divide_by1E"></span><span id="_CPPv2N3hal5lpc4011usb_divider10divide_by1E"></span><span class="target" id="namespacehal_1_1lpc40_1aed91d6470d9a94bb4e357b7d19416e69aea3ede80028e8a1fd9650f8d0c979650"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by1</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4011usb_divider10divide_by1E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4011usb_divider10divide_by2E">
-<span id="_CPPv3N3hal5lpc4011usb_divider10divide_by2E"></span><span id="_CPPv2N3hal5lpc4011usb_divider10divide_by2E"></span><span class="target" id="namespacehal_1_1lpc40_1aed91d6470d9a94bb4e357b7d19416e69a3654cdc4dd91f44f6403870019c7a3b9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by2</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4011usb_divider10divide_by2E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4011usb_divider10divide_by3E">
-<span id="_CPPv3N3hal5lpc4011usb_divider10divide_by3E"></span><span id="_CPPv2N3hal5lpc4011usb_divider10divide_by3E"></span><span class="target" id="namespacehal_1_1lpc40_1aed91d6470d9a94bb4e357b7d19416e69a0dd2a3a22403269d9079119ef2e1599d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by3</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4011usb_divider10divide_by3E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4011usb_divider10divide_by4E">
-<span id="_CPPv3N3hal5lpc4011usb_divider10divide_by4E"></span><span id="_CPPv2N3hal5lpc4011usb_divider10divide_by4E"></span><span class="target" id="namespacehal_1_1lpc40_1aed91d6470d9a94bb4e357b7d19416e69a74fcd7c5e6602418d200c2501ac52a48"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divide_by4</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4011usb_divider10divide_by4E" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="cpp enum-class">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4018spifi_clock_sourceE">
-<span id="_CPPv3N3hal5lpc4018spifi_clock_sourceE"></span><span id="_CPPv2N3hal5lpc4018spifi_clock_sourceE"></span><span class="target" id="namespacehal_1_1lpc40_1a10411d4b7b90268381d6ff9024380b6a"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">lpc40</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">spifi_clock_source</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">u8</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4018spifi_clock_sourceE" title="Link to this definition">#</a><br /></dt>
-<dd><p>spifi clock options </p>
-<p><em>Values:</em></p>
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4018spifi_clock_source12system_clockE">
-<span id="_CPPv3N3hal5lpc4018spifi_clock_source12system_clockE"></span><span id="_CPPv2N3hal5lpc4018spifi_clock_source12system_clockE"></span><span class="target" id="namespacehal_1_1lpc40_1a10411d4b7b90268381d6ff9024380b6aaf55832d9c36b9732cd4a625a7146f00b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">system_clock</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4018spifi_clock_source12system_clockE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Use IRC or external oscillator directly. </p>
-</dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4018spifi_clock_source4pll0E">
-<span id="_CPPv3N3hal5lpc4018spifi_clock_source4pll0E"></span><span id="_CPPv2N3hal5lpc4018spifi_clock_source4pll0E"></span><span class="target" id="namespacehal_1_1lpc40_1a10411d4b7b90268381d6ff9024380b6aacb0aec9c320ff617c231117260871eb5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pll0</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4018spifi_clock_source4pll0E" title="Link to this definition">#</a><br /></dt>
-<dd><p>Use PLL0 main PLL as the clock source. </p>
-</dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4018spifi_clock_source4pll1E">
-<span id="_CPPv3N3hal5lpc4018spifi_clock_source4pll1E"></span><span id="_CPPv2N3hal5lpc4018spifi_clock_source4pll1E"></span><span class="target" id="namespacehal_1_1lpc40_1a10411d4b7b90268381d6ff9024380b6aaaaee8712bcb9a79dd2b35abc66d0af2d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pll1</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4018spifi_clock_source4pll1E" title="Link to this definition">#</a><br /></dt>
-<dd><p>Use PLL1 alternative PLL as the clock source. </p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="cpp enum-class">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4019flash_configurationE">
-<span id="_CPPv3N3hal5lpc4019flash_configurationE"></span><span id="_CPPv2N3hal5lpc4019flash_configurationE"></span><span class="target" id="namespacehal_1_1lpc40_1aca67b26839d9b1699ccbed5bdaa8e481"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">lpc40</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">flash_configuration</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">u16</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4019flash_configurationE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Defines the codes for the flash access clock cycles required based on the CPU clocks speed. </p>
-<p><em>Values:</em></p>
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4019flash_configuration6clock1E">
-<span id="_CPPv3N3hal5lpc4019flash_configuration6clock1E"></span><span id="_CPPv2N3hal5lpc4019flash_configuration6clock1E"></span><span class="target" id="namespacehal_1_1lpc40_1aca67b26839d9b1699ccbed5bdaa8e481afecd6a930756d9e2293295c5830ff603"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clock1</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4019flash_configuration6clock1E" title="Link to this definition">#</a><br /></dt>
-<dd><p>Flash accesses use 1 CPU clock. Use for up to 20 MHz CPU clock with power boost off. </p>
-</dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4019flash_configuration6clock2E">
-<span id="_CPPv3N3hal5lpc4019flash_configuration6clock2E"></span><span id="_CPPv2N3hal5lpc4019flash_configuration6clock2E"></span><span class="target" id="namespacehal_1_1lpc40_1aca67b26839d9b1699ccbed5bdaa8e481ace593033990cb529467f17ef0b7980db"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clock2</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4019flash_configuration6clock2E" title="Link to this definition">#</a><br /></dt>
-<dd><p>Flash accesses use 2 CPU clocks. Use for up to 40 MHz CPU clock with power boost off. </p>
-</dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4019flash_configuration6clock3E">
-<span id="_CPPv3N3hal5lpc4019flash_configuration6clock3E"></span><span id="_CPPv2N3hal5lpc4019flash_configuration6clock3E"></span><span class="target" id="namespacehal_1_1lpc40_1aca67b26839d9b1699ccbed5bdaa8e481a16731085b5ee22a3e3eb61e64183e959"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clock3</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4019flash_configuration6clock3E" title="Link to this definition">#</a><br /></dt>
-<dd><p>Flash accesses use 3 CPU clocks. Use for up to 60 MHz CPU clock with power boost off. </p>
-</dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4019flash_configuration6clock4E">
-<span id="_CPPv3N3hal5lpc4019flash_configuration6clock4E"></span><span id="_CPPv2N3hal5lpc4019flash_configuration6clock4E"></span><span class="target" id="namespacehal_1_1lpc40_1aca67b26839d9b1699ccbed5bdaa8e481a666557ac0f3eb96a6e7facdb2390851c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clock4</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4019flash_configuration6clock4E" title="Link to this definition">#</a><br /></dt>
-<dd><p>Flash accesses use 4 CPU clocks. Use for up to 80 MHz CPU clock with power boost off. </p>
-</dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4019flash_configuration6clock5E">
-<span id="_CPPv3N3hal5lpc4019flash_configuration6clock5E"></span><span id="_CPPv2N3hal5lpc4019flash_configuration6clock5E"></span><span class="target" id="namespacehal_1_1lpc40_1aca67b26839d9b1699ccbed5bdaa8e481a4220bcc03b4c15977afc606a6cab3180"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clock5</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4019flash_configuration6clock5E" title="Link to this definition">#</a><br /></dt>
-<dd><p>Flash accesses use 5 CPU clocks. Use for up to 100 MHz CPU clock with power boost off. If CPU clock is above 100 MHz, use this but with power boost on. </p>
-</dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4019flash_configuration6clock6E">
-<span id="_CPPv3N3hal5lpc4019flash_configuration6clock6E"></span><span id="_CPPv2N3hal5lpc4019flash_configuration6clock6E"></span><span class="target" id="namespacehal_1_1lpc40_1aca67b26839d9b1699ccbed5bdaa8e481ac3ea945a74a17b40a16ec2ca4362e1f2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clock6</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4019flash_configuration6clock6E" title="Link to this definition">#</a><br /></dt>
-<dd><p>Flash accesses use 6 CPU clocks. “Safe” setting for any allowed conditions. </p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_treeE">
-<span id="_CPPv3N3hal5lpc4010clock_treeE"></span><span id="_CPPv2N3hal5lpc4010clock_treeE"></span><span id="hal::lpc40::clock_tree"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clock_tree</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_treeE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Structure representing the lpc4078 clock tree. </p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree20oscillator_frequencyE">
-<span id="_CPPv3N3hal5lpc4010clock_tree20oscillator_frequencyE"></span><span id="_CPPv2N3hal5lpc4010clock_tree20oscillator_frequencyE"></span><span id="hal::lpc40::clock_tree::oscillator_frequency__hertz"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1a1d10f0538eff8544ef76cb09d199b8f8"></span><span class="n"><span class="pre">hertz</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">oscillator_frequency</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">irc_frequency</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree20oscillator_frequencyE" title="Link to this definition">#</a><br /></dt>
-<dd><p>the frequency of the input oscillator </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree23use_external_oscillatorE">
-<span id="_CPPv3N3hal5lpc4010clock_tree23use_external_oscillatorE"></span><span id="_CPPv2N3hal5lpc4010clock_tree23use_external_oscillatorE"></span><span id="hal::lpc40::clock_tree::use_external_oscillator__b"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1a42588cf2a4dbc503af2321059d45a099"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">use_external_oscillator</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree23use_external_oscillatorE" title="Link to this definition">#</a><br /></dt>
-<dd><p>set to true to use external XTC </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree3pllE">
-<span id="_CPPv3N3hal5lpc4010clock_tree3pllE"></span><span id="_CPPv2N3hal5lpc4010clock_tree3pllE"></span><span id="hal::lpc40::clock_tree::pll__std::array:pll_t.2:"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1adcb1c519e556fbc4d229570994ed631e"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N3hal5lpc4010clock_tree5pll_tE" title="hal::lpc40::clock_tree::pll_t"><span class="n"><span class="pre">pll_t</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pll</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree3pllE" title="Link to this definition">#</a><br /></dt>
-<dd><p>phase locked loops for both pll[0] and pll[1] </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree3cpuE">
-<span id="_CPPv3N3hal5lpc4010clock_tree3cpuE"></span><span id="_CPPv2N3hal5lpc4010clock_tree3cpuE"></span><span id="hal::lpc40::clock_tree::cpu__cpu_t"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1af4e76fb60c078cb3fc48109ecafc3533"></span><a class="reference internal" href="#_CPPv4N3hal5lpc4010clock_tree5cpu_tE" title="hal::lpc40::clock_tree::cpu_t"><span class="n"><span class="pre">cpu_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cpu</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree3cpuE" title="Link to this definition">#</a><br /></dt>
-<dd><p>cpu clock control </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree3usbE">
-<span id="_CPPv3N3hal5lpc4010clock_tree3usbE"></span><span id="_CPPv2N3hal5lpc4010clock_tree3usbE"></span><span id="hal::lpc40::clock_tree::usb__usb_t"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1a07cb4e3538348ea293e2e44a271a7bfe"></span><a class="reference internal" href="#_CPPv4N3hal5lpc4010clock_tree5usb_tE" title="hal::lpc40::clock_tree::usb_t"><span class="n"><span class="pre">usb_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">usb</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree3usbE" title="Link to this definition">#</a><br /></dt>
-<dd><p>usb clock control </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree5spifiE">
-<span id="_CPPv3N3hal5lpc4010clock_tree5spifiE"></span><span id="_CPPv2N3hal5lpc4010clock_tree5spifiE"></span><span id="hal::lpc40::clock_tree::spifi__spifi_t"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1aa03b2dc463b910b1a915d22d5e435047"></span><a class="reference internal" href="#_CPPv4N3hal5lpc4010clock_tree7spifi_tE" title="hal::lpc40::clock_tree::spifi_t"><span class="n"><span class="pre">spifi_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spifi</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree5spifiE" title="Link to this definition">#</a><br /></dt>
-<dd><p>spifi clock control </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree18peripheral_dividerE">
-<span id="_CPPv3N3hal5lpc4010clock_tree18peripheral_dividerE"></span><span id="_CPPv2N3hal5lpc4010clock_tree18peripheral_dividerE"></span><span id="hal::lpc40::clock_tree::peripheral_divider__u8"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1a93bedfb873aaf329590f311d5a9f4749"></span><span class="n"><span class="pre">u8</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">peripheral_divider</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">4</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree18peripheral_dividerE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Defines the peripheral clock divider amount. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree20emc_half_cpu_dividerE">
-<span id="_CPPv3N3hal5lpc4010clock_tree20emc_half_cpu_dividerE"></span><span id="_CPPv2N3hal5lpc4010clock_tree20emc_half_cpu_dividerE"></span><span id="hal::lpc40::clock_tree::emc_half_cpu_divider__b"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1af750cfe0f9c0c00174bafda0750850d8"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">emc_half_cpu_divider</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree20emc_half_cpu_dividerE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Set true to make the EMC divider half as slow as the CPU divider. Set to false to set it to equal that amount. </p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenenum: Cannot find enum “hal::lpc40::usb_clock_source” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
 </div>
-<dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree5cpu_tE">
-<span id="_CPPv3N3hal5lpc4010clock_tree5cpu_tE"></span><span id="_CPPv2N3hal5lpc4010clock_tree5cpu_tE"></span><span id="hal::lpc40::clock_tree::cpu_t"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1cpu__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cpu_t</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree5cpu_tE" title="Link to this definition">#</a><br /></dt>
-<dd><p>cpu clock control config struct </p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree5cpu_t8use_pll0E">
-<span id="_CPPv3N3hal5lpc4010clock_tree5cpu_t8use_pll0E"></span><span id="_CPPv2N3hal5lpc4010clock_tree5cpu_t8use_pll0E"></span><span id="hal::lpc40::clock_tree::cpu_t::use_pll0__b"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1cpu__t_1a843b2a86394e852eb923db8895ec12eb"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">use_pll0</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree5cpu_t8use_pll0E" title="Link to this definition">#</a><br /></dt>
-<dd><p>If true, use PLL0, if false, use system clock which is defined as 12MHz </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree5cpu_t7dividerE">
-<span id="_CPPv3N3hal5lpc4010clock_tree5cpu_t7dividerE"></span><span id="_CPPv2N3hal5lpc4010clock_tree5cpu_t7dividerE"></span><span id="hal::lpc40::clock_tree::cpu_t::divider__u8"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1cpu__t_1aefdc0fc65db99aaf39a8aecc01686e4f"></span><span class="n"><span class="pre">u8</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divider</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree5cpu_t7dividerE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Divide the input clock from IRC or PLL0. </p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenenum: Cannot find enum “hal::lpc40::usb_divider” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
 </div>
-</dd></dl>
-
-<dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree5pll_tE">
-<span id="_CPPv3N3hal5lpc4010clock_tree5pll_tE"></span><span id="_CPPv2N3hal5lpc4010clock_tree5pll_tE"></span><span id="hal::lpc40::clock_tree::pll_t"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1pll__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pll_t</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree5pll_tE" title="Link to this definition">#</a><br /></dt>
-<dd><p>phase locked loops config struct </p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree5pll_t7enabledE">
-<span id="_CPPv3N3hal5lpc4010clock_tree5pll_t7enabledE"></span><span id="_CPPv2N3hal5lpc4010clock_tree5pll_t7enabledE"></span><span id="hal::lpc40::clock_tree::pll_t::enabled__b"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1pll__t_1ad35ada1b098d8393bb6d02c761bc693e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">enabled</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree5pll_t7enabledE" title="Link to this definition">#</a><br /></dt>
-<dd><p>turn on/off a PLL </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree5pll_t8multiplyE">
-<span id="_CPPv3N3hal5lpc4010clock_tree5pll_t8multiplyE"></span><span id="_CPPv2N3hal5lpc4010clock_tree5pll_t8multiplyE"></span><span id="hal::lpc40::clock_tree::pll_t::multiply__u8"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1pll__t_1ab912069a71fc93a92c9f9857116addaf"></span><span class="n"><span class="pre">u8</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">multiply</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree5pll_t8multiplyE" title="Link to this definition">#</a><br /></dt>
-<dd><p>increase the frequency of the PLL by the multiple </p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenenum: Cannot find enum “hal::lpc40::spifi_clock_source” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
 </div>
-</dd></dl>
-
-<dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree7spifi_tE">
-<span id="_CPPv3N3hal5lpc4010clock_tree7spifi_tE"></span><span id="_CPPv2N3hal5lpc4010clock_tree7spifi_tE"></span><span id="hal::lpc40::clock_tree::spifi_t"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1spifi__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spifi_t</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree7spifi_tE" title="Link to this definition">#</a><br /></dt>
-<dd><p>spifi clock control config struct </p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree7spifi_t5clockE">
-<span id="_CPPv3N3hal5lpc4010clock_tree7spifi_t5clockE"></span><span id="_CPPv2N3hal5lpc4010clock_tree7spifi_t5clockE"></span><span id="hal::lpc40::clock_tree::spifi_t::clock__spifi_clock_source"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1spifi__t_1adc83c466c2e9a149ea6e7ee68ff53c90"></span><a class="reference internal" href="#_CPPv4N3hal5lpc4018spifi_clock_sourceE" title="hal::lpc40::spifi_clock_source"><span class="n"><span class="pre">spifi_clock_source</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clock</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal5lpc4018spifi_clock_sourceE" title="hal::lpc40::spifi_clock_source"><span class="n"><span class="pre">spifi_clock_source</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N3hal5lpc4018spifi_clock_source12system_clockE" title="hal::lpc40::spifi_clock_source::system_clock"><span class="n"><span class="pre">system_clock</span></span></a><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree7spifi_t5clockE" title="Link to this definition">#</a><br /></dt>
-<dd><p>spifi clock source </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree7spifi_t7dividerE">
-<span id="_CPPv3N3hal5lpc4010clock_tree7spifi_t7dividerE"></span><span id="_CPPv2N3hal5lpc4010clock_tree7spifi_t7dividerE"></span><span id="hal::lpc40::clock_tree::spifi_t::divider__u8"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1spifi__t_1a245b7ab638ca618ef6d4fd780c529250"></span><span class="n"><span class="pre">u8</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divider</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree7spifi_t7dividerE" title="Link to this definition">#</a><br /></dt>
-<dd><p>spifi clock divider </p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenenum: Cannot find enum “hal::lpc40::flash_configuration” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
 </div>
-</dd></dl>
-
-<dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree5usb_tE">
-<span id="_CPPv3N3hal5lpc4010clock_tree5usb_tE"></span><span id="_CPPv2N3hal5lpc4010clock_tree5usb_tE"></span><span id="hal::lpc40::clock_tree::usb_t"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1usb__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">usb_t</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree5usb_tE" title="Link to this definition">#</a><br /></dt>
-<dd><p>usb clock control config struct </p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree5usb_t5clockE">
-<span id="_CPPv3N3hal5lpc4010clock_tree5usb_t5clockE"></span><span id="_CPPv2N3hal5lpc4010clock_tree5usb_t5clockE"></span><span id="hal::lpc40::clock_tree::usb_t::clock__usb_clock_source"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1usb__t_1a2da2f359e24264a3007127d8d761f932"></span><a class="reference internal" href="#_CPPv4N3hal5lpc4016usb_clock_sourceE" title="hal::lpc40::usb_clock_source"><span class="n"><span class="pre">usb_clock_source</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clock</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal5lpc4016usb_clock_sourceE" title="hal::lpc40::usb_clock_source"><span class="n"><span class="pre">usb_clock_source</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N3hal5lpc4016usb_clock_source12system_clockE" title="hal::lpc40::usb_clock_source::system_clock"><span class="n"><span class="pre">system_clock</span></span></a><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree5usb_t5clockE" title="Link to this definition">#</a><br /></dt>
-<dd><p>usb clock source </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree5usb_t7dividerE">
-<span id="_CPPv3N3hal5lpc4010clock_tree5usb_t7dividerE"></span><span id="_CPPv2N3hal5lpc4010clock_tree5usb_t7dividerE"></span><span id="hal::lpc40::clock_tree::usb_t::divider__usb_divider"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1usb__t_1a0ad32e214feccaebecb610ebf13f868d"></span><a class="reference internal" href="#_CPPv4N3hal5lpc4011usb_dividerE" title="hal::lpc40::usb_divider"><span class="n"><span class="pre">usb_divider</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divider</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal5lpc4011usb_dividerE" title="hal::lpc40::usb_divider"><span class="n"><span class="pre">usb_divider</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N3hal5lpc4011usb_divider10divide_by1E" title="hal::lpc40::usb_divider::divide_by1"><span class="n"><span class="pre">divide_by1</span></span></a><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree5usb_t7dividerE" title="Link to this definition">#</a><br /></dt>
-<dd><p>usb clock divider </p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenstruct: Cannot find class “hal::lpc40::clock_tree” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
 </div>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc407maximumE5hertz">
-<span id="_CPPv3N3hal5lpc407maximumE5hertz"></span><span id="_CPPv2N3hal5lpc407maximumE5hertz"></span><span id="hal::lpc40::maximum__hertz"></span><span class="target" id="namespacehal_1_1lpc40_1a621cac76892c23fd3f34ad74ca3291eb"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">lpc40</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">maximum</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">hertz</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_external_crystal_frequency</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal5lpc407maximumE5hertz" title="Link to this definition">#</a><br /></dt>
-<dd><p>Set the lpc40xx MCU to the maximum clock speed (120MHz) possible. </p>
-<p>This function REQUIRES an external crystal to be used.</p>
-<p><ul class="simple">
-<li><p>CPU clock speed set to 120MHz</p></li>
-<li><p>USB clock speed set to 120MHz</p></li>
-<li><p>Peripheral clock set to 120MHZ</p></li>
-<li><p>SPIFI clock set to 120MHz</p></li>
-<li><p>PLL0 is set to 120MHz and used for everything</p></li>
-<li><p>PLL1 is disabled and not used</p></li>
-</ul>
-</p>
-<p>TODO(#65): explain the set of errors in better detail</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>p_external_crystal_frequency</strong> – - frequency of the crystal connected to the XTAL1 &amp; XTAL2 </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4013get_frequencyE10peripheral">
-<span id="_CPPv3N3hal5lpc4013get_frequencyE10peripheral"></span><span id="_CPPv2N3hal5lpc4013get_frequencyE10peripheral"></span><span id="hal::lpc40::get_frequency__peripheral"></span><span class="target" id="namespacehal_1_1lpc40_1aa83488f1304c00f79489eb93fa01c56d"></span><span class="n"><span class="pre">hertz</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">lpc40</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">get_frequency</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="constants.html#_CPPv4N3hal5lpc4010peripheralE" title="hal::lpc40::peripheral"><span class="n"><span class="pre">peripheral</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_peripheral</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal5lpc4013get_frequencyE10peripheral" title="Link to this definition">#</a><br /></dt>
-<dd><p>Get the operating frequency of the peripheral. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>p_peripheral</strong> – - id of the peripheral </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>frequency - operating frequency of the peripheral </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4025using_external_oscillatorEv">
-<span id="_CPPv3N3hal5lpc4025using_external_oscillatorEv"></span><span id="_CPPv2N3hal5lpc4025using_external_oscillatorEv"></span><span id="hal::lpc40::using_external_oscillator"></span><span class="target" id="namespacehal_1_1lpc40_1a571d73eb6518b039e643e2e7e5dcdcbf"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">lpc40</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">using_external_oscillator</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal5lpc4025using_external_oscillatorEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Determins if the external oscillator is currently enabled and in use. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>true - external oscillator is in use currently </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>false - external oscillator is NOT in use currently </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4016configure_clocksERK10clock_tree">
-<span id="_CPPv3N3hal5lpc4016configure_clocksERK10clock_tree"></span><span id="_CPPv2N3hal5lpc4016configure_clocksERK10clock_tree"></span><span id="hal::lpc40::configure_clocks__clock_treeCR"></span><span class="target" id="namespacehal_1_1lpc40_1aca5fef1639e3542340a2f7999e1eb8d4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">lpc40</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">configure_clocks</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3hal5lpc4010clock_treeE" title="hal::lpc40::clock_tree"><span class="n"><span class="pre">clock_tree</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_clock_tree</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal5lpc4016configure_clocksERK10clock_tree" title="Link to this definition">#</a><br /></dt>
-<dd><p>Apply the clock configuration to hardware. </p>
-<p>TODO(#65): explain the set of errors in better detail </p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Cannot find function “hal::lpc40::maximum” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Cannot find function “hal::lpc40::get_frequency” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Cannot find function “hal::lpc40::using_external_oscillator” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Cannot find function “hal::lpc40::configure_clocks” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
+</div>
 </section>
 </section>
 
@@ -888,72 +620,7 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hal-lpc40-clock-tree"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4016usb_clock_sourceE"><code class="docutils literal notranslate"><span class="pre">usb_clock_source</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4016usb_clock_source12system_clockE"><code class="docutils literal notranslate"><span class="pre">system_clock</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4016usb_clock_source4pll0E"><code class="docutils literal notranslate"><span class="pre">pll0</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4016usb_clock_source4pll1E"><code class="docutils literal notranslate"><span class="pre">pll1</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4011usb_dividerE"><code class="docutils literal notranslate"><span class="pre">usb_divider</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4011usb_divider10divide_by1E"><code class="docutils literal notranslate"><span class="pre">divide_by1</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4011usb_divider10divide_by2E"><code class="docutils literal notranslate"><span class="pre">divide_by2</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4011usb_divider10divide_by3E"><code class="docutils literal notranslate"><span class="pre">divide_by3</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4011usb_divider10divide_by4E"><code class="docutils literal notranslate"><span class="pre">divide_by4</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4018spifi_clock_sourceE"><code class="docutils literal notranslate"><span class="pre">spifi_clock_source</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4018spifi_clock_source12system_clockE"><code class="docutils literal notranslate"><span class="pre">system_clock</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4018spifi_clock_source4pll0E"><code class="docutils literal notranslate"><span class="pre">pll0</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4018spifi_clock_source4pll1E"><code class="docutils literal notranslate"><span class="pre">pll1</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4019flash_configurationE"><code class="docutils literal notranslate"><span class="pre">flash_configuration</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4019flash_configuration6clock1E"><code class="docutils literal notranslate"><span class="pre">clock1</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4019flash_configuration6clock2E"><code class="docutils literal notranslate"><span class="pre">clock2</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4019flash_configuration6clock3E"><code class="docutils literal notranslate"><span class="pre">clock3</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4019flash_configuration6clock4E"><code class="docutils literal notranslate"><span class="pre">clock4</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4019flash_configuration6clock5E"><code class="docutils literal notranslate"><span class="pre">clock5</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4019flash_configuration6clock6E"><code class="docutils literal notranslate"><span class="pre">clock6</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_treeE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree20oscillator_frequencyE"><code class="docutils literal notranslate"><span class="pre">oscillator_frequency</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree23use_external_oscillatorE"><code class="docutils literal notranslate"><span class="pre">use_external_oscillator</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree3pllE"><code class="docutils literal notranslate"><span class="pre">pll</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree3cpuE"><code class="docutils literal notranslate"><span class="pre">cpu</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree3usbE"><code class="docutils literal notranslate"><span class="pre">usb</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5spifiE"><code class="docutils literal notranslate"><span class="pre">spifi</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree18peripheral_dividerE"><code class="docutils literal notranslate"><span class="pre">peripheral_divider</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree20emc_half_cpu_dividerE"><code class="docutils literal notranslate"><span class="pre">emc_half_cpu_divider</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5cpu_tE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree::cpu_t</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5cpu_t8use_pll0E"><code class="docutils literal notranslate"><span class="pre">use_pll0</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5cpu_t7dividerE"><code class="docutils literal notranslate"><span class="pre">divider</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5pll_tE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree::pll_t</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5pll_t7enabledE"><code class="docutils literal notranslate"><span class="pre">enabled</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5pll_t8multiplyE"><code class="docutils literal notranslate"><span class="pre">multiply</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree7spifi_tE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree::spifi_t</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree7spifi_t5clockE"><code class="docutils literal notranslate"><span class="pre">clock</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree7spifi_t7dividerE"><code class="docutils literal notranslate"><span class="pre">divider</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5usb_tE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree::usb_t</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5usb_t5clockE"><code class="docutils literal notranslate"><span class="pre">clock</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5usb_t7dividerE"><code class="docutils literal notranslate"><span class="pre">divider</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc407maximumE5hertz"><code class="docutils literal notranslate"><span class="pre">maximum()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4013get_frequencyE10peripheral"><code class="docutils literal notranslate"><span class="pre">get_frequency()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4025using_external_oscillatorEv"><code class="docutils literal notranslate"><span class="pre">using_external_oscillator()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4016configure_clocksERK10clock_tree"><code class="docutils literal notranslate"><span class="pre">configure_clocks()</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hal-lpc40-clock-tree"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree</span></code></a></li>
 </ul>
   </nav></div>
 
@@ -979,8 +646,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1004,7 +671,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
 </p></div>
       
     </div>

@@ -27,25 +27,25 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
     <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'stm32f1/gpio';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.17.1';
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/libhal-arm-mcu/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -308,11 +308,18 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
         </div>
       
       
@@ -332,11 +339,18 @@
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
     </div>
   
 
@@ -520,61 +534,18 @@
 <h2><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::gpio_manager</span></code><a class="headerlink" href="#hal-stm32f1-gpio-manager" title="Link to this heading">#</a></h2>
 <p>Defined in namespace <code class="docutils literal notranslate"><span class="pre">hal::stm32f1</span></code></p>
 <p><em>#include &lt;libhal-arm-mcu/stm32f1/gpio.hpp&gt;</em></p>
-<dl class="cpp class">
-<dt class="sig sig-object cpp" id="_CPPv4I_10peripheralEN3hal7stm32f14gpioE">
-<span id="_CPPv3I_10peripheralEN3hal7stm32f14gpioE"></span><span id="_CPPv2I_10peripheralEN3hal7stm32f14gpioE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheralE" title="hal::stm32f1::peripheral"><span class="n"><span class="pre">peripheral</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">select</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1stm32f1_1_1gpio"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gpio</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">stm32f1</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">gpio_manager</span></span><a class="headerlink" href="#_CPPv4I_10peripheralEN3hal7stm32f14gpioE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Gpio manager for the gpio ports A through to G. </p>
-<p>Use the acquire APIs in order to get input and output pins. If a pin is already in use, the <code class="docutils literal notranslate"><span class="pre">hal::device_or_resource_busy</span></code> will be thrown.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>select</strong> – - gpio peripheral port selection. Only peripheral::gpio_a to peripheral::gpio_g. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal7stm32f118acquire_output_pinENSt3pmr21polymorphic_allocatorIEERKN3hal2v510strong_ptrI12gpio_managerEE2u8RKN10output_pin8settingsE">
-<span id="_CPPv3N3hal7stm32f118acquire_output_pinENSt3pmr21polymorphic_allocatorIEERKN3hal2v510strong_ptrI12gpio_managerEE2u8RKN10output_pin8settingsE"></span><span id="_CPPv2N3hal7stm32f118acquire_output_pinENSt3pmr21polymorphic_allocatorIEERKN3hal2v510strong_ptrI12gpio_managerEE2u8RKN10output_pin8settingsE"></span><span id="hal::stm32f1::acquire_output_pin__std::pmr::polymorphic_allocator::.hal::v5::strong_ptr:gpio_manager:CR.u8.output_pin::settingsCR"></span><span class="target" id="gpio_8hpp_1ad5fa45f936416e717e30c354ab3ab79d"></span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">v5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">strong_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">output_pin</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">stm32f1</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">acquire_output_pin</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pmr</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">polymorphic_allocator</span></span><span class="p"><span class="pre">&lt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_allocator</span></span>, <span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">v5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">strong_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">gpio_manager</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_manager</span></span>, <span class="n"><span class="pre">u8</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_pin</span></span>, <a class="reference internal" href="output_pin.html#_CPPv4N3hal7stm32f110output_pinE" title="hal::stm32f1::output_pin"><span class="n"><span class="pre">output_pin</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">settings</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_settings</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal7stm32f118acquire_output_pinENSt3pmr21polymorphic_allocatorIEERKN3hal2v510strong_ptrI12gpio_managerEE2u8RKN10output_pin8settingsE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Acquire an output pin from a gpio port. </p>
-<p>Output pins returned from this API are considered consumed by the manager. This means that only one instance of an output pin from this gpio manager can be acquired at a time. Attempting to create two instances of the same output pin, having two writers to that peripheral, will result in the exception <code class="docutils literal notranslate"><span class="pre">hal::device_or_resource_busy</span></code> being called with the instance value set to the gpio_manager’s address.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>p_allocator</strong> – - allocator used to allocate the memory for the object </p></li>
-<li><p><strong>p_manager</strong> – - the manager for the gpio port to acquire an output pin from. For example, if you want pin A1, you will need the manager for port A and pass the number <code class="docutils literal notranslate"><span class="pre">1</span></code> to parameter <code class="docutils literal notranslate"><span class="pre">p_pin</span></code></p></li>
-<li><p><strong>p_pin</strong> – - The pin number to acquire from this port </p></li>
-<li><p><strong>p_settings</strong> – - initial settings for the output pin </p></li>
-</ul>
-</dd>
-<dt class="field-even">Throws<span class="colon">:</span></dt>
-<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">device_or_resource_busy</span></span></span> – - if the output pin was already acquired somewhere else in the program. </p>
-</dd>
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>hal::v5::strong_ptr&lt;hal::output_pin&gt; - output pin acquired from gpio port. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal7stm32f117acquire_input_pinENSt3pmr21polymorphic_allocatorIEERKN3hal2v510strong_ptrI12gpio_managerEE2u8RKN9input_pin8settingsE">
-<span id="_CPPv3N3hal7stm32f117acquire_input_pinENSt3pmr21polymorphic_allocatorIEERKN3hal2v510strong_ptrI12gpio_managerEE2u8RKN9input_pin8settingsE"></span><span id="_CPPv2N3hal7stm32f117acquire_input_pinENSt3pmr21polymorphic_allocatorIEERKN3hal2v510strong_ptrI12gpio_managerEE2u8RKN9input_pin8settingsE"></span><span id="hal::stm32f1::acquire_input_pin__std::pmr::polymorphic_allocator::.hal::v5::strong_ptr:gpio_manager:CR.u8.input_pin::settingsCR"></span><span class="target" id="gpio_8hpp_1a2dda29b05d492cdb6bc1dd89c75ed424"></span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">v5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">strong_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">input_pin</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">stm32f1</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">acquire_input_pin</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pmr</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">polymorphic_allocator</span></span><span class="p"><span class="pre">&lt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_allocator</span></span>, <span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">v5</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">strong_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">gpio_manager</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_manager</span></span>, <span class="n"><span class="pre">u8</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_pin</span></span>, <a class="reference internal" href="input_pin.html#_CPPv4N3hal7stm32f19input_pinE" title="hal::stm32f1::input_pin"><span class="n"><span class="pre">input_pin</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">settings</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_settings</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal7stm32f117acquire_input_pinENSt3pmr21polymorphic_allocatorIEERKN3hal2v510strong_ptrI12gpio_managerEE2u8RKN9input_pin8settingsE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Acquire an input pin from a gpio port. </p>
-<p>Input pins returned from this API are not considered consumed by the manager. Thus an exception representing an exhausted resource is not thrown. This allows the caller to acquire the same pin multiple times if they wish, without error. The only consequence is the generation of additional ref counted control blocks for each instance. To conserve memory, it is better to acquire the pin once and pass that around to multiple readers.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>p_allocator</strong> – - allocator used to allocate the memory for the object </p></li>
-<li><p><strong>p_manager</strong> – - the manager for the gpio port to acquire an input pin from. For example, if you want pin A1, you will need the manager for port A and pass the number <code class="docutils literal notranslate"><span class="pre">1</span></code> to parameter <code class="docutils literal notranslate"><span class="pre">p_pin</span></code>. </p></li>
-<li><p><strong>p_pin</strong> – - The pin number to acquire from this port </p></li>
-<li><p><strong>p_settings</strong> – - initial settings for the input pin. </p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>hal::v5::strong_ptr&lt;hal::input_pin&gt; - input pin acquired from gpio port. </p>
-</dd>
-</dl>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenclass: Cannot find class “hal::stm32f1::gpio” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Cannot find function “hal::stm32f1::acquire_output_pin” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Cannot find function “hal::stm32f1::acquire_input_pin” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
+</div>
 </section>
 </section>
 
@@ -625,12 +596,7 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hal-stm32f1-gpio-manager"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::gpio_manager</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_10peripheralEN3hal7stm32f14gpioE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::gpio</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal7stm32f118acquire_output_pinENSt3pmr21polymorphic_allocatorIEERKN3hal2v510strong_ptrI12gpio_managerEE2u8RKN10output_pin8settingsE"><code class="docutils literal notranslate"><span class="pre">acquire_output_pin()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal7stm32f117acquire_input_pinENSt3pmr21polymorphic_allocatorIEERKN3hal2v510strong_ptrI12gpio_managerEE2u8RKN9input_pin8settingsE"><code class="docutils literal notranslate"><span class="pre">acquire_input_pin()</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hal-stm32f1-gpio-manager"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::gpio_manager</span></code></a></li>
 </ul>
   </nav></div>
 
@@ -656,8 +622,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -681,7 +647,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
 </p></div>
       
     </div>

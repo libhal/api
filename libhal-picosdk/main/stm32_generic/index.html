@@ -27,25 +27,25 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
     <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'stm32_generic/index';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.17.1';
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/libhal-arm-mcu/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -308,11 +308,18 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
         </div>
       
       
@@ -332,11 +339,18 @@
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
     </div>
   
 
@@ -506,95 +520,29 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">STM32 Generic drivers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="i2c.html">STM32 Generic I2C APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="i2c.html#hal-stm32-generic-i2c"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::i2c</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="i2c.html#_CPPv4N3hal13stm32_generic3i2cE"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::i2c</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="i2c.html#_CPPv4N3hal13stm32_generic3i2c3i2cEPv"><code class="docutils literal notranslate"><span class="pre">i2c()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="i2c.html#_CPPv4N3hal13stm32_generic3i2c11transactionEN3hal4byteENSt4spanIKN3hal4byteEEENSt4spanIN3hal4byteEEEN3hal12function_refIN3hal16timeout_functionEEE"><code class="docutils literal notranslate"><span class="pre">transaction()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="i2c.html#_CPPv4N3hal13stm32_generic3i2c9configureERKN3hal3i2c8settingsE5hertz"><code class="docutils literal notranslate"><span class="pre">configure()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="i2c.html#_CPPv4N3hal13stm32_generic3i2c16handle_i2c_eventEv"><code class="docutils literal notranslate"><span class="pre">handle_i2c_event()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="i2c.html#_CPPv4N3hal13stm32_generic3i2c16handle_i2c_errorEv"><code class="docutils literal notranslate"><span class="pre">handle_i2c_error()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="i2c.html#_CPPv4N3hal13stm32_generic3i2cD0Ev"><code class="docutils literal notranslate"><span class="pre">~i2c()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html#hal-stm32-generic-i2c"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::i2c</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pwm.html">STM32 Generic PWM APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pwm.html#hal-stm32-generic-pwm"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::pwm</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pwm.html#_CPPv4N3hal13stm32_generic3pwmE"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::pwm</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pwm.html#_CPPv4N3hal13stm32_generic3pwm3pwmEN3hal6unsafeEPv16pwm_channel_info"><code class="docutils literal notranslate"><span class="pre">pwm()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pwm.html#_CPPv4N3hal13stm32_generic3pwm3pwmEN3hal6unsafeE"><code class="docutils literal notranslate"><span class="pre">pwm()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pwm.html#_CPPv4N3hal13stm32_generic3pwm10initializeEN3hal6unsafeEPv16pwm_channel_info"><code class="docutils literal notranslate"><span class="pre">initialize()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pwm.html#_CPPv4N3hal13stm32_generic3pwm9frequencyE3u32"><code class="docutils literal notranslate"><span class="pre">frequency()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pwm.html#_CPPv4N3hal13stm32_generic3pwm10duty_cycleE3u16"><code class="docutils literal notranslate"><span class="pre">duty_cycle()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pwm.html#_CPPv4N3hal13stm32_generic3pwm10duty_cycleEf"><code class="docutils literal notranslate"><span class="pre">duty_cycle()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="pwm.html#hal-stm32-generic-pwm-group-frequency"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::pwm_group_frequency</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pwm.html#_CPPv4N3hal13stm32_generic19pwm_group_frequencyE"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::pwm_group_frequency</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pwm.html#_CPPv4N3hal13stm32_generic19pwm_group_frequency19pwm_group_frequencyEN3hal6unsafeEPv"><code class="docutils literal notranslate"><span class="pre">pwm_group_frequency()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pwm.html#_CPPv4N3hal13stm32_generic19pwm_group_frequency19set_group_frequencyE19pwm_timer_frequency"><code class="docutils literal notranslate"><span class="pre">set_group_frequency()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="pwm.html#hal-stm32-generic-pwm"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::pwm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pwm.html#hal-stm32-generic-pwm-group-frequency"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::pwm_group_frequency</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quadrature_encoder.html">STM32 Generic Quadrature Encoder APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="quadrature_encoder.html#hal-stm32-generic-quadrature-encoder"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::quadrature_encoder</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="quadrature_encoder.html#_CPPv4N3hal13stm32_generic18quadrature_encoderE"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::quadrature_encoder</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="quadrature_encoder.html#hal-stm32-generic-quadrature-encoder"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::quadrature_encoder</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="spi.html">STM32 Generic SPI APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="spi.html#hal-stm32-generic-spi"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::spi</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="spi.html#_CPPv4N3hal13stm32_generic3spiE"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::spi</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="spi.html#_CPPv4N3hal13stm32_generic3spi3spiEN3hal6unsafeEPv"><code class="docutils literal notranslate"><span class="pre">spi()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="spi.html#_CPPv4N3hal13stm32_generic3spi9configureERKN3hal3spi8settingsEN3hal5hertzE"><code class="docutils literal notranslate"><span class="pre">configure()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="spi.html#_CPPv4N3hal13stm32_generic3spi8transferENSt4spanIKN3hal4byteEEENSt4spanIN3hal4byteEEEN3hal4byteE"><code class="docutils literal notranslate"><span class="pre">transfer()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html#hal-stm32-generic-spi"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::spi</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="timer.html">STM32 Generic Timer APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="timer.html#hal-stm32-generic-timer"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::timer</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="timer.html#_CPPv4N3hal13stm32_generic5timerE"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::timer</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="timer.html#_CPPv4N3hal13stm32_generic5timer5timerEN3hal6unsafeE"><code class="docutils literal notranslate"><span class="pre">timer()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="timer.html#_CPPv4N3hal13stm32_generic5timer10is_runningEv"><code class="docutils literal notranslate"><span class="pre">is_running()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="timer.html#_CPPv4N3hal13stm32_generic5timer6cancelEv"><code class="docutils literal notranslate"><span class="pre">cancel()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="timer.html#_CPPv4N3hal13stm32_generic5timer8scheduleEN3hal13time_durationE3u32"><code class="docutils literal notranslate"><span class="pre">schedule()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="timer.html#_CPPv4N3hal13stm32_generic5timer10initializeEN3hal6unsafeEPvPFvvEN8cortex_m5irq_tEN8cortex_m17interrupt_pointerE"><code class="docutils literal notranslate"><span class="pre">initialize()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="timer.html#hal-stm32-generic-timer"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::timer</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="uart.html">STM32 Generic UART APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="uart.html#hal-stm32-generic-uart"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::uart</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="uart.html#_CPPv4N3hal13stm32_generic4uartE"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::uart</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="uart.html#_CPPv4N3hal13stm32_generic4uart10uart_writeENSt4spanIK4byteEE"><code class="docutils literal notranslate"><span class="pre">uart_write()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="uart.html#_CPPv4N3hal13stm32_generic4uart9uart_readERNSt4spanI4byteEERK3u32"><code class="docutils literal notranslate"><span class="pre">uart_read()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="uart.html#_CPPv4N3hal13stm32_generic4uart9configureERKN6serial8settingsE5hertz"><code class="docutils literal notranslate"><span class="pre">configure()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="uart.html#hal-stm32-generic-zero-copy-usart"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::zero_copy_usart</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="uart.html#_CPPv4N3hal13stm32_generic15zero_copy_usartE"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::zero_copy_usart</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="uart.html#_CPPv4N3hal13stm32_generic15zero_copy_usart10uart_writeENSt4spanIK4byteEE"><code class="docutils literal notranslate"><span class="pre">uart_write()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="uart.html#_CPPv4N3hal13stm32_generic15zero_copy_usart9uart_readERNSt4spanI4byteEERK3u32"><code class="docutils literal notranslate"><span class="pre">uart_read()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="uart.html#_CPPv4N3hal13stm32_generic15zero_copy_usart9configureERKN6serial8settingsE3u32"><code class="docutils literal notranslate"><span class="pre">configure()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="uart.html#hal-stm32-generic-uart"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::uart</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="uart.html#hal-stm32-generic-zero-copy-usart"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::zero_copy_usart</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -662,8 +610,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -687,7 +635,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
 </p></div>
       
     </div>

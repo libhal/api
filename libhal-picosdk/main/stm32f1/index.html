@@ -27,25 +27,25 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
     <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'stm32f1/index';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.17.1';
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/libhal-arm-mcu/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -308,11 +308,18 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
         </div>
       
       
@@ -332,11 +339,18 @@
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
     </div>
   
 
@@ -518,457 +532,70 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">STM32F1 drivers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="adc.html">STM32F1 ADC APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="adc.html#hal-stm32f1-adc-manager"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::adc_manager</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="adc.html#_CPPv4N3hal7stm32f111adc_managerE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::adc_manager</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="adc.html#_CPPv4N3hal7stm32f111adc_manager15acquire_channelE8adc_pins"><code class="docutils literal notranslate"><span class="pre">acquire_channel()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="adc.html#_CPPv4N3hal7stm32f111adc_manager7channelE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::adc_manager::channel</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="adc.html#hal-stm32f1-adc-manager"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::adc_manager</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="can.html">STM32F1 CAN APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="can.html#hal-stm32f1-can-peripheral-manager"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::can_peripheral_manager</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_managerE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::can_peripheral_manager</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager9self_testE"><code class="docutils literal notranslate"><span class="pre">self_test</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager15fifo_assignmentE"><code class="docutils literal notranslate"><span class="pre">fifo_assignment</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager22can_peripheral_managerEN3hal3u32E8can_pins11disable_idsb"><code class="docutils literal notranslate"><span class="pre">can_peripheral_manager()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager22can_peripheral_managerEN3hal3u32ERN3hal12steady_clockEN3hal13time_durationE8can_pins9self_test11disable_ids"><code class="docutils literal notranslate"><span class="pre">can_peripheral_manager()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager19acquire_transceiverENSt4spanI11can_messageEE"><code class="docutils literal notranslate"><span class="pre">acquire_transceiver()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager19acquire_bus_managerEv"><code class="docutils literal notranslate"><span class="pre">acquire_bus_manager()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager17acquire_interruptEv"><code class="docutils literal notranslate"><span class="pre">acquire_interrupt()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager25acquire_identifier_filterE15fifo_assignment"><code class="docutils literal notranslate"><span class="pre">acquire_identifier_filter()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager34acquire_extended_identifier_filterE15fifo_assignment"><code class="docutils literal notranslate"><span class="pre">acquire_extended_identifier_filter()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager19acquire_mask_filterE15fifo_assignment"><code class="docutils literal notranslate"><span class="pre">acquire_mask_filter()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager28acquire_extended_mask_filterE15fifo_assignment"><code class="docutils literal notranslate"><span class="pre">acquire_extended_mask_filter()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager11bus_managerE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::can_peripheral_manager::bus_manager</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager11disable_idsE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::can_peripheral_manager::disable_ids</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager26extended_identifier_filterE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::can_peripheral_manager::extended_identifier_filter</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager30extended_identifier_filter_setE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::can_peripheral_manager::extended_identifier_filter_set</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager20extended_mask_filterE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::can_peripheral_manager::extended_mask_filter</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager15filter_resourceE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::can_peripheral_manager::filter_resource</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager17identifier_filterE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::can_peripheral_manager::identifier_filter</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager21identifier_filter_setE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::can_peripheral_manager::identifier_filter_set</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager9interruptE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::can_peripheral_manager::interrupt</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager11mask_filterE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::can_peripheral_manager::mask_filter</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager15mask_filter_setE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::can_peripheral_manager::mask_filter_set</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can.html#_CPPv4N3hal7stm32f122can_peripheral_manager11transceiverE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::can_peripheral_manager::transceiver</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="can.html#hal-stm32f1-can-peripheral-manager"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::can_peripheral_manager</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="can2.html">STM32F1 CAN V2 APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="can2.html#hal-stm32f1-can-peripheral-manager-v2"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::can_peripheral_manager_v2</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v2E"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::can_peripheral_manager_v2</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v225can_peripheral_manager_v2EN3hal5usizeENSt3pmr21polymorphic_allocatorIEEN3hal3u32ERN3hal12steady_clockEN3hal13time_durationE8can_pins13can_self_test"><code class="docutils literal notranslate"><span class="pre">can_peripheral_manager_v2()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v216enable_self_testEb"><code class="docutils literal notranslate"><span class="pre">enable_self_test()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v29baud_rateEN3hal3u32E"><code class="docutils literal notranslate"><span class="pre">baud_rate()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can2.html#_CPPv4NK3hal7stm32f125can_peripheral_manager_v29baud_rateEv"><code class="docutils literal notranslate"><span class="pre">baud_rate()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v24sendERK11can_message"><code class="docutils literal notranslate"><span class="pre">send()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v210on_receiveERKN3hal13can_interrupt24optional_receive_handlerE"><code class="docutils literal notranslate"><span class="pre">on_receive()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v26bus_onEv"><code class="docutils literal notranslate"><span class="pre">bus_on()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v214receive_bufferEv"><code class="docutils literal notranslate"><span class="pre">receive_buffer()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v214receive_cursorEv"><code class="docutils literal notranslate"><span class="pre">receive_cursor()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v216available_filterEv"><code class="docutils literal notranslate"><span class="pre">available_filter()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="can2.html#_CPPv4N3hal7stm32f125can_peripheral_manager_v214release_filterEN3hal2u8E"><code class="docutils literal notranslate"><span class="pre">release_filter()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="can2.html#hal-stm32f1-can-peripheral-manager-v2"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::can_peripheral_manager_v2</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="clock.html">STM32F1 Clock APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="clock.html#hal-stm32f1-clock-tree"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::clock_tree</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111apb_dividerE"><code class="docutils literal notranslate"><span class="pre">apb_divider</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111apb_divider11divide_by_1E"><code class="docutils literal notranslate"><span class="pre">divide_by_1</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111apb_divider11divide_by_2E"><code class="docutils literal notranslate"><span class="pre">divide_by_2</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111apb_divider11divide_by_4E"><code class="docutils literal notranslate"><span class="pre">divide_by_4</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111apb_divider11divide_by_8E"><code class="docutils literal notranslate"><span class="pre">divide_by_8</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111apb_divider12divide_by_16E"><code class="docutils literal notranslate"><span class="pre">divide_by_16</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#hal-stm32f1-clock-tree"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::clock_tree</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111ahb_dividerE"><code class="docutils literal notranslate"><span class="pre">ahb_divider</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111ahb_divider11divide_by_1E"><code class="docutils literal notranslate"><span class="pre">divide_by_1</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111ahb_divider11divide_by_2E"><code class="docutils literal notranslate"><span class="pre">divide_by_2</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111ahb_divider11divide_by_4E"><code class="docutils literal notranslate"><span class="pre">divide_by_4</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111ahb_divider11divide_by_8E"><code class="docutils literal notranslate"><span class="pre">divide_by_8</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111ahb_divider12divide_by_16E"><code class="docutils literal notranslate"><span class="pre">divide_by_16</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111ahb_divider12divide_by_64E"><code class="docutils literal notranslate"><span class="pre">divide_by_64</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111ahb_divider13divide_by_128E"><code class="docutils literal notranslate"><span class="pre">divide_by_128</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111ahb_divider13divide_by_256E"><code class="docutils literal notranslate"><span class="pre">divide_by_256</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111ahb_divider13divide_by_512E"><code class="docutils literal notranslate"><span class="pre">divide_by_512</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111adc_dividerE"><code class="docutils literal notranslate"><span class="pre">adc_divider</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111adc_divider11divide_by_2E"><code class="docutils literal notranslate"><span class="pre">divide_by_2</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111adc_divider11divide_by_4E"><code class="docutils literal notranslate"><span class="pre">divide_by_4</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111adc_divider11divide_by_6E"><code class="docutils literal notranslate"><span class="pre">divide_by_6</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111adc_divider11divide_by_8E"><code class="docutils literal notranslate"><span class="pre">divide_by_8</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f119system_clock_selectE"><code class="docutils literal notranslate"><span class="pre">system_clock_select</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f119system_clock_select19high_speed_internalE"><code class="docutils literal notranslate"><span class="pre">high_speed_internal</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f119system_clock_select19high_speed_externalE"><code class="docutils literal notranslate"><span class="pre">high_speed_external</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f119system_clock_select3pllE"><code class="docutils literal notranslate"><span class="pre">pll</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f112pll_multiplyE"><code class="docutils literal notranslate"><span class="pre">pll_multiply</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f112pll_multiply13multiply_by_2E"><code class="docutils literal notranslate"><span class="pre">multiply_by_2</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f112pll_multiply13multiply_by_3E"><code class="docutils literal notranslate"><span class="pre">multiply_by_3</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f112pll_multiply13multiply_by_4E"><code class="docutils literal notranslate"><span class="pre">multiply_by_4</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f112pll_multiply13multiply_by_5E"><code class="docutils literal notranslate"><span class="pre">multiply_by_5</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f112pll_multiply13multiply_by_6E"><code class="docutils literal notranslate"><span class="pre">multiply_by_6</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f112pll_multiply13multiply_by_7E"><code class="docutils literal notranslate"><span class="pre">multiply_by_7</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f112pll_multiply13multiply_by_8E"><code class="docutils literal notranslate"><span class="pre">multiply_by_8</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f112pll_multiply13multiply_by_9E"><code class="docutils literal notranslate"><span class="pre">multiply_by_9</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f112pll_multiply14multiply_by_10E"><code class="docutils literal notranslate"><span class="pre">multiply_by_10</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f112pll_multiply14multiply_by_11E"><code class="docutils literal notranslate"><span class="pre">multiply_by_11</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f112pll_multiply14multiply_by_12E"><code class="docutils literal notranslate"><span class="pre">multiply_by_12</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f112pll_multiply14multiply_by_13E"><code class="docutils literal notranslate"><span class="pre">multiply_by_13</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f112pll_multiply14multiply_by_14E"><code class="docutils literal notranslate"><span class="pre">multiply_by_14</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f112pll_multiply14multiply_by_15E"><code class="docutils literal notranslate"><span class="pre">multiply_by_15</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f112pll_multiply14multiply_by_16E"><code class="docutils literal notranslate"><span class="pre">multiply_by_16</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f110rtc_sourceE"><code class="docutils literal notranslate"><span class="pre">rtc_source</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f110rtc_source8no_clockE"><code class="docutils literal notranslate"><span class="pre">no_clock</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f110rtc_source18low_speed_internalE"><code class="docutils literal notranslate"><span class="pre">low_speed_internal</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f110rtc_source18low_speed_externalE"><code class="docutils literal notranslate"><span class="pre">low_speed_external</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f110rtc_source34high_speed_external_divided_by_128E"><code class="docutils literal notranslate"><span class="pre">high_speed_external_divided_by_128</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f110pll_sourceE"><code class="docutils literal notranslate"><span class="pre">pll_source</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f110pll_source26internal_8mhz_divided_by_2E"><code class="docutils literal notranslate"><span class="pre">internal_8mhz_divided_by_2</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f110pll_source19high_speed_externalE"><code class="docutils literal notranslate"><span class="pre">high_speed_external</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f110pll_source32high_speed_external_divided_by_2E"><code class="docutils literal notranslate"><span class="pre">high_speed_external_divided_by_2</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111usb_dividerE"><code class="docutils literal notranslate"><span class="pre">usb_divider</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111usb_divider19divide_by_1_point_5E"><code class="docutils literal notranslate"><span class="pre">divide_by_1_point_5</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f111usb_divider11divide_by_1E"><code class="docutils literal notranslate"><span class="pre">divide_by_1</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f110clock_treeE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::clock_tree</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f110clock_tree19high_speed_externalE"><code class="docutils literal notranslate"><span class="pre">high_speed_external</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f110clock_tree18low_speed_externalE"><code class="docutils literal notranslate"><span class="pre">low_speed_external</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f110clock_tree12system_clockE"><code class="docutils literal notranslate"><span class="pre">system_clock</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f110clock_tree5ahb_tE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::clock_tree::ahb_t</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f110clock_tree5pll_tE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::clock_tree::pll_t</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f110clock_tree5rtc_tE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::clock_tree::rtc_t</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f116configure_clocksE10clock_tree"><code class="docutils literal notranslate"><span class="pre">configure_clocks()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f19frequencyE10peripheral"><code class="docutils literal notranslate"><span class="pre">frequency()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="clock.html#_CPPv4N3hal7stm32f139maximum_speed_using_internal_oscillatorEv"><code class="docutils literal notranslate"><span class="pre">maximum_speed_using_internal_oscillator()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="constants.html">STM32F1 Constants APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheralE"><code class="docutils literal notranslate"><span class="pre">peripheral</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral4dma1E"><code class="docutils literal notranslate"><span class="pre">dma1</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral4dma2E"><code class="docutils literal notranslate"><span class="pre">dma2</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral4sramE"><code class="docutils literal notranslate"><span class="pre">sram</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral5flitfE"><code class="docutils literal notranslate"><span class="pre">flitf</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral3crcE"><code class="docutils literal notranslate"><span class="pre">crc</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral4fsmcE"><code class="docutils literal notranslate"><span class="pre">fsmc</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral4sdioE"><code class="docutils literal notranslate"><span class="pre">sdio</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral6timer2E"><code class="docutils literal notranslate"><span class="pre">timer2</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral6timer3E"><code class="docutils literal notranslate"><span class="pre">timer3</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral6timer4E"><code class="docutils literal notranslate"><span class="pre">timer4</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral6timer5E"><code class="docutils literal notranslate"><span class="pre">timer5</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral6timer6E"><code class="docutils literal notranslate"><span class="pre">timer6</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral6timer7E"><code class="docutils literal notranslate"><span class="pre">timer7</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral7timer12E"><code class="docutils literal notranslate"><span class="pre">timer12</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral7timer13E"><code class="docutils literal notranslate"><span class="pre">timer13</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral7timer14E"><code class="docutils literal notranslate"><span class="pre">timer14</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral15window_watchdogE"><code class="docutils literal notranslate"><span class="pre">window_watchdog</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral4spi2E"><code class="docutils literal notranslate"><span class="pre">spi2</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral4spi3E"><code class="docutils literal notranslate"><span class="pre">spi3</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral6usart2E"><code class="docutils literal notranslate"><span class="pre">usart2</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral6usart3E"><code class="docutils literal notranslate"><span class="pre">usart3</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral5uart4E"><code class="docutils literal notranslate"><span class="pre">uart4</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral5uart5E"><code class="docutils literal notranslate"><span class="pre">uart5</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral4i2c1E"><code class="docutils literal notranslate"><span class="pre">i2c1</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral4i2c2E"><code class="docutils literal notranslate"><span class="pre">i2c2</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral3usbE"><code class="docutils literal notranslate"><span class="pre">usb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral4can1E"><code class="docutils literal notranslate"><span class="pre">can1</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral12backup_clockE"><code class="docutils literal notranslate"><span class="pre">backup_clock</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral5powerE"><code class="docutils literal notranslate"><span class="pre">power</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral3dacE"><code class="docutils literal notranslate"><span class="pre">dac</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral4afioE"><code class="docutils literal notranslate"><span class="pre">afio</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral6gpio_aE"><code class="docutils literal notranslate"><span class="pre">gpio_a</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral6gpio_bE"><code class="docutils literal notranslate"><span class="pre">gpio_b</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral6gpio_cE"><code class="docutils literal notranslate"><span class="pre">gpio_c</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral6gpio_dE"><code class="docutils literal notranslate"><span class="pre">gpio_d</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral6gpio_eE"><code class="docutils literal notranslate"><span class="pre">gpio_e</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral6gpio_fE"><code class="docutils literal notranslate"><span class="pre">gpio_f</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral6gpio_gE"><code class="docutils literal notranslate"><span class="pre">gpio_g</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral4adc1E"><code class="docutils literal notranslate"><span class="pre">adc1</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral4adc2E"><code class="docutils literal notranslate"><span class="pre">adc2</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral6timer1E"><code class="docutils literal notranslate"><span class="pre">timer1</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral4spi1E"><code class="docutils literal notranslate"><span class="pre">spi1</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral6timer8E"><code class="docutils literal notranslate"><span class="pre">timer8</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral6usart1E"><code class="docutils literal notranslate"><span class="pre">usart1</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral4adc3E"><code class="docutils literal notranslate"><span class="pre">adc3</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral6timer9E"><code class="docutils literal notranslate"><span class="pre">timer9</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral7timer10E"><code class="docutils literal notranslate"><span class="pre">timer10</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral7timer11E"><code class="docutils literal notranslate"><span class="pre">timer11</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral3cpuE"><code class="docutils literal notranslate"><span class="pre">cpu</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral12system_timerE"><code class="docutils literal notranslate"><span class="pre">system_timer</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f110peripheral3i2sE"><code class="docutils literal notranslate"><span class="pre">i2s</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irqE"><code class="docutils literal notranslate"><span class="pre">irq</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq15window_watchdogE"><code class="docutils literal notranslate"><span class="pre">window_watchdog</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq3pvdE"><code class="docutils literal notranslate"><span class="pre">pvd</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq6tamperE"><code class="docutils literal notranslate"><span class="pre">tamper</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq3rtcE"><code class="docutils literal notranslate"><span class="pre">rtc</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq5flashE"><code class="docutils literal notranslate"><span class="pre">flash</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq3rccE"><code class="docutils literal notranslate"><span class="pre">rcc</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq5exti0E"><code class="docutils literal notranslate"><span class="pre">exti0</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq5exti1E"><code class="docutils literal notranslate"><span class="pre">exti1</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq5exti2E"><code class="docutils literal notranslate"><span class="pre">exti2</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq5exti3E"><code class="docutils literal notranslate"><span class="pre">exti3</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq5exti4E"><code class="docutils literal notranslate"><span class="pre">exti4</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq13dma1_channel1E"><code class="docutils literal notranslate"><span class="pre">dma1_channel1</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq13dma1_channel2E"><code class="docutils literal notranslate"><span class="pre">dma1_channel2</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq13dma1_channel3E"><code class="docutils literal notranslate"><span class="pre">dma1_channel3</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq13dma1_channel4E"><code class="docutils literal notranslate"><span class="pre">dma1_channel4</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq13dma1_channel5E"><code class="docutils literal notranslate"><span class="pre">dma1_channel5</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq13dma1_channel6E"><code class="docutils literal notranslate"><span class="pre">dma1_channel6</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq13dma1_channel7E"><code class="docutils literal notranslate"><span class="pre">dma1_channel7</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq4adc1E"><code class="docutils literal notranslate"><span class="pre">adc1</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq6adc1_2E"><code class="docutils literal notranslate"><span class="pre">adc1_2</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq14usb_hp_can1_txE"><code class="docutils literal notranslate"><span class="pre">usb_hp_can1_tx</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq7can1_txE"><code class="docutils literal notranslate"><span class="pre">can1_tx</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq15usb_lp_can1_rx0E"><code class="docutils literal notranslate"><span class="pre">usb_lp_can1_rx0</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq8can1_rx0E"><code class="docutils literal notranslate"><span class="pre">can1_rx0</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq8can1_rx1E"><code class="docutils literal notranslate"><span class="pre">can1_rx1</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq8can1_sceE"><code class="docutils literal notranslate"><span class="pre">can1_sce</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq7exti9_5E"><code class="docutils literal notranslate"><span class="pre">exti9_5</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq8tim1_brkE"><code class="docutils literal notranslate"><span class="pre">tim1_brk</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq14tim1_brk_tim15E"><code class="docutils literal notranslate"><span class="pre">tim1_brk_tim15</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq13tim1_brk_tim9E"><code class="docutils literal notranslate"><span class="pre">tim1_brk_tim9</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq7tim1_upE"><code class="docutils literal notranslate"><span class="pre">tim1_up</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq13tim1_up_tim16E"><code class="docutils literal notranslate"><span class="pre">tim1_up_tim16</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq13tim1_up_tim10E"><code class="docutils literal notranslate"><span class="pre">tim1_up_tim10</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq12tim1_trg_comE"><code class="docutils literal notranslate"><span class="pre">tim1_trg_com</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq18tim1_trg_com_tim11E"><code class="docutils literal notranslate"><span class="pre">tim1_trg_com_tim11</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq7tim1_ccE"><code class="docutils literal notranslate"><span class="pre">tim1_cc</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq4tim2E"><code class="docutils literal notranslate"><span class="pre">tim2</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq4tim3E"><code class="docutils literal notranslate"><span class="pre">tim3</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq4tim4E"><code class="docutils literal notranslate"><span class="pre">tim4</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq7i2c1_evE"><code class="docutils literal notranslate"><span class="pre">i2c1_ev</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq7i2c1_erE"><code class="docutils literal notranslate"><span class="pre">i2c1_er</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq7i2c2_evE"><code class="docutils literal notranslate"><span class="pre">i2c2_ev</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq7i2c2_erE"><code class="docutils literal notranslate"><span class="pre">i2c2_er</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq4spi1E"><code class="docutils literal notranslate"><span class="pre">spi1</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq4spi2E"><code class="docutils literal notranslate"><span class="pre">spi2</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq6usart1E"><code class="docutils literal notranslate"><span class="pre">usart1</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq6usart2E"><code class="docutils literal notranslate"><span class="pre">usart2</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq6usart3E"><code class="docutils literal notranslate"><span class="pre">usart3</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq9exti15_10E"><code class="docutils literal notranslate"><span class="pre">exti15_10</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq8rtcalarmE"><code class="docutils literal notranslate"><span class="pre">rtcalarm</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq9usbwakeupE"><code class="docutils literal notranslate"><span class="pre">usbwakeup</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq3cecE"><code class="docutils literal notranslate"><span class="pre">cec</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq11otg_fs_wkupE"><code class="docutils literal notranslate"><span class="pre">otg_fs_wkup</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq8tim8_brkE"><code class="docutils literal notranslate"><span class="pre">tim8_brk</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq5tim12E"><code class="docutils literal notranslate"><span class="pre">tim12</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq14tim8_brk_tim12E"><code class="docutils literal notranslate"><span class="pre">tim8_brk_tim12</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq7tim8_upE"><code class="docutils literal notranslate"><span class="pre">tim8_up</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq5tim13E"><code class="docutils literal notranslate"><span class="pre">tim13</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq13tim8_up_tim13E"><code class="docutils literal notranslate"><span class="pre">tim8_up_tim13</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq12tim8_trg_comE"><code class="docutils literal notranslate"><span class="pre">tim8_trg_com</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq5tim14E"><code class="docutils literal notranslate"><span class="pre">tim14</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq18tim8_trg_com_tim14E"><code class="docutils literal notranslate"><span class="pre">tim8_trg_com_tim14</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq7tim8_ccE"><code class="docutils literal notranslate"><span class="pre">tim8_cc</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq4adc3E"><code class="docutils literal notranslate"><span class="pre">adc3</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq4fsmcE"><code class="docutils literal notranslate"><span class="pre">fsmc</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq4sdioE"><code class="docutils literal notranslate"><span class="pre">sdio</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq4tim5E"><code class="docutils literal notranslate"><span class="pre">tim5</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq4spi3E"><code class="docutils literal notranslate"><span class="pre">spi3</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq5uart4E"><code class="docutils literal notranslate"><span class="pre">uart4</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq5uart5E"><code class="docutils literal notranslate"><span class="pre">uart5</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq8tim6_dacE"><code class="docutils literal notranslate"><span class="pre">tim6_dac</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq4tim6E"><code class="docutils literal notranslate"><span class="pre">tim6</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq4tim7E"><code class="docutils literal notranslate"><span class="pre">tim7</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq13dma2_channel1E"><code class="docutils literal notranslate"><span class="pre">dma2_channel1</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq13dma2_channel2E"><code class="docutils literal notranslate"><span class="pre">dma2_channel2</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq13dma2_channel3E"><code class="docutils literal notranslate"><span class="pre">dma2_channel3</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq15dma2_channel4_5E"><code class="docutils literal notranslate"><span class="pre">dma2_channel4_5</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq13dma2_channel4E"><code class="docutils literal notranslate"><span class="pre">dma2_channel4</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq13dma2_channel5E"><code class="docutils literal notranslate"><span class="pre">dma2_channel5</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq3ethE"><code class="docutils literal notranslate"><span class="pre">eth</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq8eth_wkupE"><code class="docutils literal notranslate"><span class="pre">eth_wkup</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq7can2_txE"><code class="docutils literal notranslate"><span class="pre">can2_tx</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq8can2_rx0E"><code class="docutils literal notranslate"><span class="pre">can2_rx0</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq8can2_rx1E"><code class="docutils literal notranslate"><span class="pre">can2_rx1</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq8can2_sceE"><code class="docutils literal notranslate"><span class="pre">can2_sce</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq6otg_fsE"><code class="docutils literal notranslate"><span class="pre">otg_fs</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constants.html#_CPPv4N3hal7stm32f13irq3maxE"><code class="docutils literal notranslate"><span class="pre">max</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="dma.html">STM32F1 DMA APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dma.html#_CPPv4N3hal7stm32f114max_dma_lengthE"><code class="docutils literal notranslate"><span class="pre">max_dma_length</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="constants.html">STM32F1 Constants APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dma.html">STM32F1 DMA APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gpio.html">STM32F1 GPIO APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gpio.html#hal-stm32f1-gpio-manager"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::gpio_manager</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="gpio.html#_CPPv4I_10peripheralEN3hal7stm32f14gpioE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::gpio</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="gpio.html#_CPPv4N3hal7stm32f118acquire_output_pinENSt3pmr21polymorphic_allocatorIEERKN3hal2v510strong_ptrI12gpio_managerEE2u8RKN10output_pin8settingsE"><code class="docutils literal notranslate"><span class="pre">acquire_output_pin()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="gpio.html#_CPPv4N3hal7stm32f117acquire_input_pinENSt3pmr21polymorphic_allocatorIEERKN3hal2v510strong_ptrI12gpio_managerEE2u8RKN9input_pin8settingsE"><code class="docutils literal notranslate"><span class="pre">acquire_input_pin()</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html#hal-stm32f1-gpio-manager"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::gpio_manager</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="independent_watchdog.html">STM32F1 Independent Watchdog APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="independent_watchdog.html#hal-stm32f1-independent-watchdog"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::independent_watchdog</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="independent_watchdog.html#_CPPv4N3hal7stm32f120independent_watchdogE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::independent_watchdog</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="independent_watchdog.html#_CPPv4N3hal7stm32f120independent_watchdog5startEv"><code class="docutils literal notranslate"><span class="pre">start()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="independent_watchdog.html#_CPPv4N3hal7stm32f120independent_watchdog5resetEv"><code class="docutils literal notranslate"><span class="pre">reset()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="independent_watchdog.html#_CPPv4N3hal7stm32f120independent_watchdog18set_countdown_timeEN3hal13time_durationE"><code class="docutils literal notranslate"><span class="pre">set_countdown_time()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="independent_watchdog.html#_CPPv4N3hal7stm32f120independent_watchdog10check_flagEv"><code class="docutils literal notranslate"><span class="pre">check_flag()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="independent_watchdog.html#_CPPv4N3hal7stm32f120independent_watchdog10clear_flagEv"><code class="docutils literal notranslate"><span class="pre">clear_flag()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="independent_watchdog.html#hal-stm32f1-independent-watchdog"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::independent_watchdog</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="input_pin.html">STM32F1 Input Pin APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="input_pin.html#hal-stm32f1-input-pin"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::input_pin</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="input_pin.html#_CPPv4N3hal7stm32f19input_pinE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::input_pin</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="input_pin.html#_CPPv4N3hal7stm32f19input_pin9input_pinE2u82u8"><code class="docutils literal notranslate"><span class="pre">input_pin()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="input_pin.html#hal-stm32f1-input-pin"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::input_pin</span></code></a></li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="interrupt.html">STM32F1 Interrupt APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="interrupt.html#_CPPv4N3hal7stm32f121initialize_interruptsEv"><code class="docutils literal notranslate"><span class="pre">initialize_interrupts()</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="interrupt.html">STM32F1 Interrupt APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="output_pin.html">STM32F1 Output Pin APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="output_pin.html#hal-stm32f1-output-pin"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::output_pin</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="output_pin.html#_CPPv4N3hal7stm32f110output_pinE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::output_pin</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="output_pin.html#_CPPv4N3hal7stm32f110output_pin10output_pinE2u82u8N10output_pin8settingsE"><code class="docutils literal notranslate"><span class="pre">output_pin()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="output_pin.html#hal-stm32f1-output-pin"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::output_pin</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pin.html">STM32F1 Pin APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pin.html#hal-stm32f1-pin-select"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::pin_select</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pin.html#_CPPv4N3hal7stm32f110pin_selectE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::pin_select</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4N3hal7stm32f110pin_select4portE"><code class="docutils literal notranslate"><span class="pre">port</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4N3hal7stm32f110pin_select3pinE"><code class="docutils literal notranslate"><span class="pre">pin</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="pin.html#_CPPv4N3hal7stm32f117release_jtag_pinsEv"><code class="docutils literal notranslate"><span class="pre">release_jtag_pins()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pin.html#_CPPv4N3hal7stm32f110mco_sourceE"><code class="docutils literal notranslate"><span class="pre">mco_source</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4N3hal7stm32f110mco_source12system_clockE"><code class="docutils literal notranslate"><span class="pre">system_clock</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4N3hal7stm32f110mco_source19high_speed_internalE"><code class="docutils literal notranslate"><span class="pre">high_speed_internal</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4N3hal7stm32f110mco_source19high_speed_externalE"><code class="docutils literal notranslate"><span class="pre">high_speed_external</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4N3hal7stm32f110mco_source22pll_clock_divided_by_2E"><code class="docutils literal notranslate"><span class="pre">pll_clock_divided_by_2</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="pin.html#_CPPv4N3hal7stm32f116activate_mco_pa8E10mco_source"><code class="docutils literal notranslate"><span class="pre">activate_mco_pa8()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pin.html#_CPPv4N3hal7stm32f113reset_mco_pa8Ev"><code class="docutils literal notranslate"><span class="pre">reset_mco_pa8()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="pin.html#_CPPv4N3hal7stm32f18can_pinsE"><code class="docutils literal notranslate"><span class="pre">can_pins</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4N3hal7stm32f18can_pins9pa11_pa12E"><code class="docutils literal notranslate"><span class="pre">pa11_pa12</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4N3hal7stm32f18can_pins7pb9_pb8E"><code class="docutils literal notranslate"><span class="pre">pb9_pb8</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="pin.html#_CPPv4N3hal7stm32f18can_pins7pd0_pd1E"><code class="docutils literal notranslate"><span class="pre">pd0_pd1</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="pin.html#hal-stm32f1-pin-select"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::pin_select</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pwm.html">STM32F1 PWM APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pwm.html#hal-stm32f1-pwm"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::pwm</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pwm.html#_CPPv4N3hal7stm32f13pwmE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::pwm</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="pwm.html#hal-stm32f1-pwm"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::pwm</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="spi.html">STM32F1 SPI APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="spi.html#hal-stm32f1-spi"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::spi</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="spi.html#_CPPv4N3hal7stm32f13spiE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::spi</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="spi.html#_CPPv4N3hal7stm32f13spi3spiEN3hal9bus_paramERKN3spi8settingsE"><code class="docutils literal notranslate"><span class="pre">spi()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html#hal-stm32f1-spi"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::spi</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="timer.html">STM32F1 Timer APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="timer.html#hal-stm32f1-timer"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::timer</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="timer.html#_CPPv4N3hal7stm32f15timerE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::timer</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="timer.html#hal-stm32f1-advanced-timer-manager"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::advanced_timer_manager</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="timer.html#_CPPv4N3hal7stm32f122advanced_timer_managerE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::advanced_timer_manager</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="timer.html#_CPPv4N3hal7stm32f122advanced_timer_manager13acquire_timerEv"><code class="docutils literal notranslate"><span class="pre">acquire_timer()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="timer.html#_CPPv4N3hal7stm32f122advanced_timer_manager27acquire_pwm_group_frequencyEv"><code class="docutils literal notranslate"><span class="pre">acquire_pwm_group_frequency()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="timer.html#hal-stm32f1-general-purpose-timer-manager"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::general_purpose_timer_manager</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="timer.html#_CPPv4N3hal7stm32f129general_purpose_timer_managerE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::general_purpose_timer_manager</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="timer.html#_CPPv4N3hal7stm32f129general_purpose_timer_manager13acquire_timerEv"><code class="docutils literal notranslate"><span class="pre">acquire_timer()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="timer.html#_CPPv4N3hal7stm32f129general_purpose_timer_manager27acquire_pwm_group_frequencyEv"><code class="docutils literal notranslate"><span class="pre">acquire_pwm_group_frequency()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="timer.html#hal-stm32f1-pwm-group-frequency"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::pwm_group_frequency</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="timer.html#_CPPv4N3hal7stm32f119pwm_group_frequencyE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::pwm_group_frequency</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="timer.html#hal-stm32f1-pwm16-channel"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::pwm16_channel</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="timer.html#_CPPv4N3hal7stm32f113pwm16_channelE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::pwm16_channel</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="timer.html#hal-stm32f1-timer"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::timer</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="timer.html#hal-stm32f1-advanced-timer-manager"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::advanced_timer_manager</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="timer.html#hal-stm32f1-general-purpose-timer-manager"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::general_purpose_timer_manager</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="timer.html#hal-stm32f1-pwm-group-frequency"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::pwm_group_frequency</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="timer.html#hal-stm32f1-pwm16-channel"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::pwm16_channel</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="uart.html">STM32F1 UART APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="uart.html#hal-stm32f1-uart"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::uart</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="uart.html#_CPPv4N3hal7stm32f14uartE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::uart</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="uart.html#_CPPv4N3hal7stm32f14uart4uartEN3hal10port_paramEN3hal12buffer_paramERKN6serial8settingsE"><code class="docutils literal notranslate"><span class="pre">uart()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="uart.html#_CPPv4N3hal7stm32f14uart4uartEN3hal7runtimeENSt7uint8_tENSt4spanIN3hal4byteEEERKN6serial8settingsE"><code class="docutils literal notranslate"><span class="pre">uart()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="uart.html#hal-stm32f1-uart"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::uart</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="usart.html">STM32F1 USART APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="usart.html#hal-stm32f1-usart-manager"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::usart_manager</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="usart.html#_CPPv4N3hal7stm32f113usart_managerE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::usart_manager</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="usart.html#_CPPv4N3hal7stm32f113usart_manager6serialE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::usart_manager::serial</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="usart.html#hal-stm32f1-usart-manager"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::usart_manager</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="usb.html">STM32F1 USB APIs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="usb.html#hal-stm32f1-usb"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::usb</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="usb.html#_CPPv4N3hal7stm32f13usbE"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::usb</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="usb.html#_CPPv4N3hal7stm32f13usb3usbEN3hal2v521strong_ptr_only_tokenERKN3hal2v510strong_ptrIN3hal12steady_clockEEEN3hal13time_durationE"><code class="docutils literal notranslate"><span class="pre">usb()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="usb.html#hal-stm32f1-usb"><code class="docutils literal notranslate"><span class="pre">hal::stm32f1::usb</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1036,8 +663,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1061,7 +688,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
 </p></div>
       
     </div>

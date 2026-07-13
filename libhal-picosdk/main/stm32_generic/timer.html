@@ -27,25 +27,25 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
     <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=2ded0ca0" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'stm32_generic/timer';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.17.1';
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/libhal-arm-mcu/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
@@ -308,11 +308,18 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
         </div>
       
       
@@ -332,11 +339,18 @@
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
     </div>
   
 
@@ -508,83 +522,10 @@
 <h2><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::timer</span></code><a class="headerlink" href="#hal-stm32-generic-timer" title="Link to this heading">#</a></h2>
 <p>Defined in namespace <code class="docutils literal notranslate"><span class="pre">hal::stm32_generic</span></code></p>
 <p><em>#include &lt;libhal-arm-mcu/stm32_generic/timer.hpp&gt;</em></p>
-<dl class="cpp class">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal13stm32_generic5timerE">
-<span id="_CPPv3N3hal13stm32_generic5timerE"></span><span id="_CPPv2N3hal13stm32_generic5timerE"></span><span id="hal::stm32_generic::timer"></span><span class="target" id="classhal_1_1stm32__generic_1_1timer"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">timer</span></span></span><a class="headerlink" href="#_CPPv4N3hal13stm32_generic5timerE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Implements shared timer setup and control logic common to all STM32 series. </p>
-<p>This class provides the common functionality for timer configuration and control, abstracting the parts of the timer interface that remain consistent across different STM32 series. It is intended to be used by series-specific implementations, which handle MCU-specific configuration details and pass any required parameters to these generic functions. </p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal13stm32_generic5timer5timerEN3hal6unsafeE">
-<span id="_CPPv3N3hal13stm32_generic5timer5timerEN3hal6unsafeE"></span><span id="_CPPv2N3hal13stm32_generic5timer5timerEN3hal6unsafeE"></span><span id="hal::stm32_generic::timer::timer__hal::unsafe"></span><span class="target" id="classhal_1_1stm32__generic_1_1timer_1aa920cdc4cca80148f75c683b02aa4f4a"></span><span class="sig-name descname"><span class="n"><span class="pre">timer</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unsafe</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal13stm32_generic5timer5timerEN3hal6unsafeE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Construct timer uninitialized. </p>
-<p>The purpose of this is to send the settings through the initialize function instead, because all the settings are series-specific. Therefore in the series-specific implementations of the timer, the address is deduced from the timer, as well as all the interrupt configuration is done, then they are passed to initialize.</p>
-<p>If this constructor is used, it is unsafe to call any API of this class before calling the <code class="docutils literal notranslate"><a class="reference internal" href="#classhal_1_1stm32__generic_1_1timer_1a26432a895013b43833d104b723777ab0"><span class="std std-ref"><span class="pre">initialize()</span></span></a></code> API with the correct inputs. Once that API has been called without failure, then the other APIs will become available. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal13stm32_generic5timer10is_runningEv">
-<span id="_CPPv3N3hal13stm32_generic5timer10is_runningEv"></span><span id="_CPPv2N3hal13stm32_generic5timer10is_runningEv"></span><span id="hal::stm32_generic::timer::is_running"></span><span class="target" id="classhal_1_1stm32__generic_1_1timer_1a24b89067eb1323b85d3924fd57245c80"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_running</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal13stm32_generic5timer10is_runningEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Determine if the timer is currently running. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>true - if a callback has been scheduled and has not been invoked yet, false otherwise. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal13stm32_generic5timer6cancelEv">
-<span id="_CPPv3N3hal13stm32_generic5timer6cancelEv"></span><span id="_CPPv2N3hal13stm32_generic5timer6cancelEv"></span><span id="hal::stm32_generic::timer::cancel"></span><span class="target" id="classhal_1_1stm32__generic_1_1timer_1aef15b3065591f6fe6f1be9ac240e757d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cancel</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal13stm32_generic5timer6cancelEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Stops a scheduled event from happening. </p>
-<p>Does nothing if the timer is not currently running.</p>
-<p>Note that there must be sufficient time between the this call finishing and the scheduled event’s termination. If this call is too close to when the schedule event expires, this function may not complete before the timer interrupt is triggered. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal13stm32_generic5timer8scheduleEN3hal13time_durationE3u32">
-<span id="_CPPv3N3hal13stm32_generic5timer8scheduleEN3hal13time_durationE3u32"></span><span id="_CPPv2N3hal13stm32_generic5timer8scheduleEN3hal13time_durationE3u32"></span><span id="hal::stm32_generic::timer::schedule__hal::time_duration.u32"></span><span class="target" id="classhal_1_1stm32__generic_1_1timer_1a1f55d5424dd8d501f148aa08c4e383ce"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">schedule</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">time_duration</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_delay</span></span>, <span class="n"><span class="pre">u32</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_timer_clock_frequency</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal13stm32_generic5timer8scheduleEN3hal13time_durationE3u32" title="Link to this definition">#</a><br /></dt>
-<dd><p>Schedule an interrupt to occur for this timer. </p>
-<p>If this is called and the timer has already scheduled an event (in other words, <code class="docutils literal notranslate"><a class="reference internal" href="#classhal_1_1stm32__generic_1_1timer_1a24b89067eb1323b85d3924fd57245c80"><span class="std std-ref"><span class="pre">is_running()</span></span></a></code> returns true), then the previous scheduled event will be canceled and the new scheduled event will be started.</p>
-<p>If the delay time result in a tick period of 0, then the timer will execute after 1 tick period. For example, if the tick period is 1ms and the requested time delay is 500us, then the event will be scheduled for 1ms.</p>
-<p>If the tick period is 1ms and the requested time is 2.5ms then the event will be scheduled after 2 tick periods or in 2ms.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>p_delay</strong> – - the amount of time until the timer expires </p></li>
-<li><p><strong>p_timer_clock_frequency</strong> – - the clock driving the timer </p></li>
-</ul>
-</dd>
-<dt class="field-even">Throws<span class="colon">:</span></dt>
-<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">argument_out_of_domain</span></span></span> – - if p_delay cannot be achieved. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal13stm32_generic5timer10initializeEN3hal6unsafeEPvPFvvEN8cortex_m5irq_tEN8cortex_m17interrupt_pointerE">
-<span id="_CPPv3N3hal13stm32_generic5timer10initializeEN3hal6unsafeEPvPFvvEN8cortex_m5irq_tEN8cortex_m17interrupt_pointerE"></span><span id="_CPPv2N3hal13stm32_generic5timer10initializeEN3hal6unsafeEPvPFvvEN8cortex_m5irq_tEN8cortex_m17interrupt_pointerE"></span><span class="target" id="classhal_1_1stm32__generic_1_1timer_1a26432a895013b43833d104b723777ab0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initialize</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unsafe</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">p_peripheral_address</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">initialize_interrupts_function</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span>, <span class="n"><span class="pre">cortex_m</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">irq_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_irq</span></span>, <span class="n"><span class="pre">cortex_m</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">interrupt_pointer</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_handler</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal13stm32_generic5timer10initializeEN3hal6unsafeEPvPFvvEN8cortex_m5irq_tEN8cortex_m17interrupt_pointerE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Initialize the timer with the series-specific settings. </p>
-<p>This is where the constructed uninitialized timer gets initialized. It gets all the series-specific settings passed to it that it needs, and it handles them appropriately.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>p_peripheral_address</strong> – - the address of the chosen timer peripheral </p></li>
-<li><p><strong>initialize_interrupts_function</strong> – - the function needed to initialize interrupts for the specific series stm32. For example, for the stm32f1 series, the function passed would be <code class="docutils literal notranslate"><span class="pre">hal::stm32f1::initialize_interrupts()</span></code>. </p></li>
-<li><p><strong>p_irq</strong> – - the irq number for the chosen timer </p></li>
-<li><p><strong>p_handler</strong> – - the platform specific interrupt handler to be installed </p></li>
-</ul>
-</dd>
-<dt class="field-even">Throws<span class="colon">:</span></dt>
-<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">device_or_resource_busy</span></span></span> – - if the timer interrupt vector is already in use. </p>
-</dd>
-</dl>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenclass: Cannot find class “hal::stm32_generic::timer” in doxygen xml output for project “libhal-arm-mcu” from directory: build/xml</p>
 </div>
-</dd></dl>
-
 </section>
 </section>
 
@@ -635,17 +576,7 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hal-stm32-generic-timer"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::timer</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal13stm32_generic5timerE"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::timer</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal13stm32_generic5timer5timerEN3hal6unsafeE"><code class="docutils literal notranslate"><span class="pre">timer()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal13stm32_generic5timer10is_runningEv"><code class="docutils literal notranslate"><span class="pre">is_running()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal13stm32_generic5timer6cancelEv"><code class="docutils literal notranslate"><span class="pre">cancel()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal13stm32_generic5timer8scheduleEN3hal13time_durationE3u32"><code class="docutils literal notranslate"><span class="pre">schedule()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal13stm32_generic5timer10initializeEN3hal6unsafeEPvPFvvEN8cortex_m5irq_tEN8cortex_m17interrupt_pointerE"><code class="docutils literal notranslate"><span class="pre">initialize()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hal-stm32-generic-timer"><code class="docutils literal notranslate"><span class="pre">hal::stm32_generic::timer</span></code></a></li>
 </ul>
   </nav></div>
 
@@ -671,8 +602,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -696,7 +627,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
 </p></div>
       
     </div>
