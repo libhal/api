@@ -27,30 +27,31 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=e42c4877" />
     <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=e42c4877" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/strong_ptr';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_version = '0.18.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/strong_ptr/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
             false;
         </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -59,20 +60,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -98,7 +105,7 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
   <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
@@ -256,11 +263,18 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
         </div>
       
       
@@ -280,11 +294,18 @@
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
     </div>
   
 
@@ -336,7 +357,14 @@
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
         <div class="sidebar-primary-item">
+
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
@@ -456,75 +484,16 @@
 <section id="make-strong-ptr-t">
 <h2>make_strong_ptr&lt;T&gt;<a class="headerlink" href="#make-strong-ptr-t" title="Link to this heading">#</a></h2>
 <p>Factory function for creating a <code class="docutils literal notranslate"><span class="pre">strong_ptr</span></code>.</p>
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4I0DpEN2v115make_strong_ptrE10strong_ptrI1TEPNSt3pmr15memory_resourceEDpRR4Args">
-<span id="_CPPv3I0DpEN2v115make_strong_ptrEPNSt3pmr15memory_resourceEDpRR4Args"></span><span id="_CPPv2I0DpEN2v115make_strong_ptrEPNSt3pmr15memory_resourceEDpRR4Args"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Args</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="strong__ptr_8cppm_1a2c27846ae2440d8b7887bb0b988a27dd"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN2v110strong_ptrE" title="v1::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0DpEN2v115make_strong_ptrE10strong_ptrI1TEPNSt3pmr15memory_resourceEDpRR4Args" title="v1::make_strong_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">v1</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">make_strong_ptr</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pmr</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">memory_resource</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">p_memory_resource</span></span>, <a class="reference internal" href="#_CPPv4I0DpEN2v115make_strong_ptrE10strong_ptrI1TEPNSt3pmr15memory_resourceEDpRR4Args" title="v1::make_strong_ptr::Args"><span class="n"><span class="pre">Args</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">...</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0DpEN2v115make_strong_ptrE10strong_ptrI1TEPNSt3pmr15memory_resourceEDpRR4Args" title="Link to this definition">#</a><br /></dt>
-<dd><p>Factory function to create a <a class="reference internal" href="#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> with automatic construction detection. </p>
-<p>This is the primary way to create a new <a class="reference internal" href="#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>.</p>
-<p>To create a <a class="reference internal" href="#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>, you must provide a <code class="docutils literal notranslate"><span class="pre">std::pmr::memory_resource</span></code>. That resource must outlive all strong_ptrs created by it. To uphold the guarantees of <a class="reference internal" href="#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>, the <code class="docutils literal notranslate"><span class="pre">std::pmr::memory_resource</span></code> MUST terminate the application if it is destroyed before all of its allocated memory has been freed. This requirement prevents use-after-free errors.</p>
-<p>The function performs the following operations:</p>
-<p><ol class="loweralpha simple">
-<li><p>Allocates memory for both the object and its control block together</p></li>
-<li><p>Detects at compile time if the type expects a strong_ptr_only_token</p></li>
-<li><p>Constructs the object with appropriate parameters</p></li>
-<li><p>Initializes <a class="reference internal" href="enable_strong_from_this.html#classv1_1_1enable__strong__from__this"><span class="std std-ref">enable_strong_from_this</span></a> support if the type inherits from it</p></li>
-<li><p>Returns a <a class="reference internal" href="#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> managing the newly created object</p></li>
-</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “v1::make_strong_ptr” with arguments None in doxygen xml output for project “strong_ptr” from directory: build/xml.
+Potential matches:
 </p>
-<p><strong>Token-based construction</strong>: If a class constructor takes <code class="docutils literal notranslate"><span class="pre">strong_ptr_only_token</span></code> as its first parameter, this function automatically provides that token, ensuring the class can only be constructed via make_strong_ptr.</p>
-<p><strong>Normal construction</strong>: For regular classes, construction proceeds normally with the provided arguments.</p>
-<p><strong><a class="reference internal" href="enable_strong_from_this.html#classv1_1_1enable__strong__from__this"><span class="std std-ref">enable_strong_from_this</span></a> support</strong>: If the constructed type inherits from <code class="docutils literal notranslate"><a class="reference internal" href="enable_strong_from_this.html#classv1_1_1enable__strong__from__this"><span class="std std-ref"><span class="pre">enable_strong_from_this</span></span></a><span class="pre">&lt;T&gt;</span></code>, the weak reference is automatically initialized to enable <code class="docutils literal notranslate"><span class="pre">strong_from_this()</span></code> and <code class="docutils literal notranslate"><span class="pre">weak_from_this()</span></code> functionality.</p>
-<p>Example usage:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Token-protected class (can only be created via make_strong_ptr)</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">protected_driver</span><span class="w"> </span><span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-<span class="w">  </span><span class="n">protected_driver</span><span class="p">(</span><span class="n">strong_ptr_only_token</span><span class="p">,</span><span class="w"> </span><span class="n">driver_config</span><span class="w"> </span><span class="n">config</span><span class="p">);</span>
-<span class="p">};</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_strong_ptr</span><span class="o">&lt;</span><span class="n">protected_driver</span><span class="o">&gt;</span><span class="p">(</span><span class="n">allocator</span><span class="p">,</span><span class="w"> </span><span class="n">config</span><span class="p">{});</span>
-
-<span class="c1">// Regular class</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">regular_class</span><span class="w"> </span><span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-<span class="w">  </span><span class="n">regular_class</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
-<span class="p">};</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_strong_ptr</span><span class="o">&lt;</span><span class="n">regular_class</span><span class="o">&gt;</span><span class="p">(</span><span class="n">allocator</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">);</span>
-
-<span class="c1">// Class with enable_strong_from_this support</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">self_aware</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">enable_strong_from_this</span><span class="o">&lt;</span><span class="n">self_aware</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-<span class="w">  </span><span class="n">self_aware</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
-<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">register_callback</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">self</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strong_from_this</span><span class="p">();</span><span class="w"> </span><span class="c1">// This works automatically</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">};</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_strong_ptr</span><span class="o">&lt;</span><span class="n">self_aware</span><span class="o">&gt;</span><span class="p">(</span><span class="n">allocator</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;example&quot;</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="w"> </span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="p">...</span><span class="n">Args</span><span class="o">&gt;</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="n">strong_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">make_strong_ptr</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pmr</span><span class="o">::</span><span class="n">memory_resource</span><span class="w"> </span><span class="o">*</span><span class="n">p_memory_resource</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span><span class="w"> </span><span class="n">p_args</span><span class="p">)</span>
+<span class="o">-</span><span class="w"> </span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="p">...</span><span class="n">Args</span><span class="o">&gt;</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="n">strong_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">make_strong_ptr</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pmr</span><span class="o">::</span><span class="n">polymorphic_allocator</span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">p_memory_resource</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span><span class="w"> </span><span class="n">p_args</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>T</strong> – The type of object to create </p></li>
-<li><p><strong>Args</strong> – Types of arguments to forward to the constructor </p></li>
-</ul>
-</dd>
-<dt class="field-even">Parameters<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>p_memory_resource</strong> – the memory resource used to allocate memory for the <a class="reference internal" href="#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a>. The memory resource must call <code class="docutils literal notranslate"><span class="pre">std::terminate</span></code> if it is destroyed without all of its memory being freed. </p></li>
-<li><p><strong>p_args</strong> – Arguments to forward to the constructor </p></li>
-</ul>
-</dd>
-<dt class="field-odd">Throws<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">Any</span></span></span> – exception thrown by the object’s constructor </p></li>
-<li><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">std</span><span class="p">::</span><span class="n">bad_alloc</span></span></span> – if memory allocation fails </p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A <a class="reference internal" href="#classv1_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> managing the newly created object </p>
-</dd>
-</dl>
-</dd></dl>
-
+</div>
 </section>
 <section id="class-api">
 <h2>Class API<a class="headerlink" href="#class-api" title="Link to this heading">#</a></h2>
@@ -952,13 +921,10 @@
     class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> On this page
   </div>
-  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-example">Usage Example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-strong-ptr-t">make_strong_ptr&lt;T&gt;</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0DpEN2v115make_strong_ptrE10strong_ptrI1TEPNSt3pmr15memory_resourceEDpRR4Args"><code class="docutils literal notranslate"><span class="pre">make_strong_ptr()</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-strong-ptr-t">make_strong_ptr&lt;T&gt;</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-api">Class API</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN2v110strong_ptrE"><code class="docutils literal notranslate"><span class="pre">v1::strong_ptr</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v110strong_ptr10strong_ptrEv"><code class="docutils literal notranslate"><span class="pre">strong_ptr()</span></code></a></li>
@@ -991,13 +957,13 @@
   </nav></div>
 
   <div class="sidebar-secondary-item">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/api/strong_ptr.md.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div></div>
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/strong_ptr.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
 
 </div></div>
               
@@ -1012,8 +978,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1037,7 +1003,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
 </p></div>
       
     </div>
