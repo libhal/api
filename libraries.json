@@ -7,6 +7,10 @@
         "url": "https://libhal.github.io/api/async_context/0.0.10"
       },
       {
+        "version": "0.0.11",
+        "url": "https://libhal.github.io/api/async_context/0.0.11"
+      },
+      {
         "version": "0.0.8",
         "url": "https://libhal.github.io/api/async_context/0.0.8"
       },
@@ -45,6 +49,10 @@
         "url": "https://libhal.github.io/api/libhal/4.22.0"
       },
       {
+        "version": "4.23.0",
+        "url": "https://libhal.github.io/api/libhal/4.23.0"
+      },
+      {
         "version": "main",
         "url": "https://libhal.github.io/api/libhal/main"
       }
@@ -73,6 +81,14 @@
       {
         "version": "1.21.2",
         "url": "https://libhal.github.io/api/libhal-arm-mcu/1.21.2"
+      },
+      {
+        "version": "1.21.3",
+        "url": "https://libhal.github.io/api/libhal-arm-mcu/1.21.3"
+      },
+      {
+        "version": "1.21.4",
+        "url": "https://libhal.github.io/api/libhal-arm-mcu/1.21.4"
       },
       {
         "version": "main",
