@@ -476,7 +476,7 @@
 <dd><p>A dynamically allocated buffer with runtime size. </p>
 <p>allocated_buffer&lt;T&gt; provides a non-resizable buffer container with runtime-determined size. This type is meant for use as buffer for serial data or sampled data. The expectation is that the memory will be used with DMA, so its access operators like operator[] are bounds checked. It’s similar to std::array&lt;T,N&gt;, but with the size determined at runtime rather than compile time.</p>
 <p>Unlike std::vector&lt;T&gt;, allocated_buffer&lt;T&gt; does not support dynamic resizing operations such as push_back() or resize().</p>
-<p>Example usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">pmr</span><span class="o">::</span><span class="n">polymorphic_allocator</span><span class="o">&lt;</span><span class="n">hal</span><span class="o">::</span><span class="n">byte</span><span class="o">&gt;</span><span class="w"> </span><span class="n">allocator</span><span class="p">;</span>
+<p>Example usage: <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">pmr</span><span class="o">::</span><span class="n">polymorphic_allocator</span><span class="o">&lt;</span><span class="n">hal</span><span class="o">::</span><span class="kt">byte</span><span class="o">&gt;</span><span class="w"> </span><span class="n">allocator</span><span class="p">;</span>
 <span class="n">hal</span><span class="o">::</span><span class="n">v5</span><span class="o">::</span><span class="n">allocated_buffer</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">buffer</span><span class="p">(</span><span class="n">allocator</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w"> </span><span class="c1">// Create buffer of 10</span>
 <span class="n">ints</span>
 
@@ -487,7 +487,7 @@
 
 <span class="c1">// Range-based for loop</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">buffer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">hal</span><span class="o">::</span><span class="n">print</span><span class="o">&lt;</span><span class="mi">16</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="n">serial</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%d &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+<span class="w">  </span><span class="n">hal</span><span class="o">::</span><span class="n">print</span><span class="o">&lt;</span><span class="mi">16</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="n">serial</span><span class="p">,</span><span class="w"> </span><span class="s">"%d "</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
