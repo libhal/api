@@ -895,7 +895,7 @@
 <p><em>import async_context;</em></p>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4I0EN2v06futureE">
-<span id="_CPPv3I0EN2v06futureE"></span><span id="_CPPv2I0EN2v06futureE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classv0_1_1future"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">future</span></span></span><a class="headerlink" href="#_CPPv4I0EN2v06futureE" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3I0EN2v06futureE"></span><span id="_CPPv2I0EN2v06futureE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classv0_1_1future"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">future</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">v0</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">future_base</span></span><a class="headerlink" href="#_CPPv4I0EN2v06futureE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Represents a future value that can be awaited. </p>
 <p>The future class represents the result of an asynchronous operation. It can hold either a value, an exception, or be in progress (waiting for completion). Futures are the primary way to manage asynchronous operations in this library.</p>
 <dl class="field-list simple">
@@ -907,13 +907,9 @@
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2v06future6futureEv">
-<span id="_CPPv3N2v06future6futureEv"></span><span id="_CPPv2N2v06future6futureEv"></span><span id="v0::future::future"></span><span class="target" id="classv0_1_1future_1a9b07f426bc5c75afce7fbbbf29cb504f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">future</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v06future6futureEv" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N2v06future6futureEv"></span><span id="_CPPv2N2v06future6futureEv"></span><span id="v0::future::futureCE"></span><span class="target" id="classv0_1_1future_1aad884415bfc392ba2dc29ce519ba258c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">future</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v06future6futureEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>Default initialization for a void future. </p>
-<p>This future will considered to be done on creation.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For void futures, the state is initialized to std::monostate, indicating completion with no return value. </p>
-</div>
+<p>This future will considered to be done on creation. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -921,16 +917,12 @@
 <span id="_CPPv3I0EN2v06future6futureERR1U"></span><span id="_CPPv2I0EN2v06future6futureERR1U"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classv0_1_1future_1a6953743b41362b3f2d3a27e5061339c2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">future</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN2v06future6futureERR1U" title="v0::future::future::U"><span class="n"><span class="pre">U</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_value</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0EN2v06future6futureERR1U" title="Link to this definition">#</a><br /></dt>
 <dd><p>Construct a future with a value. </p>
 <p>This future will considered to be done and will contain just the value passed into this.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This constructor creates a completed future containing the provided value. The future will be in the “done” state with the value stored internally. </p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>U</strong> – - type that can construct a type T (which includes T itself) </p>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>p_value</strong> – The value to initialize the future with</p>
+<dd class="field-even"><p><strong>p_value</strong> – The value to initialize the future with </p>
 </dd>
 </dl>
 </dd></dl>
@@ -974,39 +966,7 @@
 <dt class="sig sig-object cpp" id="_CPPv4N2v06futureD0Ev">
 <span id="_CPPv3N2v06futureD0Ev"></span><span id="_CPPv2N2v06futureD0Ev"></span><span id="v0::future::~futureCE"></span><span class="target" id="classv0_1_1future_1a030093ea8dd2156f17a3eb7594866bbe"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~future</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2v06futureD0Ev" title="Link to this definition">#</a><br /></dt>
 <dd><p>Destruct future. </p>
-<p>If the future contins a coroutine handle on destruction, then cancel is called on the associated context. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK2v06future4doneEv">
-<span id="_CPPv3NK2v06future4doneEv"></span><span id="_CPPv2NK2v06future4doneEv"></span><span id="v0::future::doneCCE"></span><span class="target" id="classv0_1_1future_1a89e2e38be87468e1042807f67eba2ccd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">done</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2v06future4doneEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Reports if this async object has finished its operation and now contains a value. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A future is considered “done” when it has either completed successfully, encountered an exception, or been cancelled. This method can be used to check if it’s safe to extract the result or handle the completion state. </p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>true - this operation is finished and either contains the value of type T, an exception_ptr, or this future is in a cancelled state. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>false - operation has yet to completed and does have a value.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK2v06future9has_valueEv">
-<span id="_CPPv3NK2v06future9has_valueEv"></span><span id="_CPPv2NK2v06future9has_valueEv"></span><span id="v0::future::has_valueCCE"></span><span class="target" id="classv0_1_1future_1a9760abfa809806ab8bac865cdb2ede2f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">has_value</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2v06future9has_valueEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Returns true if this future contains a value. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>true - future contains a value </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>false - future does not contain a value </p>
-</dd>
-</dl>
+<p>Destroys the stored value, if any (a no-op the compiler elides entirely for trivially-destructible T). future_base’s destructor then runs automatically, handling the exception_ptr and cancel-on-drop cases - unchanged from today, and shared across every future&lt;T&gt;. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1015,14 +975,11 @@
 <dd><p>Extract value from async operation. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This method should only be called when <code class="docutils literal notranslate"><a class="reference internal" href="#classv0_1_1future_1a9760abfa809806ab8bac865cdb2ede2f"><span class="std std-ref"><span class="pre">has_value()</span></span></a></code> returns true. Calling this method on a future that doesn’t contain a value will throw std::bad_variant_access. </p>
+<p>This method should only be called when <code class="docutils literal notranslate"><span class="pre">has_value()</span></code> returns true. </p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Throws<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">std</span><span class="p">::</span><span class="n">bad_variant_access</span></span></span> – if <code class="docutils literal notranslate"><a class="reference internal" href="#classv0_1_1future_1a9760abfa809806ab8bac865cdb2ede2f"><span class="std std-ref"><span class="pre">has_value()</span></span></a></code> return false</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Type - reference to the value from this async operation. </p>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Type - reference to the value from this async operation.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1065,40 +1022,16 @@
 <dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4I0EN2v06future7awaiter13await_suspendENSt16coroutine_handleENSt16coroutine_handleI7promiseI1UEEE">
-<span id="_CPPv3I0EN2v06future7awaiter13await_suspendENSt16coroutine_handleI7promiseI1UEEE"></span><span id="_CPPv2I0EN2v06future7awaiter13await_suspendENSt16coroutine_handleI7promiseI1UEEE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structv0_1_1future_1_1awaiter_1af79e27b6d9926c49a3819353172a8ea4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">coroutine_handle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">await_suspend</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">coroutine_handle</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">promise</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN2v06future7awaiter13await_suspendENSt16coroutine_handleENSt16coroutine_handleI7promiseI1UEEE" title="v0::future::awaiter::await_suspend::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_calling_coroutine</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0EN2v06future7awaiter13await_suspendENSt16coroutine_handleENSt16coroutine_handleI7promiseI1UEEE" title="Link to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N2v06future7awaiter13await_suspendENSt16coroutine_handleIEE">
+<span id="_CPPv3N2v06future7awaiter13await_suspendENSt16coroutine_handleIEE"></span><span id="_CPPv2N2v06future7awaiter13await_suspendENSt16coroutine_handleIEE"></span><span id="v0::future::awaiter::await_suspend__std::coroutine_handle::"></span><span class="target" id="structv0_1_1future_1_1awaiter_1a2082ed91f4e68033999904ce3bb7363d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">coroutine_handle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">await_suspend</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">coroutine_handle</span></span><span class="p"><span class="pre">&lt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_calling_coroutine</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2v06future7awaiter13await_suspendENSt16coroutine_handleIEE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Communicates to the awaiter to simply resume this coroutine associated with this future. </p>
+<p>The whole body lives on future_base - it never needed to know either this future’s T or the calling coroutine’s promise type.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>U</strong> – - return type of the promise </p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_calling_coroutine</strong> – - the currently-suspending coroutine. </p>
 </dd>
-<dt class="field-even">Parameters<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>p_calling_coroutine</strong> – - this type is forgotten. The parent calling coroutine’s handle was captured when the future object was created via get_return_object(). </p>
-</dd>
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>std::coroutine_handle&lt;&gt; - self to continue </p>
-</dd>
-</dl>
-</dd></dl>
-
-</div>
-</dd></dl>
-
-<dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv4N2v06future9cancelledE">
-<span id="_CPPv3N2v06future9cancelledE"></span><span id="_CPPv2N2v06future9cancelledE"></span><span id="v0::future::cancelled"></span><span class="target" id="structv0_1_1future_1_1cancelled"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cancelled</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">exception</span></span><a class="headerlink" href="#_CPPv4N2v06future9cancelledE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Thrown when a future is in the cancelled state and has been awaited on. </p>
-<p>This exception is thrown when a cancelled future is awaited. A future can be in the cancelled state if its coroutine promise was destroyed.</p>
-<p>In general, normal usage of async context should never result in this exception being thrown. In order for this to be seen, a future would need to be created and then cancelled, then awaited on. This does not occur if a future is awaited and then the context is cancelled. </p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK2v06future9cancelled4whatEv">
-<span id="_CPPv3NK2v06future9cancelled4whatEv"></span><span id="_CPPv2NK2v06future9cancelled4whatEv"></span><span id="v0::future::cancelled::whatC"></span><span class="target" id="structv0_1_1future_1_1cancelled_1ae1f43c49666cb81f5e2cc0821f98df8f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">what</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK2v06future9cancelled4whatEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Get exception message. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>C-string describing the cancellation error </p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>std::coroutine_handle&lt;&gt; - self to continue </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1398,17 +1331,11 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v06future6futureERR6future"><code class="docutils literal notranslate"><span class="pre">future()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v06futureaSERR6future"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v06futureD0Ev"><code class="docutils literal notranslate"><span class="pre">~future()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v06future4doneEv"><code class="docutils literal notranslate"><span class="pre">done()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v06future9has_valueEv"><code class="docutils literal notranslate"><span class="pre">has_value()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v06future5valueEv"><code class="docutils literal notranslate"><span class="pre">value()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NO2v06futurecv8co_awaitEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">co_await()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NR2v06futurecv8co_awaitEv"><code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">co_await()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v06future7awaiterE"><code class="docutils literal notranslate"><span class="pre">v0::future::awaiter</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN2v06future7awaiter13await_suspendENSt16coroutine_handleENSt16coroutine_handleI7promiseI1UEEE"><code class="docutils literal notranslate"><span class="pre">await_suspend()</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v06future9cancelledE"><code class="docutils literal notranslate"><span class="pre">v0::future::cancelled</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2v06future9cancelled4whatEv"><code class="docutils literal notranslate"><span class="pre">what()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2v06future7awaiter13await_suspendENSt16coroutine_handleIEE"><code class="docutils literal notranslate"><span class="pre">await_suspend()</span></code></a></li>
 </ul>
 </li>
 </ul>
