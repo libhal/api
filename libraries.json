@@ -69,6 +69,10 @@
         "url": "https://libhal.github.io/api/libhal/4.23.0"
       },
       {
+        "version": "4.23.1",
+        "url": "https://libhal.github.io/api/libhal/4.23.1"
+      },
+      {
         "version": "main",
         "url": "https://libhal.github.io/api/libhal/main"
       }
@@ -105,6 +109,10 @@
       {
         "version": "1.21.4",
         "url": "https://libhal.github.io/api/libhal-arm-mcu/1.21.4"
+      },
+      {
+        "version": "1.22.0",
+        "url": "https://libhal.github.io/api/libhal-arm-mcu/1.22.0"
       },
       {
         "version": "main",
@@ -173,6 +181,10 @@
       {
         "version": "0.2.1",
         "url": "https://libhal.github.io/api/strong_ptr/0.2.1"
+      },
+      {
+        "version": "0.2.2",
+        "url": "https://libhal.github.io/api/strong_ptr/0.2.2"
       },
       {
         "version": "main",
