@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>scatter_span&lt;T&gt; &#8212; scatter_span  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=e42c4877" />
+    <link rel="stylesheet" type="text/css" href="../_static/extra.css?v=e42c4877" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/scatter_span';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://libhal.github.io/api/scatter_span/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'main';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="scatter_array&lt;T, N&gt;" href="scatter_array.html" />
+    <link rel="prev" title="API" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="scatter_span  documentation - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="scatter_span  documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item">
+<nav class="navbar-nav">
+  <p
+    class="sidebar-header-items__title"
+    role="heading"
+    aria-level="2"
+    aria-label="Site Navigation"
+  ></p>
+  <ul class="bd-navbar-elements navbar-nav">
+    <li class="nav-item dropdown">
+      <button
+        class="btn dropdown-toggle nav-item"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        aria-controls="pst-nav-more-links"
+      >
+        Guides
+      </button>
+      <ul id="pst-nav-more-links" class="dropdown-menu">
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/"
+          >
+            🏡 Introduction
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/getting_started/"
+          >
+            🚀 Getting Started
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/user_guide/fundamentals/"
+          >
+            📖 User Guide
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/contributor_guide/philosophy/"
+          >
+            📚 Contributor Guides
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-item nav-external"
+            href="https://libhal.github.io/project_information/status/"
+          >
+            📊 Project Information
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    API
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+    <div class="navbar-persistent--mobile">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    API
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Types</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">scatter_span&lt;T&gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scatter_array.html">scatter_array&lt;T, N&gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="for_each_run.html">for_each_run</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">API</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">scatter_span&lt;T&gt;</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="scatter-span-t">
+<h1>scatter_span&lt;T&gt;<a class="headerlink" href="#scatter-span-t" title="Link to this heading">#</a></h1>
+<p>Defined in namespace <code class="docutils literal notranslate"><span class="pre">mem</span></code></p>
+<p><em>import scatter_span;</em></p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN3mem12scatter_spanE">
+<span id="_CPPv3I0EN3mem12scatter_spanE"></span><span id="_CPPv2I0EN3mem12scatter_spanE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classmem_1_1scatter__span"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">scatter_span</span></span></span><a class="headerlink" href="#_CPPv4I0EN3mem12scatter_spanE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Non-owning immutable view over a collection of disjoint memory spans. </p>
+<p>Works similarly to <code class="docutils literal notranslate"><span class="pre">std::span</span></code>, but the viewed elements do not need to be contiguous in memory. Each constituent chunk is a separate <code class="docutils literal notranslate"><span class="pre">std::span&lt;T</span> <span class="pre">const&gt;</span></code>. Iterating yields each chunk a span in order.</p>
+<p>Prefer <code class="docutils literal notranslate"><a class="reference internal" href="#classmem_1_1scatter__span"><span class="std std-ref"><span class="pre">scatter_span</span></span></a></code> for ad-hoc, call-site construction. Commonly used for when forwarding discontiguous buffers to an API without a heap allocation or memcpy. Prefer <code class="docutils literal notranslate"><a class="reference internal" href="scatter_array.html#classmem_1_1scatter__array"><span class="std std-ref"><span class="pre">scatter_array</span></span></a></code> when the span set is reused or must outlive the call site.</p>
+<p><dl>
+<dt><strong>Example</strong></dt><dd><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">send_packet</span><span class="p">(</span><span class="n">mem</span><span class="o">::</span><span class="n">scatter_span</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">byte</span><span class="o">&gt;</span><span class="w"> </span><span class="n">payload</span><span class="p">);</span>
+
+<span class="k">static</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">byte</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="k">const</span><span class="o">&gt;</span><span class="w"> </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">byte</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="o">&gt;</span><span class="w"> </span><span class="n">body</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">byte</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">crc</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">};</span>
+
+<span class="c1">// Three discontiguous buffers assembled into one logical packet inline,</span>
+<span class="c1">// with no heap allocation or memcpy:</span>
+<span class="n">send_packet</span><span class="p">({</span><span class="w"> </span><span class="n">header</span><span class="p">,</span><span class="w"> </span><span class="n">body</span><span class="p">,</span><span class="w"> </span><span class="n">crc</span><span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – Element type. Elements are always accessed as <code class="docutils literal notranslate"><span class="pre">T</span></code> const. </p>
+</dd>
+</dl>
+<p>Subclassed by <a class="reference internal" href="scatter_array.html#classmem_1_1scatter__array"><span class="std std-ref">mem::scatter_array&lt; T, N &gt;</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3mem12scatter_span12scatter_spanENSt4spanIKNSt4spanI1TEEEE">
+<span id="_CPPv3N3mem12scatter_span12scatter_spanENSt4spanIKNSt4spanI1TEEEE"></span><span id="_CPPv2N3mem12scatter_span12scatter_spanENSt4spanIKNSt4spanI1TEEEE"></span><span id="mem::scatter_span::scatter_span__std::span:std::span:T:C:CE"></span><span class="target" id="classmem_1_1scatter__span_1a0fbfcc766fdbf2e3d67b4a4822dcf489"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">scatter_span</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3mem12scatter_spanE" title="mem::scatter_span::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_spans</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3mem12scatter_span12scatter_spanENSt4spanIKNSt4spanI1TEEEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructs a <a class="reference internal" href="#classmem_1_1scatter__span"><span class="std std-ref">scatter_span</span></a> directly from a span-of-spans. </p>
+<p>Used by <code class="docutils literal notranslate"><a class="reference internal" href="scatter_array.html#classmem_1_1scatter__array"><span class="std std-ref"><span class="pre">scatter_array</span></span></a></code> to hand its internal storage to the base class. Assumes full extents of the first and last chunks with no trimming.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_spans</strong> – View over the array of chunk spans. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3mem12scatter_span12scatter_spanENSt16initializer_listINSt4spanI1TEEEE">
+<span id="_CPPv3N3mem12scatter_span12scatter_spanENSt16initializer_listINSt4spanI1TEEEE"></span><span id="_CPPv2N3mem12scatter_span12scatter_spanENSt16initializer_listINSt4spanI1TEEEE"></span><span id="mem::scatter_span::scatter_span__std::initializer_list:std::span:T::CE"></span><span class="target" id="classmem_1_1scatter__span_1a1b8cc5fe015910fa44031b7619c551ea"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">scatter_span</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">initializer_list</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3mem12scatter_spanE" title="mem::scatter_span::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_spans</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3mem12scatter_span12scatter_spanENSt16initializer_listINSt4spanI1TEEEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructs a <a class="reference internal" href="#classmem_1_1scatter__span"><span class="std std-ref">scatter_span</span></a> from a brace-enclosed list of spans. </p>
+<p>The first and last spans are recorded for trim purposes. An empty initializer list produces a zero-length <a class="reference internal" href="#classmem_1_1scatter__span"><span class="std std-ref">scatter_span</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_il</strong> – Initializer list of <code class="docutils literal notranslate"><span class="pre">std::span&lt;T</span> <span class="pre">const&gt;</span></code> chunks, in logical order. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3mem12scatter_span12scatter_spanEv">
+<span id="_CPPv3N3mem12scatter_span12scatter_spanEv"></span><span id="_CPPv2N3mem12scatter_span12scatter_spanEv"></span><span id="mem::scatter_span::scatter_spanCE"></span><span class="target" id="classmem_1_1scatter__span_1a79215fef4655c301a51a2c13eefd38aa"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">scatter_span</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N3mem12scatter_span12scatter_spanEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Construct an empty scatter span. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NKR3mem12scatter_span5beginEv">
+<span id="_CPPv3NKR3mem12scatter_span5beginEv"></span><span id="_CPPv2NKR3mem12scatter_span5beginEv"></span><span id="mem::scatter_span::beginCRCE"></span><span class="target" id="classmem_1_1scatter__span_1ab06b3967c3a17e9bfdbd804977098fcd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3mem21scatter_span_iteratorE" title="mem::scatter_span_iterator"><span class="n"><span class="pre">scatter_span_iterator</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3mem12scatter_spanE" title="mem::scatter_span::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><a class="headerlink" href="#_CPPv4NKR3mem12scatter_span5beginEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns an iterator to the first span chunk. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">scatter_span_iterator&lt;T&gt;</span></code> pointing at the first chunk. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NKO3mem12scatter_span5beginEv">
+<span id="_CPPv3NKO3mem12scatter_span5beginEv"></span><span id="_CPPv2NKO3mem12scatter_span5beginEv"></span><span id="mem::scatter_span::beginCOCE"></span><span class="target" id="classmem_1_1scatter__span_1a820334a3b98fce588ef5f9248592f539"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3mem21scatter_span_iteratorE" title="mem::scatter_span_iterator"><span class="n"><span class="pre">scatter_span_iterator</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3mem12scatter_spanE" title="mem::scatter_span::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;&amp;</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4NKO3mem12scatter_span5beginEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Deleted overload preventing iteration over a temporary <code class="docutils literal notranslate"><a class="reference internal" href="scatter_array.html#classmem_1_1scatter__array"><span class="std std-ref"><span class="pre">scatter_array</span></span></a></code>. </p>
+<p><code class="docutils literal notranslate"><a class="reference internal" href="scatter_array.html#classmem_1_1scatter__array"><span class="std std-ref"><span class="pre">scatter_array</span></span></a></code> owns its span-array storage (<code class="docutils literal notranslate"><span class="pre">m_internal_arr</span></code>). Calling <code class="docutils literal notranslate"><a class="reference internal" href="#classmem_1_1scatter__span_1ab06b3967c3a17e9bfdbd804977098fcd"><span class="std std-ref"><span class="pre">begin()</span></span></a></code> on an rvalue would produce an iterator that outlives the <code class="docutils literal notranslate"><a class="reference internal" href="scatter_array.html#classmem_1_1scatter__array"><span class="std std-ref"><span class="pre">scatter_array</span></span></a></code> temporary destroying that storage, leaving the returned iterator dangling into freed memory. This overload is deleted to force a compile-time error at the call site instead of runtime undefined behavior.</p>
+<p><dl>
+<dt><strong>Example (rejected at compile time)</strong></dt><dd><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// ERROR: use of deleted function</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mem</span><span class="o">::</span><span class="n">scatter_array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">).</span><span class="n">begin</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd>
+<dt><strong>Fix: bind to a named variable first</strong></dt><dd><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">ssa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mem</span><span class="o">::</span><span class="n">scatter_array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ssa</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w">  </span><span class="c1">// OK — ssa outlives `it`</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NKR3mem12scatter_span3endEv">
+<span id="_CPPv3NKR3mem12scatter_span3endEv"></span><span id="_CPPv2NKR3mem12scatter_span3endEv"></span><span id="mem::scatter_span::endCRCE"></span><span class="target" id="classmem_1_1scatter__span_1ad9ecc7b3197487cb4c90788e6762205e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3mem21scatter_span_iteratorE" title="mem::scatter_span_iterator"><span class="n"><span class="pre">scatter_span_iterator</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3mem12scatter_spanE" title="mem::scatter_span::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><a class="headerlink" href="#_CPPv4NKR3mem12scatter_span3endEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns a past-the-end iterator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">scatter_span_iterator&lt;T&gt;</span></code> pointing one past the last chunk. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NKO3mem12scatter_span3endEv">
+<span id="_CPPv3NKO3mem12scatter_span3endEv"></span><span id="_CPPv2NKO3mem12scatter_span3endEv"></span><span id="mem::scatter_span::endCOCE"></span><span class="target" id="classmem_1_1scatter__span_1a17275a6ed14a1e80b03cc067c2a6aa4b"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3mem21scatter_span_iteratorE" title="mem::scatter_span_iterator"><span class="n"><span class="pre">scatter_span_iterator</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3mem12scatter_spanE" title="mem::scatter_span::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;&amp;</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4NKO3mem12scatter_span3endEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Deleted overload preventing end-iteration over a temporary <code class="docutils literal notranslate"><a class="reference internal" href="scatter_array.html#classmem_1_1scatter__array"><span class="std std-ref"><span class="pre">scatter_array</span></span></a></code>. </p>
+<p>Mirrors <code class="docutils literal notranslate"><span class="pre">begin()</span> <span class="pre">const&amp;&amp;</span></code> = delete for the same reason: an end-iterator produced from an rvalue <code class="docutils literal notranslate"><a class="reference internal" href="scatter_array.html#classmem_1_1scatter__array"><span class="std std-ref"><span class="pre">scatter_array</span></span></a></code> would reference storage (<code class="docutils literal notranslate"><span class="pre">m_internal_arr</span></code>) that no longer exists once the temporary is destroyed at the end of the full-expression.</p>
+<p><dl>
+<dt><strong>Example (rejected at compile time)</strong></dt><dd><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// ERROR: use of deleted function</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mem</span><span class="o">::</span><span class="n">scatter_array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">).</span><span class="n">end</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd>
+<dt><strong>Fix: bind to a named variable first</strong></dt><dd><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">ssa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mem</span><span class="o">::</span><span class="n">scatter_array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ssa</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w">  </span><span class="c1">// OK — ssa outlives `it`</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NR3mem12scatter_span16sub_scatter_spanE21sub_scatter_span_args">
+<span id="_CPPv3NR3mem12scatter_span16sub_scatter_spanE21sub_scatter_span_args"></span><span id="_CPPv2NR3mem12scatter_span16sub_scatter_spanE21sub_scatter_span_args"></span><span id="mem::scatter_span::sub_scatter_span__sub_scatter_span_argsRCE"></span><span class="target" id="classmem_1_1scatter__span_1adc201314a7b9fd6db9e0291430b9b41c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3mem12scatter_spanE" title="mem::scatter_span"><span class="n"><span class="pre">scatter_span</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3mem12scatter_spanE" title="mem::scatter_span::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sub_scatter_span</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3mem12scatter_span21sub_scatter_span_argsE" title="mem::scatter_span::sub_scatter_span_args"><span class="n"><span class="pre">sub_scatter_span_args</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_args</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><a class="headerlink" href="#_CPPv4NR3mem12scatter_span16sub_scatter_spanE21sub_scatter_span_args" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns a sub-view of this <a class="reference internal" href="#classmem_1_1scatter__span"><span class="std std-ref">scatter_span</span></a> starting at a logical element offset. </p>
+<p>Analogous to <code class="docutils literal notranslate"><span class="pre">std::span::subspan</span></code>. No data is copied; the returned <code class="docutils literal notranslate"><a class="reference internal" href="#classmem_1_1scatter__span"><span class="std std-ref"><span class="pre">scatter_span</span></span></a></code> references the same underlying memory with adjusted trim values. If <code class="docutils literal notranslate"><span class="pre">p_args.offset</span></code> is at or beyond the total length, an empty <code class="docutils literal notranslate"><a class="reference internal" href="#classmem_1_1scatter__span"><span class="std std-ref"><span class="pre">scatter_span</span></span></a></code> is returned. If <code class="docutils literal notranslate"><span class="pre">p_args.count</span></code> exceeds the remaining elements it is clamped to the available length.</p>
+<p><dl>
+<dt><strong>Example</strong></dt><dd><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="o">&gt;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="p">};</span>
+<span class="n">mem</span><span class="o">::</span><span class="n">scatter_array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ssa</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span><span class="w">  </span><span class="c1">// length 9</span>
+
+<span class="c1">// Logical elements [2, 7) → { 3, 4, 5, 6, 7 }</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">sub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ssa</span><span class="p">.</span><span class="n">sub_scatter_span</span><span class="p">({</span><span class="w"> </span><span class="p">.</span><span class="n">offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_args</strong> – Offset and count describing the desired sub-range. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new <code class="docutils literal notranslate"><span class="pre">scatter_span&lt;T&gt;</span></code> covering the requested elements. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NO3mem12scatter_span16sub_scatter_spanE21sub_scatter_span_args">
+<span id="_CPPv3NO3mem12scatter_span16sub_scatter_spanE21sub_scatter_span_args"></span><span id="_CPPv2NO3mem12scatter_span16sub_scatter_spanE21sub_scatter_span_args"></span><span id="mem::scatter_span::sub_scatter_span__sub_scatter_span_argsOCE"></span><span class="target" id="classmem_1_1scatter__span_1a9c599dbe6c07fa430b822c0ad186dd2a"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3mem12scatter_spanE" title="mem::scatter_span"><span class="n"><span class="pre">scatter_span</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3mem12scatter_spanE" title="mem::scatter_span::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sub_scatter_span</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3mem12scatter_span21sub_scatter_span_argsE" title="mem::scatter_span::sub_scatter_span_args"><span class="n"><span class="pre">sub_scatter_span_args</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p_args</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">&amp;&amp;</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4NO3mem12scatter_span16sub_scatter_spanE21sub_scatter_span_args" title="Link to this definition">#</a><br /></dt>
+<dd><p>Deleted overload preventing sub-view creation from a temporary <code class="docutils literal notranslate"><a class="reference internal" href="scatter_array.html#classmem_1_1scatter__array"><span class="std std-ref"><span class="pre">scatter_array</span></span></a></code>. </p>
+<p><code class="docutils literal notranslate"><a class="reference internal" href="#classmem_1_1scatter__span_1adc201314a7b9fd6db9e0291430b9b41c"><span class="std std-ref"><span class="pre">sub_scatter_span()</span></span></a></code> returns a <code class="docutils literal notranslate"><span class="pre">scatter_span&lt;T&gt;</span></code> that views <code class="docutils literal notranslate"><a class="reference internal" href="scatter_array.html#classmem_1_1scatter__array"><span class="std std-ref"><span class="pre">scatter_array</span></span></a><span class="pre">'s</span></code> internally owned span array. If called on an rvalue, the returned <code class="docutils literal notranslate"><a class="reference internal" href="#classmem_1_1scatter__span"><span class="std std-ref"><span class="pre">scatter_span</span></span></a></code> would reference storage destroyed at the end of the full-expression that created the temporary <code class="docutils literal notranslate"><a class="reference internal" href="scatter_array.html#classmem_1_1scatter__array"><span class="std std-ref"><span class="pre">scatter_array</span></span></a></code>, leaving the result dangling. This overload is deleted so misuse fails to compile rather than producing a sub-view that reads freed memory.</p>
+<p><dl>
+<dt><strong>Example (rejected at compile time)</strong></dt><dd><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// ERROR: use of deleted function</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">sub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mem</span><span class="o">::</span><span class="n">scatter_array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">).</span><span class="n">sub_scatter_span</span><span class="p">({</span><span class="w"> </span><span class="p">.</span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+</dd>
+<dt><strong>Fix: bind to a named variable first</strong></dt><dd><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">ssa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mem</span><span class="o">::</span><span class="n">scatter_array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">sub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ssa</span><span class="p">.</span><span class="n">sub_scatter_span</span><span class="p">({</span><span class="w"> </span><span class="p">.</span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">});</span><span class="w">  </span><span class="c1">// OK — ssa outlives sub</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This restriction applies only to <code class="docutils literal notranslate"><a class="reference internal" href="scatter_array.html#classmem_1_1scatter__array"><span class="std std-ref"><span class="pre">scatter_array</span></span></a></code>, which owns its span storage. <code class="docutils literal notranslate"><a class="reference internal" href="#classmem_1_1scatter__span"><span class="std std-ref"><span class="pre">scatter_span</span></span></a></code> itself is safe to construct and use as a temporary, since the data it views lives in the caller’s expression, not in the <code class="docutils literal notranslate"><a class="reference internal" href="#classmem_1_1scatter__span"><span class="std std-ref"><span class="pre">scatter_span</span></span></a></code> object. </p>
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3mem12scatter_span6lengthEv">
+<span id="_CPPv3NK3mem12scatter_span6lengthEv"></span><span id="_CPPv2NK3mem12scatter_span6lengthEv"></span><span id="mem::scatter_span::lengthC"></span><span class="target" id="classmem_1_1scatter__span_1a31eaae96097ac5c298fb3112e2c93148"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">length</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3mem12scatter_span6lengthEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns the total number of logical elements across all chunks. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Total element count. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3mem12scatter_span21sub_scatter_span_argsE">
+<span id="_CPPv3N3mem12scatter_span21sub_scatter_span_argsE"></span><span id="_CPPv2N3mem12scatter_span21sub_scatter_span_argsE"></span><span id="mem::scatter_span::sub_scatter_span_args"></span><span class="target" id="structmem_1_1scatter__span_1_1sub__scatter__span__args"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sub_scatter_span_args</span></span></span><a class="headerlink" href="#_CPPv4N3mem12scatter_span21sub_scatter_span_argsE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Arguments for <code class="docutils literal notranslate"><a class="reference internal" href="#classmem_1_1scatter__span_1adc201314a7b9fd6db9e0291430b9b41c"><span class="std std-ref"><span class="pre">sub_scatter_span()</span></span></a></code>. Offset - Logical element index to start from. Count - Number of elements to include. (Defaults to all remaining) </p>
+</dd></dl>
+
+</dd></dl>
+
+<section id="scatter-span-iterator-t">
+<h2>scatter_span_iterator&lt;T&gt;<a class="headerlink" href="#scatter-span-iterator-t" title="Link to this heading">#</a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN3mem21scatter_span_iteratorE">
+<span id="_CPPv3I0EN3mem21scatter_span_iteratorE"></span><span id="_CPPv2I0EN3mem21scatter_span_iteratorE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classmem_1_1scatter__span__iterator"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">scatter_span_iterator</span></span></span><a class="headerlink" href="#_CPPv4I0EN3mem21scatter_span_iteratorE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Forward iterator over the constituent spans of a <a class="reference internal" href="#classmem_1_1scatter__span"><span class="std std-ref">scatter_span</span></a>. </p>
+<p>Each dereference yields a <code class="docutils literal notranslate"><span class="pre">std::span&lt;T</span> <span class="pre">const&gt;</span></code> representing one contiguous segment.</p>
+<p>The current pointer element is cached allowing for reads via the <code class="docutils literal notranslate"><span class="pre">operator*</span></code> and <code class="docutils literal notranslate"><span class="pre">operator-&gt;</span></code> to be constant time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – Element type of the underlying spans. </p>
+</dd>
+</dl>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3mem21scatter_span_iteratormlEv">
+<span id="_CPPv3NK3mem21scatter_span_iteratormlEv"></span><span id="_CPPv2NK3mem21scatter_span_iteratormlEv"></span><span id="mem::scatter_span_iterator::mul-operatorCCE"></span><span class="target" id="classmem_1_1scatter__span__iterator_1a2eeebcf85b14da47f86d404289bf0c44"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">value_type</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">*</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3mem21scatter_span_iteratormlEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns the trimmed span view for the current position. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A const reference to the cached <code class="docutils literal notranslate"><span class="pre">std::span&lt;T</span> <span class="pre">const&gt;</span></code>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3mem21scatter_span_iteratorptEv">
+<span id="_CPPv3NK3mem21scatter_span_iteratorptEv"></span><span id="_CPPv2NK3mem21scatter_span_iteratorptEv"></span><span id="mem::scatter_span_iterator::pointer-operatorCCE"></span><span class="target" id="classmem_1_1scatter__span__iterator_1ab1f61d1975cf49f1121c9d3697e6d583"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">-&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3mem21scatter_span_iteratorptEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns a proxy object that allows member access to the current span. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3mem21scatter_span_iteratorppEv">
+<span id="_CPPv3N3mem21scatter_span_iteratorppEv"></span><span id="_CPPv2N3mem21scatter_span_iteratorppEv"></span><span id="mem::scatter_span_iterator::inc-operatorCE"></span><span class="target" id="classmem_1_1scatter__span__iterator_1a0f0e3afcdcc9a9dbb1ff12b7ccef55ed"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3mem21scatter_span_iteratorE" title="mem::scatter_span_iterator"><span class="n"><span class="pre">scatter_span_iterator</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">++</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3mem21scatter_span_iteratorppEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Prefix increment. Advances to the next span and updates the cache. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Reference to <code class="docutils literal notranslate"><span class="pre">*this</span></code> after advancing. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3mem21scatter_span_iteratorppEi">
+<span id="_CPPv3N3mem21scatter_span_iteratorppEi"></span><span id="_CPPv2N3mem21scatter_span_iteratorppEi"></span><span id="mem::scatter_span_iterator::inc-operator__iCE"></span><span class="target" id="classmem_1_1scatter__span__iterator_1a5e861c010945aa1c9300990a139aef2b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3mem21scatter_span_iteratorE" title="mem::scatter_span_iterator"><span class="n"><span class="pre">scatter_span_iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">++</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3mem21scatter_span_iteratorppEi" title="Link to this definition">#</a><br /></dt>
+<dd><p>Postfix increment. Returns a copy of the iterator before advancing. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Copy of <code class="docutils literal notranslate"><span class="pre">*this</span></code> prior to the increment. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3mem21scatter_span_iteratormmEv">
+<span id="_CPPv3N3mem21scatter_span_iteratormmEv"></span><span id="_CPPv2N3mem21scatter_span_iteratormmEv"></span><span id="mem::scatter_span_iterator::dec-operatorCE"></span><span class="target" id="classmem_1_1scatter__span__iterator_1a51886168e556ba73deade24b947897e5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3mem21scatter_span_iteratorE" title="mem::scatter_span_iterator"><span class="n"><span class="pre">scatter_span_iterator</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">--</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3mem21scatter_span_iteratormmEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Prefix decrement. Retreats to the previous span and updates the cache. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Reference to <code class="docutils literal notranslate"><span class="pre">*this</span></code> after retreating. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3mem21scatter_span_iteratormmEi">
+<span id="_CPPv3N3mem21scatter_span_iteratormmEi"></span><span id="_CPPv2N3mem21scatter_span_iteratormmEi"></span><span id="mem::scatter_span_iterator::dec-operator__iCE"></span><span class="target" id="classmem_1_1scatter__span__iterator_1aaf1b445acf20e2c8abb4d44684b20e15"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3mem21scatter_span_iteratorE" title="mem::scatter_span_iterator"><span class="n"><span class="pre">scatter_span_iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">--</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3mem21scatter_span_iteratormmEi" title="Link to this definition">#</a><br /></dt>
+<dd><p>Postfix decrement. Returns a copy of the iterator before retreating. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Copy of <code class="docutils literal notranslate"><span class="pre">*this</span></code> prior to the decrement. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3mem21scatter_span_iteratorplE15difference_type">
+<span id="_CPPv3NK3mem21scatter_span_iteratorplE15difference_type"></span><span id="_CPPv2NK3mem21scatter_span_iteratorplE15difference_type"></span><span id="mem::scatter_span_iterator::add-operator__difference_typeCCE"></span><span class="target" id="classmem_1_1scatter__span__iterator_1a0eaaac973c0f1bb2873230cea68084e9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3mem21scatter_span_iteratorE" title="mem::scatter_span_iterator"><span class="n"><span class="pre">scatter_span_iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">+</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">difference_type</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_delta</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3mem21scatter_span_iteratorplE15difference_type" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns a new iterator advanced by <code class="docutils literal notranslate"><span class="pre">p_delta</span></code> spans. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_delta</strong> – Number of spans to advance. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New iterator pointing <code class="docutils literal notranslate"><span class="pre">p_delta</span></code> spans ahead. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3mem21scatter_span_iteratormiE15difference_type">
+<span id="_CPPv3NK3mem21scatter_span_iteratormiE15difference_type"></span><span id="_CPPv2NK3mem21scatter_span_iteratormiE15difference_type"></span><span id="mem::scatter_span_iterator::sub-operator__difference_typeCCE"></span><span class="target" id="classmem_1_1scatter__span__iterator_1a73004da9a3f11f043802aa8310ea43fc"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3mem21scatter_span_iteratorE" title="mem::scatter_span_iterator"><span class="n"><span class="pre">scatter_span_iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">-</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">difference_type</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_delta</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3mem21scatter_span_iteratormiE15difference_type" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns a new iterator retreated by <code class="docutils literal notranslate"><span class="pre">p_delta</span></code> spans. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_delta</strong> – Number of spans to retreat. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New iterator pointing <code class="docutils literal notranslate"><span class="pre">p_delta</span></code> spans behind. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3mem21scatter_span_iteratormiERK21scatter_span_iterator">
+<span id="_CPPv3NK3mem21scatter_span_iteratormiERK21scatter_span_iterator"></span><span id="_CPPv2NK3mem21scatter_span_iteratormiERK21scatter_span_iterator"></span><span id="mem::scatter_span_iterator::sub-operator__scatter_span_iteratorCRCCE"></span><span class="target" id="classmem_1_1scatter__span__iterator_1ac46a8ba1580cbeb7a51e1dd9e20de815"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">difference_type</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">-</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3mem21scatter_span_iteratorE" title="mem::scatter_span_iterator"><span class="n"><span class="pre">scatter_span_iterator</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3mem21scatter_span_iteratormiERK21scatter_span_iterator" title="Link to this definition">#</a><br /></dt>
+<dd><p>Returns the signed span distance between two iterators. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – The iterator to subtract. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Number of spans from <code class="docutils literal notranslate"><span class="pre">p_other</span></code> to <code class="docutils literal notranslate"><span class="pre">*this</span></code>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3mem21scatter_span_iteratoreqERK21scatter_span_iterator">
+<span id="_CPPv3NK3mem21scatter_span_iteratoreqERK21scatter_span_iterator"></span><span id="_CPPv2NK3mem21scatter_span_iteratoreqERK21scatter_span_iterator"></span><span id="mem::scatter_span_iterator::eq-operator__scatter_span_iteratorCRCCE"></span><span class="target" id="classmem_1_1scatter__span__iterator_1a980a68296455b57f50db81d03ecc277e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">==</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3mem21scatter_span_iteratorE" title="mem::scatter_span_iterator"><span class="n"><span class="pre">scatter_span_iterator</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3mem21scatter_span_iteratoreqERK21scatter_span_iterator" title="Link to this definition">#</a><br /></dt>
+<dd><p>Equality comparison by underlying pointer. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – Iterator to compare against. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code> if both iterators point to the same span. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3mem21scatter_span_iteratorneERK21scatter_span_iterator">
+<span id="_CPPv3NK3mem21scatter_span_iteratorneERK21scatter_span_iterator"></span><span id="_CPPv2NK3mem21scatter_span_iteratorneERK21scatter_span_iterator"></span><span id="mem::scatter_span_iterator::neq-operator__scatter_span_iteratorCRCCE"></span><span class="target" id="classmem_1_1scatter__span__iterator_1a9a839bf57b49e3e5913d9177b953750b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">!=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3mem21scatter_span_iteratorE" title="mem::scatter_span_iterator"><span class="n"><span class="pre">scatter_span_iterator</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3mem21scatter_span_iteratorneERK21scatter_span_iterator" title="Link to this definition">#</a><br /></dt>
+<dd><p>Inequality comparison by underlying pointer. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p_other</strong> – Iterator to compare against. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code> if the iterators point to different spans. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-friends">Friends</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3mem21scatter_span_iteratorplE15difference_typeRK21scatter_span_iterator">
+<span id="_CPPv3N3mem21scatter_span_iteratorplE15difference_typeRK21scatter_span_iterator"></span><span id="_CPPv2N3mem21scatter_span_iteratorplE15difference_typeRK21scatter_span_iterator"></span><span id="mem::scatter_span_iterator::add-operator__difference_type.scatter_span_iteratorCRCE"></span><span class="target" id="classmem_1_1scatter__span__iterator_1ae516c1402ff7a7cc7f156dc790fe40d6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">friend</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3mem21scatter_span_iteratorE" title="mem::scatter_span_iterator"><span class="n"><span class="pre">scatter_span_iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">+</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">difference_type</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">p_delta</span></span>, <a class="reference internal" href="#_CPPv4I0EN3mem21scatter_span_iteratorE" title="mem::scatter_span_iterator"><span class="n"><span class="pre">scatter_span_iterator</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p_iterator</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3mem21scatter_span_iteratorplE15difference_typeRK21scatter_span_iterator" title="Link to this definition">#</a><br /></dt>
+<dd><p>Commutative addition: advances <code class="docutils literal notranslate"><span class="pre">it</span></code> by <code class="docutils literal notranslate"><span class="pre">n</span></code> spans. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – Number of spans to advance. </p></li>
+<li><p><strong>it</strong> – Iterator to advance. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New iterator pointing <code class="docutils literal notranslate"><span class="pre">n</span></code> spans ahead of <code class="docutils literal notranslate"><span class="pre">it</span></code>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">API</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="scatter_array.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">scatter_array&lt;T, N&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN3mem12scatter_spanE"><code class="docutils literal notranslate"><span class="pre">mem::scatter_span</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3mem12scatter_span12scatter_spanENSt4spanIKNSt4spanI1TEEEE"><code class="docutils literal notranslate"><span class="pre">scatter_span()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3mem12scatter_span12scatter_spanENSt16initializer_listINSt4spanI1TEEEE"><code class="docutils literal notranslate"><span class="pre">scatter_span()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3mem12scatter_span12scatter_spanEv"><code class="docutils literal notranslate"><span class="pre">scatter_span()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NKR3mem12scatter_span5beginEv"><code class="docutils literal notranslate"><span class="pre">begin()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NKO3mem12scatter_span5beginEv"><code class="docutils literal notranslate"><span class="pre">begin()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NKR3mem12scatter_span3endEv"><code class="docutils literal notranslate"><span class="pre">end()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NKO3mem12scatter_span3endEv"><code class="docutils literal notranslate"><span class="pre">end()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NR3mem12scatter_span16sub_scatter_spanE21sub_scatter_span_args"><code class="docutils literal notranslate"><span class="pre">sub_scatter_span()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NO3mem12scatter_span16sub_scatter_spanE21sub_scatter_span_args"><code class="docutils literal notranslate"><span class="pre">sub_scatter_span()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3mem12scatter_span6lengthEv"><code class="docutils literal notranslate"><span class="pre">length()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3mem12scatter_span21sub_scatter_span_argsE"><code class="docutils literal notranslate"><span class="pre">mem::scatter_span::sub_scatter_span_args</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-span-iterator-t">scatter_span_iterator&lt;T&gt;</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN3mem21scatter_span_iteratorE"><code class="docutils literal notranslate"><span class="pre">mem::scatter_span_iterator</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3mem21scatter_span_iteratormlEv"><code class="docutils literal notranslate"><span class="pre">operator*()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3mem21scatter_span_iteratorptEv"><code class="docutils literal notranslate"><span class="pre">operator-&gt;()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3mem21scatter_span_iteratorppEv"><code class="docutils literal notranslate"><span class="pre">operator++()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3mem21scatter_span_iteratorppEi"><code class="docutils literal notranslate"><span class="pre">operator++()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3mem21scatter_span_iteratormmEv"><code class="docutils literal notranslate"><span class="pre">operator--()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3mem21scatter_span_iteratormmEi"><code class="docutils literal notranslate"><span class="pre">operator--()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3mem21scatter_span_iteratorplE15difference_type"><code class="docutils literal notranslate"><span class="pre">operator+()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3mem21scatter_span_iteratormiE15difference_type"><code class="docutils literal notranslate"><span class="pre">operator-()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3mem21scatter_span_iteratormiERK21scatter_span_iterator"><code class="docutils literal notranslate"><span class="pre">operator-()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3mem21scatter_span_iteratoreqERK21scatter_span_iterator"><code class="docutils literal notranslate"><span class="pre">operator==()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3mem21scatter_span_iteratorneERK21scatter_span_iterator"><code class="docutils literal notranslate"><span class="pre">operator!=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3mem21scatter_span_iteratorplE15difference_typeRK21scatter_span_iterator"><code class="docutils literal notranslate"><span class="pre">operator+</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/scatter_span.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.2.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
