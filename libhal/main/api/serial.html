@@ -581,35 +581,6 @@
 
 </div>
 <dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal6serial6read_tE">
-<span id="_CPPv3N3hal6serial6read_tE"></span><span id="_CPPv2N3hal6serial6read_tE"></span><span id="hal::serial::read_t"></span><span class="target" id="structhal_1_1serial_1_1read__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read_t</span></span></span><a class="headerlink" href="#_CPPv4N3hal6serial6read_tE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Return type for serial read operations. </p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal6serial6read_t4dataE">
-<span id="_CPPv3N3hal6serial6read_t4dataE"></span><span id="_CPPv2N3hal6serial6read_t4dataE"></span><span id="hal::serial::read_t::data__std::span:byte:"></span><span class="target" id="structhal_1_1serial_1_1read__t_1afd69d8c339549677f41d0a21a74112bf"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">byte</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">data</span></span></span><a class="headerlink" href="#_CPPv4N3hal6serial6read_t4dataE" title="Link to this definition">#</a><br /></dt>
-<dd><p>The filled portion of the input buffer from the serial port. </p>
-<p>The size of this buffer indicates the number of bytes read The address points to the start of the buffer passed into the <a class="reference internal" href="#classhal_1_1serial_1a74be756b984f934c1e86396d1e79f344"><span class="std std-ref">read()</span></a> function. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal6serial6read_t9availableE">
-<span id="_CPPv3N3hal6serial6read_t9availableE"></span><span id="_CPPv2N3hal6serial6read_t9availableE"></span><span id="hal::serial::read_t::available__s"></span><span class="target" id="structhal_1_1serial_1_1read__t_1a9a65d6dc025b66913775eb8ef4874eaf"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">available</span></span></span><a class="headerlink" href="#_CPPv4N3hal6serial6read_t9availableE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Number of enqueued and available to be read out bytes. </p>
-<p>This value can be equal to or exceed the value of capacity. In this situation, the number of bytes above the capacity are bytes that have been dropped. Not all drivers will indicate the number of bytes lost. It is up to the driver or application to decide what to do in this situation. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal6serial6read_t8capacityE">
-<span id="_CPPv3N3hal6serial6read_t8capacityE"></span><span id="_CPPv2N3hal6serial6read_t8capacityE"></span><span id="hal::serial::read_t::capacity__s"></span><span class="target" id="structhal_1_1serial_1_1read__t_1a771e05da8e08a309dd66c983e93ded60"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">capacity</span></span></span><a class="headerlink" href="#_CPPv4N3hal6serial6read_t8capacityE" title="Link to this definition">#</a><br /></dt>
-<dd><p>The maximum number of bytes that the serial port can queue up. </p>
-</dd></dl>
-
-</div>
-</dd></dl>
-
-<dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal6serial8settingsE">
 <span id="_CPPv3N3hal6serial8settingsE"></span><span id="_CPPv2N3hal6serial8settingsE"></span><span id="hal::serial::settings"></span><span class="target" id="structhal_1_1serial_1_1settings"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">settings</span></span></span><a class="headerlink" href="#_CPPv4N3hal6serial8settingsE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Generic settings for a standard serial device. </p>
@@ -684,7 +655,7 @@
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal6serial8settings9baud_rateE">
 <span id="_CPPv3N3hal6serial8settings9baud_rateE"></span><span id="_CPPv2N3hal6serial8settings9baud_rateE"></span><span id="hal::serial::settings::baud_rate__hertz"></span><span class="target" id="structhal_1_1serial_1_1settings_1a172e43575366b280b3c613623daccab7"></span><span class="n"><span class="pre">hertz</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">baud_rate</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">115200.0f</span></span><a class="headerlink" href="#_CPPv4N3hal6serial8settings9baud_rateE" title="Link to this definition">#</a><br /></dt>
-<dd><p>The operating speed of the baud rate (in units of bits per second) </p>
+<dd><p>The operating speed of the baud rate (in units of bits per second). </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -697,6 +668,35 @@
 <dt class="sig sig-object cpp">
 <span class="target" id="structhal_1_1serial_1_1settings_1a3258bc17846d6170f9f6603fe3de3006"></span><a class="reference internal" href="#_CPPv4N3hal6serial8settings6parityE" title="hal::serial::settings::parity"><span class="n"><span class="pre">parity</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">parity</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal6serial8settings6parityE" title="hal::serial::settings::parity"><span class="n"><span class="pre">parity</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N3hal6serial8settings6parity4noneE" title="hal::serial::settings::parity::none"><span class="n"><span class="pre">none</span></span></a><br /></dt>
 <dd><p>Parity bit type for each frame. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal6serial6read_tE">
+<span id="_CPPv3N3hal6serial6read_tE"></span><span id="_CPPv2N3hal6serial6read_tE"></span><span id="hal::serial::read_t"></span><span class="target" id="structhal_1_1serial_1_1read__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read_t</span></span></span><a class="headerlink" href="#_CPPv4N3hal6serial6read_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Return type for serial read operations. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal6serial6read_t4dataE">
+<span id="_CPPv3N3hal6serial6read_t4dataE"></span><span id="_CPPv2N3hal6serial6read_t4dataE"></span><span id="hal::serial::read_t::data__std::span:byte:"></span><span class="target" id="structhal_1_1serial_1_1read__t_1afd69d8c339549677f41d0a21a74112bf"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">byte</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">data</span></span></span><a class="headerlink" href="#_CPPv4N3hal6serial6read_t4dataE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The filled portion of the input buffer from the serial port. </p>
+<p>The size of this buffer indicates the number of bytes read The address points to the start of the buffer passed into the <a class="reference internal" href="#classhal_1_1serial_1a74be756b984f934c1e86396d1e79f344"><span class="std std-ref">read()</span></a> function. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal6serial6read_t9availableE">
+<span id="_CPPv3N3hal6serial6read_t9availableE"></span><span id="_CPPv2N3hal6serial6read_t9availableE"></span><span id="hal::serial::read_t::available__s"></span><span class="target" id="structhal_1_1serial_1_1read__t_1a9a65d6dc025b66913775eb8ef4874eaf"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">available</span></span></span><a class="headerlink" href="#_CPPv4N3hal6serial6read_t9availableE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Number of enqueued and available to be read out bytes. </p>
+<p>This value can be equal to or exceed the value of capacity. In this situation, the number of bytes above the capacity are bytes that have been dropped. Not all drivers will indicate the number of bytes lost. It is up to the driver or application to decide what to do in this situation. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal6serial6read_t8capacityE">
+<span id="_CPPv3N3hal6serial6read_t8capacityE"></span><span id="_CPPv2N3hal6serial6read_t8capacityE"></span><span id="hal::serial::read_t::capacity__s"></span><span class="target" id="structhal_1_1serial_1_1read__t_1a771e05da8e08a309dd66c983e93ded60"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">capacity</span></span></span><a class="headerlink" href="#_CPPv4N3hal6serial6read_t8capacityE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The maximum number of bytes that the serial port can queue up. </p>
 </dd></dl>
 
 </div>
@@ -775,12 +775,6 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal6serial5writeENSt4spanIK4byteEE"><code class="docutils literal notranslate"><span class="pre">write()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal6serial4readENSt4spanI4byteEE"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal6serial5flushEv"><code class="docutils literal notranslate"><span class="pre">flush()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal6serial6read_tE"><code class="docutils literal notranslate"><span class="pre">hal::serial::read_t</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal6serial6read_t4dataE"><code class="docutils literal notranslate"><span class="pre">data</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal6serial6read_t9availableE"><code class="docutils literal notranslate"><span class="pre">available</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal6serial6read_t8capacityE"><code class="docutils literal notranslate"><span class="pre">capacity</span></code></a></li>
-</ul>
-</li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal6serial8settingsE"><code class="docutils literal notranslate"><span class="pre">hal::serial::settings</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal6serial8settings9stop_bitsE"><code class="docutils literal notranslate"><span class="pre">stop_bits</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal6serial8settings9stop_bits3oneE"><code class="docutils literal notranslate"><span class="pre">one</span></code></a></li>
@@ -798,6 +792,12 @@
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3hal6serial8settingsssERK8settings"><code class="docutils literal notranslate"><span class="pre">operator&lt;=&gt;()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal6serial8settings9baud_rateE"><code class="docutils literal notranslate"><span class="pre">baud_rate</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal6serial8settings4stopE"><code class="docutils literal notranslate"><span class="pre">stop</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal6serial6read_tE"><code class="docutils literal notranslate"><span class="pre">hal::serial::read_t</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal6serial6read_t4dataE"><code class="docutils literal notranslate"><span class="pre">data</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal6serial6read_t9availableE"><code class="docutils literal notranslate"><span class="pre">available</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal6serial6read_t8capacityE"><code class="docutils literal notranslate"><span class="pre">capacity</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal6serial7write_tE"><code class="docutils literal notranslate"><span class="pre">hal::serial::write_t</span></code></a><ul class="nav section-nav flex-column">
