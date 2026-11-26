@@ -139,6 +139,10 @@
     "name": "libhal-picosdk",
     "versions": [
       {
+        "version": "0.0.2",
+        "url": "https://libhal.github.io/api/libhal-picosdk/0.0.2"
+      },
+      {
         "version": "main",
         "url": "https://libhal.github.io/api/libhal-picosdk/main"
       }
