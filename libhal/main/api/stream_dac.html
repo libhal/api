@@ -521,7 +521,8 @@
 <span class="w">       </span><span class="p">(</span><span class="mi">7</span><span class="w"> </span><span class="n">bits</span><span class="p">)</span>
 </pre></div>
 </div>
- This allows 8-bit data to be inserted into a 7-bit DAC and only lose a single bit of resolution while keeping the interface clean and efficient without the need to perform pre-processing of the data stream. Usually, the unused LSB is ignored by the DAC and thus assigning it a value has no negative effects.</p>
+</p>
+<p>This allows 8-bit data to be inserted into a 7-bit DAC and only lose a single bit of resolution while keeping the interface clean and efficient without the need to perform pre-processing of the data stream. Usually, the unused LSB is ignored by the DAC and thus assigning it a value has no negative effects.</p>
 <p>Right Justified <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w">      </span><span class="mi">8</span><span class="o">-</span><span class="n">bit</span><span class="w"> </span><span class="n">DAC</span><span class="w"> </span><span class="n">Register</span><span class="o">:</span>
 <span class="w">     </span><span class="o">+---+---+---+---+---+---+---+---+</span>
 <span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">D7</span><span class="o">|</span><span class="w"> </span><span class="n">D6</span><span class="o">|</span><span class="w"> </span><span class="n">D5</span><span class="o">|</span><span class="w"> </span><span class="n">D4</span><span class="o">|</span><span class="w"> </span><span class="n">D3</span><span class="o">|</span><span class="w"> </span><span class="n">D2</span><span class="o">|</span><span class="w"> </span><span class="n">D1</span><span class="o">|</span>
@@ -532,7 +533,8 @@
 <span class="w">      </span><span class="n">Bit</span><span class="w">    </span><span class="p">(</span><span class="mi">7</span><span class="w"> </span><span class="n">bits</span><span class="p">)</span>
 </pre></div>
 </div>
- Right justified DACs are more complicated to work with because assigning a 8-bit value to such a register will result in the MSB being trimmed off, losing the most significant data. To resolve this, the data must be preprocessed into an additional buffer where each value is shifted to the right by 1, then assigned to the register.</p>
+</p>
+<p>Right justified DACs are more complicated to work with because assigning a 8-bit value to such a register will result in the MSB being trimmed off, losing the most significant data. To resolve this, the data must be preprocessed into an additional buffer where each value is shifted to the right by 1, then assigned to the register.</p>
 <p>A worse scenario is that the unused bit is potentially a flag for the dac peripheral. In this case, the data either needs to be preprocessed into a local buffer with that flag set to the previous value to prevent destroying it. And in some cases, this design simply doesn’t make using DMA a reasonable use case.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Template Parameters<span class="colon">:</span></dt>

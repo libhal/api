@@ -506,8 +506,7 @@
 </p>
 <p>Use <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> when you need shared ownership semantics and can guarantee the pointer will never be null. For nullable references, use <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a>.</p>
 <p>Example usage:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="o">++</span>
-<span class="c1">// Create a strong_ptr to an object</span>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create a strong_ptr to an object</span>
 <span class="k">auto</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hal</span><span class="o">::</span><span class="n">make_strong_ptr</span><span class="o">&lt;</span><span class="n">my_i2c_driver</span><span class="o">&gt;</span><span class="p">(</span><span class="n">allocator</span><span class="p">,</span><span class="w"> </span><span class="n">arg1</span><span class="p">,</span><span class="w"> </span><span class="n">arg2</span><span class="p">);</span>
 
 <span class="c1">// Use the object using dereference (*) operator</span>
@@ -778,13 +777,13 @@
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NO3hal2v510strong_ptrmlEv">
 <span id="_CPPv3NO3hal2v510strong_ptrmlEv"></span><span id="_CPPv2NO3hal2v510strong_ptrmlEv"></span><span id="hal::v5::strong_ptr::mul-operatorO"></span><span class="target" id="classhal_1_1v5_1_1strong__ptr_1a5b334457a8d8b9238daf236e53a3cb23"></span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">*</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">&amp;&amp;</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4NO3hal2v510strong_ptrmlEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Disable dereferencing for r-values (temporaries) </p>
+<dd><p>Disable dereferencing for r-values (temporaries). </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NO3hal2v510strong_ptrptEv">
 <span id="_CPPv3NO3hal2v510strong_ptrptEv"></span><span id="_CPPv2NO3hal2v510strong_ptrptEv"></span><span id="hal::v5::strong_ptr::pointer-operatorO"></span><span class="target" id="classhal_1_1v5_1_1strong__ptr_1add360eb92bb900a3910ec3fdecafdb5d"></span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">-&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">&amp;&amp;</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4NO3hal2v510strong_ptrptEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Disable member access for r-values (temporaries) </p>
+<dd><p>Disable member access for r-values (temporaries). </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1012,7 +1011,7 @@
 <dt class="sig sig-object cpp" id="_CPPv4NK3hal2v58weak_ptr4lockEv">
 <span id="_CPPv3NK3hal2v58weak_ptr4lockEv"></span><span id="_CPPv2NK3hal2v58weak_ptr4lockEv"></span><span id="hal::v5::weak_ptr::lockC"></span><span class="target" id="classhal_1_1v5_1_1weak__ptr_1a2ce612f2f63e01f2540b6579bef8af7a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v58weak_ptrE" title="hal::v5::weak_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lock</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK3hal2v58weak_ptr4lockEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>Attempt to obtain a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to the referenced object. </p>
-<p>Implement <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr_1a2ce612f2f63e01f2540b6579bef8af7a"><span class="std std-ref">weak_ptr::lock()</span></a> now that <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> is defined.</p>
+<p>Implement weak_ptr::lock() now that <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> is defined.</p>
 <p>If the object still exists, returns an <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> containing a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to it. Otherwise, returns an empty <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a>.</p>
 <p>
 This function attempts to obtain a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> from a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a>. If the referenced object still exists, it returns an <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> containing a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to it. Otherwise, it returns an empty <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a>.</p>
@@ -1089,7 +1088,7 @@ This function attempts to obtain a <a class="reference internal" href="scatter_s
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal2v512optional_ptr12optional_ptrENSt9nullptr_tE">
 <span id="_CPPv3N3hal2v512optional_ptr12optional_ptrENSt9nullptr_tE"></span><span id="_CPPv2N3hal2v512optional_ptr12optional_ptrENSt9nullptr_tE"></span><span id="hal::v5::optional_ptr::optional_ptr__std::nullptr_tCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1aa2a0c1238df52e62edce445d74921328"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">optional_ptr</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">nullptr_t</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v512optional_ptr12optional_ptrENSt9nullptr_tE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Constructor for nullptr (creates a disengaged optional) </p>
+<dd><p>Constructor for nullptr (creates a disengaged optional). </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1188,7 +1187,7 @@ This function attempts to obtain a <a class="reference internal" href="scatter_s
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal2v512optional_ptraSENSt9nullptr_tE">
 <span id="_CPPv3N3hal2v512optional_ptraSENSt9nullptr_tE"></span><span id="_CPPv2N3hal2v512optional_ptraSENSt9nullptr_tE"></span><span id="hal::v5::optional_ptr::assign-operator__std::nullptr_tCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a97677297d268fc07658815f365fc2af0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr"><span class="n"><span class="pre">optional_ptr</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">nullptr_t</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N3hal2v512optional_ptraSENSt9nullptr_tE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Assignment from nullptr (resets to disengaged state) </p>
+<dd><p>Assignment from nullptr (resets to disengaged state). </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Reference to *this </p>
@@ -1242,7 +1241,7 @@ This function attempts to obtain a <a class="reference internal" href="scatter_s
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3hal2v512optional_ptr5valueEv">
 <span id="_CPPv3NK3hal2v512optional_ptr5valueEv"></span><span id="_CPPv2NK3hal2v512optional_ptr5valueEv"></span><span id="hal::v5::optional_ptr::valueCCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a5326a640f4f9a3dc2f72a07d7be733a8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">value</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v512optional_ptr5valueEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Access the contained value, throw if not engaged (const version) </p>
+<dd><p>Access the contained value, throw if not engaged (const version). </p>
 <dl class="field-list simple">
 <dt class="field-odd">Throws<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">bad_optional_ptr_access</span></span></span> – if *this is disengaged </p>
@@ -1256,7 +1255,7 @@ This function attempts to obtain a <a class="reference internal" href="scatter_s
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal2v512optional_ptrcv10strong_ptrI1TEEv">
 <span id="_CPPv3N3hal2v512optional_ptrcv10strong_ptrI1TEEv"></span><span id="_CPPv2N3hal2v512optional_ptrcv10strong_ptrI1TEEv"></span><span id="hal::v5::optional_ptr::castto-strong_ptr:T:-operatorCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a94d6a23f604d641767914666e7f8dcde"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3hal2v512optional_ptrcv10strong_ptrI1TEEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Implicitly convert to a strong_ptr&lt;T&gt; </p>
+<dd><p>Implicitly convert to a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr&lt;T&gt;</span></a>. </p>
 <p>This allows <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> to be used anywhere a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> is expected when the <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1optional__ptr"><span class="std std-ref">optional_ptr</span></a> is engaged.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Throws<span class="colon">:</span></dt>
@@ -1271,7 +1270,7 @@ This function attempts to obtain a <a class="reference internal" href="scatter_s
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3hal2v512optional_ptrcv10strong_ptrI1TEEv">
 <span id="_CPPv3NK3hal2v512optional_ptrcv10strong_ptrI1TEEv"></span><span id="_CPPv2NK3hal2v512optional_ptrcv10strong_ptrI1TEEv"></span><span id="hal::v5::optional_ptr::castto-strong_ptr:T:-operatorCCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a9e715f47d0f929b7356c6c8a6e04a769"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrE" title="hal::v5::optional_ptr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v512optional_ptrcv10strong_ptrI1TEEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Implicitly convert to a strong_ptr&lt;T&gt; (const version) </p>
+<dd><p>Implicitly convert to a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr&lt;T&gt;</span></a> (const version). </p>
 <dl class="field-list simple">
 <dt class="field-odd">Throws<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">bad_optional_ptr_access</span></span></span> – if *this is disengaged </p>
@@ -1286,7 +1285,7 @@ This function attempts to obtain a <a class="reference internal" href="scatter_s
 <dt class="sig sig-object cpp" id="_CPPv4I0EN3hal2v512optional_ptrcv10strong_ptrI1UEEv">
 <span id="_CPPv3I0EN3hal2v512optional_ptrcv10strong_ptrI1UEEv"></span><span id="_CPPv2I0EN3hal2v512optional_ptrcv10strong_ptrI1UEEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1optional__ptr_1aba9a2a710a7909d054b999afc62cb202"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v512optional_ptrcv10strong_ptrI1UEEv" title="hal::v5::optional_ptr::operator strong_ptr&lt;U&gt;::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3hal2v512optional_ptrcv10strong_ptrI1UEEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>Implicitly convert to a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> for polymorphic types. </p>
-<p>This allows optional_ptr&lt;Derived&gt; to be converted to strong_ptr&lt;Base&gt; when Derived is convertible to Base.</p>
+<p>This allows optional_ptr&lt;Derived&gt; to be converted to <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr&lt;Base&gt;</span></a> when Derived is convertible to Base.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>U</strong> – The target type (must be convertible from T) </p>
@@ -1303,7 +1302,7 @@ This function attempts to obtain a <a class="reference internal" href="scatter_s
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4I0ENK3hal2v512optional_ptrcv10strong_ptrI1UEEv">
 <span id="_CPPv3I0ENK3hal2v512optional_ptrcv10strong_ptrI1UEEv"></span><span id="_CPPv2I0ENK3hal2v512optional_ptrcv10strong_ptrI1UEEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a82b533855ee7234e55271722a343594d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0ENK3hal2v512optional_ptrcv10strong_ptrI1UEEv" title="hal::v5::optional_ptr::operator strong_ptr&lt;U&gt;::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0ENK3hal2v512optional_ptrcv10strong_ptrI1UEEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Implicitly convert to a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> for polymorphic types (const version) </p>
+<dd><p>Implicitly convert to a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> for polymorphic types (const version). </p>
 <dl class="field-list simple">
 <dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>U</strong> – The target type (must be convertible from T) </p>
@@ -1331,7 +1330,7 @@ This function attempts to obtain a <a class="reference internal" href="scatter_s
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3hal2v512optional_ptrptEv">
 <span id="_CPPv3NK3hal2v512optional_ptrptEv"></span><span id="_CPPv2NK3hal2v512optional_ptrptEv"></span><span id="hal::v5::optional_ptr::pointer-operatorCCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1ae6d04291b21b22d226e97f91042c038b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">-&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v512optional_ptrptEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Arrow operator for accessing members of the contained object (const version) </p>
+<dd><p>Arrow operator for accessing members of the contained object (const version). </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Pointer to the object managed by the contained <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
@@ -1353,7 +1352,7 @@ This function attempts to obtain a <a class="reference internal" href="scatter_s
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3hal2v512optional_ptrmlEv">
 <span id="_CPPv3NK3hal2v512optional_ptrmlEv"></span><span id="_CPPv2NK3hal2v512optional_ptrmlEv"></span><span id="hal::v5::optional_ptr::mul-operatorCCE"></span><span class="target" id="classhal_1_1v5_1_1optional__ptr_1a0e15e19c72b6cd3227ae7f3f636f590c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">*</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v512optional_ptrmlEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Dereference operator for accessing the contained object (const version) </p>
+<dd><p>Dereference operator for accessing the contained object (const version). </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Reference to the object managed by the contained <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
@@ -1436,7 +1435,7 @@ This function attempts to obtain a <a class="reference internal" href="scatter_s
 <dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">bad_weak_ptr</span></span></span> – if this object is not managed by a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>strong_ptr&lt;T&gt; pointing to this object </p>
+<dd class="field-even"><p><a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr&lt;T&gt;</span></a> pointing to this object </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1444,13 +1443,13 @@ This function attempts to obtain a <a class="reference internal" href="scatter_s
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3hal2v523enable_strong_from_this16strong_from_thisEv">
 <span id="_CPPv3NK3hal2v523enable_strong_from_this16strong_from_thisEv"></span><span id="_CPPv2NK3hal2v523enable_strong_from_this16strong_from_thisEv"></span><span id="hal::v5::enable_strong_from_this::strong_from_thisC"></span><span class="target" id="classhal_1_1v5_1_1enable__strong__from__this_1a373af2ec14a50d36d3392d4cab9934ed"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v510strong_ptrE" title="hal::v5::strong_ptr"><span class="n"><span class="pre">strong_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v523enable_strong_from_thisE" title="hal::v5::enable_strong_from_this::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">strong_from_this</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3hal2v523enable_strong_from_this16strong_from_thisEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Get a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to this object (const version) </p>
+<dd><p>Get a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a> to this object (const version). </p>
 <dl class="field-list simple">
 <dt class="field-odd">Throws<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">hal</span><span class="p">::</span><span class="n">bad_weak_ptr</span></span></span> – if this object is not managed by a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr</span></a></p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>strong_ptr&lt;T const&gt; pointing to this object </p>
+<dd class="field-even"><p><a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1strong__ptr"><span class="std std-ref">strong_ptr&lt;T const&gt;</span></a> pointing to this object </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1461,7 +1460,7 @@ This function attempts to obtain a <a class="reference internal" href="scatter_s
 <dd><p>Get a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to this object. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>weak_ptr&lt;T&gt; pointing to this object </p>
+<dd class="field-odd"><p><a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr&lt;T&gt;</span></a> pointing to this object </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1469,10 +1468,10 @@ This function attempts to obtain a <a class="reference internal" href="scatter_s
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK3hal2v523enable_strong_from_this14weak_from_thisEv">
 <span id="_CPPv3NK3hal2v523enable_strong_from_this14weak_from_thisEv"></span><span id="_CPPv2NK3hal2v523enable_strong_from_this14weak_from_thisEv"></span><span id="hal::v5::enable_strong_from_this::weak_from_thisC"></span><span class="target" id="classhal_1_1v5_1_1enable__strong__from__this_1a7f8a6c898a9f09ee6e6c85b977ae0c00"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN3hal2v58weak_ptrE" title="hal::v5::weak_ptr"><span class="n"><span class="pre">weak_ptr</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN3hal2v523enable_strong_from_thisE" title="hal::v5::enable_strong_from_this::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">weak_from_this</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK3hal2v523enable_strong_from_this14weak_from_thisEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Get a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to this object (const version) </p>
+<dd><p>Get a <a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr</span></a> to this object (const version). </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>weak_ptr&lt;T const&gt; pointing to this object </p>
+<dd class="field-odd"><p><a class="reference internal" href="scatter_span.html#classhal_1_1v5_1_1weak__ptr"><span class="std std-ref">weak_ptr&lt;T const&gt;</span></a> pointing to this object </p>
 </dd>
 </dl>
 </dd></dl>
