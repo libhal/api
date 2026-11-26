@@ -538,7 +538,7 @@
 <dl class="cpp enum-class">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4016usb_clock_sourceE">
 <span id="_CPPv3N3hal5lpc4016usb_clock_sourceE"></span><span id="_CPPv2N3hal5lpc4016usb_clock_sourceE"></span><span class="target" id="namespacehal_1_1lpc40_1a2559a9a66a8b2b9ad04b24d50c643352"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">hal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">lpc40</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">usb_clock_source</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">u8</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4016usb_clock_sourceE" title="Link to this definition">#</a><br /></dt>
-<dd><p>USB oscillator source constants (not used) </p>
+<dd><p>USB oscillator source constants (not used). </p>
 <p><em>Values:</em></p>
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4016usb_clock_source12system_clockE">
@@ -711,27 +711,6 @@
 
 </div>
 <dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree5cpu_tE">
-<span id="_CPPv3N3hal5lpc4010clock_tree5cpu_tE"></span><span id="_CPPv2N3hal5lpc4010clock_tree5cpu_tE"></span><span id="hal::lpc40::clock_tree::cpu_t"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1cpu__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cpu_t</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree5cpu_tE" title="Link to this definition">#</a><br /></dt>
-<dd><p>cpu clock control config struct </p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree5cpu_t8use_pll0E">
-<span id="_CPPv3N3hal5lpc4010clock_tree5cpu_t8use_pll0E"></span><span id="_CPPv2N3hal5lpc4010clock_tree5cpu_t8use_pll0E"></span><span id="hal::lpc40::clock_tree::cpu_t::use_pll0__b"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1cpu__t_1a843b2a86394e852eb923db8895ec12eb"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">use_pll0</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree5cpu_t8use_pll0E" title="Link to this definition">#</a><br /></dt>
-<dd><p>If true, use PLL0, if false, use system clock which is defined as 12MHz </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree5cpu_t7dividerE">
-<span id="_CPPv3N3hal5lpc4010clock_tree5cpu_t7dividerE"></span><span id="_CPPv2N3hal5lpc4010clock_tree5cpu_t7dividerE"></span><span id="hal::lpc40::clock_tree::cpu_t::divider__u8"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1cpu__t_1aefdc0fc65db99aaf39a8aecc01686e4f"></span><span class="n"><span class="pre">u8</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divider</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree5cpu_t7dividerE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Divide the input clock from IRC or PLL0. </p>
-</dd></dl>
-
-</div>
-</dd></dl>
-
-<dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree5pll_tE">
 <span id="_CPPv3N3hal5lpc4010clock_tree5pll_tE"></span><span id="_CPPv2N3hal5lpc4010clock_tree5pll_tE"></span><span id="hal::lpc40::clock_tree::pll_t"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1pll__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pll_t</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree5pll_tE" title="Link to this definition">#</a><br /></dt>
 <dd><p>phase locked loops config struct </p>
@@ -753,21 +732,21 @@
 </dd></dl>
 
 <dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree7spifi_tE">
-<span id="_CPPv3N3hal5lpc4010clock_tree7spifi_tE"></span><span id="_CPPv2N3hal5lpc4010clock_tree7spifi_tE"></span><span id="hal::lpc40::clock_tree::spifi_t"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1spifi__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spifi_t</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree7spifi_tE" title="Link to this definition">#</a><br /></dt>
-<dd><p>spifi clock control config struct </p>
+<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree5cpu_tE">
+<span id="_CPPv3N3hal5lpc4010clock_tree5cpu_tE"></span><span id="_CPPv2N3hal5lpc4010clock_tree5cpu_tE"></span><span id="hal::lpc40::clock_tree::cpu_t"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1cpu__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cpu_t</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree5cpu_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>cpu clock control config struct </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree7spifi_t5clockE">
-<span id="_CPPv3N3hal5lpc4010clock_tree7spifi_t5clockE"></span><span id="_CPPv2N3hal5lpc4010clock_tree7spifi_t5clockE"></span><span id="hal::lpc40::clock_tree::spifi_t::clock__spifi_clock_source"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1spifi__t_1adc83c466c2e9a149ea6e7ee68ff53c90"></span><a class="reference internal" href="#_CPPv4N3hal5lpc4018spifi_clock_sourceE" title="hal::lpc40::spifi_clock_source"><span class="n"><span class="pre">spifi_clock_source</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clock</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal5lpc4018spifi_clock_sourceE" title="hal::lpc40::spifi_clock_source"><span class="n"><span class="pre">spifi_clock_source</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N3hal5lpc4018spifi_clock_source12system_clockE" title="hal::lpc40::spifi_clock_source::system_clock"><span class="n"><span class="pre">system_clock</span></span></a><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree7spifi_t5clockE" title="Link to this definition">#</a><br /></dt>
-<dd><p>spifi clock source </p>
+<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree5cpu_t8use_pll0E">
+<span id="_CPPv3N3hal5lpc4010clock_tree5cpu_t8use_pll0E"></span><span id="_CPPv2N3hal5lpc4010clock_tree5cpu_t8use_pll0E"></span><span id="hal::lpc40::clock_tree::cpu_t::use_pll0__b"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1cpu__t_1a843b2a86394e852eb923db8895ec12eb"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">use_pll0</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree5cpu_t8use_pll0E" title="Link to this definition">#</a><br /></dt>
+<dd><p>If true, use PLL0, if false, use system clock which is defined as 12MHz </p>
 </dd></dl>
 
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree7spifi_t7dividerE">
-<span id="_CPPv3N3hal5lpc4010clock_tree7spifi_t7dividerE"></span><span id="_CPPv2N3hal5lpc4010clock_tree7spifi_t7dividerE"></span><span id="hal::lpc40::clock_tree::spifi_t::divider__u8"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1spifi__t_1a245b7ab638ca618ef6d4fd780c529250"></span><span class="n"><span class="pre">u8</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divider</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree7spifi_t7dividerE" title="Link to this definition">#</a><br /></dt>
-<dd><p>spifi clock divider </p>
+<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree5cpu_t7dividerE">
+<span id="_CPPv3N3hal5lpc4010clock_tree5cpu_t7dividerE"></span><span id="_CPPv2N3hal5lpc4010clock_tree5cpu_t7dividerE"></span><span id="hal::lpc40::clock_tree::cpu_t::divider__u8"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1cpu__t_1aefdc0fc65db99aaf39a8aecc01686e4f"></span><span class="n"><span class="pre">u8</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divider</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree5cpu_t7dividerE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Divide the input clock from IRC or PLL0. </p>
 </dd></dl>
 
 </div>
@@ -789,6 +768,27 @@
 <dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree5usb_t7dividerE">
 <span id="_CPPv3N3hal5lpc4010clock_tree5usb_t7dividerE"></span><span id="_CPPv2N3hal5lpc4010clock_tree5usb_t7dividerE"></span><span id="hal::lpc40::clock_tree::usb_t::divider__usb_divider"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1usb__t_1a0ad32e214feccaebecb610ebf13f868d"></span><a class="reference internal" href="#_CPPv4N3hal5lpc4011usb_dividerE" title="hal::lpc40::usb_divider"><span class="n"><span class="pre">usb_divider</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divider</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal5lpc4011usb_dividerE" title="hal::lpc40::usb_divider"><span class="n"><span class="pre">usb_divider</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N3hal5lpc4011usb_divider10divide_by1E" title="hal::lpc40::usb_divider::divide_by1"><span class="n"><span class="pre">divide_by1</span></span></a><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree5usb_t7dividerE" title="Link to this definition">#</a><br /></dt>
 <dd><p>usb clock divider </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree7spifi_tE">
+<span id="_CPPv3N3hal5lpc4010clock_tree7spifi_tE"></span><span id="_CPPv2N3hal5lpc4010clock_tree7spifi_tE"></span><span id="hal::lpc40::clock_tree::spifi_t"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1spifi__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spifi_t</span></span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree7spifi_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>spifi clock control config struct </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree7spifi_t5clockE">
+<span id="_CPPv3N3hal5lpc4010clock_tree7spifi_t5clockE"></span><span id="_CPPv2N3hal5lpc4010clock_tree7spifi_t5clockE"></span><span id="hal::lpc40::clock_tree::spifi_t::clock__spifi_clock_source"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1spifi__t_1adc83c466c2e9a149ea6e7ee68ff53c90"></span><a class="reference internal" href="#_CPPv4N3hal5lpc4018spifi_clock_sourceE" title="hal::lpc40::spifi_clock_source"><span class="n"><span class="pre">spifi_clock_source</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clock</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3hal5lpc4018spifi_clock_sourceE" title="hal::lpc40::spifi_clock_source"><span class="n"><span class="pre">spifi_clock_source</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N3hal5lpc4018spifi_clock_source12system_clockE" title="hal::lpc40::spifi_clock_source::system_clock"><span class="n"><span class="pre">system_clock</span></span></a><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree7spifi_t5clockE" title="Link to this definition">#</a><br /></dt>
+<dd><p>spifi clock source </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3hal5lpc4010clock_tree7spifi_t7dividerE">
+<span id="_CPPv3N3hal5lpc4010clock_tree7spifi_t7dividerE"></span><span id="_CPPv2N3hal5lpc4010clock_tree7spifi_t7dividerE"></span><span id="hal::lpc40::clock_tree::spifi_t::divider__u8"></span><span class="target" id="structhal_1_1lpc40_1_1clock__tree_1_1spifi__t_1a245b7ab638ca618ef6d4fd780c529250"></span><span class="n"><span class="pre">u8</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">divider</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N3hal5lpc4010clock_tree7spifi_t7dividerE" title="Link to this definition">#</a><br /></dt>
+<dd><p>spifi clock divider </p>
 </dd></dl>
 
 </div>
@@ -941,24 +941,24 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5spifiE"><code class="docutils literal notranslate"><span class="pre">spifi</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree18peripheral_dividerE"><code class="docutils literal notranslate"><span class="pre">peripheral_divider</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree20emc_half_cpu_dividerE"><code class="docutils literal notranslate"><span class="pre">emc_half_cpu_divider</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5cpu_tE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree::cpu_t</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5cpu_t8use_pll0E"><code class="docutils literal notranslate"><span class="pre">use_pll0</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5cpu_t7dividerE"><code class="docutils literal notranslate"><span class="pre">divider</span></code></a></li>
-</ul>
-</li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5pll_tE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree::pll_t</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5pll_t7enabledE"><code class="docutils literal notranslate"><span class="pre">enabled</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5pll_t8multiplyE"><code class="docutils literal notranslate"><span class="pre">multiply</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree7spifi_tE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree::spifi_t</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree7spifi_t5clockE"><code class="docutils literal notranslate"><span class="pre">clock</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree7spifi_t7dividerE"><code class="docutils literal notranslate"><span class="pre">divider</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5cpu_tE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree::cpu_t</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5cpu_t8use_pll0E"><code class="docutils literal notranslate"><span class="pre">use_pll0</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5cpu_t7dividerE"><code class="docutils literal notranslate"><span class="pre">divider</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5usb_tE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree::usb_t</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5usb_t5clockE"><code class="docutils literal notranslate"><span class="pre">clock</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree5usb_t7dividerE"><code class="docutils literal notranslate"><span class="pre">divider</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree7spifi_tE"><code class="docutils literal notranslate"><span class="pre">hal::lpc40::clock_tree::spifi_t</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree7spifi_t5clockE"><code class="docutils literal notranslate"><span class="pre">clock</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3hal5lpc4010clock_tree7spifi_t7dividerE"><code class="docutils literal notranslate"><span class="pre">divider</span></code></a></li>
 </ul>
 </li>
 </ul>
